@@ -1,0 +1,45 @@
+/*
+ *
+ * AllBinary Open License Version 1
+ * Copyright (c) 2011 AllBinary
+ * 
+ * By agreeing to this license you and any business entity you represent are
+ * legally bound to the AllBinary Open License Version 1 legal agreement.
+ * 
+ * You may obtain the AllBinary Open License Version 1 legal agreement from
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+ * 
+ * Created By: Travis Berthelot
+ *  
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+using FeaturedAnimationInterfaceFactoryInterfaceFactory = org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory;
+using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using CommonStrings = org.allbinary.@string.CommonStrings;
+
+namespace org.allbinary.game.resource;
+
+public class FeatureResourceInitializationUtil
+{
+    public readonly LogUtil logUtil = LogUtil.getInstance();
+    private static readonly FeatureResourceInitializationUtil instance = new FeatureResourceInitializationUtil();
+    public static FeatureResourceInitializationUtil getInstance()
+    {
+        return FeatureResourceInitializationUtil.instance;
+    }
+
+    // throws Exception
+    public virtual void init(int level)
+    {
+        CommonStrings commonStrings = CommonStrings.getInstance();
+        this.logUtil.putF(commonStrings.START, this, commonStrings.INIT);
+        FeaturedResourceFactory featuredResourceFactory = FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance();
+        featuredResourceFactory.init(level);
+        FeaturedResourceRelativeRelationshipFactory.getInstance().init(level);
+    }
+
+}
+

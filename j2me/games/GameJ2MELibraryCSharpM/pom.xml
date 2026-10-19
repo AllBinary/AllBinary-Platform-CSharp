@@ -1,0 +1,732 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary</groupId>
+    <artifactId>GameJ2MELibraryCSharp</artifactId>
+    <packaging>jar</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>GameJ2MELibraryCSharp</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+
+
+    <properties>
+        <dotnet.executable>dotnet</dotnet.executable>
+        <dotnet.configuration>Release</dotnet.configuration>
+        <!-- Hand written runtime for generated C# code such as Any -->
+        <csharp.runtime.source.path>G:/mnt/bc/mydev/workcsharp/j2me/J2SEForCSharpLibraryCSharpM/src/main/java</csharp.runtime.source.path>
+        <csharp.jsinterop.source.path>G:/mnt/bc/mydev/workingcsharp/replace_these_stub_projects/allbinary_src/J2MEJsInteropCompatibilityJavaLibraryCSharpM/src/main/java</csharp.jsinterop.source.path>
+        <!-- Set to false to continue the Maven build when the generated C# does not compile -->
+        <csharp.fail.on.error>true</csharp.fail.on.error>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>LoggingJ2MEAllCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>LogJ2MEJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2MEWindowingJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NoSystemJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.allbinary</groupId> 
+            <artifactId>GameLicensingNullJavaLibraryCSharp</artifactId>            
+            <!--
+            <artifactId>GameLicensingOnlyDemoJavaLibraryCSharp</artifactId>
+            <artifactId>GameLicensingInAppPurchaseJavaLibraryCSharp</artifactId>
+            -->
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2MEForJ2MEJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>OpenGLNoneJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>OpenGLNoneOtherJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>FormJMEJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>AdvertisementClientNoneJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ScreenCaptureNoneJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ProgressJ2MEJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NullCustomUIJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ImageCacheJ2MEJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ThreadJ2MELibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameScoresBaseJ2MELibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameConfigurationJ2MEJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameNotificationJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameLicensingOnlyDemoJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameInputPCJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameInputPCMotionJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NoSensorJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>FullScreenNoneJavaLibraryCSharp</artifactId>
+            <!-- 
+            <artifactId>FullScreenJavaLibraryCSharp</artifactId>
+            <artifactId>FullScreenNoneJavaLibraryCSharp</artifactId>
+            -->
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>TouchButtonBaseJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NoTouchButtonJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ApplicationStatisticsJ2MELibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NotDeviceSpecificNoMediaMIDP1LibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2SEForJ2MEJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>OpenGLESBaseJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameInputPersistanceLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>AllBinaryGyroSensorJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NoSWTJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ThreadLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameScoresBaseJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>BasicMathLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>EventJ2MELibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>TrigJ2MELibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>AllBinaryJ2MELibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>AllBinaryLayerJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary.game.ai</groupId>
+            <artifactId>ArtificialIntelligenceLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>AnimationLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameInputLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>PreGameJ2MEJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameConfigurationJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2MEUtilJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameIntermissionLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GroupLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>AllBinarySensorJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>TimeJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameConfigurationFormJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ApplicationStatisticsJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameSoundsJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>AnimationResourceJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameResourceJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>GameAnimationJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>MediaDataCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.microemu</groupId>
+            <artifactId>microemu-midpCSharp</artifactId>
+            <version>2.0.4</version>
+            <optional>true</optional>
+        </dependency>
+
+
+
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>csharp-ignore-errors</id>
+            <activation>
+                <property>
+                    <name>csharp.fail.on.error</name>
+                    <value>false</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>compile-dotnet-sources</id>
+                                <configuration>
+                                    <successCodes>
+                                        <successCode>0</successCode>
+                                        <successCode>1</successCode>
+                                    </successCodes>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-pluginCSharp</artifactId>
+                <version>3.8.1</version>
+                <!-- 
+                <version>2.5.1</version>
+                <version>2.3.2</version>
+                -->
+                <configuration> 
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Unremark to create java doc -->
+            <!-- just this not the inner part
+                  <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-pluginCSharp</artifactId>
+                    <version>2.7</version>
+                    <executions>
+            -->
+            <!--
+        <configuration>
+            <includeDependencySources>true</includeDependencySources>
+            <dependencySourceIncludes>
+                <dependencySourceInclude>org.allbinary.game.ai:ArtificialIntelligenceLibrary</dependencySourceInclude>
+            </dependencySourceIncludes>
+            <dependencySourceExcludes>
+                <dependencySourceExclude>org.allbinary:*</dependencySourceExclude>
+            </dependencySourceExcludes>
+        </configuration>
+
+            <aggregate>true</aggregate>
+
+            <localRepository url="file://g:/.m2" />
+
+            <detectOfflineLinks>true</detectOfflineLinks>
+            <includeDependencySources>true</includeDependencySources>
+            <dependencySourceIncludes>
+                <dependencySourceExclude>org.allbinary:*</dependencySourceExclude>
+            </dependencySourceIncludes>
+
+              <localRepository></localRepository>
+              <includeDependencySources>true</includeDependencySources>
+              <includeTransitiveDependencySources>true</includeTransitiveDependencySources>
+              <show>public</show>
+              <aggregate>true</aggregate>
+            <execution>
+              <id>aggregate</id>
+              <goals>
+                <goal>aggregate</goal>
+              </goals>
+              <phase>site</phase>
+              <configuration>
+              </configuration>
+            </execution>
+            -->
+
+            <!--
+                      <execution>
+                        <id>javadoc-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                          <goal>jar</goal>
+                        </goals>
+                      </execution>
+                    </executions>
+                  </plugin>
+            -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>compile-dotnet-sources</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>${dotnet.executable}</executable>
+                            <workingDirectory>${project.basedir}</workingDirectory>
+                            <arguments>
+                                <argument>build</argument>
+                                <argument>${project.basedir}/${project.artifactId}.csproj</argument>
+                                <argument>--configuration</argument>
+                                <argument>${dotnet.configuration}</argument>
+                                <argument>--nologo</argument>
+                                <argument>-p:OutputPath=${project.build.outputDirectory}/META-INF/dotnet/</argument>
+                                <argument>-p:AllBinaryRuntimeSourcePath=${csharp.runtime.source.path}</argument>
+                                <argument>-p:AllBinaryJsInteropSourcePath=${csharp.jsinterop.source.path}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+    </build>
+
+</project>
+

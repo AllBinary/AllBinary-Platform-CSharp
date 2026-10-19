@@ -1,0 +1,116 @@
+/*
+ *
+ * AllBinary Open License Version 1
+ * Copyright (c) 2011 AllBinary
+ * 
+ * By agreeing to this license you and any business entity you represent are
+ * legally bound to the AllBinary Open License Version 1 legal agreement.
+ * 
+ * You may obtain the AllBinary Open License Version 1 legal agreement from
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+ * 
+ * Created By: Travis Berthelot
+ *  
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+//using Font = javax.microedition.lcdui.Font;
+//using Graphics = javax.microedition.lcdui.Graphics;
+using Anchor = org.allbinary.graphics.Anchor;
+using BasicColor = org.allbinary.graphics.color.BasicColor;
+using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
+using ColorChangeEvent = org.allbinary.graphics.color.ColorChangeEvent;
+using ColorChangeListener = org.allbinary.graphics.color.ColorChangeListener;
+using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
+using MyFontProcessor = org.allbinary.graphics.font.MyFontProcessor;
+using UpdateMyFontInterface = org.allbinary.graphics.font.UpdateMyFontInterface;
+using UpdateMyFontProcessor = org.allbinary.graphics.font.UpdateMyFontProcessor;
+using Paintable = org.allbinary.graphics.paint.Paintable;
+using AllBinaryEventObject = org.allbinary.logic.util.@event.AllBinaryEventObject;
+using BasicArrayList = org.allbinary.util.BasicArrayList;
+
+namespace org.allbinary.game.score;
+
+public class HighScoresPaintable : Paintable, ColorChangeListener, UpdateMyFontInterface
+{
+    private readonly DisplayInfoSingleton displayInfoSingleton = DisplayInfoSingleton.getInstance();
+    private MyFontProcessor myFontProcessor;
+    private BasicColor basicColor = BasicColorFactory.getInstance().WHITE;
+    private HighScores highScores = NullHighScoresSingletonFactory.getInstance();
+    private int anchor = Anchor.TOP_LEFT;
+    private int charHeight = 0;
+    public HighScoresPaintable()
+    {
+        this.myFontProcessor = new UpdateMyFontProcessor(this);
+    }
+
+    public override void updateMeasurement(Graphics graphics)
+    {
+        Font font = graphics.getFont();
+        this.charHeight = font.getHeight();
+        this.myFontProcessor = MyFontProcessor.getInstance();
+    }
+
+    public override void onEvent(AllBinaryEventObject eventObject)
+    {
+        ColorChangeEvent colorChangeEvent = ((ColorChangeEvent) eventObject);
+        this.basicColor = colorChangeEvent.getBasicColorP();
+    }
+
+    public override void paint(Graphics graphics)
+    {
+        this.myFontProcessor.process(graphics);
+        int width = this.displayInfoSingleton.getLastWidth();
+        int height = this.displayInfoSingleton.getLastHeight();
+        graphics.setColor(((int) this.getBasicColorP()));
+        string heading = this.highScores.getHeading();
+        int topScoresWidth = (graphics.getFont().stringWidth(heading) >> 1);
+        int charHeight = this.charHeight;
+        graphics.drawString(heading, (width >> 1) - topScoresWidth, charHeight, this.anchor);
+        graphics.drawString(this.highScores.getColumnOneHeading(), 10, charHeight * 3, this.anchor);
+        string columnTwoHeading = this.highScores.getColumnTwoHeading();
+        int columnTwoHeadingWidth = graphics.getFont().stringWidth(columnTwoHeading);
+        graphics.drawString(columnTwoHeading, width - 10 - columnTwoHeadingWidth, charHeight * 3, this.anchor);
+        int index = 4;
+        int largestSecondColumnWidth = columnTwoHeadingWidth;
+        BasicArrayList list = this.highScores.getList();
+        int size = list.size();
+        int vectorIndex = 0;
+        HighScore highScore = null;
+        while (vectorIndex < size && charHeight * index < height - (charHeight * 2)) {
+            highScore = ((HighScore) list.objectArray[vectorIndex]);
+            int nextScoreWidth = graphics.getFont().stringWidth(highScore.getScoreString());
+            if (nextScoreWidth > largestSecondColumnWidth) {
+                largestSecondColumnWidth = nextScoreWidth;
+            }
+            vectorIndex++;
+        }
+        vectorIndex = 0;
+        while (vectorIndex < size && charHeight * index < height - (charHeight * 2)) {
+            highScore = ((HighScore) list.objectArray[vectorIndex]);
+            graphics.drawString(highScore.getName(), 10, charHeight * index, this.anchor);
+            graphics.drawString(highScore.getScoreString(), width - 10 - largestSecondColumnWidth, charHeight * index, this.anchor);
+            index++;
+            vectorIndex++;
+        }
+    }
+
+    public override void setBasicColorP(BasicColor basicColor)
+    {
+        this.basicColor = basicColor;
+    }
+
+    public virtual BasicColor getBasicColorP()
+    {
+        return this.basicColor;
+    }
+
+    public virtual void setHighScores(HighScores highScores)
+    {
+        this.highScores = highScores;
+    }
+
+}
+

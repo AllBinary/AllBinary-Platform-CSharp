@@ -1,0 +1,23 @@
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+using R = org.allbinary.game.testgamedemo.R;
+
+namespace org.allbinary;
+
+public class AndroidResources
+{
+    private static readonly AndroidResources instance = new AndroidResources();
+    public static AndroidResources getInstance()
+    {
+        return AndroidResources.instance;
+    }
+
+    public R.drawable drawable = new R.drawable();
+    public R.id id = new R.id();
+    public R.layout layout = new R.layout();
+    public R.raw raw = new R.raw();
+    public R.string @string = new R.string();
+}
+

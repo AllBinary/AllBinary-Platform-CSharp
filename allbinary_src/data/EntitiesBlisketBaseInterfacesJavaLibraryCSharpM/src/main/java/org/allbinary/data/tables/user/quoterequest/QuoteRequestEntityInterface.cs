@@ -1,0 +1,41 @@
+/*
+ *
+ * AllBinary Open License Version 1
+ * Copyright (c) 2011 AllBinary
+ * 
+ * By agreeing to this license you and any business entity you represent are
+ * legally bound to the AllBinary Open License Version 1 legal agreement.
+ * 
+ * You may obtain the AllBinary Open License Version 1 legal agreement from
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+ * 
+ * Created By: Travis Berthelot
+ *  
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+using java.util;
+using BasicArrayList = org.allbinary.util.BasicArrayList;
+using BasicArrayListD = org.allbinary.util.BasicArrayListD;
+using QuoteRequest = org.allbinary.business.user.quoterequest.QuoteRequest;
+using BasicDataTableInterface = org.allbinary.data.tables.BasicDataTableInterface;
+
+namespace org.allbinary.data.tables.user.quoterequest;
+
+public interface QuoteRequestEntityInterface : BasicDataTableInterface
+{
+    // throws Exception
+    QuoteRequest get(string userName, int id);
+
+    BasicArrayList getIds(string userName);
+
+    void deleteWhere(string key, string value);
+
+    void insert(BasicArrayList values);
+
+    void update(string userName, HashMap updatedValues);
+
+}
+

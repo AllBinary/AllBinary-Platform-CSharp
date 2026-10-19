@@ -1,0 +1,95 @@
+/*
+ *
+ * AllBinary Open License Version 1
+ * Copyright (c) 2011 AllBinary
+ * 
+ * By agreeing to this license you and any business entity you represent are
+ * legally bound to the AllBinary Open License Version 1 legal agreement.
+ * 
+ * You may obtain the AllBinary Open License Version 1 legal agreement from
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+ * 
+ * Created By: Travis Berthelot
+ *  
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using InputFactory = org.allbinary.game.input.InputFactory;
+using InputToGameKeyMapping = org.allbinary.game.input.mapping.InputToGameKeyMapping;
+using NullUtil = org.allbinary.logic.NullUtil;
+using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using StringMaker = org.allbinary.logic.@string.StringMaker;
+using CommonLabels = org.allbinary.@string.CommonLabels;
+using BasicArrayList = org.allbinary.util.BasicArrayList;
+using BasicArrayListD = org.allbinary.util.BasicArrayListD;
+
+namespace org.allbinary.input.motion.button;
+
+public class BasicTouchInputFactory
+{
+    private static object instance = NullUtil.getInstance().NULL_OBJECT;
+    public static BasicTouchInputFactory getInstance()
+    {
+        if (BasicTouchInputFactory.instance == NullUtil.getInstance().NULL_OBJECT) {
+            BasicTouchInputFactory.instance = new BasicTouchInputFactory();
+        }
+        return ((BasicTouchInputFactory) BasicTouchInputFactory.instance);
+    }
+
+    public readonly LogUtil logUtil = LogUtil.getInstance();
+    public readonly TouchButtonInput SPECIAL_BUTTON_SIX = new TouchButtonInput(InputFactory.getInstance().MAX - 30, "Button 6");
+    public readonly TouchButtonInput SPECIAL_BUTTON_FIVE = new TouchButtonInput(InputFactory.getInstance().MAX - 31, "Button 5");
+    public readonly TouchButtonInput SPECIAL_BUTTON_FOUR = new TouchButtonInput(InputFactory.getInstance().MAX - 32, "Button 4");
+    public readonly TouchButtonInput SPECIAL_BUTTON_THREE = new TouchButtonInput(InputFactory.getInstance().MAX - 33, "Button 3");
+    public readonly TouchButtonInput SPECIAL_BUTTON_TWO = new TouchButtonInput(InputFactory.getInstance().MAX - 34, "Button 2");
+    public readonly TouchButtonInput SPECIAL_BUTTON_ONE = new TouchButtonInput(InputFactory.getInstance().MAX - 35, "Button 1");
+    public readonly TouchButtonInput UP = new TouchButtonInput(InputFactory.getInstance().MAX - 36, "Up Button");
+    public readonly TouchButtonInput LEFT = new TouchButtonInput(InputFactory.getInstance().MAX - 37, "Left Button");
+    public readonly TouchButtonInput RIGHT = new TouchButtonInput(InputFactory.getInstance().MAX - 38, "Right Button");
+    public readonly TouchButtonInput DOWN = new TouchButtonInput(InputFactory.getInstance().MAX - 39, "Down Button");
+    public readonly TouchButtonInput NONE = new TouchButtonInput(InputFactory.getInstance().MAX - 40, "No Button");
+    private bool initialized = false;
+    private readonly BasicArrayList list = new BasicArrayListD();
+    [MethodImpl(MethodImplOptions.Synchronized)]
+    public virtual void init(InputToGameKeyMapping inputToGameKeyMapping)
+    {
+        if (!this.initialized) {
+            this.initialized = true;
+            this.list.add(this.UP);
+            this.list.add(this.LEFT);
+            this.list.add(this.RIGHT);
+            this.list.add(this.DOWN);
+            this.list.add(SPECIAL_BUTTON_TWO);
+            this.list.add(SPECIAL_BUTTON_FOUR);
+            this.list.add(SPECIAL_BUTTON_THREE);
+            this.list.add(SPECIAL_BUTTON_ONE);
+            this.list.add(SPECIAL_BUTTON_FIVE);
+            this.list.add(SPECIAL_BUTTON_SIX);
+            this.updateAllList(this.list, inputToGameKeyMapping);
+        }
+    }
+
+    public virtual void updateAll(InputToGameKeyMapping inputToGameKeyMapping)
+    {
+        this.updateAllList(this.getList(), inputToGameKeyMapping);
+    }
+
+    public virtual void updateAllList(BasicArrayList list, InputToGameKeyMapping inputToGameKeyMapping)
+    {
+        this.logUtil.putF(new StringMaker().append(CommonLabels.getInstance().START).appendint(list.size()).ToString(), this, "updateAll");
+        for (int index = list.size() - 1; index >= 0; index--) {
+            TouchButtonInput touchButtonInput = ((TouchButtonInput) list.get(index));
+            touchButtonInput.update(inputToGameKeyMapping);
+        }
+    }
+
+    public virtual BasicArrayList getList()
+    {
+        return this.list;
+    }
+
+}
+

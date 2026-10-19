@@ -1,0 +1,101 @@
+/*
+ *
+ * AllBinary Open License Version 1
+ * Copyright (c) 2011 AllBinary
+ * 
+ * By agreeing to this license you and any business entity you represent are
+ * legally bound to the AllBinary Open License Version 1 legal agreement.
+ * 
+ * You may obtain the AllBinary Open License Version 1 legal agreement from
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+ * 
+ * Created By: Travis Berthelot
+ *  
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+using java.util;
+using BasicArrayList = org.allbinary.util.BasicArrayList;
+using BasicArrayListD = org.allbinary.util.BasicArrayListD;
+//using HttpServletRequest = javax.servlet.http.HttpServletRequest;
+using StdUtil = org.allbinary.logic.StdUtil;
+using StringMaker = org.allbinary.logic.@string.StringMaker;
+using StringUtil = org.allbinary.logic.@string.StringUtil;
+using CommonSeps = org.allbinary.@string.CommonSeps;
+
+namespace org.allbinary.logic.communication.http.request;
+
+public class AbeHttpRequestInfo
+{
+    private readonly string NAME = "AbeHttpRequestInfo";
+    private readonly AbeHttpRequestInfoData abeHttpRequestInfoData = AbeHttpRequestInfoData.getInstance();
+    private readonly CommonSeps commonSeps = CommonSeps.getInstance();
+    private string httpUserAgent;
+    private string remoteAddress;
+    private string remoteHost;
+    private string remoteHostByAddr;
+    private string remotePort;
+    private string requestedFilePath;
+    public AbeHttpRequestInfo(HashMap hashMap)
+    {
+        StringUtil stringUtil = StringUtil.getInstance();
+        this.httpUserAgent = stringUtil.getNonNull(((string) hashMap.get(this.abeHttpRequestInfoData.HTTP_USER_AGENT)));
+        this.remoteAddress = stringUtil.getNonNull(((string) hashMap.get(this.abeHttpRequestInfoData.REMOTE_ADDRESS)));
+        this.remoteHost = stringUtil.getNonNull(((string) hashMap.get(this.abeHttpRequestInfoData.REMOTE_HOST)));
+        this.remoteHostByAddr = stringUtil.getNonNull(((string) hashMap.get(this.abeHttpRequestInfoData.REMOTE_HOST_BY_ADDRESS)));
+        this.remotePort = stringUtil.getNonNull(((string) hashMap.get(this.abeHttpRequestInfoData.REMOTE_PORT)));
+        this.requestedFilePath = stringUtil.getNonNull(((string) hashMap.get(this.abeHttpRequestInfoData.REQUEST_FILE_PATH)));
+    }
+
+    public AbeHttpRequestInfo(HttpServletRequest httpServletRequest)
+    {
+        StringUtil stringUtil = StringUtil.getInstance();
+        this.httpUserAgent = stringUtil.EMPTY_STRING;
+        Enumeration enumuration = httpServletRequest.getHeaderNames();
+        while (enumuration.hasMoreElements()) {
+            string key = ((string) enumuration.nextElement());
+            string value = httpServletRequest.getHeader(key);
+            if (key.IndexOf("user") >= 0) {
+                this.httpUserAgent = "key: " + key + " value: " + value;
+            }
+        }
+        this.remoteHostByAddr = stringUtil.EMPTY_STRING;
+        this.remoteAddress = httpServletRequest.getRemoteAddr();
+        this.remoteHost = httpServletRequest.getRemoteHost();
+        this.requestedFilePath = httpServletRequest.getServletPath();
+        this.remotePort = (httpServletRequest.getRemotePort()).ToString();
+    }
+
+    public virtual HashMap toHashMap()
+    {
+        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        hashMap.put(abeHttpRequestInfoData.HTTP_USER_AGENT, this.httpUserAgent);
+        hashMap.put(abeHttpRequestInfoData.REMOTE_ADDRESS, this.remoteAddress);
+        hashMap.put(abeHttpRequestInfoData.REMOTE_HOST, this.remoteHost);
+        hashMap.put(abeHttpRequestInfoData.REMOTE_HOST_BY_ADDRESS, this.remoteHostByAddr);
+        hashMap.put(abeHttpRequestInfoData.REMOTE_PORT, this.remotePort);
+        hashMap.put(abeHttpRequestInfoData.REQUEST_FILE_PATH, this.requestedFilePath);
+        return hashMap;
+    }
+
+    public virtual BasicArrayList toVector()
+    {
+        BasicArrayList vector = new BasicArrayListD();
+        vector.add(this.httpUserAgent);
+        vector.add(this.remoteAddress);
+        vector.add(this.remoteHost);
+        vector.add(this.remoteHostByAddr);
+        vector.add(this.remotePort);
+        vector.add(this.requestedFilePath);
+        return vector;
+    }
+
+    public override string ToString()
+    {
+        return new StringMaker().append(this.NAME).append(this.commonSeps.COLON_SEP).append(abeHttpRequestInfoData.HTTP_USER_AGENT).append(this.commonSeps.COLON_SEP).append(this.httpUserAgent).append(this.commonSeps.SPACE).append(abeHttpRequestInfoData.REMOTE_ADDRESS).append(this.commonSeps.COLON_SEP).append(this.remoteAddress).append(this.commonSeps.SPACE).append(abeHttpRequestInfoData.REMOTE_HOST).append(this.commonSeps.COLON_SEP).append(this.remoteHost).append(this.commonSeps.SPACE).append(abeHttpRequestInfoData.REMOTE_HOST_BY_ADDRESS).append(this.commonSeps.COLON_SEP).append(this.remoteHostByAddr).append(this.commonSeps.SPACE).append(abeHttpRequestInfoData.REMOTE_PORT).append(this.commonSeps.COLON_SEP).append(this.remotePort).append(this.commonSeps.SPACE).append(abeHttpRequestInfoData.REQUEST_FILE_PATH).append(this.commonSeps.COLON_SEP).append(this.requestedFilePath).ToString();
+    }
+
+}
+

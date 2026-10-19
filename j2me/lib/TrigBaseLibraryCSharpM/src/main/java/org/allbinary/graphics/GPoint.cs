@@ -1,0 +1,98 @@
+/*
+ *
+ * AllBinary Open License Version 1
+ * Copyright (c) 2011 AllBinary
+ * 
+ * By agreeing to this license you and any business entity you represent are
+ * legally bound to the AllBinary Open License Version 1 legal agreement.
+ * 
+ * You may obtain the AllBinary Open License Version 1 legal agreement from
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+ * 
+ * Created By: Travis Berthelot
+ *  
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+//using JsType = jsinterop.annotations.JsType;
+//using JsMethod = jsinterop.annotations.JsMethod;
+//using JsConstructor = jsinterop.annotations.JsConstructor;
+using StringMaker = org.allbinary.logic.@string.StringMaker;
+using PositionStrings = org.allbinary.math.PositionStrings;
+using CommonSeps = org.allbinary.@string.CommonSeps;
+
+namespace org.allbinary.graphics;
+
+public class GPoint
+{
+    public static GPoint getInstance(GPoint point)
+    {
+        return new GPoint(point.getX(), point.getY(), point.getZ());
+    }
+
+    private readonly int x;
+    private readonly int y;
+    private readonly int z;
+    public GPoint(int x, int y, int z)
+    {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    public virtual int getX()
+    {
+        return this.x;
+    }
+
+    public virtual int getY()
+    {
+        return this.y;
+    }
+
+    public virtual int getZ()
+    {
+        return this.z;
+    }
+
+    public virtual int getRawX()
+    {
+        return this.x;
+    }
+
+    public virtual int getRawY()
+    {
+        return this.y;
+    }
+
+    public virtual int getRawZ()
+    {
+        return this.z;
+    }
+
+    public override string ToString()
+    {
+        return GPoint.toStringStatic(this.getX(), this.getY(), this.getZ());
+    }
+
+    private static readonly string POINT_LABEL = "Point: ";
+    public static string toStringStatic(int x, int y, int z)
+    {
+        StringMaker stringBuffer = new StringMaker();
+        PositionStrings positionStrings = PositionStrings.getInstance();
+        stringBuffer.append(GPoint.POINT_LABEL);
+        stringBuffer.append(positionStrings.X_LABEL);
+        stringBuffer.appendint(x);
+        stringBuffer.append(CommonSeps.getInstance().SPACE);
+        stringBuffer.append(positionStrings.Y_LABEL);
+        stringBuffer.appendint(y);
+        stringBuffer.append(CommonSeps.getInstance().SPACE);
+        stringBuffer.append(positionStrings.Z_LABEL);
+        stringBuffer.appendint(z);
+        return stringBuffer.ToString();
+    }
+
+}
+

@@ -1,0 +1,107 @@
+/*
+ * 
+ * AllBinary Open License Version 1 
+ * Copyright (c) 2011 AllBinary 
+ *  
+ * By agreeing to this license you and any business entity you represent are 
+ * legally bound to the AllBinary Open License Version 1 legal agreement. 
+ *  
+ * You may obtain the AllBinary Open License Version 1 legal agreement from 
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+ *  
+ * Created By: Travis Berthelot 
+ *   
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+//using Arrays = java.util.Arrays;
+using TsUtil = org.allbinary.TsUtil;
+using Visitor = org.allbinary.logic.util.visitor.Visitor;
+
+namespace org.allbinary.logic.math.permutations;
+
+public class OrderedObjectArrayPermutationUtil
+{
+    private static readonly OrderedObjectArrayPermutationUtil instance = new OrderedObjectArrayPermutationUtil();
+    public static OrderedObjectArrayPermutationUtil getInstance()
+    {
+        return OrderedObjectArrayPermutationUtil.instance;
+    }
+
+    private readonly string TOTAL_ITERATIONS_TABLE = "Total Iterations: ";
+    private readonly string FINISHED = "\nFINISHED";
+    private OrderedObjectArrayPermutationUtil()
+    {
+    }
+
+    public virtual void getNext(object[] data)
+    {
+        int length = data.Length;
+        int i = length - 1;
+        TsUtil tsUtil = TsUtil.getInstance();
+        while (tsUtil.hashCode(data[i - 1]) >= tsUtil.hashCode(data[i])) {
+            i = i - 1;
+        }
+        int j = length;
+        while (tsUtil.hashCode(data[j - 1]) <= tsUtil.hashCode(data[i - 1])) {
+            j = j - 1;
+        }
+        this.swap(data, i - 1, j - 1);
+        i++;
+        j = length;
+        while (i < j) {
+            this.swap(data, i - 1, j - 1);
+            i++;
+            j--;
+        }
+    }
+
+    public virtual void swap(object[] data, int a, int b)
+    {
+        object temp = data[a];
+        data[a] = data[b];
+        data[b] = temp;
+    }
+
+    public virtual long factorial(int dataLength)
+    {
+        long temp = 1L;
+        if (dataLength > 1) {
+            for (int i = 1; i <= dataLength; i++) {
+                temp *= ((long) i);
+            }
+        }
+        return temp;
+    }
+
+    public virtual void generate(object[] data, Visitor visitor)
+    {
+        long iterations = this.factorial(data.Length);
+        Console.Write(this.TOTAL_ITERATIONS_TABLE);
+        Console.WriteLine(iterations);
+        for (long count = 0L; count < iterations - 1L; count++) {
+            this.getNext(data);
+            visitor.visit(this);
+        }
+        Console.WriteLine(this.FINISHED);
+    }
+
+    public static void main(string[] args)
+    {
+        int TOTAL = 7;
+        object[] data = new object[TOTAL];
+        for (int i = 0; i < TOTAL; i++) {
+            data[i] = new ComparableObject();
+        }
+        Arrays.sort(data);
+        ObjectPermutationVisitor permutationVisitor = new ObjectPermutationVisitor(data);
+        string ORIGINAL_DATA_LABEL = "Original Data: ";
+        Console.Write(ORIGINAL_DATA_LABEL);
+        permutationVisitor.visit(data);
+        OrderedObjectArrayPermutationUtil.getInstance().generate(data, permutationVisitor);
+    }
+
+}
+

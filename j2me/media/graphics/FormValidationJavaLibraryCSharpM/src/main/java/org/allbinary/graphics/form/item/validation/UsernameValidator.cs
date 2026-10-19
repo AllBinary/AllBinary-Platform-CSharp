@@ -1,0 +1,31 @@
+/*
+ *
+ * AllBinary Open License Version 1
+ * Copyright (c) 2011 AllBinary
+ * 
+ * By agreeing to this license you and any business entity you represent are
+ * legally bound to the AllBinary Open License Version 1 legal agreement.
+ * 
+ * You may obtain the AllBinary Open License Version 1 legal agreement from
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+ * 
+ * Created By: Travis Berthelot
+ *  
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+using ABTextFieldItem = org.allbinary.graphics.form.item.ABTextFieldItem;
+
+namespace org.allbinary.graphics.form.item.validation;
+
+public class UsernameValidator : TextFieldItemValidator
+{
+    public UsernameValidator(ABTextFieldItem textFieldItem, int min, int max, bool allowOnEmpty) : base(textFieldItem, min, max, allowOnEmpty)
+    {
+        // base(textFieldItem, min, max, allowOnEmpty) is called from the constructor declaration
+    }
+
+}
+

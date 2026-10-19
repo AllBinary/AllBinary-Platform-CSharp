@@ -1,0 +1,68 @@
+/*
+ *
+ * AllBinary Open License Version 1
+ * Copyright (c) 2011 AllBinary
+ * 
+ * By agreeing to this license you and any business entity you represent are
+ * legally bound to the AllBinary Open License Version 1 legal agreement.
+ * 
+ * You may obtain the AllBinary Open License Version 1 legal agreement from
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+ * 
+ * Created By: Travis Berthelot
+ *  
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+//using Graphics = javax.microedition.lcdui.Graphics;
+//using Image = javax.microedition.lcdui.Image;
+using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
+
+namespace org.allbinary.animation.image;
+
+public class AdjustedImageArrayAnimation : ImageArrayAnimation
+{
+    private int dx = 0;
+    private int dy = 0;
+    public AdjustedImageArrayAnimation(Image[] imageArray, int dx, int dy, AnimationBehavior animationBehavior) : base(imageArray, animationBehavior)
+    {
+        // base(imageArray, animationBehavior) is called from the constructor declaration
+        this.init(dx, dy);
+    }
+
+    // throws Exception
+    public virtual void init(int dx, int dy)
+    {
+        this.setDx(dx);
+        this.setDy(dy);
+    }
+
+    public override void paintXY(Graphics graphics, int x, int y)
+    {
+        base.paintXY(graphics, x + this.dx, y + this.dy);
+    }
+
+    public override void setDx(int dx)
+    {
+        this.dx = dx;
+    }
+
+    public override int getDx()
+    {
+        return this.dx;
+    }
+
+    public override void setDy(int dy)
+    {
+        this.dy = dy;
+    }
+
+    public override int getDy()
+    {
+        return this.dy;
+    }
+
+}
+

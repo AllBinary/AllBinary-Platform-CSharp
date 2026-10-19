@@ -1,0 +1,37 @@
+/*
+ *
+ * AllBinary Open License Version 1
+ * Copyright (c) 2011 AllBinary
+ * 
+ * By agreeing to this license you and any business entity you represent are
+ * legally bound to the AllBinary Open License Version 1 legal agreement.
+ * 
+ * You may obtain the AllBinary Open License Version 1 legal agreement from
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+ * 
+ * Created By: Travis Berthelot
+ *  
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+using System.Runtime.CompilerServices;
+
+namespace org.allbinary.input.media.image.capture;
+
+public class ProcessingFrameIndexFactory
+{
+    private static long currentFrame = 0L;
+    private ProcessingFrameIndexFactory()
+    {
+    }
+
+    [MethodImpl(MethodImplOptions.Synchronized)]
+    public static long next()
+    {
+        return ProcessingFrameIndexFactory.currentFrame++;
+    }
+
+}
+

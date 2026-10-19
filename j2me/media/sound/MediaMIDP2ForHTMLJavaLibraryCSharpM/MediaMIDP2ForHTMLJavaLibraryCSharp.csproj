@@ -1,0 +1,39 @@
+<Project>
+
+  <!-- Keep all dotnet build output under the Maven target directory. These must be set before Sdk.props is imported. -->
+  <PropertyGroup>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)target\dotnet\obj\</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(BaseIntermediateOutputPath)</MSBuildProjectExtensionsPath>
+  </PropertyGroup>
+
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AssemblyName>MediaMIDP2ForHTMLJavaLibraryCSharp</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <OutputPath Condition="'$(OutputPath)' == ''">$(MSBuildThisFileDirectory)target\dotnet\bin\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <!-- Source directories for the hand written runtime and stub libraries this library compiles with. Set by the pom. -->
+    <AllBinaryRuntimeSourcePath Condition="'$(AllBinaryRuntimeSourcePath)' == ''"></AllBinaryRuntimeSourcePath>
+    <AllBinaryJsInteropSourcePath Condition="'$(AllBinaryJsInteropSourcePath)' == ''"></AllBinaryJsInteropSourcePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="src\main\java\**\*.cs" />
+    <Compile Include="$(AllBinaryRuntimeSourcePath)\**\*.cs" Condition="'$(AllBinaryRuntimeSourcePath)' != '' And Exists('$(AllBinaryRuntimeSourcePath)')" />
+    <Compile Include="$(AllBinaryJsInteropSourcePath)\**\*.cs" Condition="'$(AllBinaryJsInteropSourcePath)' != '' And Exists('$(AllBinaryJsInteropSourcePath)')" />
+  </ItemGroup>
+
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+
+  <Target Name="AllBinaryWarnMissingDependencySources" BeforeTargets="CoreCompile">
+    <Warning Text="C# runtime source directory does not exist: $(AllBinaryRuntimeSourcePath)" Condition="'$(AllBinaryRuntimeSourcePath)' != '' And !Exists('$(AllBinaryRuntimeSourcePath)')" />
+    <Warning Text="C# jsinterop source directory does not exist: $(AllBinaryJsInteropSourcePath)" Condition="'$(AllBinaryJsInteropSourcePath)' != '' And !Exists('$(AllBinaryJsInteropSourcePath)')" />
+  </Target>
+
+</Project>

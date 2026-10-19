@@ -1,0 +1,55 @@
+/*
+ *
+ * AllBinary Open License Version 1
+ * Copyright (c) 2011 AllBinary
+ * 
+ * By agreeing to this license you and any business entity you represent are
+ * legally bound to the AllBinary Open License Version 1 legal agreement.
+ * 
+ * You may obtain the AllBinary Open License Version 1 legal agreement from
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+ * 
+ * Created By: Travis Berthelot
+ *  
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+using StdUtil = org.allbinary.logic.StdUtil;
+using org.allbinary.util;
+using BasicArrayList = org.allbinary.util.BasicArrayList;
+
+namespace org.allbinary.game.configuration.feature;
+
+public class GameFeatureChoiceGroups
+{
+    private static GameFeatureChoiceGroups gameFeatureChoiceGroupsExclusive = new GameFeatureChoiceGroups();
+    private static GameFeatureChoiceGroups gameFeatureChoiceGroupsMultiple = new GameFeatureChoiceGroups();
+    private ABHashtable<object, object> hashtable = StdUtil.getInstance().createHashtable();
+    private GameFeatureChoiceGroups()
+    {
+    }
+
+    public static GameFeatureChoiceGroups getExclusiveInstance()
+    {
+        return GameFeatureChoiceGroups.gameFeatureChoiceGroupsExclusive;
+    }
+
+    public static GameFeatureChoiceGroups getMultipleInstance()
+    {
+        return GameFeatureChoiceGroups.gameFeatureChoiceGroupsMultiple;
+    }
+
+    public virtual ABHashtable<object, object> get()
+    {
+        return this.hashtable;
+    }
+
+    public virtual void add(string name, BasicArrayList list)
+    {
+        this.hashtable.put(name, list);
+    }
+
+}
+

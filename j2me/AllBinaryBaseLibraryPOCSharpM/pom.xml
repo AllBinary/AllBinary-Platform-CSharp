@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary</groupId>
+    <artifactId>AllBinaryBaseLibraryPOMCSharp</artifactId>
+    <packaging>pom</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>AllBinaryBaseLibraryPOMCSharp</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+    
+    <properties>
+        <buildLabel>${project.version}</buildLabel>
+        <assemblyPluginVersion>2.2-beta-1</assemblyPluginVersion>
+    </properties>
+
+    <modules>
+        <module>../CommonJavaLibraryCSharpM</module>
+        <module>../TempBaseJavaLibraryCSharpM</module>
+        
+        <module>../../allbinary_src/LogCSharpM</module>
+        <module>../../allbinary_src/allbinary_src_designpatterns_srcCSharpM</module>
+        <module>../../allbinary_src/data/BaseDataJavaLibraryCSharpM</module>
+        <module>../../allbinary_src/cache/BaseCacheJavaLibraryCSharpM</module>
+        <module>../../allbinary_src/logic/BasePreloaderJavaLibraryCSharpM</module>
+        <module>../../allbinary_src/logic/BasePreloaderJ2MEJavaLibraryCSharpM</module>
+
+        <module>../ExceptionHTMLJavaLibraryCSharpM</module>
+        <module>../J2MEExceptionLibraryCSharpM</module>
+        <module>../../allbinary_src/J2SEExceptionLibraryCSharpM</module>
+        <module>../J2MEUtilJavaLibraryCSharpM</module>
+        <module>../J2MEColorJavaLibraryCSharpM</module>
+        <module>../EventJ2MELibraryCSharpM</module>
+
+        <module>../../allbinary_src/LogNoPlatformJavaLibraryCSharpM</module>
+        <module>../../allbinary_src/LogJ2MEJavaLibraryCSharpM</module>
+        <module>../../allbinary_src/LogJ2SEJavaLibraryCSharpM</module>
+        <module>../../allbinary_src/LogAndroidJavaLibraryCSharpM</module>
+        <module>../logging/LoggingNoneCSharpM</module>
+        <module>../logging/LoggingJ2MEAllCSharpM</module>
+        <module>../logging/LoggingJ2MEExceptionCSharpM</module>
+        <module>../logging/LoggingAndroidAllCSharpM</module>
+        <!--
+        //While it is a possible dependency option it really does not fit here
+        //as such it is actually build in the final POM builds instead
+        <module>../logging/LoggingRemoteExceptionCSharpM</module>  
+        -->
+        
+        <module>../J2MEWindowingJavaLibraryCSharpM</module>
+        
+        <module>../lib/BaseMathLibraryCSharpM</module>
+        <module>../lib/BasicMathLibraryCSharpM</module>
+        
+        <module>../../allbinary_src/ThreadLibraryCSharpM</module>
+        <module>../../allbinary_src/ThreadHTMLLibraryCSharpM</module>
+        <module>../../allbinary_src/ThreadJ2MELibraryCSharpM</module>
+        <module>../time/TimeJavaLibraryCSharpM</module>
+
+        <module>../statistics/ApplicationStatisticsJ2SELibraryCSharpM</module>
+        <module>../statistics/ApplicationStatisticsJ2MELibraryCSharpM</module>
+        <module>../statistics/ApplicationStatisticsJavaLibraryCSharpM</module>
+
+        <module>../../allbinary_src/logging/BasicLogConfigTypeJavaLibraryCSharpM</module>
+        <module>../../allbinary_src/logging/LogConfigTypeGameClientJavaLibraryCSharpM</module>
+
+        <module>../../allbinary_src/hardware/HardwareLibraryPOCSharpM</module>
+
+        <module>../lib/TrigBaseLibraryCSharpM</module>
+
+    </modules>
+
+</project>
+

@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary</groupId>
+    <artifactId>AllBinaryPersistenceLibraryPCSharp</artifactId>
+    <packaging>pom</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>AllBinaryPersistenceLibraryPCSharp</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+    
+    <properties>
+        <buildLabel>${project.version}</buildLabel>
+        <assemblyPluginVersion>2.2-beta-1</assemblyPluginVersion>
+    </properties>
+
+    <modules>
+        
+        <!--
+        -->
+        <module>../allbinary_src/cache/AllBinaryCacheLibraryCSharpM</module>
+        <module>../allbinary_src/PermutationsJavaLibraryCSharpM</module>
+        <module>../allbinary_src/logic/BasePreloaderFileJavaLibraryCSharpM</module>
+        <module>../allbinary_src/logic/data/file/FileJavaLibraryCSharpM</module>
+        <module>../allbinary_src/logic/data/file/FileJ2SEJavaLibraryCSharpM</module>
+        <module>../allbinary_src/data/DataJavaLibraryCSharpM</module>
+        <module>../allbinary_src/logic/data/file/FileUnamedJavaLibraryCSharpM</module>
+        <module>../allbinary_src/logic/data/file/FileAdvancedJavaLibraryCSharpM</module>
+        <module>../allbinary_src/PreLoaderJavaLibraryCSharpM</module>
+        <module>../allbinary_src/FileInitInfoJavaLibraryCSharpM</module>
+        <module>../allbinary_src/PreLoaderFileJavaLibraryCSharpM</module>
+        <module>../allbinary_src/PreLoaderLicenseJavaLibraryCSharpM</module>
+        <module>../j2me/PCResourceLibraryCSharpM</module>
+        <module>../j2me/ProgressJ2MEJavaLibraryCSharpM</module>
+        <module>../allbinary_src/licensing/ClientInfoBaseJavaLibraryCSharpM</module>
+        <module>../allbinary_src/licensing/RemoteXmlRpcJavaLibraryCSharpM</module>
+        <module>../allbinary_src/licensing/LicenseClientJavaLibraryCSharpM</module>
+
+        <!--
+        <module>../allbinary_src/PreLoaderLicenseJavaLibraryCSharpM</module>
+        -->
+    </modules>
+
+</project>
+

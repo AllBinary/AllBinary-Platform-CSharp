@@ -1,0 +1,44 @@
+/*
+ *
+ * AllBinary Open License Version 1
+ * Copyright (c) 2011 AllBinary
+ * 
+ * By agreeing to this license you and any business entity you represent are
+ * legally bound to the AllBinary Open License Version 1 legal agreement.
+ * 
+ * You may obtain the AllBinary Open License Version 1 legal agreement from
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+ * 
+ * Created By: Travis Berthelot
+ *  
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+using java.util;
+using UserFactoryInterface = org.allbinary.business.user.UserFactoryInterface;
+using UserInterface = org.allbinary.business.user.UserInterface;
+
+namespace org.allbinary.business.user.modules.admin;
+
+public class AdminUserFactory : UserFactoryInterface
+{
+    public AdminUserFactory()
+    {
+    }
+
+    // throws Exception
+    public virtual UserInterface getInstance()
+    {
+        return new AdminUser();
+    }
+
+    // throws Exception
+    public virtual UserInterface getInstance(HashMap hashMap)
+    {
+        return new AdminUser(hashMap);
+    }
+
+}
+

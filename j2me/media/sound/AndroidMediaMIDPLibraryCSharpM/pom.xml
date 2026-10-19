@@ -1,0 +1,254 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary</groupId>
+    <artifactId>AndroidMediaMIDPLibraryCSharp</artifactId>
+    <packaging>jar</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+    <name>AndroidMediaMIDPLibraryCSharp</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <dotnet.executable>dotnet</dotnet.executable>
+        <dotnet.configuration>Release</dotnet.configuration>
+        <!-- Hand written runtime for generated C# code such as Any -->
+        <csharp.runtime.source.path>G:/mnt/bc/mydev/workcsharp/j2me/J2SEForCSharpLibraryCSharpM/src/main/java</csharp.runtime.source.path>
+        <csharp.jsinterop.source.path>G:/mnt/bc/mydev/workingcsharp/replace_these_stub_projects/allbinary_src/J2MEJsInteropCompatibilityJavaLibraryCSharpM/src/main/java</csharp.jsinterop.source.path>
+        <!-- Set to false to continue the Maven build when the generated C# does not compile -->
+        <csharp.fail.on.error>true</csharp.fail.on.error>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>LoggingJ2MEAllCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>LogJ2MEJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2MEOnlyJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>AndroidResourceLibraryCSharp</artifactId>
+<!--
+            <artifactId>ResourceJ2MEJavaLibraryCSharp</artifactId>
+            <artifactId>PCResourceLibraryCSharp</artifactId>
+            <artifactId>AndroidResourceLibraryCSharp</artifactId>
+            <artifactId>ResourceLibraryCSharp</artifactId>
+            for HTML it is in ABDKPlaynJavaLibrary
+-->
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+        </dependency>
+        
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>BasicPlayerJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NoPlayerJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>SoundJ2MELibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>NoVibrateJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>ProgressJ2MEJavaLibraryCSharp</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.microemu</groupId>
+            <artifactId>microemu-jsr-135CSharp</artifactId>
+            <version>2.0.4</version>
+            <optional>true</optional>
+        </dependency>
+        <!--
+        Public microemu
+        <dependency>
+            <groupId>org.microemu</groupId>
+            <artifactId>microemu-jsr-135CSharp</artifactId>
+            <version>2.0.4</version>
+            <optional>true</optional>
+        </dependency>
+        Custom microemu
+        <dependency>
+            <groupId>org.microemu</groupId>
+            <artifactId>microemu-jsr-135CSharp</artifactId>
+            <version>3.0.0-SNAPSHOT</version>
+            <optional>true</optional>
+        </dependency>
+        -->
+        
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>androidCSharp</artifactId>
+            <version>1.5_r4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>androidCSharp</artifactId>
+            <version>1.5_r4</version>
+            <scope>provided</scope>
+            <classifier>sources</classifier>
+        </dependency>
+
+
+
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>csharp-ignore-errors</id>
+            <activation>
+                <property>
+                    <name>csharp.fail.on.error</name>
+                    <value>false</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>compile-dotnet-sources</id>
+                                <configuration>
+                                    <successCodes>
+                                        <successCode>0</successCode>
+                                        <successCode>1</successCode>
+                                    </successCodes>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <build>
+        
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-pluginCSharp</artifactId>
+                <version>3.8.1</version>
+                <!-- 
+                <version>2.5.1</version>
+                <version>2.3.2</version>
+                -->
+                <configuration> 
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>compile-dotnet-sources</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>${dotnet.executable}</executable>
+                            <workingDirectory>${project.basedir}</workingDirectory>
+                            <arguments>
+                                <argument>build</argument>
+                                <argument>${project.basedir}/${project.artifactId}.csproj</argument>
+                                <argument>--configuration</argument>
+                                <argument>${dotnet.configuration}</argument>
+                                <argument>--nologo</argument>
+                                <argument>-p:OutputPath=${project.build.outputDirectory}/META-INF/dotnet/</argument>
+                                <argument>-p:AllBinaryRuntimeSourcePath=${csharp.runtime.source.path}</argument>
+                                <argument>-p:AllBinaryJsInteropSourcePath=${csharp.jsinterop.source.path}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+    </build>
+
+</project>
+

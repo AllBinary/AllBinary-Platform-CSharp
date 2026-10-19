@@ -1,0 +1,50 @@
+/*
+ *
+ * AllBinary Open License Version 1
+ * Copyright (c) 2011 AllBinary
+ * 
+ * By agreeing to this license you and any business entity you represent are
+ * legally bound to the AllBinary Open License Version 1 legal agreement.
+ * 
+ * You may obtain the AllBinary Open License Version 1 legal agreement from
+ * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+ * 
+ * Created By: Travis Berthelot
+ *  
+ */
+// Generated Code Do Not Modify
+
+using System;
+using System.Linq;
+using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using InputOutputTypeData = org.allbinary.logic.io.InputOutputTypeData;
+using TransformTag = tags.TransformTag;
+
+namespace tags.generic;
+
+public class GenericViewTag : TransformTag
+{
+    public readonly LogUtil logUtil = LogUtil.getInstance();
+    private string output = null;
+    private string file = null;
+    public GenericViewTag()
+    {
+        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+            this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
+        }
+    }
+
+    public virtual void setOutput(string value)
+    {
+        this.output = value;
+        this.getPropertiesHashMap().put(InputOutputTypeData.getInstance().NAME, this.output);
+    }
+
+    public virtual void setFile(string value)
+    {
+        this.file = value;
+        this.getPropertiesHashMap().put(InputOutputTypeData.getInstance().FILE, this.file);
+    }
+
+}
+
