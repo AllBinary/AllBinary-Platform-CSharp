@@ -25,7 +25,7 @@ using org.allbinary.util;
 
 namespace org.allbinary.game.midlet;
 
-public class CreateGameRunnable : Runnable
+public class CreateGameRunnable : global::java.lang.Runnable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();

@@ -22,7 +22,7 @@ namespace org.allbinary.android.activity;
 public class NullProgressActivity : ProgressActivityInterface
 {
     public static readonly NullProgressActivity NULL_PROGRESS_ACTIVITY = new NullProgressActivity();
-    public virtual void runOnUiThread(Runnable action)
+    public virtual void runOnUiThread(global::java.lang.Runnable action)
     {
     }
 

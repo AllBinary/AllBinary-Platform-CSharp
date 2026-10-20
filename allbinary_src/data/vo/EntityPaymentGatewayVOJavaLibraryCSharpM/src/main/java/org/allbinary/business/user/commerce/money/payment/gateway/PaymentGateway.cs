@@ -65,12 +65,12 @@ public class PaymentGateway : PaymentGatewayInterface
     private string special9 = null;
     private string lastModified = null;
     private string timeEntered = null;
-    public PaymentGateway(HashMap hashMap)
+    public PaymentGateway(HashMap<object, object> hashMap)
     {
         this.getFormData(hashMap);
     }
 
-    public virtual void getFormData(HashMap hashMap)
+    public virtual void getFormData(HashMap<object, object> hashMap)
     {
         StringUtil stringUtil = StringUtil.getInstance();
         string empty = stringUtil.EMPTY_STRING;
@@ -529,15 +529,15 @@ public class PaymentGateway : PaymentGatewayInterface
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         return this.toHashMap(true);
     }
 
     // throws Exception
-    public virtual HashMap toHashMap(bool isEncrypted)
+    public virtual HashMap<object, object> toHashMap(bool isEncrypted)
     {
-        HashMap paymentGatewayHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> paymentGatewayHashMap = StdUtil.getInstance().createHashMap();
         paymentGatewayHashMap.put(EntryData.getInstance().ENABLE, this.enable);
         paymentGatewayHashMap.put(StoreFrontData.getInstance().NAME.ToString(), this.storeName);
         paymentGatewayHashMap.put(PaymentGatewayData.NAME.ToString(), this.getName());

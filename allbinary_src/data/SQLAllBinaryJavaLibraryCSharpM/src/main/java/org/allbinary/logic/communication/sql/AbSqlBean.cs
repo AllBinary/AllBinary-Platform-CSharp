@@ -71,7 +71,7 @@ public class AbSqlBean : AbSqlRow
         }
     }
 
-    public virtual string getField(HashMap keysAndValues, string requestedField)
+    public virtual string getField(HashMap<object, object> keysAndValues, string requestedField)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.sqlStrings.SELECT);
@@ -81,7 +81,7 @@ public class AbSqlBean : AbSqlRow
         stringBuffer.append(this.sqlStrings.WHERE);
         try {
             string field = this.stringUtil.EMPTY_STRING;
-            Set set = keysAndValues.keySet();
+            Set<object> set = keysAndValues.keySet();
             object[] keyArray = set.toArray();
             int size = keyArray.Length;
             string key = null;
@@ -121,7 +121,7 @@ public class AbSqlBean : AbSqlRow
         }
     }
 
-    public virtual string isSubsetOfEntry(string key, string value, HashMap columnsAndValues)
+    public virtual string isSubsetOfEntry(string key, string value, HashMap<object, object> columnsAndValues)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.sqlStrings.SELECT);

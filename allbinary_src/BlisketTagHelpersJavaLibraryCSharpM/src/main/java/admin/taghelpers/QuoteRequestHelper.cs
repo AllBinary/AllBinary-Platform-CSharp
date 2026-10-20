@@ -38,7 +38,7 @@ public class QuoteRequestHelper : ModifyTable
     private WeblisketSession weblisketSession;
     private StoreFrontInterface storeFrontInterface = null;
     private QuoteRequest quoteRequest;
-    public QuoteRequestHelper(HashMap hashMap, PageContext pageContext)
+    public QuoteRequestHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         HttpServletRequest request = ((HttpServletRequest) pageContext.getRequest());
         this.weblisketSession = new WeblisketSession(hashMap, pageContext);
@@ -81,7 +81,7 @@ public class QuoteRequestHelper : ModifyTable
     public virtual string update()
     {
         try {
-            HashMap values = this.quoteRequest.toHashMap();
+            HashMap<object, object> values = this.quoteRequest.toHashMap();
             QuoteRequestEntityFactory.getInstance().getQuoteRequestEntityInstance().update(this.quoteRequest.getUserName(), values);
             string success = "New QuoteRequest Successfully updated";
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {

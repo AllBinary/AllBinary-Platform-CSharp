@@ -61,7 +61,7 @@ public class BasicProfileActionScriptInput : BasicProfileActionScriptProcessor, 
         this.logUtil.putF(this.commonStrings.START + label, this, this.commonStrings.CONSTRUCTOR);
         InputRobotFactory inputRobotFactory = InputRobotFactory.getInstance();
         ABHashtable<object, object> hashtable = ((ABHashtable<object, object>) inputRobotFactory.get());
-        Set set = hashtable.keySet();
+        Set<object> set = hashtable.keySet();
         Iterator iterator = set.iterator();
         this.setInputRobotInterface(inputRobotFactory.get(((string) iterator.next())));
         this.setTime(0);
@@ -77,9 +77,9 @@ public class BasicProfileActionScriptInput : BasicProfileActionScriptProcessor, 
         this.time = time;
     }
 
-    public virtual HashMap BasicProfileActionScriptInput_toHashMap()
+    public virtual HashMap<object, object> BasicProfileActionScriptInput_toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(GenericProfileActionScriptInputData.TYPE, this.getInputRobotInterface().getName());
         hashMap.put(GenericProfileActionScriptInputData.DELAY, (this.getTime()).ToString());
         this.logUtil.putF("HashMap: " + hashMap.ToString(), this, "toHashMap()");

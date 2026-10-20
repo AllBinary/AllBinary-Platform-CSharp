@@ -39,7 +39,7 @@ public class SqlConnectionPool
     }
 
     public readonly StdUtil stdUtil = StdUtil.getInstance();
-    private HashMap connectionHashMap = null;
+    private HashMap<object, object> connectionHashMap = null;
     private readonly string FIRST_NEW_CONNECTION_CREATED = "First New Connection Created: ";
     private readonly string FIRST = "First ";
     private readonly string NEW_CONNECTION_FOR = "New Connection For ";

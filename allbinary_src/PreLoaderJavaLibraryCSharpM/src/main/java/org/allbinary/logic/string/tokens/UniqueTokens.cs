@@ -58,10 +58,10 @@ public class UniqueTokens
     }
 
     // throws Exception
-    public virtual HashSet getWhithoutDashesAndSkipNumberOnlyTokens(BasicArrayList stringVector)
+    public virtual HashSet<object> getWhithoutDashesAndSkipNumberOnlyTokens(BasicArrayList stringVector)
     {
         try {
-            HashSet hashSet = new HashSet();
+            HashSet<object> hashSet = new HashSet<object>();
             int index = 0;
             CommonSeps commonSeps = CommonSeps.getInstance();
             while (index < stringVector.size()) {

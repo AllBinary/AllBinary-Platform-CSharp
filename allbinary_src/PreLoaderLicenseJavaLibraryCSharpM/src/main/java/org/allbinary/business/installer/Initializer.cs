@@ -72,11 +72,11 @@ public class Initializer
     private static readonly int MAX = 16;
     private static readonly int MIN = 4;
     private static readonly int MINPASSWORD = 0;
-    public Initializer(Map map)
+    public Initializer(Map<object, object> map)
     {
         StringMaker stringBuffer = new StringMaker();
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
-        Set keys = map.keySet();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
+        Set<object> keys = map.keySet();
         object[] keyArray = keys.toArray();
         int size = keyArray.Length;
         for (int index = 0; index < size; index++) {
@@ -93,12 +93,12 @@ public class Initializer
         this.getFormData(hashMap);
     }
 
-    public Initializer(HashMap initHashMap)
+    public Initializer(HashMap<object, object> initHashMap)
     {
         this.getFormData(initHashMap);
     }
 
-    public virtual void getFormData(HashMap hashMap)
+    public virtual void getFormData(HashMap<object, object> hashMap)
     {
         try {
             InitializerData initializerData = InitializerData.getInstance();

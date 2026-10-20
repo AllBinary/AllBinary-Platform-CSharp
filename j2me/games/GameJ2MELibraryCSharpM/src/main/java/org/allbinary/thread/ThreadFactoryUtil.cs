@@ -49,7 +49,7 @@ public class ThreadFactoryUtil
         return this.getInstanceType(runnable, runnable.getType());
     }
 
-    private Thread getInstanceType(Runnable runnable, int type)
+    private Thread getInstanceType(global::java.lang.Runnable runnable, int type)
     {
         CommonStrings commonStrings = CommonStrings.getInstance();
         if (J2MEUtil.isHTML()) {

@@ -54,8 +54,8 @@ public class TestInputAutomationCaptureWorker : AbstractInputAutomationWorker
         if (cacheInterface.keySet().size() > 0) {
             this.logUtil.putF(this.IMAGE_AVAILABLE_SO_PROCESSING, this, this.PROCESS_DATA_WORKER_RESULTS);
             object anyType = cacheInterface.keySet().toArray()[0];
-            HashMap hashMap = this.getGenericProfileActions().getHashMap();
-            Set set = hashMap.keySet();
+            HashMap<object, object> hashMap = this.getGenericProfileActions().getHashMap();
+            Set<object> set = hashMap.keySet();
             object[] actionNameArray = set.toArray();
             int size = actionNameArray.Length;
             for (int index = 0; index < size; index++) {

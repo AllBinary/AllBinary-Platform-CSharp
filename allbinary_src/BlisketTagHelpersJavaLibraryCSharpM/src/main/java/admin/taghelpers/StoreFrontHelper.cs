@@ -33,7 +33,7 @@ public class StoreFrontHelper : TagHelper
     private readonly StoreFrontInterface storeFrontInterface = null;
     private readonly string currentLocation = null;
     private readonly string currentHomeLocation = null;
-    public StoreFrontHelper(HashMap hashMap, PageContext pageContext)
+    public StoreFrontHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         string storeName = ((string) hashMap.get(StoreFrontData.getInstance().NAME));
         if (storeName != null) {

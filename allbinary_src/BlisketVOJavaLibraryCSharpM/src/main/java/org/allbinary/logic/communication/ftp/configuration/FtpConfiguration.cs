@@ -30,7 +30,7 @@ public class FtpConfiguration : FtpConfigurationInterface
     {
     }
 
-    public FtpConfiguration(HashMap hashMap)
+    public FtpConfiguration(HashMap<object, object> hashMap)
     {
         this.ftpServer = ((string) hashMap.get(FtpConfigurationData.SERVER));
         this.ftpPath = ((string) hashMap.get(FtpConfigurationData.PATH));

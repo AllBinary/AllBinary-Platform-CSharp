@@ -30,7 +30,7 @@ public class TransformInfoHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly Portion portion;
-    public TransformInfoHelper(HashMap hashMap, PageContext pageContext)
+    public TransformInfoHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.portion = new Portion(hashMap);
     }

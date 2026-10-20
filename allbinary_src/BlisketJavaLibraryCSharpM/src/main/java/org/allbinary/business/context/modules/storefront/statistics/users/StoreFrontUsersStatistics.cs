@@ -31,7 +31,7 @@ namespace org.allbinary.business.context.modules.storefront.statistics.users;
 public class StoreFrontUsersStatistics : StoreFrontUsersStatisticsInterface
 {
     private long? totalNumberOfUsers;
-    private HashMap totalUsersByRoleHashMap;
+    private HashMap<object, object> totalUsersByRoleHashMap;
     public StoreFrontUsersStatistics(StoreFrontInterface storeFrontInterface)
     {
         this.totalUsersByRoleHashMap = StdUtil.getInstance().createHashMap();
@@ -67,11 +67,11 @@ public class StoreFrontUsersStatistics : StoreFrontUsersStatisticsInterface
         return totalForRole;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(StoreFrontUsersStatisticsData.getInstance().NUMBEROFUSERS, this.getNumberOfUsers().ToString());
-        Set setOfUserRoles = this.totalUsersByRoleHashMap.keySet();
+        Set<object> setOfUserRoles = this.totalUsersByRoleHashMap.keySet();
         UserRole nextUserRole = null;
         object[] userRoleArray = setOfUserRoles.toArray();
         int size = userRoleArray.Length;

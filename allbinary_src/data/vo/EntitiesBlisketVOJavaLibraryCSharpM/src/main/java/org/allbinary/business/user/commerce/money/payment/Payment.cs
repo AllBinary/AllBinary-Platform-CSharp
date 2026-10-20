@@ -48,7 +48,7 @@ public class Payment : PaymentInterface, DomNodeInterface
     private string driversLicense;
     private string magneticInkCheckReader;
     private bool isDefault = false;
-    public Payment(HashMap payment)
+    public Payment(HashMap<object, object> payment)
     {
         this.name = ((string) payment.get(PaymentData.NAME));
         this.type = ((string) payment.get(PaymentData.TYPE));
@@ -277,9 +277,9 @@ public class Payment : PaymentInterface, DomNodeInterface
         return this.isDefault;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(PaymentData.NAME, this.name);
         hashMap.put(PaymentData.TYPE, this.type);
         hashMap.put(PaymentData.EXPIRATION, this.expiration);
@@ -304,7 +304,7 @@ public class Payment : PaymentInterface, DomNodeInterface
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        HashMap hashMap = this.toHashMap();
+        HashMap<object, object> hashMap = this.toHashMap();
         Node node = ModDomHelper.createNameValueNodes(document, PaymentData.PAYMENT, hashMap);
         return node;
     }

@@ -23,7 +23,7 @@ namespace org.allbinary.logic.visual.dhtml.html;
 
 public class HtmlTag
 {
-    public HashMap otherAttributes;
+    public HashMap<object, object> otherAttributes;
     public HtmlTag()
     {
         this.otherAttributes = StdUtil.getInstance().createHashMap();

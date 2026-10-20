@@ -23,7 +23,7 @@ using StringMaker = org.allbinary.logic.@string.StringMaker;
 
 namespace bundle.input.automation;
 
-public class ServiceReferenceMap : Map
+public class ServiceReferenceMap : Map<object, object>
 {
     private ServiceReference serviceReference;
     public ServiceReferenceMap(ServiceReference serviceReference)
@@ -66,7 +66,7 @@ public class ServiceReferenceMap : Map
         return null;
     }
 
-    public virtual void putAll(Map m)
+    public virtual void putAll(Map<object, object> m)
     {
     }
 
@@ -74,7 +74,7 @@ public class ServiceReferenceMap : Map
     {
     }
 
-    public virtual Set keySet()
+    public virtual Set<object> keySet()
     {
         string[] keyStringArray = this.serviceReference.getPropertyKeys();
         return null;
@@ -85,12 +85,12 @@ public class ServiceReferenceMap : Map
         return null;
     }
 
-    public virtual Set entrySet()
+    public virtual Set<object> entrySet()
     {
         return null;
     }
 
-    public static string toString(Map map)
+    public static string toString(Map<object, object> map)
     {
         StringMaker stringBuffer = new StringMaker();
         return stringBuffer.ToString();

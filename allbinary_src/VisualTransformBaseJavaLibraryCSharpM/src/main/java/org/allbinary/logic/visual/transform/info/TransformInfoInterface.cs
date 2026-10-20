@@ -29,7 +29,7 @@ public interface TransformInfoInterface : TableMappingInterface
     string log();
 
     // throws Exception
-    void @override(HashMap hashMap);
+    void @override(HashMap<object, object> hashMap);
 
     string getName();
 

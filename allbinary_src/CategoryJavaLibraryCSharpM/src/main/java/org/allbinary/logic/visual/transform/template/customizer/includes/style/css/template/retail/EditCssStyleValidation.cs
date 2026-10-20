@@ -38,7 +38,7 @@ public class EditCssStyleValidation : CssStyleValidation, ValidationInterface, D
         // base(document) is called from the constructor declaration
     }
 
-    public EditCssStyleValidation(HashMap hashMap) : base(hashMap)
+    public EditCssStyleValidation(HashMap<object, object> hashMap) : base(hashMap)
     {
         // base(hashMap) is called from the constructor declaration
     }

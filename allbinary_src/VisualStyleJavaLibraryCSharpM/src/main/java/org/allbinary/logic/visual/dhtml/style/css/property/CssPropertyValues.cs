@@ -44,7 +44,7 @@ public class CssPropertyValues : DomNodeInterface
 
     public CssPropertyValues(Node node)
     {
-        HashMap indexPropertyValueHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> indexPropertyValueHashMap = StdUtil.getInstance().createHashMap();
         this.propertyValueVector = new BasicArrayListD();
         BasicArrayList cssPropertyNodeVector = DomSearchHelper.getAllNodes(CssPropertyValueData.getInstance().NAME, node.getChildNodes());
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().STYLE)) {
@@ -70,11 +70,11 @@ public class CssPropertyValues : DomNodeInterface
         }
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         CommonSeps commonSeps = CommonSeps.getInstance();
         CssPropertyValueData cssPropertyValueData = CssPropertyValueData.getInstance();
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         StringMaker stringBuffer = new StringMaker();
         int size = this.propertyValueVector.size();
         for (int index = 0; index < size; index++) {
@@ -94,7 +94,7 @@ public class CssPropertyValues : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
-            HashMap hashMap = this.toHashMap();
+            HashMap<object, object> hashMap = this.toHashMap();
             this.logUtil.putF("CssPropertyValues HashMap: " + hashMap.ToString(), this, "toXmlNode()");
         }
         return ModDomHelper.createNameValueIndexNodes(document, CssPropertyData.getInstance().VALUES, CssPropertyValueData.getInstance().NAME, this.propertyValueVector);

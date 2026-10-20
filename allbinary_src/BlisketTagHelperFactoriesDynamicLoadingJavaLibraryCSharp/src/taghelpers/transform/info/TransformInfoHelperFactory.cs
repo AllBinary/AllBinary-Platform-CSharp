@@ -33,7 +33,7 @@ public class TransformInfoHelperFactory : TagHelperFactoryInterface
     }
 
     // throws LicensingException
-    public virtual object getInstance(HashMap hashMap, PageContext pageContext)
+    public virtual object getInstance(HashMap<object, object> hashMap, PageContext pageContext)
     {
         return HelperFactory.getInstance(FACTORYNAME, CLASSNAME, hashMap, pageContext);
     }

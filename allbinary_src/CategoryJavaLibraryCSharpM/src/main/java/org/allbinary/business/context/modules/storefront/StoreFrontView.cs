@@ -43,7 +43,7 @@ public class StoreFrontView : DomNodeInterface
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        HashMap hashMap = this.storeFrontInterface.toHashMap();
+        HashMap<object, object> hashMap = this.storeFrontInterface.toHashMap();
         StoreFrontData storeFrontData = StoreFrontData.getInstance();
         hashMap.put(storeFrontData.CURRENTHOMEHOSTNAME, this.storeFrontInterface.getCurrentHomeHostName());
         hashMap.put(storeFrontData.CURRENTHOMEHOSTNAMEPATH, this.storeFrontInterface.getCurrentHomeHostNamePath());

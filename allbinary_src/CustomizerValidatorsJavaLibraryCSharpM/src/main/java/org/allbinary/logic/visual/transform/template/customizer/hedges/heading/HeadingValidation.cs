@@ -52,13 +52,13 @@ public class HeadingValidation : Validation, DomNodeInterface
         this.logo = new LogoValidation(logoNode);
     }
 
-    public HeadingValidation(HashMap hashMap)
+    public HeadingValidation(HashMap<object, object> hashMap)
     {
         this.getFormData(hashMap);
     }
 
     // throws Exception
-    public virtual void getFormData(HashMap hashMap)
+    public virtual void getFormData(HashMap<object, object> hashMap)
     {
         this.title = new TitleValidation(hashMap);
         this.logo = new LogoValidation(hashMap);

@@ -41,7 +41,7 @@ public class MediaUtil
             throw new Exception("Unable to find ImageReader for this file.");
         }
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
-            HashMap hashMap = this.getImageBufferPropertyHashMap(bufferedImage);
+            HashMap<object, object> hashMap = this.getImageBufferPropertyHashMap(bufferedImage);
             this.logUtil.putF("Image Properties: " + hashMap.ToString(), this, "saveImageFile()");
         }
         AbFile imageFile = AbFile.createAbFile(category + newImageFileName);
@@ -75,9 +75,9 @@ public class MediaUtil
         }
     }
 
-    private static HashMap getImageBufferPropertyHashMap(BufferedImage bufferedImage)
+    private static HashMap<object, object> getImageBufferPropertyHashMap(BufferedImage bufferedImage)
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         string[] propertyStringArray = bufferedImage.getPropertyNames();
         if (propertyStringArray != null) {
             for (int index = 0; index < propertyStringArray.Length; index++) {

@@ -22,7 +22,7 @@ namespace org.allbinary.logic.communication.http.request;
 
 public interface RequestMapInterface
 {
-    HashMap getRequestHashMap();
+    HashMap<object, object> getRequestHashMap();
 
 }
 

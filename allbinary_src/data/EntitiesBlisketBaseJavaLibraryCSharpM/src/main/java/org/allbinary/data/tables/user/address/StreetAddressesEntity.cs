@@ -52,7 +52,7 @@ public class StreetAddressesEntity : AbSqlBean, StreetAddressesEntityInterface
     public virtual void remove(int? index)
     {
         try {
-            HashMap whereHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> whereHashMap = StdUtil.getInstance().createHashMap();
             whereHashMap.put(UserData.USERNAME, this.userName);
             whereHashMap.put(StreetAddressData.ID, ((string) index.ToString()));
             base.deleteWhere(whereHashMap);
@@ -102,8 +102,8 @@ public class StreetAddressesEntity : AbSqlBean, StreetAddressesEntityInterface
     public virtual void update(StreetAddress address)
     {
         try {
-            HashMap addressHashMap = address.toHashMap();
-            HashMap whereKeyValuePairs = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> addressHashMap = address.toHashMap();
+            HashMap<object, object> whereKeyValuePairs = StdUtil.getInstance().createHashMap();
             whereKeyValuePairs.put(StreetAddressData.ID, address.getId());
             whereKeyValuePairs.put(UserData.USERNAME, this.userName);
             base.updateWhere(whereKeyValuePairs, addressHashMap);
@@ -127,12 +127,12 @@ public class StreetAddressesEntity : AbSqlBean, StreetAddressesEntityInterface
     {
         try {
             BasicArrayList streetAddressVector = new BasicArrayListD();
-            HashMap keyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> keyAndValue = StdUtil.getInstance().createHashMap();
             keyAndValue.put(UserData.USERNAME, this.userName);
             BasicArrayList addressList = base.getRows(keyAndValue);
             int size = addressList.size();
             for (int index = 0; index < size; index++) {
-                HashMap addressHashMap = ((HashMap) addressList.get(index));
+                HashMap<object, object> addressHashMap = ((HashMap<object, object>) addressList.get(index));
                 StreetAddress streetAddress = new StreetAddress(addressHashMap);
                 if (streetAddress != null) {
                     streetAddressVector.add(streetAddress);
@@ -150,10 +150,10 @@ public class StreetAddressesEntity : AbSqlBean, StreetAddressesEntityInterface
     public virtual StreetAddress get(int? index)
     {
         try {
-            HashMap keyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> keyAndValue = StdUtil.getInstance().createHashMap();
             keyAndValue.put(UserData.USERNAME, this.userName);
             keyAndValue.put(StreetAddressData.ID, index.ToString());
-            HashMap addressHashMap = base.getRow(keyAndValue);
+            HashMap<object, object> addressHashMap = base.getRow(keyAndValue);
             if (addressHashMap != null) {
                 return new StreetAddress(addressHashMap);
             } else {
@@ -170,8 +170,8 @@ public class StreetAddressesEntity : AbSqlBean, StreetAddressesEntityInterface
     public virtual StreetAddress getDefault()
     {
         try {
-            HashMap addressHashMap = StdUtil.getInstance().createHashMap();
-            HashMap updateKeyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> addressHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> updateKeyAndValue = StdUtil.getInstance().createHashMap();
             updateKeyAndValue.put(StreetAddressData.DEFAULT, StreetAddressData.DEFAULT);
             updateKeyAndValue.put(UserData.USERNAME, this.userName);
             addressHashMap = base.getRow(updateKeyAndValue);
@@ -198,8 +198,8 @@ public class StreetAddressesEntity : AbSqlBean, StreetAddressesEntityInterface
     public virtual void setDefault(string value)
     {
         try {
-            HashMap updateKeyAndValue = StdUtil.getInstance().createHashMap();
-            HashMap whereKeyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> updateKeyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> whereKeyAndValue = StdUtil.getInstance().createHashMap();
             whereKeyAndValue.put(UserData.USERNAME, this.userName);
             StreetAddress streetAddress = this.getDefault();
             if (streetAddress != null) {

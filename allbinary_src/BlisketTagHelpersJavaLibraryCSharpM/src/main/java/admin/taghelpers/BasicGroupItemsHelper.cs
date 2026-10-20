@@ -30,7 +30,7 @@ public class BasicGroupItemsHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly Portion portion;
-    public BasicGroupItemsHelper(HashMap hashMap, PageContext pageContext)
+    public BasicGroupItemsHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.portion = new Portion(hashMap);
     }

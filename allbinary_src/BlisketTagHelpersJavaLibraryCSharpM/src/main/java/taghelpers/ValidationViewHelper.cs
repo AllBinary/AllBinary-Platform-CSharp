@@ -29,7 +29,7 @@ public class ValidationViewHelper : ViewHelper, ValidationComponentInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private ValidationComponentInterface viewInterface;
-    public ValidationViewHelper(HashMap hashMap, PageContext pageContext) : base(hashMap, pageContext)
+    public ValidationViewHelper(HashMap<object, object> hashMap, PageContext pageContext) : base(hashMap, pageContext)
     {
         // base(hashMap, pageContext) is called from the constructor declaration
         this.viewInterface = ((ValidationComponentInterface) this.getViewObject());

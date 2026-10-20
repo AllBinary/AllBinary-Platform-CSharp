@@ -25,7 +25,7 @@ namespace admin.taghelpers;
 public class AdminConfigurationHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    public AdminConfigurationHelper(HashMap hashMap, PageContext pageContext)
+    public AdminConfigurationHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
     }
 

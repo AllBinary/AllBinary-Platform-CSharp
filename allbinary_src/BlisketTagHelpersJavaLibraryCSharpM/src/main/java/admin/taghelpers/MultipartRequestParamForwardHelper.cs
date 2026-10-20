@@ -73,7 +73,7 @@ public class MultipartRequestParamForwardHelper
         string AMP = commonSeps.AMPERSAND;
         string QUESTION = commonSeps.QUESTION;
         string EQUALS = commonSeps.EQUALS;
-        HashMap hashMap = this.requestMapInterface.getRequestHashMap();
+        HashMap<object, object> hashMap = this.requestMapInterface.getRequestHashMap();
         StringMaker stringBuffer = new StringMaker();
         int size = this.paramVector.size();
         for (int index = 0; index < size; index++) {
@@ -93,7 +93,7 @@ public class MultipartRequestParamForwardHelper
 
     private bool shouldForward()
     {
-        HashMap hashMap = this.requestMapInterface.getRequestHashMap();
+        HashMap<object, object> hashMap = this.requestMapInterface.getRequestHashMap();
         string requestCommand = ((string) hashMap.get(GLOBALS2.ADMINCOMMAND));
         if (StringValidationUtil.getInstance().isEmpty(this.command) || (!StringValidationUtil.getInstance().isEmpty(requestCommand) && string.CompareOrdinal(this.command, requestCommand) == 0)) {
             return true;

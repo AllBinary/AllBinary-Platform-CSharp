@@ -55,9 +55,9 @@ public class BasketView : HttpStoreComponentView, DomNodeInterface
             InventoryEntity inventoryEntity = InventoryEntityFactory.getInstance().getInventoryEntityInstance();
             BasketInterface basketInterface = this.getWeblisketSession().getOrder().getBasket();
             Node basketNode = document.createElement(BasketData.BASKET);
-            HashMap itemsAndNumberInBasket = basketInterface.getItems();
+            HashMap<object, object> itemsAndNumberInBasket = basketInterface.getItems();
             int numberOfResults = 1;
-            Set items = itemsAndNumberInBasket.keySet();
+            Set<object> items = itemsAndNumberInBasket.keySet();
             object[] productArray = items.toArray();
             int size = productArray.Length;
             for (int index = 0; index < size; index++) {

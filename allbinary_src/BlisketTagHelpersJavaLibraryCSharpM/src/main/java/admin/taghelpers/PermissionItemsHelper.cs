@@ -29,7 +29,7 @@ public class PermissionItemsHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly Portion portion;
-    public PermissionItemsHelper(HashMap hashMap, PageContext pageContext)
+    public PermissionItemsHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.portion = new Portion(hashMap);
     }

@@ -37,7 +37,7 @@ public class UserConfiguration : UserConfigurationInterface
         this.timeLastModified = new TimeLastModified(0);
     }
 
-    public UserConfiguration(HashMap hashMap)
+    public UserConfiguration(HashMap<object, object> hashMap)
     {
         this.userEmailConfigurationInterface = ((UserEmailConfigurationInterface) new UserEmailConfiguration(hashMap));
         this.timeCreated = new TimeCreated(((string) hashMap.get(EntryData.getInstance().TIMECREATED)));

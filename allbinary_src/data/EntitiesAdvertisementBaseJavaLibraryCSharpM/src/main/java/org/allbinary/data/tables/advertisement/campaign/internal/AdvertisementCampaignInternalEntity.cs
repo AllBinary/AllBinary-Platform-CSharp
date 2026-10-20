@@ -61,13 +61,13 @@ public class AdvertisementCampaignInternalEntity : AbSqlBean, AdvertisementCampa
 
     public virtual AdvertisementCampaignsInterface getCampaignsInStore(string storeName)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(StoreFrontData.getInstance().NAME, storeName);
         BasicArrayList hashMapVector = base.getRows(keysAndValues);
         BasicArrayList vector = new BasicArrayListD();
         int size = hashMapVector.size();
         for (int index = 0; index < size; index++) {
-            HashMap hashMap = ((HashMap) hashMapVector.get(index));
+            HashMap<object, object> hashMap = ((HashMap<object, object>) hashMapVector.get(index));
             if (hashMap != null) {
                 vector.add(((AdvertisementCampaignInterface) new AdvertisementCampaign(hashMap)));
             }
@@ -77,10 +77,10 @@ public class AdvertisementCampaignInternalEntity : AbSqlBean, AdvertisementCampa
 
     public virtual AdvertisementCampaignInterface get(string storeName, string name)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(StoreFrontData.getInstance().NAME, storeName);
         keysAndValues.put(AdvertisementCampaignData.getInstance().NAME, name);
-        HashMap hashMap = base.getRow(keysAndValues);
+        HashMap<object, object> hashMap = base.getRow(keysAndValues);
         if (hashMap != null) {
             return ((AdvertisementCampaignInterface) new AdvertisementCampaign(hashMap));
         } else {
@@ -88,7 +88,7 @@ public class AdvertisementCampaignInternalEntity : AbSqlBean, AdvertisementCampa
         }
     }
 
-    public virtual void update(HashMap updatedValues)
+    public virtual void update(HashMap<object, object> updatedValues)
     {
         base.updateWhere(EntryData.getInstance().getInstance().ID, ((string) updatedValues.get(EntryData.getInstance().getInstance().ID)), updatedValues);
     }

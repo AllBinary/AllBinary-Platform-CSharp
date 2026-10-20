@@ -69,7 +69,7 @@ public class DownloadFileServlet : HttpServlet
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 return;
             }
-            HashMap hashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
             AuthenticationHelper authenticationHelper = ((AuthenticationHelper) new AuthenticationHelperFactory().getInstance(hashMap, request));
             if (authenticationHelper.isAuthenticated()) {
                 if (AuthenticationHelperUtil.getInstance().isAuthorized(authenticationHelper, filePath)) {

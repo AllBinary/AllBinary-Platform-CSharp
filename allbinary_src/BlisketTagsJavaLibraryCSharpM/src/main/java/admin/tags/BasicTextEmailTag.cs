@@ -49,7 +49,7 @@ public class BasicTextEmailTag : CustomTagSupport
     public virtual string send()
     {
         try {
-            HashMap propertiesHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> propertiesHashMap = StdUtil.getInstance().createHashMap();
             propertiesHashMap.put("Subject", this.subject);
             propertiesHashMap.put("Body", this.body);
             object anyType = new BasicTextEmailHelperFactory().getInstance(propertiesHashMap, this.pageContext);

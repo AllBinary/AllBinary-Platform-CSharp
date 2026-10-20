@@ -135,7 +135,7 @@ public class GameFeatureUtil
 
     public virtual bool isExclusive(string itemLabel)
     {
-        Enumeration enumeration = GameFeatureChoiceGroups.getExclusiveInstance().get().keys();
+        Enumeration<object> enumeration = GameFeatureChoiceGroups.getExclusiveInstance().get().keys();
         string name = null;
         while (this.enumerationUtil.hasMoreElements(enumeration)) {
             name = ((string) this.enumerationUtil.nextElement(enumeration));

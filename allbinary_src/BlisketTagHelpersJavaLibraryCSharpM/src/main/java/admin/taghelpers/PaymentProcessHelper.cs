@@ -27,7 +27,7 @@ namespace admin.taghelpers;
 public class PaymentProcessHelper : TagHelper
 {
     private PaymentProcessorComponent paymentProcessorComponent;
-    public PaymentProcessHelper(HashMap propertiesHashMap, PageContext pageContext)
+    public PaymentProcessHelper(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         TransformInfoHttpInterface transformInfoInterface = ((TransformInfoHttpInterface) TransformInfoHttpFactory.getInstance(propertiesHashMap, pageContext));
         this.paymentProcessorComponent = new PaymentProcessorComponent(transformInfoInterface);

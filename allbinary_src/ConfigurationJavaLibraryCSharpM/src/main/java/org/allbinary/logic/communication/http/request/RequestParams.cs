@@ -34,7 +34,7 @@ public class RequestParams
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    private Map map;
+    private Map<object, object> map;
     public RequestParams()
     {
         this.logUtil.putF("New RequestParams Size: 0", this, this.commonStrings.CONSTRUCTOR);
@@ -52,12 +52,12 @@ public class RequestParams
         this.logUtil.putF("Request Params Size: " + this.getMap().keySet().size(), this, this.commonStrings.CONSTRUCTOR);
     }
 
-    protected virtual void setMap(Map map)
+    protected virtual void setMap(Map<object, object> map)
     {
         this.map = map;
     }
 
-    protected virtual Map getMap()
+    protected virtual Map<object, object> getMap()
     {
         return this.map;
     }
@@ -69,7 +69,7 @@ public class RequestParams
         try {
             Node node = document.createElement(RequestData.REQUEST);
             StringMaker stringBuffer = new StringMaker();
-            Set keys = this.map.keySet();
+            Set<object> keys = this.map.keySet();
             object[] keyArray = keys.toArray();
             int size = keyArray.Length;
             for (int i = 0; i < size; i++) {
@@ -91,10 +91,10 @@ public class RequestParams
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
-        Set keys = this.map.keySet();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
+        Set<object> keys = this.map.keySet();
         object[] keyArray = keys.toArray();
         int size = keyArray.Length;
         StringMaker stringBuffer = new StringMaker();

@@ -58,7 +58,7 @@ public class StaticPagesEntity : AbSqlBean, StaticPagesEntityInterface
 
     public virtual string getFile(string store, string keywords)
     {
-        HashMap whereHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> whereHashMap = StdUtil.getInstance().createHashMap();
         whereHashMap.put(StoreFrontData.getInstance().NAME, store);
         whereHashMap.put(basicItemData.KEYWORDS, keywords);
         string file = base.getField(whereHashMap, SearchData.PAGE);
@@ -76,7 +76,7 @@ public class StaticPagesEntity : AbSqlBean, StaticPagesEntityInterface
         return returnStr;
     }
 
-    public virtual void update(HashMap updatedValues)
+    public virtual void update(HashMap<object, object> updatedValues)
     {
         base.updateWhere(basicItemData.KEYWORDS, ((string) updatedValues.get(basicItemData.KEYWORDS)), updatedValues);
     }

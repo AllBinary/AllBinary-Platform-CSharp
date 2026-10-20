@@ -52,7 +52,7 @@ public class DownloadableInventoryItemView : HttpStoreComponentView, RequestMapI
     public string id = null;
     public ItemInterface itemInterface = null;
     public DownloadableItem downloadableItem = null;
-    private HashMap requestHashMap = null;
+    private HashMap<object, object> requestHashMap = null;
     public DownloadableInventoryItemView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
@@ -150,12 +150,12 @@ public class DownloadableInventoryItemView : HttpStoreComponentView, RequestMapI
         return stringBuffer.ToString();
     }
 
-    private void setRequestHashMap(HashMap requestHashMap)
+    private void setRequestHashMap(HashMap<object, object> requestHashMap)
     {
         this.requestHashMap = requestHashMap;
     }
 
-    public virtual HashMap getRequestHashMap()
+    public virtual HashMap<object, object> getRequestHashMap()
     {
         return this.requestHashMap;
     }

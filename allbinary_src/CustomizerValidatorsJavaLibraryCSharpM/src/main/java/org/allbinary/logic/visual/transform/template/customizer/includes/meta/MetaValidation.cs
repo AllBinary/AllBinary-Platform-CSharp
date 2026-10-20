@@ -91,9 +91,9 @@ public class MetaValidation : Validation, DomNodeInterface
         return null;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         HtmlMetaAttributeDataFactory htmlMetaAttributeDataFactory = HtmlMetaAttributeDataFactory.getInstance();
         hashMap.put(HtmlMetaData.getInstance().LABEL.ToString(), this.label);
         hashMap.put(htmlMetaAttributeDataFactory.NAME.ToString(), this.name);

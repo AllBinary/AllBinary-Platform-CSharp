@@ -28,7 +28,7 @@ public class ThreadObjectUtil
     {
     }
 
-    public virtual void processThread(Runnable runnable)
+    public virtual void processThread(global::java.lang.Runnable runnable)
     {
         runnable.run();
     }

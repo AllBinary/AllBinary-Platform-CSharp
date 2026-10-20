@@ -37,7 +37,7 @@ public class Item : BasicItem, OrderItemInterface
     private string shippedDate = null;
     private StreetAddress shippingAddress;
     private string special = null;
-    public Item(HashMap itemHashMap) : base(itemHashMap)
+    public Item(HashMap<object, object> itemHashMap) : base(itemHashMap)
     {
         // base(itemHashMap) is called from the constructor declaration
         this.setData(itemHashMap);
@@ -53,7 +53,7 @@ public class Item : BasicItem, OrderItemInterface
         this.shippingAddress = new StreetAddress();
     }
 
-    private void setData(HashMap itemHashMap)
+    private void setData(HashMap<object, object> itemHashMap)
     {
         this.group = ((string) itemHashMap.get(ShippingMethodData.GROUP));
         this.tax = ((string) itemHashMap.get(OrderHistoryData.TAX));
@@ -129,9 +129,9 @@ public class Item : BasicItem, OrderItemInterface
         return this.special;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = base.toHashMap();
+        HashMap<object, object> hashMap = base.toHashMap();
         hashMap.put(ShippingMethodData.GROUP, this.group);
         hashMap.put(OrderHistoryData.TAX, this.tax);
         hashMap.put(ShippingMethodData.NAME, this.shippingType);

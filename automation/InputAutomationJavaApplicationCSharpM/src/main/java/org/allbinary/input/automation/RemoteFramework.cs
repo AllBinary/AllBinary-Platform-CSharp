@@ -27,7 +27,7 @@ public interface RemoteFramework
 
     void disconnect(BundleContext bc);
 
-    Map getSystemProperties(BundleContext bc);
+    Map<object, object> getSystemProperties(BundleContext bc);
 
 }
 

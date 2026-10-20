@@ -40,7 +40,7 @@ public class UserName
     {
     }
 
-    public UserName(HashMap hashMap)
+    public UserName(HashMap<object, object> hashMap)
     {
         this.userName = ((string) hashMap.get(UserData.USERNAME));
     }

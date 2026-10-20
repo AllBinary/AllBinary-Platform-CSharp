@@ -36,7 +36,7 @@ public class ViewHelper : TransformInterface
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private readonly AbeClientInformationInterface abeClientInformation = ServiceClientInformationInterfaceFactory.getInstance();
     private TransformInterface componentInterface;
-    public ViewHelper(HashMap hashMap, PageContext pageContext)
+    public ViewHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.componentInterface = TransformFactory.getInstance().getInstance(this.abeClientInformation, hashMap, pageContext);
     }

@@ -39,7 +39,7 @@ public class TitleValidation : TitleView, ValidationInterface
         // base(node) is called from the constructor declaration
     }
 
-    public TitleValidation(HashMap hashMap) : base(hashMap)
+    public TitleValidation(HashMap<object, object> hashMap) : base(hashMap)
     {
         // base(hashMap) is called from the constructor declaration
     }

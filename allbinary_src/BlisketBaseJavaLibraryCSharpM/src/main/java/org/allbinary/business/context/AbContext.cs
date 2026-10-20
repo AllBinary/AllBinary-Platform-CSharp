@@ -29,9 +29,9 @@ public class AbContext
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    private HashMap propertiesHashMap;
+    private HashMap<object, object> propertiesHashMap;
     private PageContext pageContext;
-    public AbContext(HashMap propertiesHashMap, PageContext pageContext)
+    public AbContext(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, this.commonStrings.CONSTRUCTOR);
@@ -50,7 +50,7 @@ public class AbContext
         return this.pageContext;
     }
 
-    public virtual HashMap getPropertiesHashMap()
+    public virtual HashMap<object, object> getPropertiesHashMap()
     {
         return this.propertiesHashMap;
     }

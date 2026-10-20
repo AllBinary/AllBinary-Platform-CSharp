@@ -34,11 +34,11 @@ public class ShippingHelper : TagHelper
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private WeblisketSession weblisketSession;
     private StoreFrontInterface storeFrontInterface = null;
-    private HashMap propertiesHashMap = null;
+    private HashMap<object, object> propertiesHashMap = null;
     private PageContext pageContext;
     private HttpServletRequest request;
     private string shippingType = null;
-    public ShippingHelper(HashMap hashMap, PageContext pageContext)
+    public ShippingHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.pageContext = pageContext;
         this.request = ((HttpServletRequest) pageContext.getRequest());

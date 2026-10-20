@@ -56,7 +56,7 @@ public class InventorySearch : InventoryViewSearchInterface
         try {
             StoreFrontInterface storeFront = this.searchRequest.getStoreFront();
             SearchParams searchParams = this.searchRequest.getParams();
-            HashMap columnValueHashMap = searchParams.get();
+            HashMap<object, object> columnValueHashMap = searchParams.get();
             string file = new StaticPagesEntity().getFile(storeFront.getName(), new Replace("-", CommonSeps.getInstance().SPACE).all(((string) columnValueHashMap.get(basicItemData.KEYWORDS))));
             if (StringValidationUtil.getInstance().isEmpty(file)) {
                 return null;

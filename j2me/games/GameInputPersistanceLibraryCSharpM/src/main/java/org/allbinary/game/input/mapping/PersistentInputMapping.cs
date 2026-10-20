@@ -116,7 +116,7 @@ public class PersistentInputMapping
         int totalMappedTo = 0;
         int size = list.size();
         ABHashtable<object, object> hashtable = null;
-        Enumeration enumeration = null;
+        Enumeration<object> enumeration = null;
         Input mappedToInput = null;
         Input gameActionInput = null;
         for (int index = 0; index < size; index++) {

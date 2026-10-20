@@ -24,7 +24,7 @@ public class Portion
 {
     private readonly int? current;
     private readonly int? total;
-    public Portion(HashMap hashMap)
+    public Portion(HashMap<object, object> hashMap)
     {
         this.current = ((int?) hashMap.get("current"));
         this.total = ((int?) hashMap.get("total"));

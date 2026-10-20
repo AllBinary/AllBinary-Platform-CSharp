@@ -75,7 +75,7 @@ public class UpdateOrderHelper : TagHelper
     private string userCancelComment = null;
     private string storeComment = null;
     private string storeCancelComment = null;
-    public UpdateOrderHelper(HashMap hashMap, PageContext pageContext)
+    public UpdateOrderHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.request = ((HttpServletRequest) pageContext.getRequest());
         this.getFormData();
@@ -126,8 +126,8 @@ public class UpdateOrderHelper : TagHelper
     {
         try {
             string success = "Successful update";
-            HashMap orderHashMap = StdUtil.getInstance().createHashMap();
-            HashMap whereHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> orderHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> whereHashMap = StdUtil.getInstance().createHashMap();
             orderHashMap.put(EntryData.getInstance().ID, this.entryId);
             orderHashMap.put(OrderData.ID, this.orderId);
             orderHashMap.put(UserData.USERNAME, userName);

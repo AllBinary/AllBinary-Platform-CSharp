@@ -29,7 +29,7 @@ public interface AffiliateSalesEntityInterface : BasicDataTableInterface
 
     void insert(BasicArrayList values);
 
-    void update(HashMap updatedValues);
+    void update(HashMap<object, object> updatedValues);
 
 }
 

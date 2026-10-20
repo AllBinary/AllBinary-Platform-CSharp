@@ -38,7 +38,7 @@ public class PaymentHelper : Table
     private HttpServletRequest request;
     private string value = null;
     private readonly Portion portion;
-    public PaymentHelper(HashMap hashMap, PageContext pageContext)
+    public PaymentHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.request = ((HttpServletRequest) pageContext.getRequest());
         this.weblisketSession = new WeblisketSession(hashMap, pageContext);

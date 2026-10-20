@@ -41,7 +41,7 @@ public class InsertHeaderValidationView : TopBarView, ValidationComponentInterfa
     public InsertHeaderValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
-        HashMap multipartRequestHashMap = new MultipartRequestParams(this.getPageContext()).toHashMap();
+        HashMap<object, object> multipartRequestHashMap = new MultipartRequestParams(this.getPageContext()).toHashMap();
         StoreFrontInterface storeFrontInterface = StoreFrontFactory.getInstance(this.getWeblisketSession().getStoreName());
         string fullPath = URLGLOBALS.getWebappPath() + storeFrontInterface.getCurrentHostNamePath() + this.LOGOPATH;
         multipartRequestHashMap.put(LogoData.getInstance().IMAGEPATH, fullPath);

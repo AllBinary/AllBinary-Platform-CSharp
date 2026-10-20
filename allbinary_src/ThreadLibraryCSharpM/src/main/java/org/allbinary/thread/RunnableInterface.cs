@@ -19,7 +19,7 @@ using System.Linq;
 
 namespace org.allbinary.thread;
 
-public interface RunnableInterface : Runnable
+public interface RunnableInterface : global::java.lang.Runnable
 {
     bool isRunning();
 

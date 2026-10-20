@@ -68,7 +68,7 @@ public class SVGAsJSONSimpleLoader
             object svgValue = root.opt(KEY_SVG);
             JSONObject svg = (svgValue == null ? root : this.asObject(svgValue, KEY_SVG));
             BasicArrayList pointVector = new BasicArrayListD();
-            Enumeration keys = svg.keys();
+            Enumeration<object> keys = svg.keys();
             while (keys.hasMoreElements()) {
                 string key = ((string) keys.nextElement());
                 object value = svg.opt(key);

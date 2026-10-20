@@ -43,9 +43,9 @@ public class PaymentGatewayView : DomNodeInterface
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         return hashMap;
     }
 
@@ -56,7 +56,7 @@ public class PaymentGatewayView : DomNodeInterface
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF(this.commonStrings.START, this, "toXmlNode");
             }
-            HashMap hashMap = new PaymentGatewayMapping(this.paymentGatewayInterface).toHashMap();
+            HashMap<object, object> hashMap = new PaymentGatewayMapping(this.paymentGatewayInterface).toHashMap();
             hashMap.putAll(this.toHashMap());
             Node paymentGatewayNode = ModDomHelper.createNodeWithValueNodes(document, PaymentGatewayData.NAME.ToString(), hashMap);
             return paymentGatewayNode;

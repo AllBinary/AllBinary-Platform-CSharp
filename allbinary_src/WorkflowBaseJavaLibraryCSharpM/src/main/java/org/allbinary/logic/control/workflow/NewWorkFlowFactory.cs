@@ -42,7 +42,7 @@ public class NewWorkFlowFactory
     }
 
     // throws Exception, LicensingException
-    public virtual WorkFlowInterface getInstance(AbeClientInformationInterface abeClientInformation, HashMap hashMap, PageContext pageContext)
+    public virtual WorkFlowInterface getInstance(AbeClientInformationInterface abeClientInformation, HashMap<object, object> hashMap, PageContext pageContext)
     {
         try {
             string className = ((string) hashMap.get(DynamicObjectData.NAME));

@@ -29,7 +29,7 @@ public class CategoryHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly Portion portion;
-    public CategoryHelper(HashMap hashMap, PageContext pageContext)
+    public CategoryHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.portion = new Portion(hashMap);
     }

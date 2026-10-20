@@ -53,7 +53,7 @@ public class TransformInfoHttpComposite
         return this.transformInfoInterface.getPageContext();
     }
 
-    public virtual HashMap getPropertiesHashMap()
+    public virtual HashMap<object, object> getPropertiesHashMap()
     {
         return this.transformInfoInterface.getPropertiesHashMap();
     }

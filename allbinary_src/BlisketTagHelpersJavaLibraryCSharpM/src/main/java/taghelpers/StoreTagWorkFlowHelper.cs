@@ -32,7 +32,7 @@ public class StoreTagWorkFlowHelper : TagHelper
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly AbeClientInformationInterface abeClientInformation = ServiceClientInformationInterfaceFactory.getInstance();
     private StoreWorkFlowInterface storeWorkFlowInterface;
-    public StoreTagWorkFlowHelper(HashMap hashMap, PageContext pageContext)
+    public StoreTagWorkFlowHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
             this.logUtil.putF("Properties: " + hashMap.ToString(), this, "StoreTagWorkFlowHelper()");

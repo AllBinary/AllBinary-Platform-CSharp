@@ -31,7 +31,7 @@ public class NameSpaceRequestParam
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private BasicArrayList nameSpaceVector;
-    private HashMap nameSpacePropertiesHashMap;
+    private HashMap<object, object> nameSpacePropertiesHashMap;
     private string value;
     public NameSpaceRequestParam(string nameSpace, string value)
     {
@@ -68,7 +68,7 @@ public class NameSpaceRequestParam
                 this.nameSpaceVector.add(packageName);
                 if (nameSpaceAndPropertiesVector.size() > 1) {
                     string properties = ((string) nameSpaceAndPropertiesVector.get(1));
-                    HashMap packagePropertiesHashMap = this.generatePackagePropertiesHashMap(properties);
+                    HashMap<object, object> packagePropertiesHashMap = this.generatePackagePropertiesHashMap(properties);
                     this.nameSpacePropertiesHashMap.put((packageIndex).ToString(), packagePropertiesHashMap);
                 }
                 packageIndex++;
@@ -87,9 +87,9 @@ public class NameSpaceRequestParam
         return this.nameSpaceVector;
     }
 
-    public virtual HashMap getPackageProperties(int packageIndex)
+    public virtual HashMap<object, object> getPackageProperties(int packageIndex)
     {
-        HashMap packagePropertiesHashMap = ((HashMap) this.nameSpacePropertiesHashMap.get((packageIndex).ToString()));
+        HashMap<object, object> packagePropertiesHashMap = ((HashMap<object, object>) this.nameSpacePropertiesHashMap.get((packageIndex).ToString()));
         if (packagePropertiesHashMap == null) {
             packagePropertiesHashMap = StdUtil.getInstance().createHashMap();
         }
@@ -108,10 +108,10 @@ public class NameSpaceRequestParam
     }
 
     // throws Exception
-    private HashMap generatePackagePropertiesHashMap(string properties)
+    private HashMap<object, object> generatePackagePropertiesHashMap(string properties)
     {
         Tokenizer propertiesTokenizer = new Tokenizer(NameSpaceRequestParamData.PROPERTIESSEPARATOR);
-        HashMap packagePropertiesHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> packagePropertiesHashMap = StdUtil.getInstance().createHashMap();
         BasicArrayList propertyVector = propertiesTokenizer.getTokensFromString(properties, new BasicArrayListD());
         BasicArrayList list = new BasicArrayListD();
         Tokenizer propertyTokenizer = new Tokenizer(HtmlNameMathData.getInstance().EQUALS);

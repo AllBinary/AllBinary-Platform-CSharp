@@ -43,13 +43,13 @@ public class GenericCssStyleValidation : Validation, DomNodeInterface
         NodeList nodeList = document.getElementsByTagName(StylesData.getInstance().NAME);
     }
 
-    public GenericCssStyleValidation(HashMap hashMap)
+    public GenericCssStyleValidation(HashMap<object, object> hashMap)
     {
         this.getFormData(hashMap);
     }
 
     // throws Exception
-    public virtual void getFormData(HashMap hashMap)
+    public virtual void getFormData(HashMap<object, object> hashMap)
     {
     }
 

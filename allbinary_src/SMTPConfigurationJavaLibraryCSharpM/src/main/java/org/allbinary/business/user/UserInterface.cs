@@ -119,7 +119,7 @@ public interface UserInterface : TableMappingInterface, ValidationInterface
 
     void setUserConfigurationInterface(UserConfigurationInterface userConfigurationInterface);
 
-    HashMap toPasswordHashMap();
+    HashMap<object, object> toPasswordHashMap();
 
     void validateSession(WeblisketSessionInterface weblisketSession);
 

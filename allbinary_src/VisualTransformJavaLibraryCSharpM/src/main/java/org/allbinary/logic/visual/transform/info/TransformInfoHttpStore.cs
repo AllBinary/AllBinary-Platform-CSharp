@@ -32,7 +32,7 @@ namespace org.allbinary.logic.visual.transform.info;
 public class TransformInfoHttpStore : TransformInfoHttp, TransformInfoHttpStoreInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    public TransformInfoHttpStore(HashMap propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext, true)
+    public TransformInfoHttpStore(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext, true)
     {
         // base(propertiesHashMap, pageContext, true) is called from the constructor declaration
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
@@ -40,7 +40,7 @@ public class TransformInfoHttpStore : TransformInfoHttp, TransformInfoHttpStoreI
         }
     }
 
-    public TransformInfoHttpStore(HashMap databaseHashMap, HashMap propertiesHashMap, PageContext pageContext) : base(databaseHashMap, propertiesHashMap, pageContext)
+    public TransformInfoHttpStore(HashMap<object, object> databaseHashMap, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(databaseHashMap, propertiesHashMap, pageContext)
     {
         // base(databaseHashMap, propertiesHashMap, pageContext) is called from the constructor declaration
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
@@ -54,7 +54,7 @@ public class TransformInfoHttpStore : TransformInfoHttp, TransformInfoHttpStoreI
         this.setStoreName(((string) databaseHashMap.get(StoreFrontData.getInstance().NAME)));
     }
 
-    public TransformInfoHttpStore(StoreFrontInterface storeFrontInterface, HashMap propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
+    public TransformInfoHttpStore(StoreFrontInterface storeFrontInterface, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
         // base(propertiesHashMap, pageContext) is called from the constructor declaration
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {

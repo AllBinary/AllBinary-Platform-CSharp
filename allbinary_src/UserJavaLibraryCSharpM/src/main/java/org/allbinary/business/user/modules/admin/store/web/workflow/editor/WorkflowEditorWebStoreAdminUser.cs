@@ -29,7 +29,7 @@ public class WorkflowEditorWebStoreAdminUser : User
         // base() is called from the constructor declaration
     }
 
-    public WorkflowEditorWebStoreAdminUser(HashMap userHashMap) : base(userHashMap)
+    public WorkflowEditorWebStoreAdminUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
         // base(userHashMap) is called from the constructor declaration
     }

@@ -31,7 +31,7 @@ public class AdminConfigurationHelperFactory : TagHelperFactory
     }
 
     // throws LicensingException
-    public virtual object getInstance(HashMap hashMap, PageContext pageContext)
+    public virtual object getInstance(HashMap<object, object> hashMap, PageContext pageContext)
     {
         try {
             return new AdminConfigurationHelper(hashMap, pageContext);

@@ -29,7 +29,7 @@ public class SWTProcessor
         return SWTProcessor.instance;
     }
 
-    public Runnable runnable = NullRunnable.getInstance();
+    public global::java.lang.Runnable runnable = NullRunnable.getInstance();
     public virtual void process(Display display)
     {
         display.sleep();

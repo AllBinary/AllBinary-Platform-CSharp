@@ -52,7 +52,7 @@ public class EmailServerConfigurationView : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         EmailServerConfigurationMapping emailConfigurationMapping = new EmailServerConfigurationMapping(this.emailServerConfigurationInterface);
-        HashMap hashMap = emailConfigurationMapping.toHashMap();
+        HashMap<object, object> hashMap = emailConfigurationMapping.toHashMap();
         Node node = ModDomHelper.createNodeWithValueNodes(document, EmailServerConfigurationData.NAME, hashMap);
         return node;
     }

@@ -32,15 +32,15 @@ public class UploadMediaSingleton
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    private HashMap readerFileTypesHashMap;
-    private HashMap writerFileTypesHashMap;
+    private HashMap<object, object> readerFileTypesHashMap;
+    private HashMap<object, object> writerFileTypesHashMap;
     private static UploadMediaSingleton uploadMedia = null;
     private UploadMediaSingleton()
     {
         this.readerFileTypesHashMap = StdUtil.getInstance().createHashMap();
         this.writerFileTypesHashMap = StdUtil.getInstance().createHashMap();
-        HashMap hashMap = MediaData.toHashMap();
-        Set set = hashMap.keySet();
+        HashMap<object, object> hashMap = MediaData.toHashMap();
+        Set<object> set = hashMap.keySet();
         object[] mediaDataNameArray = set.toArray();
         int size = mediaDataNameArray.Length;
         for (int index = 0; index < size; index++) {
@@ -107,7 +107,7 @@ public class UploadMediaSingleton
         return this.isMedia(mediaFileType, aMediaType, this.writerFileTypesHashMap);
     }
 
-    private bool isMedia(string mediaFileType, string aMediaType, HashMap hashMap)
+    private bool isMedia(string mediaFileType, string aMediaType, HashMap<object, object> hashMap)
     {
         if (hashMap.containsKey(mediaFileType)) {
             string mediaType = ((string) hashMap.get(mediaFileType));

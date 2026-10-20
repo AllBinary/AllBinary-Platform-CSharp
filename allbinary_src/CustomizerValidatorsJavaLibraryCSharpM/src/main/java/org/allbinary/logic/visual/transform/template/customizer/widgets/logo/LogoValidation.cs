@@ -56,14 +56,14 @@ public class LogoValidation : Validation, DomNodeInterface
         this.logoFile = DomSearchHelper.getNode(LogoData.getInstance().IMAGEFILENAME, node.getChildNodes()).getNodeValue();
     }
 
-    public LogoValidation(HashMap hashMap)
+    public LogoValidation(HashMap<object, object> hashMap)
     {
         this.isFile = true;
         this.getFormData(hashMap);
     }
 
     // throws Exception
-    public virtual void getFormData(HashMap hashMap)
+    public virtual void getFormData(HashMap<object, object> hashMap)
     {
         this.logoFileItem = ((FileItem) hashMap.get(LogoData.getInstance().IMAGE));
         this.logoAbPath = new AbPath(((string) hashMap.get(LogoData.getInstance().IMAGEPATH)), StringUtil.getInstance().EMPTY_STRING);
@@ -147,10 +147,10 @@ public class LogoValidation : Validation, DomNodeInterface
         return null;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         StringUtil stringUtil = StringUtil.getInstance();
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(LogoData.getInstance().IMAGE, stringUtil.EMPTY_STRING);
         if (this.logoFile != null) {
             hashMap.put(LogoData.getInstance().IMAGEPATH, this.logoAbPath.ToString());
@@ -165,7 +165,7 @@ public class LogoValidation : Validation, DomNodeInterface
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        HashMap hashMap = this.toHashMap();
+        HashMap<object, object> hashMap = this.toHashMap();
         return ModDomHelper.createNameValueNodes(document, LogoData.getInstance().NAME, hashMap);
     }
 

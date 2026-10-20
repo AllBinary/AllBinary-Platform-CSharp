@@ -27,7 +27,7 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 
 namespace org.allbinary.android.input.api3;
 
-public class ShowVirtualKeyboardRunnable : Runnable
+public class ShowVirtualKeyboardRunnable : global::java.lang.Runnable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly Activity activity;

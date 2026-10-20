@@ -45,7 +45,7 @@ public class ProgressMidlet : AllBinaryMidlet
         Processor processor = MidletExitProcessorFactory.getInstance().getExitInstance(this);
         try {
             ThreadPool primaryThreadPool = PrimaryThreadPool.getInstance();
-            Runnable runnable = new ExitRunnable(this, processor, isProgress);
+            global::java.lang.Runnable runnable = new ExitRunnable(this, processor, isProgress);
             primaryThreadPool.runTask(runnable);
         } catch (Exception e) {
             this.logUtil.put(this.commonStrings.EXCEPTION, this, "exit", e);

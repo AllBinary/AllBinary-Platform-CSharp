@@ -29,7 +29,7 @@ public class StaticPagesHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly Portion portion;
-    public StaticPagesHelper(HashMap hashMap, PageContext pageContext)
+    public StaticPagesHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.portion = new Portion(hashMap);
     }

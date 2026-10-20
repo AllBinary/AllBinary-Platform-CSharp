@@ -78,9 +78,9 @@ public class PaymentType
         return vector;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.putAll(this.getBasicPaymentType().toHashMap());
         if (this.paymentTransactionInterfaceFactoryInterface != null) {
             hashMap.put(PaymentGatewayData.PAYMENTTRANSACTIONINTERFACEFACTORYINTERFACE.ToString(), this.paymentTransactionInterfaceFactoryInterface.GetType().FullName);

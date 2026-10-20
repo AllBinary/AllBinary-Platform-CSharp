@@ -27,7 +27,7 @@ public class AllBinaryRenderer
         return AllBinaryRenderer.instance;
     }
 
-    public virtual void setRunnable(Runnable runnable)
+    public virtual void setRunnable(global::java.lang.Runnable runnable)
     {
     }
 

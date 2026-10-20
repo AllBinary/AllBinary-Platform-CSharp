@@ -34,18 +34,18 @@ public class PrimaryThreadPool : ThreadPool
         // base(poolName, numThreads, priority) is called from the constructor declaration
     }
 
-    public override void runTask(Runnable task)
+    public override void runTask(global::java.lang.Runnable task)
     {
         this.logUtil.putF(new StringMaker().append(StringUtil.getInstance().toString(task)).appendlong(((long) DateTimeOffset.Now.ToUnixTimeMilliseconds())).ToString(), this, this.threadPoolStrings.ADD_TASK);
         base.runTask(task);
     }
 
-    protected override void startTask(Runnable task)
+    protected override void startTask(global::java.lang.Runnable task)
     {
         this.logUtil.putF(new StringMaker().append(this.threadPoolStrings.START_TASK).append(StringUtil.getInstance().toString(task)).ToString(), this, this.commonStrings.RUN);
     }
 
-    protected override void completedTask(Runnable task)
+    protected override void completedTask(global::java.lang.Runnable task)
     {
         this.logUtil.putF(new StringMaker().append(this.threadPoolStrings.COMPLETE_TASK).append(StringUtil.getInstance().toString(task)).ToString(), this, this.commonStrings.RUN);
     }

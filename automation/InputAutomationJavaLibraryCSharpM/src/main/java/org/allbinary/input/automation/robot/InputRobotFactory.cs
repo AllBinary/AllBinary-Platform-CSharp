@@ -92,7 +92,7 @@ public class InputRobotFactory
     // throws Exception
     public virtual void loadLibraries()
     {
-        Set set = this.get().keySet();
+        Set<object> set = this.get().keySet();
         this.logUtil.putF("Loading Libraries", this, "loadLibraries");
         object[] nameArray = set.toArray();
         int size = nameArray.Length;
@@ -128,7 +128,7 @@ public class InputRobotFactory
     public virtual void unloadLibraries()
     {
         this.logUtil.putF("Unloading Libraries", this, "unloadLibraries");
-        Set set = this.get().keySet();
+        Set<object> set = this.get().keySet();
         InputRobotInterface inputRobotInterface = null;
         object[] inputRobotArray = set.toArray();
         int size = inputRobotArray.Length;

@@ -41,7 +41,7 @@ public class TransformTemplateFactory
     }
 
     // throws Exception
-    public virtual TransformTemplateInterface getInstance(AbeClientInformationInterface abeClientInformation, string templateName, HashMap propertiesHashMap, PageContext pageContext)
+    public virtual TransformTemplateInterface getInstance(AbeClientInformationInterface abeClientInformation, string templateName, HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         try {
             TransformInfoEntity transformInfoEntity = TransformInfoEntityBuilder.getInstance();

@@ -85,12 +85,12 @@ public class TransformInfoEntity : AbSqlBean, TransformInfoEntityInterface
     }
 
     // throws Exception
-    public virtual TransformInfoInterface get(string name, HashMap propertiesHashMap, PageContext pageContext)
+    public virtual TransformInfoInterface get(string name, HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         TransformInfoData transformInfoData = TransformInfoData.getInstance();
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(transformInfoData.NAME, name);
-        HashMap hashMap = base.getRow(keysAndValues);
+        HashMap<object, object> hashMap = base.getRow(keysAndValues);
         if (hashMap != null) {
             object anyType = hashMap.get(transformInfoData.OBJECTCONFIG);
             if (anyType != null) {
@@ -176,7 +176,7 @@ public class TransformInfoEntity : AbSqlBean, TransformInfoEntityInterface
         return base.createTable(this.createTableStatement());
     }
 
-    public virtual void update(HashMap updatedValues)
+    public virtual void update(HashMap<object, object> updatedValues)
     {
         base.updateWhere(TransformInfoData.getInstance().NAME, ((string) updatedValues.get(TransformInfoData.getInstance().NAME)), updatedValues);
     }

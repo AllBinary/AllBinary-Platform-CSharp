@@ -205,9 +205,9 @@ public class KeyboardActionScriptInput : BasicProfileActionScriptInput, Keyboard
         return integerArray;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         for (int index = 0; index < this.getKeyArray().Length; index++) {
             hashMap.put(KeyboardActionScriptInputData.KEY + index, (this.getKeyArray()[index]).ToString());
         }

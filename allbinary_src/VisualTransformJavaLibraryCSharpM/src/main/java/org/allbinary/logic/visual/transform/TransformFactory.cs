@@ -74,7 +74,7 @@ public class TransformFactory
     }
 
     // throws Exception
-    public virtual TransformInterface getInstance(AbeClientInformationInterface abeClientInformation, HashMap propertiesHashMap, PageContext pageContext)
+    public virtual TransformInterface getInstance(AbeClientInformationInterface abeClientInformation, HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         try {
             TransformInfoData transformInfoData = TransformInfoData.getInstance();

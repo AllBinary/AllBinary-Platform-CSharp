@@ -156,10 +156,10 @@ public class Email : EmailInterface
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         try {
-            HashMap hashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
             hashMap.put(EmailData.SERVER, ((string) this.properties.get(Email.SMTP_HOST)));
             Address[] addresses = this.msg.getFrom();
             if (addresses != null) {

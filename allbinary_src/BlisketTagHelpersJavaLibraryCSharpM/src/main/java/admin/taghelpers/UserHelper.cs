@@ -41,12 +41,12 @@ namespace admin.taghelpers;
 public class UserHelper : Table
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private readonly HashMap hashMap;
+    private readonly HashMap<object, object> hashMap;
     private readonly PageContext pageContext;
     private readonly HttpServletRequest request;
     private readonly string path;
     private readonly Portion portion;
-    public UserHelper(HashMap hashMap, PageContext pageContext)
+    public UserHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.hashMap = hashMap;
         this.pageContext = pageContext;
@@ -58,7 +58,7 @@ public class UserHelper : Table
     public virtual string delete()
     {
         try {
-            HashMap requestHashMap = new RequestParams(this.request).toHashMap();
+            HashMap<object, object> requestHashMap = new RequestParams(this.request).toHashMap();
             UserName userName = new UserName(requestHashMap);
             UserEntityFactory.getInstance().deleteWhere(UserData.USERNAME, userName.get());
             StringMaker stringBuffer = new StringMaker();
@@ -110,7 +110,7 @@ public class UserHelper : Table
     {
         try {
             UserInterface user = NewUserFactory.getInstance(this.request, hashMap);
-            HashMap values = user.toHashMap();
+            HashMap<object, object> values = user.toHashMap();
             UserEntityFactory.getInstance().update(user.getUserName(), values);
             string success = "New User Successfully added to the Users Table";
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {

@@ -29,7 +29,7 @@ public class InventoryHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly Portion portion;
-    public InventoryHelper(HashMap hashMap, PageContext pageContext)
+    public InventoryHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.portion = new Portion(hashMap);
     }

@@ -25,7 +25,7 @@ namespace org.allbinary.input.media.image;
 
 public class InputImageType
 {
-    private static HashMap hashMap = StdUtil.getInstance().createHashMap();
+    private static HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
     private static readonly BasicArrayList TYPE_VECTOR = new BasicArrayListD();
     public static InputImageType CAPTURE = new InputImageType("Capture", 0);
     public static InputImageType COMPARISON = new InputImageType("Comparison", 1);

@@ -61,7 +61,7 @@ public class BasicStoreFront : BasicStoreFrontInterface
     {
     }
 
-    public BasicStoreFront(HashMap storeHashMap)
+    public BasicStoreFront(HashMap<object, object> storeHashMap)
     {
         StoreFrontData storeFrontData = StoreFrontData.getInstance();
         this.name = ((string) storeHashMap.get(storeFrontData.NAME));

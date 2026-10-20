@@ -35,7 +35,7 @@ public class WorkflowEditorWebStoreAdminUserFactory : UserFactoryInterface
     }
 
     // throws Exception
-    public virtual UserInterface getInstance(HashMap hashMap)
+    public virtual UserInterface getInstance(HashMap<object, object> hashMap)
     {
         return new WorkflowEditorWebStoreAdminUser(hashMap);
     }

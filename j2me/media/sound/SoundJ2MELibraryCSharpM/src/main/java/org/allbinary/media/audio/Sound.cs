@@ -22,7 +22,7 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 
 namespace org.allbinary.media.audio;
 
-public class Sound : SoundInterface, Runnable
+public class Sound : SoundInterface, global::java.lang.Runnable
 {
     private string resource;
     public Player player = NoPlayer.NO_PLAYER;

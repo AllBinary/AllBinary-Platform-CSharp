@@ -38,9 +38,9 @@ public class BasicStoreFrontsEntity : InitSql
     // throws Exception
     public virtual BasicStoreFrontInterface getStoreFrontInterface(string name)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(StoreFrontData.getInstance().NAME, name);
-        HashMap storeHashMap = base.getRow(keysAndValues);
+        HashMap<object, object> storeHashMap = base.getRow(keysAndValues);
         if (storeHashMap == null) {
             throw new Exception("No Such Store: " + name);
         }

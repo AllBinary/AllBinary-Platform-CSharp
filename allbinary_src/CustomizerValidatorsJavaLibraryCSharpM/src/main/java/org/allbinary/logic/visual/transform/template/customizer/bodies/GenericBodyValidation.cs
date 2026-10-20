@@ -53,13 +53,13 @@ public class GenericBodyValidation : Validation, DomNodeInterface
         }
     }
 
-    public GenericBodyValidation(HashMap hashMap)
+    public GenericBodyValidation(HashMap<object, object> hashMap)
     {
         this.getFormData(hashMap);
     }
 
     // throws Exception
-    public virtual void getFormData(HashMap hashMap)
+    public virtual void getFormData(HashMap<object, object> hashMap)
     {
         this.body = ((string) hashMap.get(BodyData.getInstance().NAME));
     }

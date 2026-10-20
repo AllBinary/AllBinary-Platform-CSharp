@@ -61,7 +61,7 @@ public class NoTemplateTransformInfoObjectConfig : TransformInfoObjectConfig
         }
         string storeName = this.getTransformInfoInterface().getStoreName();
         string viewName = this.getTransformInfoInterface().getName();
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         string VARKEY = TransformInfoObjectConfigData.getInstance().VARKEY;
         hashMap.put(VARKEY + StoreFrontData.getInstance().NAME, storeName);
         hashMap.put(VARKEY + TransformInfoData.getInstance().OWNER, viewName);

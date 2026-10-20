@@ -105,9 +105,9 @@ public class RootCategoryPropertiesAbstract : RootCategoryPropertiesInterface
         return true;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap categoryHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> categoryHashMap = StdUtil.getInstance().createHashMap();
         categoryHashMap.put(CategoryData.getInstance().NAME, this.category);
         return categoryHashMap;
     }

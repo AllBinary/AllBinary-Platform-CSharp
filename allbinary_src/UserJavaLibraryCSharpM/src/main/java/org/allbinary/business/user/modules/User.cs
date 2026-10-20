@@ -85,14 +85,14 @@ public class User : UserInterface
         this.userConfigurationInterface = UserConfigurationInterfaceFactory.getInstance(this.getRole());
     }
 
-    public User(HashMap userHashMap)
+    public User(HashMap<object, object> userHashMap)
     {
         this.getFormData(userHashMap);
         this.userConfigurationInterface = UserConfigurationInterfaceFactory.getInstance(this.getRole());
     }
 
     // throws Exception
-    public virtual void getFormData(HashMap userHashMap)
+    public virtual void getFormData(HashMap<object, object> userHashMap)
     {
         this.userName = new UserName(userHashMap).get();
         StringUtil stringUtil = StringUtil.getInstance();
@@ -444,9 +444,9 @@ public class User : UserInterface
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap values = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> values = StdUtil.getInstance().createHashMap();
         values.put(UserData.USERNAME, userName);
         values.put(UserData.PREFIXNAME, prefixName);
         values.put(UserData.FIRSTNAME, firstName);
@@ -477,7 +477,7 @@ public class User : UserInterface
         return values;
     }
 
-    public virtual HashMap toPasswordHashMap()
+    public virtual HashMap<object, object> toPasswordHashMap()
     {
         return this.password.toHashMap(this.secret);
     }

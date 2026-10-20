@@ -30,7 +30,7 @@ public interface TableMappingInterface
     BasicArrayList toVector();
 
     // throws Exception
-    HashMap toHashMap();
+    HashMap<object, object> toHashMap();
 
 }
 

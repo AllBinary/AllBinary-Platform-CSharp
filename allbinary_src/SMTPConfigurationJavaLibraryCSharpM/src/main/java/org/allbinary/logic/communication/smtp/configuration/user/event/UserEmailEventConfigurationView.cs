@@ -33,7 +33,7 @@ public class UserEmailEventConfigurationView : DomNodeInterface
     public UserEmailEventConfigurationView(Node node)
     {
         NodeList childNodeList = node.getChildNodes();
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         string name = DomNodeHelper.getTextNodeValue(UserEmailEventConfigurationData.NAME, childNodeList);
         hashMap.put(UserEmailEventConfigurationData.NAME, name);
         string eventListenerClassPath = DomNodeHelper.getTextNodeValue(UserEmailEventConfigurationData.LISTENER_CLASSPATH, childNodeList);
@@ -50,7 +50,7 @@ public class UserEmailEventConfigurationView : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         UserEmailEventConfigurationMapping userEmailEventConfigurationMapping = new UserEmailEventConfigurationMapping(this.getUserEmailEventConfigurationInterface());
-        HashMap hashMap = userEmailEventConfigurationMapping.toHashMap();
+        HashMap<object, object> hashMap = userEmailEventConfigurationMapping.toHashMap();
         Node node = ModDomHelper.createNameValueNodes(document, UserEmailEventConfigurationData.NAME, hashMap);
         return node;
     }

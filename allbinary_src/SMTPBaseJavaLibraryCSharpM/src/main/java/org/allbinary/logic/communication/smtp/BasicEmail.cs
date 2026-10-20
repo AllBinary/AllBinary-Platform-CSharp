@@ -56,7 +56,7 @@ public class BasicEmail : EmailInterface
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         return this.email.toHashMap();
     }

@@ -44,7 +44,7 @@ public class AuthenticationTag : CustomTagSupport
     private string password;
     private string newPassword = null;
     private BasicArrayList roles = null;
-    private HashMap propertiesHashMap = null;
+    private HashMap<object, object> propertiesHashMap = null;
     public AuthenticationTag()
     {
         StringUtil stringUtil = StringUtil.getInstance();

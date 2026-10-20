@@ -53,7 +53,7 @@ public class MultipartRequestParams : RequestParams
     private void processMultipartRequest(HttpServletRequest request)
     {
         try {
-            HashMap specialRequest = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> specialRequest = StdUtil.getInstance().createHashMap();
             List multipartRequestList = AbFileUploadFactory.getInstance().getFileItemStreamList(request);
             if (multipartRequestList != null) {
                 if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
@@ -90,10 +90,10 @@ public class MultipartRequestParams : RequestParams
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         if (this.special) {
-            return ((HashMap) this.getMap());
+            return ((HashMap<object, object>) this.getMap());
         } else {
             return base.toHashMap();
         }

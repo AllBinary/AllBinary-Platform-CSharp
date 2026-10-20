@@ -44,7 +44,7 @@
         
         <module>../PersonalComputerSystemJavaLibraryCSharpM</module>
         <module>../PersonalComputerOperatingSystemsJavaLibraryCSharpM</module>
-        <module>../PersonalComputerHardwareJavaLibraryCSharpM</module>
+        <!--<module>../PersonalComputerHardwareJavaLibraryCSharpM</module>-->
         
     </modules>
 

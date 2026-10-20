@@ -163,7 +163,7 @@ public class StoreFront : StoreFrontInterface
         this.setContextConfigurationInterface(ContextConfigurationInterfaceFactory.getInstance().getInstance("Admin"));
     }
 
-    public StoreFront(HashMap hashMap)
+    public StoreFront(HashMap<object, object> hashMap)
     {
         this.name = this.stringUtil.EMPTY_STRING;
         this.basketName = this.stringUtil.EMPTY_STRING;
@@ -210,23 +210,23 @@ public class StoreFront : StoreFrontInterface
     }
 
     // throws Exception
-    private AbPath createPath(string key, HashMap hashMap)
+    private AbPath createPath(string key, HashMap<object, object> hashMap)
     {
         return new AbPath(this.create(this.EMPTY_STRING, key, hashMap), StringUtil.getInstance().EMPTY_STRING);
     }
 
     // throws Exception
-    private AbPath createPath(string append, string key, HashMap hashMap)
+    private AbPath createPath(string append, string key, HashMap<object, object> hashMap)
     {
         return new AbPath(this.create(append, key, hashMap), StringUtil.getInstance().EMPTY_STRING);
     }
 
-    private string get(string key, HashMap hashMap)
+    private string get(string key, HashMap<object, object> hashMap)
     {
         return this.create(this.EMPTY_STRING, key, hashMap);
     }
 
-    private string create(string append, string key, HashMap hashMap)
+    private string create(string append, string key, HashMap<object, object> hashMap)
     {
         string path = ((string) hashMap.get(key));
         if (StringValidationUtil.getInstance().isEmpty(path)) {
@@ -241,7 +241,7 @@ public class StoreFront : StoreFrontInterface
     }
 
     // throws Exception
-    private void getFormData(HashMap storeHashMap)
+    private void getFormData(HashMap<object, object> storeHashMap)
     {
         StoreFrontData storeFrontData = StoreFrontData.getInstance();
         this.name = ((string) storeHashMap.get(storeFrontData.NAME));
@@ -289,7 +289,7 @@ public class StoreFront : StoreFrontInterface
                 isSpacesContained = true;
             }
             if (isSpacesContained || isEscapedCharactersContained) {
-                HashMap hashMap = SpecialCharacterUtil.getHashMap();
+                HashMap<object, object> hashMap = SpecialCharacterUtil.getHashMap();
                 hashMap.put(new string[] { CommonSeps.getInstance().SPACE }, this.ONE_EMPTY_STRING_ARRAY);
                 this.name = new Replace(hashMap).all(this.name);
             }
@@ -976,10 +976,10 @@ public class StoreFront : StoreFrontInterface
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         StoreFrontData storeFrontData = StoreFrontData.getInstance();
-        HashMap dataHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> dataHashMap = StdUtil.getInstance().createHashMap();
         dataHashMap.put(storeFrontData.NAME, this.name);
         dataHashMap.put(storeFrontData.HOMEHOSTNAME, this.homeHostName);
         dataHashMap.put(storeFrontData.HOMEHOSTNAMEPATH, this.homeHostNamePath.ToString());

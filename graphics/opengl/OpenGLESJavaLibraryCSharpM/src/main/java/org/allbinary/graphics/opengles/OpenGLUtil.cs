@@ -101,7 +101,7 @@ public class OpenGLUtil
         }
     }
 
-    public virtual void addRunnable(Runnable runnable)
+    public virtual void addRunnable(global::java.lang.Runnable runnable)
     {
         lock (this.lockObject) {
             if (!this.runnableList.contains(runnable)) {
@@ -114,10 +114,10 @@ public class OpenGLUtil
     private void processRunnables()
     {
         lock (this.lockObject) {
-            Runnable runnable = null;
+            global::java.lang.Runnable runnable = null;
             int size = this.runnableList.size();
             for (int index = 0; index < size; index++) {
-                runnable = ((Runnable) this.runnableList.get(index));
+                runnable = ((global::java.lang.Runnable) this.runnableList.get(index));
                 runnable.run();
             }
             this.runnableList.clear();

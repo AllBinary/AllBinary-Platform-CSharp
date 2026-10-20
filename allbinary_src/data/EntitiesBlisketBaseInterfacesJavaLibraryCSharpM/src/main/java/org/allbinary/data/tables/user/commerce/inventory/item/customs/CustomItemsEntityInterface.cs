@@ -29,7 +29,7 @@ public interface CustomItemsEntityInterface : BasicDataTableInterface
 
     void insert(BasicArrayList values);
 
-    void update(HashMap updatedValues);
+    void update(HashMap<object, object> updatedValues);
 
 }
 

@@ -31,9 +31,9 @@ public class JvmStatisticsMapping : JvmStatistics, TableMappingInterface
         // base() is called from the constructor declaration
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(JvmStatisticsData.FREE_MEMORY_BYTES, this.getFreeMemoryBytesString());
         hashMap.put(JvmStatisticsData.FREE_MEMORY_KILOBYTES, this.getFreeMemoryKilobytesString());
         hashMap.put(JvmStatisticsData.FREE_MEMORY_MEGABYTES, this.getFreeMemoryMegabytesString());

@@ -32,7 +32,7 @@ public class TransactionResult : TransactionResultInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    private HashMap keyValuePairs;
+    private HashMap<object, object> keyValuePairs;
     private string result;
     public TransactionResult(string result)
     {
@@ -49,7 +49,7 @@ public class TransactionResult : TransactionResultInterface
         }
     }
 
-    public TransactionResult(HashMap keyValuePairs)
+    public TransactionResult(HashMap<object, object> keyValuePairs)
     {
         keyValuePairs = keyValuePairs;
         this.result = "Needs to have the hashmap converted to string for other constructor";
@@ -60,7 +60,7 @@ public class TransactionResult : TransactionResultInterface
         return this.result;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         return this.keyValuePairs;
     }

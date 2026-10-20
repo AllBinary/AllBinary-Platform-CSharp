@@ -29,7 +29,7 @@ public class WholesaleUser : User
         // base() is called from the constructor declaration
     }
 
-    public WholesaleUser(HashMap userHashMap) : base(userHashMap)
+    public WholesaleUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
         // base(userHashMap) is called from the constructor declaration
     }

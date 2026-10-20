@@ -47,7 +47,7 @@ public class CssStyleValidation : Validation, DomNodeInterface
         this.cssStyleElementVector = StylesValidationFactory.getInstance().getInstance(document);
     }
 
-    public CssStyleValidation(HashMap hashMap)
+    public CssStyleValidation(HashMap<object, object> hashMap)
     {
         this.cssStyleElementVector = StylesValidationFactory.getInstance(hashMap);
     }

@@ -34,9 +34,9 @@ public interface BasketInterface
 
     int? getNumberOfItems();
 
-    Set getIds();
+    Set<object> getIds();
 
-    HashMap getItems();
+    HashMap<object, object> getItems();
 
     int? getNumberOf(string product);
 

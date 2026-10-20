@@ -25,8 +25,8 @@ namespace org.allbinary.business.advertisement.campaign;
 
 public class AdvertisementCampaign : AdvertisementCampaignInterface
 {
-    private HashMap hashMap;
-    public AdvertisementCampaign(HashMap hashMap)
+    private HashMap<object, object> hashMap;
+    public AdvertisementCampaign(HashMap<object, object> hashMap)
     {
         this.hashMap = hashMap;
     }

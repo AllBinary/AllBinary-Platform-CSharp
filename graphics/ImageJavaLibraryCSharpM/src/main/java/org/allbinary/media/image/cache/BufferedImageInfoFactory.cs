@@ -24,7 +24,7 @@ namespace org.allbinary.media.image.cache;
 
 public class BufferedImageInfoFactory
 {
-    private static HashMap hashMap = StdUtil.getInstance().createHashMap();
+    private static HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
     private BufferedImageInfoFactory()
     {
     }

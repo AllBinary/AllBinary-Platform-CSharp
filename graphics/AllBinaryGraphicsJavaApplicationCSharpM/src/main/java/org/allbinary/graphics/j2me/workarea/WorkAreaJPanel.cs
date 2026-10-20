@@ -41,7 +41,7 @@ using Node = org.w3c.dom.Node;
 
 namespace org.allbinary.graphics.j2me.workarea;
 
-public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventListener, EventListener, Runnable
+public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventListener, EventListener, global::java.lang.Runnable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private LinkedList canvasJPanelList = null;
@@ -135,9 +135,9 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
         MyCanvasEventService.addListener(((MyCanvasEventListener) this));
     }
 
-    private HashMap getCanvasHashMap()
+    private HashMap<object, object> getCanvasHashMap()
     {
-        HashMap canvasJPanelHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> canvasJPanelHashMap = StdUtil.getInstance().createHashMap();
         int size = this.canvasJPanelList.size();
         for (int index = 0; index < size; index++) {
             CanvasJPanel canvasJPanel = ((CanvasJPanel) this.canvasJPanelList.get(index));
@@ -225,7 +225,7 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
     // throws Exception
     private void duplicate(MutableTreeNode treeNode)
     {
-        HashMap canvasJPanelHashMap = this.getCanvasHashMap();
+        HashMap<object, object> canvasJPanelHashMap = this.getCanvasHashMap();
         if (canvasJPanelHashMap.containsKey(treeNode)) {
             int? frameInteger = ((int?) canvasJPanelHashMap.get(treeNode));
             CanvasJPanel canvasJPanel = ((CanvasJPanel) this.canvasJPanelList.get(((int) frameInteger)));
@@ -289,7 +289,7 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
 
     private void select(MutableTreeNode treeNode)
     {
-        HashMap canvasJPanelHashMap = this.getCanvasHashMap();
+        HashMap<object, object> canvasJPanelHashMap = this.getCanvasHashMap();
         int? frameInteger = ((int?) canvasJPanelHashMap.get(treeNode));
         if (frameInteger != null) {
             this.select(((int) frameInteger));
@@ -377,7 +377,7 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
 
     public virtual void delete(MyCanvasEvent evt)
     {
-        HashMap canvasJPanelHashMap = this.getCanvasHashMap();
+        HashMap<object, object> canvasJPanelHashMap = this.getCanvasHashMap();
         if (canvasJPanelHashMap.containsKey(evt.getTreeNode())) {
             this.canvasHolderJPanel.removeAll();
             int? frameInt = ((int?) canvasJPanelHashMap.get(evt.getTreeNode()));
@@ -400,7 +400,7 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
 
     public virtual void rotate(MyCanvasEvent evt)
     {
-        HashMap canvasJPanelHashMap = this.getCanvasHashMap();
+        HashMap<object, object> canvasJPanelHashMap = this.getCanvasHashMap();
         MutableTreeNode treeNode = evt.getTreeNode();
         int? frameInt = ((int?) canvasJPanelHashMap.get(evt.getTreeNode()));
         CanvasJPanel canvasJPanel = ((CanvasJPanel) this.canvasJPanelList.get(((int) frameInt)));

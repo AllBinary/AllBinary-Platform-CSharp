@@ -33,7 +33,7 @@ public class CustomLoaderHelperFactory : TagHelperFactoryInterface
     }
 
     // throws LicensingException
-    public virtual object getInstance(HashMap hashMap, PageContext pageContext)
+    public virtual object getInstance(HashMap<object, object> hashMap, PageContext pageContext)
     {
         AbeClientInformationInterface abeClientInformation = ServiceClientInformationInterfaceFactory.getInstance();
         return HelperFactory.getInstance(abeClientInformation, FACTORYNAME, CLASSNAME, hashMap, pageContext);

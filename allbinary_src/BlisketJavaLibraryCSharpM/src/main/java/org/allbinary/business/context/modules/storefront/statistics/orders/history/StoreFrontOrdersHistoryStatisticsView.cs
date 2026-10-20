@@ -35,7 +35,7 @@ public class StoreFrontOrdersHistoryStatisticsView : DomNodeInterface
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        HashMap hashMap = this.storeFrontOrdersHistoryStatisticsInterface.toHashMap();
+        HashMap<object, object> hashMap = this.storeFrontOrdersHistoryStatisticsInterface.toHashMap();
         Node node = ModDomHelper.createNameValueNodes(document, StoreFrontOrdersHistoryStatisticsData.getInstance().NAME, hashMap);
         return node;
     }

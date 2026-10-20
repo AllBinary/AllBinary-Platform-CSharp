@@ -35,7 +35,7 @@ namespace org.allbinary.input.automation.module;
 public class InputAutomationModuleFactoryFactory
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private HashMap hashMap;
+    private HashMap<object, object> hashMap;
     private DefaultListModelHelper defaultListModelHelper;
     private HelpSetListener helpSetListenerInterface;
     public InputAutomationModuleFactoryFactory(InputAutomationModuleConfigurations inputAutomationModuleConfigurations, HelpSetListener helpSetListenerInterface)

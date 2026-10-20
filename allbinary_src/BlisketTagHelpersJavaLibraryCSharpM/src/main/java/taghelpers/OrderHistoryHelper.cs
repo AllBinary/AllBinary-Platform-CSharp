@@ -41,7 +41,7 @@ public class OrderHistoryHelper : TagHelper
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private WeblisketSession weblisketSession = null;
     private StoreFrontInterface storeFrontInterface = null;
-    private readonly HashMap propertiesHashMap;
+    private readonly HashMap<object, object> propertiesHashMap;
     private readonly PageContext pageContext;
     private readonly HttpServletRequest request;
     private StreetAddress streetAddress = null;
@@ -49,7 +49,7 @@ public class OrderHistoryHelper : TagHelper
     private string groupId = null;
     private string status = null;
     private string newStatus;
-    public OrderHistoryHelper(HashMap propertiesHashMap, PageContext pageContext)
+    public OrderHistoryHelper(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         this.propertiesHashMap = propertiesHashMap;
         this.pageContext = pageContext;

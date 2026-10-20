@@ -34,10 +34,10 @@ namespace org.allbinary.input.automation.module.configuration;
 public class InputAutomationModuleConfigurations
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private HashMap hashMap = null;
+    private HashMap<object, object> hashMap = null;
     public InputAutomationModuleConfigurations(AbeClientInformationInterface abeClientInformation, File file)
     {
-        this.setHashMap(new HashMap());
+        this.setHashMap(new HashMap<object, object>());
         sbyte[] bytes = new sbyte[100000];
         FileInputStream idFile = new FileInputStream(file);
         int length = idFile.read(bytes);
@@ -57,7 +57,7 @@ public class InputAutomationModuleConfigurations
 
     public InputAutomationModuleConfigurations(AbeClientInformationInterface abeClientInformation, Document document)
     {
-        this.setHashMap(new HashMap());
+        this.setHashMap(new HashMap<object, object>());
         NodeList nameNodeList = document.getElementsByTagName(InputAutomationModuleData.NAME);
         this.logUtil.putF("Number Of Module(s) Specified: " + nameNodeList.getLength(), this, "Contructor");
         for (int index = 0; index < nameNodeList.getLength(); index++) {
@@ -68,7 +68,7 @@ public class InputAutomationModuleConfigurations
 
     public InputAutomationModuleConfigurations(List<InputAutomationModuleConfiguration> inputAutomationModuleConfigurationList)
     {
-        this.setHashMap(new HashMap());
+        this.setHashMap(new HashMap<object, object>());
         int size = inputAutomationModuleConfigurationList.size();
         InputAutomationModuleConfiguration inputAutomationModuleConfiguration = null;
         for (int index = 0; index < size; index++) {
@@ -79,7 +79,7 @@ public class InputAutomationModuleConfigurations
 
     public InputAutomationModuleConfigurations()
     {
-        this.setHashMap(new HashMap());
+        this.setHashMap(new HashMap<object, object>());
     }
 
     public virtual void add(InputAutomationModuleConfiguration inputAutomationModuleConfiguration)
@@ -92,12 +92,12 @@ public class InputAutomationModuleConfigurations
         this.getHashMap().remove(inputAutomationModuleConfiguration.getClassName());
     }
 
-    public virtual HashMap getHashMap()
+    public virtual HashMap<object, object> getHashMap()
     {
         return this.hashMap;
     }
 
-    public virtual void setHashMap(HashMap hashMap)
+    public virtual void setHashMap(HashMap<object, object> hashMap)
     {
         this.hashMap = hashMap;
     }

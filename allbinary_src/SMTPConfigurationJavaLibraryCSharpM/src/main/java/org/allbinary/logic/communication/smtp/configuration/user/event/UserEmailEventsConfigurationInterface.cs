@@ -26,7 +26,7 @@ namespace org.allbinary.logic.communication.smtp.configuration.user.@event;
 
 public interface UserEmailEventsConfigurationInterface
 {
-    HashMap getEventConfigurationHashMap();
+    HashMap<object, object> getEventConfigurationHashMap();
 
     void addUserEmailEventConfiguration(UserEmailEventConfigurationInterface userEmailEventConfigurationInterface);
 

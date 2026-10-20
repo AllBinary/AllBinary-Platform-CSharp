@@ -41,7 +41,7 @@ public class StoreAdminUserEmailEventHandlerSingletons
     }
 
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    private readonly HashMap userEmailEventHandlerHashMap = StdUtil.getInstance().createHashMap();
+    private readonly HashMap<object, object> userEmailEventHandlerHashMap = StdUtil.getInstance().createHashMap();
     private StoreAdminUserEmailEventHandlerSingletons()
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {

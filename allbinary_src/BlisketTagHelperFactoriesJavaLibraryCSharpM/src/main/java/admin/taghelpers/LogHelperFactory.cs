@@ -31,7 +31,7 @@ public class LogHelperFactory : TagHelperFactory
     }
 
     // throws LicensingException
-    public virtual object getInstance(HashMap hashMap, PageContext pageContext)
+    public virtual object getInstance(HashMap<object, object> hashMap, PageContext pageContext)
     {
         try {
             return new LogHelper(hashMap, pageContext);

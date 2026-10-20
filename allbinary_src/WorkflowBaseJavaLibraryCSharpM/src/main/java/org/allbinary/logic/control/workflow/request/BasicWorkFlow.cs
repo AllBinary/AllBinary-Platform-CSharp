@@ -54,16 +54,16 @@ public class BasicWorkFlow
         this.workFlowDoc.appendChild(workFlowNode);
     }
 
-    public BasicWorkFlow(HashMap hashMap, PageContext pageContext)
+    public BasicWorkFlow(HashMap<object, object> hashMap, PageContext pageContext)
     {
         WeblisketSession weblisketSession = new WeblisketSession(hashMap, pageContext);
         this.storeName = weblisketSession.getStoreName();
-        HashMap requestHashMap = new RequestParams(pageContext).toHashMap();
+        HashMap<object, object> requestHashMap = new RequestParams(pageContext).toHashMap();
         this.workFlowName = ((string) requestHashMap.get(WorkFlowData.getInstance().NAME));
         this.workFlowDoc = DomDocumentHelper.create(((string) requestHashMap.get(WorkFlowData.getInstance().DATA)));
     }
 
-    public BasicWorkFlow(HashMap hashMap)
+    public BasicWorkFlow(HashMap<object, object> hashMap)
     {
         this.workFlowName = ((string) hashMap.get(WorkFlowData.getInstance().NAME));
         this.storeName = ((string) hashMap.get(StoreFrontData.getInstance().NAME));
@@ -100,9 +100,9 @@ public class BasicWorkFlow
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(WorkFlowData.getInstance().NAME, this.workFlowName);
         hashMap.put(StoreFrontData.getInstance().NAME, this.storeName);
         hashMap.put(WorkFlowData.getInstance().DATA, XmlDocumentHelper.toString(this.workFlowDoc));
@@ -115,8 +115,8 @@ public class BasicWorkFlow
     public virtual Node toXmlNode(Document document)
     {
         try {
-            HashMap hashMap = this.toHashMap();
-            Set keySet = hashMap.keySet();
+            HashMap<object, object> hashMap = this.toHashMap();
+            Set<object> keySet = hashMap.keySet();
             Node node = document.createElement(WorkFlowData.getInstance().WORKFLOW);
             object[] nameArray = keySet.toArray();
             int size = nameArray.Length;

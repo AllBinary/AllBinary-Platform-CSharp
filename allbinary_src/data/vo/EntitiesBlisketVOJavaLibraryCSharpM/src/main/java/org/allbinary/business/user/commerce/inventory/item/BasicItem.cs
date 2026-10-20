@@ -68,7 +68,7 @@ public class BasicItem : ItemInterface
     private bool downloadable = false;
     public string timeEntered;
     public string lastModified;
-    public BasicItem(HashMap itemHashMap)
+    public BasicItem(HashMap<object, object> itemHashMap)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
             this.logUtil.putF(this.commonStrings.START, this, "Constructor(HashMap)");
@@ -454,12 +454,12 @@ public class BasicItem : ItemInterface
         return itemTotal;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
             this.logUtil.putF(this.commonStrings.START, this, "toHashMap");
         }
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(basicItemData.ID, this.itemId);
         hashMap.put(basicItemData.NUMBER, this.number);
         hashMap.put(basicItemData.INBASKETS, this.inBaskets);

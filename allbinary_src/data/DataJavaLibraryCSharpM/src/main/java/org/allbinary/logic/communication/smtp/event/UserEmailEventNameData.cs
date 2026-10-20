@@ -25,7 +25,7 @@ namespace org.allbinary.logic.communication.smtp.@event;
 
 public class UserEmailEventNameData
 {
-    private static HashMap userNameEvenNameHashMap = StdUtil.getInstance().createHashMap();
+    private static HashMap<object, object> userNameEvenNameHashMap = StdUtil.getInstance().createHashMap();
     private static int nextId = 0;
     private int eventNameId = 0;
     private string eventHandlerName;

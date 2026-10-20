@@ -32,10 +32,10 @@ public class BasketHelper : TagHelper
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private WeblisketSession weblisketSession;
     private StoreFrontInterface storeFrontInterface = null;
-    private HashMap propertiesHashMap;
+    private HashMap<object, object> propertiesHashMap;
     private PageContext pageContext;
     private readonly int MAX = 200;
-    public BasketHelper(HashMap hashMap, PageContext pageContext)
+    public BasketHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.propertiesHashMap = hashMap;
         this.pageContext = pageContext;

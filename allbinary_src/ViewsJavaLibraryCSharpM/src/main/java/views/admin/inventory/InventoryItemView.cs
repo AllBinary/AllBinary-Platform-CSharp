@@ -53,7 +53,7 @@ public class InventoryItemView : HttpStoreComponentView, RequestMapInterface
     private MediaData mediaData = null;
     public ItemInterface itemInterface = null;
     public BasicArrayList downloadableItemVector = null;
-    private HashMap requestHashMap = null;
+    private HashMap<object, object> requestHashMap = null;
     public InventoryItemView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
@@ -133,7 +133,7 @@ public class InventoryItemView : HttpStoreComponentView, RequestMapInterface
     // throws Exception
     protected virtual void processImageFiles()
     {
-        Set set = this.getRequestHashMap().keySet();
+        Set<object> set = this.getRequestHashMap().keySet();
         object[] fieldNameArray = set.toArray();
         int size = fieldNameArray.Length;
         for (int index = 0; index < size; index++) {
@@ -147,12 +147,12 @@ public class InventoryItemView : HttpStoreComponentView, RequestMapInterface
         }
     }
 
-    private void setRequestHashMap(HashMap requestHashMap)
+    private void setRequestHashMap(HashMap<object, object> requestHashMap)
     {
         this.requestHashMap = requestHashMap;
     }
 
-    public virtual HashMap getRequestHashMap()
+    public virtual HashMap<object, object> getRequestHashMap()
     {
         return this.requestHashMap;
     }

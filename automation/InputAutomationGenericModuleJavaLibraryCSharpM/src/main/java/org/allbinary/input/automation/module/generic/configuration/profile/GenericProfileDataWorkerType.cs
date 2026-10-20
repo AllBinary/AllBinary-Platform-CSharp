@@ -28,7 +28,7 @@ namespace org.allbinary.input.automation.module.generic.configuration.profile;
 
 public class GenericProfileDataWorkerType : GenericProfileDataWorkerTypeInterface
 {
-    private static HashMap hashMap = StdUtil.getInstance().createHashMap();
+    private static HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
     public static GenericProfileDataWorkerType SAVED_CAPTURE = SavedCaptureGenericProfileDataWorkerType.SAVED_CAPTURE;
     public static GenericProfileDataWorkerType SCREEN_CAPTURE = new GenericProfileDataWorkerType("Screen " + InputImageType.CAPTURE.getName());
     public static GenericProfileDataWorkerType COMPARISON = new GenericProfileDataWorkerType(InputImageType.COMPARISON.getName());

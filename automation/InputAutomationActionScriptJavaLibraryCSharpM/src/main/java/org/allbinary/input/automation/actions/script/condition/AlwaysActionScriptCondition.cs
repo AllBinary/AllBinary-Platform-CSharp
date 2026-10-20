@@ -81,9 +81,9 @@ public class AlwaysActionScriptCondition : BasicProfileActionScriptCondition, Al
         this.alwaysActionScriptConditionJPanel.getAlwaysActionJDialog().setVisible(true);
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(AlwaysActionScriptConditionData.IS_ON, (this.isIsOn()).ToString());
         this.logUtil.putF("HashMap: " + hashMap.ToString(), this, "toHashMap()");
         return hashMap;

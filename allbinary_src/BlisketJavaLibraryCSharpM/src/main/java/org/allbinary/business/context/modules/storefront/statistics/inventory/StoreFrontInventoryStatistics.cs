@@ -58,9 +58,9 @@ public class StoreFrontInventoryStatistics : StoreFrontInventoryStatisticsInterf
         return this.totalInventorySaleValueMoney;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(StoreFrontInventoryStatisticsData.getInstance().NUMBEROFITEMS, this.getNumber().ToString());
         hashMap.put(StoreFrontInventoryStatisticsData.getInstance().TOTALVALUE, this.getTotal().ToString());
         return hashMap;

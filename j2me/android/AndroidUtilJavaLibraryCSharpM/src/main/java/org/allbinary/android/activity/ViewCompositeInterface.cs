@@ -26,7 +26,7 @@ public interface ViewCompositeInterface
 
     View getView();
 
-    void runOnUiThread(Runnable action);
+    void runOnUiThread(global::java.lang.Runnable action);
 
 }
 

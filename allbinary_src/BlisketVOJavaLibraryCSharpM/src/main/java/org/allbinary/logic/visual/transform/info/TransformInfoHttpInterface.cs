@@ -28,7 +28,7 @@ public interface TransformInfoHttpInterface : TransformInfoInterface
 
     PageContext getPageContext();
 
-    HashMap getPropertiesHashMap();
+    HashMap<object, object> getPropertiesHashMap();
 
 }
 

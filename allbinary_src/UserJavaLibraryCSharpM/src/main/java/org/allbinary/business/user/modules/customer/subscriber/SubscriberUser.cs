@@ -32,7 +32,7 @@ public class SubscriberUser : User
         this.subscription = new Subscription();
     }
 
-    public SubscriberUser(HashMap userHashMap) : base(userHashMap)
+    public SubscriberUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
         // base(userHashMap) is called from the constructor declaration
         this.subscription = new Subscription();

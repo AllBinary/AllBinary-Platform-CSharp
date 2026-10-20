@@ -46,13 +46,13 @@ public class CategoryRequestHelper : ModifyTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private PageContext pageContext = null;
-    private HashMap hashMap = null;
+    private HashMap<object, object> hashMap = null;
     private HttpServletRequest request = null;
     private CategoryLoaderInterface categoryLoaderInterface = null;
     private CategoryInterface categoryInterface = null;
     private CategoryInterface childCategoryInterface = null;
     private TransformInfoInterface transformInfoInterface = null;
-    public CategoryRequestHelper(HashMap hashMap, PageContext pageContext)
+    public CategoryRequestHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         try {
             this.request = ((HttpServletRequest) pageContext.getRequest());
@@ -70,9 +70,9 @@ public class CategoryRequestHelper : ModifyTable
     public virtual void getXmlData()
     {
         try {
-            Map map = this.request.getParameterMap();
+            Map<object, object> map = this.request.getParameterMap();
             CategoryData categoryData = CategoryData.getInstance();
-            Set keys = map.keySet();
+            Set<object> keys = map.keySet();
             object[] keyArray = keys.toArray();
             int size = keyArray.Length;
             if (size > 0) {

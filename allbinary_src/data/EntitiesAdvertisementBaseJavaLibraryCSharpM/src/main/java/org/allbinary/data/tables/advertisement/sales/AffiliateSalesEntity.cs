@@ -69,7 +69,7 @@ public class AffiliateSalesEntity : AbSqlBean, AffiliateSalesEntityInterface
         return returnStr;
     }
 
-    public virtual void update(HashMap updatedValues)
+    public virtual void update(HashMap<object, object> updatedValues)
     {
         base.updateWhere(EntryData.getInstance().ID, ((string) updatedValues.get(EntryData.getInstance().ID)), updatedValues);
     }

@@ -40,8 +40,8 @@ public class ItemView
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        HashMap hashMap = this.itemInterface.toHashMap();
-        Set keySet = hashMap.keySet();
+        HashMap<object, object> hashMap = this.itemInterface.toHashMap();
+        Set<object> keySet = hashMap.keySet();
         Node node = document.createElement(ItemData.ITEM);
         BasicItemView basicItemView = new BasicItemView(this.itemInterface, this.vector);
         node.appendChild(basicItemView.toXmlNode(document));

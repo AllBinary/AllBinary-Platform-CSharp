@@ -42,7 +42,7 @@ public class StoreTagWorkFlowFactory
     }
 
     // throws Exception, LicensingException
-    public virtual StoreWorkFlowInterface getInstance(AbeClientInformationInterface abeClientInformation, HashMap propertiesHashMap, PageContext pageContext)
+    public virtual StoreWorkFlowInterface getInstance(AbeClientInformationInterface abeClientInformation, HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         try {
             string workFlowClassName = ((string) propertiesHashMap.get(DynamicObjectData.NAME));

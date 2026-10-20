@@ -45,12 +45,12 @@ public class PageValidation : Validation, DomNodeInterface
         this.title = new TitleValidation(node);
     }
 
-    public PageValidation(HashMap hashMap)
+    public PageValidation(HashMap<object, object> hashMap)
     {
         this.getFormData(hashMap);
     }
 
-    public virtual void getFormData(HashMap hashMap)
+    public virtual void getFormData(HashMap<object, object> hashMap)
     {
         this.title = new TitleValidation(hashMap);
     }

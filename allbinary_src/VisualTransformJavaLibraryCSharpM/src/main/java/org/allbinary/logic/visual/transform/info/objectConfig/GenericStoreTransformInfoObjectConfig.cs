@@ -77,15 +77,15 @@ public class GenericStoreTransformInfoObjectConfig : TransformInfoObjectConfig
         }
         TransformInfoHttp transformInfoHttpStoreInterface = ((TransformInfoHttp) this.getTransformInfoInterface());
         string objectConfigDocumentString = XmlDocumentHelper.toString(objectConfigDocument);
-        HashMap replaceHashMap = this.createReplaceHashMap(transformInfoHttpStoreInterface, objectConfigDocumentString);
+        HashMap<object, object> replaceHashMap = this.createReplaceHashMap(transformInfoHttpStoreInterface, objectConfigDocumentString);
         return this.generate(objectConfigDocumentString, replaceHashMap);
     }
 
     // throws Exception
-    private HashMap createReplaceHashMap(TransformInfoHttp transformInfoHttpStoreInterface, string objectConfigDocumentString)
+    private HashMap<object, object> createReplaceHashMap(TransformInfoHttp transformInfoHttpStoreInterface, string objectConfigDocumentString)
     {
         string storeName = transformInfoHttpStoreInterface.getStoreName();
-        HashMap hashMap = this.createHashMap(transformInfoHttpStoreInterface, objectConfigDocumentString);
+        HashMap<object, object> hashMap = this.createHashMap(transformInfoHttpStoreInterface, objectConfigDocumentString);
         TransformInfoObjectConfigData transformInfoObjectConfigData = TransformInfoObjectConfigData.getInstance();
         hashMap.put(transformInfoObjectConfigData.VARKEY + StoreFrontData.getInstance().NAME, storeName);
         string pageName = TransformTemplateCustomizerUtil.getInstance().getPageNameHack(this.getTransformInfoInterface().getName(), storeName);
@@ -94,11 +94,11 @@ public class GenericStoreTransformInfoObjectConfig : TransformInfoObjectConfig
     }
 
     // throws Exception
-    private HashMap createHashMap(TransformInfoHttp transformInfoHttpStoreInterface, string objectConfigDocumentString)
+    private HashMap<object, object> createHashMap(TransformInfoHttp transformInfoHttpStoreInterface, string objectConfigDocumentString)
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         string storeName = transformInfoHttpStoreInterface.getStoreName();
-        HashMap propertiesHashMap = transformInfoHttpStoreInterface.getPropertiesHashMap();
+        HashMap<object, object> propertiesHashMap = transformInfoHttpStoreInterface.getPropertiesHashMap();
         string templateNameOverride = StringUtil.getInstance().getNonNull(((string) propertiesHashMap.get(TransformInfoData.getInstance().PARTIAL)));
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("TemplateNameOverride: " + templateNameOverride, this, "generate()");
@@ -118,7 +118,7 @@ public class GenericStoreTransformInfoObjectConfig : TransformInfoObjectConfig
     }
 
     // throws Exception
-    private Document generate(string objectConfigDocumentString, HashMap hashMap)
+    private Document generate(string objectConfigDocumentString, HashMap<object, object> hashMap)
     {
         Replace replace = new Replace(hashMap);
         Document newObjectConfigDocument = DomDocumentHelper.create(replace.all(objectConfigDocumentString));

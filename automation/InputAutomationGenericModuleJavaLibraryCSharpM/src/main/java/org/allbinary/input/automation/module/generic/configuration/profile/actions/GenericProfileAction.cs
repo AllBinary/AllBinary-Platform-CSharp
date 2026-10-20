@@ -62,9 +62,9 @@ public class GenericProfileAction : DomNodeInterface
         this.name = name;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(GenericProfileActionData.NAME, this.name);
         this.logUtil.putF("HashMap: " + hashMap.ToString(), this, "toHashMap()");
         return hashMap;

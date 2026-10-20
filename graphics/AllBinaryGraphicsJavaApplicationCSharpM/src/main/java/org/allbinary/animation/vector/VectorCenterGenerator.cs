@@ -47,7 +47,7 @@ public class VectorCenterGenerator
     }
 
     // throws Exception
-    public virtual void calculate(HashMap hashMap)
+    public virtual void calculate(HashMap<object, object> hashMap)
     {
         object[] graphicItemArray = hashMap.keySet().toArray();
         int size = graphicItemArray.Length;
@@ -75,7 +75,7 @@ public class VectorCenterGenerator
     }
 
     // throws Exception
-    public virtual void transform(HashMap hashMap)
+    public virtual void transform(HashMap<object, object> hashMap)
     {
         this.calculate(hashMap);
         this.logUtil.putF(new StringMaker().append(" dx: ").appendint(this.dx).append(" dy: ").appendint(this.dy).ToString(), this, this.commonStrings.GET_INSTANCE);

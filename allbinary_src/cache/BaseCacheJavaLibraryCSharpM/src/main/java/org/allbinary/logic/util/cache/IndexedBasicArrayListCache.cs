@@ -64,27 +64,26 @@ public class IndexedBasicArrayListCache : BaseBasicArrayListCache, CacheInterfac
     }
 
     // throws Exception
-    public virtual void addObject(object anyType)
+    public virtual void addObject(object @object)
     {
-        this.list.add(anyType);
+        this.list.add(@object);
     }
 
     // throws Exception
-    public override void add(CacheableInterface cacheableInterface)
+    public virtual void add(CacheableInterface cacheableInterface)
     {
         this.list.add(cacheableInterface);
     }
 
     // throws Exception
-    public override void addArray(CacheableInterface[] cacheableInterfaces)
+    public virtual void addArray(CacheableInterface[] cacheableInterfaces)
     {
         throw new Exception("No Imple");
     }
 
-    public override void clear()
+    public virtual void clear()
     {
         this.index = 0;
     }
 
 }
-

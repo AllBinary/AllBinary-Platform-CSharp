@@ -105,9 +105,9 @@ public class StoreThemeCategory : Category, StoreThemeCategoryInterface
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap categoryHashMap = base.toHashMap();
+        HashMap<object, object> categoryHashMap = base.toHashMap();
         categoryHashMap.put(ThemesData.getInstance().NAME, this.themeVector);
         return categoryHashMap;
     }

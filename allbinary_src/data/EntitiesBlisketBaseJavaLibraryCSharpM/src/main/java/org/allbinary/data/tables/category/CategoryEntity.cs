@@ -99,7 +99,7 @@ public class CategoryEntity : AbSqlBean, CategoryEntityInterface
         return base.createTable(this.createTableStatement());
     }
 
-    public virtual void update(HashMap updatedValues)
+    public virtual void update(HashMap<object, object> updatedValues)
     {
         base.updateWhere(CategoryData.getInstance().NAME, ((string) updatedValues.get(CategoryData.getInstance().NAME)), updatedValues);
     }

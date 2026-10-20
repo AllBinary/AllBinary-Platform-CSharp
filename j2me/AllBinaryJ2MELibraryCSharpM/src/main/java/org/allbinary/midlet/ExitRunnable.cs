@@ -23,7 +23,7 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 
 namespace org.allbinary.midlet;
 
-public class ExitRunnable : Runnable
+public class ExitRunnable : global::java.lang.Runnable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();

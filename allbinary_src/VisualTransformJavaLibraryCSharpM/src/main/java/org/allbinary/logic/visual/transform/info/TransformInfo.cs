@@ -86,7 +86,7 @@ public class TransformInfo : TransformInfoInterface
     }
 
     // throws Exception
-    public virtual void @override(HashMap hashMap)
+    public virtual void @override(HashMap<object, object> hashMap)
     {
         TransformInfoData transformInfoData = TransformInfoData.getInstance();
         StringValidationUtil stringValidationUtil = StringValidationUtil.getInstance();
@@ -400,10 +400,10 @@ public class TransformInfo : TransformInfoInterface
         return this.dataFileName;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         TransformInfoData transformInfoData = TransformInfoData.getInstance();
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(transformInfoData.NAME, this.name);
         hashMap.put(StoreFrontData.getInstance().NAME, this.storeName);
         hashMap.put(transformInfoData.OBJECTFILENAME, this.objectFileName);

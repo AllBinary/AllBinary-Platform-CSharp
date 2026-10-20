@@ -52,7 +52,7 @@ public class InsertCustomizerValidationView : HttpStoreComponentView, Validation
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, this.commonStrings.CONSTRUCTOR);
         }
-        HashMap requestHashMap = new RequestParams(this.getPageContext()).toHashMap();
+        HashMap<object, object> requestHashMap = new RequestParams(this.getPageContext()).toHashMap();
         this.viewName = ((string) requestHashMap.get(TransformInfoData.getInstance().NAME));
     }
 
@@ -124,7 +124,7 @@ public class InsertCustomizerValidationView : HttpStoreComponentView, Validation
                         this.logUtil.putF(stringBuffer.ToString(), this, this.commonStrings.IS_VALID);
                     }
                     componentInterface.getTransformInfoInterface().setObjectConfigInterface(templateViewObjectConfig);
-                    HashMap updatedTransformInfoHashMap = componentInterface.getTransformInfoInterface().toHashMap();
+                    HashMap<object, object> updatedTransformInfoHashMap = componentInterface.getTransformInfoInterface().toHashMap();
                     TransformInfoEntityBuilder.getInstance().update(updatedTransformInfoHashMap);
                 }
             }

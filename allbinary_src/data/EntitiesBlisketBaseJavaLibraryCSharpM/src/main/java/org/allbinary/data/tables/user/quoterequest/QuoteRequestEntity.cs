@@ -58,10 +58,10 @@ public class QuoteRequestEntity : AbSqlBean, QuoteRequestEntityInterface
     // throws Exception
     public virtual QuoteRequest get(string userName, int id)
     {
-        HashMap row = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> row = StdUtil.getInstance().createHashMap();
         row.put(UserData.USERNAME, userName);
         row.put(QuoteRequestData.getInstance().ID, (id).ToString());
-        HashMap quoteRequestHashMap = base.getRow(row);
+        HashMap<object, object> quoteRequestHashMap = base.getRow(row);
         if (quoteRequestHashMap != null) {
             return new org.allbinary.business.user.quoterequest.QuoteRequest(quoteRequestHashMap);
         } else {
@@ -127,7 +127,7 @@ public class QuoteRequestEntity : AbSqlBean, QuoteRequestEntityInterface
         return result;
     }
 
-    public virtual void update(string userName, HashMap updatedValues)
+    public virtual void update(string userName, HashMap<object, object> updatedValues)
     {
         base.updateWhere(UserData.USERNAME, userName, updatedValues);
     }

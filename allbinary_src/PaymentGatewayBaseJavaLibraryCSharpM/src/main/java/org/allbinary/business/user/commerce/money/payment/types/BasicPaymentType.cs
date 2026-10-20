@@ -49,7 +49,7 @@ public class BasicPaymentType
 
     private void init(string paymentMethod)
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         string UNDERSCORE = "_";
         hashMap.put(CommonSeps.getInstance().SPACE, UNDERSCORE);
         hashMap.put(AbPathData.getInstance().EXTENSION_SEP, UNDERSCORE);
@@ -101,9 +101,9 @@ public class BasicPaymentType
         return vector;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(PaymentGatewayData.NAME.ToString(), this.name);
         hashMap.put(PaymentGatewayData.VALUE.ToString(), this.value);
         return hashMap;

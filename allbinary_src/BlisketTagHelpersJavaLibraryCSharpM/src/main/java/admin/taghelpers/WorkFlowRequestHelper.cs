@@ -34,7 +34,7 @@ public class WorkFlowRequestHelper : ModifyTable
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly AbeClientInformationInterface abeClientInformation = ServiceClientInformationInterfaceFactory.getInstance();
     private WorkFlowInterface workFlowInterface;
-    public WorkFlowRequestHelper(HashMap hashMap, PageContext pageContext)
+    public WorkFlowRequestHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.workFlowInterface = NewWorkFlowFactory.getInstance().getInstance(this.abeClientInformation, hashMap, pageContext);
     }

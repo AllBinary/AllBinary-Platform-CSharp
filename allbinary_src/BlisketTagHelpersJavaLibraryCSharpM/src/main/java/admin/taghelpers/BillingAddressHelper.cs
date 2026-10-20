@@ -42,7 +42,7 @@ public class BillingAddressHelper : Table
     private string userName = null;
     private StreetAddress streetAddress = null;
     private readonly Portion portion;
-    public BillingAddressHelper(HashMap hashMap, PageContext pageContext)
+    public BillingAddressHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.request = ((HttpServletRequest) pageContext.getRequest());
         this.weblisketSession = new WeblisketSession(hashMap, pageContext);

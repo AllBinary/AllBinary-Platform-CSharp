@@ -32,9 +32,9 @@ public class FtpConfigurationMapping : TableMappingInterface
         this.ftpConfigurationInterface = ftpConfigurationInterface;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(FtpConfigurationData.SERVER, this.ftpConfigurationInterface.getServer());
         hashMap.put(FtpConfigurationData.USERNAME, this.ftpConfigurationInterface.getUserName());
         hashMap.put(FtpConfigurationData.PASSWORD, this.ftpConfigurationInterface.getPassword());

@@ -35,7 +35,7 @@ public class Replace
     private readonly string REPLACERS_ = "Replacers: ";
     private readonly string ALL = "all";
     private readonly string FOUND_KEY = "found key total: ";
-    private readonly HashMap hashMap;
+    private readonly HashMap<object, object> hashMap;
     public Replace(string key, string value)
     {
         this.hashMap = StdUtil.getInstance().createHashMap();
@@ -48,7 +48,7 @@ public class Replace
         this.hashMap.put(keys, values);
     }
 
-    public Replace(HashMap hashMap)
+    public Replace(HashMap<object, object> hashMap)
     {
         this.hashMap = hashMap;
     }

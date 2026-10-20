@@ -23,7 +23,7 @@ namespace org.allbinary.gui.dialog;
 public interface HashMapJDialogListenerInterface
 {
     // throws Exception
-    void onHashMap(HashMap hashMap);
+    void onHashMap(HashMap<object, object> hashMap);
 
 }
 

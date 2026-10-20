@@ -272,9 +272,9 @@ public class Category : CategoryInterface
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap categoryHashMap = this.categoryPropertiesInterface.toHashMap();
+        HashMap<object, object> categoryHashMap = this.categoryPropertiesInterface.toHashMap();
         return categoryHashMap;
     }
 

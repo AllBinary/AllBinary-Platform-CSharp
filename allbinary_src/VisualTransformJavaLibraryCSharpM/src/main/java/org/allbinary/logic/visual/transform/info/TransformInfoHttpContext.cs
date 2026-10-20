@@ -31,7 +31,7 @@ namespace org.allbinary.logic.visual.transform.info;
 public class TransformInfoHttpContext : TransformInfoHttp
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    public TransformInfoHttpContext(HashMap databaseHashMap, HashMap propertiesHashMap, PageContext pageContext) : base(databaseHashMap, propertiesHashMap, pageContext)
+    public TransformInfoHttpContext(HashMap<object, object> databaseHashMap, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(databaseHashMap, propertiesHashMap, pageContext)
     {
         // base(databaseHashMap, propertiesHashMap, pageContext) is called from the constructor declaration
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
@@ -45,7 +45,7 @@ public class TransformInfoHttpContext : TransformInfoHttp
         this.setStoreName(StringUtil.getInstance().EMPTY_STRING);
     }
 
-    public TransformInfoHttpContext(HashMap propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
+    public TransformInfoHttpContext(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
         // base(propertiesHashMap, pageContext) is called from the constructor declaration
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {

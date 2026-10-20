@@ -52,7 +52,7 @@ public interface UserEntityInterface : BasicDataTableInterface
 
     void insert(BasicArrayList values);
 
-    void update(string userName, HashMap updatedValues);
+    void update(string userName, HashMap<object, object> updatedValues);
 
 }
 

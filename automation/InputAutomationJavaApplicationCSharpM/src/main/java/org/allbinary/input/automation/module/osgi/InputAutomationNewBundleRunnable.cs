@@ -92,10 +92,10 @@ public class InputAutomationNewBundleRunnable : RunnableInterface
     }
 
     // throws Exception
-    private HashMap getAllJarSymbolicNameHashMap()
+    private HashMap<object, object> getAllJarSymbolicNameHashMap()
     {
         this.logUtil.putF(this.commonStrings.START, this, "getAllJarSymbolicNameHashMap");
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         BasicArrayList jarFileBasicArrayList = this.getJarModuleFileBasicArrayList();
         this.logUtil.putF("Jar Module Files: " + jarFileBasicArrayList, this, "getAllJarSymbolicNameHashMap");
         int size = jarFileBasicArrayList.size();
@@ -171,9 +171,9 @@ public class InputAutomationNewBundleRunnable : RunnableInterface
     {
         this.logUtil.putF(this.commonStrings.START, this, "findNewModules");
         BasicArrayList vector = new BasicArrayListD();
-        HashMap hashMap = this.getAllJarSymbolicNameHashMap();
+        HashMap<object, object> hashMap = this.getAllJarSymbolicNameHashMap();
         this.logUtil.putF("All: " + hashMap, this, "findNewModules");
-        Set set = hashMap.keySet();
+        Set<object> set = hashMap.keySet();
         object[] symbolicNameArray = set.toArray();
         int size = symbolicNameArray.Length;
         for (int index = 0; index < size; index++) {

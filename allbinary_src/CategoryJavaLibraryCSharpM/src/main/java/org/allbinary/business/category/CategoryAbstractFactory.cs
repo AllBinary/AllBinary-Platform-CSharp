@@ -113,7 +113,7 @@ public class CategoryAbstractFactory : CategoryFactoryInterface
         }
     }
 
-    public virtual CategoryInterface getInstance(CategoryInterface rootCategoryInterface, CategoryInterface parentCategoryInterface, HashMap categoryPropertiesHashMap)
+    public virtual CategoryInterface getInstance(CategoryInterface rootCategoryInterface, CategoryInterface parentCategoryInterface, HashMap<object, object> categoryPropertiesHashMap)
     {
         try {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {

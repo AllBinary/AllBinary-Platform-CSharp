@@ -93,10 +93,10 @@ public class Password
         return vector;
     }
 
-    public virtual HashMap toHashMap(string secret)
+    public virtual HashMap<object, object> toHashMap(string secret)
     {
         this.password = StringUtil.getInstance().getNonNull(this.password);
-        HashMap values = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> values = StdUtil.getInstance().createHashMap();
         int random = new Random().nextInt(SuperCrypt.KEYMAX);
         values.put(EntryData.getInstance().ENCRYPTION, random.ToString());
         values.put(UserData.SECRET, secret);

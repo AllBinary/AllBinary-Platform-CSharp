@@ -48,11 +48,11 @@ public class BasicItemView : DomNodeInterface
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
             this.logUtil.putF(this.commonStrings.START, this, "toXmlNode");
         }
-        HashMap hashMap = this.itemInterface.toHashMap();
+        HashMap<object, object> hashMap = this.itemInterface.toHashMap();
         string EMPTY_STRING = StringUtil.getInstance().EMPTY_STRING;
         hashMap.put(this.basicItemData.IMAGE, EMPTY_STRING);
         StringUtil stringUtil = StringUtil.getInstance();
-        Set keySet = hashMap.keySet();
+        Set<object> keySet = hashMap.keySet();
         Node node = document.createElement(this.basicItemData.ITEM);
         object[] nameArray = keySet.toArray();
         int size2 = nameArray.Length;

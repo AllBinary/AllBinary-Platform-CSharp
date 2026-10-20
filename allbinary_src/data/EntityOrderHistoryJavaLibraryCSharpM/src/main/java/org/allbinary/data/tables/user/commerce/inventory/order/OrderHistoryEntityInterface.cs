@@ -47,7 +47,7 @@ public interface OrderHistoryEntityInterface : BasicDataTableInterface
     OrderHistory getOrder(string id);
 
     // throws Exception
-    void update(HashMap whereHashMap, HashMap orderHashMap);
+    void update(HashMap<object, object> whereHashMap, HashMap<object, object> orderHashMap);
 
 }
 

@@ -25,7 +25,7 @@ namespace admin.taghelpers;
 public interface TagHelperFactoryInterface
 {
     // throws Exception, LicensingException
-    object getInstance(HashMap hashMap, PageContext pageContext);
+    object getInstance(HashMap<object, object> hashMap, PageContext pageContext);
 
 }
 

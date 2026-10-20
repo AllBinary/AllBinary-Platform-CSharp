@@ -33,8 +33,8 @@ public class VirtualKeyboardAPI3 : VirtualKeyboard, VirtualKeyboardEventListener
     public static int MIN_API = 3;
     private bool virtualKeyboard = false;
     private Activity activity;
-    private readonly Runnable showVirtualKeyboardRunnable;
-    private readonly Runnable hideVirtualKeyboardRunnable;
+    private readonly global::java.lang.Runnable showVirtualKeyboardRunnable;
+    private readonly global::java.lang.Runnable hideVirtualKeyboardRunnable;
     public VirtualKeyboardAPI3(Activity activity) : base()
     {
         // base() is called from the constructor declaration

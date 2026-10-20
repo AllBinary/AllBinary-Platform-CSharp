@@ -36,7 +36,7 @@ public class FileDomDataModel : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         TableMappingInterface tableMappingInterface = ((TableMappingInterface) new FileTableMapping(this.file));
-        HashMap hashMap = tableMappingInterface.toHashMap();
+        HashMap<object, object> hashMap = tableMappingInterface.toHashMap();
         return ModDomHelper.createNodeWithValueNodes(document, "file", hashMap);
     }
 

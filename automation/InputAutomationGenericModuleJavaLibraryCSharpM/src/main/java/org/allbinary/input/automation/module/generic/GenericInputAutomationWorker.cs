@@ -76,8 +76,8 @@ public class GenericInputAutomationWorker : AbstractInputAutomationWorker
             this.setFrame(((long?) keyArray[keyArray.Length - 1]));
             if (getFrame() > this.lastFrame) {
                 this.logUtil.putF("Processing new frame: " + getFrame(), this, this.PROCESS_DATA_WORKER_RESULTS);
-                HashMap hashMap = this.getGenericProfile().getGenericProfileActions().getHashMap();
-                Set set = hashMap.keySet();
+                HashMap<object, object> hashMap = this.getGenericProfile().getGenericProfileActions().getHashMap();
+                Set<object> set = hashMap.keySet();
                 this.logUtil.putF("Processing " + set.size() + "Actions", this, this.PROCESS_DATA_WORKER_RESULTS);
                 object[] actionNameArray = set.toArray();
                 int size = actionNameArray.Length;

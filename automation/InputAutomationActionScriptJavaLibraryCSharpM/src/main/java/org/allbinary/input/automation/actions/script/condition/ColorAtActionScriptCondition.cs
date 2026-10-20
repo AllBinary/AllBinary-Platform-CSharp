@@ -115,9 +115,9 @@ public class ColorAtActionScriptCondition : BasicProfileActionScriptCondition, C
         this.colorAtActionScriptConditionJPanel.getColorAtActionJDialog().setVisible(true);
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(ColorAtActionScriptConditionData.LOCATION_X, (this.getPoint().x).ToString());
         hashMap.put(ColorAtActionScriptConditionData.LOCATION_Y, (this.getPoint().y).ToString());
         hashMap.put(ColorAtActionScriptConditionData.MIN_RED, (this.getColorRangeInterface().getMinRed()).ToString());

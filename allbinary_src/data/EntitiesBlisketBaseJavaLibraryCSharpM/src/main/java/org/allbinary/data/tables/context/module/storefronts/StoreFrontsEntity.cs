@@ -71,9 +71,9 @@ public class StoreFrontsEntity : AbSqlBean, StoreFrontsEntityInterface
     // throws Exception
     public virtual StoreFront getStoreFrontInterface(string name)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(StoreFrontData.getInstance().NAME, name);
-        HashMap storeHashMap = base.getRow(keysAndValues);
+        HashMap<object, object> storeHashMap = base.getRow(keysAndValues);
         if (storeHashMap != null) {
             return new StoreFront(storeHashMap);
         } else {
@@ -87,7 +87,7 @@ public class StoreFrontsEntity : AbSqlBean, StoreFrontsEntityInterface
         return storeFrontNames;
     }
 
-    public virtual void update(HashMap updatedValues)
+    public virtual void update(HashMap<object, object> updatedValues)
     {
         base.updateWhere(StoreFrontData.getInstance().NAME, ((string) updatedValues.get(StoreFrontData.getInstance().NAME)), updatedValues);
     }

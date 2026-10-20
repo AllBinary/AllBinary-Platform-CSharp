@@ -29,7 +29,7 @@ public class AdminUser : User
         // base() is called from the constructor declaration
     }
 
-    public AdminUser(HashMap userHashMap) : base(userHashMap)
+    public AdminUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
         // base(userHashMap) is called from the constructor declaration
     }

@@ -46,7 +46,7 @@ public class CssPropertiesValidationFactory
         return propertiesVector;
     }
 
-    public static BasicArrayList getInstance(HashMap hashMap)
+    public static BasicArrayList getInstance(HashMap<object, object> hashMap)
     {
         BasicArrayList styles = new BasicArrayListD();
         return styles;

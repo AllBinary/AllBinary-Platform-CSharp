@@ -45,10 +45,10 @@ public class TransformInfoPropertiesDocument
         this.document = DomDocumentFileHelper.createDocument(xmlFile);
     }
 
-    public virtual HashMap toTransformInfoPropertiesHashMap()
+    public virtual HashMap<object, object> toTransformInfoPropertiesHashMap()
     {
         try {
-            HashMap transformInfoPropertiesHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> transformInfoPropertiesHashMap = StdUtil.getInstance().createHashMap();
             Node transformInfosNode = this.document.getElementsByTagName(TransformInfosData.getInstance().NAME).item(0);
             NodeList transformInfosChildNodeList = transformInfosNode.getChildNodes();
             BasicArrayList transformInfoNodeVector = DomSearchHelper.getAllNodes(TransformInfoData.getInstance().NAME, transformInfosChildNodeList);

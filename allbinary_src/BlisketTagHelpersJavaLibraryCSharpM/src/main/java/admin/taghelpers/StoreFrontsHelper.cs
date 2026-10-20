@@ -36,7 +36,7 @@ public class StoreFrontsHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly Portion portion;
-    public StoreFrontsHelper(HashMap hashMap, PageContext pageContext)
+    public StoreFrontsHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.portion = new Portion(hashMap);
     }

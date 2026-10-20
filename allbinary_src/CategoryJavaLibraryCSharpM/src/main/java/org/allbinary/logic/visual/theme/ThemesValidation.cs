@@ -39,7 +39,7 @@ public class ThemesValidation : Validation, DomNodeInterface
     {
     }
 
-    public ThemesValidation(HashMap hashMap)
+    public ThemesValidation(HashMap<object, object> hashMap)
     {
     }
 

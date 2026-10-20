@@ -21,7 +21,7 @@ namespace org.allbinary.android.activity;
 
 public interface SimpleProgressActivityInterface
 {
-    void runOnUiThread(Runnable action);
+    void runOnUiThread(global::java.lang.Runnable action);
 
     // throws Exception
     void onSetProgress(int value, string text);

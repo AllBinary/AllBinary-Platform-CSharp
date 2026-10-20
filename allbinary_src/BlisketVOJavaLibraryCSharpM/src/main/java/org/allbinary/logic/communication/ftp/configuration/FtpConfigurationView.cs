@@ -52,7 +52,7 @@ public class FtpConfigurationView : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         FtpConfigurationMapping ftpConfigurationMapping = new FtpConfigurationMapping(this.getFtpConfigurationInterface());
-        HashMap hashMap = ftpConfigurationMapping.toHashMap();
+        HashMap<object, object> hashMap = ftpConfigurationMapping.toHashMap();
         Node node = ModDomHelper.createNameValueNodes(document, FtpConfigurationData.NAME, hashMap);
         return node;
     }

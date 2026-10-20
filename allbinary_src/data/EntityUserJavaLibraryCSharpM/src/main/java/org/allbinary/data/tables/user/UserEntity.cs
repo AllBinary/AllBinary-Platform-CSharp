@@ -80,14 +80,14 @@ public class UserEntity : AbSqlBean, UserEntityInterface
     // throws Exception
     public virtual BasicArrayList getStoreManagers(StoreFrontInterface storeFrontInterface)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         BasicArrayList usersVector = new BasicArrayListD();
         keysAndValues.put(UserRoleData.NAME.ToString(), UserRoleFactory.getInstance().STOREMANAGER.ToString());
         keysAndValues.put(UserData.PERMISSIONS, storeFrontInterface.getName());
         BasicArrayList usersHashMapVector = base.getRows(keysAndValues);
         int size = usersHashMapVector.size();
         for (int i = 0; i < size; i++) {
-            HashMap userHashMap = ((HashMap) usersHashMapVector.get(i));
+            HashMap<object, object> userHashMap = ((HashMap<object, object>) usersHashMapVector.get(i));
             if (userHashMap != null) {
                 usersVector.add(new User(userHashMap));
             }
@@ -104,13 +104,13 @@ public class UserEntity : AbSqlBean, UserEntityInterface
     // throws Exception
     public virtual BasicArrayList getUsersWithRole(UserRole userRole)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         BasicArrayList usersVector = new BasicArrayListD();
         keysAndValues.put(UserRoleData.NAME.ToString(), userRole.ToString());
         BasicArrayList usersHashMapVector = base.getRows(keysAndValues);
         int size = usersHashMapVector.size();
         for (int index = 0; index < size; index++) {
-            HashMap userHashMap = ((HashMap) usersHashMapVector.get(index));
+            HashMap<object, object> userHashMap = ((HashMap<object, object>) usersHashMapVector.get(index));
             if (userHashMap != null) {
                 usersVector.add(new User(userHashMap));
             }
@@ -121,13 +121,13 @@ public class UserEntity : AbSqlBean, UserEntityInterface
     // throws Exception
     public virtual BasicArrayList getUsers(StoreFrontInterface storeFrontInterface)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         BasicArrayList usersVector = new BasicArrayListD();
         keysAndValues.put(StoreFrontData.getInstance().NAME, storeFrontInterface.getName());
         BasicArrayList usersHashMapVector = base.getRows(keysAndValues);
         int size = usersHashMapVector.size();
         for (int index = 0; index < size; index++) {
-            HashMap userHashMap = ((HashMap) usersHashMapVector.get(index));
+            HashMap<object, object> userHashMap = ((HashMap<object, object>) usersHashMapVector.get(index));
             if (userHashMap != null) {
                 usersVector.add(new User(userHashMap));
             }
@@ -138,9 +138,9 @@ public class UserEntity : AbSqlBean, UserEntityInterface
     // throws Exception
     public virtual UserInterface getUser(string userName)
     {
-        HashMap row = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> row = StdUtil.getInstance().createHashMap();
         row.put(UserData.USERNAME, userName);
-        HashMap userHashMap = base.getRow(row);
+        HashMap<object, object> userHashMap = base.getRow(row);
         if (userHashMap != null) {
             return CreateUserFactory.getInstance(userHashMap);
         } else {
@@ -210,7 +210,7 @@ public class UserEntity : AbSqlBean, UserEntityInterface
         }
     }
 
-    public virtual void update(string userName, HashMap updatedValues)
+    public virtual void update(string userName, HashMap<object, object> updatedValues)
     {
         base.updateWhere(UserData.USERNAME, userName, updatedValues);
     }

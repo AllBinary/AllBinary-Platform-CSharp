@@ -23,7 +23,7 @@ namespace org.allbinary.logic.visual.media;
 
 public class MediaData
 {
-    private static HashMap hashMap = StdUtil.getInstance().createHashMap();
+    private static HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
     private string name;
     private string type;
     private string extension;
@@ -79,7 +79,7 @@ public class MediaData
         return MediaDataFactory.getInstance().JPG;
     }
 
-    public static HashMap toHashMap()
+    public static HashMap<object, object> toHashMap()
     {
         return MediaData.hashMap;
     }

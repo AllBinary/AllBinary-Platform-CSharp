@@ -106,7 +106,7 @@ public class InventorySearchUtil
             int endPage = ((int) searchParams.getEndPageInt());
             int pageLength = ((int) searchParams.getLengthInt());
             int savedPagesInRange = 0;
-            HashMap columnValueHashMap = searchParams.get();
+            HashMap<object, object> columnValueHashMap = searchParams.get();
             string keyword = new Replace("-", CommonSeps.getInstance().SPACE).all(((string) columnValueHashMap.get(basicItemData.KEYWORDS)));
             if (StringValidationUtil.getInstance().isEmpty(keyword)) {
                 return null;

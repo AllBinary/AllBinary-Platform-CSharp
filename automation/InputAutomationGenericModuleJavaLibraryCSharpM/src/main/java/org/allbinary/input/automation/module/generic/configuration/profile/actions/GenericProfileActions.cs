@@ -45,7 +45,7 @@ public class GenericProfileActions : DomNodeInterface, DomDocumentMappingInterfa
     private string name = null;
     private GenericProfileActionsJPanel genericProfileActionsJPanel = null;
     private DefaultListModelHelper actionsDefaultListModelHelper = null;
-    private HashMap hashMap = null;
+    private HashMap<object, object> hashMap = null;
     public GenericProfileActions(GenericProfileActionsJPanel genericProfileActionsJPanel, string name)
     {
         this.setName(name);
@@ -72,7 +72,7 @@ public class GenericProfileActions : DomNodeInterface, DomDocumentMappingInterfa
     {
         this.setGenericProfileActionsJPanel(genericProfileActionsJPanel);
         this.actionsDefaultListModelHelper = new DefaultListModelHelper();
-        this.setHashMap(new HashMap());
+        this.setHashMap(new HashMap<object, object>());
     }
 
     // throws Exception
@@ -168,9 +168,9 @@ public class GenericProfileActions : DomNodeInterface, DomDocumentMappingInterfa
         this.save();
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         this.logUtil.putF("HashMap: " + hashMap.ToString(), this, "toHashMap()");
         return hashMap;
     }
@@ -179,7 +179,7 @@ public class GenericProfileActions : DomNodeInterface, DomDocumentMappingInterfa
     public virtual Node toXmlNode(Document document)
     {
         Node node = document.createElement(GenericProfileActionsData.NAME);
-        Set set = this.getHashMap().keySet();
+        Set<object> set = this.getHashMap().keySet();
         object[] actionNameArray = set.toArray();
         int size = actionNameArray.Length;
         for (int index = 0; index < size; index++) {
@@ -209,12 +209,12 @@ public class GenericProfileActions : DomNodeInterface, DomDocumentMappingInterfa
         this.genericProfileActionsJPanel = genericProfileActionsJPanel;
     }
 
-    public virtual HashMap getHashMap()
+    public virtual HashMap<object, object> getHashMap()
     {
         return this.hashMap;
     }
 
-    public virtual void setHashMap(HashMap hashMap)
+    public virtual void setHashMap(HashMap<object, object> hashMap)
     {
         this.hashMap = hashMap;
     }

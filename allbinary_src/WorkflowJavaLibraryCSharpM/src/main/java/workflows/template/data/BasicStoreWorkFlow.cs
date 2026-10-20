@@ -25,7 +25,7 @@ namespace workflows.template.data;
 
 public class BasicStoreWorkFlow : BasicWorkFlow, StoreWorkFlowInterface
 {
-    public BasicStoreWorkFlow(HashMap propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
+    public BasicStoreWorkFlow(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
         // base(propertiesHashMap, pageContext) is called from the constructor declaration
     }

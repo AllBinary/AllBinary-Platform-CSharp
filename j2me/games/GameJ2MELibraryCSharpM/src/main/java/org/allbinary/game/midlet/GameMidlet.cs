@@ -628,7 +628,7 @@ public class GameMidlet : ProgressMidlet, CommandListener
         ABHashtable<object, object> hashtable = StdUtil.getInstance().createHashtable();
         if (this.allbinaryGameCanvasRunnableInterface != NullGameCanvasRunnable.NULL_GAME_CANVAS_RUNNABLE) {
             ABHashtable<object, object> currentHashtable = this.allbinaryGameCanvasRunnableInterface.getCurrentStateHashtable();
-            Enumeration enumeration = currentHashtable.keys();
+            Enumeration<object> enumeration = currentHashtable.keys();
             object key = null;
             while (this.enumerationUtil.hasMoreElements(enumeration)) {
                 key = this.enumerationUtil.nextElement(enumeration);

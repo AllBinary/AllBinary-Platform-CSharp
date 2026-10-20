@@ -34,7 +34,7 @@ public class JvmStatisticsView : JvmStatisticsMapping, DomNodeInterface
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        HashMap hashMap = this.toHashMap();
+        HashMap<object, object> hashMap = this.toHashMap();
         Node node = ModDomHelper.createNameValueNodes(document, JvmStatisticsData.NAME, hashMap);
         return node;
     }

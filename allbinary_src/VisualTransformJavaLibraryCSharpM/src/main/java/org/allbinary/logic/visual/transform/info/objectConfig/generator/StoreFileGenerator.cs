@@ -62,7 +62,7 @@ public class StoreFileGenerator : TransformInfoObjectConfigGenerator
         if (stringValidationUtil.isEmpty(fileName)) {
             TransformInfoHttpStoreInterface transformInfoHttpStoreInterface = ((TransformInfoHttpStoreInterface) transformInfoInterface);
             fileName = transformInfoInterface.getName().substring(transformInfoHttpStoreInterface.getStoreName().length() + 1);
-            HashMap outputMappingHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> outputMappingHashMap = StdUtil.getInstance().createHashMap();
             outputMappingHashMap.put(TransformInfosData.getInstance().PREVIEW, "Preview");
             outputMappingHashMap.put(TransformInfosData.getInstance().SMALL_PREVIEW, "SmallPreview");
             outputMappingHashMap.put(CommonSeps.getInstance().SPACE, StringUtil.getInstance().EMPTY_STRING);

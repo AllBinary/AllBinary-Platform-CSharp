@@ -96,7 +96,7 @@ public class ThreadPool
         }
     }
 
-    public virtual void runTask(Runnable task)
+    public virtual void runTask(global::java.lang.Runnable task)
     {
         lock (this) {
             if (!this.isAlive) {
@@ -110,7 +110,7 @@ public class ThreadPool
     }
 
     // throws InterruptedException
-    protected virtual Runnable getTask()
+    protected virtual global::java.lang.Runnable getTask()
     {
         lock (this) {
             while (this.taskQueue.size() == 0) {
@@ -119,7 +119,7 @@ public class ThreadPool
                 }
                 System.Threading.Monitor.Wait(this);
             }
-            Runnable runnable = ((Runnable) this.taskQueue.removeAt(0));
+            global::java.lang.Runnable runnable = ((global::java.lang.Runnable) this.taskQueue.removeAt(0));
             return runnable;
         }
     }
@@ -178,11 +178,11 @@ public class ThreadPool
         }
     }
 
-    protected virtual void startTask(Runnable task)
+    protected virtual void startTask(global::java.lang.Runnable task)
     {
     }
 
-    protected virtual void completedTask(Runnable task)
+    protected virtual void completedTask(global::java.lang.Runnable task)
     {
     }
 

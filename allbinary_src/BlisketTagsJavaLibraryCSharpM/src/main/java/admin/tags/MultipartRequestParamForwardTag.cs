@@ -56,7 +56,7 @@ public class MultipartRequestParamForwardTag : CustomTagSupport
         try {
             HelperTag parentTag = ((HelperTag) this.getParent());
             ParentInventoryTagHelper.getInstance().isValid(this, parentTag);
-            HashMap hashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
             hashMap.put(AbTagData.PARENT, parentTag);
             MultipartRequestParamForwardHelper multipartRequestParamForwardHelper = new MultipartRequestParamForwardHelper(parentTag, this.page, this.command, this.paramVector, this.pageContext);
             multipartRequestParamForwardHelper.forward();

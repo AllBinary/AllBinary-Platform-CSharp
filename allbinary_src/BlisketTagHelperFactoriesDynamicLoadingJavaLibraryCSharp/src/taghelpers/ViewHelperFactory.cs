@@ -33,7 +33,7 @@ public class ViewHelperFactory : TagHelperFactoryInterface
     }
 
     // throws Exception, LicensingException
-    public virtual object getInstance(HashMap propertiesHashMap, PageContext pageContext)
+    public virtual object getInstance(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         return HelperFactory.getInstance(FACTORYNAME, CLASSNAME, propertiesHashMap, pageContext);
     }

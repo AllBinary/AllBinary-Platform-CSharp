@@ -24,7 +24,7 @@ namespace org.allbinary.logic.visual.transform.info;
 public interface TransformInfoFactoryInterface
 {
     // throws Exception
-    TransformInfoInterface getInstance(HashMap databaseHashMap, HashMap propertiesHashMap, PageContext pageContext);
+    TransformInfoInterface getInstance(HashMap<object, object> databaseHashMap, HashMap<object, object> propertiesHashMap, PageContext pageContext);
 
 }
 

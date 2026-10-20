@@ -34,7 +34,7 @@ public class TransformInfoHttpStoreFactory : TransformInfoFactoryInterface
     }
 
     // throws Exception
-    public virtual TransformInfoInterface getInstance(HashMap databaseHashMap, HashMap propertiesHashMap, PageContext pageContext)
+    public virtual TransformInfoInterface getInstance(HashMap<object, object> databaseHashMap, HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         return new TransformInfoHttpStore(databaseHashMap, propertiesHashMap, pageContext);
     }

@@ -37,7 +37,7 @@ public class NullKeyInputViewComposite : KeyInputViewCompositeInterface
         throw new SystemException();
     }
 
-    public virtual void runOnUiThread(Runnable action)
+    public virtual void runOnUiThread(global::java.lang.Runnable action)
     {
     }
 

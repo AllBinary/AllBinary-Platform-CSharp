@@ -80,11 +80,11 @@ public class InventoryEntity : AbSqlBean, InventoryEntityInterface
             this.logUtil.putF("Getting Items For: " + storeFrontInterface.getName(), this, "getItems");
         }
         BasicArrayList itemVector = new BasicArrayListD();
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         BasicArrayList itemHashMapVector = base.getRows(keysAndValues);
         int size = itemHashMapVector.size();
         for (int i = 0; i < size; i++) {
-            HashMap itemHashMap = ((HashMap) itemHashMapVector.get(i));
+            HashMap<object, object> itemHashMap = ((HashMap<object, object>) itemHashMapVector.get(i));
             if (itemHashMap != null) {
                 string category = ((string) itemHashMap.get(basicItemData.CATEGORY));
                 if (!StringValidationUtil.getInstance().isEmpty(category) && category.StartsWith(storeFrontInterface.getCategoryPath())) {
@@ -98,9 +98,9 @@ public class InventoryEntity : AbSqlBean, InventoryEntityInterface
     // throws MoneyException
     public virtual ItemInterface getItem(string id)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(basicItemData.ID, id);
-        HashMap itemHashMap = base.getRow(keysAndValues);
+        HashMap<object, object> itemHashMap = base.getRow(keysAndValues);
         if (itemHashMap != null) {
             return new BasicItem(itemHashMap);
         } else {
@@ -188,7 +188,7 @@ public class InventoryEntity : AbSqlBean, InventoryEntityInterface
         return base.createTable(this.createTableStatement());
     }
 
-    public virtual void update(HashMap updatedValues)
+    public virtual void update(HashMap<object, object> updatedValues)
     {
         base.updateWhere(basicItemData.ID, ((string) updatedValues.get(basicItemData.ID)), updatedValues);
     }

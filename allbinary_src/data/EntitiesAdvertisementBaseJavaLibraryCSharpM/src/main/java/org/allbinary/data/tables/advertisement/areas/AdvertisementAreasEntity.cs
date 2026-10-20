@@ -60,13 +60,13 @@ public class AdvertisementAreasEntity : AbSqlBean, AdvertisementAreasEntityInter
     // throws Exception
     public virtual BasicArrayList get(string storeName)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(StoreFrontData.getInstance().NAME, storeName);
         BasicArrayList hashMapVector = base.getRows(keysAndValues);
         BasicArrayList vector = new BasicArrayListD();
         int size = hashMapVector.size();
         for (int index = 0; index < size; index++) {
-            HashMap hashMap = ((HashMap) hashMapVector.get(index));
+            HashMap<object, object> hashMap = ((HashMap<object, object>) hashMapVector.get(index));
             if (hashMap != null) {
                 vector.add(((AdvertisementAreaInterface) new AdvertisementArea(hashMap)));
             }
@@ -77,10 +77,10 @@ public class AdvertisementAreasEntity : AbSqlBean, AdvertisementAreasEntityInter
     // throws Exception
     public virtual AdvertisementAreaInterface get(string storeName, string advertisementAreaName)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(StoreFrontData.getInstance().NAME, storeName);
         keysAndValues.put(AdvertisementAreaData.getInstance().NAME, advertisementAreaName);
-        HashMap hashMap = base.getRow(keysAndValues);
+        HashMap<object, object> hashMap = base.getRow(keysAndValues);
         if (hashMap != null) {
             return ((AdvertisementAreaInterface) new AdvertisementArea(hashMap));
         } else {
@@ -105,7 +105,7 @@ public class AdvertisementAreasEntity : AbSqlBean, AdvertisementAreasEntityInter
         return returnStr;
     }
 
-    public virtual void update(HashMap updatedValues)
+    public virtual void update(HashMap<object, object> updatedValues)
     {
         base.updateWhere(AdvertisementAreaData.getInstance().NAME, ((string) updatedValues.get(AdvertisementAreaData.getInstance().NAME)), updatedValues);
     }

@@ -38,7 +38,7 @@ public class EmailServerConfiguration : EmailServerConfigurationInterface
         this.setSmtpServer(StringUtil.getInstance().EMPTY_STRING);
     }
 
-    public EmailServerConfiguration(HashMap hashMap)
+    public EmailServerConfiguration(HashMap<object, object> hashMap)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             CommonStrings commonStrings = CommonStrings.getInstance();

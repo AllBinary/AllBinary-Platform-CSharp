@@ -48,12 +48,12 @@ public class AuthenticationHelper : TagHelper
     private UserRole role = null;
     private string timeout = null;
     private int? attemptsInteger = null;
-    public AuthenticationHelper(HashMap hashMap, PageContext pageContext) : this(hashMap, ((HttpServletRequest) pageContext.getRequest()))
+    public AuthenticationHelper(HashMap<object, object> hashMap, PageContext pageContext) : this(hashMap, ((HttpServletRequest) pageContext.getRequest()))
     {
         // this(hashMap, ((HttpServletRequest) pageContext.getRequest())) is called from the constructor declaration
     }
 
-    public AuthenticationHelper(HashMap hashMap, HttpServletRequest httpServletRequest)
+    public AuthenticationHelper(HashMap<object, object> hashMap, HttpServletRequest httpServletRequest)
     {
         this.weblisketSession = new WeblisketSession(hashMap, httpServletRequest);
         this.getFormData();

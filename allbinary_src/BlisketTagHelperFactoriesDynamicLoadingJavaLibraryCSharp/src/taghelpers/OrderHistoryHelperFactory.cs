@@ -32,7 +32,7 @@ public class OrderHistoryHelperFactory
     }
 
     // throws LicensingException
-    public static object getInstance(HashMap hashMap, PageContext pageContext)
+    public static object getInstance(HashMap<object, object> hashMap, PageContext pageContext)
     {
         return HelperFactory.getInstance(FACTORYNAME, CLASSNAME, hashMap, pageContext);
     }

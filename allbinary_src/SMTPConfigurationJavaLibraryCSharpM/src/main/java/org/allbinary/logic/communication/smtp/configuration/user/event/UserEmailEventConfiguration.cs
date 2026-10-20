@@ -36,7 +36,7 @@ public class UserEmailEventConfiguration : UserEmailEventConfigurationInterface
         }
     }
 
-    public UserEmailEventConfiguration(HashMap hashMap)
+    public UserEmailEventConfiguration(HashMap<object, object> hashMap)
     {
         this.setName(((string) hashMap.get(UserEmailEventConfigurationData.NAME)));
         this.setEventListenerClassPath(((string) hashMap.get(UserEmailEventConfigurationData.LISTENER_CLASSPATH)));

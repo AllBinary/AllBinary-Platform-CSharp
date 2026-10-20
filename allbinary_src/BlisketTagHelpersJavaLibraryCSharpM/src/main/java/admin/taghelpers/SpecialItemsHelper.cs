@@ -29,7 +29,7 @@ public class SpecialItemsHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly Portion portion;
-    public SpecialItemsHelper(HashMap hashMap, PageContext pageContext)
+    public SpecialItemsHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.portion = new Portion(hashMap);
     }

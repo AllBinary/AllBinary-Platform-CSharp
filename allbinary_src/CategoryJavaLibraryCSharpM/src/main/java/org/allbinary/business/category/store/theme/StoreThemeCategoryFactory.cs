@@ -139,7 +139,7 @@ public class StoreThemeCategoryFactory : CategoryFactoryInterface
         }
     }
 
-    public virtual CategoryInterface getInstance(HashMap categoryPropertiesHashMap, int level)
+    public virtual CategoryInterface getInstance(HashMap<object, object> categoryPropertiesHashMap, int level)
     {
         try {
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(categoryPropertiesHashMap));
@@ -152,7 +152,7 @@ public class StoreThemeCategoryFactory : CategoryFactoryInterface
         }
     }
 
-    public virtual CategoryInterface getInstance(CategoryInterface rootCategoryInterface, CategoryInterface parentCategoryInterface, HashMap categoryPropertiesHashMap)
+    public virtual CategoryInterface getInstance(CategoryInterface rootCategoryInterface, CategoryInterface parentCategoryInterface, HashMap<object, object> categoryPropertiesHashMap)
     {
         try {
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(categoryPropertiesHashMap));

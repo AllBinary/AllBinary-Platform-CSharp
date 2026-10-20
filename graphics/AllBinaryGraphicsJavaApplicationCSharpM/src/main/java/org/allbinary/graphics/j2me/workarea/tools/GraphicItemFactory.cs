@@ -32,7 +32,7 @@ public class GraphicItemFactory
         return GraphicItemFactory.instance;
     }
 
-    private readonly HashMap graphicItems;
+    private readonly HashMap<object, object> graphicItems;
     private readonly GraphicsItemInterfaceFactoryInterface DEFAULT = new SelectionToolFactory();
     private GraphicItemFactory()
     {
@@ -50,10 +50,10 @@ public class GraphicItemFactory
     }
 
     // throws Exception
-    public virtual HashMap getInstance(BasicArrayList graphicItemNodeList)
+    public virtual HashMap<object, object> getInstance(BasicArrayList graphicItemNodeList)
     {
         int numberOfItems = graphicItemNodeList.size();
-        HashMap graphicItemHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> graphicItemHashMap = StdUtil.getInstance().createHashMap();
         if (LOGGING.contains(LOGGING.MENUEVENT)) {
         }
         for (int index = 0; index < numberOfItems; index++) {

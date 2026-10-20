@@ -82,7 +82,7 @@ public class PageValidationView : PageView, ValidationComponentInterface
                     stringBuffer.append(viewNameOfViewToBeModified);
                     this.logUtil.putF(stringBuffer.ToString(), this, "insert()");
                 }
-                HashMap hashMap = StdUtil.getInstance().createHashMap();
+                HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
                 string title = specifiedTransformInfoInterface.getName().substring(this.getTransformInfoInterface().getStoreName().length());
                 if (string.CompareOrdinal(title, "index") == 0) {
                     hashMap.put(TitleData.getInstance().TEXT, this.getTransformInfoInterface().getStoreName() + " - Home Page");
@@ -131,7 +131,7 @@ public class PageValidationView : PageView, ValidationComponentInterface
                 TransformInfo transformInfoInterface = ((TransformInfo) allViewsToBeModifiedVector.get(index));
                 string viewNameOfViewToBeModified = transformInfoInterface.getName();
                 TransformInfoInterface specifiedTransformInfoInterface = transformInfoEntityInterface.get(viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap(), httpTransformInfoInterface.getPageContext());
-                HashMap hashMap = StdUtil.getInstance().createHashMap();
+                HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
                 string title = specifiedTransformInfoInterface.getName().substring(this.getTransformInfoInterface().getStoreName().length());
                 if (string.CompareOrdinal(title, "index") == 0) {
                     hashMap.put(TitleData.getInstance().TEXT, this.getTransformInfoInterface().getStoreName() + " - Home Page");

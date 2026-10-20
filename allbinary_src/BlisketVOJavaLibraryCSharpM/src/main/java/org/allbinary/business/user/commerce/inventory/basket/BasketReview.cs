@@ -90,16 +90,16 @@ public class BasketReview
         return this.items.size();
     }
 
-    public virtual Set getIds()
+    public virtual Set<object> getIds()
     {
-        HashSet idSet = new HashSet();
+        HashSet<object> idSet = new HashSet<object>();
         object[] itemArray = this.items.toArray();
         int size = itemArray.Length;
         for (int index = 0; index < size; index++) {
             Item item = ((Item) itemArray[index]);
             idSet.add(item.getId());
         }
-        return ((Set) idSet);
+        return ((Set<object>) idSet);
     }
 
     public virtual int? getNumberOf(string id)

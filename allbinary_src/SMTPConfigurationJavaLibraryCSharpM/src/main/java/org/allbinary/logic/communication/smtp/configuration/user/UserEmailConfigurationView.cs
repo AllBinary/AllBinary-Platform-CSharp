@@ -62,7 +62,7 @@ public class UserEmailConfigurationView : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         UserEmailConfigurationMapping emailConfigurationMapping = new UserEmailConfigurationMapping(this.userEmailConfigurationInterface);
-        HashMap hashMap = emailConfigurationMapping.toHashMap();
+        HashMap<object, object> hashMap = emailConfigurationMapping.toHashMap();
         Node node = ModDomHelper.createNameValueNodes(document, UserEmailConfigurationData.NAME, hashMap);
         UserEmailConfigurationInterface userEmailConfigurationInterface = this.getEmailConfigurationInterface();
         UserEmailEventsConfigurationInterface userEmailEventsConfigurationInterface = userEmailConfigurationInterface.getUserEmailEventsConfigurationInterface();

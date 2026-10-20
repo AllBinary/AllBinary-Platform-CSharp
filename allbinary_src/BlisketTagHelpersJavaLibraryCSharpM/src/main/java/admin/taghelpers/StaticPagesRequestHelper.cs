@@ -55,7 +55,7 @@ public class StaticPagesRequestHelper : AbContext, TagHelperInterface
     private string storeName = null;
     private SearchParams searchParams = null;
     private string xslFile;
-    public StaticPagesRequestHelper(HashMap propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
+    public StaticPagesRequestHelper(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
         // base(propertiesHashMap, pageContext) is called from the constructor declaration
         this.request = ((HttpServletRequest) pageContext.getRequest());

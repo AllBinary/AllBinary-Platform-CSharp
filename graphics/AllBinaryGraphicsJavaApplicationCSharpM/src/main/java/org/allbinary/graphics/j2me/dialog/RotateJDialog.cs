@@ -28,7 +28,7 @@ namespace org.allbinary.graphics.j2me.dialog;
 public class RotateJDialog : javax.swing.JDialog
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private HashMap hashMap = StdUtil.getInstance().createHashMap();
+    private HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
     public RotateJDialog(java.awt.Frame parent, bool modal) : base(parent, modal)
     {
         // base(parent, modal) is called from the constructor declaration

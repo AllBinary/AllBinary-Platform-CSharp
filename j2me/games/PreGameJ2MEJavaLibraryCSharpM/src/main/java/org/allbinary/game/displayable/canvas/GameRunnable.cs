@@ -20,7 +20,7 @@ using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingl
 
 namespace org.allbinary.game.displayable.canvas;
 
-public class GameRunnable : Runnable
+public class GameRunnable : global::java.lang.Runnable
 {
     public readonly int WAIT = 240;
     public readonly int FAST = 60;

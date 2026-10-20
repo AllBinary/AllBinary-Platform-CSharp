@@ -32,9 +32,9 @@ public class UserEmailConfigurationMapping : TableMappingInterface
         this.userEmailConfigurationInterface = userEmailConfigurationInterface;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         return hashMap;
     }
 

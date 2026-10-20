@@ -65,7 +65,7 @@ public class TransformTemplateCustomizerUtil
     {
         string SPACE = CommonSeps.getInstance().SPACE;
         string[] ONE_EMPTY_STRING_ARRAY = StringUtil.getInstance().ONE_EMPTY_STRING_ARRAY;
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(new string[] { viewName + SPACE }, ONE_EMPTY_STRING_ARRAY);
         hashMap.put(new string[] { storeName + SPACE }, ONE_EMPTY_STRING_ARRAY);
         hashMap.put(new string[] { this.CUSTOMIZER_NAME }, ONE_EMPTY_STRING_ARRAY);

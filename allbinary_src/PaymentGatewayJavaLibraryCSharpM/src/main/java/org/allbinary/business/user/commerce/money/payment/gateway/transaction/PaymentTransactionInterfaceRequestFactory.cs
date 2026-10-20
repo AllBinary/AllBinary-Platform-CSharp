@@ -69,7 +69,7 @@ public class PaymentTransactionInterfaceRequestFactory
             if (command != null && string.CompareOrdinal(command, org.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR) == 0) {
                 return this.generateFromTestData(transformInfoInterface);
             } else {
-                HashMap propertiesHashMap = httpTransformInfoInterface.getPropertiesHashMap();
+                HashMap<object, object> propertiesHashMap = httpTransformInfoInterface.getPropertiesHashMap();
                 WeblisketSession weblisketSession = new WeblisketSession(propertiesHashMap, pageContext);
                 StoreFrontInterface storeFrontInterface = StoreFrontFactory.getInstance(weblisketSession.getStoreName());
                 OrderInterface order = weblisketSession.getOrder();
@@ -99,7 +99,7 @@ public class PaymentTransactionInterfaceRequestFactory
     {
         try {
             TransformInfoHttpInterface httpTransformInfoInterface = ((TransformInfoHttpInterface) transformInfoInterface);
-            HashMap propertiesHashMap = httpTransformInfoInterface.getPropertiesHashMap();
+            HashMap<object, object> propertiesHashMap = httpTransformInfoInterface.getPropertiesHashMap();
             PageContext pageContext = httpTransformInfoInterface.getPageContext();
             WeblisketSession weblisketSession = new WeblisketSession(propertiesHashMap, pageContext);
             StoreFrontInterface storeFrontInterface = StoreFrontFactory.getInstance(weblisketSession.getStoreName());

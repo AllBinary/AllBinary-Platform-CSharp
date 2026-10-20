@@ -41,7 +41,7 @@ public class OrderHistoryRequestHelper : TagHelper
     private string id = null;
     private string groupId = null;
     private string status = null;
-    public OrderHistoryRequestHelper(HashMap hashMap, PageContext pageContext)
+    public OrderHistoryRequestHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.request = ((HttpServletRequest) pageContext.getRequest());
         this.getFormData();

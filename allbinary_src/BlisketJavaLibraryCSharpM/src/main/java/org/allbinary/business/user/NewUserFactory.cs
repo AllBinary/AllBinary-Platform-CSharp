@@ -43,17 +43,17 @@ public class NewUserFactory
     {
         TransformInfoHttpInterface httpTransformInfoInterface = ((TransformInfoHttpInterface) transformInfoInterface);
         HttpServletRequest httpServletRequest = ((HttpServletRequest) httpTransformInfoInterface.getPageContext().getRequest());
-        HashMap hashMap = new RequestParams(httpServletRequest).toHashMap();
+        HashMap<object, object> hashMap = new RequestParams(httpServletRequest).toHashMap();
         string role = ((string) httpTransformInfoInterface.getPropertiesHashMap().get(UserRoleData.NAME.ToString()));
         hashMap.put(UserRoleData.NAME.ToString(), role);
         return CreateUserFactory.getInstance(hashMap);
     }
 
     // throws Exception
-    public static UserInterface getInstance(HttpServletRequest httpServletRequest, HashMap propertiesHashMap)
+    public static UserInterface getInstance(HttpServletRequest httpServletRequest, HashMap<object, object> propertiesHashMap)
     {
         if (propertiesHashMap != null) {
-            HashMap requestHashMap = new RequestParams(httpServletRequest).toHashMap();
+            HashMap<object, object> requestHashMap = new RequestParams(httpServletRequest).toHashMap();
             string roleString = ((string) propertiesHashMap.get(UserRoleData.NAME.ToString()));
             requestHashMap.put(UserRoleData.NAME.ToString(), roleString);
             return CreateUserFactory.getInstance(requestHashMap);

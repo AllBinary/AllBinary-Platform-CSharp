@@ -82,7 +82,7 @@ public class BasicOptionItemsEntity : AbSqlBean, BasicOptionItemsEntityInterface
         return base.createTable(this.createTableStatement());
     }
 
-    public virtual void update(HashMap updatedValues)
+    public virtual void update(HashMap<object, object> updatedValues)
     {
         base.updateWhere(basicItemData.ID, ((string) updatedValues.get(basicItemData.ID)), updatedValues);
     }

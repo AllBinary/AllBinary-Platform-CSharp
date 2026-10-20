@@ -80,7 +80,7 @@ public class OrderHistory : Order, OrderHistoryInterface
         base.setStoreCancelComments(((string) orderHistory.getStoreCancelComments()));
     }
 
-    public OrderHistory(BasketInterface basketInterface, HashMap orderHistoryHashMap) : base(((string) orderHistoryHashMap.get(StoreFrontData.getInstance().NAME)), basketInterface, ((string) orderHistoryHashMap.get(OrderData.ID)), ((string) orderHistoryHashMap.get(ShippingMethodData.NAME)), ((string) orderHistoryHashMap.get(EntryData.getInstance().SPECIAL)), ((string) orderHistoryHashMap.get(PaymentData.METHOD)))
+    public OrderHistory(BasketInterface basketInterface, HashMap<object, object> orderHistoryHashMap) : base(((string) orderHistoryHashMap.get(StoreFrontData.getInstance().NAME)), basketInterface, ((string) orderHistoryHashMap.get(OrderData.ID)), ((string) orderHistoryHashMap.get(ShippingMethodData.NAME)), ((string) orderHistoryHashMap.get(EntryData.getInstance().SPECIAL)), ((string) orderHistoryHashMap.get(PaymentData.METHOD)))
     {
         // base(((string) orderHistoryHashMap.get(StoreFrontData.getInstance().NAME)), basketInterface, ((string) orderHistoryHashMap.get(OrderData.ID)), ((string) orderHistoryHashMap.get(ShippingMethodData.NAME)), ((string) orderHistoryHashMap.get(EntryData.getInstance().SPECIAL)), ((string) orderHistoryHashMap.get(PaymentData.METHOD))) is called from the constructor declaration
         this.shippingAddress = new StreetAddress(((string) orderHistoryHashMap.get(ShippingAddressData.NAME)), ((string) orderHistoryHashMap.get(ShippingAddressData.STREET)), ((string) orderHistoryHashMap.get(ShippingAddressData.CITY)), ((string) orderHistoryHashMap.get(ShippingAddressData.STATE)), ((string) orderHistoryHashMap.get(ShippingAddressData.CODE)), ((string) orderHistoryHashMap.get(ShippingAddressData.COUNTRY)));
@@ -232,9 +232,9 @@ public class OrderHistory : Order, OrderHistoryInterface
         return this.total;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(UserData.USERNAME, this.userName);
         hashMap.put(OrderHistoryData.ORDERDATE, this.orderDate);
         hashMap.put(OrderHistoryData.SHIPPEDDATE, this.shipDate);
@@ -255,8 +255,8 @@ public class OrderHistory : Order, OrderHistoryInterface
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        HashMap hashMap = this.toHashMap();
-        Set keySet = hashMap.keySet();
+        HashMap<object, object> hashMap = this.toHashMap();
+        Set<object> keySet = hashMap.keySet();
         object[] keyArray = keySet.toArray();
         int size = keyArray.Length;
         Node node = document.createElement(OrderHistoryData.ORDERHISTORY);

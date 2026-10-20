@@ -24,7 +24,7 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 
 namespace org.allbinary.game.displayable.canvas;
 
-public class CommandRunnable : Runnable
+public class CommandRunnable : global::java.lang.Runnable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();

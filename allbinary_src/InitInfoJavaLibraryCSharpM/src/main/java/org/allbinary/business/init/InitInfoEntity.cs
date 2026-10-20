@@ -66,9 +66,9 @@ public class InitInfoEntity : InitSql
     public virtual bool get()
     {
         try {
-            HashMap keyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> keyAndValue = StdUtil.getInstance().createHashMap();
             keyAndValue.put(this.NOTHING, this.NOTHING);
-            HashMap hashMap = getRow(keyAndValue);
+            HashMap<object, object> hashMap = getRow(keyAndValue);
             if (hashMap != null) {
                 InitInfo.getInstance().set(hashMap);
                 return true;
@@ -89,9 +89,9 @@ public class InitInfoEntity : InitSql
     public virtual bool @is()
     {
         try {
-            HashMap keyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> keyAndValue = StdUtil.getInstance().createHashMap();
             keyAndValue.put(this.NOTHING, this.NOTHING);
-            HashMap hashMap = getRow(keyAndValue);
+            HashMap<object, object> hashMap = getRow(keyAndValue);
             if (hashMap != null) {
                 return true;
             } else {

@@ -46,7 +46,7 @@ public class CanvasDom
     public static readonly string POSSIBLE = "possible";
     public static readonly string GRAPHICITEMS = "graphicItems";
     public static readonly string REAL_SIZE = "realSize";
-    private HashMap graphicItemHashMap;
+    private HashMap<object, object> graphicItemHashMap;
     private double angle;
     private IntegerDimension dimension;
     private readonly Grid grid;
@@ -111,7 +111,7 @@ public class CanvasDom
         return this.angle;
     }
 
-    public virtual HashMap getGraphicItemHashMap()
+    public virtual HashMap<object, object> getGraphicItemHashMap()
     {
         return this.graphicItemHashMap;
     }

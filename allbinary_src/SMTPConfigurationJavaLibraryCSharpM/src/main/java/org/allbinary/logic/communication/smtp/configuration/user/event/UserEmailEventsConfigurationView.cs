@@ -62,8 +62,8 @@ public class UserEmailEventsConfigurationView : DomNodeInterface
     {
         UserEmailEventsConfigurationMapping userEmailConfigurationMapping = new UserEmailEventsConfigurationMapping(this.userEmailEventsConfigurationInterface);
         Node node = document.createElement(UserEmailEventsConfigurationData.NAME);
-        HashMap emailEventHashMap = this.getUserEmailEventsConfigurationInterface().getEventConfigurationHashMap();
-        Set set = emailEventHashMap.keySet();
+        HashMap<object, object> emailEventHashMap = this.getUserEmailEventsConfigurationInterface().getEventConfigurationHashMap();
+        Set<object> set = emailEventHashMap.keySet();
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             this.logUtil.putF("Number Of Email Events Specified in file: " + set.size(), this, this.commonStrings.CONSTRUCTOR);
         }

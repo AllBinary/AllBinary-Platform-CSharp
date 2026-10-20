@@ -32,9 +32,9 @@ public class UserEmailEventConfigurationMapping : TableMappingInterface
         this.userEmailEventConfigurationInterface = userEmailEventConfigurationInterface;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(UserEmailEventConfigurationData.NAME, this.userEmailEventConfigurationInterface.getName());
         hashMap.put(UserEmailEventConfigurationData.LISTENER_CLASSPATH, this.userEmailEventConfigurationInterface.getEventListenerClassPath());
         return hashMap;

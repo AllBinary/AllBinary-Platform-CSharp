@@ -25,7 +25,7 @@ namespace tags;
 public class PropertiesTag : CommandTag
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private HashMap propertiesHashMap;
+    private HashMap<object, object> propertiesHashMap;
     public PropertiesTag()
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
@@ -34,7 +34,7 @@ public class PropertiesTag : CommandTag
         this.propertiesHashMap = StdUtil.getInstance().createHashMap();
     }
 
-    protected virtual HashMap getPropertiesHashMap()
+    protected virtual HashMap<object, object> getPropertiesHashMap()
     {
         return this.propertiesHashMap;
     }

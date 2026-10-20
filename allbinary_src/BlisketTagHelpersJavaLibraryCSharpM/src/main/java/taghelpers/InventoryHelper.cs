@@ -48,7 +48,7 @@ public class InventoryHelper : TagHelper
     private StreetAddress streetAddress = null;
     private string id = null;
     private SearchRequest searchRequest = null;
-    public InventoryHelper(HashMap propertiesHashMap, PageContext pageContext)
+    public InventoryHelper(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         this.response = ((HttpServletResponse) pageContext.getResponse());
         this.request = ((HttpServletRequest) pageContext.getRequest());

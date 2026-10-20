@@ -26,7 +26,7 @@ namespace admin.taghelpers;
 public class InitHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    public InitHelper(HashMap hashMap, PageContext pageContext)
+    public InitHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
     }
 

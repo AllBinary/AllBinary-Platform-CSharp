@@ -31,13 +31,13 @@ public class UserEmailEventsConfiguration : UserEmailEventsConfigurationInterfac
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    private HashMap emailEventHashMap = null;
+    private HashMap<object, object> emailEventHashMap = null;
     public UserEmailEventsConfiguration()
     {
         this.init();
     }
 
-    public UserEmailEventsConfiguration(HashMap hashMap)
+    public UserEmailEventsConfiguration(HashMap<object, object> hashMap)
     {
         this.init();
     }
@@ -50,7 +50,7 @@ public class UserEmailEventsConfiguration : UserEmailEventsConfigurationInterfac
         }
     }
 
-    public virtual HashMap getEventConfigurationHashMap()
+    public virtual HashMap<object, object> getEventConfigurationHashMap()
     {
         return this.emailEventHashMap;
     }

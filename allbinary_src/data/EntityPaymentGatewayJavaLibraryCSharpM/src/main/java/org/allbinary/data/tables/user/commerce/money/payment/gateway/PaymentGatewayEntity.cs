@@ -83,13 +83,13 @@ public class PaymentGatewayEntity : AbSqlBean, PaymentGatewayEntityInterface
             Calendar calendar = Calendar.getInstance();
             string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
             paymentGatewayInterface.setLastModified(time);
-            HashMap whereKeyValuePairs = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> whereKeyValuePairs = StdUtil.getInstance().createHashMap();
             whereKeyValuePairs.put(StoreFrontData.getInstance().NAME.ToString(), paymentGatewayInterface.getStoreName());
             whereKeyValuePairs.put(PaymentGatewayData.NAME.ToString(), paymentGatewayInterface.getName());
             if (whereKeyValuePairs.get(EntryData.getInstance().TIMECREATED) != null) {
                 throw new Exception("Don't update TimeCreated for update");
             }
-            HashMap updateHashMap = new PaymentGatewayEncryptedMapping(paymentGatewayInterface).toHashMap();
+            HashMap<object, object> updateHashMap = new PaymentGatewayEncryptedMapping(paymentGatewayInterface).toHashMap();
             base.updateWhere(whereKeyValuePairs, updateHashMap);
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.commonStrings.SUCCESS, this, "update");
@@ -104,8 +104,8 @@ public class PaymentGatewayEntity : AbSqlBean, PaymentGatewayEntityInterface
     public virtual PaymentGatewayInterface getPaymentGatewayInterface(string storeName, BasicPaymentType paymentType)
     {
         try {
-            HashMap paymentGatewayHashMap = StdUtil.getInstance().createHashMap();
-            HashMap whereKeyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> paymentGatewayHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> whereKeyAndValue = StdUtil.getInstance().createHashMap();
             whereKeyAndValue.put(StoreFrontData.getInstance().NAME.ToString(), storeName);
             whereKeyAndValue.put(PaymentGatewayData.NAME.ToString(), paymentType.getName());
             paymentGatewayHashMap = base.getRow(whereKeyAndValue);
@@ -180,7 +180,7 @@ public class PaymentGatewayEntity : AbSqlBean, PaymentGatewayEntityInterface
     public virtual void remove(string storeName, BasicPaymentType paymentType)
     {
         try {
-            HashMap whereHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> whereHashMap = StdUtil.getInstance().createHashMap();
             whereHashMap.put(StoreFrontData.getInstance().NAME.ToString(), storeName);
             whereHashMap.put(PaymentGatewayData.NAME.ToString(), paymentType.getName());
             base.deleteWhere(whereHashMap);

@@ -50,7 +50,7 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
         }
 
     }
-    private readonly Runnable FIRST_RUNNABLE;
+    private readonly global::java.lang.Runnable FIRST_RUNNABLE;
     //    private boolean first = true;
     private class SecondRunnable : ARunnable
     {
@@ -66,7 +66,7 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
         }
 
     }
-    private readonly Runnable SECOND_RUNNABLE;
+    private readonly global::java.lang.Runnable SECOND_RUNNABLE;
     private class EndRunnable : ARunnable
     {
         private readonly MultipassWaypointPathRunnable multipassWaypointPathRunnable;
@@ -81,8 +81,8 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
         }
 
     }
-    private readonly Runnable END_RUNNABLE;
-    private readonly Runnable ALREADY_ENDED_RUNNABLE = new ARunnable()
+    private readonly global::java.lang.Runnable END_RUNNABLE;
+    private readonly global::java.lang.Runnable ALREADY_ENDED_RUNNABLE = new ARunnable()
 #if JAVA_ANONYMOUS_CLASS_BODY
         public virtual void run()
         {
@@ -91,7 +91,7 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
 
 #endif
 ;
-    private Runnable currentPassRunnable;
+    private global::java.lang.Runnable currentPassRunnable;
     public MultipassWaypointPathRunnable()
     {
         this.list = this.basicArrayListUtil.getImmutableInstance();

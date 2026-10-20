@@ -38,7 +38,7 @@ public class AbeHttpRequestInfo
     private string remoteHostByAddr;
     private string remotePort;
     private string requestedFilePath;
-    public AbeHttpRequestInfo(HashMap hashMap)
+    public AbeHttpRequestInfo(HashMap<object, object> hashMap)
     {
         StringUtil stringUtil = StringUtil.getInstance();
         this.httpUserAgent = stringUtil.getNonNull(((string) hashMap.get(this.abeHttpRequestInfoData.HTTP_USER_AGENT)));
@@ -53,7 +53,7 @@ public class AbeHttpRequestInfo
     {
         StringUtil stringUtil = StringUtil.getInstance();
         this.httpUserAgent = stringUtil.EMPTY_STRING;
-        Enumeration enumuration = httpServletRequest.getHeaderNames();
+        Enumeration<object> enumuration = httpServletRequest.getHeaderNames();
         while (enumuration.hasMoreElements()) {
             string key = ((string) enumuration.nextElement());
             string value = httpServletRequest.getHeader(key);
@@ -68,9 +68,9 @@ public class AbeHttpRequestInfo
         this.remotePort = (httpServletRequest.getRemotePort()).ToString();
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(abeHttpRequestInfoData.HTTP_USER_AGENT, this.httpUserAgent);
         hashMap.put(abeHttpRequestInfoData.REMOTE_ADDRESS, this.remoteAddress);
         hashMap.put(abeHttpRequestInfoData.REMOTE_HOST, this.remoteHost);

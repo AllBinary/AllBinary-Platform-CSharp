@@ -32,7 +32,7 @@ public class PaymentGatewayEncryptedMapping : TableMappingInterface
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         return this.paymentGatewayInterface.toHashMap(true);
     }

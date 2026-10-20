@@ -44,7 +44,7 @@ public class CustomItemsRequestHelper : ModifyTable
     private string packageName = null;
     private string timeEntered = null;
     private string lastModified = null;
-    public CustomItemsRequestHelper(HashMap hashMap, PageContext pageContext)
+    public CustomItemsRequestHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.request = ((HttpServletRequest) pageContext.getRequest());
         this.getFormData();
@@ -59,9 +59,9 @@ public class CustomItemsRequestHelper : ModifyTable
         this.lastModified = this.request.getParameter(EntryData.getInstance().LASTMODIFIED);
     }
 
-    private HashMap getHashMap()
+    private HashMap<object, object> getHashMap()
     {
-        HashMap values = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> values = StdUtil.getInstance().createHashMap();
         values.put(basicItemData.ID, this.id);
         values.put(DynamicObjectData.NAME, this.className);
         values.put(CustomItemData.PACKAGE, this.packageName);
@@ -119,7 +119,7 @@ public class CustomItemsRequestHelper : ModifyTable
     {
         try {
             string success = "Update Pricing Successful";
-            HashMap values = this.getHashMap();
+            HashMap<object, object> values = this.getHashMap();
             CustomItemsEntityFactory.getInstance().getCustomItemsEntityInstance().update(values);
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(new StringMaker().append(this.id).append(CommonSeps.getInstance().SPACE).append(success).ToString(), this, "update()");

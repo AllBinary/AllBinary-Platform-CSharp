@@ -37,7 +37,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly AbContext abContext;
-    public TransformInfoHttp(HashMap propertiesHashMap, PageContext pageContext, bool crud) : base()
+    public TransformInfoHttp(HashMap<object, object> propertiesHashMap, PageContext pageContext, bool crud) : base()
     {
         // base() is called from the constructor declaration
         this.abContext = new AbContext(propertiesHashMap, pageContext);
@@ -47,7 +47,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
         this.@override(propertiesHashMap);
     }
 
-    public TransformInfoHttp(HttpServletRequest request, HashMap propertiesHashMap, PageContext pageContext) : base()
+    public TransformInfoHttp(HttpServletRequest request, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base()
     {
         // base() is called from the constructor declaration
         this.abContext = new AbContext(propertiesHashMap, pageContext);
@@ -58,7 +58,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
         this.@override(propertiesHashMap);
     }
 
-    public TransformInfoHttp(HashMap databaseHashMap, HashMap propertiesHashMap, PageContext pageContext) : base()
+    public TransformInfoHttp(HashMap<object, object> databaseHashMap, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base()
     {
         // base() is called from the constructor declaration
         this.abContext = new AbContext(propertiesHashMap, pageContext);
@@ -68,7 +68,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
         this.set(databaseHashMap);
     }
 
-    public TransformInfoHttp(HashMap propertiesHashMap, PageContext pageContext) : base()
+    public TransformInfoHttp(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base()
     {
         // base() is called from the constructor declaration
         this.abContext = new AbContext(propertiesHashMap, pageContext);
@@ -85,7 +85,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
     }
 
     // throws Exception
-    private void set(HashMap hashMap)
+    private void set(HashMap<object, object> hashMap)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + hashMap.ToString(), this, "set()");
@@ -124,7 +124,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
         return this.abContext.getPageContext();
     }
 
-    public virtual HashMap getPropertiesHashMap()
+    public virtual HashMap<object, object> getPropertiesHashMap()
     {
         return this.abContext.getPropertiesHashMap();
     }

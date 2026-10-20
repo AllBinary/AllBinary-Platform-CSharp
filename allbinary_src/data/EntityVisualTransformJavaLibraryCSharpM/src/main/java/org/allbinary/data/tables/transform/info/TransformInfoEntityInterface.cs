@@ -28,7 +28,7 @@ namespace org.allbinary.data.tables.transform.info;
 public interface TransformInfoEntityInterface : BasicDataTableInterface
 {
     // throws Exception
-    TransformInfoInterface get(string name, HashMap propertiesHashMap, PageContext pageContext);
+    TransformInfoInterface get(string name, HashMap<object, object> propertiesHashMap, PageContext pageContext);
 
     // throws Exception
     BasicArrayList getObjectConfigs(string storeName);
@@ -40,7 +40,7 @@ public interface TransformInfoEntityInterface : BasicDataTableInterface
 
     void insert(BasicArrayList values);
 
-    void update(HashMap updatedValues);
+    void update(HashMap<object, object> updatedValues);
 
 }
 

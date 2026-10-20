@@ -37,7 +37,7 @@ public class InventoryRequestHelper : ModifyTable
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly BasicItemData basicItemData = BasicItemData.getInstance();
     private readonly ItemInterface itemInterface;
-    public InventoryRequestHelper(HashMap propertiesHashMap, PageContext pageContext)
+    public InventoryRequestHelper(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         HelperTag inventoryTag = ((HelperTag) propertiesHashMap.get(AbTagData.PARENT));
         InventoryItemView itemView = InventoryItemViewParentTagHelper.getInstance().getInventoryItemView(inventoryTag);

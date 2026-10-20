@@ -33,7 +33,7 @@ public class CustomLoaderTag : CustomTagSupport
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private string command = null;
     private string webappPath = null;
-    private HashMap propertiesHashMap = null;
+    private HashMap<object, object> propertiesHashMap = null;
     public CustomLoaderTag()
     {
     }

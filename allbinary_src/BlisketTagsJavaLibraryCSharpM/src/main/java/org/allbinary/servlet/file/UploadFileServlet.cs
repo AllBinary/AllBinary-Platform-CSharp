@@ -47,7 +47,7 @@ public class UploadFileServlet : HttpServlet
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    public HashMap requestHashMap = null;
+    public HashMap<object, object> requestHashMap = null;
     private string fileName = null;
     // throws ServletException, IOException
     protected virtual void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -63,7 +63,7 @@ public class UploadFileServlet : HttpServlet
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 return;
             }
-            HashMap hashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
             AuthenticationHelper authenticationHelper = ((AuthenticationHelper) new AuthenticationHelperFactory().getInstance(hashMap, request));
             if (authenticationHelper.isAuthenticated()) {
                 if (AuthenticationHelperUtil.getInstance().isAuthorized(authenticationHelper, filePath)) {

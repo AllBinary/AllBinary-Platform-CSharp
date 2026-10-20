@@ -56,9 +56,9 @@ public class CssProperty : DomNodeInterface
         return this.propertyName;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(CssPropertyData.getInstance().NAME, this.propertyName);
         return hashMap;
     }
@@ -66,7 +66,7 @@ public class CssProperty : DomNodeInterface
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        HashMap hashMap = this.toHashMap();
+        HashMap<object, object> hashMap = this.toHashMap();
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("CssView HashMap: " + hashMap.ToString(), this, "toXmlNode()");
         }

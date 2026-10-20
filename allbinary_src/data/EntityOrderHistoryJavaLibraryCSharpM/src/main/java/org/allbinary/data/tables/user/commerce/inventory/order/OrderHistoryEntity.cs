@@ -188,7 +188,7 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
         try {
             Calendar calendar = Calendar.getInstance();
             string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
-            HashMap updateHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> updateHashMap = StdUtil.getInstance().createHashMap();
             updateHashMap.put(OrderHistoryData.STATUS, status);
             if (string.CompareOrdinal(status, OrderHistoryData.CANCELLED) == 0) {
                 updateHashMap.put(OrderHistoryData.CANCELDATE, time);
@@ -208,7 +208,7 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
         try {
             Calendar calendar = Calendar.getInstance();
             string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
-            HashMap updateHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> updateHashMap = StdUtil.getInstance().createHashMap();
             updateHashMap.put(PaymentData.METHOD, paymentMethod);
             updateHashMap.put(OrderHistoryData.TRANSDATE, time);
             base.updateWhere(OrderData.ID, orderId, updateHashMap);
@@ -223,12 +223,12 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
     public virtual BasicArrayList getStoreOrders(StoreFrontInterface storeFrontInterface)
     {
         BasicArrayList orderReviewVector = new BasicArrayListD();
-        HashMap whereHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> whereHashMap = StdUtil.getInstance().createHashMap();
         whereHashMap.put(StoreFrontData.getInstance().NAME, storeFrontInterface.getName());
         BasicArrayList orderHashMapVector = base.getRows(whereHashMap);
         int size = orderHashMapVector.size();
         for (int i = 0; i < size; i++) {
-            HashMap orderReviewHashMap = ((HashMap) orderHashMapVector.get(i));
+            HashMap<object, object> orderReviewHashMap = ((HashMap<object, object>) orderHashMapVector.get(i));
             OrderHistory orderReview = new OrderHistory(new Basket(), orderReviewHashMap);
             orderReviewVector.add(orderReview);
         }
@@ -239,12 +239,12 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
     public virtual BasicArrayList getOrders(string userName)
     {
         BasicArrayList orderReviewVector = new BasicArrayListD();
-        HashMap whereHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> whereHashMap = StdUtil.getInstance().createHashMap();
         whereHashMap.put(UserData.USERNAME, userName);
         BasicArrayList orderHashMapVector = base.getRows(whereHashMap);
         int size = orderHashMapVector.size();
         for (int index = 0; index < size; index++) {
-            HashMap orderReviewHashMap = ((HashMap) orderHashMapVector.get(index));
+            HashMap<object, object> orderReviewHashMap = ((HashMap<object, object>) orderHashMapVector.get(index));
             OrderHistory orderReview = new OrderHistory(new Basket(), orderReviewHashMap);
             orderReviewVector.add(orderReview);
         }
@@ -255,12 +255,12 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
     public virtual BasicArrayList getOrders(string status, string fromDate, string toDate)
     {
         BasicArrayList orderReviewVector = new BasicArrayListD();
-        HashMap whereHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> whereHashMap = StdUtil.getInstance().createHashMap();
         whereHashMap.put(OrderHistoryData.STATUS, status);
         BasicArrayList orderHashMapVector = base.getRowsWhereBetween(whereHashMap, OrderHistoryData.ORDERDATE, fromDate, toDate);
         int size = orderHashMapVector.size();
         for (int index = 0; index < size; index++) {
-            HashMap orderReviewHashMap = ((HashMap) orderHashMapVector.get(index));
+            HashMap<object, object> orderReviewHashMap = ((HashMap<object, object>) orderHashMapVector.get(index));
             OrderHistory orderReview = new OrderHistory(new Basket(), orderReviewHashMap);
             orderReviewVector.add(orderReview);
         }
@@ -274,7 +274,7 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
         BasicArrayList orderHashMapVector = base.getRowsWhereBetween(OrderHistoryData.ORDERDATE, fromDate, toDate);
         int size = orderHashMapVector.size();
         for (int index = 0; index < size; index++) {
-            HashMap orderReviewHashMap = ((HashMap) orderHashMapVector.get(index));
+            HashMap<object, object> orderReviewHashMap = ((HashMap<object, object>) orderHashMapVector.get(index));
             OrderHistory orderReview = new OrderHistory(new Basket(), orderReviewHashMap);
             orderReviewVector.add(orderReview);
         }
@@ -284,9 +284,9 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
     // throws Exception
     public virtual OrderHistory getOrder(string id)
     {
-        HashMap whereHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> whereHashMap = StdUtil.getInstance().createHashMap();
         whereHashMap.put(OrderData.ID, id);
-        HashMap orderReviewHashMap = base.getRow(whereHashMap);
+        HashMap<object, object> orderReviewHashMap = base.getRow(whereHashMap);
         if (orderReviewHashMap != null) {
             OrderHistory orderHistory = new OrderHistory(new Basket(), orderReviewHashMap);
             return orderHistory;
@@ -393,7 +393,7 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
     }
 
     // throws Exception
-    public virtual void update(HashMap whereHashMap, HashMap orderHashMap)
+    public virtual void update(HashMap<object, object> whereHashMap, HashMap<object, object> orderHashMap)
     {
         try {
             updateWhere(whereHashMap, orderHashMap);

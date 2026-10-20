@@ -29,7 +29,7 @@ public class WizardWebStoreAdminUser : User
         // base() is called from the constructor declaration
     }
 
-    public WizardWebStoreAdminUser(HashMap userHashMap) : base(userHashMap)
+    public WizardWebStoreAdminUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
         // base(userHashMap) is called from the constructor declaration
     }

@@ -32,13 +32,13 @@ public class AuthenticationHelperFactory : TagHelperFactoryInterface
     }
 
     // throws LicensingException
-    public virtual object getInstance(HashMap hashMap, PageContext pageContext)
+    public virtual object getInstance(HashMap<object, object> hashMap, PageContext pageContext)
     {
         return HelperFactory.getInstance(FACTORYNAME, CLASSNAME, hashMap, pageContext);
     }
 
     // throws LicensingException
-    public virtual object getInstance(HashMap hashMap, HttpServletRequest httpServletRequest)
+    public virtual object getInstance(HashMap<object, object> hashMap, HttpServletRequest httpServletRequest)
     {
         return HelperFactory.getInstance(FACTORYNAME, CLASSNAME, hashMap, httpServletRequest);
     }

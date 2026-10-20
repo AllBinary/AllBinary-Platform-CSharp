@@ -48,7 +48,7 @@ public class TestInputAutomationActionWorker : AbstractInputAutomationWorker
     {
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.PROCESS);
         ABHashtable<object, object> hashtable = InputRobotFactory.getInstance().get();
-        Set set = hashtable.keySet();
+        Set<object> set = hashtable.keySet();
         object[] inputTypeNameArray = set.toArray();
         int size = inputTypeNameArray.Length;
         for (int index = 0; index < size; index++) {

@@ -64,7 +64,7 @@ public class AbSqlRow : AbSqlColumn
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public virtual void updateWhere(string key, string value, HashMap updatedKeyValuePairs)
+    public virtual void updateWhere(string key, string value, HashMap<object, object> updatedKeyValuePairs)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.sqlStrings.UPDATE);
@@ -109,7 +109,7 @@ public class AbSqlRow : AbSqlColumn
 
     // throws Exception
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public virtual void updateWhere(HashMap whereKeyValuePairs, HashMap updatedKeyValuePairs)
+    public virtual void updateWhere(HashMap<object, object> whereKeyValuePairs, HashMap<object, object> updatedKeyValuePairs)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.sqlStrings.UPDATE);
@@ -139,7 +139,7 @@ public class AbSqlRow : AbSqlColumn
                 }
             }
             stringBuffer.append(this.sqlStrings.WHERE);
-            Set set = whereKeyValuePairs.keySet();
+            Set<object> set = whereKeyValuePairs.keySet();
             object[] keyArray2 = set.toArray();
             int size2 = keyArray2.Length;
             for (int i = 0; i < size2; i++) {
@@ -194,7 +194,7 @@ public class AbSqlRow : AbSqlColumn
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public virtual void deleteWhere(HashMap keysAndValues)
+    public virtual void deleteWhere(HashMap<object, object> keysAndValues)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.sqlStrings.DELETE);
@@ -202,7 +202,7 @@ public class AbSqlRow : AbSqlColumn
         stringBuffer.append(this.getTableName());
         stringBuffer.append(this.sqlStrings.WHERE);
         try {
-            Set set = keysAndValues.keySet();
+            Set<object> set = keysAndValues.keySet();
             object[] keyArray = set.toArray();
             int size = keyArray.Length;
             for (int i = 0; i < size; i++) {
@@ -257,15 +257,15 @@ public class AbSqlRow : AbSqlColumn
         }
     }
 
-    public virtual HashMap getRow(HashMap keysAndValues)
+    public virtual HashMap<object, object> getRow(HashMap<object, object> keysAndValues)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.sqlStrings.SELECT_ALL_FROM);
         stringBuffer.append(this.getTableName());
         stringBuffer.append(this.sqlStrings.WHERE);
         try {
-            HashMap result = null;
-            Set set = keysAndValues.keySet();
+            HashMap<object, object> result = null;
+            Set<object> set = keysAndValues.keySet();
             object[] keyArray = set.toArray();
             int size = keyArray.Length;
             for (int index = 0; index < size; index++) {
@@ -310,12 +310,12 @@ public class AbSqlRow : AbSqlColumn
         }
     }
 
-    public virtual BasicArrayList getRows(HashMap keysAndValues)
+    public virtual BasicArrayList getRows(HashMap<object, object> keysAndValues)
     {
         return this.getRows(keysAndValues, StringUtil.getInstance().EMPTY_STRING);
     }
 
-    public virtual BasicArrayList getRows(HashMap keysAndValues, string more)
+    public virtual BasicArrayList getRows(HashMap<object, object> keysAndValues, string more)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.sqlStrings.SELECT_ALL_FROM);
@@ -323,7 +323,7 @@ public class AbSqlRow : AbSqlColumn
         stringBuffer.append(this.sqlStrings.WHERE);
         try {
             BasicArrayList rows = new BasicArrayListD();
-            Set set = keysAndValues.keySet();
+            Set<object> set = keysAndValues.keySet();
             object[] keyArray = set.toArray();
             int size = keyArray.Length;
             for (int index = 0; index < size; index++) {
@@ -345,7 +345,7 @@ public class AbSqlRow : AbSqlColumn
             ResultSet rset = this.executeSQLStatement(sqlStatement);
             ResultSetMetaData resultSetMetaData = rset.getMetaData();
             while (rset.next()) {
-                HashMap result = this.stdUtil.createHashMap();
+                HashMap<object, object> result = this.stdUtil.createHashMap();
                 int columnCount = resultSetMetaData.getColumnCount();
                 for (int index = 1; index <= columnCount; index++) {
                     string columnName = resultSetMetaData.getColumnName(index);
@@ -381,7 +381,7 @@ public class AbSqlRow : AbSqlColumn
             ResultSet rset = this.executeSQLStatement(sqlStatement);
             ResultSetMetaData resultSetMetaData = rset.getMetaData();
             while (rset.next()) {
-                HashMap result = this.stdUtil.createHashMap();
+                HashMap<object, object> result = this.stdUtil.createHashMap();
                 int columnCount = resultSetMetaData.getColumnCount();
                 for (int index = 1; index <= columnCount; index++) {
                     string columnName = resultSetMetaData.getColumnName(index);
@@ -402,7 +402,7 @@ public class AbSqlRow : AbSqlColumn
         }
     }
 
-    public virtual BasicArrayList getRowsWhereBetween(HashMap whereKeyValuePairs, string betweenColumn, string smallest, string largest)
+    public virtual BasicArrayList getRowsWhereBetween(HashMap<object, object> whereKeyValuePairs, string betweenColumn, string smallest, string largest)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.sqlStrings.SELECT_ALL_FROM);
@@ -410,7 +410,7 @@ public class AbSqlRow : AbSqlColumn
         try {
             BasicArrayList rows = new BasicArrayListD();
             stringBuffer.append(this.sqlStrings.WHERE);
-            Set set = whereKeyValuePairs.keySet();
+            Set<object> set = whereKeyValuePairs.keySet();
             string key = null;
             string value = null;
             object[] keyArray = set.toArray();
@@ -439,7 +439,7 @@ public class AbSqlRow : AbSqlColumn
             }
             ResultSet rset = this.executeSQLStatement(sqlStatement);
             ResultSetMetaData resultSetMetaData = rset.getMetaData();
-            HashMap result = null;
+            HashMap<object, object> result = null;
             BasicArrayList columnNames = null;
             int columnCount = 0;
             string columnName = null;
@@ -492,7 +492,7 @@ public class AbSqlRow : AbSqlColumn
             ResultSetMetaData resultSetMetaData = rset.getMetaData();
             string columnName = null;
             string field = null;
-            HashMap result = null;
+            HashMap<object, object> result = null;
             BasicArrayList columnNames = null;
             int columnCount = 0;
             while (rset.next()) {

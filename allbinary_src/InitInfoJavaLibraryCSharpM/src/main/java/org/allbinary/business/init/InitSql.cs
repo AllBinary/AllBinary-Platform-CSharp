@@ -113,15 +113,15 @@ public class InitSql
         }
     }
 
-    public virtual HashMap getRow(HashMap keysAndValues)
+    public virtual HashMap<object, object> getRow(HashMap<object, object> keysAndValues)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.sqlStrings.SELECT_ALL_FROM);
         stringBuffer.append(this.tableName);
         stringBuffer.append(this.sqlStrings.WHERE);
         try {
-            HashMap result = null;
-            Set set = keysAndValues.keySet();
+            HashMap<object, object> result = null;
+            Set<object> set = keysAndValues.keySet();
             object[] keyArray = set.toArray();
             int size = keyArray.Length;
             for (int i = 0; i < size; i++) {
@@ -167,7 +167,7 @@ public class InitSql
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public virtual void updateWhere(string key, string value, HashMap updatedKeyValuePairs)
+    public virtual void updateWhere(string key, string value, HashMap<object, object> updatedKeyValuePairs)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.sqlStrings.UPDATE);

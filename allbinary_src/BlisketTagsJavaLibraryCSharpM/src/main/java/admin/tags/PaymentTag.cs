@@ -33,7 +33,7 @@ public class PaymentTag : TableTag
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private string storeName = null;
-    private HashMap propertiesHashMap = null;
+    private HashMap<object, object> propertiesHashMap = null;
     public PaymentTag()
     {
         this.setTagHelperFactory(new PaymentHelperFactory());

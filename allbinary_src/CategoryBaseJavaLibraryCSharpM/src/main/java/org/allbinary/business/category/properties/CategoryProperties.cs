@@ -51,7 +51,7 @@ public class CategoryProperties : CategoryPropertiesInterface
         this.category = CategoryUtil.getNameFromNode(node);
     }
 
-    public CategoryProperties(HashMap categoryPropertiesHashMap)
+    public CategoryProperties(HashMap<object, object> categoryPropertiesHashMap)
     {
         this.category = new string((((string) categoryPropertiesHashMap.get(CategoryData.getInstance().NAME))).ToCharArray());
     }
@@ -143,9 +143,9 @@ public class CategoryProperties : CategoryPropertiesInterface
         return returnBoolean;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap categoryHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> categoryHashMap = StdUtil.getInstance().createHashMap();
         categoryHashMap.put(CategoryData.getInstance().NAME, this.category);
         return categoryHashMap;
     }

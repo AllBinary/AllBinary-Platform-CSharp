@@ -73,9 +73,9 @@ public class TimeIntervalActionScriptCondition : BasicProfileActionScriptConditi
         this.timeIntervalActionScriptConditionJPanel.getTimeIntervalActionJDialog().setVisible(true);
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(TimeIntervalActionScriptConditionData.TIME, (this.timeHelper.delay).ToString());
         this.logUtil.putF("HashMap: " + hashMap.ToString(), this, "toHashMap()");
         return hashMap;

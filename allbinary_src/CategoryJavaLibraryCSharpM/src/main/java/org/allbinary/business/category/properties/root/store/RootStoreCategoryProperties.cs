@@ -89,7 +89,7 @@ public class RootStoreCategoryProperties : RootCategoryPropertiesInterface, Cate
         this.log();
     }
 
-    public RootStoreCategoryProperties(TransformInfoInterface transformInfoInterface, HashMap categoryPropertiesHashMap)
+    public RootStoreCategoryProperties(TransformInfoInterface transformInfoInterface, HashMap<object, object> categoryPropertiesHashMap)
     {
         this.transformInfoInterface = transformInfoInterface;
         string categoryPath = new string((((string) categoryPropertiesHashMap.get(CategoryData.getInstance().NAME))).ToCharArray());
@@ -175,9 +175,9 @@ public class RootStoreCategoryProperties : RootCategoryPropertiesInterface, Cate
         return true;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap categoryHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> categoryHashMap = StdUtil.getInstance().createHashMap();
         categoryHashMap.put(CategoryData.getInstance().NAME, this.getValue());
         return categoryHashMap;
     }

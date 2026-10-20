@@ -55,9 +55,9 @@ public class FileTableMapping : TableMappingInterface
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap filePropertyHashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> filePropertyHashMap = StdUtil.getInstance().createHashMap();
         AbPathData pathData = AbPathData.getInstance();
         PathUtil pathUtil = PathUtil.getInstance();
         string rootFileName = pathData.getNameFromPath(pathUtil.getWithoutExtension(this.file.getPath()));

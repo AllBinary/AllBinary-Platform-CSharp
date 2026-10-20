@@ -48,7 +48,7 @@ public class RequestWorkFlowFactory
     }
 
     // throws Exception, LicensingException
-    public static WorkFlowInterface getInstance(HashMap hashMap, PageContext pageContext)
+    public static WorkFlowInterface getInstance(HashMap<object, object> hashMap, PageContext pageContext)
     {
         string workFlowName = ((string) pageContext.getRequest().getParameter(WorkFlowData.getInstance().NAME));
         WeblisketSession weblisketSession = new WeblisketSession(hashMap, pageContext);

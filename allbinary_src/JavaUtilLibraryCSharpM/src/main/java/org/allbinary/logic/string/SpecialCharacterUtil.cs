@@ -27,12 +27,12 @@ namespace org.allbinary.logic.@string;
 
 public class SpecialCharacterUtil
 {
-    public static HashMap getHashMap()
+    public static HashMap<object, object> getHashMap()
     {
         CommonSeps commonSeps = CommonSeps.getInstance();
         CommonPhoneStrings commonPhoneStrings = CommonPhoneStrings.getInstance();
         StringUtil stringUtil = StringUtil.getInstance();
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put("!", stringUtil.EMPTY_STRING);
         hashMap.put("@", stringUtil.EMPTY_STRING);
         hashMap.put(commonPhoneStrings.POUND, stringUtil.EMPTY_STRING);

@@ -42,7 +42,7 @@ public class GenericProfiles : DomNodeInterface, DomDocumentMappingInterface
     public static readonly string DEFAULT_PROFILES_PATH = "./modules/configs/profiles/";
     public static readonly string DEFAULT_PROFILE_ACTIONS_PATH = GenericProfiles.DEFAULT_PROFILES_PATH + "actions/";
     public static readonly string DEFAULT_FILE = GenericProfiles.DEFAULT_PROFILES_PATH + "profiles.xml";
-    private HashMap hashMap;
+    private HashMap<object, object> hashMap;
     private DefaultListModelHelper profilesDefaultListModelHelper;
     private readonly string fileName;
     public GenericProfiles(string fileName)
@@ -123,7 +123,7 @@ public class GenericProfiles : DomNodeInterface, DomDocumentMappingInterface
     public virtual Node toXmlNode(Document document)
     {
         Node node = document.createElement(GenericProfilesData.NAME);
-        Set set = this.hashMap.keySet();
+        Set<object> set = this.hashMap.keySet();
         object[] nameArray = set.toArray();
         int size = nameArray.Length;
         for (int index = 0; index < size; index++) {

@@ -97,9 +97,9 @@ public class CssElementView : DomNodeInterface
         return this.value;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(DomData.VALUE, this.value);
         hashMap.put(this.TITLE, this.title);
         hashMap.put(this.DESCRIPTION, this.description);
@@ -109,7 +109,7 @@ public class CssElementView : DomNodeInterface
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        HashMap hashMap = this.toHashMap();
+        HashMap<object, object> hashMap = this.toHashMap();
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("CssView HashMap: " + hashMap.ToString(), this, "toXmlNode");
         }

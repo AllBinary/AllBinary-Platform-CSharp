@@ -39,14 +39,14 @@ namespace org.allbinary.logic.communication.http.request.session;
 public class WeblisketSession : WeblisketSessionInterface
 {
     private HttpSession session;
-    public WeblisketSession(HashMap hashMap, PageContext pageContext) : this(hashMap, ((HttpServletRequest) pageContext.getRequest()))
+    public WeblisketSession(HashMap<object, object> hashMap, PageContext pageContext) : this(hashMap, ((HttpServletRequest) pageContext.getRequest()))
     {
         // this(hashMap, ((HttpServletRequest) pageContext.getRequest())) is called from the constructor declaration
     }
 
-    public WeblisketSession(HashMap hashMap, HttpServletRequest httpServletRequest)
+    public WeblisketSession(HashMap<object, object> hashMap, HttpServletRequest httpServletRequest)
     {
-        HashMap propertiesHashMap = hashMap;
+        HashMap<object, object> propertiesHashMap = hashMap;
         HttpServletRequest request = httpServletRequest;
         this.session = request.getSession(true);
         if (this.getStoreName() == null) {

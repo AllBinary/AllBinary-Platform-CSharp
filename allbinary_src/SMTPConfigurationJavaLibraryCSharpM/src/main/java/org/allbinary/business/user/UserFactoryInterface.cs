@@ -24,7 +24,7 @@ namespace org.allbinary.business.user;
 public interface UserFactoryInterface : Serializable
 {
     // throws Exception
-    UserInterface getInstance(HashMap hashMap);
+    UserInterface getInstance(HashMap<object, object> hashMap);
 
 }
 

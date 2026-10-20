@@ -36,7 +36,7 @@ public class AbeClassLoader : ClassLoader
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly AbCryptUtil abCryptUtil = AbCryptUtil.getInstance();
     private readonly string LOAD_CLASS = "loadClass";
-    private static Map classes = StdUtil.getInstance().createHashMap();
+    private static Map<object, object> classes = StdUtil.getInstance().createHashMap();
     private readonly string ENCRYPTED_EXTENSION = AbPathData.getInstance().EXTENSION_SEP + "abc";
     private static string PATH;
     private string key;

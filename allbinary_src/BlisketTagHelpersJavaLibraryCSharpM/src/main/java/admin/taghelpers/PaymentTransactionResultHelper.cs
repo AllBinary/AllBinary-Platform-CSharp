@@ -29,7 +29,7 @@ public class PaymentTransactionResultHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly Portion portion;
-    public PaymentTransactionResultHelper(HashMap hashMap, PageContext pageContext)
+    public PaymentTransactionResultHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.portion = new Portion(hashMap);
     }

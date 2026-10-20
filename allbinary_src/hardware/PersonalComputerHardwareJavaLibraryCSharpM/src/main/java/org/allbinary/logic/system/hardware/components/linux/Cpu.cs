@@ -41,7 +41,7 @@ public class Cpu : CpuInterface, HardwareComponentInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private readonly string CPUFILE = "/proc/cpuinfo";
-    private HashMap cpuHashMap = null;
+    private HashMap<object, object> cpuHashMap = null;
     public Cpu(string filePath)
     {
         this.init(filePath);

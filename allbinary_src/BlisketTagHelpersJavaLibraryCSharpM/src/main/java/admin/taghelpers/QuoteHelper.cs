@@ -54,7 +54,7 @@ public class QuoteHelper : BasicTable
     private readonly WeblisketSession weblisketSession;
     private readonly StoreFrontInterface storeFrontInterface = null;
     private readonly Portion portion;
-    public QuoteHelper(HashMap hashMap, PageContext pageContext)
+    public QuoteHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         string storeName = ((string) hashMap.get(StoreFrontData.getInstance().NAME));
         if (storeName != null) {

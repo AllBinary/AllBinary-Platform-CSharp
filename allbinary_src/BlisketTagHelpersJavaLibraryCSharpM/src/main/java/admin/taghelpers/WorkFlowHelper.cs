@@ -28,10 +28,10 @@ namespace admin.taghelpers;
 public class WorkFlowHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private readonly HashMap hashMap;
+    private readonly HashMap<object, object> hashMap;
     private readonly PageContext pageContext;
     private readonly Portion portion;
-    public WorkFlowHelper(HashMap hashMap, PageContext pageContext)
+    public WorkFlowHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.hashMap = hashMap;
         this.pageContext = pageContext;

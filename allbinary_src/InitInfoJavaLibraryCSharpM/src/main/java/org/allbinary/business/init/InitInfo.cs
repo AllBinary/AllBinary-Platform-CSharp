@@ -76,7 +76,7 @@ public class InitInfo
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public virtual void set(HashMap hashMap)
+    public virtual void set(HashMap<object, object> hashMap)
     {
         try {
             this.testing = ((string) hashMap.get(this.TESTING));
@@ -198,9 +198,9 @@ public class InitInfo
         return BooleanUtil.getInstance().isStringBoolean(testing);
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(this.TESTING, this.getTesting());
         hashMap.put(this.MAINPATH, this.getMainPath());
         hashMap.put(this.TESTHTMLPATH, this.getTestHtmlPath());

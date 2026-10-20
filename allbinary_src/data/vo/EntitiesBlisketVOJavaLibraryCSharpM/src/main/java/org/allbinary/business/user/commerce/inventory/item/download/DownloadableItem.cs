@@ -63,7 +63,7 @@ public class DownloadableItem
         this.retries = EMPTY_STRING;
     }
 
-    public DownloadableItem(HashMap hashMap)
+    public DownloadableItem(HashMap<object, object> hashMap)
     {
         this.id = ((string) hashMap.get(DownloadItemData.ID));
         this.basicItemId = ((string) hashMap.get(BasicItemData.getInstance().ID));
@@ -120,9 +120,9 @@ public class DownloadableItem
         return values;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap values = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> values = StdUtil.getInstance().createHashMap();
         values.put(DownloadItemData.ID, this.getId());
         values.put(BasicItemData.getInstance().ID, this.basicItemId);
         values.put(EntryData.getInstance().ENABLE, this.enabled);

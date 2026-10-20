@@ -32,7 +32,7 @@ public class InputAutomationTypeDefaultComboBoxModelFactory
     public static DefaultComboBoxModel getInstance()
     {
         DefaultComboBoxModel defaultComboBoxModel = new DefaultComboBoxModel();
-        Set set = InputRobotFactory.getInstance().get().keySet();
+        Set<object> set = InputRobotFactory.getInstance().get().keySet();
         object[] nameArray = set.toArray();
         int size = nameArray.Length;
         for (int index = 0; index < size; index++) {

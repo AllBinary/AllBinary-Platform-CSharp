@@ -56,7 +56,7 @@ public class LayerPlacer
         GPoint relativePoint = this.getPoint(layerPlacementInterface);
         LayerInterfaceFactory layerInterfaceFactory = LayerInterfaceFactory.getInstance();
         ABHashtable<object, object> hashtable = layerPlacementInterface.getInstance();
-        Enumeration enumeration = hashtable.keys();
+        Enumeration<object> enumeration = hashtable.keys();
         GPoint point = null;
         ABHashtable<object, object> layerHashtable = null;
         int x = 0;

@@ -100,7 +100,7 @@ public class StreetAddress
         this.log();
     }
 
-    public StreetAddress(HashMap address)
+    public StreetAddress(HashMap<object, object> address)
     {
         this.id = ((string) address.get(StreetAddressData.ID));
         this.name = ((string) address.get(StreetAddressData.NAME));
@@ -270,9 +270,9 @@ public class StreetAddress
         }
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(StreetAddressData.ID, this.id);
         hashMap.put(StreetAddressData.NAME, this.name);
         hashMap.put(StreetAddressData.STREET, this.street);
@@ -287,8 +287,8 @@ public class StreetAddress
     public virtual Node toXmlNode(Document document)
     {
         StringUtil stringUtil = StringUtil.getInstance();
-        HashMap hashMap = this.toHashMap();
-        Set keySet = hashMap.keySet();
+        HashMap<object, object> hashMap = this.toHashMap();
+        Set<object> keySet = hashMap.keySet();
         object[] keyArray = keySet.toArray();
         int size = keyArray.Length;
         Node node = document.createElement(StreetAddressData.ADDRESS);

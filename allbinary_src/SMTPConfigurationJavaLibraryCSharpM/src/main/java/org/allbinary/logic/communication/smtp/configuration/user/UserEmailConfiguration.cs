@@ -37,7 +37,7 @@ public class UserEmailConfiguration : UserEmailConfigurationInterface
         this.setUserEmailEventsConfigurationInterface(new UserEmailEventsConfiguration());
     }
 
-    public UserEmailConfiguration(HashMap hashMap)
+    public UserEmailConfiguration(HashMap<object, object> hashMap)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             this.logUtil.putF(this.commonStrings.CONSTRUCTOR, this, this.commonStrings.CONSTRUCTOR);

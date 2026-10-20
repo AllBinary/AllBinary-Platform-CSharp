@@ -38,13 +38,13 @@ public class BasketRequestHelper : TagHelper
     public readonly BasicItemData basicItemData = BasicItemData.getInstance();
     private readonly WeblisketSession weblisketSession;
     private readonly StoreFrontInterface storeFrontInterface = null;
-    private readonly HashMap propertiesHashMap;
+    private readonly HashMap<object, object> propertiesHashMap;
     private readonly PageContext pageContext;
     private readonly HttpServletRequest request;
     private string id = null;
     private string num = null;
     private readonly int MAX = 200;
-    public BasketRequestHelper(HashMap propertiesHashMap, PageContext pageContext)
+    public BasketRequestHelper(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         this.propertiesHashMap = propertiesHashMap;
         this.pageContext = pageContext;

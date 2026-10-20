@@ -66,7 +66,7 @@ public class WorkFlowEntity : AbSqlBean, WorkFlowEntityInterface
     public virtual void delete(string name, string storeName)
     {
         try {
-            HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
             keysAndValues.put(WorkFlowData.getInstance().NAME, name);
             keysAndValues.put(StoreFrontData.getInstance().NAME, storeName);
             base.deleteWhere(keysAndValues);
@@ -84,10 +84,10 @@ public class WorkFlowEntity : AbSqlBean, WorkFlowEntityInterface
     public virtual WorkFlowInterface get(string name, string storeName)
     {
         try {
-            HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
             keysAndValues.put(WorkFlowData.getInstance().NAME, name);
             keysAndValues.put(StoreFrontData.getInstance().NAME, storeName);
-            HashMap hashMap = base.getRow(keysAndValues);
+            HashMap<object, object> hashMap = base.getRow(keysAndValues);
             return ((WorkFlowInterface) DbWorkFlowFactory.getInstance().getInstance(this.abeClientInformation, hashMap));
         } catch (LicensingException e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
@@ -106,12 +106,12 @@ public class WorkFlowEntity : AbSqlBean, WorkFlowEntityInterface
     {
         try {
             BasicArrayList workFlowsVector = new BasicArrayListD();
-            HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
             keysAndValues.put(StoreFrontData.getInstance().NAME, storeName);
             BasicArrayList hashMapVector = base.getRows(keysAndValues);
             int size = hashMapVector.size();
             for (int i = 0; i < size; i++) {
-                HashMap workFlowHashMap = ((HashMap) hashMapVector.get(i));
+                HashMap<object, object> workFlowHashMap = ((HashMap<object, object>) hashMapVector.get(i));
                 if (workFlowHashMap != null) {
                     workFlowsVector.add(DbWorkFlowFactory.getInstance().getInstance(abeClientInformation, workFlowHashMap));
                 }
@@ -125,10 +125,10 @@ public class WorkFlowEntity : AbSqlBean, WorkFlowEntityInterface
         }
     }
 
-    public virtual void update(HashMap updatedValues)
+    public virtual void update(HashMap<object, object> updatedValues)
     {
         try {
-            HashMap wherekeysAndValues = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> wherekeysAndValues = StdUtil.getInstance().createHashMap();
             wherekeysAndValues.put(WorkFlowData.getInstance().NAME, ((string) updatedValues.get(WorkFlowData.getInstance().NAME)));
             wherekeysAndValues.put(StoreFrontData.getInstance().NAME, ((string) updatedValues.get(StoreFrontData.getInstance().NAME)));
             base.updateWhere(wherekeysAndValues, updatedValues);

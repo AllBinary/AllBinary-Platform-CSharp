@@ -44,7 +44,7 @@ public class DownloadableItemView : DomNodeInterface
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
             this.logUtil.putF(this.commonStrings.START, this, "toXmlNode");
         }
-        HashMap hashMap = this.downloadableItem.toHashMap();
+        HashMap<object, object> hashMap = this.downloadableItem.toHashMap();
         long totalTime = ((long) this.downloadableItem.getValidTime());
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -66,7 +66,7 @@ public class DownloadableItemView : DomNodeInterface
         hashMap.put(DownloadItemData.VALID_TIME_HOURS, (hourDelta - hour).ToString());
         hashMap.put(DownloadItemData.VALID_TIME_MINUTES, (minuteDelta - minute).ToString());
         hashMap.put(DownloadItemData.VALID_TIME_SECONDS, (secondDelta - second).ToString());
-        Set keySet = hashMap.keySet();
+        Set<object> keySet = hashMap.keySet();
         Node node = document.createElement(DownloadItemData.NAME);
         StringUtil stringUtil = StringUtil.getInstance();
         object[] nameArray = keySet.toArray();

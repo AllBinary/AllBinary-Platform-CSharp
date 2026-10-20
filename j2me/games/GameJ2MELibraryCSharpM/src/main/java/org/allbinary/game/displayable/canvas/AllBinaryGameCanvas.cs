@@ -1256,7 +1256,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
             this.getCustomCommandListener().commandAction(GameCommandsFactory.getInstance().SET_MENU_DISPLAYABLE, textBox);
         }
         if (autoSubmit) {
-            class SaveHighScoreRunnable : Runnable
+            class SaveHighScoreRunnable : global::java.lang.Runnable
             {
                 private readonly ProgressCanvas progressCanvas = ProgressCanvasFactory.getInstance();
                 public virtual void run()

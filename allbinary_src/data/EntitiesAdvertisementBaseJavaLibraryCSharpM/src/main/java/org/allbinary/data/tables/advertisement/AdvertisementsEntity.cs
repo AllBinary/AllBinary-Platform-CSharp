@@ -59,23 +59,23 @@ public class AdvertisementsEntity : AbSqlBean, AdvertisementsEntityInterface
 
     public virtual BasicArrayList get(string storeName)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(StoreFrontData.getInstance().NAME, storeName);
         BasicArrayList hashMapVector = base.getRows(keysAndValues);
         BasicArrayList vector = new BasicArrayListD();
         int size = hashMapVector.size();
         for (int index = 0; index < size; index++) {
-            HashMap hashMap = ((HashMap) hashMapVector.get(index));
+            HashMap<object, object> hashMap = ((HashMap<object, object>) hashMapVector.get(index));
         }
         return vector;
     }
 
     public virtual AdvertisementInterface get(string storeName, string advertismentName)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(StoreFrontData.getInstance().NAME, storeName);
         keysAndValues.put(AdvertisementData.getInstance().NAME, advertismentName);
-        HashMap hashMap = base.getRow(keysAndValues);
+        HashMap<object, object> hashMap = base.getRow(keysAndValues);
         return null;
     }
 
@@ -95,7 +95,7 @@ public class AdvertisementsEntity : AbSqlBean, AdvertisementsEntityInterface
         return returnStr;
     }
 
-    public virtual void update(HashMap updatedValues)
+    public virtual void update(HashMap<object, object> updatedValues)
     {
         base.updateWhere(EntryData.getInstance().ID, ((string) updatedValues.get(EntryData.getInstance().ID)), updatedValues);
     }

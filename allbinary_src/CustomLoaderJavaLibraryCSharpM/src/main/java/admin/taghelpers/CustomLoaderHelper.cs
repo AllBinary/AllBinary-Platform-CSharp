@@ -29,7 +29,7 @@ public class CustomLoaderHelper
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    public CustomLoaderHelper(HashMap hashMap, PageContext pageContext)
+    public CustomLoaderHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
     }
 

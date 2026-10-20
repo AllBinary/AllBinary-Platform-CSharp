@@ -32,7 +32,7 @@ public class TransformInfoRequestHelper : ModifyTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private TransformInfoHttpInterface transformInfoInterface;
-    public TransformInfoRequestHelper(HashMap propertiesHashMap, PageContext pageContext)
+    public TransformInfoRequestHelper(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         this.transformInfoInterface = new TransformInfoHttpStoreNoManipulation(propertiesHashMap, pageContext);
     }
@@ -41,7 +41,7 @@ public class TransformInfoRequestHelper : ModifyTable
     {
         try {
             string success = "Updated Successfully";
-            HashMap hashMapData = this.transformInfoInterface.toHashMap();
+            HashMap<object, object> hashMapData = this.transformInfoInterface.toHashMap();
             TransformInfoEntityBuilder.getInstance().update(hashMapData);
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "update()");

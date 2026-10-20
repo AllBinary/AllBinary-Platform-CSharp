@@ -46,7 +46,7 @@ public class RootStoreThemeCategoryPropertiesFactory : CategoryPropertiesFactory
         this.categoryPropertiesInterface = ((CategoryPropertiesInterface) new RootStoreThemeCategoryProperties(transformInfoInterface, node));
     }
 
-    public RootStoreThemeCategoryPropertiesFactory(TransformInfoInterface transformInfoInterface, HashMap categoryPropertiesHashMap)
+    public RootStoreThemeCategoryPropertiesFactory(TransformInfoInterface transformInfoInterface, HashMap<object, object> categoryPropertiesHashMap)
     {
         this.categoryPropertiesInterface = ((CategoryPropertiesInterface) new RootStoreThemeCategoryProperties(transformInfoInterface, categoryPropertiesHashMap));
     }

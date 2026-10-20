@@ -23,7 +23,7 @@ public class OpenGLUtil
     {
     }
 
-    public virtual void addRunnable(Runnable runnable)
+    public virtual void addRunnable(global::java.lang.Runnable runnable)
     {
     }
 

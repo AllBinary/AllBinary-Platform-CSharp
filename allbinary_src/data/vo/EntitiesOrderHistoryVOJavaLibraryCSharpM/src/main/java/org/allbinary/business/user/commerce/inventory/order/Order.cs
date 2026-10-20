@@ -194,9 +194,9 @@ public class Order : OrderInterface, Serializable
         return "Create your own Order.emailOrder";
     }
 
-    public virtual HashMap toHashMapOrder()
+    public virtual HashMap<object, object> toHashMapOrder()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(PaymentData.METHOD, this.paymentMethod);
         hashMap.put(ShippingMethodData.NAME, this.shippingType);
         hashMap.put(StoreFrontData.getInstance().NAME, this.storeName);
@@ -212,8 +212,8 @@ public class Order : OrderInterface, Serializable
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        HashMap hashMap = this.toHashMapOrder();
-        Set keySet = hashMap.keySet();
+        HashMap<object, object> hashMap = this.toHashMapOrder();
+        Set<object> keySet = hashMap.keySet();
         object[] keyArray = keySet.toArray();
         int size = keyArray.Length;
         Node node = document.createElement(OrderData.ORDER);

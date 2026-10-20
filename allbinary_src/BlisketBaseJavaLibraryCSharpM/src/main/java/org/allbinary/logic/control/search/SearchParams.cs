@@ -28,7 +28,7 @@ namespace org.allbinary.logic.control.search;
 
 public class SearchParams
 {
-    private HashMap columnsAndSearchValues;
+    private HashMap<object, object> columnsAndSearchValues;
     private string order = null;
     private string sortBy = null;
     private string listLength = null;
@@ -84,7 +84,7 @@ public class SearchParams
         this.endPage = value;
     }
 
-    public virtual HashMap get()
+    public virtual HashMap<object, object> get()
     {
         return this.columnsAndSearchValues;
     }
@@ -156,7 +156,7 @@ public class SearchParams
     private Node getFieldsNode(Document document)
     {
         Node fieldsNode = ModDomHelper.createNameValueNodes(document, SearchData.FIELDS, this.columnsAndSearchValues.size().ToString());
-        Set set = this.columnsAndSearchValues.keySet();
+        Set<object> set = this.columnsAndSearchValues.keySet();
         object[] searchValueArray = set.toArray();
         int size = searchValueArray.Length;
         for (int index = 0; index < size; index++) {

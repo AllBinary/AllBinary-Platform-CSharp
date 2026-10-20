@@ -32,7 +32,7 @@ public class ThreadObjectUtil
         TsUtil.getInstance().waitFor(anyType, delay);
     }
 
-    public virtual void processThread(Runnable runnable)
+    public virtual void processThread(global::java.lang.Runnable runnable)
     {
         Thread thread = new Thread(runnable);
         thread.start();

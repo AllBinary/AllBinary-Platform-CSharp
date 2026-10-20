@@ -29,7 +29,7 @@ public class OrderItemsHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly Portion portion;
-    public OrderItemsHelper(HashMap hashMap, PageContext pageContext)
+    public OrderItemsHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.portion = new Portion(hashMap);
     }

@@ -105,9 +105,9 @@ public class MouseActionScriptInput : BasicProfileActionScriptInput, MouseAction
         this.mouseActionScriptInputJPanel.getMouseActionJDialog().setVisible(true);
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(MouseActionScriptInputData.BUTTONS, (this.getButtonClicks()).ToString());
         this.logUtil.putF("HashMap: " + hashMap.ToString(), this, "toHashMap()");
         return hashMap;
@@ -119,7 +119,7 @@ public class MouseActionScriptInput : BasicProfileActionScriptInput, MouseAction
         Node node = base.toXmlNode(document);
         Node mouseNode = ModDomHelper.createNodeWithValueNodes(document, MouseActionScriptInputData.NAME, this.toHashMap());
         node.appendChild(mouseNode);
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(MouseActionScriptInputData.MOVE_X, (this.getPoint().x).ToString());
         hashMap.put(MouseActionScriptInputData.MOVE_Y, (this.getPoint().y).ToString());
         mouseNode.appendChild(ModDomHelper.createNodeWithValueNodes(document, MouseActionScriptInputData.MOVE, hashMap));

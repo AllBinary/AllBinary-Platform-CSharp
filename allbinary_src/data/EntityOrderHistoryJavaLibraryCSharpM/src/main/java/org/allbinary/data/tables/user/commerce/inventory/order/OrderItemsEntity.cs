@@ -62,7 +62,7 @@ public class OrderItemsEntity : AbSqlBean, OrderItemsEntityInterface
         BasicArrayList vector = new BasicArrayListD();
         try {
             BasketInterface basket = order.getBasket();
-            Set items = basket.getIds();
+            Set<object> items = basket.getIds();
             string ZERO_STRING = TableDataFactory.getInstance().ZERO_STRING;
             string EMPTY_STRING = StringUtil.getInstance().EMPTY_STRING;
             InventoryEntity inventoryEntity = InventoryEntityFactory.getInstance().getInventoryEntityInstance();
@@ -130,8 +130,8 @@ public class OrderItemsEntity : AbSqlBean, OrderItemsEntityInterface
     public virtual void setStatus(string orderId, string groupId, string status)
     {
         try {
-            HashMap whereHashMap = StdUtil.getInstance().createHashMap();
-            HashMap updateHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> whereHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> updateHashMap = StdUtil.getInstance().createHashMap();
             whereHashMap.put(OrderData.ID, orderId);
             whereHashMap.put(ShippingMethodData.GROUP, groupId);
             updateHashMap.put(OrderHistoryData.STATUS, status);
@@ -167,7 +167,7 @@ public class OrderItemsEntity : AbSqlBean, OrderItemsEntityInterface
     {
         try {
             BasketReview basketReview = new BasketReview();
-            HashMap keyValues = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> keyValues = StdUtil.getInstance().createHashMap();
             keyValues.put(OrderData.ID, orderId);
             BasicArrayList items = base.getRows(keyValues);
             EntryData entryData = EntryData.getInstance();
@@ -176,7 +176,7 @@ public class OrderItemsEntity : AbSqlBean, OrderItemsEntityInterface
                 object[] itemsArray = items.toArray();
                 int itemsSize = itemsArray.Length;
                 for (int i = 0; i < itemsSize; i++) {
-                    HashMap itemHashMap = ((HashMap) itemsArray[i]);
+                    HashMap<object, object> itemHashMap = ((HashMap<object, object>) itemsArray[i]);
                     itemHashMap.put(basicItemData.INBASKETS, EMPTY_STRING);
                     itemHashMap.put(entryData.ENABLE, EMPTY_STRING);
                     itemHashMap.put(entryData.TIMECREATED, EMPTY_STRING);

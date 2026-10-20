@@ -72,7 +72,7 @@ public class TitleBodyValidation : Validation, DomNodeInterface
         }
     }
 
-    public TitleBodyValidation(HashMap hashMap)
+    public TitleBodyValidation(HashMap<object, object> hashMap)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF(this.commonStrings.START, this, "Constructor(hashmap)");
@@ -81,7 +81,7 @@ public class TitleBodyValidation : Validation, DomNodeInterface
     }
 
     // throws Exception
-    public virtual void getFormData(HashMap hashMap)
+    public virtual void getFormData(HashMap<object, object> hashMap)
     {
         this.body = ((string) hashMap.get(BodyData.getInstance().NAME));
         this.titleValidation = new TitleNotRequiredValidation(hashMap);

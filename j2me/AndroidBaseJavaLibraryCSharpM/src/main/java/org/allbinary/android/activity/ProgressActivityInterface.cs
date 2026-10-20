@@ -21,7 +21,7 @@ namespace org.allbinary.android.activity;
 
 public interface ProgressActivityInterface
 {
-    void runOnUiThread(Runnable action);
+    void runOnUiThread(global::java.lang.Runnable action);
 
     void onDismissTitleProgressBar();
 

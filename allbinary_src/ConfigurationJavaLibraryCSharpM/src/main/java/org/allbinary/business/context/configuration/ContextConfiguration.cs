@@ -35,7 +35,7 @@ public class ContextConfiguration : ContextConfigurationInterface
         this.setEmailServerConfigurationInterface(((EmailServerConfigurationInterface) new EmailServerConfiguration()));
     }
 
-    public ContextConfiguration(HashMap hashMap)
+    public ContextConfiguration(HashMap<object, object> hashMap)
     {
         this.logUtil.putF(this.commonStrings.START, this, "ContextConfiguration(HashMap)");
         this.setEmailServerConfigurationInterface(((EmailServerConfigurationInterface) new EmailServerConfiguration(hashMap)));

@@ -38,16 +38,16 @@ public class PathFindingThreadPool : ThreadPool
         base.runTaskWithPriority(task);
     }
 
-    public override void runTask(Runnable task)
+    public override void runTask(global::java.lang.Runnable task)
     {
         base.runTask(task);
     }
 
-    protected override void startTask(Runnable task)
+    protected override void startTask(global::java.lang.Runnable task)
     {
     }
 
-    protected override void completedTask(Runnable task)
+    protected override void completedTask(global::java.lang.Runnable task)
     {
     }
 

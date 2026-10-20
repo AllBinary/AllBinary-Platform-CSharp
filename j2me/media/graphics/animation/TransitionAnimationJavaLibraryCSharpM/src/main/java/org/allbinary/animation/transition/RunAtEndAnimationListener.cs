@@ -21,8 +21,8 @@ namespace org.allbinary.animation.transition;
 
 public class RunAtEndAnimationListener : AnimationListenerInterface
 {
-    public Runnable runnable;
-    protected RunAtEndAnimationListener(Runnable runnable)
+    public global::java.lang.Runnable runnable;
+    protected RunAtEndAnimationListener(global::java.lang.Runnable runnable)
     {
         this.runnable = runnable;
     }

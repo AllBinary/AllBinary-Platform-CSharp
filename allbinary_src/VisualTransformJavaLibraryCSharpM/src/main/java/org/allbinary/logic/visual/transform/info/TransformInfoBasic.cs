@@ -32,7 +32,7 @@ namespace org.allbinary.logic.visual.transform.info;
 public class TransformInfoBasic : AbContext, TransformInfoHttpInterface
 {
     private StoreFrontInterface storeFrontInterface;
-    public TransformInfoBasic(StoreFrontInterface storeFrontInterface, HashMap propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
+    public TransformInfoBasic(StoreFrontInterface storeFrontInterface, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
         // base(propertiesHashMap, pageContext) is called from the constructor declaration
         this.storeFrontInterface = storeFrontInterface;
@@ -48,7 +48,7 @@ public class TransformInfoBasic : AbContext, TransformInfoHttpInterface
         return commonStrings.NOT_IMPLEMENTED;
     }
 
-    public virtual void @override(HashMap hashMap)
+    public virtual void @override(HashMap<object, object> hashMap)
     {
     }
 
@@ -174,7 +174,7 @@ public class TransformInfoBasic : AbContext, TransformInfoHttpInterface
     }
 
     // throws Exception
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         return null;
     }

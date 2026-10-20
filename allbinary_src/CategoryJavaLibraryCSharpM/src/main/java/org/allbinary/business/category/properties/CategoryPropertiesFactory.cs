@@ -37,7 +37,7 @@ public class CategoryPropertiesFactory : CategoryPropertiesFactoryInterface
         this.categoryPropertiesInterface = ((CategoryPropertiesInterface) new CategoryProperties(node));
     }
 
-    public CategoryPropertiesFactory(HashMap categoryPropertiesHashMap)
+    public CategoryPropertiesFactory(HashMap<object, object> categoryPropertiesHashMap)
     {
         this.categoryPropertiesInterface = ((CategoryPropertiesInterface) new CategoryProperties(categoryPropertiesHashMap));
     }

@@ -101,7 +101,7 @@ public class RemoteHighScores : HighScores
         } else {
             string NEXT_ELEMENT = new StringMaker().append(CommonLabels.getInstance().NEXT).append("Element: ").ToString();
             CommonStrings commonStrings = CommonStrings.getInstance();
-            Enumeration enumeration = hashtable.elements();
+            Enumeration<object> enumeration = hashtable.elements();
             object nextElement = null;
             while (this.enumerationUtil.hasMoreElements(enumeration)) {
                 nextElement = this.enumerationUtil.nextElement(enumeration);

@@ -34,7 +34,7 @@ public class TransformInfoHttpFactory
     }
 
     // throws Exception
-    public static TransformInfoInterface getInstance(HashMap propertiesHashMap, PageContext pageContext)
+    public static TransformInfoInterface getInstance(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         LogUtil logUtil = LogUtil.getInstance();
         try {

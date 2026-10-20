@@ -42,7 +42,7 @@ public class ShippingAddressHelper : BasicTable
     private string userName = null;
     private StreetAddress streetAddress = null;
     private readonly Portion portion;
-    public ShippingAddressHelper(HashMap hashMap, PageContext pageContext)
+    public ShippingAddressHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.request = ((HttpServletRequest) pageContext.getRequest());
         this.weblisketSession = new WeblisketSession(hashMap, pageContext);

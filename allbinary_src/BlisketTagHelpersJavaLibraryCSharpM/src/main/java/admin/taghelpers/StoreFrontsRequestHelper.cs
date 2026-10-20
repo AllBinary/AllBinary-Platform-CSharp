@@ -52,7 +52,7 @@ public class StoreFrontsRequestHelper : ModifyTable
     private string storeName = null;
     private StoreFrontInterface modifyingStoreFrontInterface = null;
     private readonly Portion portion;
-    public StoreFrontsRequestHelper(HashMap hashMap, PageContext pageContext)
+    public StoreFrontsRequestHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.pageContext = pageContext;
         this.request = ((HttpServletRequest) pageContext.getRequest());
@@ -72,7 +72,7 @@ public class StoreFrontsRequestHelper : ModifyTable
     {
         try {
             string success = "Updated Successfully";
-            HashMap hashMapData = this.modifyingStoreFrontInterface.toHashMap();
+            HashMap<object, object> hashMapData = this.modifyingStoreFrontInterface.toHashMap();
             StoreFrontsEntityFactory.getInstance().getStoreFrontsEntityInstance().update(hashMapData);
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "update()");

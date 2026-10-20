@@ -38,7 +38,7 @@ public class InsertCssValidationView : CssCustomizerView, ValidationComponentInt
     public InsertCssValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
-        HashMap requestHashMap = new NameSpaceRequestParams(this.getPageContext()).toHashMap();
+        HashMap<object, object> requestHashMap = new NameSpaceRequestParams(this.getPageContext()).toHashMap();
         this.styleValidationInterface = new CssStyleValidation(requestHashMap);
     }
 

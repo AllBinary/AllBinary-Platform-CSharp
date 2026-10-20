@@ -24,7 +24,7 @@ namespace admin.tags;
 
 public class BasicOptionItemsTag : TableTag
 {
-    private HashMap propertiesHashMap = null;
+    private HashMap<object, object> propertiesHashMap = null;
     public BasicOptionItemsTag()
     {
         this.setTagHelperFactory(new BasicOptionItemsHelperFactory());

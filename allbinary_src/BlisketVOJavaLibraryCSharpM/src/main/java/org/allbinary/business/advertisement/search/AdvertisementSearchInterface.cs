@@ -38,7 +38,7 @@ public interface AdvertisementSearchInterface
 
     int getProductsPerPage();
 
-    HashMap getSearchParams();
+    HashMap<object, object> getSearchParams();
 
     void setCategory(AdvertisementCategoryInterface advertisementCategoryInterface);
 
@@ -50,7 +50,7 @@ public interface AdvertisementSearchInterface
 
     void setProductsPerPage(int productsPerPage);
 
-    void setSearchParams(HashMap columnAndKeywordHashMap);
+    void setSearchParams(HashMap<object, object> columnAndKeywordHashMap);
 
 }
 

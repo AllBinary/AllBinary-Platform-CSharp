@@ -36,7 +36,7 @@ public class OrderTag : CustomTagSupport
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private string command = null;
     private string storeName = null;
-    private HashMap propertiesHashMap = null;
+    private HashMap<object, object> propertiesHashMap = null;
     public OrderTag()
     {
     }

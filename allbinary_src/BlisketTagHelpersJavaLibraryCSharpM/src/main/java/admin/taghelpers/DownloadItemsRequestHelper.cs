@@ -34,7 +34,7 @@ public class DownloadItemsRequestHelper : ModifyTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly DownloadableItem downloadableItem;
-    public DownloadItemsRequestHelper(HashMap hashMap, PageContext pageContext)
+    public DownloadItemsRequestHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         HelperTag inventoryTag = ((HelperTag) hashMap.get(AbTagData.PARENT));
         InventoryItemViewParentTagHelper inventoryItemViewParentTagHelper = InventoryItemViewParentTagHelper.getInstance();
@@ -83,7 +83,7 @@ public class DownloadItemsRequestHelper : ModifyTable
     {
         try {
             string success = "Update Successful";
-            HashMap values = this.downloadableItem.toHashMap();
+            HashMap<object, object> values = this.downloadableItem.toHashMap();
             DownloadItemsEntityFactory.getInstance().getDownloadItemsEntityInstance().update(values);
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(this.downloadableItem.getId() + CommonSeps.getInstance().SPACE + success, this, "update()");

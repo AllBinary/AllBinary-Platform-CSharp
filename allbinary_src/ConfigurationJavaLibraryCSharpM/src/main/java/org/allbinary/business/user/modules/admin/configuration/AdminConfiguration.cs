@@ -49,14 +49,14 @@ public class AdminConfiguration : AdminConfigurationInterface
         this.getFormData(new RequestParams(request).toHashMap());
     }
 
-    public AdminConfiguration(HashMap storeHashMap)
+    public AdminConfiguration(HashMap<object, object> storeHashMap)
     {
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         this.getFormData(storeHashMap);
     }
 
     // throws Exception
-    private void getFormData(HashMap storeHashMap)
+    private void getFormData(HashMap<object, object> storeHashMap)
     {
         this.logUtil.putF(this.commonStrings.START, this, "getFormData");
         this.setContextConfigurationInterface(((ContextConfigurationInterface) new ContextConfiguration(storeHashMap)));

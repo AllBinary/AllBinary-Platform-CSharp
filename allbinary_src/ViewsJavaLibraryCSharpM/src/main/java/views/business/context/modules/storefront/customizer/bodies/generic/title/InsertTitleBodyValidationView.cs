@@ -37,7 +37,7 @@ public class InsertTitleBodyValidationView : TitleBodyCustomizerView, Validation
     public InsertTitleBodyValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
-        HashMap requestHashMap = new RequestParams(this.getPageContext()).toHashMap();
+        HashMap<object, object> requestHashMap = new RequestParams(this.getPageContext()).toHashMap();
         this.titleBody = new TitleBodyValidation(requestHashMap);
     }
 

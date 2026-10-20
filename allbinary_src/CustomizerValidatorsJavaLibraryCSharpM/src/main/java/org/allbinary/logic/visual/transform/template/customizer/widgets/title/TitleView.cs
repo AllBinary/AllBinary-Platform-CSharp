@@ -55,7 +55,7 @@ public class TitleView : DomNodeInterface
         }
     }
 
-    public TitleView(HashMap hashMap)
+    public TitleView(HashMap<object, object> hashMap)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("HashMap: " + hashMap.ToString(), this, this.commonStrings.CONSTRUCTOR);
@@ -68,7 +68,7 @@ public class TitleView : DomNodeInterface
         return this.title;
     }
 
-    public virtual void getFormData(HashMap hashMap)
+    public virtual void getFormData(HashMap<object, object> hashMap)
     {
         this.title = ((string) hashMap.get(TitleData.getInstance().TEXT));
         if (StringValidationUtil.getInstance().isEmpty(this.title)) {
@@ -76,9 +76,9 @@ public class TitleView : DomNodeInterface
         }
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(TitleData.getInstance().TEXT, this.getTitle());
         return hashMap;
     }
@@ -86,7 +86,7 @@ public class TitleView : DomNodeInterface
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        HashMap hashMap = this.toHashMap();
+        HashMap<object, object> hashMap = this.toHashMap();
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("TitleView HashMap: " + hashMap.ToString(), this, "toXmlNode()");
         }

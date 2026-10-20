@@ -117,7 +117,7 @@ public class SelectionTool : GraphicItemInterface
         int xRect2 = Math.Abs(this.endPoint.getX() - this.startPoint.getX()) + xRect;
         int yRect = this.getYRect();
         int yRect2 = Math.Abs(this.endPoint.getY() - this.startPoint.getY()) + yRect;
-        HashMap hashMap = this.canvasJPanel.getGraphicItemHashMap();
+        HashMap<object, object> hashMap = this.canvasJPanel.getGraphicItemHashMap();
         object[] graphicItemArray = hashMap.keySet().toArray();
         int size = graphicItemArray.Length;
         for (int index = 0; index < size; index++) {

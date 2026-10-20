@@ -82,9 +82,9 @@ public class StoreFrontOrdersHistoryStatistics : StoreFrontOrdersHistoryStatisti
         return this.totalMoney;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         StoreFrontOrdersHistoryStatisticsData storeFrontOrdersHistoryStatisticsData = StoreFrontOrdersHistoryStatisticsData.getInstance();
         hashMap.put(storeFrontOrdersHistoryStatisticsData.NUMBEROFORDERS, this.getNumberOfOrders().ToString());
         hashMap.put(storeFrontOrdersHistoryStatisticsData.SUBTOTAL, this.getSubTotal().ToString());

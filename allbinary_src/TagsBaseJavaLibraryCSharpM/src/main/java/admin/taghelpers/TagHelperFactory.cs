@@ -27,7 +27,7 @@ public class TagHelperFactory : TagHelperFactoryInterface
 {
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     // throws Exception, LicensingException
-    public virtual object getInstance(HashMap hashMap, PageContext pageContext)
+    public virtual object getInstance(HashMap<object, object> hashMap, PageContext pageContext)
     {
         throw new SystemException();
     }

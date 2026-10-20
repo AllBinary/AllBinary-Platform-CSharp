@@ -30,7 +30,7 @@ public class LogHelper : BasicTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly Portion portion;
-    public LogHelper(HashMap hashMap, PageContext pageContext)
+    public LogHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.portion = new Portion(hashMap);
     }

@@ -135,7 +135,7 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
             } else {
                 this.getRequestHashMap().remove(DownloadItemData.EXTRA_FILES);
             }
-            HashMap hashMap = this.getRequestHashMap();
+            HashMap<object, object> hashMap = this.getRequestHashMap();
             hashMap.put(basicItemData.ID, this.itemInterface.getId());
             object licenseObject = hashMap.get(DownloadItemData.LICENSE_FILE);
             if (licenseObject != null) {

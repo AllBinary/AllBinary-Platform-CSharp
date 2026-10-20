@@ -48,7 +48,7 @@ public class ThreadPool
         if (!this.currentPriorityRunnable.isDone()) {
             this.currentPriorityRunnable.run();
         } else {
-            Runnable runnable = this.getTask();
+            global::java.lang.Runnable runnable = this.getTask();
             if (runnable == this.NULL_RUNNABLE) {
                 return;
             }
@@ -63,7 +63,7 @@ public class ThreadPool
     // throws Exception
     public virtual void runATask()
     {
-        Runnable runnable = this.getTask();
+        global::java.lang.Runnable runnable = this.getTask();
         if (runnable != null) {
             runnable.run();
         }
@@ -104,7 +104,7 @@ public class ThreadPool
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public virtual void runTask(Runnable task)
+    public virtual void runTask(global::java.lang.Runnable task)
     {
         if (!this.isAlive) {
             this.init();
@@ -116,12 +116,12 @@ public class ThreadPool
 
     // throws InterruptedException
     [MethodImpl(MethodImplOptions.Synchronized)]
-    protected virtual Runnable getTask()
+    protected virtual global::java.lang.Runnable getTask()
     {
         if (this.taskQueue.isEmpty()) {
             return this.NULL_RUNNABLE;
         }
-        return ((Runnable) this.taskQueue.removeAt(0));
+        return ((global::java.lang.Runnable) this.taskQueue.removeAt(0));
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
@@ -174,11 +174,11 @@ public class ThreadPool
         }
     }
 
-    protected virtual void startTask(Runnable task)
+    protected virtual void startTask(global::java.lang.Runnable task)
     {
     }
 
-    protected virtual void completedTask(Runnable task)
+    protected virtual void completedTask(global::java.lang.Runnable task)
     {
     }
 

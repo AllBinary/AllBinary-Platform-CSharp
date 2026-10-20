@@ -29,7 +29,7 @@ public class AdminConfigurationRequestHelper : ModifyTable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private HttpServletRequest request;
-    public AdminConfigurationRequestHelper(HashMap hashMap, PageContext pageContext)
+    public AdminConfigurationRequestHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
             this.logUtil.putF(this.commonStrings.CONSTRUCTOR, this, this.commonStrings.CONSTRUCTOR);

@@ -46,7 +46,7 @@ public class TransactionEntity : AbSqlBean, TransactionEntityInterface
     public virtual void remove(string userName, string orderNumber)
     {
         try {
-            HashMap whereHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> whereHashMap = StdUtil.getInstance().createHashMap();
             whereHashMap.put(OrderData.ID, ((string) orderNumber));
             whereHashMap.put(UserData.USERNAME, userName);
             base.deleteWhere(whereHashMap);

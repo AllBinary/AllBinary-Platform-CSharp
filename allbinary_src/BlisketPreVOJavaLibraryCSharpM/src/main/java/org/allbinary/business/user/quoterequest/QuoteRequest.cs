@@ -60,7 +60,7 @@ public class QuoteRequest
         }
     }
 
-    public QuoteRequest(HashMap hashMap)
+    public QuoteRequest(HashMap<object, object> hashMap)
     {
         QuoteRequestData quoteRequestData = QuoteRequestData.getInstance();
         this.id = ((string) hashMap.get(quoteRequestData.ID));
@@ -154,10 +154,10 @@ public class QuoteRequest
         return values;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         QuoteRequestData quoteRequestData = QuoteRequestData.getInstance();
-        HashMap values = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> values = StdUtil.getInstance().createHashMap();
         values.put(UserData.USERNAME, userName);
         values.put(quoteRequestData.PROJECT_INFO, this.projectInfo);
         values.put(quoteRequestData.CUSTOMER_COMMENTS, this.userComments);

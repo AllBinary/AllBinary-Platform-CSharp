@@ -27,7 +27,7 @@ namespace org.allbinary.input.automation.module.game.skill;
 
 public class GameSkill
 {
-    private static HashMap hashMap = StdUtil.getInstance().createHashMap();
+    private static HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
     private GameSkillType gameSkillType = null;
     private string extra = null;
     private int time = 0;

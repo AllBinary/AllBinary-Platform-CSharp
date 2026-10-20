@@ -85,17 +85,17 @@ public class ModDomHelper
     }
 
     // throws Exception
-    public static Node createNameValueNodes(Document document, string rootNode, HashMap hashMap)
+    public static Node createNameValueNodes(Document document, string rootNode, HashMap<object, object> hashMap)
     {
         Node node = document.createElement(rootNode);
         return ModDomHelper.createNameValueNodes(document, node, hashMap);
     }
 
     // throws Exception
-    public static Node createNameValueNodes(Document document, Node node, HashMap hashMap)
+    public static Node createNameValueNodes(Document document, Node node, HashMap<object, object> hashMap)
     {
         StringUtil stringUtil = StringUtil.getInstance();
-        Set keySet = hashMap.keySet();
+        Set<object> keySet = hashMap.keySet();
         object[] keyArray = keySet.toArray();
         int size = keyArray.Length;
         for (int i = 0; i < size; i++) {
@@ -108,7 +108,7 @@ public class ModDomHelper
             } else if (anyType is string) {
                 string value = stringUtil.getNonNull(((string) anyType));
                 node.appendChild(ModDomHelper.createNameValueNodes(document, name, value));
-            } else if (anyType is HashMap) {
+            } else if (anyType is HashMap<object, object>) {
                 node.appendChild(ModDomHelper.createNameValueNodes(document, name, hashMap));
             } else {
                 throw new Exception("HashMap value is the wrong instance and is: " + ClassUtil.viewAll(anyType, CommonSeps.getInstance().NEW_LINE));
@@ -144,17 +144,17 @@ public class ModDomHelper
     }
 
     // throws Exception
-    public static Node createNodeWithValueNodes(Document document, string rootNode, HashMap hashMap)
+    public static Node createNodeWithValueNodes(Document document, string rootNode, HashMap<object, object> hashMap)
     {
         Node node = document.createElement(rootNode);
         return ModDomHelper.createNodeWithValueNodes(document, node, hashMap);
     }
 
     // throws Exception
-    public static Node createNodeWithValueNodes(Document document, Node node, HashMap hashMap)
+    public static Node createNodeWithValueNodes(Document document, Node node, HashMap<object, object> hashMap)
     {
         StringUtil stringUtil = StringUtil.getInstance();
-        Set keySet = hashMap.keySet();
+        Set<object> keySet = hashMap.keySet();
         object[] keyArray = keySet.toArray();
         int size = keyArray.Length;
         for (int i = 0; i < size; i++) {

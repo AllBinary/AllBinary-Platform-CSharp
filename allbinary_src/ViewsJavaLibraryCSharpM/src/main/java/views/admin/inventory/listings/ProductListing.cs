@@ -72,7 +72,7 @@ public class ProductListing : ProductListingInterface
     }
 
     // throws Exception
-    private HashSet getHashSet(StoreFrontInterface storeFront)
+    private HashSet<object> getHashSet(StoreFrontInterface storeFront)
     {
         InventoryColumnUtil inventoryColumnUtil = InventoryColumnUtil.getInstance();
         BasicArrayList keywords = inventoryColumnUtil.getColumnWhereLike(this.inventory, storeFront.getCategoryPath(), basicItemData.KEYWORDS);
@@ -84,7 +84,7 @@ public class ProductListing : ProductListingInterface
             keywords.addAllList(substoreKeywords);
         }
         UniqueTokens uniqueTokens = new UniqueTokens();
-        HashSet keywordHashSet = uniqueTokens.getWhithoutDashesAndSkipNumberOnlyTokens(keywords);
+        HashSet<object> keywordHashSet = uniqueTokens.getWhithoutDashesAndSkipNumberOnlyTokens(keywords);
         return keywordHashSet;
     }
 
@@ -113,10 +113,10 @@ public class ProductListing : ProductListingInterface
     }
 
     // throws Exception
-    private void create(string keywordData, HashMap keywordFilenameHashMap, BasicArrayList vector, AbPath staticPath)
+    private void create(string keywordData, HashMap<object, object> keywordFilenameHashMap, BasicArrayList vector, AbPath staticPath)
     {
         StringMaker stringBuffer = new StringMaker();
-        HashMap hashMap = SpecialCharacterUtil.getHashMap();
+        HashMap<object, object> hashMap = SpecialCharacterUtil.getHashMap();
         hashMap.put(CommonSeps.getInstance().SPACE, StringUtil.getInstance().EMPTY_STRING);
         string pageName = new Replace(hashMap).all(keywordData);
         SearchParams searchParams = this.searchRequest.getParams();
@@ -153,9 +153,9 @@ public class ProductListing : ProductListingInterface
         }
     }
 
-    private void addStaticPageInfoToDatabase(StoreFrontInterface storeFront, HashMap keywordFilenameHashMap)
+    private void addStaticPageInfoToDatabase(StoreFrontInterface storeFront, HashMap<object, object> keywordFilenameHashMap)
     {
-        Set keywordHashSet = keywordFilenameHashMap.keySet();
+        Set<object> keywordHashSet = keywordFilenameHashMap.keySet();
         object[] keywordArray = keywordHashSet.toArray();
         int size = keywordArray.Length;
         for (int index = 0; index < size; index++) {
@@ -183,10 +183,10 @@ public class ProductListing : ProductListingInterface
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().STATICPAGEGENERATIONLOGGING)) {
                 this.logUtil.putF("Store Static Pages Path: " + staticPath, this, "generateAll()");
             }
-            HashSet keywordHashSet = this.getHashSet(storeFront);
+            HashSet<object> keywordHashSet = this.getHashSet(storeFront);
             object[] keywordArray = keywordHashSet.toArray();
             int size = keywordArray.Length;
-            HashMap keywordFilenameHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> keywordFilenameHashMap = StdUtil.getInstance().createHashMap();
             if (size == 0) {
                 stringBuffer.delete(0, stringBuffer.length());
                 stringBuffer.append("Products For ");

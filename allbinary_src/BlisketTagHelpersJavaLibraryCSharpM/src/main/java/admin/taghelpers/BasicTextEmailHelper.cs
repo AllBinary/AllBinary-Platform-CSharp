@@ -32,9 +32,9 @@ namespace admin.taghelpers;
 public class BasicTextEmailHelper : TagHelper
 {
     private readonly AbeClientInformationInterface abeClientInformation = ServiceClientInformationInterfaceFactory.getInstance();
-    private HashMap hashMap;
+    private HashMap<object, object> hashMap;
     private PageContext pageContext;
-    public BasicTextEmailHelper(HashMap hashMap, PageContext pageContext)
+    public BasicTextEmailHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.pageContext = pageContext;
         this.hashMap = hashMap;

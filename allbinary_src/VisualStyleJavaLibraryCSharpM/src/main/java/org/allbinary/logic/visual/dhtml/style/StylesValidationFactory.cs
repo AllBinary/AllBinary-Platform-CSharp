@@ -78,7 +78,7 @@ public class StylesValidationFactory
     }
 
     // throws Exception
-    public static BasicArrayList getInstance(HashMap hashMap)
+    public static BasicArrayList getInstance(HashMap<object, object> hashMap)
     {
         Document stylesDocument = ((Document) hashMap.get(NameSpaceRequestParamData.DOCUMENT));
         return StylesValidationFactory.getInstance().getInstance(stylesDocument);

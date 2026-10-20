@@ -21,7 +21,7 @@ public class ToastUtil
 
     public virtual void makeToast(View view, Context context, string message, int time)
     {
-        class MakeToast : Runnable
+        class MakeToast : global::java.lang.Runnable
         {
             public readonly string @string;
             public MakeToast(string @string)

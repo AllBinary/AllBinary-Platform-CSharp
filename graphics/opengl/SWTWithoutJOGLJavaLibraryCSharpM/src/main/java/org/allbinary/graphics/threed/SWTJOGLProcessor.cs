@@ -22,7 +22,7 @@ using System.Linq;
 namespace org.allbinary.graphics.threed;
 
 //SWTWithoutJOGL
-public class SWTJOGLProcessor : Runnable
+public class SWTJOGLProcessor : global::java.lang.Runnable
 {
     private static readonly SWTJOGLProcessor instance = new SWTJOGLProcessor();
     public static SWTJOGLProcessor getInstance()

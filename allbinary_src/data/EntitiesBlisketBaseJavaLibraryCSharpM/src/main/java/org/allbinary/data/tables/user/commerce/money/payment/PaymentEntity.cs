@@ -55,8 +55,8 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
     public virtual void setDefault(string userName, int? index)
     {
         try {
-            HashMap updateKeyAndValue = StdUtil.getInstance().createHashMap();
-            HashMap whereKeyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> updateKeyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> whereKeyAndValue = StdUtil.getInstance().createHashMap();
             whereKeyAndValue.put(UserData.USERNAME, userName);
             PaymentInterface paymentInterface = this.getDefault(userName);
             if (paymentInterface != null) {
@@ -81,12 +81,12 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
     {
         try {
             BasicArrayList paymentVector = new BasicArrayListD();
-            HashMap keyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> keyAndValue = StdUtil.getInstance().createHashMap();
             keyAndValue.put(UserData.USERNAME, userName);
             BasicArrayList paymentList = base.getRows(keyAndValue);
             int size = paymentList.size();
             for (int index = 0; index < size; index++) {
-                HashMap paymentHashMap = ((HashMap) paymentList.get(index));
+                HashMap<object, object> paymentHashMap = ((HashMap<object, object>) paymentList.get(index));
                 Payment payment = new Payment(paymentHashMap);
                 if (payment != null) {
                     paymentVector.add(payment);
@@ -104,8 +104,8 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
     public virtual PaymentInterface getDefault(string userName)
     {
         try {
-            HashMap paymentHashMap = StdUtil.getInstance().createHashMap();
-            HashMap updateKeyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> paymentHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> updateKeyAndValue = StdUtil.getInstance().createHashMap();
             updateKeyAndValue.put(EntryData.getInstance().DEFAULT, EntryData.getInstance().DEFAULT);
             updateKeyAndValue.put(UserData.USERNAME, userName);
             paymentHashMap = base.getRow(updateKeyAndValue);
@@ -129,7 +129,7 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
     public virtual void remove(string userName, int? index)
     {
         try {
-            HashMap whereHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> whereHashMap = StdUtil.getInstance().createHashMap();
             whereHashMap.put(UserData.USERNAME, userName);
             whereHashMap.put(PaymentData.ID, ((string) index.ToString()));
             base.deleteWhere(whereHashMap);

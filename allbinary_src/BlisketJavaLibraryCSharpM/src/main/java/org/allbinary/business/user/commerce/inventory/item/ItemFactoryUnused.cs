@@ -31,7 +31,7 @@ public class ItemFactoryUnused
     }
 
     // throws MoneyException
-    public static TableMappingInterface getInstance(HashMap hashMap)
+    public static TableMappingInterface getInstance(HashMap<object, object> hashMap)
     {
         return ((TableMappingInterface) new Item(hashMap));
     }

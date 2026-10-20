@@ -31,7 +31,7 @@ public class CreateUserFactory
     }
 
     // throws Exception
-    public static UserInterface getInstance(HashMap hashMap)
+    public static UserInterface getInstance(HashMap<object, object> hashMap)
     {
         if (hashMap != null) {
             string roleString = ((string) hashMap.get(UserRoleData.NAME.ToString()));

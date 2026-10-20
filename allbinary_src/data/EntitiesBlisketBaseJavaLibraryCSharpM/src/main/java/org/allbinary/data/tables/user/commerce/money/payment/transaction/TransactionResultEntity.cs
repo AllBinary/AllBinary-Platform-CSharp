@@ -47,7 +47,7 @@ public class TransactionResultEntity : AbSqlBean, TransactionResultEntityInterfa
     public virtual void remove(string userName, string orderNumber)
     {
         try {
-            HashMap whereHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> whereHashMap = StdUtil.getInstance().createHashMap();
             whereHashMap.put(OrderData.ID, ((string) orderNumber));
             whereHashMap.put(UserData.USERNAME, userName);
             base.deleteWhere(whereHashMap);
@@ -86,8 +86,8 @@ public class TransactionResultEntity : AbSqlBean, TransactionResultEntityInterfa
     public virtual TransactionResultInterface getTransactionResultInterface(string orderNumber)
     {
         try {
-            HashMap resultHashMap = StdUtil.getInstance().createHashMap();
-            HashMap updateKeyAndValue = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> resultHashMap = StdUtil.getInstance().createHashMap();
+            HashMap<object, object> updateKeyAndValue = StdUtil.getInstance().createHashMap();
             updateKeyAndValue.put(OrderData.ID, orderNumber);
             resultHashMap = base.getRow(updateKeyAndValue);
             if (resultHashMap != null) {

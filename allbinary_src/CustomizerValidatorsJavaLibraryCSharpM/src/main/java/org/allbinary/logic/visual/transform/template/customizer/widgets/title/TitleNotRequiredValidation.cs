@@ -39,7 +39,7 @@ public class TitleNotRequiredValidation : TitleView, ValidationInterface
         // base(node) is called from the constructor declaration
     }
 
-    public TitleNotRequiredValidation(HashMap hashMap) : base(hashMap)
+    public TitleNotRequiredValidation(HashMap<object, object> hashMap) : base(hashMap)
     {
         // base(hashMap) is called from the constructor declaration
     }

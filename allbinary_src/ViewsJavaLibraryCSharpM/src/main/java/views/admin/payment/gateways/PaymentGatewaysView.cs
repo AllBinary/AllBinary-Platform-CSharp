@@ -53,7 +53,7 @@ public class PaymentGatewaysView : HttpStoreComponentView, DomNodeInterface
             int size = this.paymentGatewayVector.size();
             for (int index = 0; index < size; index++) {
                 BasicPaymentType paymentType = ((BasicPaymentType) this.paymentGatewayVector.get(index));
-                HashMap hashMap = paymentType.toHashMap();
+                HashMap<object, object> hashMap = paymentType.toHashMap();
                 hashMap.put(EntryData.getInstance().DEFAULT, PaymentTypeUtil.getInstance().getDefault(storeName).getBasicPaymentType().getName());
                 Node paymentGatewayNode = ModDomHelper.createNodeWithValueNodes(document, PaymentGatewayData.NAME.ToString(), hashMap);
                 paymentGatewaysNode.appendChild(paymentGatewayNode);

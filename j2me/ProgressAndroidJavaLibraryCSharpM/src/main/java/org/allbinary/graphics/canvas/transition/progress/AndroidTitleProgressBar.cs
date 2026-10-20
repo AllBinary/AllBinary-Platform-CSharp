@@ -27,7 +27,7 @@ namespace org.allbinary.graphics.canvas.transition.progress;
 
 public class AndroidTitleProgressBar : ProgressCanvas
 {
-    public class TitleProgressBarSetProgressRunnable : Runnable
+    public class TitleProgressBarSetProgressRunnable : global::java.lang.Runnable
     {
         private readonly AndroidTitleProgressBar androidTitleProgressBar;
         public TitleProgressBarSetProgressRunnable(AndroidTitleProgressBar androidTitleProgressBar)
@@ -48,7 +48,7 @@ public class AndroidTitleProgressBar : ProgressCanvas
         }
 
     }
-    public class TitleProgressBarPortionSetProgressRunnable : Runnable
+    public class TitleProgressBarPortionSetProgressRunnable : global::java.lang.Runnable
     {
         private readonly AndroidTitleProgressBar androidTitleProgressBar;
         public TitleProgressBarPortionSetProgressRunnable(AndroidTitleProgressBar androidTitleProgressBar)
@@ -69,7 +69,7 @@ public class AndroidTitleProgressBar : ProgressCanvas
         }
 
     }
-    public class ShowTitleProgressBarRunnable : Runnable
+    public class ShowTitleProgressBarRunnable : global::java.lang.Runnable
     {
         private readonly AndroidTitleProgressBar androidTitleProgressBar;
         public ShowTitleProgressBarRunnable(AndroidTitleProgressBar androidTitleProgressBar)
@@ -90,7 +90,7 @@ public class AndroidTitleProgressBar : ProgressCanvas
         }
 
     }
-    public class DismissTitleProgressBarRunnable : Runnable
+    public class DismissTitleProgressBarRunnable : global::java.lang.Runnable
     {
         private readonly AndroidTitleProgressBar androidTitleProgressBar;
         public DismissTitleProgressBarRunnable(AndroidTitleProgressBar androidTitleProgressBar)

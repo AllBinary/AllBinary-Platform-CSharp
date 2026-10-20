@@ -48,7 +48,7 @@ public class DeleteFileValidationView : DownloadableInventoryItemView, Validatio
     // throws Exception
     public virtual void getFormData()
     {
-        HashMap hashMap = new RequestParams(request).toHashMap();
+        HashMap<object, object> hashMap = new RequestParams(request).toHashMap();
         if (hashMap == null) {
             throw new Exception("No Request Params Found");
         }

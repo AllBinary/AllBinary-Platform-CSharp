@@ -50,7 +50,7 @@ public class RootStoreThemeCategoryProperties : RootStoreCategoryProperties
         // base(transformInfoInterface, node) is called from the constructor declaration
     }
 
-    public RootStoreThemeCategoryProperties(TransformInfoInterface transformInfoInterface, HashMap categoryPropertiesHashMap) : base(transformInfoInterface, categoryPropertiesHashMap)
+    public RootStoreThemeCategoryProperties(TransformInfoInterface transformInfoInterface, HashMap<object, object> categoryPropertiesHashMap) : base(transformInfoInterface, categoryPropertiesHashMap)
     {
         // base(transformInfoInterface, categoryPropertiesHashMap) is called from the constructor declaration
     }

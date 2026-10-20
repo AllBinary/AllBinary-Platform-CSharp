@@ -35,7 +35,7 @@ public class StoreFrontAdvertisementsStatisticsView : DomNodeInterface
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        HashMap hashMap = this.storeFrontAdvertisementsStatisticsInterface.toHashMap();
+        HashMap<object, object> hashMap = this.storeFrontAdvertisementsStatisticsInterface.toHashMap();
         Node node = ModDomHelper.createNameValueNodes(document, StoreFrontAdvertisementsStatisticsData.getInstance().NAME, hashMap);
         return node;
     }

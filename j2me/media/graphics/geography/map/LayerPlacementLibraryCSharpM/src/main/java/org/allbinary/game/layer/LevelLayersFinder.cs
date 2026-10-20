@@ -39,7 +39,7 @@ public class LevelLayersFinder
     {
         SmallIntegerSingletonFactory smallIntegerSingletonFactory = SmallIntegerSingletonFactory.getInstance();
         BasicArrayList list = new BasicArrayListD();
-        Enumeration enumeration = hashtable.keys();
+        Enumeration<object> enumeration = hashtable.keys();
         ABHashtable<object, object> layerHashtableCanBeNull = null;
         int? integerCanBeNull = null;
         int? cachedIntegerCanBeNull = null;

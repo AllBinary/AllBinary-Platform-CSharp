@@ -162,7 +162,7 @@ public interface PaymentGatewayInterface : TableMappingInterface
     void setTimeEntered(string value);
 
     // throws Exception
-    HashMap toHashMap(bool isEncrypted);
+    HashMap<object, object> toHashMap(bool isEncrypted);
 
     BasicArrayList toVector(bool isEncrypted);
 

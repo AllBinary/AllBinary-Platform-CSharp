@@ -44,10 +44,10 @@ public class OrderHelper : TagHelper
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private WeblisketSession weblisketSession;
     private StoreFrontInterface storeFrontInterface = null;
-    private HashMap propertiesHashMap;
+    private HashMap<object, object> propertiesHashMap;
     private PageContext pageContext;
     private HttpServletRequest request;
-    public OrderHelper(HashMap propertiesHashMap, PageContext pageContext)
+    public OrderHelper(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         this.propertiesHashMap = propertiesHashMap;
         this.pageContext = pageContext;

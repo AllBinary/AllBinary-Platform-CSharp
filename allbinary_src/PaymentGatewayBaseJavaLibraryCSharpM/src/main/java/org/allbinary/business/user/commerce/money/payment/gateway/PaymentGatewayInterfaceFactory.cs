@@ -54,13 +54,13 @@ public class PaymentGatewayInterfaceFactory : PaymentGatewayInterfaceFactoryInte
     // throws Exception
     public virtual PaymentGatewayInterface getInstance(BasicPaymentType paymentType)
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(PaymentGatewayData.NAME.ToString(), paymentType.getName());
         return this.getInstance(hashMap);
     }
 
     // throws Exception
-    public virtual PaymentGatewayInterface getInstance(HashMap hashMap)
+    public virtual PaymentGatewayInterface getInstance(HashMap<object, object> hashMap)
     {
         CommonStrings commonStrings = CommonStrings.getInstance();
         try {

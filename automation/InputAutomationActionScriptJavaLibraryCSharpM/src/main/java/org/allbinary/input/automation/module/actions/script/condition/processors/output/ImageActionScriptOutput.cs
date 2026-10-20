@@ -78,9 +78,9 @@ public class ImageActionScriptOutput : BasicProfileActionScriptOutput, ImageActi
         return this.actionScriptOutputJPanel;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(ImageActionScriptOutputData.DISPLAY, (this.isDisplay()).ToString());
         hashMap.put(ImageActionScriptOutputData.SAVE, (this.isSaved()).ToString());
         this.logUtil.putF("HashMap: " + hashMap.ToString(), this, "toHashMap()");

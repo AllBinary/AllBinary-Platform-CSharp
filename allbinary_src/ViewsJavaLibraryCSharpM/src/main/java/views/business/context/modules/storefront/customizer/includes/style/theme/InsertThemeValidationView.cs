@@ -34,7 +34,7 @@ namespace views.business.context.modules.storefront.customizer.includes.style.th
 public class InsertThemeValidationView : ThemeCustomizerView, ValidationComponentInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private HashMap requestHashMap;
+    private HashMap<object, object> requestHashMap;
     public InsertThemeValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration

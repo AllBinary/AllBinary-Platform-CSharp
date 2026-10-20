@@ -32,7 +32,7 @@ public class AffiliateUser : User
         this.affiliateSales = new AffiliateSales();
     }
 
-    public AffiliateUser(HashMap userHashMap) : base(userHashMap)
+    public AffiliateUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
         // base(userHashMap) is called from the constructor declaration
         this.affiliateSales = new AffiliateSales();

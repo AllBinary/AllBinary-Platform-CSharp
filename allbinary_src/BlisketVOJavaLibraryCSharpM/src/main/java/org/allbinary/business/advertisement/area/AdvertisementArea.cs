@@ -31,7 +31,7 @@ public class AdvertisementArea : AdvertisementAreaInterface
     private string description;
     private AdvertisementAreaConstraintsInterface advertisementAreaConstraintsInterface;
     private string campaign;
-    public AdvertisementArea(HashMap hashMap)
+    public AdvertisementArea(HashMap<object, object> hashMap)
     {
         this.name = ((string) hashMap.get(AdvertisementAreaData.getInstance().NAME));
         this.storeName = ((string) hashMap.get(StoreFrontData.getInstance().NAME));

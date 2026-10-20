@@ -70,7 +70,7 @@ public class DownloadItemsEntity : AbSqlBean, DownloadItemsEntityInterface
         }
     }
 
-    public virtual void update(HashMap updatedValues)
+    public virtual void update(HashMap<object, object> updatedValues)
     {
         base.updateWhere(DownloadItemData.ID, ((string) updatedValues.get(DownloadItemData.ID)), updatedValues);
     }
@@ -78,12 +78,12 @@ public class DownloadItemsEntity : AbSqlBean, DownloadItemsEntityInterface
     public virtual BasicArrayList getForItem(string id)
     {
         BasicArrayList returnVector = new BasicArrayListD();
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(basicItemData.ID, id);
         BasicArrayList vector = base.getRows(keysAndValues);
         int size = vector.size();
         for (int index = 0; index < size; index++) {
-            HashMap hashMap = ((HashMap) vector.get(index));
+            HashMap<object, object> hashMap = ((HashMap<object, object>) vector.get(index));
             returnVector.add(new DownloadableItem(hashMap));
         }
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
@@ -95,13 +95,13 @@ public class DownloadItemsEntity : AbSqlBean, DownloadItemsEntityInterface
     public virtual BasicArrayList getForItem(string id, string downloadItemId)
     {
         BasicArrayList returnVector = new BasicArrayListD();
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(basicItemData.ID, id);
         keysAndValues.put(DownloadItemData.ID, downloadItemId);
         BasicArrayList vector = base.getRows(keysAndValues);
         int size = vector.size();
         for (int index = 0; index < size; index++) {
-            HashMap hashMap = ((HashMap) vector.get(index));
+            HashMap<object, object> hashMap = ((HashMap<object, object>) vector.get(index));
             returnVector.add(new DownloadableItem(hashMap));
         }
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {

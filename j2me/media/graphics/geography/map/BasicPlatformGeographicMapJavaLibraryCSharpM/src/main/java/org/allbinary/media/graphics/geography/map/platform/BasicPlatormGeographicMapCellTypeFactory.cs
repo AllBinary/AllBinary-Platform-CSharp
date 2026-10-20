@@ -45,7 +45,7 @@ public class BasicPlatormGeographicMapCellTypeFactory : GeographicMapCellTypeFac
         string PLATFORM = "Platform";
         string JUMP_TRHU = "JumpThru";
         string LADDER = "Ladder";
-        Enumeration enumeration = tileTypeToTileIdsMap.keys();
+        Enumeration<object> enumeration = tileTypeToTileIdsMap.keys();
         BasicArrayList idsWithTypeList = null;
         string key = null;
         BasicPlatormGeographicMapCellType basicPlatormGeographicMapCellType = null;

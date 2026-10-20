@@ -51,7 +51,7 @@ public class BasicGroupItemsRequestHelper : ModifyTable
     private string itemTen = null;
     private string timeEntered = null;
     private string lastModified = null;
-    public BasicGroupItemsRequestHelper(HashMap hashMap, PageContext pageContext)
+    public BasicGroupItemsRequestHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.request = ((HttpServletRequest) pageContext.getRequest());
         this.getFormData();
@@ -74,9 +74,9 @@ public class BasicGroupItemsRequestHelper : ModifyTable
         this.lastModified = this.request.getParameter(EntryData.getInstance().LASTMODIFIED);
     }
 
-    private HashMap getHashMap()
+    private HashMap<object, object> getHashMap()
     {
-        HashMap values = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> values = StdUtil.getInstance().createHashMap();
         values.put(basicItemData.ID, id);
         values.put(BasicGroupItemData.ITEM_ONE, this.itemOne);
         values.put(BasicGroupItemData.ITEM_TWO, this.itemTwo);
@@ -150,7 +150,7 @@ public class BasicGroupItemsRequestHelper : ModifyTable
     {
         try {
             string success = "Update Pricing Successful";
-            HashMap values = this.getHashMap();
+            HashMap<object, object> values = this.getHashMap();
             BasicGroupItemsEntityFactory.getInstance().getBasicGroupItemsEntityInstance().update(values);
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(new StringMaker().append(this.id).append(CommonSeps.getInstance().SPACE).append(success).ToString(), this, "update()");

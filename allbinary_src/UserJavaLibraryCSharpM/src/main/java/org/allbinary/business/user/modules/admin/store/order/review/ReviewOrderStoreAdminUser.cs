@@ -29,7 +29,7 @@ public class ReviewOrderStoreAdminUser : User
         // base() is called from the constructor declaration
     }
 
-    public ReviewOrderStoreAdminUser(HashMap userHashMap) : base(userHashMap)
+    public ReviewOrderStoreAdminUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
         // base(userHashMap) is called from the constructor declaration
     }

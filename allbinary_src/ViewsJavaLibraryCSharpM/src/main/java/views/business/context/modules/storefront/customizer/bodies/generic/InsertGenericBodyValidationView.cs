@@ -37,7 +37,7 @@ public class InsertGenericBodyValidationView : GenericBodyCustomizerView, Valida
     public InsertGenericBodyValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
-        HashMap requestHashMap = new RequestParams(this.getPageContext()).toHashMap();
+        HashMap<object, object> requestHashMap = new RequestParams(this.getPageContext()).toHashMap();
         this.body = new GenericBodyValidation(requestHashMap);
     }
 

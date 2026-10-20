@@ -42,7 +42,7 @@ public class TagWorkFlowFactory
     }
 
     // throws Exception, LicensingException
-    public virtual WorkFlowInterface getInstance(AbeClientInformationInterface abeClientInformation, HashMap propertiesHashMap, PageContext pageContext)
+    public virtual WorkFlowInterface getInstance(AbeClientInformationInterface abeClientInformation, HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         try {
             string workFlowClassName = ((string) propertiesHashMap.get(DynamicObjectData.NAME));

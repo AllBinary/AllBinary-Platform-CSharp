@@ -19,7 +19,7 @@ using System.Linq;
 
 namespace org.allbinary.thread;
 
-public interface PriorityRunnable : Runnable
+public interface PriorityRunnable : global::java.lang.Runnable
 {
     int getPriority();
 

@@ -44,9 +44,9 @@ public class IdGeneratorEntity : AbSqlBean, IdGeneratorEntityInterface
     // throws Exception
     public virtual long? get(string name)
     {
-        HashMap keysAndValues = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> keysAndValues = StdUtil.getInstance().createHashMap();
         keysAndValues.put(this.NAME, name);
-        HashMap hashMap = base.getRow(keysAndValues);
+        HashMap<object, object> hashMap = base.getRow(keysAndValues);
         if ((((string) hashMap.get(this.NAME))).compareTo(name) != 0) {
             throw new Exception("results do not match");
         }
@@ -76,13 +76,13 @@ public class IdGeneratorEntity : AbSqlBean, IdGeneratorEntityInterface
 
     public virtual void update(string name, long? value)
     {
-        HashMap map = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> map = StdUtil.getInstance().createHashMap();
         map.put(this.NAME, name);
         map.put(this.VALUE, value.ToString());
         this.update(map);
     }
 
-    public virtual void update(HashMap hashMap)
+    public virtual void update(HashMap<object, object> hashMap)
     {
         base.updateWhere(this.NAME, ((string) hashMap.get(this.NAME)), hashMap);
     }

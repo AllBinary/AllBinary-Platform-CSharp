@@ -29,7 +29,7 @@ public class ViewEditorWebStoreAdminUser : User
         // base() is called from the constructor declaration
     }
 
-    public ViewEditorWebStoreAdminUser(HashMap userHashMap) : base(userHashMap)
+    public ViewEditorWebStoreAdminUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
         // base(userHashMap) is called from the constructor declaration
     }

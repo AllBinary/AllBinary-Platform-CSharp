@@ -41,7 +41,7 @@ public class PooledThread : Thread
     {
         this.threadPool.threadStarted();
         while (true) {
-            Runnable task2 = this.threadObjectUtil.NULL_PRIORITY_RUNNABLE;
+            global::java.lang.Runnable task2 = this.threadObjectUtil.NULL_PRIORITY_RUNNABLE;
             try {
                 task2 = this.threadPool.getTask();
                 this.threadPool.runningTask = true;

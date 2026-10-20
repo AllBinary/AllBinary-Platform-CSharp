@@ -43,7 +43,7 @@ public class InventoryColumnUtil
         BasicArrayList vectorOfHashMaps = inventoryEntity.getAllRows();
         int size = vectorOfHashMaps.size();
         for (int index = 0; index < size; index++) {
-            HashMap hashMap = ((HashMap) vectorOfHashMaps.get(index));
+            HashMap<object, object> hashMap = ((HashMap<object, object>) vectorOfHashMaps.get(index));
             string categoryName = ((string) hashMap.get(basicItemData.CATEGORY));
             if (!StringValidationUtil.getInstance().isEmpty(categoryName) && categoryName.StartsWith(category)) {
                 keywords.add(hashMap.get(column));

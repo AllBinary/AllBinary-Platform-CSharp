@@ -29,7 +29,7 @@ namespace org.allbinary.business.user.commerce.inventory.basket;
 
 public class Basket : BasketInterface, Serializable
 {
-    private HashMap items = StdUtil.getInstance().createHashMap();
+    private HashMap<object, object> items = StdUtil.getInstance().createHashMap();
     public Basket()
     {
     }
@@ -63,10 +63,10 @@ public class Basket : BasketInterface, Serializable
 
     public virtual string getTotalWeight()
     {
-        HashMap itemsAndNumberInBasket = this.getItems();
+        HashMap<object, object> itemsAndNumberInBasket = this.getItems();
         Money totalWeight = new Money();
         if (itemsAndNumberInBasket.size() > 0) {
-            Set items = itemsAndNumberInBasket.keySet();
+            Set<object> items = itemsAndNumberInBasket.keySet();
             string product = null;
             float? weightFloat = null;
             object[] itemArray = items.toArray();
@@ -86,13 +86,13 @@ public class Basket : BasketInterface, Serializable
         return this.items.size();
     }
 
-    public virtual Set getIds()
+    public virtual Set<object> getIds()
     {
-        Set set = this.items.keySet();
+        Set<object> set = this.items.keySet();
         return set;
     }
 
-    public virtual HashMap getItems()
+    public virtual HashMap<object, object> getItems()
     {
         return this.items;
     }
@@ -106,10 +106,10 @@ public class Basket : BasketInterface, Serializable
     // throws MoneyException
     public virtual Money getSubTotal()
     {
-        HashMap itemsAndNumberInBasket = this.getItems();
+        HashMap<object, object> itemsAndNumberInBasket = this.getItems();
         Money subTotal = new Money();
         if (itemsAndNumberInBasket.size() > 0) {
-            Set items = itemsAndNumberInBasket.keySet();
+            Set<object> items = itemsAndNumberInBasket.keySet();
             InventoryEntityFactory inventoryEntityFactory = InventoryEntityFactory.getInstance();
             InventoryEntity inventoryEntity = ((InventoryEntity) inventoryEntityFactory.getInventoryEntityInstance());
             object[] itemArray = items.toArray();

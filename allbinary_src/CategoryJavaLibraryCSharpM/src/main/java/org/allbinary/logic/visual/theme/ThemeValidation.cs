@@ -73,7 +73,7 @@ public class ThemeValidation : ThemeInterface, ValidationInterface, DomNodeInter
         this.init();
     }
 
-    public ThemeValidation(TransformInfoInterface transformInfoInterface, HashMap hashMap)
+    public ThemeValidation(TransformInfoInterface transformInfoInterface, HashMap<object, object> hashMap)
     {
         this.transformInfoInterface = transformInfoInterface;
         AbPath categoryThemeAbPath = new AbPath(((string) hashMap.get(ThemeData.getInstance().PATH)), StringUtil.getInstance().EMPTY_STRING);
@@ -229,10 +229,10 @@ public class ThemeValidation : ThemeInterface, ValidationInterface, DomNodeInter
         return vector;
     }
 
-    public virtual HashMap toHashMap()
+    public virtual HashMap<object, object> toHashMap()
     {
         ThemeData themeData = ThemeData.getInstance();
-        HashMap hashMap = StdUtil.getInstance().createHashMap();
+        HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
         hashMap.put(themeData.NAME, this.getName());
         hashMap.put(themeData.PATH, this.getPath());
         hashMap.put(themeData.PREVIEW_IMAGE_NAME, this.getPreviewImageName());

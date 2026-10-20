@@ -23,7 +23,7 @@ namespace org.allbinary.business.user.commerce.money.payment.gateway;
 public interface PaymentGatewayInterfaceFactoryInterface
 {
     // throws Exception
-    PaymentGatewayInterface getInstance(HashMap hashMap);
+    PaymentGatewayInterface getInstance(HashMap<object, object> hashMap);
 
 }
 

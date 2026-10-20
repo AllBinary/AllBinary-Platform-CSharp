@@ -24,7 +24,7 @@ namespace org.allbinary.logic.visual.transform.info;
 
 public class TransformInfoHttpStoreNoManipulation : TransformInfoHttpStore
 {
-    public TransformInfoHttpStoreNoManipulation(HashMap propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
+    public TransformInfoHttpStoreNoManipulation(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
         // base(propertiesHashMap, pageContext) is called from the constructor declaration
     }

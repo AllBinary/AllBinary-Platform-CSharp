@@ -36,9 +36,9 @@ public class BasicWorkFlow : WorkFlowInterface
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private readonly AbeClientInformationInterface abeClientInformation = ServiceClientInformationInterfaceFactory.getInstance();
     private ValidationComponentInterface validationDomNodeInterface;
-    private HashMap propertiesHashMap;
+    private HashMap<object, object> propertiesHashMap;
     private PageContext pageContext;
-    public BasicWorkFlow(HashMap propertiesHashMap, PageContext pageContext)
+    public BasicWorkFlow(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().WORKFLOW)) {
             this.logUtil.putF("Properties: " + propertiesHashMap.ToString(), this, "BasicWorkFlow()");
@@ -54,7 +54,7 @@ public class BasicWorkFlow : WorkFlowInterface
         return ((string) this.getPropertiesHashMap().get(WorkFlowData.getInstance().NAME));
     }
 
-    protected virtual HashMap getPropertiesHashMap()
+    protected virtual HashMap<object, object> getPropertiesHashMap()
     {
         return this.propertiesHashMap;
     }

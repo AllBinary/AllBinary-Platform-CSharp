@@ -45,13 +45,13 @@ public class AuthenticationRequestHelper : TagHelper
     private readonly AbeClientInformationInterface abeClientInformation = ServiceClientInformationInterfaceFactory.getInstance();
     private WeblisketSession weblisketSession;
     private HttpServletRequest request;
-    public AuthenticationRequestHelper(HashMap hashMap, PageContext pageContext)
+    public AuthenticationRequestHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         this.weblisketSession = new WeblisketSession(hashMap, pageContext);
         this.request = ((HttpServletRequest) pageContext.getRequest());
     }
 
-    public AuthenticationRequestHelper(HashMap hashMap, HttpServletRequest httpServletRequest)
+    public AuthenticationRequestHelper(HashMap<object, object> hashMap, HttpServletRequest httpServletRequest)
     {
         this.weblisketSession = new WeblisketSession(hashMap, httpServletRequest);
         this.request = httpServletRequest;
@@ -92,7 +92,7 @@ public class AuthenticationRequestHelper : TagHelper
             }
             string newPassword = this.generateNewPassword();
             userInterface.setPassword(newPassword);
-            HashMap newPasswordHashMap = userInterface.toPasswordHashMap();
+            HashMap<object, object> newPasswordHashMap = userInterface.toPasswordHashMap();
             UserEntityFactory.getInstance().update(userName, newPasswordHashMap);
             new NewPasswordEmail(this.abeClientInformation, userInterface, newPassword).process();
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
@@ -138,7 +138,7 @@ public class AuthenticationRequestHelper : TagHelper
                 if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
                     this.logUtil.putF("Authentication Successful", this, "changePassword()");
                 }
-                HashMap newPasswordHashMap = password.toHashMap(null);
+                HashMap<object, object> newPasswordHashMap = password.toHashMap(null);
                 UserEntityFactory.getInstance().update(userName, newPasswordHashMap);
                 new NewPasswordEmail(this.abeClientInformation, userInterface, newPassword).process();
                 return true;

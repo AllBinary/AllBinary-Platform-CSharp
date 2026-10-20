@@ -37,7 +37,7 @@ public class PaymentGatewayHelper : BasicTable
     private WeblisketSession weblisketSession = null;
     private readonly HttpServletRequest httpServletRequest = null;
     private readonly Portion portion = null;
-    public PaymentGatewayHelper(HashMap hashMap, PageContext pageContext)
+    public PaymentGatewayHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
         try {
             this.weblisketSession = new WeblisketSession(hashMap, pageContext);

@@ -39,7 +39,7 @@ public class UserDomNode : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         string EMPTY_STRING = StringUtil.getInstance().EMPTY_STRING;
-        HashMap hashMap = this.dataMappingInterface.toHashMap();
+        HashMap<object, object> hashMap = this.dataMappingInterface.toHashMap();
         hashMap.put(EntryData.getInstance().LASTMODIFIED, EMPTY_STRING);
         hashMap.put(EntryData.getInstance().ENCRYPTION, EMPTY_STRING);
         hashMap.put(UserData.PASSWORD, EMPTY_STRING);

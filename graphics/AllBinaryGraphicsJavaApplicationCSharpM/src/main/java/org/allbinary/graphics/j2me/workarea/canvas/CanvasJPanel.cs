@@ -61,7 +61,7 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
     private readonly GuiLog guiLog = GuiLog.getInstance();
     private readonly GameInputStrings gameInputStrings = GameInputStrings.getInstance();
     private GraphicItemInterface selectedTool = null;
-    private HashMap graphicItemHashMap = null;
+    private HashMap<object, object> graphicItemHashMap = null;
     private IntegerDimension canvasDimension = null;
     private double angle = 0.0;
     private DefaultMutableTreeNode canvasTreeNode = null;
@@ -303,7 +303,7 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
     }
 
     // throws Exception
-    public virtual void duplicateGraphicItemHashMap(HashMap hashMap)
+    public virtual void duplicateGraphicItemHashMap(HashMap<object, object> hashMap)
     {
         object[] mutableTreeNodeArray = hashMap.keySet().toArray();
         int size = mutableTreeNodeArray.Length;
@@ -314,7 +314,7 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
         }
     }
 
-    public virtual HashMap getGraphicItemHashMap()
+    public virtual HashMap<object, object> getGraphicItemHashMap()
     {
         return this.graphicItemHashMap;
     }

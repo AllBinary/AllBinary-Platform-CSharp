@@ -35,7 +35,7 @@ public class HelperFactory
     }
 
     // throws LicensingException
-    public static object getInstance(AbeClientInformationInterface abeClientInformation, string factoryName, string className, HashMap hashMap, HttpServletRequest httpServletRequest)
+    public static object getInstance(AbeClientInformationInterface abeClientInformation, string factoryName, string className, HashMap<object, object> hashMap, HttpServletRequest httpServletRequest)
     {
         LogUtil logUtil = LogUtil.getInstance();
         try {
@@ -64,7 +64,7 @@ public class HelperFactory
     }
 
     // throws LicensingException
-    public static object getInstance(AbeClientInformationInterface abeClientInformation, string factoryName, string className, HashMap hashMap, PageContext pageContext)
+    public static object getInstance(AbeClientInformationInterface abeClientInformation, string factoryName, string className, HashMap<object, object> hashMap, PageContext pageContext)
     {
         LogUtil logUtil = LogUtil.getInstance();
         try {
@@ -93,7 +93,7 @@ public class HelperFactory
     }
 
     // throws LicensingException
-    public static object getInstance(AbeClientInformationInterface abeClientInformation, string factoryName, string className, HashMap hashMap, HashMap specialhashMap, PageContext pageContext)
+    public static object getInstance(AbeClientInformationInterface abeClientInformation, string factoryName, string className, HashMap<object, object> hashMap, HashMap<object, object> specialhashMap, PageContext pageContext)
     {
         LogUtil logUtil = LogUtil.getInstance();
         try {
