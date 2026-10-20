@@ -18,7 +18,6 @@ using System;
 using System.Linq;
 using java.util;
 //using ListIterator = java.util.ListIterator;
-//using Set = java.util.Set;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using StoreFrontData = org.allbinary.business.context.modules.storefront.StoreFrontData;

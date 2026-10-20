@@ -24,13 +24,13 @@ namespace org.allbinary.media.graphics.geography.map;
 public class GeographicMapCellType
 {
     public static readonly GeographicMapCellType[] NULL_GEOGRAPHIC_MAP_CELL_TYPE_ARRAY = new GeographicMapCellType[0];
-    public static readonly GeographicMapCellType NULL_GEOGRAPHIC_MAP_CELL_TYPE = new GeographicMapCellType(Integer.MIN_VALUE, 0);
+    public static readonly GeographicMapCellType NULL_GEOGRAPHIC_MAP_CELL_TYPE = new GeographicMapCellType(int.MinValue, 0);
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly int type;
     public GeographicMapCellType(int type, int reset)
     {
         this.type = type;
-        if (type != Integer.MIN_VALUE) {
+        if (type != int.MinValue) {
             GeographicMapCellTypeFactory geographicMapCellTypeFactory = GeographicMapCellTypeFactory.getInstance();
             GeographicMapCellType[] geographicMapCellTypeArray = geographicMapCellTypeFactory.getGeographicMapCellTypeArray();
             if (geographicMapCellTypeArray[type] == null || reset == 1) {

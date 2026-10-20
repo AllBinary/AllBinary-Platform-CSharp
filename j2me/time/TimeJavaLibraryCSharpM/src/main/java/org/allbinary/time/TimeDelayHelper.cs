@@ -25,7 +25,7 @@ namespace org.allbinary.time;
 public class TimeDelayHelper
 {
     private long startTime = ((long) (-1));
-    private long elapsedTimeAtPause = Long.MIN_VALUE;
+    private long elapsedTimeAtPause = long.MinValue;
     public int delay;
     public TimeDelayHelper(int delay)
     {
@@ -125,14 +125,14 @@ public class TimeDelayHelper
     public virtual void pause()
     {
         this.elapsedTimeAtPause = this.getElapsedTNT();
-        this.startTime = Long.MAX_VALUE;
+        this.startTime = long.MaxValue;
     }
 
     public virtual bool resume()
     {
-        if (this.elapsedTimeAtPause != Long.MIN_VALUE) {
+        if (this.elapsedTimeAtPause != long.MinValue) {
             this.startTime = DateTimeOffset.Now.ToUnixTimeMilliseconds() + this.elapsedTimeAtPause;
-            this.elapsedTimeAtPause = Long.MIN_VALUE;
+            this.elapsedTimeAtPause = long.MinValue;
             this.setStartTimeTNT();
             return true;
         }

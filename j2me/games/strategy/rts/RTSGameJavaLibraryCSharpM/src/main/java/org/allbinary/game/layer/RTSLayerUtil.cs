@@ -81,7 +81,7 @@ public class RTSLayerUtil
         rtsLayer.select();
     }
 
-    private readonly long MAX_RELOAD_TIME = ((long) Integer.MAX_VALUE) / 100000L;
+    private readonly long MAX_RELOAD_TIME = ((long) int.MaxValue) / 100000L;
     public virtual long getCostExponential(long cost)
     {
         return ((cost * cost * cost) / (cost * 1000L));

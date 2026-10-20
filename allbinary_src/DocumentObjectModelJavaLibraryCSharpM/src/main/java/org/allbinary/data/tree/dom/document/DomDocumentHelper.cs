@@ -32,12 +32,12 @@ public class DomDocumentHelper
 
     public static void init()
     {
-        System.setProperty("jdk.xml.maxElementDepth", "0");
-        System.setProperty("jdk.xml.xpathExprOpLimit", "0");
-        System.setProperty("jdk.xml.xpathTotalOpLimit", "0");
+        global::java.lang.JavaSystem.setProperty("jdk.xml.maxElementDepth", "0");
+        global::java.lang.JavaSystem.setProperty("jdk.xml.xpathExprOpLimit", "0");
+        global::java.lang.JavaSystem.setProperty("jdk.xml.xpathTotalOpLimit", "0");
         string LIMIT = "500000";
-        System.setProperty("jdk.xml.maxGeneralEntitySizeLimit", LIMIT);
-        System.setProperty("jdk.xml.totalEntitySizeLimit", LIMIT);
+        global::java.lang.JavaSystem.setProperty("jdk.xml.maxGeneralEntitySizeLimit", LIMIT);
+        global::java.lang.JavaSystem.setProperty("jdk.xml.totalEntitySizeLimit", LIMIT);
     }
 
     public static Document create()

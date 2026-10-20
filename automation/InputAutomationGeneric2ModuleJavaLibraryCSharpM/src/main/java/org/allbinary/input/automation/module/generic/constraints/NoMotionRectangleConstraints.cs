@@ -28,8 +28,8 @@ public class NoMotionRectangleConstraints : MotionRectangleConstraints
     {
         this.setMinDimension(new Dimension(0, 0));
         this.setMinArea(0);
-        this.setMaxDimension(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
-        this.setMaxMotionRectangles(Integer.MAX_VALUE);
+        this.setMaxDimension(new Dimension(int.MaxValue, int.MaxValue));
+        this.setMaxMotionRectangles(int.MaxValue);
     }
 
     public virtual bool isValid(long? frame, BufferedImage bufferedImage, Rectangle rectangle)

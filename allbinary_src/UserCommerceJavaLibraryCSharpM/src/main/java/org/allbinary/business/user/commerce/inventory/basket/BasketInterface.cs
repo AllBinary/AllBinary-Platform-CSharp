@@ -17,7 +17,6 @@
 using System;
 using System.Linq;
 using java.util;
-//using Set = java.util.Set;
 using Money = org.allbinary.business.user.commerce.money.Money;
 using MoneyException = org.allbinary.business.user.commerce.money.MoneyException;
 

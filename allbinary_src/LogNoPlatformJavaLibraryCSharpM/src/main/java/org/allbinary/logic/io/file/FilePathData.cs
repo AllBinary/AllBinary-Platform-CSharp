@@ -28,12 +28,12 @@ public class FilePathData
         return FilePathData.instance;
     }
 
-    public readonly char SEPARATORCHAR = File.separatorChar;
-    public string PATH_START = File.separator;
+    public readonly char SEPARATORCHAR = global::System.IO.Path.DirectorySeparatorChar;
+    public string PATH_START = global::System.IO.Path.DirectorySeparatorChar.ToString();
     private FilePathData()
     {
-        if (File.separatorChar == '\\') {
-            this.PATH_START = File.separator + File.separator;
+        if (global::System.IO.Path.DirectorySeparatorChar == '\\') {
+            this.PATH_START = global::System.IO.Path.DirectorySeparatorChar.ToString() + global::System.IO.Path.DirectorySeparatorChar.ToString();
         }
     }
 

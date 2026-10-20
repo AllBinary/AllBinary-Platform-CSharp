@@ -34,10 +34,10 @@ public class VectorCenterGenerator
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    public int minX = Integer.MAX_VALUE;
-    public int minY = Integer.MAX_VALUE;
-    public int maxX = Integer.MIN_VALUE;
-    public int maxY = Integer.MIN_VALUE;
+    public int minX = int.MaxValue;
+    public int minY = int.MaxValue;
+    public int maxX = int.MinValue;
+    public int maxY = int.MinValue;
     private int dx = 0;
     private int dy = 0;
     private int width = 0;

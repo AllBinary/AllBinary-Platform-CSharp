@@ -45,7 +45,7 @@ public class ClassUtil
             Type[] classes = myClass.getClasses();
             stringBuffer.append(lineBreak);
             stringBuffer.append("Class: ");
-            stringBuffer.append(myClass.getName());
+            stringBuffer.append(myClass.FullName);
             stringBuffer.append(" uses ");
             stringBuffer.appendint(classes.Length);
             stringBuffer.append(" other classes");

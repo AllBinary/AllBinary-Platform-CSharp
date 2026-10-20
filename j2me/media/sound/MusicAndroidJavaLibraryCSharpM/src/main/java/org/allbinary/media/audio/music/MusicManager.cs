@@ -76,7 +76,7 @@ public class MusicManager
             return;
         }
         if (this.timeDelayHelper2.isTime(this.gameTickTimeDelayHelper.startTime)) {
-            if (this.androidServicesUtil.isServiceRunning(this.musicServiceClass.getName())) {
+            if (this.androidServicesUtil.isServiceRunning(this.musicServiceClass.FullName)) {
             } else {
                 this.startNewSong();
             }
@@ -134,7 +134,7 @@ public class MusicManager
 
     public static void resume(Activity activity, Type musicServiceClass)
     {
-        if (AndroidServicesUtil.getInstance().isServiceRunning(musicServiceClass.getName())) {
+        if (AndroidServicesUtil.getInstance().isServiceRunning(musicServiceClass.FullName)) {
             CommonStateStrings commonStateStrings = CommonStateStrings.getInstance();
             Intent musicResumeIntent = new Intent(activity, musicServiceClass);
             musicResumeIntent.putExtra(commonStateStrings.ON_START_COMMAND, 2);

@@ -28,7 +28,7 @@ public class NoImageComparatorConstraints : ImageComparatorConstraints
     public NoImageComparatorConstraints() : base(1)
     {
         // base(1) is called from the constructor declaration
-        this.setMaxNonMatchingPixelDeltas(Integer.MAX_VALUE);
+        this.setMaxNonMatchingPixelDeltas(int.MaxValue);
     }
 
     public virtual bool isColorAllowed(int frame, GPoint point, Color color)

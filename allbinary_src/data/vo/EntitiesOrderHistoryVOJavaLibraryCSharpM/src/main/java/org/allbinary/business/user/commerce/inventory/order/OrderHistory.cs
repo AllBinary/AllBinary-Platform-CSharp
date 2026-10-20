@@ -16,9 +16,8 @@
 
 using System;
 using System.Linq;
-//using Date = java.util.Date;
+using Date = java.util.Date;
 using java.util;
-//using Set = java.util.Set;
 using StoreFrontData = org.allbinary.business.context.modules.storefront.StoreFrontData;
 using EntryData = org.allbinary.business.entry.EntryData;
 using UserData = org.allbinary.business.user.UserData;

@@ -20,7 +20,6 @@ using System.Runtime.CompilerServices;
 //using ResultSet = java.sql.ResultSet;
 //using ResultSetMetaData = java.sql.ResultSetMetaData;
 using java.util;
-//using Set = java.util.Set;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using DbConnectionInfo = org.allbinary.business.init.db.DbConnectionInfo;

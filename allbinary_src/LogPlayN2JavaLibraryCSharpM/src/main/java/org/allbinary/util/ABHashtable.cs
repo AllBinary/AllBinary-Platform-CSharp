@@ -17,7 +17,6 @@
 using System;
 using System.Linq;
 using java.util;
-//using Set = java.util.Set;
 //using JsType = jsinterop.annotations.JsType;
 
 namespace org.allbinary.util;

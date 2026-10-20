@@ -32,7 +32,7 @@ public class HashtableUtil
     private readonly EnumerationUtil enumerationUtil = EnumerationUtil.getInstance();
     public virtual void putAll(ABHashtable<object, object> fromHashtable, ABHashtable<object, object> hashtable)
     {
-        Enumeration enumeration = fromHashtable.keys();
+        Enumeration<object> enumeration = fromHashtable.keys();
         object keyCanBeNull = null;
         object valueCanBeNull = null;
         while (this.enumerationUtil.hasMoreElements(enumeration)) {
@@ -49,7 +49,7 @@ public class HashtableUtil
     {
         object[] objectArray = new object[hashtable.size()];
         int index = 0;
-        Enumeration enumeration = hashtable.keys();
+        Enumeration<object> enumeration = hashtable.keys();
         while (this.enumerationUtil.hasMoreElements(enumeration)) {
             objectArray[index++] = this.enumerationUtil.nextElement(enumeration);
         }
@@ -59,7 +59,7 @@ public class HashtableUtil
     public virtual BasicArrayList getKeysAsList(ABHashtable<object, object> hashtable)
     {
         BasicArrayList list = new BasicArrayListS(hashtable.size());
-        Enumeration enumeration = hashtable.keys();
+        Enumeration<object> enumeration = hashtable.keys();
         while (this.enumerationUtil.hasMoreElements(enumeration)) {
             list.add(this.enumerationUtil.nextElement(enumeration));
         }
@@ -67,4 +67,3 @@ public class HashtableUtil
     }
 
 }
-

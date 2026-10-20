@@ -62,8 +62,8 @@ public class LogUtil
         try {
             string className = CommonStrings.getInstance().EMPTY;
             Type clazz = anyType.GetType();
-            if (clazz.getName() != null) {
-                className = clazz.getName();
+            if (clazz.FullName != null) {
+                className = clazz.FullName;
             }
             string message = this.logFormatUtil.getS(className, functionName, specialMessage);
             if (exception != null) {

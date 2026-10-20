@@ -36,7 +36,7 @@ public class CachePolicyFactory
     public CachePolicy ONE_MINUTE_ONE_HUNDRED_MAX;
     public CachePolicyFactory()
     {
-        this.MAX_TIME_THOUSAND_MAX = new CachePolicy(this.NAME, Long.MAX_VALUE, 1000);
+        this.MAX_TIME_THOUSAND_MAX = new CachePolicy(this.NAME, long.MaxValue, 1000);
         this.THIRTY_MINUTES_TEN_THOUSAND_MAX = new CachePolicy(this.NAME, 1000 * 60 * 30, 10000);
         this.THIRTY_MINUTES_FIFTY_THOUSAND_MAX = new CachePolicy(this.NAME, 1000 * 60 * 30, 100000);
         this.ONE_MINUTE_FIVE_MAX = new CachePolicy(this.NAME, 1000 * 60 * 1, 5);

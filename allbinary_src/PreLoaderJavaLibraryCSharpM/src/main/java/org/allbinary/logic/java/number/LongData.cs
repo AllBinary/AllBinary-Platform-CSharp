@@ -21,7 +21,7 @@ namespace org.allbinary.logic.java.number;
 
 public class LongData
 {
-    public static int MAX_LONG_LENGTH = Long.MAX_VALUE.ToString().Length;
+    public static int MAX_LONG_LENGTH = long.MaxValue.ToString().Length;
     private LongData()
     {
     }

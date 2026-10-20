@@ -380,7 +380,7 @@ public class UnitWaypointBehavior2 : UnitWaypointBehavior
     {
         if (this.waypointPathsListP.size() != 0) {
             this.setCurrentTargetLayerInterface(waypointLayer);
-            int MAX = Integer.MAX_VALUE;
+            int MAX = int.MaxValue;
             this.setCurrentTargetDistance(MAX);
             this.setRandomGeographicMapCellHistory(this.waypointPathsListP);
         } else {
@@ -422,7 +422,7 @@ public class UnitWaypointBehavior2 : UnitWaypointBehavior
         this.associatedAdvancedRTSGameLayer.waypoint2LogHelperP.clearTarget(this.associatedAdvancedRTSGameLayer);
         this.setCurrentTargetLayerInterface(CollidableDestroyableDamageableLayer.getNullInstance());
         this.setTrackingWaypoint(false);
-        int MAX = Integer.MAX_VALUE;
+        int MAX = int.MaxValue;
         this.setCurrentTargetDistance(MAX);
         TrackingEventHandler.getInstance().fireEvent(this.associatedAdvancedRTSGameLayer.getTrackingEvent());
     }

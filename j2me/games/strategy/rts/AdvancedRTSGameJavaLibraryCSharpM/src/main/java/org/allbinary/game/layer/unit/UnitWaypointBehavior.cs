@@ -60,7 +60,7 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
     private bool moving = false;
     private bool movingFromStopped = false;
     public BasicArrayList waypointPathsListP = BasicArrayListUtil.getInstance().getImmutableInstance();
-    private int currentTargetDistance = Integer.MAX_VALUE;
+    private int currentTargetDistance = int.MaxValue;
     public CollidableDestroyableDamageableLayer currentTargetLayerInterfaceP = CollidableDestroyableDamageableLayer.getNullInstance();
     private bool trackingWaypoint = false;
     protected UnitWaypointBehavior(UnitLayer associatedAdvancedRTSGameLayer, CollidableDestroyableDamageableLayer fakeWaypoint)

@@ -309,8 +309,8 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
     {
         this.rtsLogHelper.setClosestGeographicMapCellHistory(this, pathsList);
         int closestIndex = -1;
-        int shortestDistance = Integer.MAX_VALUE;
-        int currentDistance = Integer.MAX_VALUE;
+        int shortestDistance = int.MaxValue;
+        int currentDistance = int.MaxValue;
         for (int index = pathsList.size() - 1; index >= 0; index--) {
             BasicArrayList geographicMapCellPositionBasicArrayList = ((BasicArrayList) pathsList.get(index));
             GeographicMapCellPosition geographicMapCellPosition = ((GeographicMapCellPosition) geographicMapCellPositionBasicArrayList.get(geographicMapCellPositionBasicArrayList.size() - 1));

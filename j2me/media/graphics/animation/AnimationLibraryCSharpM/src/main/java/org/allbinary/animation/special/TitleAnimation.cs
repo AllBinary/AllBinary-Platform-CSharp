@@ -141,7 +141,7 @@ public class TitleAnimation : SpecialAnimation
     public override void paintXY(Graphics graphics, int ax, int ay)
     {
         int x = 0;
-        if (this.widthP != Integer.MIN_VALUE) {
+        if (this.widthP != int.MinValue) {
             x = ((this.displayInfoSingleton.getLastWidth() - this.widthP) / 2);
         }
         int deltaX = 0;

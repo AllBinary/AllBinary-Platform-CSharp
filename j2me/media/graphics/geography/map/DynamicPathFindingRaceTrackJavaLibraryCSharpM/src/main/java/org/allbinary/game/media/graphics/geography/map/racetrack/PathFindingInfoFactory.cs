@@ -48,7 +48,7 @@ public class PathFindingInfoFactory : BasePathFindingInfoFactory
 
     public static void initMax(int max)
     {
-        PathFindingInfoFactory.instance = new PathFindingInfoFactory(new SimplePathFinderGraphVisitorFactory(1, 1, Integer.MAX_VALUE), max);
+        PathFindingInfoFactory.instance = new PathFindingInfoFactory(new SimplePathFinderGraphVisitorFactory(1, 1, int.MaxValue), max);
     }
 
     private readonly int MAX_DIRECTIONS = 4;

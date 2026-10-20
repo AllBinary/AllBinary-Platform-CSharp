@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 //using IOException = java.io.IOException;
-//using Calendar = java.util.Calendar;
+using Calendar = java.util.Calendar;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbeLicenseClient = org.allbinary.logic.system.security.licensing.client.AbeLicenseClient;
 using CommonStrings = org.allbinary.@string.CommonStrings;

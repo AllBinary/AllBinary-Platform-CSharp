@@ -37,7 +37,7 @@ public class ScoreComparator : RecordComparator
 
     public virtual long getBestScore()
     {
-        return (this.isHighestBest ? Long.MAX_VALUE : 0);
+        return (this.isHighestBest ? long.MaxValue : 0);
     }
 
     public virtual int compare(sbyte[] recordOne, sbyte[] recordTwo)

@@ -29,7 +29,7 @@ public class MirrorMotionGestureEventUtil
     private readonly MotionEventCircularPool motionEventCircularPool;
     private MirrorMotionGestureEventUtil()
     {
-        this.motionEventCircularPool = MotionEventCircularPool.createPool(Integer.MAX_VALUE);
+        this.motionEventCircularPool = MotionEventCircularPool.createPool(int.MaxValue);
     }
 
     // throws Exception

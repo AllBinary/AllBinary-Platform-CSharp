@@ -60,8 +60,8 @@ public class Log
     {
         string className = CommonStrings.getInstance().EMPTY;
         Type clazz = this.anyType.GetType();
-        if (clazz.getName() != null) {
-            className = clazz.getName();
+        if (clazz.FullName != null) {
+            className = clazz.FullName;
         }
         return this.logFormatUtil.get(className, this.functionName, this.specialMessage, this.exception);
     }

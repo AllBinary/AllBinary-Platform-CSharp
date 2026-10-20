@@ -38,7 +38,7 @@ public class GameTickTimeDelayHelper
 
     public virtual void loop()
     {
-        if (this.lastStartTime == Long.MIN_VALUE) {
+        if (this.lastStartTime == long.MinValue) {
             this.timeDelta = 0L;
         } else {
             this.timeDelta = DateTimeOffset.Now.ToUnixTimeMilliseconds() - this.lastStartTime;

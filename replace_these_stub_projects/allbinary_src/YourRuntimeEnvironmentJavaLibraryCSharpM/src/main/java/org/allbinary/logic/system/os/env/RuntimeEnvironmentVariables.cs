@@ -23,7 +23,7 @@ public class RuntimeEnvironmentVariables
 
     public virtual string getTest1()
     {
-        return System.getProperty("java.java.home");
+        return global::java.lang.JavaSystem.getProperty("java.java.home");
     }
 
     public virtual string getVariable(string var)
@@ -73,7 +73,7 @@ public class RuntimeEnvironmentVariables
     public virtual string getTempDir()
     {
         try {
-            return System.getProperty("java.io.tmpdir");
+            return global::java.lang.JavaSystem.getProperty("java.io.tmpdir");
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().OSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getTempDir()", e);
@@ -85,7 +85,7 @@ public class RuntimeEnvironmentVariables
     public virtual string getLibraryPath()
     {
         try {
-            return System.getProperty("java.library.path");
+            return global::java.lang.JavaSystem.getProperty("java.library.path");
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().OSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getLibraryPath()", e);
@@ -97,7 +97,7 @@ public class RuntimeEnvironmentVariables
     public virtual string getClassPath()
     {
         try {
-            return System.getProperty("java.class.path");
+            return global::java.lang.JavaSystem.getProperty("java.class.path");
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().OSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getClassPath()", e);
@@ -110,7 +110,7 @@ public class RuntimeEnvironmentVariables
     {
         try {
             string existingPath = this.getLibraryPath();
-            System.setProperty("java.library.path", libPath + ":" + existingPath);
+            global::java.lang.JavaSystem.setProperty("java.library.path", libPath + ":" + existingPath);
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().OSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "updateLibraryPath()", e);
@@ -121,7 +121,7 @@ public class RuntimeEnvironmentVariables
     public virtual string getUserHome()
     {
         try {
-            return System.getProperty("user.home");
+            return global::java.lang.JavaSystem.getProperty("user.home");
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().OSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getUserHome()", e);
@@ -133,7 +133,7 @@ public class RuntimeEnvironmentVariables
     public virtual string getUserDir()
     {
         try {
-            return System.getProperty("user.dir");
+            return global::java.lang.JavaSystem.getProperty("user.dir");
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().OSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getUserDir()", e);

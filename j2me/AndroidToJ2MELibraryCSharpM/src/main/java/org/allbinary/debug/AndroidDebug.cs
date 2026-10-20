@@ -22,7 +22,7 @@ namespace org.allbinary.debug;
 
 public class AndroidDebug : DebugInterface
 {
-    private long startTime = Long.MAX_VALUE;
+    private long startTime = long.MaxValue;
     private bool running = false;
     private int bufferSize = 32 * 1024 * 1024;
     public virtual void start()
@@ -34,7 +34,7 @@ public class AndroidDebug : DebugInterface
 
     public virtual void stop()
     {
-        this.startTime = Long.MAX_VALUE;
+        this.startTime = long.MaxValue;
         Debug.stopMethodTracing();
         this.setRunning(false);
     }

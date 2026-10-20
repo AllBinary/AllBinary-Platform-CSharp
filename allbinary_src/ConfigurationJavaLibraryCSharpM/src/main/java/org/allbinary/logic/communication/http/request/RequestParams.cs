@@ -17,7 +17,6 @@
 using System;
 using System.Linq;
 using java.util;
-//using Set = java.util.Set;
 //using HttpServletRequest = javax.servlet.http.HttpServletRequest;
 //using PageContext = javax.servlet.jsp.PageContext;
 using ModDomHelper = org.allbinary.data.tree.dom.ModDomHelper;

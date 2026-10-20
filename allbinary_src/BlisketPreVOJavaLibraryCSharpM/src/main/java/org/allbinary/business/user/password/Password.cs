@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using java.util;
-//using Random = java.util.Random;
+using Random = java.util.Random;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using EntryData = org.allbinary.business.entry.EntryData;

@@ -18,7 +18,6 @@ using System;
 using System.Linq;
 //using ResultSet = java.sql.ResultSet;
 using java.util;
-//using Set = java.util.Set;
 using DbConnectionInfo = org.allbinary.business.init.db.DbConnectionInfo;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;

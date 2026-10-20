@@ -21,11 +21,10 @@ using System.Linq;
 
 namespace org.allbinary.thread;
 
-public class ARunnable : Runnable
+public class ARunnable : global::java.lang.Runnable
 {
     public virtual void run()
     {
     }
 
 }
-

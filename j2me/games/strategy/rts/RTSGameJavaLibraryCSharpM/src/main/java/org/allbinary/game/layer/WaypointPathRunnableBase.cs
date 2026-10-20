@@ -28,7 +28,7 @@ public class WaypointPathRunnableBase : RunnableInterface, PriorityRunnable
     private readonly LayerDistanceUtil layerDistanceUtil = LayerDistanceUtil.getInstance();
     public PathFindingLayerInterface pathFindingLayer = NullPathFindingLayer.NULL_PATH_FINDING_LAYER;
     public PathFindingLayerInterface targetPathFindingLayer = NullPathFindingLayer.NULL_PATH_FINDING_LAYER;
-    public int priorityP = Integer.MAX_VALUE;
+    public int priorityP = int.MaxValue;
     public bool runningP = false;
     public virtual bool isRunning()
     {

@@ -22,7 +22,6 @@ using System.Runtime.CompilerServices;
 //using FileInputStream = java.io.FileInputStream;
 //using URL = java.net.URL;
 using java.util;
-//using Set = java.util.Set;
 //using JarInputStream = java.util.jar.JarInputStream;
 //using Manifest = java.util.jar.Manifest;
 using Bundle = org.osgi.framework.Bundle;
@@ -122,7 +121,7 @@ public class InputAutomationNewBundleRunnable : RunnableInterface
     private BasicArrayList getJarModuleFileBasicArrayList()
     {
         this.logUtil.putF(this.commonStrings.START, this, "getJarModuleFileBasicArrayList");
-        string baseJarPath = System.getProperty(JAR_DIR_PROP);
+        string baseJarPath = global::java.lang.JavaSystem.getProperty(JAR_DIR_PROP);
         if (baseJarPath.StartsWith(InputAutomationNewBundleRunnable.FILE)) {
             baseJarPath = baseJarPath.Substring(InputAutomationNewBundleRunnable.FILE.length());
         }

@@ -21,7 +21,6 @@ using System.Linq;
 //using FileInputStream = java.io.FileInputStream;
 //using FileOutputStream = java.io.FileOutputStream;
 using java.util;
-//using Set = java.util.Set;
 using DomNodeInterface = org.allbinary.data.tree.dom.DomNodeInterface;
 using DomDocumentHelper = org.allbinary.data.tree.dom.document.DomDocumentHelper;
 using XmlDocumentHelper = org.allbinary.data.tree.dom.document.XmlDocumentHelper;

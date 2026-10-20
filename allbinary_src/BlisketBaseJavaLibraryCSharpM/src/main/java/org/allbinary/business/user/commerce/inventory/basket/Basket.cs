@@ -18,7 +18,6 @@ using System;
 using System.Linq;
 //using Serializable = java.io.Serializable;
 using java.util;
-//using Set = java.util.Set;
 using ItemInterface = org.allbinary.business.user.commerce.inventory.item.ItemInterface;
 using Money = org.allbinary.business.user.commerce.money.Money;
 using MoneyException = org.allbinary.business.user.commerce.money.MoneyException;

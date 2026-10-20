@@ -18,7 +18,6 @@ using System;
 using System.Linq;
 using java.util;
 //using Iterator = java.util.Iterator;
-//using Set = java.util.Set;
 using DomNodeHelper = org.allbinary.data.tree.dom.DomNodeHelper;
 using DomSearchHelper = org.allbinary.data.tree.dom.DomSearchHelper;
 using ModDomHelper = org.allbinary.data.tree.dom.ModDomHelper;

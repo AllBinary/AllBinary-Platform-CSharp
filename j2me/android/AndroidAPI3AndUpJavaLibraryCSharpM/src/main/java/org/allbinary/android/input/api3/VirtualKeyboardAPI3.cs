@@ -29,7 +29,7 @@ namespace org.allbinary.android.input.api3;
 
 public class VirtualKeyboardAPI3 : VirtualKeyboard, VirtualKeyboardEventListenerInterface
 {
-    public static int MAX_API = Integer.MAX_VALUE;
+    public static int MAX_API = int.MaxValue;
     public static int MIN_API = 3;
     private bool virtualKeyboard = false;
     private Activity activity;

@@ -67,6 +67,7 @@
         
         <module>../../allbinary_src/ThreadLibraryCSharpM</module>
         <module>../../allbinary_src/ThreadHTMLLibraryCSharpM</module>
+        <module>../../replace_these_stub_projects/allbinary_src/NoneOnlyJavaLibraryCSharpM</module>
         <module>../../allbinary_src/ThreadJ2MELibraryCSharpM</module>
         <module>../time/TimeJavaLibraryCSharpM</module>
 

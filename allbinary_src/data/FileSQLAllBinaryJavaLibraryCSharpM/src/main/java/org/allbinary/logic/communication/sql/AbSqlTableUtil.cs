@@ -20,7 +20,7 @@ using System.Runtime.CompilerServices;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 //using ResultSet = java.sql.ResultSet;
 //using ResultSetMetaData = java.sql.ResultSetMetaData;
-//using Calendar = java.util.Calendar;
+using Calendar = java.util.Calendar;
 using Portion = org.allbinary.business.installer.Portion;
 using AbFileOutputStream = org.allbinary.logic.io.AbFileOutputStream;
 using BufferedLineReader = org.allbinary.logic.io.BufferedLineReader;

@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using DateTimeFormat = com.google.gwt.i18n.client.DateTimeFormat;
-//using Date = java.util.Date;
+using Date = java.util.Date;
 
 namespace org.allbinary.time;
 

@@ -30,7 +30,7 @@ namespace org.allbinary.media;
 public class AllBinaryVisualDebugVibration : AllBinaryVibrationME, UpdateMyFontInterface
 {
     private readonly DisplayInfoSingleton displayInfoSingleton = DisplayInfoSingleton.getInstance();
-    private readonly TimeDelayHelper timeDelayHelper = new TimeDelayHelper(Integer.MAX_VALUE);
+    private readonly TimeDelayHelper timeDelayHelper = new TimeDelayHelper(int.MaxValue);
     private readonly string VIBRATING = "Vibrating";
     private MyFontProcessor myFontProcessor;
     private int anchor = Anchor.TOP_LEFT;
@@ -50,7 +50,7 @@ public class AllBinaryVisualDebugVibration : AllBinaryVibrationME, UpdateMyFontI
     public virtual void paint(Graphics graphics)
     {
         if (this.timeDelayHelper.isTimeTNT()) {
-            this.timeDelayHelper.delay = Integer.MAX_VALUE;
+            this.timeDelayHelper.delay = int.MaxValue;
             this.myFontProcessor.process(graphics);
             graphics.drawString(this.VIBRATING, this.displayInfoSingleton.getLastHalfWidth() - (width >> 1), 0, this.anchor);
         }

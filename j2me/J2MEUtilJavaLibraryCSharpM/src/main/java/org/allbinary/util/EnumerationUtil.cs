@@ -31,17 +31,17 @@ public class EnumerationUtil
         return EnumerationUtil.instance;
     }
 
-    public virtual bool hasMoreElements(Enumeration enumeration)
+    public virtual bool hasMoreElements(Enumeration<object> enumeration)
     {
         return enumeration.hasMoreElements();
     }
 
-    public virtual object nextElement(Enumeration enumeration)
+    public virtual object nextElement(Enumeration<object> enumeration)
     {
         return enumeration.nextElement();
     }
 
-    public virtual object[] getAsArray(Enumeration enumeration)
+    public virtual object[] getAsArray(Enumeration<object> enumeration)
     {
         BasicArrayList basicArrayList = new BasicArrayListD();
         while (this.hasMoreElements(enumeration)) {
@@ -51,4 +51,3 @@ public class EnumerationUtil
     }
 
 }
-

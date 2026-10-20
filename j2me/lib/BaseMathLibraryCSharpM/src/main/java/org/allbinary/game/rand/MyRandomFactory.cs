@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Random = java.util.Random;
+using Random = java.util.Random;
 //using JsType = jsinterop.annotations.JsType;
 //using JsMethod = jsinterop.annotations.JsMethod;
 //using JsConstructor = jsinterop.annotations.JsConstructor;
@@ -49,7 +49,7 @@ public class MyRandomFactory
 
     public virtual int getNextInt(int range)
     {
-        int div = (Integer.MAX_VALUE / range) + 1;
+        int div = (int.MaxValue / range) + 1;
         return ((int) (this.rand.nextInt() / div));
     }
 

@@ -30,7 +30,7 @@ public class GameGlobalsFactory
     }
 
     public bool newCanvas = true;
-    public long newDisplaybleTime = ((long) Integer.MIN_VALUE);
+    public long newDisplaybleTime = ((long) int.MinValue);
     public GPoint point = PointFactory.getInstance().ZERO_ZERO;
 }
 

@@ -53,8 +53,8 @@ public class LogUtil
                 string functionName = log.getFunctionName();
                 string className = CommonStrings.getInstance().EMPTY;
                 Type clazz = anyType.GetType();
-                if (clazz.getName() != null) {
-                    className = clazz.getName();
+                if (clazz.FullName != null) {
+                    className = clazz.FullName;
                 }
                 string message = this.logFormatUtil.get(className, functionName, specialMessage, exception);
                 this.logger.log(Level.INFO, message);
@@ -68,8 +68,8 @@ public class LogUtil
         try {
             string className = CommonStrings.getInstance().EMPTY;
             Type clazz = anyType.GetType();
-            if (clazz.getName() != null) {
-                className = clazz.getName();
+            if (clazz.FullName != null) {
+                className = clazz.FullName;
             }
             string message = this.logFormatUtil.getS(className, functionName, specialMessage);
             if (exception != null) {

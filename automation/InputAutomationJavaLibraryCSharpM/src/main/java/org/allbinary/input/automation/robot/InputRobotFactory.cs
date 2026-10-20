@@ -20,7 +20,7 @@ using System.Linq;
 //using GraphicsEnvironment = java.awt.GraphicsEnvironment;
 //using Collection = java.util.Collection;
 //using Iterator = java.util.Iterator;
-//using Set = java.util.Set;
+using java.util;
 //using HelpSet = javax.help.HelpSet;
 //using HelpSetEvent = javax.help.@event.HelpSetEvent;
 //using HelpSetListener = javax.help.@event.HelpSetListener;

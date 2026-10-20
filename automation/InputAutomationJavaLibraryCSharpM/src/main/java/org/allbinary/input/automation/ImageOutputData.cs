@@ -27,6 +27,6 @@ public class ImageOutputData
     {
     }
 
-    public static readonly string SAVE_PATH = new StringMaker().append(System.getProperty("user.dir")).appendchar(FilePathData.getInstance().SEPARATORCHAR).append("saves").appendchar(FilePathData.getInstance().SEPARATORCHAR).ToString();
+    public static readonly string SAVE_PATH = new StringMaker().append(global::java.lang.JavaSystem.getProperty("user.dir")).appendchar(FilePathData.getInstance().SEPARATORCHAR).append("saves").appendchar(FilePathData.getInstance().SEPARATORCHAR).ToString();
 }
 

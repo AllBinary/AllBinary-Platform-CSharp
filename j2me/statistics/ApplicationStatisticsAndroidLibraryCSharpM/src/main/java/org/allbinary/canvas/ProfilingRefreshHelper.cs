@@ -41,7 +41,7 @@ public class ProfilingRefreshHelper : AndroidGameStatistics
     {
         base.initView(view);
         this.frameProcessingTimeElapsed = this.getTimeDelayHelper().getStartTime();
-        this.bestFrameProcessingTime = Integer.MAX_VALUE;
+        this.bestFrameProcessingTime = int.MaxValue;
         this.worstFrameProcessingTime = 0;
     }
 

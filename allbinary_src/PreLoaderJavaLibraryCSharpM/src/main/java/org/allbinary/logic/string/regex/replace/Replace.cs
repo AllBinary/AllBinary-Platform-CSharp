@@ -55,7 +55,7 @@ public class Replace
 
     public virtual string all(string replace)
     {
-        return this.upTo(replace, Integer.MIN_VALUE);
+        return this.upTo(replace, int.MinValue);
     }
 
     public virtual string upTo(string replace, int total)
@@ -104,7 +104,7 @@ public class Replace
                         }
                     }
                     totalNumberOfReplaces++;
-                    if (total != Integer.MIN_VALUE && totalNumberOfReplaces >= total) {
+                    if (total != int.MinValue && totalNumberOfReplaces >= total) {
                         break;
                     }
                 } else {

@@ -17,7 +17,6 @@
 using System;
 using System.Linq;
 using java.util;
-//using Set = java.util.Set;
 using HistoryDbInitInfo = org.allbinary.business.init.db.HistoryDbInitInfo;
 using InventoryDbInitInfo = org.allbinary.business.init.db.InventoryDbInitInfo;
 using LogDbInitInfo = org.allbinary.business.init.db.LogDbInitInfo;

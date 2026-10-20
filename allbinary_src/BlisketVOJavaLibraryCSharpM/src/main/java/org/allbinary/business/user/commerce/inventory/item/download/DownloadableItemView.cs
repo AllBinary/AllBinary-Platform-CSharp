@@ -16,9 +16,8 @@
 
 using System;
 using System.Linq;
-//using Calendar = java.util.Calendar;
+using Calendar = java.util.Calendar;
 using java.util;
-//using Set = java.util.Set;
 using DomNodeInterface = org.allbinary.data.tree.dom.DomNodeInterface;
 using ModDomHelper = org.allbinary.data.tree.dom.ModDomHelper;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;

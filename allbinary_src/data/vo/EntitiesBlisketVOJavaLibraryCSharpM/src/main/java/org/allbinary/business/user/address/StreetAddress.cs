@@ -17,7 +17,6 @@
 using System;
 using System.Linq;
 using java.util;
-//using Set = java.util.Set;
 //using HttpServletRequest = javax.servlet.http.HttpServletRequest;
 using DomNodeHelper = org.allbinary.data.tree.dom.DomNodeHelper;
 using DomSearchHelper = org.allbinary.data.tree.dom.DomSearchHelper;

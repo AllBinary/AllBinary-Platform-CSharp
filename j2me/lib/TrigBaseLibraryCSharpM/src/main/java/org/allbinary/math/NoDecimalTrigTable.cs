@@ -43,7 +43,7 @@ public class NoDecimalTrigTable
     private NoDecimalTrigTable()
     {
         int TOTAL_ANGLE = ((int) AngleFactory.getInstance().TOTAL_ANGLE);
-        long MAX_VALUE = (((long) Integer.MAX_VALUE));
+        long MAX_VALUE = (((long) int.MaxValue));
         this.noDecimalSin = new long[TOTAL_ANGLE];
         this.noDecimalCos = new long[TOTAL_ANGLE];
         this.noDecimalTan = new long[TOTAL_ANGLE + 1];
@@ -1149,8 +1149,8 @@ public class NoDecimalTrigTable
     // throws Exception
     public virtual short antiTan(int dx, int dy)
     {
-        long MAX_VALUE = (((long) Integer.MAX_VALUE));
-        long MIN_VALUE = (((long) Integer.MIN_VALUE));
+        long MAX_VALUE = (((long) int.MaxValue));
+        long MIN_VALUE = (((long) int.MinValue));
         long ratio = (MAX_VALUE - 1L);
         if (dy != 0) {
             long dxl = (((long) dx));

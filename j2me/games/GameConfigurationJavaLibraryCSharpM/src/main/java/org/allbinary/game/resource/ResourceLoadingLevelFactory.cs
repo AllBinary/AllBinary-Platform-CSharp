@@ -27,11 +27,11 @@ public class ResourceLoadingLevelFactory
         return ResourceLoadingLevelFactory.instance;
     }
 
-    public readonly ResourceLoadingLevel LOAD_EARLY = new ResourceLoadingLevel("Load Early", Integer.MAX_VALUE);
-    public readonly ResourceLoadingLevel LOAD_TOUCH = new ResourceLoadingLevel("Load Touch", Integer.MAX_VALUE - 1);
-    public readonly ResourceLoadingLevel LOAD_GAME = new ResourceLoadingLevel("Load Game", Integer.MAX_VALUE - 2);
-    public readonly ResourceLoadingLevel LEVEL = new ResourceLoadingLevel("Level", Integer.MAX_VALUE - 99);
-    public readonly ResourceLoadingLevel MAX_LEVEL = new ResourceLoadingLevel("Max Level", Integer.MAX_VALUE - 100);
+    public readonly ResourceLoadingLevel LOAD_EARLY = new ResourceLoadingLevel("Load Early", int.MaxValue);
+    public readonly ResourceLoadingLevel LOAD_TOUCH = new ResourceLoadingLevel("Load Touch", int.MaxValue - 1);
+    public readonly ResourceLoadingLevel LOAD_GAME = new ResourceLoadingLevel("Load Game", int.MaxValue - 2);
+    public readonly ResourceLoadingLevel LEVEL = new ResourceLoadingLevel("Level", int.MaxValue - 99);
+    public readonly ResourceLoadingLevel MAX_LEVEL = new ResourceLoadingLevel("Max Level", int.MaxValue - 100);
     public readonly ResourceLoadingLevel LOAD_ALL = new ResourceLoadingLevel("Load All", -1);
     private readonly ResourceLoadingLevel[] RESOURCE_LOADING_LEVEL_ARRAY;
     public virtual string getLevelString(int level)

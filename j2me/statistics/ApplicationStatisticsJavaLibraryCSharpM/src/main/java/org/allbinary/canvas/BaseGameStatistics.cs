@@ -29,7 +29,7 @@ namespace org.allbinary.canvas;
 
 public class BaseGameStatistics
 {
-    private readonly TimeDelayHelper timeDelayHelper = new TimeDelayHelper(Integer.MAX_VALUE);
+    private readonly TimeDelayHelper timeDelayHelper = new TimeDelayHelper(int.MaxValue);
     private readonly TimeDelayHelper updateDelayHelper = new TimeDelayHelper(2000);
     private long totalRefreshes = 0L;
     private long totalFrames = 0L;

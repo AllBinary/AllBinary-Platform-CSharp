@@ -77,7 +77,7 @@ public class HorizontalScreenPatrolAI : BasicAI
                 }
                 if (this.firedIndex > FIRE) {
                     this.firedIndex = 0;
-                    this.firingX = Integer.MIN_VALUE;
+                    this.firingX = int.MinValue;
                 }
                 this.firedIndex++;
             }

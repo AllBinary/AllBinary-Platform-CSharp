@@ -58,7 +58,7 @@ public class InterfaceUtil
     {
         Type[] classes = anyType.GetType().getInterfaces();
         for (int index = 0; index < classes.Length; index++) {
-            if (clazz.getName().compareTo(classes[index].getName()) == 0) {
+            if (clazz.FullName.compareTo(classes[index].getName()) == 0) {
                 return true;
             }
         }
@@ -82,7 +82,7 @@ public class InterfaceUtil
         Type[] classes = anyType.GetType().getInterfaces();
         stringBuffer.append("isImplementedView: \n");
         for (int index = 0; index < classes.Length; index++) {
-            stringBuffer.append(clazz.getName());
+            stringBuffer.append(clazz.FullName);
             stringBuffer.append(" should be = ");
             stringBuffer.append(classes[index].getName());
             stringBuffer.append(classes[index].getName());

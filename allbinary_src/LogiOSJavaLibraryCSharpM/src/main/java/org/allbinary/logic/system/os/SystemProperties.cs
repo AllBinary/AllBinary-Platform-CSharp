@@ -37,17 +37,17 @@ public class SystemProperties
 
     public virtual string getName()
     {
-        return System.getProperty(this.OS_NAME);
+        return global::java.lang.JavaSystem.getProperty(this.OS_NAME);
     }
 
     public virtual string getArch()
     {
-        return System.getProperty(this.OS_ARCH);
+        return global::java.lang.JavaSystem.getProperty(this.OS_ARCH);
     }
 
     public virtual string getVersion()
     {
-        return System.getProperty(this.OS_VERSION);
+        return global::java.lang.JavaSystem.getProperty(this.OS_VERSION);
     }
 
     public virtual string getUserHomePath()

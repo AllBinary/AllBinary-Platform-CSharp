@@ -31,7 +31,7 @@ public class PathFindingNodeCostInfoData
     {
     }
 
-    public int MAX_TOTAL_COST = Integer.MAX_VALUE;
-    public int MAX_NODE_COST = Integer.MAX_VALUE / 10000;
+    public int MAX_TOTAL_COST = int.MaxValue;
+    public int MAX_NODE_COST = int.MaxValue / 10000;
 }
 

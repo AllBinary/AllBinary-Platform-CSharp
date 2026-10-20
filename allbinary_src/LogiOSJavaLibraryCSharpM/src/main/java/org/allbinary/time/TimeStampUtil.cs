@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Calendar = java.util.Calendar;
-//using Date = java.util.Date;
+using Calendar = java.util.Calendar;
+using Date = java.util.Date;
 
 namespace org.allbinary.time;
 

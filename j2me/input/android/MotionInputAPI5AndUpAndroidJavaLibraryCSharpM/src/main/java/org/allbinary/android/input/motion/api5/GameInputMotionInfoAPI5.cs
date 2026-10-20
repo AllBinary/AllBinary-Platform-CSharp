@@ -28,9 +28,9 @@ public class GameInputMotionInfoAPI5 : GameInputMotionInfo
         return GameInputMotionInfoAPI5.instance;
     }
 
-    private GameInputMotionInfoAPI5() : base(Integer.MAX_VALUE, 10)
+    private GameInputMotionInfoAPI5() : base(int.MaxValue, 10)
     {
-        // base(Integer.MAX_VALUE, 10) is called from the constructor declaration
+        // base(int.MaxValue, 10) is called from the constructor declaration
     }
 
 }

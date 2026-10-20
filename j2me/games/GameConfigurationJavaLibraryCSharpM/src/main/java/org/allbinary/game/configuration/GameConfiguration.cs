@@ -27,7 +27,7 @@ namespace org.allbinary.game.configuration;
 
 public class GameConfiguration
 {
-    private static readonly int? MIN_VALUE = Integer.MIN_VALUE;
+    private static readonly int? MIN_VALUE = int.MinValue;
     private string name = StringUtil.getInstance().EMPTY_STRING;
     private int? defaultValue = SmallIntegerSingletonFactory.getInstance().getAt(0);
     private int? value = GameConfiguration.MIN_VALUE;

@@ -17,7 +17,6 @@
 using System;
 using System.Linq;
 using java.util;
-//using Set = java.util.Set;
 using DatabaseConnectionInfoInterface = org.allbinary.business.init.db.DatabaseConnectionInfoInterface;
 using DbConnectionInfo = org.allbinary.business.init.db.DbConnectionInfo;
 using StdUtil = org.allbinary.logic.StdUtil;

@@ -36,7 +36,7 @@ public class GeologicalResource
 
     public virtual void add(int value)
     {
-        int max = Integer.MAX_VALUE;
+        int max = int.MaxValue;
         if (this.getTotal() + value > max) {
             this.setTotal(max);
         } else {

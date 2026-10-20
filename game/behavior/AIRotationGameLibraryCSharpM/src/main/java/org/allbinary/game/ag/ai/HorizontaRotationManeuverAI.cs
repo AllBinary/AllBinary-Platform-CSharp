@@ -37,7 +37,7 @@ namespace org.allbinary.game.ag.ai;
 
 public class HorizontaRotationManeuverAI : BasicAI, ArtificialIntelligenceTransitionInterface
 {
-    private readonly CircularIndexUtil circularIndexUtil = CircularIndexUtil.createInstanceAt(10, Integer.MAX_VALUE);
+    private readonly CircularIndexUtil circularIndexUtil = CircularIndexUtil.createInstanceAt(10, int.MaxValue);
     private int currentSpeedDivisor = 5;
     private readonly IndexedAnimation rotationAnimationInterface;
     private readonly BasicVelocityProperties baseVelocityInterface;

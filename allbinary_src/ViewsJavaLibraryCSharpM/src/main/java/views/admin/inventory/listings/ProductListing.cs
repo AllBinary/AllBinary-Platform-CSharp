@@ -17,8 +17,6 @@
 using System;
 using System.Linq;
 using java.util;
-//using HashSet = java.util.HashSet;
-//using Set = java.util.Set;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using StoreFrontInterface = org.allbinary.business.context.modules.storefront.StoreFrontInterface;

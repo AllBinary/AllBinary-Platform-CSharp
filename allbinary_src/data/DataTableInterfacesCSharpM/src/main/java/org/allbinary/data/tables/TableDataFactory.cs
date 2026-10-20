@@ -28,7 +28,7 @@ public class TableDataFactory
         return TableDataFactory.instance;
     }
 
-    public readonly string INTEGER_MAX_VALUE_STRING = (Integer.MAX_VALUE).ToString();
+    public readonly string INTEGER_MAX_VALUE_STRING = (int.MaxValue).ToString();
     public readonly string ZERO_STRING = CommonPhoneStrings.getInstance().ZERO;
 }
 
