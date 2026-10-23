@@ -59,12 +59,12 @@ public class AbFile : AbFileInterface
     }
 
     private readonly File file;
-    protected AbFile(File file)
+    public AbFile(File file)
     {
         this.file = file;
     }
 
-    protected virtual File getFile()
+    public virtual File getFile()
     {
         return this.file;
     }

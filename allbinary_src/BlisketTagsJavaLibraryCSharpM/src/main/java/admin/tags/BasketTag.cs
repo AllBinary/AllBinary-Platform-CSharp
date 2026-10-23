@@ -58,7 +58,7 @@ public class BasketTag : CustomTagSupport
             object anyType = new BasketHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Method method = anyType.GetType().getMethod("isBasketEmpty", null);
             bool? emptyBoolean = ((bool?) method.invoke(anyType, null));
-            return emptyBoolean;
+            return emptyBoolean.Value;
         } catch (LicensingException e) {
             throw e;
         } catch (Exception e) {
@@ -76,7 +76,7 @@ public class BasketTag : CustomTagSupport
             object anyType = new BasketRequestHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Method method = anyType.GetType().getMethod("addItemToBasket", null);
             bool? emptyBoolean = ((bool?) method.invoke(anyType, null));
-            return emptyBoolean;
+            return emptyBoolean.Value;
         } catch (LicensingException e) {
             throw e;
         } catch (Exception e) {
@@ -95,7 +95,7 @@ public class BasketTag : CustomTagSupport
             object anyType = new BasketRequestHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Method method = anyType.GetType().getMethod("removeItemFromBasket", null);
             bool? emptyBoolean = ((bool?) method.invoke(anyType, null));
-            return emptyBoolean;
+            return emptyBoolean.Value;
         } catch (LicensingException e) {
             throw e;
         } catch (Exception e) {
@@ -114,7 +114,7 @@ public class BasketTag : CustomTagSupport
             object anyType = new BasketRequestHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Method method = anyType.GetType().getMethod("adjustBasket", null);
             bool? emptyBoolean = ((bool?) method.invoke(anyType, null));
-            return emptyBoolean;
+            return emptyBoolean.Value;
         } catch (LicensingException e) {
             throw e;
         } catch (Exception e) {

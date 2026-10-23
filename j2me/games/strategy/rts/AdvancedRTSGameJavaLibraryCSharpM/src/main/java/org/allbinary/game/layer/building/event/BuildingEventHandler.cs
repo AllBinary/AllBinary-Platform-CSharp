@@ -36,7 +36,7 @@ public class BuildingEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         BuildingEventListenerInterface buildingEventListenerInterface = (((BuildingEventListenerInterface) eventListenerInterface));
         buildingEventListenerInterface.onBuildingEvent(((RTSLayerEvent) eventObject));

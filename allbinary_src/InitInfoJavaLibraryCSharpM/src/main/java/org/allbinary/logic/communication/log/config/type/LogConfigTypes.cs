@@ -70,7 +70,7 @@ public class LogConfigTypes
         LogConfigType logConfigType = null;
         for (int index = 0; index < size; index++) {
             logConfigType = ((LogConfigType) availableLogConfigTypes.get(index));
-            if (logConfigType.getName().compareTo(name) == 0) {
+            if (string.CompareOrdinal(logConfigType.getName(), name) == 0) {
                 return logConfigType;
             }
         }

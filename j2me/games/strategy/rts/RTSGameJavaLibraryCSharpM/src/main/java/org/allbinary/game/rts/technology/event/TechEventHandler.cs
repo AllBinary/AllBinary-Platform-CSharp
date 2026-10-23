@@ -34,7 +34,7 @@ public class TechEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         TechEventListenerInterface techEventListenerInterface = (((TechEventListenerInterface) eventListenerInterface));
         techEventListenerInterface.onTechEvent(eventObject);

@@ -33,7 +33,7 @@ public class TouchButtonsPaintable : Paintable
     public TouchButtonsPaintable(BasicColor basicColor)
     {
         this.foregroundBasicColor = basicColor;
-        this.foregroundColor = ((int) basicColor);
+        this.foregroundColor = basicColor.intValue();
     }
 
     public override void paint(Graphics graphics)

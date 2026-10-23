@@ -40,7 +40,7 @@ public class BillingAddressView : HttpStoreComponentView, DomNodeInterface
         this.request = ((HttpServletRequest) this.getPageContext().getRequest());
     }
 
-    protected virtual HttpServletRequest getRequest()
+    public virtual HttpServletRequest getRequest()
     {
         return this.request;
     }

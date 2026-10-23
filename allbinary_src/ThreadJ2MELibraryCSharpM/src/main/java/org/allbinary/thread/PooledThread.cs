@@ -23,7 +23,7 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 
 namespace org.allbinary.thread;
 
-public class PooledThread : Thread
+public class PooledThread : global::org.allbinary.thread.NullThread
 {
     private readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();

@@ -85,7 +85,7 @@ public class UpKeyEventHandlerBase : BasicEventHandler
     }
 
     // throws Exception
-    protected virtual void processForInteger(int? eventObject, EventListenerInterface eventListenerInterface)
+    public virtual void processForInteger(int? eventObject, EventListenerInterface eventListenerInterface)
     {
         UpKeyEventListenerInterface upKeyEventListenerInterface = ((UpKeyEventListenerInterface) eventListenerInterface);
         upKeyEventListenerInterface.onUpKeyEvent(eventObject);

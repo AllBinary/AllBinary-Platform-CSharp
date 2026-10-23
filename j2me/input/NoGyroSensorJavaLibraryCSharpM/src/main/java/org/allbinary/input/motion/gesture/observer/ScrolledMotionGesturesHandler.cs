@@ -30,12 +30,12 @@ public class ScrolledMotionGesturesHandler : BasicEventHandler
         return ScrolledMotionGesturesHandler.SINGLETON;
     }
 
-    protected ScrolledMotionGesturesHandler()
+    public ScrolledMotionGesturesHandler()
     {
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         BaseMotionGestureEventListener baseMotionGestureEventListener = ((BaseMotionGestureEventListener) eventListenerInterface);
         baseMotionGestureEventListener.onScrolledMotionGestureEvent(((MotionGestureEvent) eventObject));

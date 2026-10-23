@@ -37,7 +37,7 @@ public class DemoGameMidlet : GameMidlet
     }
 
     // throws Exception
-    protected virtual bool isContinue()
+    public virtual bool isContinue()
     {
         ABHashtable<object, object> hashtable = this.getStartStateHashtable();
         if (hashtable != null && hashtable.size() > 0) {
@@ -60,13 +60,13 @@ public class DemoGameMidlet : GameMidlet
     }
 
     // throws Exception
-    protected virtual GameCanvasRunnableInterface createGameCanvasRunnable(AllBinaryGameLayerManager allBinaryGameLayerManager)
+    public virtual GameCanvasRunnableInterface createGameCanvasRunnable(AllBinaryGameLayerManager allBinaryGameLayerManager)
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
 
     // throws Exception
-    protected virtual GameCanvasRunnableInterface createGameCanvasRunnableInterface()
+    public virtual GameCanvasRunnableInterface createGameCanvasRunnableInterface()
     {
         return this.createGameCanvasRunnable(this.createGameLayerManager());
     }

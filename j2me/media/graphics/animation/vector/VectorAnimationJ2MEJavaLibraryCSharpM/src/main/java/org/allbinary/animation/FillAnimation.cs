@@ -23,7 +23,7 @@ public class FillAnimation : IndexedAnimation
     public override void setBasicColorP(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != ((int) basicColor)) {
+        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != basicColor.intValue()) {
             changed = true;
         }
         base.setBasicColorP(basicColor);
@@ -35,7 +35,7 @@ public class FillAnimation : IndexedAnimation
     public override void changeBasicColor(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getChangeBasicColor() == null || ((int) this.getChangeBasicColor()) != ((int) basicColor)) {
+        if (this.getChangeBasicColor() == null || ((int) this.getChangeBasicColor()) != basicColor.intValue()) {
             changed = true;
         }
         base.changeBasicColor(basicColor);
@@ -68,7 +68,7 @@ public class FillAnimation : IndexedAnimation
     {
     }
 
-    protected virtual void paint(Graphics g)
+    public virtual void paint(Graphics g)
     {
         g.drawRGB(pixelBuffer, 0, width, 0, 0, width, height, true);
     }

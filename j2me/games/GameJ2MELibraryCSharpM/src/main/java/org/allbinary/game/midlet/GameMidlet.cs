@@ -134,7 +134,7 @@ public class GameMidlet : ProgressMidlet, CommandListener
     private readonly FullScreenUtil fullScreenUtil = FullScreenUtil.getInstance();
     private readonly DebugInterface debugInterface;
     private GameCanvasRunnableInterface allbinaryGameCanvasRunnableInterface = NullGameCanvasRunnable.NULL_GAME_CANVAS_RUNNABLE;
-    private Thread thread = NullThread.NULL_THREAD;
+    private global::org.allbinary.thread.NullThread thread = NullThread.NULL_THREAD;
     private CommandForm loadGameForm;
     private bool isFullScreen = false;
     private bool resized = false;
@@ -152,24 +152,24 @@ public class GameMidlet : ProgressMidlet, CommandListener
         this.init();
     }
 
-    protected virtual void init()
+    public virtual void init()
     {
     }
 
     // throws Exception
-    protected virtual void setDemo()
-    {
-        throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
-    }
-
-    // throws Exception
-    protected virtual void createGame()
+    public virtual void setDemo()
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
 
     // throws Exception
-    protected virtual void mediaShutdown()
+    public virtual void createGame()
+    {
+        throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
+    }
+
+    // throws Exception
+    public virtual void mediaShutdown()
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
@@ -178,14 +178,14 @@ public class GameMidlet : ProgressMidlet, CommandListener
     {
     }
 
-    protected override void pauseApp()
+    public override void pauseApp()
     {
         this.pauseAppBackground(true);
         GameAdState gameAdState = this.gameAdStateFactory.getCurrentInstance();
         gameAdState.getAdvertisements().stopAll();
     }
 
-    protected virtual void pauseAppBackground(bool background)
+    public virtual void pauseAppBackground(bool background)
     {
         this.logUtil.putF(this.commonStrings.START, this, this.PAUSE_APP_BACKGROUND);
         if (this.allbinaryGameCanvasRunnableInterface != NullGameCanvasRunnable.NULL_GAME_CANVAS_RUNNABLE) {
@@ -196,14 +196,14 @@ public class GameMidlet : ProgressMidlet, CommandListener
         AllBinarySensorManager.getInstance().shutdown();
     }
 
-    protected virtual void unPauseApp()
+    public virtual void unPauseApp()
     {
         this.unPauseAppBackground(true);
         GameAdState gameAdState = this.gameAdStateFactory.getCurrentInstance();
         gameAdState.getAdvertisements().startAll();
     }
 
-    protected virtual void unPauseAppBackground(bool background)
+    public virtual void unPauseAppBackground(bool background)
     {
         this.logUtil.putF(this.commonStrings.START, this, this.UN_PAUSE_APP_BACKGROUND);
         AllBinarySensorManager.getInstance().init();
@@ -215,7 +215,7 @@ public class GameMidlet : ProgressMidlet, CommandListener
         }
     }
 
-    protected override void destroyAppInRunnable(bool unconditional, bool isProgress)
+    public override void destroyAppInRunnable(bool unconditional, bool isProgress)
     {
         ProgressCanvas progressCanvas = ProgressCanvasFactory.getInstance();
         if (isProgress) {
@@ -228,7 +228,7 @@ public class GameMidlet : ProgressMidlet, CommandListener
         }
     }
 
-    protected override void destroyApp(bool unconditional)
+    public override void destroyApp(bool unconditional)
     {
         string METHOD_NAME = "GameMidlet::destroyApp";
         try {
@@ -251,7 +251,7 @@ public class GameMidlet : ProgressMidlet, CommandListener
     }
 
     // throws MIDletStateChangeException
-    protected override void startApp()
+    public override void startApp()
     {
         try {
             GameAdState gameAdState = this.gameAdStateFactory.getCurrentInstance();
@@ -528,31 +528,31 @@ public class GameMidlet : ProgressMidlet, CommandListener
     }
 
     // throws Exception
-    protected virtual MyCanvas getInputMappingInstructionsCanvas()
+    public virtual MyCanvas getInputMappingInstructionsCanvas()
     {
         return new GameInputMappingInstructionsCanvas(this, this.createGameLayerManager());
     }
 
     // throws Exception
-    protected virtual MyCanvas getInputMappingCanvas()
+    public virtual MyCanvas getInputMappingCanvas()
     {
         return new GameInputMappingCanvas(this.abeClientInformation, this, this.createGameLayerManager(), this.getHelpPaintable());
     }
 
     // throws Exception
-    protected virtual MyCanvas getAboutCanvas()
+    public virtual MyCanvas getAboutCanvas()
     {
         return new BasicPaintablesCanvas(this, CanvasStrings.getInstance().ABOUT, this.createGameLayerManager(), AboutPaintableFactory.getInstance().paintableArray);
     }
 
     // throws Exception
-    protected virtual HelpPaintable getHelpPaintable()
+    public virtual HelpPaintable getHelpPaintable()
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
 
     // throws Exception
-    protected virtual HighScoresCanvas createHighScoresCanvas()
+    public virtual HighScoresCanvas createHighScoresCanvas()
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
@@ -568,7 +568,7 @@ public class GameMidlet : ProgressMidlet, CommandListener
     }
 
     // throws Exception
-    protected virtual void stopGameCanvasRunnableInterface()
+    public virtual void stopGameCanvasRunnableInterface()
     {
         this.logUtil.putF(this.commonStrings.START, this, this.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);
         GameNotificationEventHandler.getInstance().removeAllListeners();
@@ -601,13 +601,13 @@ public class GameMidlet : ProgressMidlet, CommandListener
         this.allbinaryGameCanvasRunnableInterface = gameCanvasRunnableInterface;
     }
 
-    protected virtual AllBinaryGameLayerManager createGameLayerManager()
+    public virtual AllBinaryGameLayerManager createGameLayerManager()
     {
         GameInfo gameInfo = new GameInfo(GameTypeFactory.getInstance().SINGLE_PLAYER, GameMode.SERVER, PlayerTypesFactory.getInstance().PLAYER_TYPE_ONE, 1, 1);
         return new AllBinaryGameLayerManager(this.basicColorFactory.BLACK, this.basicColorFactory.WHITE, gameInfo);
     }
 
-    protected virtual CommandForm getGameOptionsForm()
+    public virtual CommandForm getGameOptionsForm()
     {
         AllBinaryGameLayerManager layerManager = this.createGameLayerManager();
         return GameOptionsFormFactory.getInstance().init(this, "Game Options", layerManager.getBackgroundBasicColor(), layerManager.getForegroundBasicColor());

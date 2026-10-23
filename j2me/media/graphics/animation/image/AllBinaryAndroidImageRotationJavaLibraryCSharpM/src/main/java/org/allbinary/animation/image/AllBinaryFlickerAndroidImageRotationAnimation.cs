@@ -47,7 +47,7 @@ public class AllBinaryFlickerAndroidImageRotationAnimation : ImageBaseRotationAn
     public override void setBasicColorP(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != ((int) basicColor)) {
+        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != basicColor.intValue()) {
             this.imageModifierUtil.setColor(this.originalImage, this.getImage(), 0, basicColor);
             changed = true;
         }

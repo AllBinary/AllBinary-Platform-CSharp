@@ -40,12 +40,12 @@ public class PrimaryThreadPool : ThreadPool
         base.runTask(task);
     }
 
-    protected override void startTask(global::java.lang.Runnable task)
+    public override void startTask(global::java.lang.Runnable task)
     {
         this.logUtil.putF(new StringMaker().append(this.threadPoolStrings.START_TASK).append(StringUtil.getInstance().toString(task)).ToString(), this, this.commonStrings.RUN);
     }
 
-    protected override void completedTask(global::java.lang.Runnable task)
+    public override void completedTask(global::java.lang.Runnable task)
     {
         this.logUtil.putF(new StringMaker().append(this.threadPoolStrings.COMPLETE_TASK).append(StringUtil.getInstance().toString(task)).ToString(), this, this.commonStrings.RUN);
     }

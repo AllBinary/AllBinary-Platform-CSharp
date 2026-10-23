@@ -44,11 +44,11 @@ public class RuntimeEnvironmentVariables
             string solarisCommand = linuxCommand;
             OperatingSystems operatingSystems = OperatingSystems.getInstance();
             if (string.CompareOrdinal(osName, operatingSystems.LINUX) == 0) {
-                process = Runtime.getRuntime().exec(linuxCommand);
+                process = new object().exec(linuxCommand);
             } else if (osName.IndexOf(operatingSystems.WINDOWS) >= 0) {
-                process = Runtime.getRuntime().exec(windowsCommand);
+                process = new object().exec(windowsCommand);
             } else if (string.CompareOrdinal(osName, operatingSystems.SOLARIS) == 0) {
-                process = Runtime.getRuntime().exec(solarisCommand);
+                process = new object().exec(solarisCommand);
             } else {
                 throw new Exception();
             }
@@ -163,7 +163,7 @@ public class RuntimeEnvironmentVariables
             if (string.CompareOrdinal(osName, operatingSystems.LINUX) == 0) {
                 throw new Exception();
             } else if (osName.IndexOf(operatingSystems.WINDOWS) >= 0) {
-                process = Runtime.getRuntime().exec(windowsCommand);
+                process = new object().exec(windowsCommand);
             } else if (string.CompareOrdinal(osName, operatingSystems.SOLARIS) == 0) {
                 throw new Exception();
             } else {

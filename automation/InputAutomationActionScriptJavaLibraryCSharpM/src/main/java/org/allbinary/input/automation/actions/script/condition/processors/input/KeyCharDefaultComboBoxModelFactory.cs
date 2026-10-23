@@ -36,7 +36,7 @@ public class KeyCharDefaultComboBoxModelFactory
             int? nextKey = keyArray[index];
             KeyStroke keyStroke = KeyStroke.getKeyStroke(((int) nextKey), 0);
             char keyChar = KeyStrokeMap.getChar(keyStroke);
-            defaultComboBoxModel.addElement(Character.toString(keyChar));
+            defaultComboBoxModel.addElement((keyChar).ToString());
         }
         return defaultComboBoxModel;
     }

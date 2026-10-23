@@ -29,7 +29,7 @@ public class AdvancedRTSLayerFormFactory : RTSLayerFormFactory
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly ScrollSelectionForm scrollSelectionForm;
-    protected AdvancedRTSLayerFormFactory(string label, ItemArraySingletonFactoryInterface itemArrayFactoryInterface)
+    public AdvancedRTSLayerFormFactory(string label, ItemArraySingletonFactoryInterface itemArrayFactoryInterface)
     {
         ScrollSelectionForm scrollSelectionForm = ScrollSelectionForm.getNullScrollSelectionForm();
         try {

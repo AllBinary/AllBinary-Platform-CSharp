@@ -28,7 +28,7 @@ public class BasicColorUtil
     }
 
     public readonly BasicColor[] ZERO_ARRAY = new BasicColor[0];
-    public readonly int ALPHA = 0xFF000000;
+    public readonly int ALPHA = unchecked((int) 0xFF000000);
     public readonly bool isAlpha = true;
     public readonly bool ffOpaque = true;
     public virtual int getRGB(int red, int green, int blue)

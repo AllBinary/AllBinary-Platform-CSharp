@@ -29,7 +29,7 @@ public class WaypointEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         WaypointEventListenerInterface waypointEventListenerInterface = (((WaypointEventListenerInterface) eventListenerInterface));
         waypointEventListenerInterface.onWaypointEvent(((RTSLayerEvent) eventObject));

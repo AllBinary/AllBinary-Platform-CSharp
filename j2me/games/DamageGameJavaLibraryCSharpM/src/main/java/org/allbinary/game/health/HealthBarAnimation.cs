@@ -66,7 +66,7 @@ public class HealthBarAnimation : Animation
         }
     }
 
-    protected virtual int getY()
+    public virtual int getY()
     {
         BasicHudFactory basicHudFactory = BasicHudFactory.getInstance();
         if (this.location == basicHudFactory.TOPLEFT) {

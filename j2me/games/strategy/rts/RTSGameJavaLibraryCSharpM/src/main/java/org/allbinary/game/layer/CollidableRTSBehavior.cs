@@ -60,7 +60,7 @@ public class CollidableRTSBehavior : CollidableDestroyableDamageableBehavior
     }
 
     // throws Exception
-    protected virtual void collideNone(CollidableCompositeLayer ownerLayer, CollidableCompositeLayer collidableInterface)
+    public virtual void collideNone(CollidableCompositeLayer ownerLayer, CollidableCompositeLayer collidableInterface)
     {
     }
 

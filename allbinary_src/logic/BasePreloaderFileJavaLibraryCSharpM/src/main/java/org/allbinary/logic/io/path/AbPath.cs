@@ -71,7 +71,7 @@ public class AbPath
         this.nameP = this.EMPTY_STRING;
     }
 
-    protected virtual string getSchema(string aPath)
+    public virtual string getSchema(string aPath)
     {
         int beginIndex = aPath.IndexOf(this.commonSeps.COLON);
         if (beginIndex >= 0) {
@@ -155,7 +155,7 @@ public class AbPath
         return this.path;
     }
 
-    protected virtual void setPath(string path)
+    public virtual void setPath(string path)
     {
         this.path = path;
     }

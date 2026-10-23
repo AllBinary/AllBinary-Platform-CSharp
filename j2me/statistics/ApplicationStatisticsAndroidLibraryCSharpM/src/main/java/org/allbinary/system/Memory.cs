@@ -26,18 +26,18 @@ public class Memory
     public static string getInfo()
     {
         StringMaker stringBuffer = new StringMaker();
-        long maxUtilizedMemoryAvailable = Runtime.getRuntime().maxMemory();
-        long memoryUsed = Runtime.getRuntime().totalMemory();
+        long maxUtilizedMemoryAvailable = GC.GetGCMemoryInfo().TotalAvailableMemoryBytes;
+        long memoryUsed = GC.GetGCMemoryInfo().HeapSizeBytes;
         stringBuffer.append("APK Memory: Available: ");
         stringBuffer.appendlong(maxUtilizedMemoryAvailable);
         stringBuffer.append("/");
-        stringBuffer.appendlong(((long) Runtime.getRuntime().maxMemory()));
+        stringBuffer.appendlong(((long) GC.GetGCMemoryInfo().TotalAvailableMemoryBytes));
         stringBuffer.append(" Used: ");
         stringBuffer.appendlong(memoryUsed);
         stringBuffer.append(" Free: ");
         stringBuffer.appendlong(maxUtilizedMemoryAvailable - memoryUsed);
         stringBuffer.append("/");
-        stringBuffer.appendlong(((long) (Runtime.getRuntime().maxMemory() - memoryUsed)));
+        stringBuffer.appendlong(((long) (GC.GetGCMemoryInfo().TotalAvailableMemoryBytes - memoryUsed)));
         return stringBuffer.ToString();
     }
 

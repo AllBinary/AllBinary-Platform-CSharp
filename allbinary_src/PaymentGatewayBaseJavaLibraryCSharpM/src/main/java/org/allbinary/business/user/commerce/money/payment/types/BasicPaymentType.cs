@@ -35,12 +35,12 @@ public class BasicPaymentType
     private string value = null;
     private PaymentGatewayInterfaceFactoryInterface paymentGatewayInterfaceFactoryInterface;
     private PaymentGatewayDomNodeFactoryInterface paymentGatewayDomNodeFactoryInterface;
-    protected BasicPaymentType(string paymentMethod)
+    public BasicPaymentType(string paymentMethod)
     {
         this.init(paymentMethod);
     }
 
-    protected BasicPaymentType(string paymentMethod, PaymentGatewayInterfaceFactoryInterface paymentGatewayInterfaceFactoryInterface, PaymentGatewayDomNodeFactoryInterface paymentGatewayDomNodeFactoryInterface)
+    public BasicPaymentType(string paymentMethod, PaymentGatewayInterfaceFactoryInterface paymentGatewayInterfaceFactoryInterface, PaymentGatewayDomNodeFactoryInterface paymentGatewayDomNodeFactoryInterface)
     {
         this.init(paymentMethod);
         this.paymentGatewayInterfaceFactoryInterface = paymentGatewayInterfaceFactoryInterface;

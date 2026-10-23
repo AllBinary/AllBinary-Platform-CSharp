@@ -86,12 +86,12 @@ public class AllBinaryArrayImageRotationAnimationFactory : BaseImageAnimationFac
         }
     }
 
-    protected virtual void setImageArray(Image[] imageArray)
+    public virtual void setImageArray(Image[] imageArray)
     {
         this.imageArray = imageArray;
     }
 
-    protected virtual int getAngleIncrement()
+    public virtual int getAngleIncrement()
     {
         return this.angleIncrement;
     }

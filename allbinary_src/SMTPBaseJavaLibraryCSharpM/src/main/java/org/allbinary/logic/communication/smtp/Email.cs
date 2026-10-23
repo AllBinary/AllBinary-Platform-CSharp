@@ -81,7 +81,7 @@ public class Email : EmailInterface
                 if (!stringValidationUtil.isEmpty(contentBase)) {
                     internetHeaders.addHeader("Content-Base", contentBase);
                 }
-                mimeBodyParts[1] = new MimeBodyPart(internetHeaders, System.Text.Encoding.UTF8.GetBytes(htmlAttachment));
+                mimeBodyParts[1] = new MimeBodyPart(internetHeaders, System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(htmlAttachment), value => unchecked((sbyte) value)));
             }
             this.init(server, ((Authenticator) null), new InternetAddress[] { new InternetAddress(from) }, new InternetAddress[] { new InternetAddress(to) }, ((InternetAddress[]) null), ((InternetAddress[]) null), subject, mimeBodyParts);
         } catch (Exception e) {
@@ -119,7 +119,7 @@ public class Email : EmailInterface
         if (this.isDebug) {
             session.setDebug(true);
             this.bs = new System.IO.MemoryStream();
-            PrintStream printStream = new PrintStream(this.bs);
+            System.IO.StreamWriter printStream = new System.IO.StreamWriter(this.bs) { AutoFlush = true };
             session.setDebugOut(printStream);
         }
         this.msg = new MimeMessage(session);

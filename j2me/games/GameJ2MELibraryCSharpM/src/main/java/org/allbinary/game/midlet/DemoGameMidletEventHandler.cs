@@ -35,7 +35,7 @@ public class DemoGameMidletEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         DemoGameMidletEventListener demoGameMidletEventListener = ((DemoGameMidletEventListener) eventListenerInterface);
         demoGameMidletEventListener.onDemoGameMidletEvent(((DemoGameMidletEvent) eventObject));

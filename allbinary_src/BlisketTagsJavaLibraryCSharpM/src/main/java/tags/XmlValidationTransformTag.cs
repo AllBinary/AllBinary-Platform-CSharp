@@ -38,7 +38,7 @@ public class XmlValidationTransformTag : TransformTag
             Type helperClass = this.getHelper().GetType();
             Method method = helperClass.getMethod(commonStrings.IS_VALID, null);
             bool? result = ((bool?) method.invoke(this.getHelper(), null));
-            return result;
+            return result.Value;
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.IS_VALID, e);

@@ -37,7 +37,7 @@ public class BasicColorCacheFactory
 
     public virtual void add(BasicColor basicDefaultColor)
     {
-        this.hashtable.put(((int) basicDefaultColor), basicDefaultColor);
+        this.hashtable.put(basicDefaultColor.intValue(), basicDefaultColor);
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]

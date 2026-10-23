@@ -55,7 +55,7 @@ public class ResizeImageJPanel : javax.swing.JPanel, ImageProcessorInputComposit
 
     public virtual void process()
     {
-        new Thread()
+        new global::org.allbinary.thread.NullThread()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public virtual void run()
             {
@@ -98,7 +98,7 @@ public class ResizeImageJPanel : javax.swing.JPanel, ImageProcessorInputComposit
 
     public virtual void update()
     {
-        new Thread()
+        new global::org.allbinary.thread.NullThread()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public virtual void run()
             {
@@ -125,7 +125,7 @@ public class ResizeImageJPanel : javax.swing.JPanel, ImageProcessorInputComposit
 
     public virtual void updateFor16Above()
     {
-        new Thread()
+        new global::org.allbinary.thread.NullThread()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public virtual void run()
             {
@@ -152,7 +152,7 @@ public class ResizeImageJPanel : javax.swing.JPanel, ImageProcessorInputComposit
 
     public virtual void updateFor16Below()
     {
-        new Thread()
+        new global::org.allbinary.thread.NullThread()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public virtual void run()
             {

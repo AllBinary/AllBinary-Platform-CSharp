@@ -51,8 +51,8 @@ public class AllBinaryGameLayerManager : AllBinaryLayerManager
         this.backgroundBasicColor = backgroundBasicColor;
         this.foregroundBasicColor = foregroundBasicColor;
         ItemColorFactory itemColorFactory = ItemColorFactory.getInstance();
-        itemColorFactory.INVERT_PAINT = ((int) this.backgroundBasicColor);
-        itemColorFactory.PAINT = ((int) this.foregroundBasicColor);
+        itemColorFactory.INVERT_PAINT = this.backgroundBasicColor.intValue();
+        itemColorFactory.PAINT = this.foregroundBasicColor.intValue();
         this.gameInfo = gameInfo;
     }
 
@@ -73,7 +73,7 @@ public class AllBinaryGameLayerManager : AllBinaryLayerManager
     public virtual void setBackgroundBasicColor(BasicColor backgroundBasicColor)
     {
         this.backgroundBasicColor = backgroundBasicColor;
-        ItemColorFactory.getInstance().INVERT_PAINT = ((int) this.backgroundBasicColor);
+        ItemColorFactory.getInstance().INVERT_PAINT = this.backgroundBasicColor.intValue();
     }
 
     public virtual BasicColor getForegroundBasicColor()
@@ -84,7 +84,7 @@ public class AllBinaryGameLayerManager : AllBinaryLayerManager
     public virtual void setForegroundBasicColor(BasicColor foregroundBasicColor)
     {
         this.foregroundBasicColor = foregroundBasicColor;
-        ItemColorFactory.getInstance().PAINT = ((int) this.foregroundBasicColor);
+        ItemColorFactory.getInstance().PAINT = this.foregroundBasicColor.intValue();
     }
 
     public virtual GameInfo getGameInfo()

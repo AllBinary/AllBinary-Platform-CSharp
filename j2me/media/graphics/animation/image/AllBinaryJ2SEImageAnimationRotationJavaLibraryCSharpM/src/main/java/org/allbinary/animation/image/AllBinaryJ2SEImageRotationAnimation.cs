@@ -61,7 +61,7 @@ public class AllBinaryJ2SEImageRotationAnimation : ImageBaseRotationAnimation
     public override void setBasicColorP(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != ((int) basicColor)) {
+        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != basicColor.intValue()) {
             changed = true;
         }
         base.setBasicColorP(basicColor);
@@ -74,7 +74,7 @@ public class AllBinaryJ2SEImageRotationAnimation : ImageBaseRotationAnimation
     public override void changeBasicColor(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getChangeBasicColor() == null || ((int) this.getChangeBasicColor()) != ((int) basicColor)) {
+        if (this.getChangeBasicColor() == null || ((int) this.getChangeBasicColor()) != basicColor.intValue()) {
             changed = true;
         }
         base.changeBasicColor(basicColor);
@@ -177,7 +177,7 @@ public class AllBinaryJ2SEImageRotationAnimation : ImageBaseRotationAnimation
     }
 
     // throws Throwable
-    protected override void finalize()
+    public override void finalize()
     {
         base.finalize();
         DisposalUtil disposalUtil = DisposalUtil.getInstance();

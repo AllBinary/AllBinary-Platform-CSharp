@@ -46,7 +46,7 @@ public class BasePatrolAI : BasicAI
         this.currentDistance = ((int) this.maxDistance);
     }
 
-    protected virtual void update()
+    public virtual void update()
     {
         this.updateTotalDistance();
         this.changeDirectionIfReachedPacingAreaMax();
@@ -68,7 +68,7 @@ public class BasePatrolAI : BasicAI
         }
     }
 
-    protected virtual void nextDirection()
+    public virtual void nextDirection()
     {
         if (this.lastKeyDirection == Canvas.LEFT) {
             this.keyDirection = Canvas.RIGHT;

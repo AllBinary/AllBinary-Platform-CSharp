@@ -35,7 +35,7 @@ public class InputAutomationBundleActivator : BundleActivator, InputAutomationBu
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    private static Thread moduleManagementThread = null;
+    private static global::org.allbinary.thread.NullThread moduleManagementThread = null;
     private static BundleContext bundleContext = null;
     public static BundleContext getBundleContext()
     {
@@ -48,7 +48,7 @@ public class InputAutomationBundleActivator : BundleActivator, InputAutomationBu
         try {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.START);
             this.bundleContext = bundleContext;
-            InputAutomationBundleActivator.moduleManagementThread = new Thread(new InputAutomationNewBundleRunnable(this));
+            InputAutomationBundleActivator.moduleManagementThread = new global::org.allbinary.thread.NullThread(new InputAutomationNewBundleRunnable(this));
             InputAutomationBundleActivator.moduleManagementThread.start();
             InputAutomationJFrame.create(this);
         } catch (Exception e) {

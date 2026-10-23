@@ -47,7 +47,7 @@ public class AbeClassLoader : ClassLoader
         AbeClassLoader.PATH = org.allbinary.globals.URLGLOBALS.getWebappPath() + "WEB-INF/classes/";
     }
 
-    protected virtual Type findLoadedClass1(string name)
+    public virtual Type findLoadedClass1(string name)
     {
         return ((Type) AbeClassLoader.classes.get(name));
     }

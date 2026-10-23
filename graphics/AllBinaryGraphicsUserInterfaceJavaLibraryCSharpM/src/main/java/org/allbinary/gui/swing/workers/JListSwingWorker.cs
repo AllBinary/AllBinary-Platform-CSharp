@@ -35,7 +35,7 @@ public class JListSwingWorker : SwingWorker
         return null;
     }
 
-    protected virtual void done()
+    public virtual void done()
     {
         this.getJList().setModel(this.getListModel());
     }

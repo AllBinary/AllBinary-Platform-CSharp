@@ -51,7 +51,7 @@ public class RandomPatrolAI : BasePatrolAI
         }
     }
 
-    protected override void nextDirection()
+    public override void nextDirection()
     {
         base.nextDirection();
         this.changedDirection = true;

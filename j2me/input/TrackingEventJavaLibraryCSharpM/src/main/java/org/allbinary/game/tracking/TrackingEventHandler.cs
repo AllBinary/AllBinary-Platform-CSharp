@@ -35,7 +35,7 @@ public class TrackingEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         TrackingEventListenerInterface trackingEventListenerInterface = ((TrackingEventListenerInterface) eventListenerInterface);
         trackingEventListenerInterface.onMovement(((TrackingEvent) eventObject));

@@ -22,7 +22,7 @@ public class ABCustomItem
         return ((ABCustomItem) ABCustomItem.NULL_CUSTOM_ITEM);
     }
 
-    protected ABCustomItem(string label, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor)
+    public ABCustomItem(string label, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor)
     {
     }
 

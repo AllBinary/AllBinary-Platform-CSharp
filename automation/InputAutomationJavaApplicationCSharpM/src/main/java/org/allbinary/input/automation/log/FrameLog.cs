@@ -69,13 +69,13 @@ public class FrameLog
         string filePath = filePathStringBuffer.ToString();
         FileOutputStream fileOutputStream = new FileOutputStream(new File(filePath));
         fileOutputStream.write(FrameLog.frameBytes);
-        fileOutputStream.write(System.Text.Encoding.UTF8.GetBytes(getFrame().ToString()));
+        fileOutputStream.write(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(getFrame().ToString()), value => unchecked((sbyte) value)));
         fileOutputStream.write('\n');
         fileOutputStream.write(FrameLog.info);
-        fileOutputStream.write(System.Text.Encoding.UTF8.GetBytes(this.infoStringBuffer.ToString()));
+        fileOutputStream.write(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(this.infoStringBuffer.ToString()), value => unchecked((sbyte) value)));
         fileOutputStream.write('\n');
         fileOutputStream.write(FrameLog.actions);
-        fileOutputStream.write(System.Text.Encoding.UTF8.GetBytes(this.actionsStringBuffer.ToString()));
+        fileOutputStream.write(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(this.actionsStringBuffer.ToString()), value => unchecked((sbyte) value)));
         fileOutputStream.close();
     }
 

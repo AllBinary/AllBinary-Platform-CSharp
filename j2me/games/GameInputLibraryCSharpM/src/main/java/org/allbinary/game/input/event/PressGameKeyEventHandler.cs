@@ -74,7 +74,7 @@ public class PressGameKeyEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         PressGameKeyEventListenerInterface pressGameKeyEventListenerInterface = (((PressGameKeyEventListenerInterface) eventListenerInterface));
         pressGameKeyEventListenerInterface.onPressGameKeyEvent(((GameKeyEvent) eventObject));

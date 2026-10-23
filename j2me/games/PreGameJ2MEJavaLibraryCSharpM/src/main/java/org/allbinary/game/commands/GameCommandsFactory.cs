@@ -62,7 +62,7 @@ public class GameCommandsFactory
     public readonly Command SELECT_COMMAND = new Command("Select", StringUtil.getInstance().EMPTY_STRING, Command.SCREEN, 1);
     public readonly Command FEATURE_UPDATE = new Command("Feature Update", StringUtil.getInstance().EMPTY_STRING, Command.SCREEN, 1);
     public readonly Command BUY_COMMAND = new Command("BUY", StringUtil.getInstance().EMPTY_STRING, Command.SCREEN, 1);
-    protected GameCommandsFactory()
+    public GameCommandsFactory()
     {
     }
 

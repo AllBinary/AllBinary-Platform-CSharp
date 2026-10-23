@@ -27,8 +27,8 @@ public class ItemColorFactory
         return ItemColorFactory.instance;
     }
 
-    public int INVERT_PAINT = 0xFF000000;
-    public int PAINT = 0xFFe07718;
+    public int INVERT_PAINT = unchecked((int) 0xFF000000);
+    public int PAINT = unchecked((int) 0xFFe07718);
     public int TEXT_FIELD_NO_FOCUS = 0x7F7F7F;
 }
 

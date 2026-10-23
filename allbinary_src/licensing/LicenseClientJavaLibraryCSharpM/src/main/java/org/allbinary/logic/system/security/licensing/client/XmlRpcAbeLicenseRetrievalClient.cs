@@ -74,7 +74,7 @@ public class XmlRpcAbeLicenseRetrievalClient : XmlRpcAbeClient
         } catch (IOException e) {
             this.logUtil.put(EXCEPTION_IN_CLIENT, this, this.commonStrings.GET, e);
             this.logUtil.putF(TRYING_OTHER_SERVERS + ExceptionUtil.getInstance().getStackTrace(e), this, this.commonStrings.GET);
-            if (!e.Message.startsWith(HOST_NOT_RESOLVED)) {
+            if (!e.Message.StartsWith(HOST_NOT_RESOLVED)) {
                 return this.tryAnother(anyType);
             } else {
                 isOnline = false;

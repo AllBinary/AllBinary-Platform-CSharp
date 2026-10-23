@@ -44,7 +44,7 @@ public class VectorToImageArrayRotationAnimationFactory : BaseImageAnimationFact
     }
 
     // throws Exception
-    protected virtual void init()
+    public virtual void init()
     {
         AngleFactory angleFactory = AngleFactory.getInstance();
         this.angleIncrement = angleFactory.TOTAL_ANGLE / GameConfigurationCentral.getInstance().getGameControlFidelity();
@@ -61,7 +61,7 @@ public class VectorToImageArrayRotationAnimationFactory : BaseImageAnimationFact
         }
     }
 
-    protected virtual int getAngleIncrement()
+    public virtual int getAngleIncrement()
     {
         return this.angleIncrement;
     }

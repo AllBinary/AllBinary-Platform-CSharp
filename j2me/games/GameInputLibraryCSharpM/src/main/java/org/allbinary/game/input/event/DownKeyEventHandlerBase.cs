@@ -110,14 +110,14 @@ public class DownKeyEventHandlerBase : BasicEventHandler
     }
 
     // throws Exception
-    protected virtual void processI(int? eventObject, EventListenerInterface eventListenerInterface)
+    public virtual void processI(int? eventObject, EventListenerInterface eventListenerInterface)
     {
         DownKeyEventListenerInterface downKeyEventListenerInterface = ((DownKeyEventListenerInterface) eventListenerInterface);
         downKeyEventListenerInterface.onDownKey(eventObject);
     }
 
     // throws Exception
-    protected virtual void processEvent(GameKeyEvent eventObject, EventListenerInterface eventListenerInterface)
+    public virtual void processEvent(GameKeyEvent eventObject, EventListenerInterface eventListenerInterface)
     {
         DownKeyEventListenerInterface downKeyEventListenerInterface = ((DownKeyEventListenerInterface) eventListenerInterface);
         downKeyEventListenerInterface.onDownKeyEvent(eventObject);

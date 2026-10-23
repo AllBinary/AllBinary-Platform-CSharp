@@ -28,7 +28,7 @@ public class BasicLayerProcessor
     public static readonly BasicLayerProcessor NULL_LAYER_PROCESSOR = new BasicLayerProcessor();
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly BasicArrayList list = new BasicArrayListD();
-    protected BasicLayerProcessor()
+    public BasicLayerProcessor()
     {
     }
 

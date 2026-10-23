@@ -24,7 +24,7 @@ public class RaceTrackGameFeature : GameFeature
 {
     public static readonly GameFeature MINI_MAP = new RaceTrackGameFeature("Mini Map");
     public static readonly GameFeature AUTO_FINISH_AI = new RaceTrackGameFeature("Auto Finish AI");
-    protected RaceTrackGameFeature(string name) : base(name)
+    public RaceTrackGameFeature(string name) : base(name)
     {
         // base(name) is called from the constructor declaration
     }

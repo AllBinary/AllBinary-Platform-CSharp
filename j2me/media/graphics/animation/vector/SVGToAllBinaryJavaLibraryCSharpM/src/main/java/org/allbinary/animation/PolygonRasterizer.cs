@@ -17,9 +17,9 @@ public class PolygonRasterizer
     {
         int pointCount = PathParser.parsePath(svgPath, pathX, pathY, pathX.Length);
         for (int i = 0; i < pixelBuffer.Length; i++) {
-            pixelBuffer[i] = 0xFFFFFFFF;
+            pixelBuffer[i] = unchecked((int) 0xFFFFFFFF);
         }
-        PolygonRasterizer.getInstance().fillPolygon(pathX, pathY, pointCount, pixelBuffer, width, height, 0xFFFF00FF);
+        PolygonRasterizer.getInstance().fillPolygon(pathX, pathY, pointCount, pixelBuffer, width, height, unchecked((int) 0xFFFF00FF));
         return pixelBuffer;
     }
 

@@ -56,7 +56,7 @@ public class CollidableVehicleBehavior : CollidableDestroyableDamageableBehavior
 
     private long halfImpactVelocityX = 0L;
     private long halfImpactVelocityY = 0L;
-    protected virtual void collideVehicle(CollidableCompositeLayer ownerLayer, VehiclePropertiesCompositeInterface vehiclePropertiesCompositeInterface)
+    public virtual void collideVehicle(CollidableCompositeLayer ownerLayer, VehiclePropertiesCompositeInterface vehiclePropertiesCompositeInterface)
     {
         VehiclePropertiesCompositeInterface ownerVehicleLayerInterface = (((VehiclePropertiesCompositeInterface) ownerLayer));
         VehicleProperties ownerVehicleProperties = ownerVehicleLayerInterface.getVehicleProperties();

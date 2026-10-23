@@ -23,7 +23,7 @@ namespace org.allbinary.game.input;
 
 public class J2MEGameKey : Input
 {
-    protected J2MEGameKey(int key, string keyName) : base(key, keyName)
+    public J2MEGameKey(int key, string keyName) : base(key, keyName)
     {
         // base(key, keyName) is called from the constructor declaration
         int id = this.getId();

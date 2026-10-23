@@ -66,7 +66,7 @@ public class BasicHud_1 : UpdateMyFontInterface
         this.setBufferZone(bufferZone);
         this.onDisplayChangeEvent(DisplayInfoSingleton.getInstance().displayChangeEvent);
         this.setBasicColorP(basicColor);
-        this.color = ((int) basicColor);
+        this.color = basicColor.intValue();
     }
 
     public virtual void updateMeasurement(Graphics graphics)
@@ -93,7 +93,7 @@ public class BasicHud_1 : UpdateMyFontInterface
     }
 
     // throws Exception
-    protected virtual HudGraphicsPosition getHudGraphicsPositionWH(int width, int height, int maxWidth, int maxHeight)
+    public virtual HudGraphicsPosition getHudGraphicsPositionWH(int width, int height, int maxWidth, int maxHeight)
     {
         int x = 0;
         int y = 0;
@@ -141,7 +141,7 @@ public class BasicHud_1 : UpdateMyFontInterface
         this.myFontProcessor = this.updateMyFontProcessor;
     }
 
-    protected virtual GPoint getPoint(int x, int y)
+    public virtual GPoint getPoint(int x, int y)
     {
         return PointFactory.getInstance().createXY(x, y);
     }
@@ -166,7 +166,7 @@ public class BasicHud_1 : UpdateMyFontInterface
         this.direction = direction;
     }
 
-    protected virtual HudGraphicsPosition getHudGraphicsPosition()
+    public virtual HudGraphicsPosition getHudGraphicsPosition()
     {
         return this.hudGraphicsPosition;
     }
@@ -196,12 +196,12 @@ public class BasicHud_1 : UpdateMyFontInterface
         return this.basicColor;
     }
 
-    protected virtual void setY(int y)
+    public virtual void setY(int y)
     {
         this.y = y;
     }
 
-    protected virtual int getY()
+    public virtual int getY()
     {
         return this.y;
     }

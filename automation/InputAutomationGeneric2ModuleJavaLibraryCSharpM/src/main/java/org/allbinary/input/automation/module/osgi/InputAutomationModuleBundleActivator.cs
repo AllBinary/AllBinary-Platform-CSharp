@@ -117,22 +117,22 @@ public class InputAutomationModuleBundleActivator : BundleActivator
         this.removeModules(context);
     }
 
-    protected virtual InputAutomationModuleFactoryInterface[] getInputAutomationModuleInterface()
+    public virtual InputAutomationModuleFactoryInterface[] getInputAutomationModuleInterface()
     {
         return this.inputAutomationModuleInterface;
     }
 
-    protected virtual void setInputAutomationModuleInterface(InputAutomationModuleFactoryInterface[] inputAutomationModuleInterface)
+    public virtual void setInputAutomationModuleInterface(InputAutomationModuleFactoryInterface[] inputAutomationModuleInterface)
     {
         this.inputAutomationModuleInterface = inputAutomationModuleInterface;
     }
 
-    protected virtual object getServiceFactory()
+    public virtual object getServiceFactory()
     {
         return this.serviceFactory;
     }
 
-    protected virtual void setServiceFactory(ServiceFactory serviceObject)
+    public virtual void setServiceFactory(ServiceFactory serviceObject)
     {
         this.serviceFactory = serviceObject;
     }

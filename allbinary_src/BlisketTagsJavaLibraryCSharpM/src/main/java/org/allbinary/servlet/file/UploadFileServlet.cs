@@ -50,7 +50,7 @@ public class UploadFileServlet : HttpServlet
     public HashMap<object, object> requestHashMap = null;
     private string fileName = null;
     // throws ServletException, IOException
-    protected virtual void processRequest(HttpServletRequest request, HttpServletResponse response)
+    public virtual void processRequest(HttpServletRequest request, HttpServletResponse response)
     {
         bool isError = false;
         InputStream inputStream = null;
@@ -69,7 +69,7 @@ public class UploadFileServlet : HttpServlet
                 if (AuthenticationHelperUtil.getInstance().isAuthorized(authenticationHelper, filePath)) {
                     this.saveFile(filePath);
                     response.setContentType("text/plain");
-                    response.getOutputStream().write(System.Text.Encoding.UTF8.GetBytes("OK!"));
+                    response.getOutputStream().write(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes("OK!"), value => unchecked((sbyte) value)));
                 } else {
                     isError = true;
                     response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "You are not Authorized");
@@ -130,13 +130,13 @@ public class UploadFileServlet : HttpServlet
     }
 
     // throws ServletException, IOException
-    protected virtual void doGet(HttpServletRequest request, HttpServletResponse response)
+    public virtual void doGet(HttpServletRequest request, HttpServletResponse response)
     {
         this.processRequest(request, response);
     }
 
     // throws ServletException, IOException
-    protected virtual void doPost(HttpServletRequest request, HttpServletResponse response)
+    public virtual void doPost(HttpServletRequest request, HttpServletResponse response)
     {
         this.processRequest(request, response);
     }

@@ -62,7 +62,7 @@ public class MeteredGameObject : MeteredGameObjectInterface
         return this.good;
     }
 
-    protected virtual void setGood(bool good)
+    public virtual void setGood(bool good)
     {
         this.good = good;
     }
@@ -72,7 +72,7 @@ public class MeteredGameObject : MeteredGameObjectInterface
         return this.dropping;
     }
 
-    protected virtual void setDropping(bool dropping)
+    public virtual void setDropping(bool dropping)
     {
         this.dropping = dropping;
     }

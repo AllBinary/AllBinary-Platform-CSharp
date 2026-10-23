@@ -30,7 +30,7 @@ public class UnitGameResources : BasicGameResources
     public string RESOURCE_ICON_ANIMATION = StringUtil.getInstance().EMPTY_STRING;
     public string RESOURCE_ICON_BUILD = StringUtil.getInstance().EMPTY_STRING;
     public string RESOURCE_ICON = StringUtil.getInstance().EMPTY_STRING;
-    protected UnitGameResources()
+    public UnitGameResources()
     {
     }
 
@@ -40,7 +40,7 @@ public class UnitGameResources : BasicGameResources
     private static readonly string ICON_BUILD = "_icon" + UnitGameResources.BUILD;
     private readonly string ICON_SIZE = "_64_by_64.png";
     // throws Exception
-    protected override void append(string ROOT, string sizeString)
+    public override void append(string ROOT, string sizeString)
     {
         base.append(ROOT, sizeString);
         string @string = GameGraphicsResourceUtil.getInstance().getName();
@@ -69,7 +69,7 @@ public class UnitGameResources : BasicGameResources
     }
 
     // throws Exception
-    protected override string getString()
+    public override string getString()
     {
         if (AndroidUtil.isAndroid()) {
             return GameGraphicsResourceUtil.getInstance().getStringForFeature(GraphicsFeatureFactory.getInstance().SPRITE_QUARTER_ROTATION_GRAPHICS);

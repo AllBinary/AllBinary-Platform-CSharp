@@ -33,7 +33,7 @@ public class AllBinaryOrientationSensor : AllBinarySensor
         this.listener = completeMotionGestureInputEventListenerInterface;
     }
 
-    protected AllBinaryOrientationSensor()
+    public AllBinaryOrientationSensor()
     {
     }
 

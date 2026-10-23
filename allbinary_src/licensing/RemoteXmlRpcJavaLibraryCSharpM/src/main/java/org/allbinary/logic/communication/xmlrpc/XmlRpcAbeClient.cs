@@ -85,7 +85,7 @@ public class XmlRpcAbeClient
     }
 
     // throws Exception
-    protected virtual object tryAnother(object anyType)
+    public virtual object tryAnother(object anyType)
     {
         if (getServer() < getMaxServers()) {
             this.setServer(getServer() + 1);
@@ -100,62 +100,62 @@ public class XmlRpcAbeClient
         throw new Exception("Tried All Servers But Still Failed");
     }
 
-    protected virtual AbeClientInformationInterface getClientInfo()
+    public virtual AbeClientInformationInterface getClientInfo()
     {
         return this.clientInfo;
     }
 
-    protected virtual XmlRpcHandler getClient()
+    public virtual XmlRpcHandler getClient()
     {
         return this.client;
     }
 
-    protected virtual void setClient(XmlRpcClient client)
+    public virtual void setClient(XmlRpcClient client)
     {
         this.client = client;
     }
 
-    protected virtual int getServer()
+    public virtual int getServer()
     {
         return this.server;
     }
 
-    protected virtual void setServer(int server)
+    public virtual void setServer(int server)
     {
         this.server = server;
     }
 
-    protected virtual int getStart()
+    public virtual int getStart()
     {
         return this.start;
     }
 
-    protected virtual void setStart(int start)
+    public virtual void setStart(int start)
     {
         this.start = start;
     }
 
-    protected virtual int getMaxServers()
+    public virtual int getMaxServers()
     {
         return this.maxServers;
     }
 
-    protected virtual void setMaxServers(int maxServers)
+    public virtual void setMaxServers(int maxServers)
     {
         this.maxServers = maxServers;
     }
 
-    protected virtual bool isIsDone()
+    public virtual bool isIsDone()
     {
         return this.isDone;
     }
 
-    protected virtual void setIsDone(bool isDone)
+    public virtual void setIsDone(bool isDone)
     {
         this.isDone = isDone;
     }
 
-    protected virtual string getRemoteMethod()
+    public virtual string getRemoteMethod()
     {
         return this.remoteMethod;
     }

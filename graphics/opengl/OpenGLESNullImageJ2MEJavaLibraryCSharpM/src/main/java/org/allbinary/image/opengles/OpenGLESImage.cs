@@ -50,7 +50,7 @@ public class OpenGLESImage : OpenGLSurfaceChangedInterface
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
 
-    protected virtual bool initTexture(GL10 gl)
+    public virtual bool initTexture(GL10 gl)
     {
         return false;
     }

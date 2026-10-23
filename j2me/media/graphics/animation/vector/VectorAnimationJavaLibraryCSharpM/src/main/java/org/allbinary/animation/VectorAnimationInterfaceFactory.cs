@@ -40,12 +40,12 @@ public class VectorAnimationInterfaceFactory : AnimationInterfaceFactoryInterfac
         return new VectorAnimation(this.currentPoints, this.getBasicColorP(), this.animationBehaviorFactory.getOrCreateInstance());
     }
 
-    protected virtual void setBasicColorP(BasicColor basicColor)
+    public virtual void setBasicColorP(BasicColor basicColor)
     {
         this.basicColor = basicColor;
     }
 
-    protected virtual BasicColor getBasicColorP()
+    public virtual BasicColor getBasicColorP()
     {
         return this.basicColor;
     }

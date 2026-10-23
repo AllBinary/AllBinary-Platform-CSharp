@@ -34,12 +34,12 @@ public class ImageModifierUtil
     public readonly Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     public virtual void setColor(Image unusedOriginalImage, Image image, int imageIndex, BasicColor basicColor)
     {
-        this.paint.setColorFilter(new PorterDuffColorFilter(((int) basicColor), PorterDuff.Mode.SRC_IN));
+        this.paint.setColorFilter(new PorterDuffColorFilter(basicColor.intValue(), PorterDuff.Mode.SRC_IN));
     }
 
     public virtual void changeColor(Image unusedOriginalImage, Image image, int imageIndex, BasicColor basicColor)
     {
-        this.paint.setColorFilter(new PorterDuffColorFilter(((int) basicColor), PorterDuff.Mode.SRC_IN));
+        this.paint.setColorFilter(new PorterDuffColorFilter(basicColor.intValue(), PorterDuff.Mode.SRC_IN));
     }
 
     public virtual void setAlpha(Image originalImage, Image image, int imageIndex, int alphaInt)

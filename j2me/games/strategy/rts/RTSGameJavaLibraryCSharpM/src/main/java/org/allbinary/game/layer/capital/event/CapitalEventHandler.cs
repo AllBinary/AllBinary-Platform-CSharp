@@ -28,7 +28,7 @@ public class CapitalEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         CapitalEventListenerInterface capitalEventListenerInterface = (((CapitalEventListenerInterface) eventListenerInterface));
         capitalEventListenerInterface.onCapitalChangeEvent(((CapitalEvent) eventObject));

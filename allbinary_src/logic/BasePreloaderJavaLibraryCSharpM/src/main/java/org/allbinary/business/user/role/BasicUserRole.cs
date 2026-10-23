@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using Serializable = java.io.Serializable;
+using Serializable = java.io.Serializable;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 
@@ -66,7 +66,7 @@ public class BasicUserRole : Serializable
         return this.sessionInactivityTimeout;
     }
 
-    public override bool Equals(BasicUserRole basicUserRole)
+    public virtual bool Equals(BasicUserRole basicUserRole)
     {
         if (this.getRoleId() == basicUserRole.getRoleId()) {
             return true;

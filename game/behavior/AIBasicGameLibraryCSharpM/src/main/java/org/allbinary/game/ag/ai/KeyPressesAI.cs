@@ -77,7 +77,7 @@ public class KeyPressesAI : BasicAI
         this.on = on;
     }
 
-    protected virtual bool isOn()
+    public virtual bool isOn()
     {
         return this.on;
     }

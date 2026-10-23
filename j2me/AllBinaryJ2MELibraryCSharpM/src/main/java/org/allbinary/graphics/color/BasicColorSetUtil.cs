@@ -28,13 +28,13 @@ public class BasicColorSetUtil
         return BasicColorSetUtil.instance;
     }
 
-    protected BasicColorSetUtil()
+    public BasicColorSetUtil()
     {
     }
 
     public virtual void setBasicColorP(Graphics graphics, BasicColor basicColor)
     {
-        graphics.setColor(((int) basicColor));
+        graphics.setColor(basicColor.intValue());
     }
 
     public virtual void setBasicColorP3(Graphics graphics, BasicColor basicColor, int value)

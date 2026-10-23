@@ -35,7 +35,7 @@ public class GameInitializedEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         GameInitializedListenerInterface gameInitializedListenerInterface = (((GameInitializedListenerInterface) eventListenerInterface));
         gameInitializedListenerInterface.onGameInitialized(((GameInitializedEvent) eventObject));

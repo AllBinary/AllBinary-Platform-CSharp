@@ -256,20 +256,20 @@ public class TransformInfo : TransformInfoInterface
     }
 
     // throws Exception
-    protected virtual void setObjectConfigFileName(string value)
+    public virtual void setObjectConfigFileName(string value)
     {
         this.objectConfigFileName = value;
     }
 
     // throws Exception
-    protected virtual void setObjectConfigFile(string value)
+    public virtual void setObjectConfigFile(string value)
     {
         this.objectConfigFileName = value;
         this.setObjectConfigInterface(TransformInfoObjectConfigAndManipulatorFactory.getInstance().getInstance(this.abeClientInformation, this, this.getObjectConfigFilePath()));
     }
 
     // throws Exception
-    protected virtual void setObjectConfig(string value)
+    public virtual void setObjectConfig(string value)
     {
         Document document = DomDocumentHelper.create(value);
         this.setObjectConfigInterface(TransformInfoObjectConfigAndManipulatorFactory.getInstance().getInstance(this.abeClientInformation, this, document));
@@ -409,11 +409,11 @@ public class TransformInfo : TransformInfoInterface
         hashMap.put(transformInfoData.OBJECTFILENAME, this.objectFileName);
         hashMap.put(transformInfoData.OBJECT, this.anyType);
         hashMap.put(transformInfoData.OBJECTCONFIGFILENAME, this.getObjectConfigFile());
-        hashMap.put(transformInfoData.OBJECTCONFIG, Encoder.encode(System.Text.Encoding.UTF8.GetBytes(this.getObjectConfigInterface().ToString())));
+        hashMap.put(transformInfoData.OBJECTCONFIG, Encoder.encode(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(this.getObjectConfigInterface().ToString()), value => unchecked((sbyte) value))));
         hashMap.put(transformInfoData.TEMPLATEFILENAME, this.templateFileName);
         hashMap.put(transformInfoData.TEMPLATE, this.template);
         hashMap.put(transformInfoData.DATAFILENAME, this.dataFileName);
-        hashMap.put(transformInfoData.DATA, Encoder.encode(System.Text.Encoding.UTF8.GetBytes(this.data)));
+        hashMap.put(transformInfoData.DATA, Encoder.encode(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(this.data), value => unchecked((sbyte) value))));
         Calendar calendar = Calendar.getInstance();
         string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
         hashMap.put(EntryData.getInstance().LASTMODIFIED, time);
@@ -428,11 +428,11 @@ public class TransformInfo : TransformInfoInterface
         vector.add(this.objectFileName);
         vector.add(this.anyType);
         vector.add(this.getObjectConfigFile());
-        vector.add(Encoder.encode(System.Text.Encoding.UTF8.GetBytes(this.getObjectConfigInterface().ToString())));
+        vector.add(Encoder.encode(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(this.getObjectConfigInterface().ToString()), value => unchecked((sbyte) value))));
         vector.add(this.templateFileName);
         vector.add(this.template);
         vector.add(this.dataFileName);
-        vector.add(Encoder.encode(System.Text.Encoding.UTF8.GetBytes(this.data)));
+        vector.add(Encoder.encode(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(this.data), value => unchecked((sbyte) value))));
         Calendar calendar = Calendar.getInstance();
         string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
         vector.add(time);

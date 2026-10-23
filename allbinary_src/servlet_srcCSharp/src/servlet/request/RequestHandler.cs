@@ -41,7 +41,7 @@ public class RequestHandler : HttpServlet
     }
 
     // throws ServletException, IOException
-    protected virtual void processRequest(HttpServletRequest request, HttpServletResponse response)
+    public virtual void processRequest(HttpServletRequest request, HttpServletResponse response)
     {
         try {
             response.setContentType("text/html");
@@ -66,13 +66,13 @@ public class RequestHandler : HttpServlet
     }
 
     // throws ServletException, IOException
-    protected virtual void doGet(HttpServletRequest request, HttpServletResponse response)
+    public virtual void doGet(HttpServletRequest request, HttpServletResponse response)
     {
         this.processRequest(request, response);
     }
 
     // throws ServletException, IOException
-    protected virtual void doPost(HttpServletRequest request, HttpServletResponse response)
+    public virtual void doPost(HttpServletRequest request, HttpServletResponse response)
     {
         this.processRequest(request, response);
     }

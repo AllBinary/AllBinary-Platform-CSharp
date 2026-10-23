@@ -69,7 +69,7 @@ public class Animation : AnimationInterface, OpenGLSurfaceChangedInterface
     public virtual void setBasicColorP(BasicColor basicColor)
     {
         this.basicColor = basicColor;
-        this.colorP = ((int) this.basicColor);
+        this.colorP = this.basicColor.intValue();
     }
 
     public virtual void setBackgroundBasicColorP(BasicColor basicColor)
@@ -84,7 +84,7 @@ public class Animation : AnimationInterface, OpenGLSurfaceChangedInterface
     public virtual void changeBasicColor(BasicColor basicColor)
     {
         this.changeBasicColorP = basicColor;
-        this.changeColorP = ((int) this.changeBasicColorP);
+        this.changeColorP = this.changeBasicColorP.intValue();
     }
 
     public virtual int getChangeColor()

@@ -25,26 +25,26 @@ namespace org.allbinary.logic.util.queue;
 public class BasicQueue
 {
     public readonly BasicArrayList queueVector = new BasicArrayListD();
-    protected BasicQueue()
+    public BasicQueue()
     {
     }
 
     // throws Exception
     [MethodImpl(MethodImplOptions.Synchronized)]
-    protected virtual bool offer(object anyType)
+    public virtual bool offer(object anyType)
     {
         this.queueVector.add(anyType);
         return true;
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    protected virtual void remove(object anyType)
+    public virtual void remove(object anyType)
     {
         this.queueVector.remove(anyType);
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    protected virtual object removeLast()
+    public virtual object removeLast()
     {
         object anyType = this.queueVector.get(this.queueVector.size() - 1);
         this.queueVector.remove(anyType);

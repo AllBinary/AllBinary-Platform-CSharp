@@ -40,12 +40,12 @@ public class InitDb
     {
     }
 
-    protected virtual void setHelper(object anyType)
+    public virtual void setHelper(object anyType)
     {
         this.anyType = anyType;
     }
 
-    protected virtual object getHelper()
+    public virtual object getHelper()
     {
         return this.anyType;
     }
@@ -68,7 +68,7 @@ public class InitDb
             Type dynamicClass = this.anyType.GetType();
             Method method = dynamicClass.getMethod(this.METHOD_CALL_ADD_USERS, null);
             bool? result = ((bool?) method.invoke(this.anyType, null));
-            return result;
+            return result.booleanValue();
         } catch (Exception e) {
             return false;
         }
@@ -80,7 +80,7 @@ public class InitDb
             Type dynamicClass = this.anyType.GetType();
             Method method = dynamicClass.getMethod(this.METHOD_CALL_ADD_DATABASES, null);
             bool? result = ((bool?) method.invoke(this.anyType, null));
-            return result;
+            return result.booleanValue();
         } catch (Exception e) {
             return false;
         }
@@ -92,7 +92,7 @@ public class InitDb
             Type dynamicClass = this.anyType.GetType();
             Method method = dynamicClass.getMethod(this.METHOD_CALL_ADD_TABLES, null);
             bool? result = ((bool?) method.invoke(this.anyType, null));
-            return result;
+            return result.booleanValue();
         } catch (Exception e) {
             return false;
         }
@@ -104,7 +104,7 @@ public class InitDb
             Type dynamicClass = this.anyType.GetType();
             Method method = dynamicClass.getMethod(this.METHOD_CALL_TEMP_MAIN_PATH, null);
             bool? result = ((bool?) method.invoke(this.anyType, null));
-            return result;
+            return result.booleanValue();
         } catch (Exception e) {
             return false;
         }
@@ -116,7 +116,7 @@ public class InitDb
             Type dynamicClass = this.anyType.GetType();
             Method method = dynamicClass.getMethod(this.METHOD_CALL_MAIN_PATH, null);
             bool? result = ((bool?) method.invoke(this.anyType, null));
-            return result;
+            return result.booleanValue();
         } catch (Exception e) {
             return false;
         }

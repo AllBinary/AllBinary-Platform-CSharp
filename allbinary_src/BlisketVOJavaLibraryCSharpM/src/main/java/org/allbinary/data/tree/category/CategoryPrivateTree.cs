@@ -44,7 +44,7 @@ public class CategoryPrivateTree
 
     // throws Exception
     [MethodImpl(MethodImplOptions.Synchronized)]
-    protected virtual void save(CategoryInterface categoryInterface)
+    public virtual void save(CategoryInterface categoryInterface)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
             this.logUtil.putF("Saving Category File: " + categoryInterface.getFilePath(), this, "save()");
@@ -59,7 +59,7 @@ public class CategoryPrivateTree
 
     // throws Exception
     [MethodImpl(MethodImplOptions.Synchronized)]
-    protected virtual void delete(CategoryInterface categoryInterface)
+    public virtual void delete(CategoryInterface categoryInterface)
     {
         if (categoryInterface.isLeaf()) {
             AbFile categoryFile = AbFile.createAbFileFromAbPath(categoryInterface.getFilePath());

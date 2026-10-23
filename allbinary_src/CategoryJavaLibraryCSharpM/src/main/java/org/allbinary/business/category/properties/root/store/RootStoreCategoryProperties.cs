@@ -104,7 +104,7 @@ public class RootStoreCategoryProperties : RootCategoryPropertiesInterface, Cate
     }
 
     // throws Exception
-    protected virtual void initPath()
+    public virtual void initPath()
     {
         TransformInfoHttpInterface transformInfoHttpStoreInterface = ((TransformInfoHttpInterface) this.transformInfoInterface);
         StoreFrontInterface storeFrontInterface = StoreFrontFactory.getInstance(transformInfoHttpStoreInterface.getStoreName());

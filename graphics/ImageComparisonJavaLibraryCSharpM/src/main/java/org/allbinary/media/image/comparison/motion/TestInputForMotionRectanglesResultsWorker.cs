@@ -92,7 +92,7 @@ public class TestInputForMotionRectanglesResultsWorker : MotionRectanglesResults
                     string inputTypeNameString = ((string) inputTypeNameArray[index]);
                     InputRobotInterface inputRobotInterface = ((InputRobotInterface) robotHashtable.get(inputTypeNameString));
                     inputRobotInterface.mouseMoveToTarget(rectangle);
-                    if (inputRobotInterface.getName().compareTo(TempInputRobotNames.DX_NAME) == 0) {
+                    if (string.CompareOrdinal(inputRobotInterface.getName(), TempInputRobotNames.DX_NAME) == 0) {
                         inputRobotInterface.mousePress(InputEvent.BUTTON1_MASK);
                         System.Threading.Thread.Sleep((int) (300));
                         inputRobotInterface.mouseRelease(InputEvent.BUTTON1_MASK);

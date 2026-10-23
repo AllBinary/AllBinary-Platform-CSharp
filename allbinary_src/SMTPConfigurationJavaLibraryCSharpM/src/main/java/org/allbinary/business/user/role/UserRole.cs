@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Serializable = java.io.Serializable;
+using Serializable = java.io.Serializable;
 using UserFactoryInterface = org.allbinary.business.user.UserFactoryInterface;
 
 namespace org.allbinary.business.user.role;
@@ -25,7 +25,7 @@ public class UserRole : Serializable
 {
     private BasicUserRole basicUserRole;
     private UserFactoryInterface userFactoryInterface;
-    protected UserRole(BasicUserRole aBasicUserRole, UserFactoryInterface aUserFactoryInterface)
+    public UserRole(BasicUserRole aBasicUserRole, UserFactoryInterface aUserFactoryInterface)
     {
         this.basicUserRole = aBasicUserRole;
         this.userFactoryInterface = aUserFactoryInterface;

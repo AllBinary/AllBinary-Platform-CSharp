@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Serializable = java.io.Serializable;
+using Serializable = java.io.Serializable;
 using java.util;
 
 namespace org.allbinary.business.user;

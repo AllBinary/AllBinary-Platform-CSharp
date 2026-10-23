@@ -187,7 +187,7 @@ public class AbSqlTableUtil
                 if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     this.logUtil.putF(this.APPENDING + sqlStatementLine, this, this.METHOD_BACKUP_TABLE);
                 }
-                outputStream.write(System.Text.Encoding.UTF8.GetBytes(sqlStatementLine));
+                outputStream.write(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(sqlStatementLine), value => unchecked((sbyte) value)));
             }
             StreamUtil.getInstance().close(outputStream);
             return this.TABLE_LABEL + tableName + this.BACKUP_SUCCESS;

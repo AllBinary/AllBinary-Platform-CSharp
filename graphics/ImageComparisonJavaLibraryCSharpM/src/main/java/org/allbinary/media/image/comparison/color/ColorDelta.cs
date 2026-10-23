@@ -50,7 +50,7 @@ public class ColorDelta : CacheableInterface
         return this.rgb1;
     }
 
-    protected virtual void setRgb1(int rgb1)
+    public virtual void setRgb1(int rgb1)
     {
         this.rgb1 = rgb1;
     }
@@ -60,7 +60,7 @@ public class ColorDelta : CacheableInterface
         return this.rgb2;
     }
 
-    protected virtual void setRgb2(int rgb2)
+    public virtual void setRgb2(int rgb2)
     {
         this.rgb2 = rgb2;
     }

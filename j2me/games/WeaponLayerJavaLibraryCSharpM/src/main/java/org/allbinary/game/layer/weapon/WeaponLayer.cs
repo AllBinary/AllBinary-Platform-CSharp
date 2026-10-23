@@ -53,7 +53,7 @@ public class WeaponLayer : MultiPlayerGameLayer, TickableInterface
     private Movement movement;
     private WeaponProperties weaponProperties = WeaponProperties.NULL_WEAPON_PROPERTIES;
     private readonly int multiPlayerType;
-    protected WeaponLayer(string name, RemoteInfo remoteInfo, int multiPlayerType, Movement movement, Animation animationInterface, Animation destroyedAnimationInterface, Rectangle rectangle, ViewPositionBase viewPosition) : base(remoteInfo, BasicGroupFactory.getInstance().NONE_ARRAY, name, rectangle, viewPosition)
+    public WeaponLayer(string name, RemoteInfo remoteInfo, int multiPlayerType, Movement movement, Animation animationInterface, Animation destroyedAnimationInterface, Rectangle rectangle, ViewPositionBase viewPosition) : base(remoteInfo, BasicGroupFactory.getInstance().NONE_ARRAY, name, rectangle, viewPosition)
     {
         // base(remoteInfo, BasicGroupFactory.getInstance().NONE_ARRAY, name, rectangle, viewPosition) is called from the constructor declaration
         this.initAnimationInterface = animationInterface;
@@ -96,7 +96,7 @@ public class WeaponLayer : MultiPlayerGameLayer, TickableInterface
         this.movement.init(weaponProperties.getSpeed(), angle, otherAngle);
     }
 
-    protected virtual void setGroupInterfaces()
+    public virtual void setGroupInterfaces()
     {
         BasicGroupFactory basicGroupFactory = BasicGroupFactory.getInstance();
         if (this.sourceLayerInterface.getGroupInterface()[0] == basicGroupFactory.ENEMY) {
@@ -143,12 +143,12 @@ public class WeaponLayer : MultiPlayerGameLayer, TickableInterface
         this.totalDamage += damage * damage;
     }
 
-    protected virtual void givePoints(int total)
+    public virtual void givePoints(int total)
     {
         this.scoreableInterface.addPoints(GameConfigurationUtil.getInstance().getCompetitionValue() * total);
     }
 
-    protected virtual bool isExhausted()
+    public virtual bool isExhausted()
     {
         if (this.totalDamage > this.getInitDamage() || this.totalDamage < 0) {
             return true;
@@ -176,17 +176,17 @@ public class WeaponLayer : MultiPlayerGameLayer, TickableInterface
         }
     }
 
-    protected virtual int getInitDamage()
+    public virtual int getInitDamage()
     {
         return this.initDamage;
     }
 
-    protected virtual void setAnimationInterface(Animation animationInterface)
+    public virtual void setAnimationInterface(Animation animationInterface)
     {
         this.animationInterface = animationInterface;
     }
 
-    protected virtual Animation getAnimationInterface()
+    public virtual Animation getAnimationInterface()
     {
         return this.animationInterface;
     }

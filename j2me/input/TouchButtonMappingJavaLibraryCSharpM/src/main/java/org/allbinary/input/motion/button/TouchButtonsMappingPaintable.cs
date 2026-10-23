@@ -33,7 +33,7 @@ public class TouchButtonsMappingPaintable : Paintable
     private TouchButtonLocationHelper touchButtonLocationHelper = new TouchButtonLocationHelper();
     public TouchButtonsMappingPaintable(BasicColor basicColor)
     {
-        this.foregroundColor = ((int) basicColor);
+        this.foregroundColor = basicColor.intValue();
         this.init();
     }
 

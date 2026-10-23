@@ -37,7 +37,7 @@ public class BasicPersitance
     private readonly string recordId;
     public readonly BasicArrayList valueList = new BasicArrayListD();
     public readonly BasicArrayList idList = new BasicArrayListD();
-    protected BasicPersitance(string recordId)
+    public BasicPersitance(string recordId)
     {
         this.recordId = recordId;
     }

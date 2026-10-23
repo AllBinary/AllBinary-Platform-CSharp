@@ -22,7 +22,7 @@ namespace org.allbinary.game.input;
 
 public class LaptopGameInputMapping : PCGameInputMapping
 {
-    protected override InputToGameKeyMapping getDefault()
+    public override InputToGameKeyMapping getDefault()
     {
         return new LaptopDefaultGameInputMapping().getInputMapping();
     }

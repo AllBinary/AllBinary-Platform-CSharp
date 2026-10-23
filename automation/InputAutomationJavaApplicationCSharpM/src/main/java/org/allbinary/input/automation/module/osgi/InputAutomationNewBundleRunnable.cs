@@ -60,7 +60,7 @@ public class InputAutomationNewBundleRunnable : RunnableInterface
     }
 
     // throws Exception
-    public virtual void setThread(Thread thread)
+    public virtual void setThread(global::org.allbinary.thread.NullThread thread)
     {
     }
 

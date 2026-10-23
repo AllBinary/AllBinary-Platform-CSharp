@@ -41,7 +41,7 @@ public class SmallBasicColorCacheFactory
     public virtual void add(BasicColor basicDefaultColor)
     {
         this.BASIC_COLOR_ARRAY[this.colorIndex] = basicDefaultColor;
-        this.INDEX_TO_COLOR[this.colorIndex] = ((int) basicDefaultColor);
+        this.INDEX_TO_COLOR[this.colorIndex] = basicDefaultColor.intValue();
         this.colorIndex++;
     }
 
@@ -53,7 +53,7 @@ public class SmallBasicColorCacheFactory
                 return this.BASIC_COLOR_ARRAY[index];
             }
         }
-        int ALPHA_MASK = 0xFF000000;
+        int ALPHA_MASK = unchecked((int) 0xFF000000);
         basicColor = BasicColorFactory.getInstance().createInstanceAN(colorAsInt & ALPHA_MASK, colorAsInt & 0x00FFFFFF, StringUtil.getInstance().EMPTY_STRING);
         this.add(basicColor);
         return basicColor;

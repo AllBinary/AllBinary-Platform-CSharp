@@ -23,7 +23,7 @@ namespace org.allbinary.media.graphics.geography.map;
 
 public class CachingGeographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory
 {
-    protected CachingGeographicMapCellPositionFactory(BasicGeographicMap geographicMapInterface) : base(geographicMapInterface)
+    public CachingGeographicMapCellPositionFactory(BasicGeographicMap geographicMapInterface) : base(geographicMapInterface)
     {
         // base(geographicMapInterface) is called from the constructor declaration
     }

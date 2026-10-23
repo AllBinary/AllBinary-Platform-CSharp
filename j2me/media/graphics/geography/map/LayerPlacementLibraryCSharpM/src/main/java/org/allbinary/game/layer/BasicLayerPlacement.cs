@@ -46,7 +46,7 @@ public class BasicLayerPlacement
         return this.layerType;
     }
 
-    protected virtual void setLayerType(LayerPlacementType layerType)
+    public virtual void setLayerType(LayerPlacementType layerType)
     {
         this.layerType = layerType;
     }

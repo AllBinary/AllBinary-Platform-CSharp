@@ -31,7 +31,7 @@ public class PaymentType
     private readonly BasicPaymentType basicPaymentType;
     private readonly PaymentTransactionInterfaceFactoryInterface paymentTransactionInterfaceFactoryInterface;
     private readonly PaymentProcessorInterfaceFactoryInterface paymentProcessorInterfaceFactoryInterface;
-    protected PaymentType(BasicPaymentType basicPaymentType)
+    public PaymentType(BasicPaymentType basicPaymentType)
     {
         this.basicPaymentType = basicPaymentType;
         this.paymentTransactionInterfaceFactoryInterface = null;
@@ -39,7 +39,7 @@ public class PaymentType
         PaymentTypeUtil.getInstance().add(this);
     }
 
-    protected PaymentType(BasicPaymentType basicPaymentType, PaymentTransactionInterfaceFactoryInterface paymentTransactionInterfaceFactoryInterface, PaymentProcessorInterfaceFactoryInterface paymentProcessorInterfaceFactoryInterface)
+    public PaymentType(BasicPaymentType basicPaymentType, PaymentTransactionInterfaceFactoryInterface paymentTransactionInterfaceFactoryInterface, PaymentProcessorInterfaceFactoryInterface paymentProcessorInterfaceFactoryInterface)
     {
         this.basicPaymentType = basicPaymentType;
         this.paymentTransactionInterfaceFactoryInterface = paymentTransactionInterfaceFactoryInterface;

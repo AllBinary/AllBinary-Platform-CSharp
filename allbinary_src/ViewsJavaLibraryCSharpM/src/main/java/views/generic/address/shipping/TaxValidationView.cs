@@ -46,7 +46,7 @@ public class TaxValidationView : ShippingAddressView, ValidationComponentInterfa
         int size = streetAddressList.size();
         for (int index = 0; index < size; index++) {
             StreetAddress aStreetAddress = ((StreetAddress) streetAddressList.get(index));
-            if (aStreetAddress.getName().compareTo(ShippingAddressData.TAX) == 0) {
+            if (string.CompareOrdinal(aStreetAddress.getName(), ShippingAddressData.TAX) == 0) {
                 this.streetAddress = aStreetAddress;
                 return true;
             }

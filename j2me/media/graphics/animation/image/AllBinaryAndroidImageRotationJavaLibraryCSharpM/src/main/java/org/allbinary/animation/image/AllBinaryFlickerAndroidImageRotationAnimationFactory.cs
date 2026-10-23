@@ -48,17 +48,17 @@ public class AllBinaryFlickerAndroidImageRotationAnimationFactory : AnimationInt
         return new AllBinaryFlickerAndroidImageRotationAnimation(this.getImage(), image, AngleInfo.getInstance(this.angleIncrement), AngleFactory.getInstance().TOTAL_ANGLE, this.animationBehaviorFactory.getOrCreateInstance());
     }
 
-    protected virtual short getAngleIncrement()
+    public virtual short getAngleIncrement()
     {
         return this.angleIncrement;
     }
 
-    protected virtual void setImage(Image image)
+    public virtual void setImage(Image image)
     {
         this.image = image;
     }
 
-    protected virtual Image getImage()
+    public virtual Image getImage()
     {
         return this.image;
     }

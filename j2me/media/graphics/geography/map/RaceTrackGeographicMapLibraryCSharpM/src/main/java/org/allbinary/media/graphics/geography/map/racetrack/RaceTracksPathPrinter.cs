@@ -34,7 +34,7 @@ public class RaceTracksPathPrinter
         }
     }
 
-    protected virtual void printPaths(BasicArrayList list)
+    public virtual void printPaths(BasicArrayList list)
     {
         int size = list.size();
         for (int index = 0; index < size; index++) {

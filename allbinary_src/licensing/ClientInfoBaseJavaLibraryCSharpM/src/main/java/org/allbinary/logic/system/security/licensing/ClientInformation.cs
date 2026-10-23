@@ -143,7 +143,7 @@ public class ClientInformation : AbeClientInformationInterface
         return false;
     }
 
-    protected virtual void setHardSale(bool hardSale)
+    public virtual void setHardSale(bool hardSale)
     {
         this.hardSale = hardSale;
     }
@@ -153,17 +153,17 @@ public class ClientInformation : AbeClientInformationInterface
         return this.hardSale;
     }
 
-    protected virtual void setOperatingSystemInterface(GenericOperatingSystem operatingSystemInterface)
+    public virtual void setOperatingSystemInterface(GenericOperatingSystem operatingSystemInterface)
     {
         this.operatingSystemInterface = operatingSystemInterface;
     }
 
-    protected virtual void setLicenseId(string licenseId)
+    public virtual void setLicenseId(string licenseId)
     {
         this.licenseId = licenseId;
     }
 
-    protected virtual void setLicenseServers(BasicArrayList licenseServers)
+    public virtual void setLicenseServers(BasicArrayList licenseServers)
     {
         this.licenseServers = licenseServers;
     }

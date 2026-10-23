@@ -56,7 +56,7 @@ public class HackRotationSpriteIndexedAnimation : RotationAnimation
         this.paint(g);
     }
 
-    protected virtual void paint(Graphics g)
+    public virtual void paint(Graphics g)
     {
         this.sprite.paint(g);
     }

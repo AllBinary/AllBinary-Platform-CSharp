@@ -114,12 +114,12 @@ public class GenericInputAutomationWorker : AbstractInputAutomationWorker
         this.genericProfile = genericProfile;
     }
 
-    protected virtual long? getFrame()
+    public virtual long? getFrame()
     {
         return this.frame;
     }
 
-    protected virtual void setFrame(long? frame)
+    public virtual void setFrame(long? frame)
     {
         this.frame = frame;
     }

@@ -21,15 +21,15 @@ namespace org.allbinary.logic.communication.java.vm.stats;
 
 public class JvmStatistics
 {
-    private Runtime runtime;
+    private object runtime;
     public JvmStatistics()
     {
-        this.runtime = Runtime.getRuntime();
+        this.runtime = new object();
     }
 
     public virtual long getFreeMemoryBytes()
     {
-        return this.runtime.freeMemory();
+        return Math.Max(0L, GC.GetGCMemoryInfo().HeapSizeBytes - GC.GetTotalMemory(false));
     }
 
     public virtual long getFreeMemoryKilobytes()
@@ -44,7 +44,7 @@ public class JvmStatistics
 
     public virtual long getMaxMemoryBytes()
     {
-        return this.runtime.maxMemory();
+        return GC.GetGCMemoryInfo().TotalAvailableMemoryBytes;
     }
 
     public virtual long getMaxMemoryKilobytes()
@@ -59,7 +59,7 @@ public class JvmStatistics
 
     public virtual long getTotalMemoryBytes()
     {
-        return this.runtime.totalMemory();
+        return GC.GetGCMemoryInfo().HeapSizeBytes;
     }
 
     public virtual long getTotalMemoryKilobytes()
@@ -164,7 +164,7 @@ public class JvmStatistics
 
     public virtual long getNumberOfThreads()
     {
-        return Thread.activeCount();
+        return global::org.allbinary.thread.NullThread.activeCount();
     }
 
     public virtual long? getNumberOfThreadsLong()
@@ -179,7 +179,7 @@ public class JvmStatistics
 
     public virtual void collectGarbage()
     {
-        this.runtime.gc();
+        GC.Collect();
     }
 
 }

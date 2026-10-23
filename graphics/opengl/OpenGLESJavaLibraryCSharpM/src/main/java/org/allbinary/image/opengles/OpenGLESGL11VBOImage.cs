@@ -43,7 +43,7 @@ public class OpenGLESGL11VBOImage : OpenGLESImage
         this.regionTextureVertexFloatBuffer.put(FloatBuffer.wrap(this.regionTextureRectangleFloatArray));
     }
 
-    protected virtual void initVertices()
+    public virtual void initVertices()
     {
         this.textureVertexFloatBuffer.put(0f);
         this.textureVertexFloatBuffer.put(1f);

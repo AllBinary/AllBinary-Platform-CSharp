@@ -47,22 +47,22 @@ public class TileLayerItem : ABCustomItem, ABCustomItemInterface
         return this.tiledLayer.getHeight();
     }
 
-    protected virtual int getMinContentHeight()
+    public virtual int getMinContentHeight()
     {
         return this.tiledLayer.getHeight();
     }
 
-    protected virtual int getMinContentWidth()
+    public virtual int getMinContentWidth()
     {
         return this.tiledLayer.getWidth();
     }
 
-    protected virtual int getPrefContentHeight(int width)
+    public virtual int getPrefContentHeight(int width)
     {
         return this.tiledLayer.getHeight();
     }
 
-    protected virtual int getPrefContentWidth(int height)
+    public virtual int getPrefContentWidth(int height)
     {
         return this.tiledLayer.getWidth();
     }

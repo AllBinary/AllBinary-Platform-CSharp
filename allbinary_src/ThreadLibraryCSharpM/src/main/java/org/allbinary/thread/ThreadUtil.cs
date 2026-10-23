@@ -30,7 +30,7 @@ public class ThreadUtil
     }
 
     public readonly string JOIN = "join";
-    public virtual bool isRunning(Thread thread)
+    public virtual bool isRunning(global::org.allbinary.thread.NullThread thread)
     {
         if (thread != null && thread.isAlive()) {
             return true;
@@ -40,7 +40,7 @@ public class ThreadUtil
     }
 
     // throws Exception
-    public virtual void join(Thread thread)
+    public virtual void join(global::org.allbinary.thread.NullThread thread)
     {
         if (ThreadUtil.getInstance().isRunning(thread)) {
             this.logUtil.putF("Waiting for Thread To Join/End", this, this.JOIN);

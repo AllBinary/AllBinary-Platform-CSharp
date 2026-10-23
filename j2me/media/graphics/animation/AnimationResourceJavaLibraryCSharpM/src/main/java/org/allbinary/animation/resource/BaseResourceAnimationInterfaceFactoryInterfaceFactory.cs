@@ -61,7 +61,7 @@ public class BaseResourceAnimationInterfaceFactoryInterfaceFactory : FeatureReso
     }
 
     // throws Exception
-    protected virtual void initImageCache(ImageCache imageCache, int level)
+    public virtual void initImageCache(ImageCache imageCache, int level)
     {
     }
 
@@ -147,7 +147,7 @@ public class BaseResourceAnimationInterfaceFactoryInterfaceFactory : FeatureReso
         return this.rectangleArrayOfArraysHashtable;
     }
 
-    protected virtual void setInitialized(bool initialized)
+    public virtual void setInitialized(bool initialized)
     {
         this.initialized = initialized;
     }

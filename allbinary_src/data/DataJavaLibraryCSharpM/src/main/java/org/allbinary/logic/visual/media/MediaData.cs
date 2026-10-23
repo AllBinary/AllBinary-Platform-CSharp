@@ -27,7 +27,7 @@ public class MediaData
     private string name;
     private string type;
     private string extension;
-    protected MediaData(string a_Name)
+    public MediaData(string a_Name)
     {
         this.name = a_Name;
         this.extension = "." + this.name;

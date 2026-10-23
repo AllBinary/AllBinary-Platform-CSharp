@@ -39,13 +39,13 @@ public class GeologicalGameResources : BasicGameResources
     }
 
     // throws Exception
-    protected override void append(string ROOT, string sizeString)
+    public override void append(string ROOT, string sizeString)
     {
         base.append(ROOT, sizeString);
     }
 
     // throws Exception
-    protected override string getString()
+    public override string getString()
     {
         if (AndroidUtil.isAndroid()) {
             return GameGraphicsResourceUtil.getInstance().getStringForFeature(GraphicsFeatureFactory.getInstance().SPRITE_QUARTER_ROTATION_GRAPHICS);

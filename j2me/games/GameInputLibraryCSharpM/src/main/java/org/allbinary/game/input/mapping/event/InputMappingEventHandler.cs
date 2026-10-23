@@ -35,7 +35,7 @@ public class InputMappingEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         InputMappingEventListenerInterface inputMappingEventListenerInterface = ((InputMappingEventListenerInterface) eventListenerInterface);
         inputMappingEventListenerInterface.onInputMappingEvent(((InputMappingEvent) eventObject));

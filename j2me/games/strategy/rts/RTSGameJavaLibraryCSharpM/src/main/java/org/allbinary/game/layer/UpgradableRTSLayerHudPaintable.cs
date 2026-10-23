@@ -110,7 +110,7 @@ public class UpgradableRTSLayerHudPaintable : SelectionHudPaintable
         this.rtsLayer = rtsLayer;
     }
 
-    protected virtual CollidableDestroyableDamageableLayer getRtsLayer()
+    public virtual CollidableDestroyableDamageableLayer getRtsLayer()
     {
         return this.rtsLayer;
     }

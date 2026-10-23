@@ -28,7 +28,7 @@ public class BaseGameInputMotionEventProcessor : MotionEventProcessor
 {
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private readonly GameMotionGestureListener gameMotionGestureListener;
-    protected BaseGameInputMotionEventProcessor()
+    public BaseGameInputMotionEventProcessor()
     {
         this.gameMotionGestureListener = new GameMotionGestureListener(MotionGestureReceiveInterfaceFactory.getInstance());
         this.addListener();

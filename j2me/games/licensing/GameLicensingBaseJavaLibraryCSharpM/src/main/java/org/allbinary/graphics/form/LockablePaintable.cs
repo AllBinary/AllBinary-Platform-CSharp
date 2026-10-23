@@ -40,12 +40,12 @@ public class LockablePaintable : ItemPaintable
         }
     }
 
-    protected virtual int getLockedIndex()
+    public virtual int getLockedIndex()
     {
         return this.lockedIndex;
     }
 
-    protected virtual Animation getAnimation()
+    public virtual Animation getAnimation()
     {
         return this.animation;
     }

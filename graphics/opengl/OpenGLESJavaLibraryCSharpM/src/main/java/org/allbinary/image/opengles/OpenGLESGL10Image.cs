@@ -139,7 +139,7 @@ public class OpenGLESGL10Image : OpenGLESImage
         this.initVertices();
     }
 
-    protected virtual void initVertices()
+    public virtual void initVertices()
     {
         this.textureVertexFloatBuffer.put(0f);
         this.textureVertexFloatBuffer.put(1f);

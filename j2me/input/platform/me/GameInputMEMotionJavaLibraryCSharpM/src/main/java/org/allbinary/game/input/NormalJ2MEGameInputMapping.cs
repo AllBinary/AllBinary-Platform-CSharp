@@ -22,7 +22,7 @@ namespace org.allbinary.game.input;
 
 public class NormalJ2MEGameInputMapping : J2MEGameInputMapping
 {
-    protected override InputToGameKeyMapping getDefault()
+    public override InputToGameKeyMapping getDefault()
     {
         return new NormalJ2MEDefaultGameInputMapping().getInputMapping();
     }

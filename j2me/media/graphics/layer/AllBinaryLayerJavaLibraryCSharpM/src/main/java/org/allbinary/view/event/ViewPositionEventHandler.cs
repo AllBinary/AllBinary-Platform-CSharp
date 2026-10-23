@@ -73,7 +73,7 @@ public class ViewPositionEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         ViewPositionEventListenerInterface viewPositionEventListenerInterface = (((ViewPositionEventListenerInterface) eventListenerInterface));
         viewPositionEventListenerInterface.onChangeEvent(((ViewPositionEvent) eventObject));

@@ -116,7 +116,7 @@ public class TrueTypeFontUtil : TrueTypeFontUtilBase
         int cellsPerRow7 = this.CELLS_PER_ROW * 7;
         Image image = Image.createImage(textureSize, textureSize);
         Graphics graphics = image.getGraphics();
-        graphics.setColor(((int) basicColor));
+        graphics.setColor(basicColor.intValue());
         int biggestHeight = 0;
         Rectangle bounds = new Rectangle(PointFactory.getInstance().createXY(0, 0), cellSize, cellSize);
         int x = 0;

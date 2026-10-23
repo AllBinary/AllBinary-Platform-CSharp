@@ -37,7 +37,7 @@ public class MagicalImageServlet : HttpServlet
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     // throws ServletException, IOException
-    protected virtual void processRequest(HttpServletRequest request, HttpServletResponse response)
+    public virtual void processRequest(HttpServletRequest request, HttpServletResponse response)
     {
         InputStream inputStream = null;
         try {
@@ -62,13 +62,13 @@ public class MagicalImageServlet : HttpServlet
     }
 
     // throws ServletException, IOException
-    protected virtual void doGet(HttpServletRequest request, HttpServletResponse response)
+    public virtual void doGet(HttpServletRequest request, HttpServletResponse response)
     {
         this.processRequest(request, response);
     }
 
     // throws ServletException, IOException
-    protected virtual void doPost(HttpServletRequest request, HttpServletResponse response)
+    public virtual void doPost(HttpServletRequest request, HttpServletResponse response)
     {
         this.processRequest(request, response);
     }

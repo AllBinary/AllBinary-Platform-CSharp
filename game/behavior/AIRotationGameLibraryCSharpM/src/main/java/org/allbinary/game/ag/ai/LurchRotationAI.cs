@@ -37,7 +37,7 @@ public class LurchRotationAI : LurchAI
         this.update();
     }
 
-    protected override void reverse()
+    public override void reverse()
     {
         base.reverse();
         this.update();

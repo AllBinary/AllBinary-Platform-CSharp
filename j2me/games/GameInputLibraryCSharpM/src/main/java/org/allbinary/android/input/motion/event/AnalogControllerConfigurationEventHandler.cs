@@ -72,7 +72,7 @@ public class AnalogControllerConfigurationEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         AnalogControllerConfigurationEventListenerInterface analogControllerConfigurationEventListenerInterface = (((AnalogControllerConfigurationEventListenerInterface) eventListenerInterface));
         analogControllerConfigurationEventListenerInterface.onAnalogControllerConfigurationEvent(((AnalogControllerConfigurationEvent) eventObject));

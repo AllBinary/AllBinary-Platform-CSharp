@@ -114,7 +114,7 @@ public class PlayerGameNotificationHud : GameNotificationHud, UpdateMyFontInterf
         }
     }
 
-    protected override GPoint getPoint(int x, int y)
+    public override GPoint getPoint(int x, int y)
     {
         this.point = CustomGPoint.getInstance3(0, 0);
         this.point.setX(x);
@@ -122,9 +122,9 @@ public class PlayerGameNotificationHud : GameNotificationHud, UpdateMyFontInterf
         return this.point;
     }
 
-    protected override void add(string @string, int? seconds, BasicColor basicColor, bool? permanent)
+    public override void add(string @string, int? seconds, BasicColor basicColor, bool? permanent)
     {
-        if (permanent) {
+        if (permanent.Value) {
             if (this.lastString != @string) {
                 this.lastString = @string;
                 this.logUtil.putF(new StringMaker().append(this.PERMANENT_GAME_NOTIFICATION).append(@string).ToString(), this, this.commonStrings.ADD);

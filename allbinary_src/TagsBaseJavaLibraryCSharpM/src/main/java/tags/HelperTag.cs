@@ -35,7 +35,7 @@ public class HelperTag : PropertiesTag
     }
 
     // throws Exception
-    protected virtual void setHelper()
+    public virtual void setHelper()
     {
         if (this.anyType == null) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {

@@ -23,7 +23,7 @@ namespace org.allbinary.thread;
 public class ABRunnable : RunnableInterface
 {
     private bool running = false;
-    public virtual void setThread(Thread thread)
+    public virtual void setThread(global::org.allbinary.thread.NullThread thread)
     {
     }
 

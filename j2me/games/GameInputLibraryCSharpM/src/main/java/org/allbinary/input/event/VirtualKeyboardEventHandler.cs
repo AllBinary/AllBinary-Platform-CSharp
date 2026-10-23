@@ -38,7 +38,7 @@ public class VirtualKeyboardEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         VirtualKeyboardEventListenerInterface virtualKeyboardEventListenerInterface = ((VirtualKeyboardEventListenerInterface) eventListenerInterface);
         virtualKeyboardEventListenerInterface.onVirtualKeyboardEvent(((VirtualKeyboardEvent) eventObject));

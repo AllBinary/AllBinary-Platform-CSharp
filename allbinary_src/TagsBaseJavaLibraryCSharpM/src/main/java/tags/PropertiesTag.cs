@@ -34,7 +34,7 @@ public class PropertiesTag : CommandTag
         this.propertiesHashMap = StdUtil.getInstance().createHashMap();
     }
 
-    protected virtual HashMap<object, object> getPropertiesHashMap()
+    public virtual HashMap<object, object> getPropertiesHashMap()
     {
         return this.propertiesHashMap;
     }

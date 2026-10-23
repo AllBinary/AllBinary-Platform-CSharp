@@ -43,11 +43,11 @@ public class PathFindingThreadPool : ThreadPool
         base.runTask(task);
     }
 
-    protected override void startTask(global::java.lang.Runnable task)
+    public override void startTask(global::java.lang.Runnable task)
     {
     }
 
-    protected override void completedTask(global::java.lang.Runnable task)
+    public override void completedTask(global::java.lang.Runnable task)
     {
     }
 

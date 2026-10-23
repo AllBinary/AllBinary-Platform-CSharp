@@ -35,7 +35,7 @@ public class BoundsChangeEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         BoundsChangeEventListener boundsChangeEventListener = ((BoundsChangeEventListener) eventListenerInterface);
         boundsChangeEventListener.onBoundsChangeEvent(((BoundsChangeEvent) eventObject));

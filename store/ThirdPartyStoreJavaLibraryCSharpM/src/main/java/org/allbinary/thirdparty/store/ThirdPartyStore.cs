@@ -38,7 +38,7 @@ public class ThirdPartyStore
         return this.authorized;
     }
 
-    protected virtual void setAuthorized(bool authorized)
+    public virtual void setAuthorized(bool authorized)
     {
         this.authorized = authorized;
     }

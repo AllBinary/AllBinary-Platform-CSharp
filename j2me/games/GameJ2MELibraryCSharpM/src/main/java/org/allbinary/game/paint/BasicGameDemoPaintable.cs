@@ -58,17 +58,17 @@ public class BasicGameDemoPaintable : StatePaintable
         return this.helpPaintableInterface;
     }
 
-    protected virtual void setCurrentStatePaintable(Paintable currentStatePaintable)
+    public virtual void setCurrentStatePaintable(Paintable currentStatePaintable)
     {
         this.currentStatePaintable = currentStatePaintable;
     }
 
-    protected virtual Paintable getCurrentStatePaintable()
+    public virtual Paintable getCurrentStatePaintable()
     {
         return this.currentStatePaintable;
     }
 
-    protected virtual Paintable getMainDemoStatePaintable()
+    public virtual Paintable getMainDemoStatePaintable()
     {
         return this.mainDemoStatePaintable;
     }

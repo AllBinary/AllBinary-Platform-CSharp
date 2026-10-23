@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Serializable = java.io.Serializable;
+using Serializable = java.io.Serializable;
 using java.util;
 using StoreFrontData = org.allbinary.business.context.modules.storefront.StoreFrontData;
 using StoreFrontInterface = org.allbinary.business.context.modules.storefront.StoreFrontInterface;

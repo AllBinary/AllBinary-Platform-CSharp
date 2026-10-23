@@ -34,7 +34,7 @@ public class ThreadObjectUtil
 
     public virtual void processThread(global::java.lang.Runnable runnable)
     {
-        Thread thread = new Thread(runnable);
+        global::org.allbinary.thread.NullThread thread = new global::org.allbinary.thread.NullThread(runnable);
         thread.start();
     }
 

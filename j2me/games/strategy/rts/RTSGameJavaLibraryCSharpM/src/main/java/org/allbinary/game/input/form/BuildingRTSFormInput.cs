@@ -175,7 +175,7 @@ public class BuildingRTSFormInput : RTSFormInput
     }
 
     // throws Exception
-    protected virtual bool attemptBuild(RTSPlayerLayerInterface rtsPlayerLayerInterface, AllBinaryLayerManager layerManager, RTSLayer layerInterface, int itemIndex)
+    public virtual bool attemptBuild(RTSPlayerLayerInterface rtsPlayerLayerInterface, AllBinaryLayerManager layerManager, RTSLayer layerInterface, int itemIndex)
     {
         this.logUtil.putF(new StringMaker().append("Layer: ").append(StringUtil.getInstance().toString(layerInterface)).ToString(), this, "attemptBuild");
         GeographicMapCellPositionAreaBase geographicMapCellPositionArea = layerInterface.geographicMapCellPositionAreaBase;
@@ -223,7 +223,7 @@ public class BuildingRTSFormInput : RTSFormInput
     }
 
     // throws Exception
-    protected virtual bool isBuildAttemptValid(RTSPlayerLayerInterface rtsPlayerLayerInterface, RTSLayer layerInterface)
+    public virtual bool isBuildAttemptValid(RTSPlayerLayerInterface rtsPlayerLayerInterface, RTSLayer layerInterface)
     {
         GeographicMapCellPositionAreaBase geographicMapCellPositionArea = layerInterface.geographicMapCellPositionAreaBase;
         BasicArrayList occupyList = geographicMapCellPositionArea.getOccupyingGeographicMapCellPositionList();
@@ -253,7 +253,7 @@ public class BuildingRTSFormInput : RTSFormInput
     }
 
     // throws Exception
-    protected virtual void add(RTSPlayerLayerInterface rtsPlayerLayerInterface, AllBinaryLayerManager layerManager, RTSLayer layerInterface)
+    public virtual void add(RTSPlayerLayerInterface rtsPlayerLayerInterface, AllBinaryLayerManager layerManager, RTSLayer layerInterface)
     {
         GeographicMapCellPositionAreaBase geographicMapCellPositionArea = layerInterface.geographicMapCellPositionAreaBase;
         BasicArrayList occupyList = geographicMapCellPositionArea.getOccupyingGeographicMapCellPositionList();

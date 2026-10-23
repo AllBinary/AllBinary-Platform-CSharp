@@ -39,7 +39,7 @@ public class Scoreable : ScoreableInterface
         this.points -= points;
     }
 
-    protected virtual void setPoints(int points)
+    public virtual void setPoints(int points)
     {
         this.points = points;
     }

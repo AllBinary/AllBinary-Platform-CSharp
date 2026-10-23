@@ -32,7 +32,7 @@ namespace org.allbinary.game.init;
 public class CommonGameInitialization : BaseGameInitialization
 {
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    protected CommonGameInitialization(ResourceInitialization[] resourceInitializationArray, int portion) : base(resourceInitializationArray, portion)
+    public CommonGameInitialization(ResourceInitialization[] resourceInitializationArray, int portion) : base(resourceInitializationArray, portion)
     {
         // base(resourceInitializationArray, portion) is called from the constructor declaration
     }

@@ -49,7 +49,7 @@ public class BasicPaymentTypeUtil
         int size = this.paymentTypeVector.size();
         for (int i = 0; i < size; i++) {
             BasicPaymentType paymentType = ((BasicPaymentType) this.paymentTypeVector.get(i));
-            if (paymentType.getName().compareTo(paymentTypeString) == 0) {
+            if (string.CompareOrdinal(paymentType.getName(), paymentTypeString) == 0) {
                 return paymentType;
             }
         }

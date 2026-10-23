@@ -112,7 +112,7 @@ public class BasicEventHandler : BasicEventHandlerInterface
     }
 
     // throws Exception
-    protected virtual void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public virtual void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         eventListenerInterface.onEvent(eventObject);
     }

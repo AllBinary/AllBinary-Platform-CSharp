@@ -30,7 +30,7 @@ public class CurrentlyPressedTouchButtonSingleton
     }
 
     public readonly BasicArrayList list = new BasicArrayListD();
-    protected CurrentlyPressedTouchButtonSingleton()
+    public CurrentlyPressedTouchButtonSingleton()
     {
     }
 

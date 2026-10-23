@@ -40,8 +40,8 @@ public class ExceptionUtil
     {
         if (e != null) {
             System.IO.MemoryStream byteArrayOutputStream = new System.IO.MemoryStream();
-            PrintStream printStream = new PrintStream(byteArrayOutputStream);
-            e.printStackTrace(printStream);
+            System.IO.StreamWriter printStream = new System.IO.StreamWriter(byteArrayOutputStream) { AutoFlush = true };
+            (printStream).WriteLine(e);
             string output = System.Text.Encoding.UTF8.GetString(byteArrayOutputStream.ToArray());
             if (output != null) {
                 return new string((output).ToCharArray());

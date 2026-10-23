@@ -38,13 +38,13 @@ public class AbstractInputAutomationWorker : RunnableInterface
     private CaptureWorkerInterface captureWorkerInterface = null;
     private ImageComparisonWorker imageComparisonWorker = null;
     private MotionRectanglesWorker motionRectanglesWorker = null;
-    private Thread captureThread = null;
+    private global::org.allbinary.thread.NullThread captureThread = null;
     public AbstractInputAutomationWorker(InputAutomationActionInterface inputAutomationActionInterface)
     {
     }
 
     // throws Exception
-    public virtual void setThread(Thread thread)
+    public virtual void setThread(global::org.allbinary.thread.NullThread thread)
     {
     }
 
@@ -61,7 +61,7 @@ public class AbstractInputAutomationWorker : RunnableInterface
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    protected virtual bool isAnyDataWorkerRunning()
+    public virtual bool isAnyDataWorkerRunning()
     {
         if (this.captureThread != null && (this.captureThread.isAlive() || this.getCaptureWorker().isRunning() || this.getMotionRectanglesWorker().isRunning() || this.getImageComparisonWorker().isRunning())) {
             return true;
@@ -71,10 +71,10 @@ public class AbstractInputAutomationWorker : RunnableInterface
 
     // throws Exception
     [MethodImpl(MethodImplOptions.Synchronized)]
-    protected virtual void startDataWorkers()
+    public virtual void startDataWorkers()
     {
         if (!isAnyDataWorkerRunning()) {
-            this.captureThread = new Thread(this.getCaptureWorker());
+            this.captureThread = new global::org.allbinary.thread.NullThread(this.getCaptureWorker());
             this.logUtil.putF("Starting CaptureWorkers - Need more images - Thread State: " + this.captureThread.getState().ToString(), this, "startCaptureWorkers");
             this.captureThread.start();
         }
@@ -82,7 +82,7 @@ public class AbstractInputAutomationWorker : RunnableInterface
 
     // throws Exception
     [MethodImpl(MethodImplOptions.Synchronized)]
-    protected virtual void waitForDataWorkers()
+    public virtual void waitForDataWorkers()
     {
         while (isAnyDataWorkerRunning()) {
             this.logUtil.putF("Waiting", this, this.commonStrings.RUN);
@@ -91,7 +91,7 @@ public class AbstractInputAutomationWorker : RunnableInterface
     }
 
     // throws Exception
-    protected virtual void stopDataWorkers()
+    public virtual void stopDataWorkers()
     {
         this.getCaptureWorker().setRunning(false);
     }
@@ -132,32 +132,32 @@ public class AbstractInputAutomationWorker : RunnableInterface
         this.inputAutomationActionInterface = inputAutomationActionInterface;
     }
 
-    protected virtual CaptureWorkerInterface getCaptureWorker()
+    public virtual CaptureWorkerInterface getCaptureWorker()
     {
         return this.captureWorkerInterface;
     }
 
-    protected virtual void setCaptureWorker(CaptureWorkerInterface captureWorkerInterface)
+    public virtual void setCaptureWorker(CaptureWorkerInterface captureWorkerInterface)
     {
         this.captureWorkerInterface = captureWorkerInterface;
     }
 
-    protected virtual ImageComparisonWorker getImageComparisonWorker()
+    public virtual ImageComparisonWorker getImageComparisonWorker()
     {
         return this.imageComparisonWorker;
     }
 
-    protected virtual void setImageComparisonWorker(ImageComparisonWorker imageComparisonWorker)
+    public virtual void setImageComparisonWorker(ImageComparisonWorker imageComparisonWorker)
     {
         this.imageComparisonWorker = imageComparisonWorker;
     }
 
-    protected virtual MotionRectanglesWorker getMotionRectanglesWorker()
+    public virtual MotionRectanglesWorker getMotionRectanglesWorker()
     {
         return this.motionRectanglesWorker;
     }
 
-    protected virtual void setMotionRectanglesWorker(MotionRectanglesWorker motionRectanglesWorker)
+    public virtual void setMotionRectanglesWorker(MotionRectanglesWorker motionRectanglesWorker)
     {
         this.motionRectanglesWorker = motionRectanglesWorker;
     }

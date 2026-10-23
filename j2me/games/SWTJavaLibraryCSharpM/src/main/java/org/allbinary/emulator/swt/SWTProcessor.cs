@@ -29,7 +29,7 @@ public class SWTProcessor
         return SWTProcessor.instance;
     }
 
-    protected SWTProcessor()
+    public SWTProcessor()
     {
     }
 

@@ -203,7 +203,7 @@ public class StreetAddress
     public virtual bool? isEmpty()
     {
         string EMPTY_STRING = StringUtil.getInstance().EMPTY_STRING;
-        if (this.getName() == null && this.getName().compareTo(EMPTY_STRING) == 0 && this.getStreet() == null && this.getStreet().compareTo(EMPTY_STRING) == 0 && this.getCity() == null && this.getCity().compareTo(EMPTY_STRING) == 0 && this.getState() == null && this.getState().compareTo(EMPTY_STRING) == 0 && this.getCode() == null && this.getCode().compareTo(EMPTY_STRING) == 0 && this.getCountry() == null && this.getCountry().compareTo(EMPTY_STRING) == 0) {
+        if (this.getName() == null && string.CompareOrdinal(this.getName(), EMPTY_STRING) == 0 && this.getStreet() == null && this.getStreet().compareTo(EMPTY_STRING) == 0 && this.getCity() == null && this.getCity().compareTo(EMPTY_STRING) == 0 && this.getState() == null && this.getState().compareTo(EMPTY_STRING) == 0 && this.getCode() == null && this.getCode().compareTo(EMPTY_STRING) == 0 && this.getCountry() == null && this.getCountry().compareTo(EMPTY_STRING) == 0) {
             return true;
         }
         return false;
@@ -212,7 +212,7 @@ public class StreetAddress
     public virtual bool? isValid()
     {
         string EMPTY_STRING = StringUtil.getInstance().EMPTY_STRING;
-        if (this.getName() == null || this.getName().compareTo(EMPTY_STRING) == 0 || this.getStreet() == null || this.getStreet().compareTo(EMPTY_STRING) == 0 || this.getCity() == null || this.getCity().compareTo(EMPTY_STRING) == 0 || this.getState() == null || this.getState().compareTo(EMPTY_STRING) == 0 || this.getCode() == null || this.getCode().compareTo(EMPTY_STRING) == 0 || this.getCountry() == null || this.getCountry().compareTo(EMPTY_STRING) == 0) {
+        if (this.getName() == null || string.CompareOrdinal(this.getName(), EMPTY_STRING) == 0 || this.getStreet() == null || this.getStreet().compareTo(EMPTY_STRING) == 0 || this.getCity() == null || this.getCity().compareTo(EMPTY_STRING) == 0 || this.getState() == null || this.getState().compareTo(EMPTY_STRING) == 0 || this.getCode() == null || this.getCode().compareTo(EMPTY_STRING) == 0 || this.getCountry() == null || this.getCountry().compareTo(EMPTY_STRING) == 0) {
             return false;
         }
         return true;

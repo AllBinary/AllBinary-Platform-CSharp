@@ -48,7 +48,7 @@ public class BasicColorFactory
 
     public virtual BasicColor createInstanceARGB(int alphaValue, int r, int g, int b, string name)
     {
-        int ALPHA_MASK = 0xFF000000;
+        int ALPHA_MASK = unchecked((int) 0xFF000000);
         return new BasicColor(alphaValue, ((alphaValue << 24) & ALPHA_MASK) + ((r << 16) & 0x00FF0000) + ((g << 8) & 0x0000FF00) + (b & 0x000000FF), StringUtil.getInstance().EMPTY_STRING);
     }
 

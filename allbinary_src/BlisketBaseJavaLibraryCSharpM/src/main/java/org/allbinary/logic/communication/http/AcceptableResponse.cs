@@ -25,7 +25,7 @@ public class AcceptableResponse
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    protected AcceptableResponse(string candidate, string tagName, int index)
+    public AcceptableResponse(string candidate, string tagName, int index)
     {
         this.logUtil.putF(tagName, this, this.commonStrings.CONSTRUCTOR);
         AcceptableResponseUtil acceptableResponseUtil = AcceptableResponseUtil.getInstance();

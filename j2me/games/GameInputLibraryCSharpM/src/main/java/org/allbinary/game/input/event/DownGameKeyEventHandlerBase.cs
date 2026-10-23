@@ -76,7 +76,7 @@ public class DownGameKeyEventHandlerBase : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         DownGameKeyEventListenerInterface downGameKeyEventListenerInterface = ((DownGameKeyEventListenerInterface) eventListenerInterface);
         downGameKeyEventListenerInterface.onDownGameKeyEvent(((GameKeyEvent) eventObject));

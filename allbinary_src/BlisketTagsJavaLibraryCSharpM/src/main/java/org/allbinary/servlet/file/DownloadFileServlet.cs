@@ -47,7 +47,7 @@ public class DownloadFileServlet : HttpServlet
     private readonly string DOWNLOAD = "download";
     private readonly int DEFAULT_BUFFER_SIZE = 16384;
     // throws ServletException, IOException
-    protected virtual void processRequest(HttpServletRequest request, HttpServletResponse response)
+    public virtual void processRequest(HttpServletRequest request, HttpServletResponse response)
     {
         InputStream inputStream = null;
         try {
@@ -107,13 +107,13 @@ public class DownloadFileServlet : HttpServlet
     }
 
     // throws ServletException, IOException
-    protected virtual void doGet(HttpServletRequest request, HttpServletResponse response)
+    public virtual void doGet(HttpServletRequest request, HttpServletResponse response)
     {
         this.processRequest(request, response);
     }
 
     // throws ServletException, IOException
-    protected virtual void doPost(HttpServletRequest request, HttpServletResponse response)
+    public virtual void doPost(HttpServletRequest request, HttpServletResponse response)
     {
         this.processRequest(request, response);
     }

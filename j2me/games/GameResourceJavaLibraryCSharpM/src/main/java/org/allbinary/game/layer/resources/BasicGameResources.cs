@@ -30,7 +30,7 @@ public class BasicGameResources
     public static readonly StringMaker stringBuffer = new StringMaker();
     public string RESOURCE = StringUtil.getInstance().EMPTY_STRING;
     public string RESOURCE_DESTROY = StringUtil.getInstance().EMPTY_STRING;
-    protected BasicGameResources()
+    public BasicGameResources()
     {
     }
 
@@ -50,7 +50,7 @@ public class BasicGameResources
     }
 
     // throws Exception
-    protected virtual void append(string ROOT, string sizeString)
+    public virtual void append(string ROOT, string sizeString)
     {
         string DESTROY = "_destroy";
         string @string = this.getString();
@@ -68,7 +68,7 @@ public class BasicGameResources
     }
 
     // throws Exception
-    protected virtual string getString()
+    public virtual string getString()
     {
         return GameGraphicsResourceUtil.getInstance().getName();
     }

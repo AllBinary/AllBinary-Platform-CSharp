@@ -101,12 +101,12 @@ public class GameInput
         removeList.clear();
     }
 
-    protected virtual BasicArrayList getRemovalGameKeyEventList()
+    public virtual BasicArrayList getRemovalGameKeyEventList()
     {
         return this.removalGameKeyEventList;
     }
 
-    protected virtual BasicArrayList getGameKeyEventList()
+    public virtual BasicArrayList getGameKeyEventList()
     {
         return this.gameKeyEventList;
     }

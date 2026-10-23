@@ -17,7 +17,7 @@ public class NullCanvas : Canvas
     {
     }
 
-    protected override void sizeChanged(int w, int h)
+    public override void sizeChanged(int w, int h)
     {
     }
 
@@ -70,11 +70,11 @@ public class NullCanvas : Canvas
     }
 
     // throws Exception
-    protected virtual void process()
+    public virtual void process()
     {
     }
 
-    protected override void paint(Graphics graphics)
+    public override void paint(Graphics graphics)
     {
     }
 
@@ -82,20 +82,20 @@ public class NullCanvas : Canvas
     {
     }
 
-    protected virtual void setPaused(bool isPaused)
+    public virtual void setPaused(bool isPaused)
     {
         throw new SystemException();
     }
 
-    protected override void pointerDragged(int x, int y)
+    public override void pointerDragged(int x, int y)
     {
     }
 
-    protected override void pointerPressed(int x, int y)
+    public override void pointerPressed(int x, int y)
     {
     }
 
-    protected override void pointerReleased(int x, int y)
+    public override void pointerReleased(int x, int y)
     {
     }
 

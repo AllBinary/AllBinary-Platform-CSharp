@@ -32,7 +32,7 @@ public class WorkFlowWrapper : WorkFlowInterface
         this.anyType = anyType;
     }
 
-    protected virtual object getWorkFlowObject()
+    public virtual object getWorkFlowObject()
     {
         return this.anyType;
     }

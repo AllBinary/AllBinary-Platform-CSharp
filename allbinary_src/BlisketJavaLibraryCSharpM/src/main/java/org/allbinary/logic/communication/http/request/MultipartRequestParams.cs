@@ -45,7 +45,7 @@ public class MultipartRequestParams : RequestParams
         this.processMultipartRequest(((HttpServletRequest) pageContext.getRequest()));
     }
 
-    protected virtual void setSpecial()
+    public virtual void setSpecial()
     {
         this.special = true;
     }

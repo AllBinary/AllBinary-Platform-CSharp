@@ -84,7 +84,7 @@ public class HorizontalScreenPatrolAI : BasicAI
         }
     }
 
-    protected virtual void nextDirection()
+    public virtual void nextDirection()
     {
     }
 

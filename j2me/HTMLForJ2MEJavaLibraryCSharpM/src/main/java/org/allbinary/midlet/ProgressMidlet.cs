@@ -37,7 +37,7 @@ public class ProgressMidlet : AllBinaryMidlet
     {
     }
 
-    protected virtual void exitProgress(bool isProgress)
+    public virtual void exitProgress(bool isProgress)
     {
         Processor processor = MidletExitProcessorFactory.getInstance().getExitInstance(this);
         try {

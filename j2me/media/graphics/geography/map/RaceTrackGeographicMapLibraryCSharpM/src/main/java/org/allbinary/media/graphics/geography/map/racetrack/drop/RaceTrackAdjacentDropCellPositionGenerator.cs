@@ -92,7 +92,7 @@ public class RaceTrackAdjacentDropCellPositionGenerator : RaceTrackDropCellPosit
 
     private readonly GeographicMapDirectionUtil geographicMapDirectionUtil = GeographicMapDirectionUtil.getInstance();
     // throws Exception
-    protected override void drop(AllBinaryLayerManager allBinaryLayerManager, int index)
+    public override void drop(AllBinaryLayerManager allBinaryLayerManager, int index)
     {
         GeographicMapCellPosition geographicMapCellPosition = ((GeographicMapCellPosition) this.list.get(index));
         GeographicMapCellPosition randomGeographicMapCellPosition = this.getFirstNonRoadAdjacentCellPosition(geographicMapCellPosition.getColumn(), geographicMapCellPosition.getRow());

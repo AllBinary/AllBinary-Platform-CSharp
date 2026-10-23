@@ -106,7 +106,7 @@ public class PopupMenuInputProcessor : BasicMenuInputProcessor
     }
 
     // throws Exception
-    protected virtual void processMotionInput(MotionGestureEvent motionGestureEvent)
+    public virtual void processMotionInput(MotionGestureEvent motionGestureEvent)
     {
         if (motionGestureEvent == null) {
             this.logUtil.putF("Exception: Bug", this, this.gameInputStrings.PROCESS_MOTION_INPUT);

@@ -28,14 +28,14 @@ public class AllBinaryLayerManager : LayerManager
     private readonly LayerManagerEvent createLayerManagerEvent;
     private readonly LayerManagerEvent deleteLayerManagerEvent;
     private LayerProcessor[] basicLayerProcessorArray = new LayerProcessor[0];
-    protected AllBinaryLayerManager() : base(LayerManagerNoDebug.getInstance())
+    public AllBinaryLayerManager() : base(LayerManagerNoDebug.getInstance())
     {
         this.createLayerManagerEvent = new LayerManagerEvent(this, this.layerManagerEventHandler.CREATE);
         this.deleteLayerManagerEvent = new LayerManagerEvent(this, this.layerManagerEventHandler.DELETE);
         // base(LayerManagerNoDebug.getInstance()) is called from the constructor declaration
     }
 
-    protected virtual LayerProcessor[] getLayerProcessorArray()
+    public virtual LayerProcessor[] getLayerProcessorArray()
     {
         return this.basicLayerProcessorArray;
     }

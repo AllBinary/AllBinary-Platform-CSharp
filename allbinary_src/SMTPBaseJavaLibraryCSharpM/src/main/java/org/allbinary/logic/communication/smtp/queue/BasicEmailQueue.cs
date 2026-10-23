@@ -75,7 +75,7 @@ public class BasicEmailQueue : BasicQueue, EmailQueueInterface
 
     // throws Exception
     [MethodImpl(MethodImplOptions.Synchronized)]
-    protected virtual void processAllUnsent()
+    public virtual void processAllUnsent()
     {
         int size = queueVector.size();
         for (int index = 0; index < size; index++) {

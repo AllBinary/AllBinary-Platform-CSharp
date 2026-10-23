@@ -58,7 +58,7 @@ public class HitPointGameObject : MeteredGameObject, HitPointGameObjectInterface
         return this.closeDeath;
     }
 
-    protected virtual void setCloseDeath(bool closeDeath)
+    public virtual void setCloseDeath(bool closeDeath)
     {
         this.closeDeath = closeDeath;
     }

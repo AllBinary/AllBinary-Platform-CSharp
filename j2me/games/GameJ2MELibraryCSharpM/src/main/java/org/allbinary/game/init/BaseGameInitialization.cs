@@ -59,7 +59,7 @@ public class BaseGameInitialization : GameInitializationInterface
     }
 
     // throws Exception
-    protected virtual void initKeyMapping(AbeClientInformationInterface abeClientInformation, int portion)
+    public virtual void initKeyMapping(AbeClientInformationInterface abeClientInformation, int portion)
     {
         if (ChangedGameFeatureListener.getInstance().isChangedFeature(InputFeatureFactory.getInstance().INPUT_MAPPING)) {
             PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().init(abeClientInformation);
@@ -138,17 +138,17 @@ public class BaseGameInitialization : GameInitializationInterface
         FeaturedResourceRelativeRelationshipFactory.getInstance().clear();
     }
 
-    protected virtual void setGameInitialized(bool gameInitialized)
+    public virtual void setGameInitialized(bool gameInitialized)
     {
         this.gameInitialized = gameInitialized;
     }
 
-    protected virtual bool isGameInitialized()
+    public virtual bool isGameInitialized()
     {
         return this.gameInitialized;
     }
 
-    protected virtual int getPortion()
+    public virtual int getPortion()
     {
         return this.portion;
     }

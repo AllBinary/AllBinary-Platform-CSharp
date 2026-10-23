@@ -37,7 +37,7 @@ public class PopupCommandFormInputProcessor : CommandFormInputProcessor
     }
 
     // throws Exception
-    protected override void processMotionInput(MotionGestureEvent motionGestureEvent)
+    public override void processMotionInput(MotionGestureEvent motionGestureEvent)
     {
         base.processMotionInput(motionGestureEvent);
     }

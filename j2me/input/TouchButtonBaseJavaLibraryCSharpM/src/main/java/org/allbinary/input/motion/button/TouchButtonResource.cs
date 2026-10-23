@@ -15,7 +15,7 @@ public class TouchButtonResource
 {
     public readonly string RESOURCE;
     public readonly string HINT;
-    protected TouchButtonResource(string resource, string hint)
+    public TouchButtonResource(string resource, string hint)
     {
         this.RESOURCE = resource;
         this.HINT = hint;

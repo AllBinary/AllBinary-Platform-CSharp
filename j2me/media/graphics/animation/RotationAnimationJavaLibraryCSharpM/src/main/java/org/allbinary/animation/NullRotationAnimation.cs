@@ -20,7 +20,7 @@ public class NullRotationAnimation : RotationAnimation
         return new NullRotationAnimation(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior);
     }
 
-    protected NullRotationAnimation(AngleInfo angleInfo, CircularIndexUtil circularIndexUtil, AnimationBehavior animationBehavior) : base(angleInfo, circularIndexUtil, animationBehavior)
+    public NullRotationAnimation(AngleInfo angleInfo, CircularIndexUtil circularIndexUtil, AnimationBehavior animationBehavior) : base(angleInfo, circularIndexUtil, animationBehavior)
     {
         // base(angleInfo, circularIndexUtil, animationBehavior) is called from the constructor declaration
     }

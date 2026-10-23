@@ -105,7 +105,7 @@ public class ImageCache : ImageCacheBase
     }
 
     // throws Exception
-    protected virtual Image createImage(object key, InputStream inputStream)
+    public virtual Image createImage(object key, InputStream inputStream)
     {
         return Image.createImageLater(((string) key), -1, -1);
     }

@@ -103,7 +103,7 @@ public class LayerManagerEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         LayerManagerEventListenerInterface layerManagerEventListenerInterface = (((LayerManagerEventListenerInterface) eventListenerInterface));
         layerManagerEventListenerInterface.onCreateLayerManagerEvent(((LayerManagerEvent) eventObject));

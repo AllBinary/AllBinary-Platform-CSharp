@@ -54,7 +54,7 @@ public class VirtualKeyboardAPI3 : VirtualKeyboard, VirtualKeyboardEventListener
     public override void onVirtualKeyboardEvent(VirtualKeyboardEvent virtualKeyboardEvent)
     {
         bool? isShow = ((bool?) virtualKeyboardEvent.getSource());
-        if (isShow) {
+        if (isShow.Value) {
             this.showVirtualKeyboard();
         } else {
             this.hideVirtualKeyboard();

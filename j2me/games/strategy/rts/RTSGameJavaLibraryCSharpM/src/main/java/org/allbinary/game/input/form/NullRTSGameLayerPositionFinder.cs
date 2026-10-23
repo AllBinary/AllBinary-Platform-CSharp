@@ -31,7 +31,7 @@ public class NullRTSGameLayerPositionFinder : LayerPositionFinderInterface
         return NullRTSGameLayerPositionFinder.instance;
     }
 
-    protected NullRTSGameLayerPositionFinder()
+    public NullRTSGameLayerPositionFinder()
     {
     }
 

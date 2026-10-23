@@ -62,7 +62,7 @@ public class TouchButton : Paintable
         this.animationInterface.paintXY(graphics, animationX, this.animationY);
     }
 
-    protected virtual void updateRectangle()
+    public virtual void updateRectangle()
     {
         try {
             int x = this.rawRectangle.getWidth() * this.cellPosition.getColumn();

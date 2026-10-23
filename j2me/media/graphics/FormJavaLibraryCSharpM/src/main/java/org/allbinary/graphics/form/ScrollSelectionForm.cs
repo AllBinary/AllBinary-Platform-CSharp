@@ -388,7 +388,7 @@ public class ScrollSelectionForm : PaintableForm
         return this.scrollSelectionFormFormTypeItemIndexPaintable.paint(graphics, index, item, x, y);
     }
 
-    protected virtual int getDiffX(ABCustomItem item)
+    public virtual int getDiffX(ABCustomItem item)
     {
         return 0;
     }

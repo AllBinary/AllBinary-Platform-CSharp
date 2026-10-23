@@ -68,7 +68,7 @@ public class XmlRpcRemoteHighScoresClient : XmlRpcAbeClient
             return result;
         } catch (IOException e) {
             this.logUtil.put(TRYING_OTHER_SERVERS + ExceptionUtil.getInstance().getStackTrace(e), this, this.commonStrings.GET, e);
-            if (!e.Message.startsWith(HOST_NOT_RESOLVED)) {
+            if (!e.Message.StartsWith(HOST_NOT_RESOLVED)) {
                 return this.tryAnother(anyType);
             } else {
                 throw new Exception(HOST_NOT_RESOLVED_MSG);

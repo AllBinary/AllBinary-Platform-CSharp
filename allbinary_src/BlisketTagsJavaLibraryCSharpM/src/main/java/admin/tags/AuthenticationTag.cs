@@ -85,7 +85,7 @@ public class AuthenticationTag : CustomTagSupport
             Type addressHelperClass = anyType.GetType();
             Method method = addressHelperClass.getMethod("changePassword", null);
             bool? result = ((bool?) method.invoke(anyType, null));
-            return result;
+            return result.Value;
         } catch (LicensingException e) {
             throw e;
         } catch (Exception e) {
@@ -104,7 +104,7 @@ public class AuthenticationTag : CustomTagSupport
             Type addressHelperClass = anyType.GetType();
             Method method = addressHelperClass.getMethod("newPassword", null);
             bool? result = ((bool?) method.invoke(anyType, null));
-            return result;
+            return result.Value;
         } catch (LicensingException e) {
             throw e;
         } catch (Exception e) {
@@ -142,7 +142,7 @@ public class AuthenticationTag : CustomTagSupport
             Type helperClass = anyType.GetType();
             Method method = helperClass.getMethod("isSessionOld", null);
             bool? resultBoolean = ((bool?) method.invoke(anyType, null));
-            return resultBoolean;
+            return resultBoolean.Value;
         } catch (LicensingException e) {
             throw e;
         } catch (Exception e) {
@@ -163,7 +163,7 @@ public class AuthenticationTag : CustomTagSupport
             Method method = addressHelperClass.getMethod("isRoleValid", methodParams);
             object[] methodArgs = new object[] { this.userName, this.password, this.roles };
             bool? resultBoolean = ((bool?) method.invoke(anyType, methodArgs));
-            return resultBoolean;
+            return resultBoolean.Value;
         } catch (LicensingException e) {
             throw e;
         } catch (Exception e) {
@@ -224,7 +224,7 @@ public class AuthenticationTag : CustomTagSupport
             Method method = addressHelperClass.getMethod("isAuthenticationSessionValid", methodParams);
             object[] methodArgs = new object[] { this.roles };
             bool? resultBoolean = ((bool?) method.invoke(anyType, methodArgs));
-            return resultBoolean;
+            return resultBoolean.Value;
         } catch (LicensingException e) {
             throw e;
         } catch (Exception e) {
@@ -245,7 +245,7 @@ public class AuthenticationTag : CustomTagSupport
             Method method = helperClass.getMethod("processIfNewLogin", methodParams);
             object[] methodArgs = new object[] { this.userName, this.password };
             bool? resultBoolean = ((bool?) method.invoke(anyType, methodArgs));
-            return resultBoolean;
+            return resultBoolean.Value;
         } catch (LicensingException e) {
             throw e;
         } catch (Exception e) {
@@ -264,7 +264,7 @@ public class AuthenticationTag : CustomTagSupport
             Type addressHelperClass = anyType.GetType();
             Method method = addressHelperClass.getMethod("processInvalidation", null);
             bool? resultBoolean = ((bool?) method.invoke(anyType, null));
-            return resultBoolean;
+            return resultBoolean.Value;
         } catch (LicensingException e) {
             throw e;
         } catch (Exception e) {

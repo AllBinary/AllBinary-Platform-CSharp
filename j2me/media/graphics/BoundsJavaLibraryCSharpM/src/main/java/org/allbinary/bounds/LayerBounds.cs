@@ -30,7 +30,7 @@ public class LayerBounds : BoundsChangeEventListener
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public Rectangle rectangle;
-    protected LayerBounds(Rectangle rectangle)
+    public LayerBounds(Rectangle rectangle)
     {
         this.rectangle = rectangle;
     }

@@ -34,7 +34,7 @@ public class MyCommandsFactory
     public readonly Command SET_DISPLAYABLE = new Command("Display", StringUtil.getInstance().EMPTY_STRING, Command.SCREEN, 2);
     public readonly Command PAUSE_COMMAND = new Command("Pause", StringUtil.getInstance().EMPTY_STRING, Command.SCREEN, 0);
     public readonly Command RESUME_COMMAND = new Command("Resume", StringUtil.getInstance().EMPTY_STRING, Command.SCREEN, 0);
-    protected MyCommandsFactory()
+    public MyCommandsFactory()
     {
     }
 

@@ -22,7 +22,7 @@ namespace org.allbinary.logic.system.security.licensing;
 public class LicenseType
 {
     private string name = null;
-    protected LicenseType(string name)
+    public LicenseType(string name)
     {
         this.setName(name);
     }

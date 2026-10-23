@@ -28,7 +28,7 @@ public class FlagGameResources : BasicGameResources
     public string RESOURCE_ICON_ANIMATION = StringUtil.getInstance().EMPTY_STRING;
     public string RESOURCE_ICON_BUILD = StringUtil.getInstance().EMPTY_STRING;
     public string RESOURCE_ICON = StringUtil.getInstance().EMPTY_STRING;
-    protected FlagGameResources()
+    public FlagGameResources()
     {
     }
 
@@ -38,7 +38,7 @@ public class FlagGameResources : BasicGameResources
     private static readonly string ICON_BUILD = "_icon" + FlagGameResources.BUILD;
     private readonly string ICON_SIZE = "_64_by_64.png";
     // throws Exception
-    protected override void append(string ROOT, string sizeString)
+    public override void append(string ROOT, string sizeString)
     {
         base.append(ROOT, sizeString);
         string @string = GameGraphicsResourceUtil.getInstance().getName();

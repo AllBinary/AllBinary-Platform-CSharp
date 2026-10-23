@@ -37,7 +37,7 @@ public class Properties
         this.propertiesHashMap = StdUtil.getInstance().createHashMap();
     }
 
-    protected virtual HashMap<object, object> getPropertiesHashMap()
+    public virtual HashMap<object, object> getPropertiesHashMap()
     {
         return this.propertiesHashMap;
     }

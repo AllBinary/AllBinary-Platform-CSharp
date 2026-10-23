@@ -84,13 +84,13 @@ public class PickupBehavior : PickupBehaviorInterface
         }
     }
 
-    protected virtual void add(CountedPickedUpLayerInterfaceFactoryInterface countedPickedUpLayerInterfaceFactoryInterface)
+    public virtual void add(CountedPickedUpLayerInterfaceFactoryInterface countedPickedUpLayerInterfaceFactoryInterface)
     {
         int partIndex = countedPickedUpLayerInterfaceFactoryInterface.getId() + this.countedIndex;
         this.addAt(countedPickedUpLayerInterfaceFactoryInterface, partIndex);
     }
 
-    protected virtual void addAt(CountedPickedUpLayerInterfaceFactoryInterface countedPickedUpLayerInterfaceFactoryInterface, int partIndex)
+    public virtual void addAt(CountedPickedUpLayerInterfaceFactoryInterface countedPickedUpLayerInterfaceFactoryInterface, int partIndex)
     {
         CollidableDestroyableDamageableLayer collidableDestroyableDamageableLayer = ((CollidableDestroyableDamageableLayer) this.ownerLayerInterface);
         CountedLayerInterfaceFactoryPart countedLayerInterfaceFactory = ((CountedLayerInterfaceFactoryPart) collidableDestroyableDamageableLayer.getPartInterfaceArray()[partIndex]);

@@ -510,7 +510,7 @@ public class FileUtil
             FileStreamFactory fileInputStreamFactory = FileStreamFactory.getInstance();
             OutputStream fileOutputStream = fileInputStreamFactory.getFileOutputStreamInstance(StringUtil.getInstance().EMPTY_STRING, filePath);
             dataOutputStream = new AbDataOutputStream(fileOutputStream);
-            dataOutputStream.write(System.Text.Encoding.UTF8.GetBytes(@string), 0, @string.Length);
+            dataOutputStream.write(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(@string), value => unchecked((sbyte) value)), 0, @string.Length);
             dataOutputStream.flush();
         } finally {
             StreamUtil.getInstance().close(dataOutputStream);

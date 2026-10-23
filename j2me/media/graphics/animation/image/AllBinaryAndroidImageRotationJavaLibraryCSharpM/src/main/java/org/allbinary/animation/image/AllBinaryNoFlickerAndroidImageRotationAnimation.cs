@@ -40,7 +40,7 @@ public class AllBinaryNoFlickerAndroidImageRotationAnimation : ImageBaseRotation
     private readonly Image[] twoImages = new Image[2];
     private Image imageToShow;
     private int bufferedImageIndex = 0;
-    protected AllBinaryNoFlickerAndroidImageRotationAnimation(Image originalImage, Image image, AngleInfo angleInfo, short totalAngle, AnimationBehavior animationBehavior) : base(image, angleInfo, totalAngle, animationBehavior)
+    public AllBinaryNoFlickerAndroidImageRotationAnimation(Image originalImage, Image image, AngleInfo angleInfo, short totalAngle, AnimationBehavior animationBehavior) : base(image, angleInfo, totalAngle, animationBehavior)
     {
         // base(image, angleInfo, totalAngle, animationBehavior) is called from the constructor declaration
         this.originalImage = originalImage;
@@ -55,7 +55,7 @@ public class AllBinaryNoFlickerAndroidImageRotationAnimation : ImageBaseRotation
     public override void setBasicColorP(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != ((int) basicColor)) {
+        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != basicColor.intValue()) {
             this.imageModifierUtil.setColor(this.originalImage, this.imageToShow, 0, basicColor);
             changed = true;
         }

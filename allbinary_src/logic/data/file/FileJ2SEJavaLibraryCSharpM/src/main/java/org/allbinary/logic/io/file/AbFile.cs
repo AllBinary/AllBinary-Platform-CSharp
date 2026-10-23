@@ -64,7 +64,7 @@ public class AbFile : AbFileInterface
         this.file = file;
     }
 
-    protected virtual File getFile()
+    public virtual File getFile()
     {
         return this.file;
     }

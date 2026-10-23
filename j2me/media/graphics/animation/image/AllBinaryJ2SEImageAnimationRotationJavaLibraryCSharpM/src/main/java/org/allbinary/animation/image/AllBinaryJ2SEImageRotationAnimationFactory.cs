@@ -79,7 +79,7 @@ public class AllBinaryJ2SEImageRotationAnimationFactory : BaseImageAnimationFact
         }
     }
 
-    protected virtual short getAngleIncrement()
+    public virtual short getAngleIncrement()
     {
         return this.angleIncrementP;
     }

@@ -54,7 +54,7 @@ public class TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory : Base
     }
 
     // throws Exception
-    protected override void initImageCache(ImageCache imageCache, int level)
+    public override void initImageCache(ImageCache imageCache, int level)
     {
         if (this.isInitialized()) {
             return;

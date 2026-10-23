@@ -24,7 +24,7 @@ namespace org.allbinary.input.motion.button;
 public class TouchButtonsListBuilder : BaseTouchInput
 {
     private readonly BasicArrayList baseTouchInputList = new BasicArrayListD();
-    protected virtual void addList(BasicArrayList list)
+    public virtual void addList(BasicArrayList list)
     {
         int size = this.baseTouchInputList.size();
         BaseTouchInput baseTouchInput = null;

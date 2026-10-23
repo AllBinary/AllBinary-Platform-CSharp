@@ -17,7 +17,7 @@ public class AndroidAPI1KeyFactory : AndroidKeyFactory
         return ((AndroidAPI1KeyFactory) AndroidAPI1KeyFactory.instance);
     }
 
-    protected AndroidAPI1KeyFactory()
+    public AndroidAPI1KeyFactory()
     {
     }
 

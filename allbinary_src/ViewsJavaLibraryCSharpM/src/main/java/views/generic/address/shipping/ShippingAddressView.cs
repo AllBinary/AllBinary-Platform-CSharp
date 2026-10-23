@@ -42,7 +42,7 @@ public class ShippingAddressView : HttpStoreComponentView, DomNodeInterface
         this.request = ((HttpServletRequest) httpTransformInfoInterface.getPageContext().getRequest());
     }
 
-    protected virtual HttpServletRequest getRequest()
+    public virtual HttpServletRequest getRequest()
     {
         return this.request;
     }

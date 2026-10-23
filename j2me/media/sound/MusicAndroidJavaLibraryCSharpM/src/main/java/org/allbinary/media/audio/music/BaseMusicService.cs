@@ -136,7 +136,7 @@ public class BaseMusicService : Service
 
                 }
                 global::java.lang.Runnable runnable = new MusicRunnable(this);
-                Thread thread = new Thread(runnable);
+                global::org.allbinary.thread.NullThread thread = new global::org.allbinary.thread.NullThread(runnable);
                 thread.start();
                 return;
             }

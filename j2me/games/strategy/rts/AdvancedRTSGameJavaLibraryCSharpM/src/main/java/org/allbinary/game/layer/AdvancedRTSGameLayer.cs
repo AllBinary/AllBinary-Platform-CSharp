@@ -96,7 +96,7 @@ public class AdvancedRTSGameLayer : RTSLayer, DestroyedEventListenerInterface
         this.getWaypointBehavior().getWaypoint().setAllBinaryGameLayerManager(this.allBinaryGameLayerManagerP);
     }
 
-    protected virtual void initVisibility(RTSPlayerLayerInterface rtsPlayerLayerInterface)
+    public virtual void initVisibility(RTSPlayerLayerInterface rtsPlayerLayerInterface)
     {
         AdvancedRTSPlayerLayerInterface advancedRTSPlayerLayerInterface = ((AdvancedRTSPlayerLayerInterface) rtsPlayerLayerInterface);
         if (advancedRTSPlayerLayerInterface.isLocalPlayer() || advancedRTSPlayerLayerInterface.getGameType() == GameTypeFactory.getInstance().BOT) {
@@ -141,7 +141,7 @@ public class AdvancedRTSGameLayer : RTSLayer, DestroyedEventListenerInterface
         return ((WaypointBehaviorBase) this.waypointBehaviorBase);
     }
 
-    protected virtual void setWaypointBehavior(WaypointBehaviorBase unitWaypointHelper)
+    public virtual void setWaypointBehavior(WaypointBehaviorBase unitWaypointHelper)
     {
         this.waypointBehaviorBase = unitWaypointHelper;
     }
@@ -263,7 +263,7 @@ public class AdvancedRTSGameLayer : RTSLayer, DestroyedEventListenerInterface
         return this.geographicMapCellPositionAreaBase.getSurroundingGeographicMapCellPositionList();
     }
 
-    protected override void setSelected(bool selected)
+    public override void setSelected(bool selected)
     {
         base.setSelected(selected);
         if (this.debug) {

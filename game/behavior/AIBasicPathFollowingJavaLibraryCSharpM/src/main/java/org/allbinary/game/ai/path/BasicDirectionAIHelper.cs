@@ -58,9 +58,9 @@ public class BasicDirectionAIHelper
 
     private int getAIKeyPressed(int? frame)
     {
-        short angle = ((short) this.angleInfo.getAngleIncrementInfo().getFrameAngle(((int) frame)));
+        short angle = ((short) this.angleInfo.getAngleIncrementInfo().getFrameAngle(frame.intValue()));
         if (this.angleInfo.getAngle() != angle) {
-            return this.turnAI(((int) frame));
+            return this.turnAI(frame.intValue());
         } else {
             return Canvas.UP;
         }
@@ -83,7 +83,7 @@ public class BasicDirectionAIHelper
         return keyDirection;
     }
 
-    protected virtual AngleInfo getAngleInfoP()
+    public virtual AngleInfo getAngleInfoP()
     {
         return this.angleInfo;
     }

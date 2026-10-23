@@ -48,7 +48,7 @@ public class MirrorSpriteImageJPanel : javax.swing.JPanel, ImageProcessorInputCo
 
     public virtual void process()
     {
-        new Thread()
+        new global::org.allbinary.thread.NullThread()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public virtual void run()
             {

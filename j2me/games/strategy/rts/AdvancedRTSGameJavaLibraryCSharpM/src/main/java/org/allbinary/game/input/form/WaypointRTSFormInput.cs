@@ -150,7 +150,7 @@ public class WaypointRTSFormInput : RTSFormInput
     }
 
     // throws Exception
-    protected virtual bool attemptBuild(RTSPlayerLayerInterface rtsPlayerLayerInterface, AllBinaryLayerManager layerManager, RTSLayer layerInterface, int itemIndex)
+    public virtual bool attemptBuild(RTSPlayerLayerInterface rtsPlayerLayerInterface, AllBinaryLayerManager layerManager, RTSLayer layerInterface, int itemIndex)
     {
         this.logUtil.putF("Layer: " + layerInterface, this, "attemptBuild");
         if (layerInterface == null) {

@@ -68,12 +68,12 @@ public class BuildingAdvancedRTSFormInput : BuildingRTSFormInput
     }
 
     // throws Exception
-    protected override bool isBuildAttemptValid(RTSPlayerLayerInterface rtsPlayerLayerInterface, RTSLayer layerInterface)
+    public override bool isBuildAttemptValid(RTSPlayerLayerInterface rtsPlayerLayerInterface, RTSLayer layerInterface)
     {
         AdvancedRTSPlayerLayerInterface advancedRTSPlayerLayerInterface = ((AdvancedRTSPlayerLayerInterface) rtsPlayerLayerInterface);
         AdvancedPlayerOwnedRTSLayers advancedPlayerOwnedRTSLayers = advancedRTSPlayerLayerInterface.getAdvancedPlayerOwnedRTSLayers();
         int totalHouses = advancedPlayerOwnedRTSLayers.getHouseList().size();
-        if (totalHouses < 1 && layerInterface.getName().indexOf(" House") < 0) {
+        if (totalHouses < 1 && layerInterface.getName().IndexOf(" House") < 0) {
             rtsPlayerLayerInterface.add(ErrorSound.getInstance());
             if (!rtsPlayerLayerInterface.implmentsArtificialIntelligenceCompositeInterface()) {
                 GameNotificationEventHandler.getInstance().fireEvent(this.atLeastOneHouseGameNotificationEvent);
@@ -85,7 +85,7 @@ public class BuildingAdvancedRTSFormInput : BuildingRTSFormInput
 
     private readonly RTSLayerEvent BUILD_BUILDING_RTS_LAYER_EVENT = new RTSLayerEvent(NullPathFindingLayer.NULL_PATH_FINDING_LAYER);
     // throws Exception
-    protected override void add(RTSPlayerLayerInterface rtsPlayerLayerInterface, AllBinaryLayerManager layerManager, RTSLayer layerInterface)
+    public override void add(RTSPlayerLayerInterface rtsPlayerLayerInterface, AllBinaryLayerManager layerManager, RTSLayer layerInterface)
     {
         this.BUILD_BUILDING_RTS_LAYER_EVENT.setRtsLayer(layerInterface);
         BuildingEventHandler.getInstance().fireEvent(this.BUILD_BUILDING_RTS_LAYER_EVENT);

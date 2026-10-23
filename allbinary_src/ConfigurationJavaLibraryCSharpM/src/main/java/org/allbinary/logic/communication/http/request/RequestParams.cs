@@ -52,12 +52,12 @@ public class RequestParams
         this.logUtil.putF("Request Params Size: " + this.getMap().keySet().size(), this, this.commonStrings.CONSTRUCTOR);
     }
 
-    protected virtual void setMap(Map<object, object> map)
+    public virtual void setMap(Map<object, object> map)
     {
         this.map = map;
     }
 
-    protected virtual Map<object, object> getMap()
+    public virtual Map<object, object> getMap()
     {
         return this.map;
     }

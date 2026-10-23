@@ -69,10 +69,10 @@ public class LogUtil
     public virtual void put(string specialMessage, object anyType, string functionName, object exception)
     {
         if (exception != null) {
-            if (exception.GetType().FullName.compareTo(typeof(XmlRpcException).getName()) == 0) {
+            if (string.CompareOrdinal(exception.GetType().FullName, typeof(XmlRpcException).getName()) == 0) {
                 return;
             }
-            if (exception.GetType().FullName.compareTo(typeof(IOException).getName()) == 0) {
+            if (string.CompareOrdinal(exception.GetType().FullName, typeof(IOException).getName()) == 0) {
                 return;
             }
             if (this.isFirstException || this.timeDelayHelper.isTimeTNT()) {

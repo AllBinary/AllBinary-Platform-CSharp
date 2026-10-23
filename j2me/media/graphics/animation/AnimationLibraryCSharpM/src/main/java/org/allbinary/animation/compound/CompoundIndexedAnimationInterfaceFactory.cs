@@ -30,12 +30,12 @@ public class CompoundIndexedAnimationInterfaceFactory : CompoundAnimationInterfa
         // base(basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory) is called from the constructor declaration
     }
 
-    protected override Animation[] createArray(int size)
+    public override Animation[] createArray(int size)
     {
         return new Animation[size];
     }
 
-    protected override Animation createAnimation(Animation[] animationArray)
+    public override Animation createAnimation(Animation[] animationArray)
     {
         return new CompoundIndexedAnimation(animationArray, this.animationBehaviorFactory.getOrCreateInstance());
     }

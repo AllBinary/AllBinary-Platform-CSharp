@@ -61,7 +61,7 @@ public class InputAutomationJFrame : javax.swing.JFrame, InputAutomationConfigur
     private InputAutomationModuleFactoryFactory inputAutomationModuleFactory = null;
     private InputAutomationModuleFactoryInterface inputAutomationModuleInterface = null;
     private RunnableInterface runnableInterface = null;
-    private Thread thread = null;
+    private global::org.allbinary.thread.NullThread thread = null;
     private HelpSet helpSet;
     private readonly URI uri = new URI("http://geocities.com/allbinary/");
     public InputAutomationJFrame()
@@ -404,8 +404,8 @@ public class InputAutomationJFrame : javax.swing.JFrame, InputAutomationConfigur
             if (this.inputAutomationModuleInterface != null) {
                 this.runnableInterface = this.inputAutomationModuleInterface.getInstance();
                 if (this.runnableInterface != null) {
-                    this.thread = new Thread(this.runnableInterface);
-                    this.thread.setPriority(Thread.MIN_PRIORITY + 1);
+                    this.thread = new global::org.allbinary.thread.NullThread(this.runnableInterface);
+                    this.thread.setPriority(global::org.allbinary.thread.NullThread.MIN_PRIORITY + 1);
                     this.thread.start();
                 } else {
                     this.logUtil.putF("Runnnable was null", this, "startJMenuItemActionPerformed");

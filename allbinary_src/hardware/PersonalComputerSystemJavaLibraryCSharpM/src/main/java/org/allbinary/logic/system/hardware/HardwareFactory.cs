@@ -40,9 +40,9 @@ public class HardwareFactory
     {
         try {
             OperatingSystems operatingSystems = OperatingSystems.getInstance();
-            if (os.getName().compareTo(operatingSystems.LINUX) == 0) {
+            if (string.CompareOrdinal(os.getName(), operatingSystems.LINUX) == 0) {
                 return ((HardwareInterface) new LinuxHardware());
-            } else if (os.getName().indexOf(operatingSystems.WINDOWS) >= 0) {
+            } else if (os.getName().IndexOf(operatingSystems.WINDOWS) >= 0) {
                 return ((HardwareInterface) new WindowsHardware());
             }
             throw new Exception("No Hardware Imp for: " + os.getName());

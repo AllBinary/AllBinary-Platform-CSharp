@@ -37,7 +37,7 @@ namespace org.allbinary.game.configuration.persistance;
 public class KeyValuePersistance : BasicPersitance
 {
     private readonly TsUtil tsUtil = TsUtil.getInstance();
-    protected KeyValuePersistance(string recordId) : base(recordId)
+    public KeyValuePersistance(string recordId) : base(recordId)
     {
         // base(recordId) is called from the constructor declaration
     }

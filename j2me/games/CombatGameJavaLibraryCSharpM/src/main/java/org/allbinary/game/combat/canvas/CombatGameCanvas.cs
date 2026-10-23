@@ -49,13 +49,13 @@ public class CombatGameCanvas : AllBinaryGameCanvas
     }
 
     // throws Exception
-    protected override void initApp(AbeClientInformationInterface abeClientInformation)
+    public override void initApp(AbeClientInformationInterface abeClientInformation)
     {
         this.CombatGameCanvas_init();
         base.initApp(abeClientInformation);
     }
 
-    protected virtual void initConfigurablePortion(int portion)
+    public virtual void initConfigurablePortion(int portion)
     {
         DestroyedLayerProcessor.init();
         ProgressCanvasFactory.getInstance().addNormalPortion(portion, "Basic Processors");
@@ -72,7 +72,7 @@ public class CombatGameCanvas : AllBinaryGameCanvas
     }
 
     // throws Exception
-    protected override void processPlayingGame()
+    public override void processPlayingGame()
     {
         base.processPlayingGame();
         for (int index = CombatGameCanvas.basicLayerProcessor.Length; --index >= 0; ) {
@@ -81,7 +81,7 @@ public class CombatGameCanvas : AllBinaryGameCanvas
     }
 
     // throws Exception
-    protected override void cleanupGame()
+    public override void cleanupGame()
     {
         base.cleanupGame();
         for (int index = CombatGameCanvas.basicLayerProcessor.Length; --index >= 0; ) {
@@ -94,7 +94,7 @@ public class CombatGameCanvas : AllBinaryGameCanvas
     }
 
     // throws Exception
-    protected virtual void cleanupManager()
+    public virtual void cleanupManager()
     {
         this.gameLayerManager.cleanup();
     }

@@ -66,7 +66,7 @@ public class LurchAI : BasicAI
         }
     }
 
-    protected virtual void reverse()
+    public virtual void reverse()
     {
         if (this.currentRelativeAngle == 180) {
             this.currentRelativeAngle = 0;

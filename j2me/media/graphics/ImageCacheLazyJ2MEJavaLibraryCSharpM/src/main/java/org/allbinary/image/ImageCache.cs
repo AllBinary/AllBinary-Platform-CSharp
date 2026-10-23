@@ -293,13 +293,13 @@ public class ImageCache : ImageCacheBase
     }
 
     // throws Exception
-    protected virtual void init(Image image, Image image2)
+    public virtual void init(Image image, Image image2)
     {
         image.init(image2.getImage());
     }
 
     // throws Exception
-    protected virtual Image creatImage(string key)
+    public virtual Image creatImage(string key)
     {
         InputStream inputStream = this.resourceUtil.getResourceAsStream(key);
         Image image = ImageFactory.getInstance().createImageFromInputStream(inputStream);
@@ -369,7 +369,7 @@ public class ImageCache : ImageCacheBase
     }
 
     // throws Exception
-    protected override Image createImageFromInputStream(object key, InputStream inputStream)
+    public override Image createImageFromInputStream(object key, InputStream inputStream)
     {
         GDLazyResources gdLazyResources = GDLazyResources.getInstance();
         string[] resourceStringArray = gdLazyResources.requiredResourcesBeforeLoadingArray;
@@ -391,7 +391,7 @@ public class ImageCache : ImageCacheBase
     }
 
     // throws Exception
-    protected virtual Image createImageLater(string key, int width, int height)
+    public virtual Image createImageLater(string key, int width, int height)
     {
         return Image.createImageLater(key, width, height);
     }

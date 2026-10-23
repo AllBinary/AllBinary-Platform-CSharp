@@ -48,7 +48,7 @@ public class ImageRotationAnimationFactory : BaseImageAnimationFactory
         }
     }
 
-    protected virtual short getAngleIncrementP()
+    public virtual short getAngleIncrementP()
     {
         return this.angleIncrement;
     }

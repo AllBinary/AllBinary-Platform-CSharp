@@ -61,7 +61,7 @@ public class InputToGameKeyMapping : InputMapping
         }
     }
 
-    protected override void removeAll()
+    public override void removeAll()
     {
         base.removeAll();
         this.clear();

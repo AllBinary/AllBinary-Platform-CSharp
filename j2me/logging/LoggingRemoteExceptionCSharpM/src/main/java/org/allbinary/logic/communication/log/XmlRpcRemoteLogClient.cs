@@ -56,7 +56,7 @@ public class XmlRpcRemoteLogClient : XmlRpcAbeClient
             return result;
         } catch (IOException e) {
             Console.WriteLine("IOException Trying Other Servers");
-            if (!e.Message.startsWith(HOST_NOT_RESOLVED)) {
+            if (!e.Message.StartsWith(HOST_NOT_RESOLVED)) {
                 return this.tryAnother(anyType);
             } else {
                 throw new Exception(HOST_NOT_RESOLVED_MSG);

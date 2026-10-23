@@ -35,7 +35,7 @@ public class GameFeatureEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         GameFeatureListenerInterface gameFeatureListenerInterface = (((GameFeatureListenerInterface) eventListenerInterface));
         gameFeatureListenerInterface.onGameFeatureChange(((GameFeatureEvent) eventObject));

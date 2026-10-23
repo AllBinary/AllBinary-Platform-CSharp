@@ -79,7 +79,7 @@ public class ResourceUtil
         if (inputStream != null) {
             return inputStream;
         }
-        inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(resourcePath);
+        inputStream = global::org.allbinary.thread.NullThread.currentThread().getContextClassLoader().getResourceAsStream(resourcePath);
         if (inputStream != null) {
             return inputStream;
         }

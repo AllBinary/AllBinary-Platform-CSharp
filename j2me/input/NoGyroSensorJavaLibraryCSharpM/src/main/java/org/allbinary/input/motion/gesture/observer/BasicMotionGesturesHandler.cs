@@ -30,12 +30,12 @@ public class BasicMotionGesturesHandler : BasicEventHandler
         return BasicMotionGesturesHandler.SINGLETON;
     }
 
-    protected BasicMotionGesturesHandler()
+    public BasicMotionGesturesHandler()
     {
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         BaseMotionGestureEventListener baseMotionGestureEventListener = ((BaseMotionGestureEventListener) eventListenerInterface);
         baseMotionGestureEventListener.onMotionGestureEvent(((MotionGestureEvent) eventObject));

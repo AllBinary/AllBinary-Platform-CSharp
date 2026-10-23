@@ -37,7 +37,7 @@ public class IndependentVectorExplosionRotationAnimationFactory : ProceduralAnim
     }
 
     // throws Exception
-    protected virtual void init()
+    public virtual void init()
     {
         this.framePoints = VectorRotationGenerator.getInstance().getInstance(this.vectorInfo);
     }

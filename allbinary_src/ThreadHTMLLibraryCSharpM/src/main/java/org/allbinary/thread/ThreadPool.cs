@@ -116,7 +116,7 @@ public class ThreadPool
 
     // throws InterruptedException
     [MethodImpl(MethodImplOptions.Synchronized)]
-    protected virtual global::java.lang.Runnable getTask()
+    public virtual global::java.lang.Runnable getTask()
     {
         if (this.taskQueue.isEmpty()) {
             return this.NULL_RUNNABLE;
@@ -161,11 +161,11 @@ public class ThreadPool
         return false;
     }
 
-    protected virtual void threadStarted()
+    public virtual void threadStarted()
     {
     }
 
-    protected virtual void threadStopped()
+    public virtual void threadStopped()
     {
         if (this.numThreads == 1) {
             this.isAlive = false;
@@ -174,11 +174,11 @@ public class ThreadPool
         }
     }
 
-    protected virtual void startTask(global::java.lang.Runnable task)
+    public virtual void startTask(global::java.lang.Runnable task)
     {
     }
 
-    protected virtual void completedTask(global::java.lang.Runnable task)
+    public virtual void completedTask(global::java.lang.Runnable task)
     {
     }
 

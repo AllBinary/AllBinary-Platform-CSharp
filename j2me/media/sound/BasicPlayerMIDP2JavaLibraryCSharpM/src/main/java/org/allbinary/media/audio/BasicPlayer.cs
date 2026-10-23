@@ -126,7 +126,7 @@ public class BasicPlayer : Player, TimeBaseInterface, Controllable2
         this.loopCountP = count;
     }
 
-    protected virtual int getLoopCount()
+    public virtual int getLoopCount()
     {
         return this.loopCountP;
     }

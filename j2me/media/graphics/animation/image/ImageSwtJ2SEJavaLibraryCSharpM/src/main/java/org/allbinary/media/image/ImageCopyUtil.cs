@@ -179,7 +179,7 @@ public class ImageCopyUtil
                 openGLESImageProperties.scaleX = openGLESImageProperties.scaleX2;
                 openGLESImageProperties.scaleY2 = ((float) ((((float) height)) / openGLESImage.getHeight()));
                 openGLESImageProperties.scaleY = openGLESImageProperties.scaleY2;
-                if (image.getName().startsWith(this.INFORMATION)) {
+                if (image.getName().StartsWith(this.INFORMATION)) {
                     openGLESImage.openGLESImageTranslate = new OpenGLESDeviceImageTranslate();
                     OpenGLESDeviceImageTranslate openGLESDeviceImageTranslate = ((OpenGLESDeviceImageTranslate) openGLESImage.openGLESImageTranslate);
                     openGLESDeviceImageTranslate.translateX = displayInfoSingleton.getLastWidth() / 1.4f / openGLESImageProperties.scaleX;
@@ -189,12 +189,12 @@ public class ImageCopyUtil
                 } else {
                     openGLESImageProperties.scaleX = openGLESImageProperties.scaleX * 0.75f;
                     openGLESImageProperties.scaleY = openGLESImageProperties.scaleY * 0.75f;
-                    if (image.getName().startsWith(this.LEADERBOARD)) {
+                    if (image.getName().StartsWith(this.LEADERBOARD)) {
                         openGLESImage.openGLESImageTranslate = new OpenGLESDeviceImageTranslate();
                         OpenGLESDeviceImageTranslate openGLESDeviceImageTranslate = ((OpenGLESDeviceImageTranslate) openGLESImage.openGLESImageTranslate);
                         openGLESDeviceImageTranslate.translateX = -displayInfoSingleton.getLastWidth() / 40 / openGLESImageProperties.scaleX;
                     }
-                    if (image.getName().startsWith(this.LEADERBOARD)) {
+                    if (image.getName().StartsWith(this.LEADERBOARD)) {
                     } else {
                         openGLESImageProperties.scaleX = 1.0f;
                         openGLESImageProperties.scaleY = 1.0f;

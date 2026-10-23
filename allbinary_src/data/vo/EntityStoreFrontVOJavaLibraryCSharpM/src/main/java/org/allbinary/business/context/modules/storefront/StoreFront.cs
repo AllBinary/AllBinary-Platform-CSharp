@@ -374,7 +374,7 @@ public class StoreFront : StoreFrontInterface
         if (!stringValidationUtil.isValidNotRequired(this.testFtpPassword, this.MINCHAR, this.MAXCHAR)) {
             valid = false;
         }
-        if (valid == true) {
+        if (valid.Value == true) {
             return true;
         } else {
             return false;

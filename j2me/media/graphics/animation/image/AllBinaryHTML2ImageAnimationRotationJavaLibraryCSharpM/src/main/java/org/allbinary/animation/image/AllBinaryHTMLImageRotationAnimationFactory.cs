@@ -65,7 +65,7 @@ public class AllBinaryHTMLImageRotationAnimationFactory : BaseImageAnimationFact
         }
     }
 
-    protected virtual short getAngleIncrement()
+    public virtual short getAngleIncrement()
     {
         return this.angleIncrement;
     }

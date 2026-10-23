@@ -26,7 +26,7 @@ public class OnDemandResources
 {
     public static readonly OnDemandResources NULL_ON_DEMAND_RESOURCES = new OnDemandResources();
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    protected OnDemandResources()
+    public OnDemandResources()
     {
     }
 

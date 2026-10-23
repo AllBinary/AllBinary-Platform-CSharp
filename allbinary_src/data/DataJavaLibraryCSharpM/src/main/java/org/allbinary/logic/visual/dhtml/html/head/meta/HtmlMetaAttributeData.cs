@@ -29,7 +29,7 @@ public class HtmlMetaAttributeData
         this.id = id;
     }
 
-    public override bool Equals(HtmlMetaAttributeData htmlMetaAttributeData)
+    public virtual bool Equals(HtmlMetaAttributeData htmlMetaAttributeData)
     {
         if (htmlMetaAttributeData.id == this.id) {
             return true;

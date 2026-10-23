@@ -116,7 +116,7 @@ public class AndroidTitleProgressBar : ProgressCanvas
     private TitleProgressBarSetProgressRunnable progressDialogSetProgressRunnable;
     private ProgressActivityInterface progressActivity = NullProgressActivity.NULL_PROGRESS_ACTIVITY;
     private int portion = 0;
-    protected AndroidTitleProgressBar(string title, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(title, backgroundBasicColor, foregroundBasicColor)
+    public AndroidTitleProgressBar(string title, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(title, backgroundBasicColor, foregroundBasicColor)
     {
         this.showTitleProgressBarRunnable = new ShowTitleProgressBarRunnable(this);
         this.dismissTitleProgressBarRunnable = new DismissTitleProgressBarRunnable(this);
@@ -183,7 +183,7 @@ public class AndroidTitleProgressBar : ProgressCanvas
         }
     }
 
-    protected override void setValue(int value)
+    public override void setValue(int value)
     {
         try {
             base.setValue(value);

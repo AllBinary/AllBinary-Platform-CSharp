@@ -53,7 +53,7 @@ public class CanvasImageJPanel : javax.swing.JPanel, ImageProcessedVisitor
 
     public virtual void process()
     {
-        new Thread()
+        new global::org.allbinary.thread.NullThread()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public virtual void run()
             {

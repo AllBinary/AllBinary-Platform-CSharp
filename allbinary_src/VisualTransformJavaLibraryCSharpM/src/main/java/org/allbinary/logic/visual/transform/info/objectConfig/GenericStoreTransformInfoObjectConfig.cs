@@ -63,7 +63,7 @@ public class GenericStoreTransformInfoObjectConfig : TransformInfoObjectConfig
     }
 
     // throws Exception
-    protected virtual Document generate(Document objectConfigDocument)
+    public virtual Document generate(Document objectConfigDocument)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             StringMaker stringBuffer = new StringMaker();

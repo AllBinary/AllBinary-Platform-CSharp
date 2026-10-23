@@ -27,7 +27,7 @@ public class AllBinaryVibration : AllBinaryVibrationME
 {
     private static AllBinaryVibrationME VIBRATION = AllBinaryNoVibration.NO_VIBRATION;
     private readonly Vibrator vibrator = ((Vibrator) ResourceUtil.getInstance().getContext().getSystemService(Context.VIBRATOR_SERVICE));
-    protected AllBinaryVibration()
+    public AllBinaryVibration()
     {
     }
 

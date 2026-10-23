@@ -78,7 +78,7 @@ public class TouchButtonFactory
         this.list = list;
     }
 
-    protected virtual BasicArrayList getList()
+    public virtual BasicArrayList getList()
     {
         return this.list;
     }

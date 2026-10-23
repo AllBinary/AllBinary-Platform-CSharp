@@ -53,7 +53,7 @@ public class PersistentInputMapping
     private readonly InputToGameKeyMapping inputMapping = new InputToGameKeyMapping();
     private InputMappingEventListenerInterface inputMappingEventListenerInterface = NullInputMappingEventListener.NULL_INPUT_MAPPING_EVENT_LISTENER;
     private readonly InputPersistance inputPersistance;
-    protected PersistentInputMapping(string name)
+    public PersistentInputMapping(string name)
     {
         this.inputMappingEvent = new InputMappingEvent(this);
         this.inputPersistance = new InputPersistance(name);
@@ -64,12 +64,12 @@ public class PersistentInputMapping
         return this.getInputMapping().getHashtable().size();
     }
 
-    protected virtual bool isDefaultNew()
+    public virtual bool isDefaultNew()
     {
         return false;
     }
 
-    protected virtual InputToGameKeyMapping getDefault()
+    public virtual InputToGameKeyMapping getDefault()
     {
         return InputToGameKeyMapping.getNullInstance();
     }

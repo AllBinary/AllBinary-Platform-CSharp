@@ -263,7 +263,7 @@ public class GeographicMapCellHistory : UpdateMyFontInterface
             for (int index = size; --index >= 0; ) {
                 geographicMapCellPosition = ((GeographicMapCellPosition) this.list.get(index));
                 isCellVisitedBoolean = ((bool?) localVisitedList.get(index));
-                if (!isCellVisitedBoolean) {
+                if (!isCellVisitedBoolean.Value) {
                     this.paintNotVisitedRelativeToPoint(graphics, geographicMapInterface.getAllBinaryTiledLayer(), geographicMapCellPosition.getPoint());
                 }
             }

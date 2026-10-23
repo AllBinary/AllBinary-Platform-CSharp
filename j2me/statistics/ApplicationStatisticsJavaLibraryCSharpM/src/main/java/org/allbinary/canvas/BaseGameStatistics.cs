@@ -76,7 +76,7 @@ public class BaseGameStatistics
         }
     }
 
-    protected virtual TimeDelayHelper getTimeDelayHelper()
+    public virtual TimeDelayHelper getTimeDelayHelper()
     {
         return this.timeDelayHelper;
     }

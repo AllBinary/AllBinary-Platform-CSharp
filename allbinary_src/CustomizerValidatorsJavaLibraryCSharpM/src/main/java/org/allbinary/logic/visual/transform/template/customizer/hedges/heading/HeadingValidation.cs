@@ -81,7 +81,7 @@ public class HeadingValidation : Validation, DomNodeInterface
             } else {
                 this.logo.processLogoFile();
             }
-            if (!titleValid && !logoValid) {
+            if (!titleValid.Value && !logoValid.Value) {
                 valid = false;
             }
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
@@ -109,10 +109,10 @@ public class HeadingValidation : Validation, DomNodeInterface
             if (!this.logo.isValid()) {
                 logoValid = false;
             }
-            if (!titleValid && !logoValid) {
+            if (!titleValid.Value && !logoValid.Value) {
                 valid = false;
             }
-            if (!valid) {
+            if (!valid.Value) {
                 stringBuffer.append("Include a title and/or logo for the header.");
             }
             return stringBuffer.ToString();

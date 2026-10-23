@@ -76,7 +76,7 @@ public class UpGameKeyEventHandlerBase : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         UpGameKeyEventListenerInterface upGameKeyEventListenerInterface = ((UpGameKeyEventListenerInterface) eventListenerInterface);
         upGameKeyEventListenerInterface.onUpGameKeyEvent(((GameKeyEvent) eventObject));

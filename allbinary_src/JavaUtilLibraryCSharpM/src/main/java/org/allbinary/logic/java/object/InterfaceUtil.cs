@@ -46,7 +46,7 @@ public class InterfaceUtil
     {
         if (interfaceName != null && interfaces != null && interfaces.Length > 0) {
             for (int index = 0; index < interfaces.Length; index++) {
-                if (interfaces[index].getName().indexOf(interfaceName) >= 0) {
+                if (interfaces[index].getName().IndexOf(interfaceName) >= 0) {
                     return interfaces[index];
                 }
             }
@@ -58,7 +58,7 @@ public class InterfaceUtil
     {
         Type[] classes = anyType.GetType().getInterfaces();
         for (int index = 0; index < classes.Length; index++) {
-            if (clazz.FullName.compareTo(classes[index].getName()) == 0) {
+            if (string.CompareOrdinal(clazz.FullName, classes[index].getName()) == 0) {
                 return true;
             }
         }
@@ -69,7 +69,7 @@ public class InterfaceUtil
     {
         Type[] classes = anyType.GetType().getInterfaces();
         for (int index = 0; index < classes.Length; index++) {
-            if (classes[index].getName().indexOf(className) == 0) {
+            if (classes[index].getName().IndexOf(className) == 0) {
                 return true;
             }
         }

@@ -103,7 +103,7 @@ public class DownloadableInventoryItemView : HttpStoreComponentView, RequestMapI
     }
 
     // throws Exception
-    protected virtual void processFile(FileItem fileItem)
+    public virtual void processFile(FileItem fileItem)
     {
         string fileName = fileItem.getName();
         string fullPath = this.getItemFilePath();
@@ -121,7 +121,7 @@ public class DownloadableInventoryItemView : HttpStoreComponentView, RequestMapI
     }
 
     // throws Exception
-    protected virtual void unzip(FileItem fileItem)
+    public virtual void unzip(FileItem fileItem)
     {
         string fileName = fileItem.getName();
         string fullPath = this.getItemFilePath();

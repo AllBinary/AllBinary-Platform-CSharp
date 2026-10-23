@@ -73,7 +73,7 @@ public class ThirdPartyInApplicationPurchase : ThirdPartyInApplicationPurchaseIn
         return false;
     }
 
-    protected virtual void requestProducts()
+    public virtual void requestProducts()
     {
     }
 

@@ -66,7 +66,7 @@ public class InputMappingHelpPaintable : HelpPaintable
         public int charHeight = 0;
     }
     private UpdateMyFontProperties updateMyFontProperties = new UpdateMyFontProperties();
-    protected InputMappingHelpPaintable(GameInputMapping[] gameInputMappingArray, BasicColor backgroundBasicColor, BasicColor basicColor) : base("Input Mapping", backgroundBasicColor, basicColor)
+    public InputMappingHelpPaintable(GameInputMapping[] gameInputMappingArray, BasicColor backgroundBasicColor, BasicColor basicColor) : base("Input Mapping", backgroundBasicColor, basicColor)
     {
         // base("Input Mapping", backgroundBasicColor, basicColor) is called from the constructor declaration
         this.gameInputMappingArray = gameInputMappingArray;
@@ -206,7 +206,7 @@ public class InputMappingHelpPaintable : HelpPaintable
     {
         this.myFontProcessor.process(graphics);
         int halfWidth = this.displayInfo.getLastHalfWidth();
-        graphics.setColor(((int) this.basicColor));
+        graphics.setColor(this.basicColor.intValue());
         graphics.drawString(this.title, halfWidth - this.titleBeginWidth, this.updateMyFontProperties.charHeight, this.anchor);
         string[] inputInfo = this.inputInfo;
         int size = inputInfo.Length;
@@ -234,7 +234,7 @@ public class InputMappingHelpPaintable : HelpPaintable
                 graphics.drawString(input.getName(), halfWidth - beginWidth + deltaX, y, this.anchor);
                 deltaX += this.updateMyFontProperties.inputDeltaXArray[index][index2];
                 sep = this.updateMyFontProperties.sepArray[index][index2];
-                graphics.setColor(((int) this.basicColor));
+                graphics.setColor(this.basicColor.intValue());
                 graphics.drawString(sep, halfWidth - beginWidth + deltaX, y, this.anchor);
                 deltaX += this.updateMyFontProperties.sepWidthArray[index][index2];
             }

@@ -61,7 +61,7 @@ public class StoreFileGenerator : TransformInfoObjectConfigGenerator
         StringValidationUtil stringValidationUtil = StringValidationUtil.getInstance();
         if (stringValidationUtil.isEmpty(fileName)) {
             TransformInfoHttpStoreInterface transformInfoHttpStoreInterface = ((TransformInfoHttpStoreInterface) transformInfoInterface);
-            fileName = transformInfoInterface.getName().substring(transformInfoHttpStoreInterface.getStoreName().length() + 1);
+            fileName = transformInfoInterface.getName().Substring(transformInfoHttpStoreInterface.getStoreName().length() + 1);
             HashMap<object, object> outputMappingHashMap = StdUtil.getInstance().createHashMap();
             outputMappingHashMap.put(TransformInfosData.getInstance().PREVIEW, "Preview");
             outputMappingHashMap.put(TransformInfosData.getInstance().SMALL_PREVIEW, "SmallPreview");
@@ -102,7 +102,7 @@ public class StoreFileGenerator : TransformInfoObjectConfigGenerator
             this.file.createNewFile();
         }
         if (this.file.exists()) {
-            InputStream inputStream = new ByteArrayInputStream(System.Text.Encoding.UTF8.GetBytes(input));
+            InputStream inputStream = new ByteArrayInputStream(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(input), value => unchecked((sbyte) value)));
             FileUtil.getInstance().write(inputStream, this.file);
         } else {
             throw new Exception("Could Not Create: " + this.fileAbPath.ToString());

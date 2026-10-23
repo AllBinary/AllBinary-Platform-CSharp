@@ -22,7 +22,7 @@ namespace org.allbinary.game.input;
 
 public class MotionJ2MEGameInputMapping : J2MEGameInputMapping
 {
-    protected override InputToGameKeyMapping getDefault()
+    public override InputToGameKeyMapping getDefault()
     {
         return new MotionJ2MEDefaultGameInputMapping().getInputMapping();
     }

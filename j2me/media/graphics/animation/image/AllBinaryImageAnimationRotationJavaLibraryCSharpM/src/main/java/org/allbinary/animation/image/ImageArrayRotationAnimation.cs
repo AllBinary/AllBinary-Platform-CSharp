@@ -25,7 +25,7 @@ namespace org.allbinary.animation.image;
 public class ImageArrayRotationAnimation : ImageArrayBaseRotationAnimation
 {
     // throws Exception
-    protected static ImageArrayRotationAnimation createAnimation(object anyType, AnimationBehavior animationBehavior)
+    public static ImageArrayRotationAnimation createAnimation(object anyType, AnimationBehavior animationBehavior)
     {
         ImageArrayRotationAnimationInfo imageRotationAnimationInfo = ((ImageArrayRotationAnimationInfo) anyType);
         return new ImageArrayRotationAnimation(imageRotationAnimationInfo.getImageArray(), imageRotationAnimationInfo.getAngleInfoP(), imageRotationAnimationInfo.getTotalAngle(), animationBehavior);

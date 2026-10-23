@@ -103,13 +103,13 @@ public class RTSPlayerGameInput : PlayerGameInput
     }
 
     // throws Exception
-    protected virtual void left()
+    public virtual void left()
     {
         this.rtsPlayerLayerInterface.getCurrentScrollSelectionForm().processInputKey(Canvas.LEFT);
     }
 
     // throws Exception
-    protected virtual void right()
+    public virtual void right()
     {
         this.rtsPlayerLayerInterface.getCurrentScrollSelectionForm().processInputKey(Canvas.RIGHT);
     }
@@ -162,7 +162,7 @@ public class RTSPlayerGameInput : PlayerGameInput
     }
 
     // throws Exception
-    protected virtual void select(MotionGestureEvent motionGestureEvent)
+    public virtual void select(MotionGestureEvent motionGestureEvent)
     {
         GPoint point = motionGestureEvent.getCurrentPoint();
         GeographicMapCompositeInterface geographicMapCompositeInterface = ((GeographicMapCompositeInterface) this.gameCanvas.getLayerManager());
@@ -253,7 +253,7 @@ public class RTSPlayerGameInput : PlayerGameInput
         return this.motionGestureInputList;
     }
 
-    protected virtual AllBinaryGameCanvas getGameCanvas()
+    public virtual AllBinaryGameCanvas getGameCanvas()
     {
         return this.gameCanvas;
     }

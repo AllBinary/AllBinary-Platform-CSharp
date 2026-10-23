@@ -34,12 +34,12 @@ public class CompoundRotationAnimationInterfaceFactory : CompoundAnimationInterf
         }
     }
 
-    protected override Animation[] createArray(int size)
+    public override Animation[] createArray(int size)
     {
         return new RotationAnimation[size];
     }
 
-    protected override Animation createAnimation(Animation[] animationInterfaceArray)
+    public override Animation createAnimation(Animation[] animationInterfaceArray)
     {
         return new CompoundRotationAnimation(((RotationAnimation[]) animationInterfaceArray), this.animationBehaviorFactory.getOrCreateInstance());
     }

@@ -43,7 +43,7 @@ public class AllBinaryHTMLImageRotationAnimation : ImageBaseRotationAnimation
     private Image imageToShow;
     private int bufferedImageIndex = 0;
     private AlphaBaseProcessor alphaProcessor = AlphaBaseProcessor.getInstance();
-    protected AllBinaryHTMLImageRotationAnimation(Image originalImage, Image image, AngleInfo angleInfo, short totalAngle, AnimationBehavior animationBehavior) : base(image, angleInfo, totalAngle, animationBehavior)
+    public AllBinaryHTMLImageRotationAnimation(Image originalImage, Image image, AngleInfo angleInfo, short totalAngle, AnimationBehavior animationBehavior) : base(image, angleInfo, totalAngle, animationBehavior)
     {
         // base(image, angleInfo, totalAngle, animationBehavior) is called from the constructor declaration
         this.originalImage = originalImage;
@@ -67,7 +67,7 @@ public class AllBinaryHTMLImageRotationAnimation : ImageBaseRotationAnimation
     public virtual void setBasicColorP(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != ((int) basicColor)) {
+        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != basicColor.intValue()) {
             changed = true;
         }
         base.setBasicColorP(basicColor);

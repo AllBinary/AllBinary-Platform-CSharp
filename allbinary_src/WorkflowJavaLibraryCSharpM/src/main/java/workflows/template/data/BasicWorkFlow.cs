@@ -54,12 +54,12 @@ public class BasicWorkFlow : WorkFlowInterface
         return ((string) this.getPropertiesHashMap().get(WorkFlowData.getInstance().NAME));
     }
 
-    protected virtual HashMap<object, object> getPropertiesHashMap()
+    public virtual HashMap<object, object> getPropertiesHashMap()
     {
         return this.propertiesHashMap;
     }
 
-    protected virtual PageContext getPageContext()
+    public virtual PageContext getPageContext()
     {
         return this.pageContext;
     }

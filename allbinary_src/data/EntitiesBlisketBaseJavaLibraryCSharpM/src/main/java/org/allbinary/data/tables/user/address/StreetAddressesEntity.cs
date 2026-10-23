@@ -220,7 +220,7 @@ public class StreetAddressesEntity : AbSqlBean, StreetAddressesEntityInterface
         }
     }
 
-    protected virtual string getUserName()
+    public virtual string getUserName()
     {
         return this.userName;
     }

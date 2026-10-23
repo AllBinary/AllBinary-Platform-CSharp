@@ -60,7 +60,7 @@ public class RaceTrackRandomDropCellPositionGenerator : RaceTrackDropCellPositio
     }
 
     // throws Exception
-    protected override void drop(AllBinaryLayerManager allBinaryLayerManager, int index)
+    public override void drop(AllBinaryLayerManager allBinaryLayerManager, int index)
     {
         GeographicMapCellPosition geographicMapCellPosition = ((GeographicMapCellPosition) this.list.get(index));
         GPoint point = geographicMapCellPosition.getPoint();

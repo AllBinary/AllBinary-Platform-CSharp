@@ -24,7 +24,7 @@ namespace org.allbinary.game.score;
 public class HighScoresBase : HighScoresFactoryInterface
 {
     public CommonStrings commonStrings = CommonStrings.getInstance();
-    protected HighScoresBase()
+    public HighScoresBase()
     {
     }
 

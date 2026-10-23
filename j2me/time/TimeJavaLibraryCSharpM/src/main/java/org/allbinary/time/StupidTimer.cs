@@ -22,7 +22,7 @@ public class StupidTimer
     private bool visitBool(Visitor visitorInterface)
     {
         bool? result = ((bool?) visitorInterface.visit(this.nullUtil.NULL_OBJECT));
-        bool result2 = result;
+        bool result2 = result.Value;
         return result2;
     }
 

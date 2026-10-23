@@ -32,7 +32,7 @@ public class LayerPlacementType
         return this.type;
     }
 
-    protected virtual void setType(int type)
+    public virtual void setType(int type)
     {
         this.type = type;
     }

@@ -63,22 +63,22 @@ public class TableTag : PropertiesTag
         return false;
     }
 
-    protected virtual void setTagHelperFactory(TagHelperFactoryInterface tagHelperFactoryInterface)
+    public virtual void setTagHelperFactory(TagHelperFactoryInterface tagHelperFactoryInterface)
     {
         this.tagHelperFactoryInterface = tagHelperFactoryInterface;
     }
 
-    protected virtual TagHelperFactoryInterface getTagHelperFactoryInterface()
+    public virtual TagHelperFactoryInterface getTagHelperFactoryInterface()
     {
         return this.tagHelperFactoryInterface;
     }
 
-    protected virtual void setTagRequestHelperFactory(TagHelperFactoryInterface tagHelperFactoryInterface)
+    public virtual void setTagRequestHelperFactory(TagHelperFactoryInterface tagHelperFactoryInterface)
     {
         this.tagRequestHelperFactoryInterface = tagHelperFactoryInterface;
     }
 
-    protected virtual TagHelperFactoryInterface getTagRequestHelperFactoryInterface()
+    public virtual TagHelperFactoryInterface getTagRequestHelperFactoryInterface()
     {
         return this.tagRequestHelperFactoryInterface;
     }

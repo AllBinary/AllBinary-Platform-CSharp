@@ -76,7 +76,7 @@ public class TouchButton : Paintable
         this.animationInterface.paintXY(graphics, this.animationX, this.animationY);
     }
 
-    protected virtual void updateRectangle()
+    public virtual void updateRectangle()
     {
         try {
             PointFactory pointFactory = PointFactory.getInstance();

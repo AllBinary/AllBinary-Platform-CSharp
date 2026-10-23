@@ -39,17 +39,17 @@ public class ThreadFactoryUtil
         return ThreadFactoryUtil.instance;
     }
 
-    public virtual Thread getInstanceGameCanvasRunnable(GameCanvasRunnableInterface runnable)
+    public virtual global::org.allbinary.thread.NullThread getInstanceGameCanvasRunnable(GameCanvasRunnableInterface runnable)
     {
         return this.getInstanceType(runnable, runnable.getType());
     }
 
-    public virtual Thread getInstanceForRunnable(ABRunnable runnable)
+    public virtual global::org.allbinary.thread.NullThread getInstanceForRunnable(ABRunnable runnable)
     {
         return this.getInstanceType(runnable, runnable.getType());
     }
 
-    private Thread getInstanceType(global::java.lang.Runnable runnable, int type)
+    private global::org.allbinary.thread.NullThread getInstanceType(global::java.lang.Runnable runnable, int type)
     {
         CommonStrings commonStrings = CommonStrings.getInstance();
         if (J2MEUtil.isHTML()) {
@@ -64,12 +64,12 @@ public class ThreadFactoryUtil
                 primaryThreadPool.runTask(runnable);
             }
         }
-        Thread thread = new Thread(runnable, runnable.ToString());
+        global::org.allbinary.thread.NullThread thread = new global::org.allbinary.thread.NullThread(runnable, runnable.ToString());
         this.logUtil.putF(thread.ToString(), this, commonStrings.CONSTRUCTOR);
         return thread;
     }
 
-    public virtual void start(Thread thread)
+    public virtual void start(global::org.allbinary.thread.NullThread thread)
     {
         thread.start();
     }

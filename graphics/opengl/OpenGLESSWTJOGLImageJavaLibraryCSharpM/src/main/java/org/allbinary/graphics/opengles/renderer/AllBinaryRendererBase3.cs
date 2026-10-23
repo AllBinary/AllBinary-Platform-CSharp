@@ -28,7 +28,7 @@ public class AllBinaryRendererBase3
 {
     public readonly BasicArrayList list = new BasicArrayListD();
     // throws Exception
-    protected virtual void update(GL10 gl)
+    public virtual void update(GL10 gl)
     {
         while (this.list.size() > 0) {
             OpenGLESImage openGLESImage = ((OpenGLESImage) this.list.removeAt(0));

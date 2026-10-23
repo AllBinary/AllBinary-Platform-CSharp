@@ -22,7 +22,7 @@ namespace org.allbinary.input.magnetic.field;
 
 public class AllBinaryMagneticFieldSensor : AllBinarySensor
 {
-    protected AllBinaryMagneticFieldSensor()
+    public AllBinaryMagneticFieldSensor()
     {
     }
 

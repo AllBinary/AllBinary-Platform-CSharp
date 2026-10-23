@@ -33,9 +33,9 @@ public class LicenseTypeFactory
     public readonly LicenseType NORMAL = new LicenseType("Normal");
     public virtual LicenseType getInstance(string name)
     {
-        if (this.DEMO.getName().compareTo(name) == 0) {
+        if (string.CompareOrdinal(this.DEMO.getName(), name) == 0) {
             return this.DEMO;
-        } else if (this.NORMAL.getName().compareTo(name) == 0) {
+        } else if (string.CompareOrdinal(this.NORMAL.getName(), name) == 0) {
             return this.NORMAL;
         }
         return this.UNKNOWN;

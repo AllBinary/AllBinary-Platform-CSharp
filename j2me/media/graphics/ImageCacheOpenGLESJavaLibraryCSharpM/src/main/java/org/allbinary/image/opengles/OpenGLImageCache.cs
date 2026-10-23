@@ -64,7 +64,7 @@ public class OpenGLImageCache : ImageCache
     }
 
     // throws Exception
-    protected override Image createImage(string caller, int width, int height)
+    public override Image createImage(string caller, int width, int height)
     {
         int textureSize = width;
         if (height > width) {
@@ -86,7 +86,7 @@ public class OpenGLImageCache : ImageCache
     }
 
     // throws Exception
-    protected override Image createImageFromInputStream(object key, InputStream inputStream)
+    public override Image createImageFromInputStream(object key, InputStream inputStream)
     {
         Image cachedImage = this.imageCache.getWithKey(key);
         Image image = this.preResourceImageUtil.encapsulate(cachedImage);

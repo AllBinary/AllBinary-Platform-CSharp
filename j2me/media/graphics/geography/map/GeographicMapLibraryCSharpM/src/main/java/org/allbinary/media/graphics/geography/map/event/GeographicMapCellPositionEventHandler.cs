@@ -101,7 +101,7 @@ public class GeographicMapCellPositionEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         GeographicMapCellPositionEventListenerInterface geographicMapCellPositionEventListenerInterface = (((GeographicMapCellPositionEventListenerInterface) eventListenerInterface));
         geographicMapCellPositionEventListenerInterface.onGeographicMapCellPositionEvent(((GeographicMapCellPositionEvent) eventObject));

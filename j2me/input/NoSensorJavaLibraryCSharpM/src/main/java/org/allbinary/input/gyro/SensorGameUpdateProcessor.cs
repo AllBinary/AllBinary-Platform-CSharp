@@ -24,7 +24,7 @@ namespace org.allbinary.input.gyro;
 public class SensorGameUpdateProcessor
 {
     private AllBinarySensor inputSensor = NoAllBinarySensor.getInstance();
-    protected virtual void setInputSensor(AllBinarySensor inputSensor)
+    public virtual void setInputSensor(AllBinarySensor inputSensor)
     {
         this.inputSensor = inputSensor;
     }
@@ -53,7 +53,7 @@ public class SensorGameUpdateProcessor
         }
     }
 
-    protected virtual void setNoSensors()
+    public virtual void setNoSensors()
     {
         this.setInputSensor(NoAllBinarySensor.getInstance());
     }

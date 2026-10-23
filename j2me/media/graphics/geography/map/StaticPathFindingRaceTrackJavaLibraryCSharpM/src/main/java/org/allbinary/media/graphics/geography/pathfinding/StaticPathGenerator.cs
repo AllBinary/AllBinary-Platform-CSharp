@@ -38,7 +38,7 @@ public class StaticPathGenerator : PathGeneratorInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly BasicArrayListUtil basicArrayListUtil = BasicArrayListUtil.getInstance();
-    protected StaticPathGenerator()
+    public StaticPathGenerator()
     {
         PreLogUtil.put("Using Static Path Finding", this, CommonStrings.getInstance().CONSTRUCTOR);
     }

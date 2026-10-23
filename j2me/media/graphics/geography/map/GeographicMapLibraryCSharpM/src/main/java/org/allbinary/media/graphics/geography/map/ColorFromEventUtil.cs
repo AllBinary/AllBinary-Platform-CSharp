@@ -46,7 +46,7 @@ public class ColorFromEventUtil
 
     public ColorFromEventUtil()
     {
-        this.COLOR_INT = ((int) this.YELLOW);
+        this.COLOR_INT = this.YELLOW.intValue();
     }
 
 }

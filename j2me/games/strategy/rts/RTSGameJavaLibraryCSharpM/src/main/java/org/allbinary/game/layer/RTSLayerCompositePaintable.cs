@@ -55,22 +55,22 @@ public class RTSLayerCompositePaintable : Paintable
         graphics.drawString(this.getUpgradeCost(), this.upgradableRTSLayerHudPaintable.textX, this.upgradableRTSLayerHudPaintable.costY, 0);
     }
 
-    protected virtual void setUpgradeCost(string upgradeCost)
+    public virtual void setUpgradeCost(string upgradeCost)
     {
         this.upgradeCost = upgradeCost;
     }
 
-    protected virtual string getUpgradeCost()
+    public virtual string getUpgradeCost()
     {
         return this.upgradeCost;
     }
 
-    protected virtual void setDownGradeCost(string downGradeCost)
+    public virtual void setDownGradeCost(string downGradeCost)
     {
         this.downGradeCost = downGradeCost;
     }
 
-    protected virtual string getDownGradeCost()
+    public virtual string getDownGradeCost()
     {
         return this.downGradeCost;
     }

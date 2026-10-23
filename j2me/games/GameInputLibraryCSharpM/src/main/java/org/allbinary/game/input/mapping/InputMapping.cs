@@ -35,7 +35,7 @@ public class InputMapping
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private readonly ABHashtable<object, object> hashtable = StdUtil.getInstance().createHashtable();
     private readonly BasicArrayList mappedList = new BasicArrayListD();
-    protected InputMapping()
+    public InputMapping()
     {
     }
 
@@ -44,17 +44,17 @@ public class InputMapping
         return this.hashtable.size();
     }
 
-    protected virtual bool isDefaultNew()
+    public virtual bool isDefaultNew()
     {
         return false;
     }
 
-    protected virtual InputToGameKeyMapping getDefault()
+    public virtual InputToGameKeyMapping getDefault()
     {
         return InputToGameKeyMapping.getNullInstance();
     }
 
-    protected virtual void removeAll()
+    public virtual void removeAll()
     {
         this.hashtable.clear();
         this.mappedList.clear();

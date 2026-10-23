@@ -74,7 +74,7 @@ public class UnitWaypointBehavior2 : UnitWaypointBehavior
         this.waypointPathRunnable = (J2MEUtil.isHTML() ? new MultipassWaypointPathRunnable() : new WaypointPathRunnable());
     }
 
-    protected override void initRange(int weaponRange)
+    public override void initRange(int weaponRange)
     {
         base.initRange(weaponRange);
         this.closeRange = weaponRange;
@@ -214,7 +214,7 @@ public class UnitWaypointBehavior2 : UnitWaypointBehavior
     }
 
     // throws Exception
-    protected override void setGeographicMapCellHistoryPath(BasicArrayList geographicMapCellPositionBasicArrayList)
+    public override void setGeographicMapCellHistoryPath(BasicArrayList geographicMapCellPositionBasicArrayList)
     {
         this.setCurrentPathGeographicMapCellPosition(SimpleGeographicMapCellPositionFactory.NULL_GEOGRAPHIC_MAP_CELL_POSITION);
         this.nextUnvisitedPathGeographicMapCellPosition = SimpleGeographicMapCellPositionFactory.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
@@ -470,7 +470,7 @@ public class UnitWaypointBehavior2 : UnitWaypointBehavior
     }
 
     // throws Exception
-    protected override void addWaypointFromUser(AdvancedRTSGameLayer advancedRTSGameLayer)
+    public override void addWaypointFromUser(AdvancedRTSGameLayer advancedRTSGameLayer)
     {
         if (advancedRTSGameLayer.isDestroyed()) {
             throw new Exception("Trying to add a dead: " + advancedRTSGameLayer);

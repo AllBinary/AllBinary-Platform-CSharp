@@ -115,12 +115,12 @@ public class InputAutomationRobotBundleActivator : BundleActivator
         this.removeRobots(context);
     }
 
-    protected virtual object getServiceFactory()
+    public virtual object getServiceFactory()
     {
         return this.serviceFactory;
     }
 
-    protected virtual void setServiceFactory(ServiceFactory serviceObject)
+    public virtual void setServiceFactory(ServiceFactory serviceObject)
     {
         this.serviceFactory = serviceObject;
     }

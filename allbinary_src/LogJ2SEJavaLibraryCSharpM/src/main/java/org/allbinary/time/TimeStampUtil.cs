@@ -31,7 +31,7 @@ public class TimeStampUtil
         return TimeStampUtil.instance;
     }
 
-    private readonly SimpleDateFormat simpleDataFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+    private readonly string simpleDataFormat = "yyyy-MM-dd HH:mm:ss.fff";
     private TimeStampUtil()
     {
     }
@@ -40,7 +40,7 @@ public class TimeStampUtil
     {
         Calendar calendar = Calendar.getInstance();
         Date date = calendar.getTime();
-        return this.simpleDataFormat.format(date);
+        return global::System.DateTimeOffset.FromUnixTimeMilliseconds((date).getTime()).LocalDateTime.ToString(this.simpleDataFormat, global::System.Globalization.CultureInfo.InvariantCulture);
     }
 
 }

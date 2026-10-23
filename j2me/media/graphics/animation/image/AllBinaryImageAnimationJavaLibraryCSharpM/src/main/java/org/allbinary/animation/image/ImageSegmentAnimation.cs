@@ -31,7 +31,7 @@ public class ImageSegmentAnimation : ImageAnimation
     private int drawHeight;
     private CircularIndexUtil circularIndexUtil;
     private int[] sequenceArray;
-    protected ImageSegmentAnimation(Image image, int[] sequenceArray, AnimationBehavior animationBehavior) : base(image, animationBehavior)
+    public ImageSegmentAnimation(Image image, int[] sequenceArray, AnimationBehavior animationBehavior) : base(image, animationBehavior)
     {
         // base(image, animationBehavior) is called from the constructor declaration
         this.startX = 0;

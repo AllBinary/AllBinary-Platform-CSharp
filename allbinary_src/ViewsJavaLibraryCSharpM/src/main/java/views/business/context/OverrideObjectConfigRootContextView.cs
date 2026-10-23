@@ -57,9 +57,9 @@ public class OverrideObjectConfigRootContextView : HttpStoreComponentView
             stringBuffer.append(this.getTransformInfoInterface().getStoreName());
             stringBuffer.append(CommonSeps.getInstance().SPACE);
             string nameStart = stringBuffer.ToString();
-            if (this.getTransformInfoInterface().getName().indexOf(GeneratorTransformInfoData.NAME) > 0) {
+            if (this.getTransformInfoInterface().getName().IndexOf(GeneratorTransformInfoData.NAME) > 0) {
                 rootTransformInfoInterface.setName(nameStart + GeneratorTransformInfoData.NAME);
-            } else if (this.getTransformInfoInterface().getName().indexOf(RootTransformInfoData.NAME) > 0) {
+            } else if (this.getTransformInfoInterface().getName().IndexOf(RootTransformInfoData.NAME) > 0) {
                 rootTransformInfoInterface.setName(nameStart + RootTransformInfoData.NAME);
             } else {
                 throw new Exception("Override Currently Not Supported");

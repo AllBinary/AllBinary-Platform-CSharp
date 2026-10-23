@@ -30,12 +30,12 @@ public class AutoCompoundRotationAnimationInterfaceFactory : CompoundAnimationIn
         // base(basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory) is called from the constructor declaration
     }
 
-    protected override Animation[] createArray(int size)
+    public override Animation[] createArray(int size)
     {
         return new RotationAnimation[size];
     }
 
-    protected override Animation createAnimation(Animation[] animationInterfaceArray)
+    public override Animation createAnimation(Animation[] animationInterfaceArray)
     {
         return new AutoCompoundRotationAnimation(((RotationAnimation[]) animationInterfaceArray), this.animationBehaviorFactory.getOrCreateInstance());
     }

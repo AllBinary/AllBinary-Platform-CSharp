@@ -84,7 +84,7 @@ public class TerrainEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         TerrainEventListenerInterface terrainEventListenerInterface = ((TerrainEventListenerInterface) eventListenerInterface);
         terrainEventListenerInterface.onTerrainEvent(((TerrainEvent) eventObject));

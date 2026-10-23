@@ -73,7 +73,7 @@ public class BasicEmailInfo
     }
 
     // throws Exception
-    protected virtual void init()
+    public virtual void init()
     {
         throw new SystemException();
     }

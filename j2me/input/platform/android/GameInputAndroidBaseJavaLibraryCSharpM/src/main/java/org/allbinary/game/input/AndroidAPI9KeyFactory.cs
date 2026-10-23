@@ -18,7 +18,7 @@ public class AndroidAPI9KeyFactory : AndroidKeyFactory
         return ((AndroidAPI9KeyFactory) AndroidAPI9KeyFactory.instance);
     }
 
-    protected AndroidAPI9KeyFactory()
+    public AndroidAPI9KeyFactory()
     {
         this.KEYCODE_BUTTON_L1 = new AndroidGameKey(KeyEvent.KEYCODE_BUTTON_L1, "BUTTON L1");
         this.KEYCODE_BUTTON_R1 = new AndroidGameKey(KeyEvent.KEYCODE_BUTTON_R1, "BUTTON R1");

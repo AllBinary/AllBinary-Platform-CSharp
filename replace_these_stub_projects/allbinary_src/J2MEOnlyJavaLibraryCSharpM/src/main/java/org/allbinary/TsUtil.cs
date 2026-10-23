@@ -86,7 +86,7 @@ public class TsUtil
 
     public virtual sbyte[] getByteArray(string @string)
     {
-        return System.Text.Encoding.UTF8.GetBytes(@string);
+        return System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(@string), value => unchecked((sbyte) value));
     }
 
     public virtual bool isItemListener(Displayable owner)

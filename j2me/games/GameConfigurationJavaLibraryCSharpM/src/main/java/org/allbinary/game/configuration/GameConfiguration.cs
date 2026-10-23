@@ -96,7 +96,7 @@ public class GameConfiguration
         this.defaultValue = defaultValue;
     }
 
-    protected virtual int? getDefaultValue()
+    public virtual int? getDefaultValue()
     {
         return this.defaultValue;
     }

@@ -38,7 +38,7 @@ public class GameSkillType
         return this.name;
     }
 
-    protected virtual void setName(string name)
+    public virtual void setName(string name)
     {
         this.name = name;
     }

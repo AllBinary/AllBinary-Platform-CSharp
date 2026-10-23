@@ -77,7 +77,7 @@ public class DestroyedEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         DestroyedEventListenerInterface destroyedEventListenerInterface = ((DestroyedEventListenerInterface) eventListenerInterface);
         destroyedEventListenerInterface.onDestroyed(((DestroyedEvent) eventObject));

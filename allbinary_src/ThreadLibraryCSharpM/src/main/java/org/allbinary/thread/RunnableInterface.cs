@@ -26,7 +26,7 @@ public interface RunnableInterface : global::java.lang.Runnable
     void setRunning(bool isRunning);
 
     // throws Exception
-    void setThread(Thread thread);
+    void setThread(global::org.allbinary.thread.NullThread thread);
 
 }
 

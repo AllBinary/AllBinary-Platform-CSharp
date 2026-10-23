@@ -23,7 +23,7 @@ namespace org.allbinary.layer;
 
 public class AllBinaryLayerCircularPool : BaseCircularPool
 {
-    protected AllBinaryLayerCircularPool()
+    public AllBinaryLayerCircularPool()
     {
     }
 

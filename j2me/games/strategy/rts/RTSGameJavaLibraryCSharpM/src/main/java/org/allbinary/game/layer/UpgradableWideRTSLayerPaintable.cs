@@ -42,12 +42,12 @@ public class UpgradableWideRTSLayerPaintable : RTSLayerCompositePaintable
         graphics.drawString(this.getCost(), this.upgradableRTSLayerHudPaintable.textX, this.upgradableRTSLayerHudPaintable.costY, 0);
     }
 
-    protected virtual void setCost(string cost)
+    public virtual void setCost(string cost)
     {
         this.cost = cost;
     }
 
-    protected virtual string getCost()
+    public virtual string getCost()
     {
         return this.cost;
     }

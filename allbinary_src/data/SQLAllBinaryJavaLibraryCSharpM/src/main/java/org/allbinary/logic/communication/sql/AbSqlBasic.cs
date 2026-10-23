@@ -113,7 +113,7 @@ public class AbSqlBasic
                 this.logUtil.put(this.SQL_CONNECTION_RETRYING, this, METHOD_CREATE_CONNECTION, se);
             }
             try {
-                Thread.currentThread().sleep(2000);
+                global::org.allbinary.thread.NullThread.currentThread().sleep(2000);
                 if (this.connectAttemptCounter < 10) {
                     this.connectAttemptCounter++;
                     this.initialize();
@@ -131,7 +131,7 @@ public class AbSqlBasic
         try {
             {
                 try {
-                    ClassLoader loader = Thread.currentThread().getContextClassLoader();
+                    ClassLoader loader = global::org.allbinary.thread.NullThread.currentThread().getContextClassLoader();
                     Type jdbcDriverClass = loader.loadClass(this.getDatabaseConnectionInfoInterface().getJdbcDriver());
                     jdbcDriverClass.newInstance();
                 } catch (Exception e) {

@@ -28,7 +28,7 @@ namespace org.allbinary.thread;
 public class ThreadPool
 {
     private static readonly string ROOT_NAME = "-PooledThread-";
-    public static readonly int NORMAL_PRIORITY = Thread.NORM_PRIORITY;
+    public static readonly int NORMAL_PRIORITY = global::org.allbinary.thread.NullThread.NORM_PRIORITY;
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     public readonly NullRunnable NULL_RUNNABLE = NullRunnable.getInstance();
@@ -110,7 +110,7 @@ public class ThreadPool
     }
 
     // throws InterruptedException
-    protected virtual global::java.lang.Runnable getTask()
+    public virtual global::java.lang.Runnable getTask()
     {
         lock (this) {
             while (this.taskQueue.size() == 0) {
@@ -166,11 +166,11 @@ public class ThreadPool
         return false;
     }
 
-    protected virtual void threadStarted()
+    public virtual void threadStarted()
     {
     }
 
-    protected virtual void threadStopped()
+    public virtual void threadStopped()
     {
         if (this.numThreads == 1) {
             this.isAlive = false;
@@ -178,11 +178,11 @@ public class ThreadPool
         }
     }
 
-    protected virtual void startTask(global::java.lang.Runnable task)
+    public virtual void startTask(global::java.lang.Runnable task)
     {
     }
 
-    protected virtual void completedTask(global::java.lang.Runnable task)
+    public virtual void completedTask(global::java.lang.Runnable task)
     {
     }
 

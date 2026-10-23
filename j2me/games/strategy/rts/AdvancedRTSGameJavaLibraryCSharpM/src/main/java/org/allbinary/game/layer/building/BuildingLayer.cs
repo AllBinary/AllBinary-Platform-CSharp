@@ -103,7 +103,7 @@ public class BuildingLayer : AdvancedRTSGameLayer, RotationAnimationInterfaceCom
     }
 
     public bool local = false;
-    protected override void initVisibility(RTSPlayerLayerInterface rtsPlayerLayerInterface)
+    public override void initVisibility(RTSPlayerLayerInterface rtsPlayerLayerInterface)
     {
         AdvancedRTSPlayerLayerInterface advancedRTSPlayerLayerInterface = ((AdvancedRTSPlayerLayerInterface) rtsPlayerLayerInterface);
         if (advancedRTSPlayerLayerInterface.isLocalPlayer()) {
@@ -211,7 +211,7 @@ public class BuildingLayer : AdvancedRTSGameLayer, RotationAnimationInterfaceCom
         return this.buildingLevelCost;
     }
 
-    protected virtual void setBuildingLevelCost(int buildingLevelCost)
+    public virtual void setBuildingLevelCost(int buildingLevelCost)
     {
         this.buildingLevelCost = buildingLevelCost;
     }

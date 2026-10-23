@@ -27,7 +27,7 @@ public class GameFeatureCanvas : Canvas
     {
     }
 
-    protected override void paint(Graphics graphics)
+    public override void paint(Graphics graphics)
     {
     }
 

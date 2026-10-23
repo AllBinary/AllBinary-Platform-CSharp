@@ -61,7 +61,7 @@ public class AbDatabaseManagement : AbSqlBean
     }
 
     // throws Exception
-    protected virtual bool addDbUser(string hostName, string db, string userName, string password)
+    public virtual bool addDbUser(string hostName, string db, string userName, string password)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.GRANT_ALL);
@@ -80,7 +80,7 @@ public class AbDatabaseManagement : AbSqlBean
         return true;
     }
 
-    protected virtual bool addDbUser(string db, string userName, string password)
+    public virtual bool addDbUser(string db, string userName, string password)
     {
         try {
             this.addDbUser(this.AT_LOCALHOST, db, userName, password);
@@ -95,7 +95,7 @@ public class AbDatabaseManagement : AbSqlBean
         }
     }
 
-    protected virtual bool? addDb(string db)
+    public virtual bool? addDb(string db)
     {
         try {
             string sqlStatement = this.sqlStrings.CREATE_DATABASE + db;

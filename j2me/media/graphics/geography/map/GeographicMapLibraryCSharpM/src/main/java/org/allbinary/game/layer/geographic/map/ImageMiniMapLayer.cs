@@ -35,7 +35,7 @@ public class ImageMiniMapLayer : MiniMapLayer
     }
 
     // throws Exception
-    protected override void init()
+    public override void init()
     {
         int aWidth = this.allBinaryTiledLayer.getWidth();
         int aHeight = this.allBinaryTiledLayer.getHeight();

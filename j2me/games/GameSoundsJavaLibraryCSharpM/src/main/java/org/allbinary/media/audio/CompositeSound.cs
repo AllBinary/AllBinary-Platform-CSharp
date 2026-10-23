@@ -21,7 +21,7 @@ namespace org.allbinary.media.audio;
 
 public class CompositeSound : Sound
 {
-    protected CompositeSound(string resource) : base(resource)
+    public CompositeSound(string resource) : base(resource)
     {
         // base(resource) is called from the constructor declaration
     }

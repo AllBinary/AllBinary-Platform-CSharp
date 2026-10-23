@@ -43,7 +43,7 @@ public class PreGameLockablePaintable : LockablePaintable
         }
     }
 
-    protected virtual ScrollCurrentSelectionForm getPaintableForm()
+    public virtual ScrollCurrentSelectionForm getPaintableForm()
     {
         return this.paintableForm;
     }

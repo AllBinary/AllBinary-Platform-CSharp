@@ -46,12 +46,12 @@ public class CompoundAnimationInterfaceFactory : AnimationInterfaceFactoryInterf
         return this.createAnimation(animationInterfaceArray);
     }
 
-    protected virtual Animation[] createArray(int size)
+    public virtual Animation[] createArray(int size)
     {
         return NullAnimationFactory.getFactoryInstance().EMPTY_ARRAY;
     }
 
-    protected virtual Animation createAnimation(Animation[] animationInterfaceArray)
+    public virtual Animation createAnimation(Animation[] animationInterfaceArray)
     {
         return NullAnimationFactory.getFactoryInstance().getInstance(0);
     }

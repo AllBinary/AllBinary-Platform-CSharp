@@ -116,7 +116,7 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
         this.document.appendChild(objectConfigNode);
     }
 
-    protected virtual TransformInfoInterface getTransformInfoInterface()
+    public virtual TransformInfoInterface getTransformInfoInterface()
     {
         return this.ownerTransformInfoInterface;
     }
@@ -127,7 +127,7 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
         return this.document;
     }
 
-    protected virtual void setDocument(Document document)
+    public virtual void setDocument(Document document)
     {
         this.document = document;
     }
@@ -141,7 +141,7 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
             Node viewNode = viewNodeList.item(index);
             NamedNodeMap viewAttributes = viewNode.getAttributes();
             Attr attrNode = ((Attr) viewAttributes.getNamedItem(TransformInfoData.getInstance().NAME));
-            if (transformInfoInterface.getName().compareTo(attrNode.getValue()) == 0) {
+            if (string.CompareOrdinal(transformInfoInterface.getName(), attrNode.getValue()) == 0) {
                 return true;
             }
         }

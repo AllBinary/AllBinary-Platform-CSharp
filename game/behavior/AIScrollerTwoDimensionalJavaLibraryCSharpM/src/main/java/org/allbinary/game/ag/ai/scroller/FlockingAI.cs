@@ -37,7 +37,7 @@ public class FlockingAI : BasicAI
     {
         // base(ownerLayerInterface, gameInput) is called from the constructor declaration
         int? allowedDistance = ((int?) hashtable.get(BasePatrolAI.MAX_DISTANCE));
-        this.allowedDistance = ((int) allowedDistance);
+        this.allowedDistance = allowedDistance.intValue();
     }
 
     // throws Exception

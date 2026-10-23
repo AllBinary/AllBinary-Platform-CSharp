@@ -47,7 +47,7 @@ public class TransformTag : TransformInfoTag
     }
 
     // throws Exception
-    protected virtual string view()
+    public virtual string view()
     {
         try {
             string result = ((string) this.getHelper().GetType().getMethod("view", null).invoke(this.getHelper(), null));

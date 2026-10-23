@@ -48,7 +48,7 @@ public class RepaintBehavior
         if (features.isFeature(openGLFeatureFactory.OPENGL)) {
             DisplayInfoSingleton.getInstance().process();
         } else {
-            Thread thread = new Thread(new ARunnable()
+            global::org.allbinary.thread.NullThread thread = new global::org.allbinary.thread.NullThread(new ARunnable()
 #if JAVA_ANONYMOUS_CLASS_BODY
                 public virtual void run()
                 {

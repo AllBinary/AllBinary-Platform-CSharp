@@ -48,7 +48,7 @@ public class RaceTrackData
         this.cellTypeIdToGeographicMapCellTypeArray = cellTypeIdToGeographicMapCellTypeArray;
     }
 
-    protected virtual void setMapArray(int[][] mapArray)
+    public virtual void setMapArray(int[][] mapArray)
     {
         this.mapArray = mapArray;
     }
@@ -58,7 +58,7 @@ public class RaceTrackData
         return this.mapArray;
     }
 
-    protected virtual void setCellTypeIdToGeographicMapCellTypeArray(int[] cellTypeIdToGeographicMapCellTypeArray)
+    public virtual void setCellTypeIdToGeographicMapCellTypeArray(int[] cellTypeIdToGeographicMapCellTypeArray)
     {
         this.cellTypeIdToGeographicMapCellTypeArray = cellTypeIdToGeographicMapCellTypeArray;
     }

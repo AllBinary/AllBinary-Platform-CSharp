@@ -54,7 +54,7 @@ public class SavedCaptureImagesWorker : BasicEventHandler, CaptureWorkerInterfac
     }
 
     // throws Exception
-    public virtual void setThread(Thread thread)
+    public virtual void setThread(global::org.allbinary.thread.NullThread thread)
     {
     }
 

@@ -72,7 +72,7 @@ public class CompleteMotionGestureInputEventHandler : BasicEventHandler
     }
 
     // throws Exception
-    protected override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
+    public override void process(AllBinaryEventObject eventObject, EventListenerInterface eventListenerInterface)
     {
         CompleteMotionGestureInputEventListenerInterface completeMotionGestureInputEventListenerInterface = ((CompleteMotionGestureInputEventListenerInterface) eventListenerInterface);
         completeMotionGestureInputEventListenerInterface.onCompleteMotionGestureInputEvent(((CompleteMotionGestureInputEvent) eventObject));

@@ -58,7 +58,7 @@ public class GeologicalResource
         return this.total;
     }
 
-    protected virtual void setTotal(int total)
+    public virtual void setTotal(int total)
     {
         this.total = total;
     }

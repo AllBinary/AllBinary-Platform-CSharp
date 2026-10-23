@@ -26,7 +26,7 @@ public class HighScoreCommandsBaseFactory
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly Command[] HIGH_SCORE_COMMANDS;
-    protected HighScoreCommandsBaseFactory(Command[] HIGH_SCORE_COMMANDS)
+    public HighScoreCommandsBaseFactory(Command[] HIGH_SCORE_COMMANDS)
     {
         this.HIGH_SCORE_COMMANDS = HIGH_SCORE_COMMANDS;
     }

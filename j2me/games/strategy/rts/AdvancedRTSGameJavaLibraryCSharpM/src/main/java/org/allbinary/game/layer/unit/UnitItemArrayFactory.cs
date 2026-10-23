@@ -42,13 +42,13 @@ public class UnitItemArrayFactory : ItemArraySingletonFactoryInterface
     private BasicColor basicColor = BasicColorFactory.getInstance().WHITE;
     private static readonly ABCustomItem[] ITEMS = CustomItemUtil.getInstance().CUSTOM_ITEM_ARRAY;
     private readonly BasicGameResources[] resources;
-    protected UnitItemArrayFactory(BasicGameResources[] resources)
+    public UnitItemArrayFactory(BasicGameResources[] resources)
     {
         this.resources = resources;
     }
 
     // throws Exception
-    protected virtual ABCustomItem createFlagItem(FlagGameResources flagResources, LayerInterfaceFactoryInterface layerInterfaceFactoryInterface)
+    public virtual ABCustomItem createFlagItem(FlagGameResources flagResources, LayerInterfaceFactoryInterface layerInterfaceFactoryInterface)
     {
         string name = flagResources.NAME;
         int index = name.IndexOf(this.commonSeps.SPACE);
@@ -59,7 +59,7 @@ public class UnitItemArrayFactory : ItemArraySingletonFactoryInterface
     }
 
     // throws Exception
-    protected virtual ABCustomItem createNamedFlagItem(FlagGameResources flagResources, string name, LayerInterfaceFactoryInterface layerInterfaceFactoryInterface)
+    public virtual ABCustomItem createNamedFlagItem(FlagGameResources flagResources, string name, LayerInterfaceFactoryInterface layerInterfaceFactoryInterface)
     {
         ImageCache IMAGE_CACHE = GameFeatureImageCacheFactory.getInstance();
         Image image = IMAGE_CACHE.getWithKey(flagResources.RESOURCE_ICON);

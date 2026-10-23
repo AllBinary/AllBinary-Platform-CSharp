@@ -55,7 +55,7 @@ public class CommandTextItemArrayFactory
             command = ((Command) vectorUtil.elementAt(vector, index));
             if (command.getPriority() < priorityLimit) {
                 bool? aBoolean = ((bool?) this.visitorInterface.visit(command));
-                if (aBoolean) {
+                if (aBoolean.Value) {
                     textItem = new CommandTextItem(command, ImageItem.LAYOUT_DEFAULT, StringUtil.getInstance().EMPTY_STRING, backgroundBasicColor, foregroundBasicColor);
                     this.list.add(textItem);
                 }

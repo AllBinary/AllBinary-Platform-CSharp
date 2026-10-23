@@ -40,12 +40,12 @@ public class NumberTextFieldItemValidator : ValidatorBase
         this.maxChars = maxChars;
     }
 
-    protected virtual bool? isNumberValid(int? value)
+    public virtual bool? isNumberValid(int? value)
     {
         return BooleanFactory.getInstance().TRUE;
     }
 
-    protected virtual BasicArrayList toNumberVector(int? value)
+    public virtual BasicArrayList toNumberVector(int? value)
     {
         return new BasicArrayListD();
     }

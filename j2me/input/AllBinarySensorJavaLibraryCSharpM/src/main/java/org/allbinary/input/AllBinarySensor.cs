@@ -28,7 +28,7 @@ public class AllBinarySensor : AllBinarySensorListener
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private static int max = 100;
-    protected AllBinarySensor()
+    public AllBinarySensor()
     {
     }
 

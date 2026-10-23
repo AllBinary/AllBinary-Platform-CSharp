@@ -46,7 +46,7 @@ public class SimultaneousCompoundIndexAnimationInterfaceFactory : AnimationInter
         return this.getOrCreate(animationInterfaceArray);
     }
 
-    protected virtual Animation getOrCreate(IndexedAnimation[] animationInterfaceArray)
+    public virtual Animation getOrCreate(IndexedAnimation[] animationInterfaceArray)
     {
         return new SimultaneousCompoundIndexAnimation(animationInterfaceArray, this.animationBehaviorFactory.getOrCreateInstance());
     }

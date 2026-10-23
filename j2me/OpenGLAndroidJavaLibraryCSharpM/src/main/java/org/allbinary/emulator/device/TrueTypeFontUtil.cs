@@ -89,7 +89,7 @@ public class TrueTypeFontUtil : TrueTypeFontUtilBase
             paint.setTypeface(typeface);
             paint.setTextSize(((float) this.realFontSize));
             paint.setAlpha(((int) basicColor.alpha));
-            paint.setColor(((int) basicColor));
+            paint.setColor(basicColor.intValue());
             int biggestHeight = 0;
             Rect bounds = new Rect();
             int x = 0;

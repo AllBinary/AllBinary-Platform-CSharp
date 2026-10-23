@@ -36,7 +36,7 @@ public class AbFileInputStream : FileInputStream
         // base(AbFileNativeUtil.get(file)) is called from the constructor declaration
     }
 
-    protected AbFileInputStream(File file) : base(file)
+    public AbFileInputStream(File file) : base(file)
     {
         // base(file) is called from the constructor declaration
     }

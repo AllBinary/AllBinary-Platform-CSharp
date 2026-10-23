@@ -137,7 +137,7 @@ public class CommandFormInputProcessor : BasicMenuInputProcessor
     }
 
     // throws Exception
-    protected virtual void processMotionInput(MotionGestureEvent motionGestureEvent)
+    public virtual void processMotionInput(MotionGestureEvent motionGestureEvent)
     {
         TouchMotionGestureFactory touchMotionGestureFactory = TouchMotionGestureFactory.getInstance();
         MotionGestureInput motionGestureInput = motionGestureEvent.getMotionGesture();

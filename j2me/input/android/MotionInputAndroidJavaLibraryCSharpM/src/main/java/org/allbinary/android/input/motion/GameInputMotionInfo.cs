@@ -23,7 +23,7 @@ public class GameInputMotionInfo
 {
     public readonly int MAX_API;
     public readonly int MAX_POINTERS;
-    protected GameInputMotionInfo(int maxApi, int maxPointers)
+    public GameInputMotionInfo(int maxApi, int maxPointers)
     {
         this.MAX_API = maxApi;
         this.MAX_POINTERS = maxPointers;

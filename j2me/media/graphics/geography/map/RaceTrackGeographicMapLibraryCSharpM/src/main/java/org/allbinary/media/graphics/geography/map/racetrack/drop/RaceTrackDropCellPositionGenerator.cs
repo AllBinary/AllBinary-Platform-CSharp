@@ -45,7 +45,7 @@ public class RaceTrackDropCellPositionGenerator : BaseDropCellPositionGenerator
     private readonly int STRAIGHTAWAY = 4;
     public RaceTrackGeographicMapInterface raceTrackGeographicMap = NullRaceTrackGeographicMap.NULL_RACE_TRACK_GEOGRAPHIC_MAP;
     public GeographicMapCellTypeFactory raceTrackGeographicMapCellTypeFactory = GeographicMapCellTypeFactory.getInstance();
-    protected RaceTrackDropCellPositionGenerator()
+    public RaceTrackDropCellPositionGenerator()
     {
         this.timeDelayHelper = new TimeDelayHelper(10000);
     }
@@ -112,7 +112,7 @@ public class RaceTrackDropCellPositionGenerator : BaseDropCellPositionGenerator
     }
 
     // throws Exception
-    protected virtual void drop(AllBinaryLayerManager allBinaryLayerManager, int index)
+    public virtual void drop(AllBinaryLayerManager allBinaryLayerManager, int index)
     {
         throw new Exception(CommonStrings.getInstance().NOT_IMPLEMENTED);
     }

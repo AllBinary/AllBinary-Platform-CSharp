@@ -23,7 +23,7 @@ namespace org.allbinary.view;
 public class ViewPositionBase : GPoint
 {
     public static readonly ViewPositionBase NULL_VIEW_POSITION = new ViewPositionBase(0, 0, 0);
-    protected ViewPositionBase(int x, int y, int z) : base(x, y, z)
+    public ViewPositionBase(int x, int y, int z) : base(x, y, z)
     {
         // base(x, y, z) is called from the constructor declaration
     }

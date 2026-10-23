@@ -56,7 +56,7 @@ public class ImageCacheBase
         }
     }
 
-    protected virtual Image getImage(object resourceId)
+    public virtual Image getImage(object resourceId)
     {
         object imageCanBeNull = this.hashtable.get(resourceId);
         if (imageCanBeNull == null) {
@@ -74,7 +74,7 @@ public class ImageCacheBase
         this.logUtil.putF(new StringMaker().append("ImageCache: ").append(this.ToString()).ToString(), this, "releaseAll");
     }
 
-    protected virtual int getIndexWH(int width, int height)
+    public virtual int getIndexWH(int width, int height)
     {
         int foundIndex = -1;
         int size = this.widths.Length;
@@ -87,7 +87,7 @@ public class ImageCacheBase
         return foundIndex;
     }
 
-    protected virtual Image getFromAvailable(int foundIndex, int width, int height)
+    public virtual Image getFromAvailable(int foundIndex, int width, int height)
     {
         if (foundIndex != -1) {
             if (this.availableListOfList[foundIndex].size() > 0) {
@@ -111,13 +111,13 @@ public class ImageCacheBase
     }
 
     // throws Exception
-    protected virtual Image createImage(string caller, int width, int height)
+    public virtual Image createImage(string caller, int width, int height)
     {
         return this.imageFactory.createImage(caller, width, height);
     }
 
     // throws Exception
-    protected virtual Image createImageFromInputStream(object key, InputStream inputStream)
+    public virtual Image createImageFromInputStream(object key, InputStream inputStream)
     {
         return this.imageFactory.createImageFromInputStream(key, inputStream);
     }

@@ -39,7 +39,7 @@ public class AdminEmailInfo : BasicEmailInfo
     }
 
     // throws Exception
-    protected virtual void init()
+    public virtual void init()
     {
         AdminConfigurationInterface adminConfigurationInterface = ((AdminConfigurationInterface) new AdminConfiguration());
         ContextConfigurationInterface contextConfigurationInterface = adminConfigurationInterface.getContextConfigurationInterface();

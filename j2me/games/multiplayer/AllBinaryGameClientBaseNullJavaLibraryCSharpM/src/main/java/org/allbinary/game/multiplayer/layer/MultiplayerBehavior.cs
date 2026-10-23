@@ -23,7 +23,7 @@ namespace org.allbinary.game.multiplayer.layer;
 public class MultiplayerBehavior
 {
     public static readonly MultiplayerBehavior NULL_MULTIPLAYER_BEHAVIOR = new MultiplayerBehavior(StringUtil.getInstance().EMPTY_STRING);
-    protected MultiplayerBehavior(string username)
+    public MultiplayerBehavior(string username)
     {
     }
 

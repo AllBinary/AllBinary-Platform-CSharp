@@ -26,7 +26,7 @@ public class PickedUpLayerInterfaceFactory : PickedUpLayerInterfaceFactoryBase
     private readonly PickedUpLayerType pickedUpLayerType;
     private readonly IconLayer iconLayer;
     private readonly Animation animationInterface;
-    protected PickedUpLayerInterfaceFactory(PickedUpLayerType pickeUpLayerType, IconLayer iconLayer, Animation animationInterface)
+    public PickedUpLayerInterfaceFactory(PickedUpLayerType pickeUpLayerType, IconLayer iconLayer, Animation animationInterface)
     {
         this.pickedUpLayerType = pickeUpLayerType;
         this.animationInterface = animationInterface;

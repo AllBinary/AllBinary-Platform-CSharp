@@ -641,7 +641,7 @@ public class MyFrame : javax.swing.JFrame, FileJDialogListenerInterface, HashMap
             }
             this.jTabbedPane.addTab(newCanvasInterface.getName(), ((JPanel) newCanvasInterface));
             this.jTabbedPane.setSelectedComponent(((JPanel) newCanvasInterface));
-            Thread animationThread = new Thread(((global::java.lang.Runnable) newCanvasInterface));
+            global::org.allbinary.thread.NullThread animationThread = new global::org.allbinary.thread.NullThread(((global::java.lang.Runnable) newCanvasInterface));
             animationThread.start();
             this.updateSelectedWorkArea();
         } catch (Exception e) {

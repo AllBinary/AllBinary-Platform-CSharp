@@ -93,7 +93,7 @@ public class SelectedRTSLayersPlayerGameInput : PlayerGameInput
     }
 
     // throws Exception
-    protected virtual void upgrade()
+    public virtual void upgrade()
     {
         bool anyChanged = false;
         for (int index = this.selectedRTSLayersList.size() - 1; index >= 0; index--) {
@@ -124,7 +124,7 @@ public class SelectedRTSLayersPlayerGameInput : PlayerGameInput
     }
 
     // throws Exception
-    protected virtual void downgrade()
+    public virtual void downgrade()
     {
         bool anyChanged = false;
         for (int index = this.selectedRTSLayersList.size(); --index >= 0; ) {

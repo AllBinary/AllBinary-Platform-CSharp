@@ -46,7 +46,7 @@ public class CollidableUnitBehavior : CollidableRTSBehavior
     }
 
     // throws Exception
-    protected override void collideNone(CollidableCompositeLayer ownerLayer, CollidableCompositeLayer collidableInterfaceCompositeInterface)
+    public override void collideNone(CollidableCompositeLayer ownerLayer, CollidableCompositeLayer collidableInterfaceCompositeInterface)
     {
         this.chase(ownerLayer, collidableInterfaceCompositeInterface);
         AdvancedRTSGameLayer rtsLayer = ((AdvancedRTSGameLayer) collidableInterfaceCompositeInterface);
@@ -115,7 +115,7 @@ public class CollidableUnitBehavior : CollidableRTSBehavior
     }
 
     // throws Exception
-    protected virtual void collideUnit(CollidableCompositeLayer ownerLayer, UnitLayer unitLayer)
+    public virtual void collideUnit(CollidableCompositeLayer ownerLayer, UnitLayer unitLayer)
     {
         UnitLayer ownerUnitLayer = ((UnitLayer) ownerLayer);
         BasicArrayList partialPositionList = UnitLayer.getPartialpositionlist();

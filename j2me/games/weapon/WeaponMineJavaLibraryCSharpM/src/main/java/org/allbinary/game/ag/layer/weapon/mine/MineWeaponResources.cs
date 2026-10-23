@@ -35,7 +35,7 @@ public class MineWeaponResources : BasicGameResources
     public readonly string DROP_TEXT_RESOURCE = "/mine_drop_text_20_by_20.png";
     public readonly string DROP_RESOURCE = "/mine_drop_20_by_20.png";
     public readonly string DROP_ICON_RESOURCE = "/mine_drop_icon_20_by_20.png";
-    protected MineWeaponResources()
+    public MineWeaponResources()
     {
         string ROOT = "/mine";
         string SMALL = "_20_by_20.png";

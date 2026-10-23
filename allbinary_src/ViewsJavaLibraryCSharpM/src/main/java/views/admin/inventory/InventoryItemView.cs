@@ -131,7 +131,7 @@ public class InventoryItemView : HttpStoreComponentView, RequestMapInterface
     }
 
     // throws Exception
-    protected virtual void processImageFiles()
+    public virtual void processImageFiles()
     {
         Set<object> set = this.getRequestHashMap().keySet();
         object[] fieldNameArray = set.toArray();

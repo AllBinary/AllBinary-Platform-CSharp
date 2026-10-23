@@ -28,7 +28,7 @@ namespace org.allbinary.business.user.role;
 public class UserRoleB : UserRole
 {
     public static BasicArrayList roleVector = new BasicArrayListD();
-    protected UserRoleB(BasicUserRole aBasicUserRole, UserFactoryInterface aUserFactoryInterface) : base(aBasicUserRole, aUserFactoryInterface)
+    public UserRoleB(BasicUserRole aBasicUserRole, UserFactoryInterface aUserFactoryInterface) : base(aBasicUserRole, aUserFactoryInterface)
     {
         // base(aBasicUserRole, aUserFactoryInterface) is called from the constructor declaration
         UserRoleB.roleVector.add(this);

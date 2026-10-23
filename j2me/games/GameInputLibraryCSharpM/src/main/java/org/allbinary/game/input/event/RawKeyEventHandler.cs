@@ -97,7 +97,7 @@ public class RawKeyEventHandler
     }
 
     // throws Exception
-    protected virtual void process(int keyCode, int deviceId, bool repeated, RawKeyEventListener eventListenerInterface)
+    public virtual void process(int keyCode, int deviceId, bool repeated, RawKeyEventListener eventListenerInterface)
     {
         eventListenerInterface.onEventRaw(keyCode, deviceId, repeated);
     }

@@ -38,7 +38,7 @@ public class FullTouchButton : TouchButton
         // base(touchButtonInput, animationInterface, hintAnimationInterface, rawRectangle, cellPosition, xBorder, yBorder) is called from the constructor declaration
     }
 
-    protected override void updateRectangle()
+    public override void updateRectangle()
     {
         try {
             PointFactory pointFactory = PointFactory.getInstance();

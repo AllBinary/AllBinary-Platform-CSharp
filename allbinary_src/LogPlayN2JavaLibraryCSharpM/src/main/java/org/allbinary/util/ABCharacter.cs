@@ -24,7 +24,7 @@ public class ABCharacter
 {
     public static string toString(char ch)
     {
-        return Character.toString(ch);
+        return (ch).ToString();
     }
 
 }

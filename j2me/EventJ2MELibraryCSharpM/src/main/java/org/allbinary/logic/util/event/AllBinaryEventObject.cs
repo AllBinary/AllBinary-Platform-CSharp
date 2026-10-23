@@ -38,7 +38,7 @@ public class AllBinaryEventObject
         return this.source;
     }
 
-    protected virtual void setSource(object source)
+    public virtual void setSource(object source)
     {
         this.source = source;
     }

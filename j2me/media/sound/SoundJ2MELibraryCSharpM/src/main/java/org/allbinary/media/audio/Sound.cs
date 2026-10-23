@@ -26,7 +26,7 @@ public class Sound : SoundInterface, global::java.lang.Runnable
 {
     private string resource;
     public Player player = NoPlayer.NO_PLAYER;
-    protected Sound(string resource)
+    public Sound(string resource)
     {
         this.resource = resource;
     }

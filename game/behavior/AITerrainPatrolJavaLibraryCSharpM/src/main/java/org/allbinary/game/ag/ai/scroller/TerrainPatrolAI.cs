@@ -43,7 +43,7 @@ public class TerrainPatrolAI : PacePatrolAI
         this.terrainEventListener.onTerrainEvent(TerrainEventCircularStaticPool.getInstance().getNext(this.CLIFF));
     }
 
-    protected override void update()
+    public override void update()
     {
         base.update();
         this.changeDirectionIfCliffReached();

@@ -108,7 +108,7 @@ public class Layer
         this.logUtil.putF(commonStrings.NOT_IMPLEMENTED, this, canvasStrings.PAINT);
     }
 
-    protected virtual void setLayerWidth(int width)
+    public virtual void setLayerWidth(int width)
     {
         if (width < 0) {
             throw new ArgumentException();
@@ -116,7 +116,7 @@ public class Layer
         this.width = width;
     }
 
-    protected virtual void setLayerHeight(int height)
+    public virtual void setLayerHeight(int height)
     {
         if (height < 0) {
             throw new ArgumentException();

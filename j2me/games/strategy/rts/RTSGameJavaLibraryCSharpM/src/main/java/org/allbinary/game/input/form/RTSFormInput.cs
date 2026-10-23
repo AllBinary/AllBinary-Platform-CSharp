@@ -116,7 +116,7 @@ public class RTSFormInput
     }
 
     // throws Exception
-    protected virtual ABCustomItem getItemAt(RTSPlayerLayerInterface rtsPlayerLayerInterface, GPoint point)
+    public virtual ABCustomItem getItemAt(RTSPlayerLayerInterface rtsPlayerLayerInterface, GPoint point)
     {
         this.logUtil.putF(new StringMaker().append("Point: ").append(StringUtil.getInstance().toString(point)).ToString(), this, "getItemAt");
         ScrollSelectionForm scrollSelectionForm = rtsPlayerLayerInterface.getCurrentScrollSelectionForm();
@@ -124,7 +124,7 @@ public class RTSFormInput
     }
 
     // throws Exception
-    protected virtual int getIndexAt(RTSPlayerLayerInterface rtsPlayerLayerInterface, GPoint point)
+    public virtual int getIndexAt(RTSPlayerLayerInterface rtsPlayerLayerInterface, GPoint point)
     {
         this.logUtil.putF(new StringMaker().append("Point: ").append(StringUtil.getInstance().toString(point)).ToString(), this, "getItemAt");
         ScrollSelectionForm scrollSelectionForm = rtsPlayerLayerInterface.getCurrentScrollSelectionForm();
@@ -132,7 +132,7 @@ public class RTSFormInput
     }
 
     // throws Exception
-    protected virtual CollidableDestroyableDamageableLayer getInstance(AllBinaryLayerManager layerManager, ABCustomItem aItem, GeographicMapCellPosition geographicMapCellPosition)
+    public virtual CollidableDestroyableDamageableLayer getInstance(AllBinaryLayerManager layerManager, ABCustomItem aItem, GeographicMapCellPosition geographicMapCellPosition)
     {
         LayerInterfaceFactoryImageItem item = ((LayerInterfaceFactoryImageItem) aItem);
         LayerInterfaceFactoryInterface layerInterfaceFactoryInterface = item.getLayerInterfaceFactoryInterface();

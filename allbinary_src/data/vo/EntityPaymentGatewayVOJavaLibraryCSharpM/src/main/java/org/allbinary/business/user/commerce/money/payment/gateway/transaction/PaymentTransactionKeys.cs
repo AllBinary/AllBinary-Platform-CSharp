@@ -22,7 +22,7 @@ namespace org.allbinary.business.user.commerce.money.payment.gateway.transaction
 public class PaymentTransactionKeys
 {
     private string key;
-    protected PaymentTransactionKeys(string value)
+    public PaymentTransactionKeys(string value)
     {
         this.key = value;
     }

@@ -104,7 +104,7 @@ public class ScrollMapPlayerGameInput : PlayerGameInput
     }
 
     // throws Exception
-    protected virtual void up()
+    public virtual void up()
     {
         int y = this.geographicMapInterface.getAllBinaryTiledLayer().getYP() - 10;
         if (this.keepOnMapMinY(y)) {
@@ -113,7 +113,7 @@ public class ScrollMapPlayerGameInput : PlayerGameInput
     }
 
     // throws Exception
-    protected virtual void down()
+    public virtual void down()
     {
         int y = -this.geographicMapInterface.getAllBinaryTiledLayer().getYP() + 10;
         if (this.keepOnMapMaxY(y)) {
@@ -122,7 +122,7 @@ public class ScrollMapPlayerGameInput : PlayerGameInput
     }
 
     // throws Exception
-    protected virtual void right()
+    public virtual void right()
     {
         int x = this.geographicMapInterface.getAllBinaryTiledLayer().getYP() + 10;
         if (this.keepOnMapMinX(x)) {
@@ -131,7 +131,7 @@ public class ScrollMapPlayerGameInput : PlayerGameInput
     }
 
     // throws Exception
-    protected virtual void left()
+    public virtual void left()
     {
         int x = -this.geographicMapInterface.getAllBinaryTiledLayer().getYP() - 10;
         if (this.keepOnMapMaxX(x)) {

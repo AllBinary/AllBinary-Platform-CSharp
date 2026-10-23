@@ -37,7 +37,7 @@ public class GeneratorStoreFrontContextView : HttpStoreComponentView
     }
 
     // throws Exception
-    protected virtual string view(string group)
+    public virtual string view(string group)
     {
         string result = TransformsGeneratorUtil.getInstance().generateComponentsFromObjectConfig(this.abeClientInformation, this.getTransformInfoInterface(), group);
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPEXTRAOUTPUT)) {

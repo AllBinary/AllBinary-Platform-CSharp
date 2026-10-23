@@ -88,7 +88,7 @@ public class ImageArrayAnimation : IndexedAnimation
         return this.imageArray;
     }
 
-    protected virtual void setImageArray(Image[] imageArray)
+    public virtual void setImageArray(Image[] imageArray)
     {
         this.imageArray = imageArray;
         this.totalFrames = imageArray.Length;
