@@ -31,7 +31,7 @@
         NoGyroSensorLibrary
 
         -->
-        <module>../../android/AndroidUtilJavaLibraryCSharpM</module>
+        <!--<module>../../android/AndroidUtilJavaLibraryCSharpM</module>-->
 
         <module>../../../allbinary_src/security/SimpleCryptLibraryCSharpM</module>
         <!--
@@ -40,7 +40,7 @@
         -->
         <module>../../../allbinary_src/TokenizerJavaLibraryCSharpM</module>
         <module>../../../allbinary_src/security/BasicSecurityJavaLibraryCSharpM</module>
-        <module>../../../replace_these_stub_projects/security/YourCryptFileJavaLibraryCSharpM</module>
+        <!--<module>../../../replace_these_stub_projects/security/YourCryptFileJavaLibraryCSharpM</module>-->
         <module>../../../replace_these_stub_projects/security/YourSecurityJavaLibraryCSharpM</module>
         <module>../../../replace_these_stub_projects/communication/YourXmlRpcJavaLibraryCSharpM</module>
         <module>../../../replace_these_stub_projects/allbinary_src/J2MEOnlyJavaLibraryCSharpM</module>
@@ -50,8 +50,8 @@
         <module>../../DebugJavaLibraryCSharpM</module>             
         <module>../../ResourceLibraryCSharpM</module>
         <module>../../ResourceJ2MEJavaLibraryCSharpM</module>
-        <module>../../AndroidResourceLibraryCSharpM</module>
-        <module>../../../allbinary_src/hardware/AndroidSystemJavaLibraryCSharpM</module>
+        <!--<module>../../AndroidResourceLibraryCSharpM</module>-->
+        <!--<module>../../../allbinary_src/hardware/AndroidSystemJavaLibraryCSharpM</module>-->
 
         <module>../../../game/behavior/ArtificialIntelligenceLibraryCSharpM</module>
 

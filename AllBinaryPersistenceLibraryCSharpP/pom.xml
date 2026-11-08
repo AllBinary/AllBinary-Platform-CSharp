@@ -37,18 +37,18 @@
         <module>../allbinary_src/logic/BasePreloaderFileJavaLibraryCSharpM</module>
         <module>../allbinary_src/logic/data/file/FileJavaLibraryCSharpM</module>
         <module>../allbinary_src/logic/data/file/FileJ2SEJavaLibraryCSharpM</module>
-        <module>../allbinary_src/data/DataJavaLibraryCSharpM</module>
-        <module>../allbinary_src/logic/data/file/FileUnamedJavaLibraryCSharpM</module>
-        <module>../allbinary_src/logic/data/file/FileAdvancedJavaLibraryCSharpM</module>
-        <module>../allbinary_src/PreLoaderJavaLibraryCSharpM</module>
-        <module>../allbinary_src/FileInitInfoJavaLibraryCSharpM</module>
-        <module>../allbinary_src/PreLoaderFileJavaLibraryCSharpM</module>
-        <module>../allbinary_src/PreLoaderLicenseJavaLibraryCSharpM</module>
+        <!--<module>../allbinary_src/data/DataJavaLibraryCSharpM</module>-->
+        <!--<module>../allbinary_src/logic/data/file/FileUnamedJavaLibraryCSharpM</module>-->
+        <!--<module>../allbinary_src/logic/data/file/FileAdvancedJavaLibraryCSharpM</module>-->
+        <!--<module>../allbinary_src/PreLoaderJavaLibraryCSharpM</module>-->
+        <!--<module>../allbinary_src/FileInitInfoJavaLibraryCSharpM</module>-->
+        <!--<module>../allbinary_src/PreLoaderFileJavaLibraryCSharpM</module>-->
+        <!--<module>../allbinary_src/PreLoaderLicenseJavaLibraryCSharpM</module>-->
         <module>../j2me/PCResourceLibraryCSharpM</module>
         <module>../j2me/ProgressJ2MEJavaLibraryCSharpM</module>
         <module>../allbinary_src/licensing/ClientInfoBaseJavaLibraryCSharpM</module>
-        <module>../allbinary_src/licensing/RemoteXmlRpcJavaLibraryCSharpM</module>
-        <module>../allbinary_src/licensing/LicenseClientJavaLibraryCSharpM</module>
+        <!--<module>../allbinary_src/licensing/RemoteXmlRpcJavaLibraryCSharpM</module>-->
+        <!--<module>../allbinary_src/licensing/LicenseClientJavaLibraryCSharpM</module>-->
 
         <!--
         <module>../allbinary_src/PreLoaderLicenseJavaLibraryCSharpM</module>

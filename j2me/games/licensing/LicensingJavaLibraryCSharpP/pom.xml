@@ -14,8 +14,8 @@
 
     <modules>
 
-        <module>../../platform/android/AndroidResourcesTempJavaLibraryCSharpM</module>
-        <module>../../../../allbinary_src/licensing/ClientInformationMobileLicensingRegistrationJavaLibraryCSharpM</module>
+        <!--<module>../../platform/android/AndroidResourcesTempJavaLibraryCSharpM</module>-->
+        <!--<module>../../../../allbinary_src/licensing/ClientInformationMobileLicensingRegistrationJavaLibraryCSharpM</module>-->
 
         <!--
         <module>../../../../../working/allbinary_src/licensing/LicenseRegistrationJavaLibraryCSharpM</module>
@@ -39,6 +39,7 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+    </dependencies>
 
 
 </project>

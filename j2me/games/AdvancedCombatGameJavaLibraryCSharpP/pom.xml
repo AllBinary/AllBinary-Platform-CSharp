@@ -53,7 +53,7 @@
         <!--
         <module>../../../graphics/opengl/OpenGLESJavaLibraryCSharpM</module>
         -->
-        <module>../../../graphics/opengl/OpenGLJOGLJavaLibraryCSharpM</module>
+        <!--<module>../../../graphics/opengl/OpenGLJOGLJavaLibraryCSharpM</module>-->
         <module>../../../graphics/opengl/OpenGLESBaseJavaLibraryCSharpM</module>
 
         <!-- Not used in Platform Libraries -->
@@ -84,6 +84,7 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+    </dependencies>
 
 
 </project>
