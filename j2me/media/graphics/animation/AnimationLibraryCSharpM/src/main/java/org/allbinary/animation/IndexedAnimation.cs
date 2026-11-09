@@ -27,7 +27,7 @@ public class IndexedAnimation : Animation, IndexedAnimationInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     public readonly AnimationBehavior animationBehaviorP;
-    protected IndexedAnimation(AnimationBehavior animationBehavior)
+    public IndexedAnimation(AnimationBehavior animationBehavior)
     {
         this.animationBehaviorP = animationBehavior;
     }
@@ -37,17 +37,17 @@ public class IndexedAnimation : Animation, IndexedAnimationInterface
         return this.animationBehaviorP;
     }
 
-    public override void reset()
+    public virtual void reset()
     {
         this.animationBehaviorP.reset();
         this.setFrame(0);
     }
 
-    public override void setFrame(int index)
+    public virtual void setFrame(int index)
     {
     }
 
-    public override int getFrame()
+    public virtual int getFrame()
     {
         return 0;
     }
@@ -58,12 +58,12 @@ public class IndexedAnimation : Animation, IndexedAnimationInterface
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
 
-    public override int getSize()
+    public virtual int getSize()
     {
         return 0;
     }
 
-    public override void previousFrame()
+    public virtual void previousFrame()
     {
     }
 
@@ -76,11 +76,11 @@ public class IndexedAnimation : Animation, IndexedAnimationInterface
         }
     }
 
-    public override void setSequence(int[] sequence)
+    public virtual void setSequence(int[] sequence)
     {
     }
 
-    public override int[] getSequence()
+    public virtual int[] getSequence()
     {
         return PrimitiveIntUtil.getArrayInstance();
     }

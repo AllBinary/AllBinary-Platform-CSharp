@@ -25,10 +25,10 @@ public class DomData
     {
     }
 
-    public static readonly string ID = "id";
-    public static readonly string CHILD = "child";
-    public static readonly string NAME = "name";
-    public static readonly string VALUE = "value";
-    public static readonly string INDEX = "index";
+    public const string ID = "id";
+    public const string CHILD = "child";
+    public const string NAME = "name";
+    public const string VALUE = "value";
+    public const string INDEX = "index";
 }
 

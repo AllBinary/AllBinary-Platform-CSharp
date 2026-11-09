@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Item = javax.microedition.lcdui.Item;
+using Item = javax.microedition.lcdui.Item;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using SmallIntegerSingletonFactory = org.allbinary.logic.math.SmallIntegerSingletonFactory;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
@@ -52,12 +52,12 @@ public class GameConfigurationUtil
         GameConfigurationSingleton gameConfigurationSingleton = GameConfigurationSingleton.getInstance();
         GameConfiguration gameConfiguration = gameConfigurationSingleton.getInstanceByName(gauge.getLabel());
         SmallIntegerSingletonFactory smallIntegerSingletonFactory = SmallIntegerSingletonFactory.getInstance();
-        int? value = smallIntegerSingletonFactory.getAt(gauge.getValue() + ((int) gameConfiguration.getMinValue()));
+        int? value = smallIntegerSingletonFactory.getAt(gauge.getValue() + global::java.lang.JavaNumber.intValue(gameConfiguration.getMinValue()));
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.GAUGE_UPDATE);
         stringBuffer.append(gameConfiguration.getName());
         stringBuffer.append(this.FROM);
-        stringBuffer.appendint(((int) ((int) gameConfiguration.getValue())));
+        stringBuffer.appendint(((int) global::java.lang.JavaNumber.intValue(gameConfiguration.getValue())));
         stringBuffer.append(this.TO);
         stringBuffer.appendint(((int) ((int) value)));
         this.logUtil.putF(stringBuffer.ToString(), this, this.commonStrings.UPDATE);
@@ -73,9 +73,9 @@ public class GameConfigurationUtil
         stringBuffer.append("Gauge Default: ");
         stringBuffer.append(gameConfiguration.getName());
         stringBuffer.append(this.TO);
-        stringBuffer.appendint(((int) ((int) gameConfiguration.getDefaultValue())));
+        stringBuffer.appendint(((int) global::java.lang.JavaNumber.intValue(gameConfiguration.getDefaultValue())));
         this.logUtil.putF(stringBuffer.ToString(), this, "setDefault");
-        gauge.setValue(((int) gameConfiguration.getDefaultValue()) - ((int) gameConfiguration.getMinValue()));
+        gauge.setValue(global::java.lang.JavaNumber.intValue(gameConfiguration.getDefaultValue()) - global::java.lang.JavaNumber.intValue(gameConfiguration.getMinValue()));
         gameConfiguration.setValue(gameConfiguration.getDefaultValue());
     }
 
@@ -98,13 +98,13 @@ public class GameConfigurationUtil
                     string name = item.getLabel();
                     GameConfiguration nextGameConfiguration = gameConfigurationSingleton.getInstanceByName(name);
                     if (nextGameConfiguration == gameConfigurationCentral.COLLIDE_DAMAGE) {
-                        gauge.setValue(((int) gameConfigurationCentral.COLLIDE_DAMAGE.getValue()) - ((int) gameConfiguration.getMinValue()));
+                        gauge.setValue(global::java.lang.JavaNumber.intValue(gameConfigurationCentral.COLLIDE_DAMAGE.getValue()) - global::java.lang.JavaNumber.intValue(gameConfiguration.getMinValue()));
                     } else if (nextGameConfiguration == gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL) {
-                        gauge.setValue(((int) gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL.getValue()) - ((int) gameConfiguration.getMinValue()));
+                        gauge.setValue(global::java.lang.JavaNumber.intValue(gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL.getValue()) - global::java.lang.JavaNumber.intValue(gameConfiguration.getMinValue()));
                     } else if (nextGameConfiguration == gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL) {
-                        gauge.setValue(((int) gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.getValue()) - ((int) gameConfiguration.getMinValue()));
+                        gauge.setValue(global::java.lang.JavaNumber.intValue(gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.getValue()) - global::java.lang.JavaNumber.intValue(gameConfiguration.getMinValue()));
                     } else if (nextGameConfiguration == gameConfigurationCentral.SPEED_CHALLENGE_LEVEL) {
-                        gauge.setValue(((int) gameConfigurationCentral.SPEED_CHALLENGE_LEVEL.getValue()) - ((int) gameConfiguration.getMinValue()));
+                        gauge.setValue(global::java.lang.JavaNumber.intValue(gameConfigurationCentral.SPEED_CHALLENGE_LEVEL.getValue()) - global::java.lang.JavaNumber.intValue(gameConfiguration.getMinValue()));
                     }
                 }
             }
@@ -116,7 +116,7 @@ public class GameConfigurationUtil
     {
         this.logUtil.putF(this.commonStrings.START, this, "updateCompetitionValue");
         GameConfigurationCentral gameConfigurationCentral = GameConfigurationCentral.getInstance();
-        this.COMPETITION_VALUE = ((int) gameConfigurationCentral.COLLIDE_DAMAGE.getValue()) + ((int) gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.getValue()) + ((int) gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL.getValue()) + ((int) gameConfigurationCentral.SPEED_CHALLENGE_LEVEL.getValue());
+        this.COMPETITION_VALUE = global::java.lang.JavaNumber.intValue(gameConfigurationCentral.COLLIDE_DAMAGE.getValue()) + global::java.lang.JavaNumber.intValue(gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.getValue()) + global::java.lang.JavaNumber.intValue(gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL.getValue()) + global::java.lang.JavaNumber.intValue(gameConfigurationCentral.SPEED_CHALLENGE_LEVEL.getValue());
         this.COMPETITION_VALUE = (this.COMPETITION_VALUE >> 2);
     }
 

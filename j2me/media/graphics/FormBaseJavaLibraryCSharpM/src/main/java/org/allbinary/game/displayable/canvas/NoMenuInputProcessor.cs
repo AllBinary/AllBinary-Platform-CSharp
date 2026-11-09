@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using NullCanvas = javax.microedition.lcdui.NullCanvas;
+using NullCanvas = javax.microedition.lcdui.NullCanvas;
 using GameKeyEvent = org.allbinary.game.input.@event.GameKeyEvent;
 using MotionGestureEvent = org.allbinary.input.motion.gesture.observer.MotionGestureEvent;
 using BasicArrayListUtil = org.allbinary.util.BasicArrayListUtil;

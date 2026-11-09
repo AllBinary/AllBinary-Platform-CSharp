@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using CommonSeps = org.allbinary.@string.CommonSeps;
@@ -34,7 +34,7 @@ public class MultiSelectPaintable : SelectionHudPaintable
     private char[] totalCharArray = NullUtil.getInstance().NULL_CHAR_ARRAY;
     private string rootNamesString = StringUtil.getInstance().EMPTY_STRING;
     private readonly string TOTAL = "Total Selected: ";
-    private readonly int backgroundColor = ((int) BasicColorFactory.getInstance().GREY);
+    private readonly int backgroundColor = global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().GREY);
     private int totalWidth = 0;
     private int textLine2Y = 0;
     public MultiSelectPaintable()
@@ -54,18 +54,18 @@ public class MultiSelectPaintable : SelectionHudPaintable
         this.clear();
         int size = list.size();
         this.totalCharArray = this.getPrimitiveLongUtil().getCharArray(size);
-        for (int index = list.size() - 1; index >= 0; index--) {
-            RTSLayer rtsLayer = ((RTSLayer) list.get(index));
+        for (int index_0 = list.size() - 1; index_0 >= 0; index_0--) {
+            RTSLayer rtsLayer = ((RTSLayer) list.get(index_0));
             if (!this.rootNameList.contains(rtsLayer.getRootName())) {
                 this.rootNameList.add(rtsLayer.getRootName());
             }
         }
         string COMMA_SEP = CommonSeps.getInstance().COMMA_SEP;
         StringMaker stringBuffer = new StringMaker();
-        for (int index = this.rootNameList.size() - 1; index >= 0; index--) {
-            string rootName = ((string) this.rootNameList.get(index));
+        for (int index_1 = this.rootNameList.size() - 1; index_1 >= 0; index_1--) {
+            string rootName = ((string) this.rootNameList.get(index_1));
             stringBuffer.append(rootName);
-            if (index != 0) {
+            if (index_1 != 0) {
                 stringBuffer.append(COMMA_SEP);
             }
         }

@@ -61,7 +61,7 @@ public class EditValidationUserView : UserView, ValidationComponentInterface
     {
         try {
             StringMaker stringBuffer = new StringMaker();
-            if (UserName.getInstance().isValid(this.userName)) {
+            if (((bool) (UserName.getInstance().isValid(this.userName)))) {
                 if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("User Name is valid", this, "validationInfo()");
                 }
@@ -98,6 +98,12 @@ public class EditValidationUserView : UserView, ValidationComponentInterface
     public virtual Node toValidationInfoNode(Document document)
     {
         return null;
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

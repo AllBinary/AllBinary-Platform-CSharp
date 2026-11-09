@@ -46,7 +46,7 @@ public class BooleanFileVisitor : VisitorInterface
         string nextFileFilterString = null;
         for (int index = 0; index < size; index++) {
             nextFileFilterString = ((string) list.get(index));
-            if (this.visit(file, nextFileFilterString)) {
+            if (((bool) (this.visit(file, nextFileFilterString)))) {
                 return true;
             }
         }

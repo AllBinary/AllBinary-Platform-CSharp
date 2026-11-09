@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
 
 namespace org.allbinary.logic.java.exception;
 
@@ -37,9 +37,9 @@ public class ExceptionUtil
     private readonly string NONE = "No Stack Trace";
     public virtual string getStackTrace(Exception e)
     {
-        System.IO.MemoryStream bs = new System.IO.MemoryStream();
+        ByteArrayOutputStream bs = new ByteArrayOutputStream();
         Console.WriteLine(e);
-        string output = System.Text.Encoding.UTF8.GetString(bs.ToArray());
+        string output = bs.ToString();
         if (output != null) {
             return new string((output).ToCharArray());
         }

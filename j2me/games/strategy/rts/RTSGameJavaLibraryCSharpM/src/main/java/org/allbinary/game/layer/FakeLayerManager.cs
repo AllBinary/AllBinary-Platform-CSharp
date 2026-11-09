@@ -32,18 +32,18 @@ public class FakeLayerManager : AllBinaryGameLayerManager, GeographicMapComposit
         // base(BasicColorFactory.getInstance().BLACK, BasicColorFactory.getInstance().WHITE, gameInfo) is called from the constructor declaration
     }
 
-    public override BasicGeographicMap[] getGeographicMapInterface()
+    public virtual BasicGeographicMap[] getGeographicMapInterface()
     {
         return this.geographicMapInterfaceArray;
     }
 
-    public override void setGeographicMapInterface(BasicGeographicMap[] geographicMapInterfaceArray)
+    public virtual void setGeographicMapInterface(BasicGeographicMap[] geographicMapInterfaceArray)
     {
         this.geographicMapInterfaceArray = geographicMapInterfaceArray;
         this.geographicMapCellTypeArray = new GeographicMapCellType[this.geographicMapInterfaceArray.Length];
     }
 
-    public override GeographicMapCellType[] geographicMapCellTypeArray()
+    public virtual GeographicMapCellType[] geographicMapCellTypeArray()
     {
         return this.geographicMapCellTypeArray;
     }

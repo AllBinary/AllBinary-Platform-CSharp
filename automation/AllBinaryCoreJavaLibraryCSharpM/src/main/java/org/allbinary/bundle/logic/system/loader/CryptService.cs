@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
-//using InputStream = java.io.InputStream;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using InputStream = java.io.InputStream;
 using Globals = org.allbinary.globals.Globals;
 using URLGLOBALS = org.allbinary.globals.URLGLOBALS;
 using BasicTextJDialog = org.allbinary.gui.dialog.BasicTextJDialog;
@@ -41,7 +41,7 @@ public class CryptService
     private readonly AbCryptUtil abCryptUtil = AbCryptUtil.getInstance();
     public CryptService()
     {
-        Globals.getInstance().init(this.GetType().getClassLoader(), "./");
+        Globals.getInstance().init(global::java.lang.ClassLoader.getSystemClassLoader(), "./");
         this.logUtil.putF("Set Globals: " + URLGLOBALS.getWebappPath(), this, this.commonStrings.CONSTRUCTOR);
     }
 

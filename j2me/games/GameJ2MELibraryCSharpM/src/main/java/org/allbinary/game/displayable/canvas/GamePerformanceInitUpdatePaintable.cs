@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using GameStatisticsFactory = org.allbinary.canvas.GameStatisticsFactory;
 using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
@@ -35,7 +37,7 @@ public class GamePerformanceInitUpdatePaintable : InitUpdatePaintable, UpdateMyF
     private MyFontProcessor myFontProcessor;
     private char[][] baseRefreshHelperCharArray = System.Linq.Enumerable.Range(0, 0).Select(_ => new char[0]).ToArray();
     private int defaultStringWidth = 0;
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.defaultStringWidth = MyFontProcessor.defaultStringWidth(font, 2);
@@ -51,7 +53,7 @@ public class GamePerformanceInitUpdatePaintable : InitUpdatePaintable, UpdateMyF
         this.baseRefreshHelperCharArray = GameStatisticsFactory.getInstance().to2DCharArray();
     }
 
-    private readonly int RED = ((int) BasicColorFactory.getInstance().RED);
+    private readonly int RED = global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().RED);
     public override void paint(Graphics graphics)
     {
         this.myFontProcessor.process(graphics);

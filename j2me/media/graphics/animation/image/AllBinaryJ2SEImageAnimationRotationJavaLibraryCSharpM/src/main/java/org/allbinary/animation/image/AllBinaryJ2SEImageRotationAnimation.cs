@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
 using DisposalUtil = org.allbinary.DisposalUtil;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -61,7 +61,7 @@ public class AllBinaryJ2SEImageRotationAnimation : ImageBaseRotationAnimation
     public override void setBasicColorP(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != basicColor.intValue()) {
+        if (this.getBasicColorP() == null || global::java.lang.JavaNumber.intValue(this.getBasicColorP()) != basicColor.intValue()) {
             changed = true;
         }
         base.setBasicColorP(basicColor);
@@ -74,7 +74,7 @@ public class AllBinaryJ2SEImageRotationAnimation : ImageBaseRotationAnimation
     public override void changeBasicColor(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getChangeBasicColor() == null || ((int) this.getChangeBasicColor()) != basicColor.intValue()) {
+        if (this.getChangeBasicColor() == null || global::java.lang.JavaNumber.intValue(this.getChangeBasicColor()) != basicColor.intValue()) {
             changed = true;
         }
         base.changeBasicColor(basicColor);
@@ -165,12 +165,12 @@ public class AllBinaryJ2SEImageRotationAnimation : ImageBaseRotationAnimation
         base.close();
         DisposalUtil disposalUtil = DisposalUtil.getInstance();
         int size2 = this.twoImages.Length;
-        for (int index = 0; index < size2; index++) {
-            disposalUtil.disposeImage(this.twoImages[index]);
+        for (int index_0 = 0; index_0 < size2; index_0++) {
+            disposalUtil.disposeImage(this.twoImages[index_0]);
         }
         int size = this.originalImageArray.Length;
-        for (int index = 0; index < size; index++) {
-            disposalUtil.disposeImage(this.originalImageArray[index]);
+        for (int index_1 = 0; index_1 < size; index_1++) {
+            disposalUtil.disposeImage(this.originalImageArray[index_1]);
         }
         disposalUtil.disposeImage(this.realOriginalImage);
         disposalUtil.disposeImage(this.imageToShow);
@@ -182,12 +182,12 @@ public class AllBinaryJ2SEImageRotationAnimation : ImageBaseRotationAnimation
         base.finalize();
         DisposalUtil disposalUtil = DisposalUtil.getInstance();
         int size2 = this.twoImages.Length;
-        for (int index = 0; index < size2; index++) {
-            disposalUtil.disposeImage(this.twoImages[index]);
+        for (int index_2 = 0; index_2 < size2; index_2++) {
+            disposalUtil.disposeImage(this.twoImages[index_2]);
         }
         int size = this.originalImageArray.Length;
-        for (int index = 0; index < size; index++) {
-            disposalUtil.disposeImage(this.originalImageArray[index]);
+        for (int index_3 = 0; index_3 < size; index_3++) {
+            disposalUtil.disposeImage(this.originalImageArray[index_3]);
         }
         disposalUtil.disposeImage(this.realOriginalImage);
         disposalUtil.disposeImage(this.imageToShow);

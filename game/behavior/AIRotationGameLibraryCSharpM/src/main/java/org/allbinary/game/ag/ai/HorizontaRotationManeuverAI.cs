@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using ArtificialIntelligence = org.allbinary.ai.ArtificialIntelligence;
 using ArtificialIntelligenceTransitionInterface = org.allbinary.ai.ArtificialIntelligenceTransitionInterface;
 using IndexedAnimation = org.allbinary.animation.IndexedAnimation;
@@ -52,15 +52,15 @@ public class HorizontaRotationManeuverAI : BasicAI, ArtificialIntelligenceTransi
         this.velocityInterface = ((VelocityInterface) this.baseVelocityInterface);
         RotationAnimationInterface rotationAnimationInterface = ((RotationAnimationInterface) this.rotationAnimationInterface);
         AngleIncrementInfo angleIncrementInfo = rotationAnimationInterface.getAngleInfoP().getAngleIncrementInfo();
-        rotationAnimationInterfaceCompositeInterface.setFrame(((int) angleIncrementInfo.RIGHT_FRAME));
+        rotationAnimationInterfaceCompositeInterface.setFrame(global::java.lang.JavaNumber.intValue(angleIncrementInfo.RIGHT_FRAME));
     }
 
-    public override void transition()
+    public virtual void transition()
     {
         RotationAnimationInterface rotationAnimationInterface = ((RotationAnimationInterface) this.rotationAnimationInterface);
         AngleIncrementInfo angleIncrementInfo = rotationAnimationInterface.getAngleInfoP().getAngleIncrementInfo();
         RotationAnimationInterfaceCompositeInterface rotationAnimationInterfaceCompositeInterface = ((RotationAnimationInterfaceCompositeInterface) this.getOwnerLayerInterface());
-        rotationAnimationInterfaceCompositeInterface.setFrame(((int) angleIncrementInfo.RIGHT_FRAME));
+        rotationAnimationInterfaceCompositeInterface.setFrame(global::java.lang.JavaNumber.intValue(angleIncrementInfo.RIGHT_FRAME));
         AllBinaryLayer allbinaryLayer = this.getOwnerLayerInterface();
         allbinaryLayer.setPosition(allbinaryLayer.getXP(), 1, allbinaryLayer.getZP());
     }
@@ -72,12 +72,12 @@ public class HorizontaRotationManeuverAI : BasicAI, ArtificialIntelligenceTransi
         AngleIncrementInfo angleIncrementInfo = rotationAnimationInterface.getAngleInfoP().getAngleIncrementInfo();
         int frame = this.rotationAnimationInterface.getFrame();
         AllBinaryLayer ownerLayerInterface = this.getOwnerLayerInterface();
-        if (ownerLayerInterface.getXP() - ownerLayerInterface.getWidth() <= 0 && frame == ((int) angleIncrementInfo.LEFT_FRAME)) {
+        if (ownerLayerInterface.getXP() - ownerLayerInterface.getWidth() <= 0 && frame == global::java.lang.JavaNumber.intValue(angleIncrementInfo.LEFT_FRAME)) {
             this.reverse();
             this.drop();
         }
         DisplayInfoSingleton displayInfo = DisplayInfoSingleton.getInstance();
-        if (ownerLayerInterface.getX2() + ownerLayerInterface.getWidth() > displayInfo.getLastWidth() && frame == ((int) angleIncrementInfo.RIGHT_FRAME)) {
+        if (ownerLayerInterface.getX2() + ownerLayerInterface.getWidth() > displayInfo.getLastWidth() && frame == global::java.lang.JavaNumber.intValue(angleIncrementInfo.RIGHT_FRAME)) {
             this.reverse();
             this.accelerate();
             this.drop();
@@ -88,25 +88,25 @@ public class HorizontaRotationManeuverAI : BasicAI, ArtificialIntelligenceTransi
             this.velocityInterface.limitMaxXYVelocity(this.velocityInterface.getMaxForwardVelocity() / this.currentSpeedDivisor);
         }
         this.circularIndexUtil.next();
-        if (frame == ((int) angleIncrementInfo.LEFT_FRAME)) {
+        if (frame == global::java.lang.JavaNumber.intValue(angleIncrementInfo.LEFT_FRAME)) {
             base.processKeyAI(Canvas.KEY_NUM0);
-        } else if (frame == ((int) angleIncrementInfo.RIGHT_FRAME)) {
+        } else if (frame == global::java.lang.JavaNumber.intValue(angleIncrementInfo.RIGHT_FRAME)) {
             base.processKeyAI(Canvas.KEY_POUND);
         }
     }
 
-    protected virtual void reverse()
+    public virtual void reverse()
     {
         RotationAnimationInterface rotationAnimationInterface = ((RotationAnimationInterface) this.rotationAnimationInterface);
         AngleIncrementInfo angleIncrementInfo = rotationAnimationInterface.getAngleInfoP().getAngleIncrementInfo();
         int frame = this.rotationAnimationInterface.getFrame();
-        if (frame == ((int) angleIncrementInfo.LEFT_FRAME)) {
+        if (frame == global::java.lang.JavaNumber.intValue(angleIncrementInfo.LEFT_FRAME)) {
             RotationAnimationInterfaceCompositeInterface rotationAnimationInterfaceCompositeInterface = ((RotationAnimationInterfaceCompositeInterface) this.getOwnerLayerInterface());
-            rotationAnimationInterfaceCompositeInterface.setFrame(((int) angleIncrementInfo.RIGHT_FRAME));
+            rotationAnimationInterfaceCompositeInterface.setFrame(global::java.lang.JavaNumber.intValue(angleIncrementInfo.RIGHT_FRAME));
             this.baseVelocityInterface.zero();
-        } else if (frame == ((int) angleIncrementInfo.RIGHT_FRAME)) {
+        } else if (frame == global::java.lang.JavaNumber.intValue(angleIncrementInfo.RIGHT_FRAME)) {
             RotationAnimationInterfaceCompositeInterface rotationAnimationInterfaceCompositeInterface = ((RotationAnimationInterfaceCompositeInterface) this.getOwnerLayerInterface());
-            rotationAnimationInterfaceCompositeInterface.setFrame(((int) angleIncrementInfo.LEFT_FRAME));
+            rotationAnimationInterfaceCompositeInterface.setFrame(global::java.lang.JavaNumber.intValue(angleIncrementInfo.LEFT_FRAME));
             this.baseVelocityInterface.zero();
         }
     }

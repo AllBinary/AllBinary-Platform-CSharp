@@ -42,7 +42,7 @@ public class DownloadItemsEntity : AbSqlBean, DownloadItemsEntityInterface
         this.setTableName(this.tableName);
     }
 
-    public virtual void insert(BasicArrayList values)
+    public override void insert(BasicArrayList values)
     {
         try {
             base.insert(values);
@@ -123,7 +123,7 @@ public class DownloadItemsEntity : AbSqlBean, DownloadItemsEntityInterface
         return base.createTable(this.createTableStatement());
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
     }

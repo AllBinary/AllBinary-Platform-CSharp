@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using InputStream = java.io.InputStream;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
 using J2MEUtil = org.allbinary.J2MEUtil;
 using TsUtil = org.allbinary.TsUtil;
 using LazyImageRotationAnimation = org.allbinary.animation.image.LazyImageRotationAnimation;
@@ -67,50 +67,79 @@ public class ImageCache : ImageCacheBase
     public bool hasAnyLazyAnimationFactories = false;
     private class NotHTMLProcessor : Processor
     {
+        private readonly ImageCache outer;
+
         public override void process()
         {
-            concurrentImageLoadingProcessor.runTask();
+            this.outer.concurrentImageLoadingProcessor.runTask();
+        }
+
+        public NotHTMLProcessor(ImageCache outer)
+        {
+            this.outer = outer;
         }
 
     }
     private class NotHTMLEndProcessor : Processor
     {
+        private readonly ImageCache outer;
+
         public override void process()
         {
             ProgressCanvas progressCanvas = ProgressCanvasFactory.getInstance();
             progressCanvas.endIfPaintedSinceStart();
         }
 
+        public NotHTMLEndProcessor(ImageCache outer)
+        {
+            this.outer = outer;
+        }
+
     }
     private class HTMLEndProcessor : Processor
     {
+        private readonly ImageCache outer;
+
         public override void process()
         {
-            int size = gdResources.currentLayoutRequiredTotal;
+            int size = this.outer.gdResources.currentLayoutRequiredTotal;
             if (size == 0) {
                 ProgressCanvas progressCanvas = ProgressCanvasFactory.getInstance();
                 progressCanvas.endIfPaintedSinceStart();
-            } else if (totalLoaded > size / 12) {
+            } else if (this.outer.totalLoaded > size / 12) {
                 ProgressCanvas progressCanvas = ProgressCanvasFactory.getInstance();
                 progressCanvas.endIfPaintedSinceStart();
-                endProcessor = new NotHTMLEndProcessor();
+                this.outer.endProcessor = new NotHTMLEndProcessor(this.outer);
             }
+        }
+
+        public HTMLEndProcessor(ImageCache outer)
+        {
+            this.outer = outer;
         }
 
     }
     private class FirstProcessor : Processor
     {
+        private readonly ImageCache outer;
+
         public override void process()
         {
-            this.firstProcess();
+            this.outer.firstProcess();
+        }
+
+        public FirstProcessor(ImageCache outer)
+        {
+            this.outer = outer;
         }
 
     }
-    private Processor processor = new FirstProcessor();
+    private Processor processor;
     private Processor endProcessor = Processor.getInstance();
     public ImageCache()
     {
         this.concurrentImageLoadingProcessor = new ConcurrentImageLoadingProcessor(this);
+        this.processor = new FirstProcessor(this);
     }
 
     public virtual void firstProcess()
@@ -119,10 +148,10 @@ public class ImageCache : ImageCacheBase
         bool isHTML = J2MEUtil.isHTML();
         if (isHTML) {
             this.processor = Processor.getInstance();
-            this.endProcessor = new HTMLEndProcessor();
+            this.endProcessor = new HTMLEndProcessor(this);
         } else {
-            this.processor = new NotHTMLProcessor();
-            this.endProcessor = new NotHTMLEndProcessor();
+            this.processor = new NotHTMLProcessor(this);
+            this.endProcessor = new NotHTMLEndProcessor(this);
             try {
                 this.runTask();
             } catch (Exception e) {
@@ -374,8 +403,8 @@ public class ImageCache : ImageCacheBase
         GDLazyResources gdLazyResources = GDLazyResources.getInstance();
         string[] resourceStringArray = gdLazyResources.requiredResourcesBeforeLoadingArray;
         int size = resourceStringArray.Length;
-        for (int index = 0; index < size; index++) {
-            if (key == resourceStringArray[index]) {
+        for (int index_1 = 0; index_1 < size; index_1++) {
+            if (key == resourceStringArray[index_1]) {
                 return this.creatImage(((string) key));
             }
         }
@@ -402,15 +431,15 @@ public class ImageCache : ImageCacheBase
         lock (this.@lock) {
             LazyImageRotationAnimation lazyImageRotationAnimation2 = null;
             int size = this.loadAfterList.size();
-            for (int index = 0; index < size; index++) {
-                lazyImageRotationAnimation2 = ((LazyImageRotationAnimation) this.loadAfterList.get(index));
+            for (int index_2 = 0; index_2 < size; index_2++) {
+                lazyImageRotationAnimation2 = ((LazyImageRotationAnimation) this.loadAfterList.get(index_2));
                 if (lazyImageRotationAnimation2.instanceId == lazyImageRotationAnimation.instanceId) {
                     list.add(lazyImageRotationAnimation2);
                 }
             }
             int size2 = list.size();
-            for (int index = 0; index < size2; index++) {
-                this.loadAfterList.remove(list.get(index));
+            for (int index_3 = 0; index_3 < size2; index_3++) {
+                this.loadAfterList.remove(list.get(index_3));
             }
         }
         return list;

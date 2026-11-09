@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using CommandForm = org.allbinary.graphics.displayable.screen.CommandForm;
 using Init = org.allbinary.init.Init;

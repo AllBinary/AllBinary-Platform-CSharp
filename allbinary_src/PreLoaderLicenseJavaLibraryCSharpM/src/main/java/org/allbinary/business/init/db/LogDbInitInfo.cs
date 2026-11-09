@@ -21,7 +21,7 @@ namespace org.allbinary.business.init.db;
 
 public class LogDbInitInfo : DbInitInfo
 {
-    private static readonly string INITFILE = "logdbinitdata.dat";
+    private const string INITFILE = "logdbinitdata.dat";
     public LogDbInitInfo() : base(INITFILE, true)
     {
         // base(INITFILE, true) is called from the constructor declaration

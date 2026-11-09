@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using File = java.io.File;
-//using FileOutputStream = java.io.FileOutputStream;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Image = javax.microedition.lcdui.Image;
+using File = java.io.File;
+using FileOutputStream = java.io.FileOutputStream;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Image = javax.microedition.lcdui.Image;
 using Bitmap = android.graphics.Bitmap;
 using Canvas = android.graphics.Canvas;
 using Paint = android.graphics.Paint;

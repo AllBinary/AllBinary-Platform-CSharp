@@ -16,12 +16,12 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using DataInputStream = java.io.DataInputStream;
-//using DataOutputStream = java.io.DataOutputStream;
-//using RecordEnumeration = javax.microedition.rms.RecordEnumeration;
-//using RecordStore = javax.microedition.rms.RecordStore;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using DataInputStream = java.io.DataInputStream;
+using DataOutputStream = java.io.DataOutputStream;
+using RecordEnumeration = javax.microedition.rms.RecordEnumeration;
+using RecordStore = javax.microedition.rms.RecordStore;
 using TsUtil = org.allbinary.TsUtil;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
 using SmallIntegerSingletonFactory = org.allbinary.logic.math.SmallIntegerSingletonFactory;
@@ -99,7 +99,7 @@ public class KeyValuePersistance : BasicPersitance
         try {
             this.logUtil.putF(new StringMaker().append(this.persistanceStrings.SAVING).append(StringUtil.getInstance().toString(hashtable)).ToString(), this, this.commonStrings.SAVE);
             recordStore = RecordStore.openRecordStore(this.getRecordId(abeClientInformation), true);
-            System.IO.MemoryStream byteArrayOutputStream = new System.IO.MemoryStream();
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             DataOutputStream outputStream = new DataOutputStream(byteArrayOutputStream);
             string value = null;
             CommonSeps commonSeps = CommonSeps.getInstance();
@@ -114,7 +114,7 @@ public class KeyValuePersistance : BasicPersitance
                 outputStream.writeUTF(value);
             }
             TsUtil tsUtil = TsUtil.getInstance();
-            sbyte[] savedGameBytes = tsUtil.getByteArray(System.Text.Encoding.UTF8.GetString(byteArrayOutputStream.ToArray()));
+            sbyte[] savedGameBytes = tsUtil.getByteArray(byteArrayOutputStream.ToString());
             recordStore.addRecord(savedGameBytes, 0, savedGameBytes.Length);
         } catch (Exception e) {
             throw e;

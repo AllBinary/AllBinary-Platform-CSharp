@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 
 namespace org.allbinary.game.configuration.feature;

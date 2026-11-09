@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using FileFilter = java.io.FileFilter;
+using FileFilter = java.io.FileFilter;
 using IncludeFileExtensionsBooleanFileVisitor = org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;

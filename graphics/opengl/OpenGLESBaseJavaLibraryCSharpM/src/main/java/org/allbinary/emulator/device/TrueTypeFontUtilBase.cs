@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
+using Font = javax.microedition.lcdui.Font;
 using AvianUtil = org.allbinary.AvianUtil;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 

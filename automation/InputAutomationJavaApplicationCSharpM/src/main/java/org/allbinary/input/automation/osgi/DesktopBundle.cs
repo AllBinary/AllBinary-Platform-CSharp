@@ -26,7 +26,7 @@ namespace org.allbinary.input.automation.osgi;
 
 public class DesktopBundle
 {
-    private static readonly string DESKTOP_SYMBOLIC_NAME = "org.knopflerfish.bundle.desktop";
+    private const string DESKTOP_SYMBOLIC_NAME = "org.knopflerfish.bundle.desktop";
     private Bundle bundle = null;
     public DesktopBundle()
     {

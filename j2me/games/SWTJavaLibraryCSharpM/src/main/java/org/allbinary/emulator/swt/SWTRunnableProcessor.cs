@@ -32,7 +32,7 @@ public class SWTRunnableProcessor : SWTProcessor
     {
     }
 
-    public virtual void process(Display display)
+    public override void process(Display display)
     {
         this.runnable.run();
     }

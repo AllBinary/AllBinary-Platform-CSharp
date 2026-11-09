@@ -91,7 +91,7 @@ public class PermissionItemsRequestHelper : ModifyTable
         return values;
     }
 
-    public virtual string insert()
+    public override string insert()
     {
         try {
             Calendar calendar = Calendar.getInstance();
@@ -124,7 +124,7 @@ public class PermissionItemsRequestHelper : ModifyTable
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             PermissionItemsEntityFactory.getInstance().getPermissionItemsEntityInstance().delete(this.id);
@@ -142,7 +142,7 @@ public class PermissionItemsRequestHelper : ModifyTable
         }
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             string success = "Update Pricing Successful";

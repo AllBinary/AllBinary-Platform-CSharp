@@ -14,6 +14,8 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 
@@ -21,6 +23,6 @@ namespace org.allbinary.game.displayable.canvas;
 
 public class TitleResource
 {
-    public static readonly string RESOURCE_TITLE = "/title_sprite_100_by_100.png";
+    public const string RESOURCE_TITLE = "/title_sprite_100_by_100.png";
 }
 

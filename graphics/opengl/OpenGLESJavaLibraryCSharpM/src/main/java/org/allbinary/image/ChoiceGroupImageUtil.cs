@@ -14,12 +14,14 @@
  */
 // Generated Code Do Not Modify
 
+extern alias ImageCacheOpenGLESJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using ChoiceGroupImageFactory = javax.microedition.lcdui.ChoiceGroupImageFactory;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using GL = javax.microedition.khronos.opengles.GL;
+using ChoiceGroupImageFactory = javax.microedition.lcdui.ChoiceGroupImageFactory;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using OpenGLFeatureFactory = org.allbinary.graphics.opengles.OpenGLFeatureFactory;
 using Features = org.allbinary.game.configuration.feature.Features;
 

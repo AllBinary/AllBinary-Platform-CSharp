@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Buffer = java.nio.Buffer;
-//using FloatBuffer = java.nio.FloatBuffer;
-//using IntBuffer = java.nio.IntBuffer;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Buffer = java.nio.Buffer;
+using FloatBuffer = java.nio.FloatBuffer;
+using IntBuffer = java.nio.IntBuffer;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 
 namespace org.allbinary.device;

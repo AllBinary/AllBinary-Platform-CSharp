@@ -87,7 +87,7 @@ public class TitleBodyValidation : Validation, DomNodeInterface
         this.titleValidation = new TitleNotRequiredValidation(hashMap);
     }
 
-    public virtual bool? isValid()
+    public override bool? isValid()
     {
         try {
             bool? isValid = true;
@@ -97,7 +97,7 @@ public class TitleBodyValidation : Validation, DomNodeInterface
             if (!StringValidationUtil.getInstance().isValidNotRequired(this.body, BodyData.getInstance().MIN, AbSqlData.MAXBLOB)) {
                 isValid = false;
             }
-            if (!this.titleValidation.isValid()) {
+            if (!((bool) (this.titleValidation.isValid()))) {
                 isValid = false;
             }
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
@@ -112,7 +112,7 @@ public class TitleBodyValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual string validationInfo()
+    public override string validationInfo()
     {
         try {
             StringMaker stringBuffer = new StringMaker();
@@ -131,12 +131,12 @@ public class TitleBodyValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual Document toValidationInfoDoc()
+    public override Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual Node toValidationInfoNode(Document document)
+    public override Node toValidationInfoNode(Document document)
     {
         return null;
     }

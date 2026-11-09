@@ -28,7 +28,7 @@ public class InputAutomationGenericModuleBundleActivator : InputAutomationModule
     }
 
     // throws Exception
-    public virtual void init()
+    public override void init()
     {
         InputAutomationGenericModuleServiceFactory inputAutomationGenericModuleServiceFactory = InputAutomationGenericModuleServiceFactory.getInstance();
         this.setInputAutomationModuleInterface(inputAutomationGenericModuleServiceFactory.getInputAutomationModuleInterfaceArray());

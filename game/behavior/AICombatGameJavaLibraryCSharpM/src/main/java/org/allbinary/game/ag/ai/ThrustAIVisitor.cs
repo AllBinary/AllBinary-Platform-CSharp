@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using BasicAI = org.allbinary.game.ai.BasicAI;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using BooleanFactory = org.allbinary.logic.java.@bool.BooleanFactory;

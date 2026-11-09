@@ -14,11 +14,13 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Item = javax.microedition.lcdui.Item;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Item = javax.microedition.lcdui.Item;
 using GameState = org.allbinary.game.state.GameState;
 using GameStateFactory = org.allbinary.game.state.GameStateFactory;
 using StdUtil = org.allbinary.logic.StdUtil;

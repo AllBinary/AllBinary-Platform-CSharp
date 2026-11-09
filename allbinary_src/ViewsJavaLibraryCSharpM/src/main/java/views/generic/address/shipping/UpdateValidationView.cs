@@ -56,5 +56,11 @@ public class UpdateValidationView : ShippingAddressView, ValidationComponentInte
         return null;
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

@@ -117,7 +117,7 @@ public class MyRandomFactory
         StringMaker stringBuilder = new StringMaker();
         CommonSeps commonSeps = CommonSeps.getInstance();
         int size2 = 100;
-        for (int index = 0; index < size2; index++) {
+        for (int index_2 = 0; index_2 < size2; index_2++) {
             stringBuilder.appendint(((int) randomFactory.getAbsoluteNextInt(3))).append(commonSeps.COMMA);
         }
         Console.WriteLine(stringBuilder.ToString());
@@ -125,25 +125,25 @@ public class MyRandomFactory
         int[] intArray = new int[52];
         int[] intArray2 = new int[52];
         int size = intArray.Length;
-        for (int index = 0; index < size; index++) {
-            intArray[index] = index;
-            intArray2[index] = index;
+        for (int index_3 = 0; index_3 < size; index_3++) {
+            intArray[index_3] = index_3;
+            intArray2[index_3] = index_3;
         }
         randomFactory.shuffle2(intArray, intArray2);
-        for (int index = 0; index < size; index++) {
-            stringBuilder.appendint(intArray[index]).append(commonSeps.COMMA);
+        for (int index_4 = 0; index_4 < size; index_4++) {
+            stringBuilder.appendint(intArray[index_4]).append(commonSeps.COMMA);
         }
         Console.WriteLine(stringBuilder.ToString());
         stringBuilder.delete(0, stringBuilder.length());
-        for (int index = 0; index < size; index++) {
-            stringBuilder.appendint(intArray2[index]).append(commonSeps.COMMA);
+        for (int index_5 = 0; index_5 < size; index_5++) {
+            stringBuilder.appendint(intArray2[index_5]).append(commonSeps.COMMA);
         }
         Console.WriteLine(stringBuilder.ToString());
         bool found = false;
-        for (int index = 0; index < size; index++) {
+        for (int index_6 = 0; index_6 < size; index_6++) {
             found = false;
             for (int index2 = 0; index2 < size; index2++) {
-                if (intArray[index2] == index) {
+                if (intArray[index2] == index_6) {
                     found = true;
                 }
             }

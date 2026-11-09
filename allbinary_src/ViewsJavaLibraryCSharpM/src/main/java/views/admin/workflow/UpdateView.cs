@@ -68,5 +68,11 @@ public class UpdateView : WorkFlowView, ValidationComponentInterface
         return null;
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

@@ -21,6 +21,6 @@ namespace org.allbinary.animation.caption;
 
 public class CaptionResources
 {
-    public static readonly string RESOURCE = "/character_message_bubbled_box.png";
+    public const string RESOURCE = "/character_message_bubbled_box.png";
 }
 

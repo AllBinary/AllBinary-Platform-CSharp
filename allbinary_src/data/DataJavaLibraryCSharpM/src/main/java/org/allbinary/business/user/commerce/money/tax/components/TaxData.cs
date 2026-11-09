@@ -25,7 +25,7 @@ public class TaxData
     {
     }
 
-    public static readonly string NAME = "TAX_NAME";
-    public static readonly string RATE = "TAX_RATE";
+    public const string NAME = "TAX_NAME";
+    public const string RATE = "TAX_RATE";
 }
 

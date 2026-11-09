@@ -33,7 +33,7 @@ public class PreLogUtil
         PreLogUtil.putOE(specialMessage, anyType, functionName, NullUtil.getInstance().NULL_OBJECT);
     }
 
-    private static readonly string LABEL = "org.allbinary";
+    private const string LABEL = "org.allbinary";
     public static void putOE(string specialMessage, object anyType, string functionName, object exception)
     {
         string className = PreLogUtil.LABEL;
@@ -42,7 +42,7 @@ public class PreLogUtil
             className = actualClassName;
         }
         string message = LogFormatUtil.getInstance().get(className, functionName, specialMessage, exception);
-        android.util.Log.i(PreLogUtil.LABEL, message);
+        Console.WriteLine((PreLogUtil.LABEL) + ": " + (message));
     }
 
     public static void putS(string specialMessage, string className, string functionName)
@@ -53,7 +53,7 @@ public class PreLogUtil
     public static void putSE(string specialMessage, string className, string functionName, object exception)
     {
         string message = LogFormatUtil.getInstance().get(className, functionName, specialMessage, exception);
-        android.util.Log.i(className, message);
+        Console.WriteLine((className) + ": " + (message));
     }
 
 }

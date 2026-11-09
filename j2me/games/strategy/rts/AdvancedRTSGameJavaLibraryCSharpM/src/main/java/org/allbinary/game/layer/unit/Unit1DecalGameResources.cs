@@ -20,12 +20,21 @@ using BasicGameResources = org.allbinary.game.layer.resources.BasicGameResources
 using GameGraphicsResourceUtil = org.allbinary.game.layer.resources.GameGraphicsResourceUtil;
 using AndroidUtil = org.allbinary.AndroidUtil;
 using GraphicsFeatureFactory = org.allbinary.game.configuration.feature.GraphicsFeatureFactory;
+using NullUtil = org.allbinary.logic.NullUtil;
 
 namespace org.allbinary.game.layer.unit;
 
 public class Unit1DecalGameResources : BasicGameResources
 {
-    private static readonly Unit1DecalGameResources instance = new Unit1DecalGameResources();
+    private static object instance = NullUtil.getInstance().NULL_OBJECT;
+    public static BasicGameResources getInstance()
+    {
+        if (Unit1DecalGameResources.instance == NullUtil.getInstance().NULL_OBJECT) {
+            Unit1DecalGameResources.instance = new Unit1DecalGameResources();
+        }
+        return ((Unit1DecalGameResources) Unit1DecalGameResources.instance);
+    }
+
     private Unit1DecalGameResources()
     {
         string ROOT = "/unit_decal";
@@ -52,11 +61,6 @@ public class Unit1DecalGameResources : BasicGameResources
         } else {
             return base.getString();
         }
-    }
-
-    public static BasicGameResources getInstance()
-    {
-        return Unit1DecalGameResources.instance;
     }
 
 }

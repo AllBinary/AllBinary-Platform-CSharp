@@ -54,7 +54,7 @@ public class AngleIncrementInfo
         return this.angleIncrement;
     }
 
-    private static readonly string INCREMENT = "Inc: ";
+    private const string INCREMENT = "Inc: ";
     public override string ToString()
     {
         return new StringMaker().append(AngleIncrementInfo.INCREMENT).appendshort(this.angleIncrement).ToString();

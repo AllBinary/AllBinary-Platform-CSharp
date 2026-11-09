@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using ABCustomItem = org.allbinary.graphics.form.item.ABCustomItem;
 
 namespace org.allbinary.graphics.form;

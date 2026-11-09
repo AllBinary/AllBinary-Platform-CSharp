@@ -2,9 +2,9 @@
 
 using System;
 using System.Linq;
-//using Closeable = java.io.Closeable;
-//using InputStream = java.io.InputStream;
-//using OutputStream = java.io.OutputStream;
+using Closeable = java.io.Closeable;
+using InputStream = java.io.InputStream;
+using OutputStream = java.io.OutputStream;
 using Feature = org.allbinary.game.configuration.feature.Feature;
 using Features = org.allbinary.game.configuration.feature.Features;
 using MainFeatureFactory = org.allbinary.game.configuration.feature.MainFeatureFactory;

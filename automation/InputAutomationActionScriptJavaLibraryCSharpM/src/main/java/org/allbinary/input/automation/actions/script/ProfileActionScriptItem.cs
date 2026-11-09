@@ -31,18 +31,18 @@ public class ProfileActionScriptItem : DefaultMutableTreeNode, ProfileActionScri
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private JPopupMenu jPopupMenu = null;
-    private static readonly string EDIT = "Edit";
-    public static readonly string DELETE = "Delete";
-    public static readonly string NEW_CONDITION = "New Condition";
-    public static readonly string NEW_INPUT = "New Input";
-    public static readonly string NEW_OUTPUT = "New Output";
-    public static readonly string NEW_COLOR_AT = "Color At";
-    public static readonly string NEW_TIME_INTERVAL = "Time Interval";
-    public static readonly string NEW_ALWAYS = "Always On/Off";
-    public static readonly string NEW_KEY_INPUT = "Key";
-    public static readonly string NEW_MOUSE_INPUT = "Mouse";
-    public static readonly string NEW_JOYSTICK_INPUT = "Joystick";
-    public static readonly string NEW_IMAGE_OUTPUT = "Image";
+    private const string EDIT = "Edit";
+    public const string DELETE = "Delete";
+    public const string NEW_CONDITION = "New Condition";
+    public const string NEW_INPUT = "New Input";
+    public const string NEW_OUTPUT = "New Output";
+    public const string NEW_COLOR_AT = "Color At";
+    public const string NEW_TIME_INTERVAL = "Time Interval";
+    public const string NEW_ALWAYS = "Always On/Off";
+    public const string NEW_KEY_INPUT = "Key";
+    public const string NEW_MOUSE_INPUT = "Mouse";
+    public const string NEW_JOYSTICK_INPUT = "Joystick";
+    public const string NEW_IMAGE_OUTPUT = "Image";
     public ProfileActionScriptItem(string label, Node node) : base(label)
     {
         // base(label) is called from the constructor declaration

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
+using GL10 = javax.microedition.khronos.opengles.GL10;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 

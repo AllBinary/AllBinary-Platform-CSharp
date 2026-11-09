@@ -30,7 +30,7 @@ public class BasicGeographicMapFactory
     // throws Exception
     public virtual BasicGeographicMap getInstance(RaceTrackInfo raceTrackInfo, RaceTrackData raceTrackData, AllBinaryTiledLayerFactoryInterface tiledLayerFactoryInterface, GeographicMapCellPositionFactoryInterface geographicMapCellPositionFactoryInterface, GeographicMapCellTypeFactory geographicMapCellTypeFactory)
     {
-        return new BasicGeographicMap(SmallIntegerSingletonFactory.getInstance().getAt(((int) raceTrackInfo.getId()) + 100 + 1), raceTrackInfo.getName(), raceTrackData.getCellTypeIdToGeographicMapCellTypeArray(), tiledLayerFactoryInterface.getMiniInstance(raceTrackData), BasicColorFactory.getInstance().CLEAR_COLOR, BasicColorFactory.getInstance().CLEAR_COLOR, geographicMapCellPositionFactoryInterface, new GeographicMapCellPositionBaseFactory(), geographicMapCellTypeFactory);
+        return new BasicGeographicMap(SmallIntegerSingletonFactory.getInstance().getAt(global::java.lang.JavaNumber.intValue(raceTrackInfo.getId()) + 100 + 1), raceTrackInfo.getName(), raceTrackData.getCellTypeIdToGeographicMapCellTypeArray(), tiledLayerFactoryInterface.getMiniInstance(raceTrackData), BasicColorFactory.getInstance().CLEAR_COLOR, BasicColorFactory.getInstance().CLEAR_COLOR, geographicMapCellPositionFactoryInterface, new GeographicMapCellPositionBaseFactory(), geographicMapCellTypeFactory);
     }
 
 }

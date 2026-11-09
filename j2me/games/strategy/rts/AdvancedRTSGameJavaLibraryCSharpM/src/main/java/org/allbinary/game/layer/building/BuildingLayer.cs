@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using ExplosionBasicSound = org.allbinary.ag.weapon.media.audio.ExplosionBasicSound;
 using NullAnimationFactory = org.allbinary.animation.NullAnimationFactory;
 using NullIndexedAnimationFactory = org.allbinary.animation.NullIndexedAnimationFactory;
@@ -62,6 +62,7 @@ using TimeDelayHelper = org.allbinary.time.TimeDelayHelper;
 using BasicArrayListS = org.allbinary.util.BasicArrayListS;
 using RemoteInfo = org.allbinary.game.multiplayer.layer.RemoteInfo;
 using org.allbinary.util;
+using RotationAnimation = org.allbinary.animation.RotationAnimation;
 
 namespace org.allbinary.game.layer.building;
 
@@ -371,6 +372,16 @@ public class BuildingLayer : AdvancedRTSGameLayer, RotationAnimationInterfaceCom
     public static int getStaticType()
     {
         return 2;
+    }
+
+    public override RotationAnimation getRotationAnimationInterface()
+    {
+        return base.getRotationAnimationInterface();
+    }
+
+    public override void setFrame(int index)
+    {
+        base.setFrame(index);
     }
 
 }

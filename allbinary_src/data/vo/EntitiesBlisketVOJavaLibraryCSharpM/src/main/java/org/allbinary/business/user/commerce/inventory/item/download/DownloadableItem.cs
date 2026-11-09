@@ -58,8 +58,8 @@ public class DownloadableItem
         this.changes = EMPTY_STRING;
         this.licenseFile = EMPTY_STRING;
         this.file = EMPTY_STRING;
-        this.size = (0).ToString();
-        this.validTime = (0).ToString();
+        this.size = long.Parse((0).ToString());
+        this.validTime = long.Parse((0).ToString());
         this.retries = EMPTY_STRING;
     }
 
@@ -77,13 +77,13 @@ public class DownloadableItem
         this.file = ((string) hashMap.get(DownloadItemData.FILE));
         string value = ((string) hashMap.get(DownloadItemData.SIZE));
         if (!StringValidationUtil.getInstance().isEmpty(value)) {
-            this.size = (value).ToString();
+            this.size = long.Parse((value).ToString());
         } else {
             this.size = 0;
         }
         string validTime = ((string) hashMap.get(DownloadItemData.VALID_TIME));
         if (!StringValidationUtil.getInstance().isEmpty(validTime)) {
-            this.validTime = (validTime).ToString();
+            this.validTime = long.Parse((validTime).ToString());
         } else {
             string totalYears = ((string) hashMap.get(DownloadItemData.VALID_TIME_YEARS));
             string totalMonths = ((string) hashMap.get(DownloadItemData.VALID_TIME_MONTHS));

@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 
 namespace org.platform;
 

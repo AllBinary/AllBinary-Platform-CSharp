@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using EGLConfig = javax.microedition.khronos.egl.EGLConfig;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
+using EGLConfig = javax.microedition.khronos.egl.EGLConfig;
+using GL10 = javax.microedition.khronos.opengles.GL10;
 using RendererStrings = org.allbinary.graphics.opengles.renderer.RendererStrings;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 

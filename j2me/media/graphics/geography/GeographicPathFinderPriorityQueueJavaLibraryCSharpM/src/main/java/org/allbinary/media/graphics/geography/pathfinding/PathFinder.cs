@@ -16,8 +16,6 @@
 
 using System;
 using System.Linq;
-using java.util;
-//using java.util;
 using AllBinaryTiledLayer = org.allbinary.game.layer.AllBinaryTiledLayer;
 using NullUtil = org.allbinary.logic.NullUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
@@ -28,6 +26,7 @@ using BasicGeographicMapCellPositionFactory = org.allbinary.media.graphics.geogr
 using GeographicMapCellPosition = org.allbinary.media.graphics.geography.map.GeographicMapCellPosition;
 using GeographicMapCellType = org.allbinary.media.graphics.geography.map.GeographicMapCellType;
 using RaceTrackGeographicMapCellType = org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType;
+using org.allbinary.util;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using BasicArrayListUtil = org.allbinary.util.BasicArrayListUtil;
@@ -39,8 +38,8 @@ public class PathFinder : GeographicPathFinderBase
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly BasicArrayListUtil basicArrayListUtil = BasicArrayListUtil.getInstance();
     private readonly MathUtil mathUtil = MathUtil.getInstance();
-    private readonly PriorityQueue<PathFindingNodeCost> openPriorityQueue = new PriorityQueue<PathFindingNodeCost>();
-    private readonly HashSet<PathFindingNodeCost> closedSet = new HashSet<PathFindingNodeCost>();
+    private readonly ABPriorityQueue<PathFindingNodeCost> openPriorityQueue = new ABPriorityQueue<PathFindingNodeCost>();
+    private readonly ABHashSet<PathFindingNodeCost> closedSet = new ABHashSet<PathFindingNodeCost>();
     private object geographicMapInterface = NullUtil.getInstance().NULL_OBJECT;
     private PathFindingNodeCost[][] costArray = PathFindingNodeCost.NULL_PATH_FINDING_NODE_COST_ARRAY_ARRAY;
     // throws Exception
@@ -127,10 +126,10 @@ public class PathFinder : GeographicPathFinderBase
         int targetRow = target.getRow();
         int sizeX = this.costArray.Length;
         int sizeY = this.costArray[0].Length;
-        for (int column = 0; column < sizeX; column++) {
-            for (int row = 0; row < sizeY; row++) {
-                discoveryCalculation = ((long) this.mathUtil.abs(column - targetColumn)) + this.mathUtil.abs(row - targetRow);
-                node = this.costArray[column][row];
+        for (int column_2 = 0; column_2 < sizeX; column_2++) {
+            for (int row_2 = 0; row_2 < sizeY; row_2++) {
+                discoveryCalculation = ((long) this.mathUtil.abs(column_2 - targetColumn)) + this.mathUtil.abs(row_2 - targetRow);
+                node = this.costArray[column_2][row_2];
                 node.pathFindingNodeCostInfoP.totalCostP = 0;
                 node.pathFindingNodeCostInfoP.costToEndP = discoveryCalculation;
             }
@@ -151,10 +150,10 @@ public class PathFinder : GeographicPathFinderBase
             PathFindingNodeCost neighbor = null;
             PathFindingNodeCostInfo neighborInfo = null;
             long calculatedCost = 0L;
-            for (int column = current.geographicMapCellPosition.getColumn() - 1; column < current.geographicMapCellPosition.getColumn() + 2; column++) {
-                for (int row = current.geographicMapCellPosition.getRow() - 1; row < current.geographicMapCellPosition.getRow() + 2; row++) {
-                    if (column > 0 && row > 0 && column < allBinaryTiledLayer.getColumns() && row < allBinaryTiledLayer.getRows() && geographicMapInterface.isOnMap(basicGeographicMapCellPositionFactory.getAt(column, row))) {
-                        neighbor = this.costArray[column][row];
+            for (int column_4 = current.geographicMapCellPosition.getColumn() - 1; column_4 < current.geographicMapCellPosition.getColumn() + 2; column_4++) {
+                for (int row_4 = current.geographicMapCellPosition.getRow() - 1; row_4 < current.geographicMapCellPosition.getRow() + 2; row_4++) {
+                    if (column_4 > 0 && row_4 > 0 && column_4 < allBinaryTiledLayer.getColumns() && row_4 < allBinaryTiledLayer.getRows() && geographicMapInterface.isOnMap(basicGeographicMapCellPositionFactory.getAt(column_4, row_4))) {
+                        neighbor = this.costArray[column_4][row_4];
                         if (this.closedSet.contains(neighbor)) {
                             continue;
                         }

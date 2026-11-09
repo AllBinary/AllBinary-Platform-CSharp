@@ -79,10 +79,10 @@ public class RaceTrackDropCellPositionGenerator : BaseDropCellPositionGenerator
         int lastIndex = trackedList.size() - 1;
         int total = 0;
         int ahead = 0;
-        for (int index = lastIndex; index > 0; index--) {
-            geographicMapCellPosition = ((GeographicMapCellPosition) trackedList.get(index));
+        for (int index_0 = lastIndex; index_0 > 0; index_0--) {
+            geographicMapCellPosition = ((GeographicMapCellPosition) trackedList.get(index_0));
             total = 0;
-            ahead = index;
+            ahead = index_0;
             while (this.isDropAllowedAt(((GeographicMapCellPosition) trackedList.get(ahead)))) {
                 total++;
                 if (total > this.STRAIGHTAWAY) {
@@ -96,8 +96,8 @@ public class RaceTrackDropCellPositionGenerator : BaseDropCellPositionGenerator
             }
         }
         int size = this.list.size();
-        for (int index = size - 1; index >= 0; index--) {
-            this.drop(allBinaryGameLayerManager, index);
+        for (int index_1 = size - 1; index_1 >= 0; index_1--) {
+            this.drop(allBinaryGameLayerManager, index_1);
         }
     }
 

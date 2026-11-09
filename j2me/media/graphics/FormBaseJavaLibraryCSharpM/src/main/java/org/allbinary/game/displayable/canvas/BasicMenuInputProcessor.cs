@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using NullCanvas = javax.microedition.lcdui.NullCanvas;
+using Canvas = javax.microedition.lcdui.Canvas;
+using NullCanvas = javax.microedition.lcdui.NullCanvas;
 using PlayerGameInput = org.allbinary.game.input.PlayerGameInput;
 using MyCanvas = org.allbinary.graphics.displayable.MyCanvas;
 using BaseMotionGestureEventListener = org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener;
@@ -31,18 +31,18 @@ public class BasicMenuInputProcessor : PlayerGameInput, BaseMotionGestureEventLi
 {
     public readonly BasicArrayList motionGestureEventList = new BasicArrayListD();
     private Canvas canvas = NullCanvas.NULL_CANVAS;
-    protected BasicMenuInputProcessor(BasicArrayList gameKeyEventList, int playerInputId, Canvas gameCanvas) : base(gameKeyEventList, new BasicArrayListD(), playerInputId)
+    public BasicMenuInputProcessor(BasicArrayList gameKeyEventList, int playerInputId, Canvas gameCanvas) : base(gameKeyEventList, new BasicArrayListD(), playerInputId)
     {
         // base(gameKeyEventList, new BasicArrayListD(), playerInputId) is called from the constructor declaration
         this.canvas = gameCanvas;
     }
 
-    public override void onMotionGestureEvent(MotionGestureEvent motionGestureEvent)
+    public virtual void onMotionGestureEvent(MotionGestureEvent motionGestureEvent)
     {
         this.motionGestureEventList.add(motionGestureEvent);
     }
 
-    public override void onScrolledMotionGestureEvent(MotionGestureEvent motionGestureEvent)
+    public virtual void onScrolledMotionGestureEvent(MotionGestureEvent motionGestureEvent)
     {
     }
 
@@ -51,7 +51,7 @@ public class BasicMenuInputProcessor : PlayerGameInput, BaseMotionGestureEventLi
         this.canvas = canvas;
     }
 
-    protected virtual MyCanvas getCanvas()
+    public virtual MyCanvas getCanvas()
     {
         return ((MyCanvas) this.canvas);
     }

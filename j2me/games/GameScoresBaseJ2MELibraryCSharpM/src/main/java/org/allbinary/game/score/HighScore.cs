@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using DataOutputStream = java.io.DataOutputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using DataOutputStream = java.io.DataOutputStream;
 using GameInfo = org.allbinary.game.GameInfo;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonSeps = org.allbinary.@string.CommonSeps;
@@ -58,11 +58,11 @@ public class HighScore
     // throws Exception
     public virtual sbyte[] getAsBytes()
     {
-        System.IO.MemoryStream byteArrayOutputStream = new System.IO.MemoryStream();
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         DataOutputStream outputStream = new DataOutputStream(byteArrayOutputStream);
         outputStream.writeUTF(this.getName());
         outputStream.writeLong(this.getScore());
-        return ((sbyte[]) (Array) byteArrayOutputStream.ToArray());
+        return byteArrayOutputStream.toByteArray();
     }
 
     public virtual GameInfo getGameInfo()

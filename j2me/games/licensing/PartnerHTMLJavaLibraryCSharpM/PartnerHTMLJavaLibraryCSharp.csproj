@@ -43,8 +43,9 @@
     <ProjectReference Include="..\..\..\..\allbinary_src\licensing\ClientInfoLicensingJavaLibraryCSharpM\ClientInfoLicensingJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\GameJ2MELibraryCSharpM\GameJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\licensing\FileLicenseInitInfoJavaLibraryCSharpM\FileLicenseInitInfoJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\input\platform\pc\GameInputPCMotionJavaLibraryCSharpM\GameInputPCMotionJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\logic\BasePreloaderJavaLibraryCSharpM\BasePreloaderJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\allbinary_custom_android_version\microemulator\microemu-midp\microemu-midpCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\2_0_4\microemu-midpCSharp\microemu-midp-for-polyglotCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\LogCSharpM\LogCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\logic\data\file\FileJavaLibraryCSharpM\FileJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\ThreadLibraryCSharpM\ThreadLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -75,26 +76,29 @@
     <ProjectReference Include="..\..\..\media\MediaDataCSharpM\MediaDataCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\data\BaseDataJavaLibraryCSharpM\BaseDataJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\security\BasicSecurityJavaLibraryCSharpM\BasicSecurityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\J2MEColorJavaLibraryCSharpM\J2MEColorJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\input\TouchButtonJavaLibraryCSharpM\TouchButtonJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\input\TouchButtonBaseJavaLibraryCSharpM\TouchButtonBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\input\MotionGestureBaseJavaLibraryCSharpM\MotionGestureBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\allbinary_src_designpatterns_srcCSharpM\allbinary_src_designpatterns_srcCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\logic\BasePreloaderJ2MEJavaLibraryCSharpM\BasePreloaderJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\allbinary_custom_android_version\microemulator\microemu-cldc\microemu-cldcCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\2_0_4\microemu-cldcCSharp\microemu-cldc-for-polyglotCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\CommonJavaLibraryCSharpM\CommonJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\NullJ2MELibraryCSharpM\NullJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\media\sound\SoundJ2MELibraryCSharpM\SoundJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\lib\TrigBaseLibraryCSharpM\TrigBaseLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\J2MEColorJavaLibraryCSharpM\J2MEColorJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\media\graphics\geography\map\GraphBaseJavaLibraryCSharpM\GraphBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\hardware\BaseHardwareJavaLibraryCSharpM\BaseHardwareJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\hardware\BaseSystemJavaLibraryCSharpM\BaseSystemJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\cache\BaseCacheJavaLibraryCSharpM\BaseCacheJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\ScreenCaptureJavaLibraryCSharpM\ScreenCaptureJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/math/PositionStrings is also in a nearer dependency -->
-    <ProjectReference Include="..\..\..\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="BaseMathLibraryCSharp" />
+    <ProjectReference Include="..\..\..\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\media\graphics\FormBaseJavaLibraryCSharpM\FormBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\media\graphics\geography\map\LayerPlacementLibraryCSharpM\LayerPlacementLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\media\graphics\animation\RotationAnimationJavaLibraryCSharpM\RotationAnimationJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\TokenizerJavaLibraryCSharpM\TokenizerJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\allbinary_src\security\SimpleCryptLibraryCSharpM\SimpleCryptLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\input\TouchScreenJavaLibraryCSharpM\TouchScreenJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\replace_these_stub_projects\allbinary_src\J2MEJsInteropCompatibilityJavaLibraryCSharpM\J2MEJsInteropCompatibilityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\media\sound\NoPlayerJavaLibraryCSharpM\NoPlayerJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\media\sound\BasicPlayerJavaLibraryCSharpM\BasicPlayerJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

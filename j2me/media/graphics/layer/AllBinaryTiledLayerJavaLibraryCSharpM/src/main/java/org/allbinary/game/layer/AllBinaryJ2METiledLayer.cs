@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using TiledLayer = javax.microedition.lcdui.game.TiledLayer;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
+using TiledLayer = javax.microedition.lcdui.game.TiledLayer;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 

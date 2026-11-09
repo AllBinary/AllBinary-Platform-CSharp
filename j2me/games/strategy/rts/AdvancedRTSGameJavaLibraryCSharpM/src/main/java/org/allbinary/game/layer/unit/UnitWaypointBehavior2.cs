@@ -67,6 +67,7 @@ public class UnitWaypointBehavior2 : UnitWaypointBehavior
     private CollidableDestroyableDamageableLayer targetWithoutCachedPathLayerInterface = CollidableDestroyableDamageableLayer.getNullInstance();
     public UnitWaypointBehavior2(UnitLayer ownerAdvancedRTSGameLayer, AdvancedRTSGameLayer fakeWaypoint) : base(ownerAdvancedRTSGameLayer, fakeWaypoint)
     {
+        this.buildingSteeringVisitor = new BuildingSteeringVisitor(this);
         // base(ownerAdvancedRTSGameLayer, fakeWaypoint) is called from the constructor declaration
         this.progressTimeDelayHelper = new TimeDelayHelper(5000);
         this.wanderPathsList = new BasicArrayListD();
@@ -452,8 +453,8 @@ public class UnitWaypointBehavior2 : UnitWaypointBehavior
         return targetDistance < this.sensorRange + layerInterface.getHalfHeight();
     }
 
-    private static readonly string TARGET_DISTANCE = "Target Distance";
-    private static readonly string TARGET_LAYER = "Target Layer";
+    private const string TARGET_DISTANCE = "Target Distance";
+    private const string TARGET_LAYER = "Target Layer";
     public override string getCurrentTargetingStateString()
     {
         StringMaker stringBuffer = new StringMaker();
@@ -483,6 +484,8 @@ public class UnitWaypointBehavior2 : UnitWaypointBehavior
 
     private class BuildingSteeringVisitor : SteeringVisitor
     {
+        private readonly UnitWaypointBehavior2 outer;
+
         private readonly BasicArrayList positionList = new BasicArrayListD();
         public override object visit(object anyType)
         {
@@ -491,7 +494,7 @@ public class UnitWaypointBehavior2 : UnitWaypointBehavior
                 if (this.getList().size() > 0) {
                     AllBinaryLayer allbinaryLayer = ((AllBinaryLayer) this.getList().get(0));
                     GeographicMapCellPosition cellPosition = ((GeographicMapCellPosition) this.getPositionList().get(0));
-                    bool clear = this.buildingChase(allbinaryLayer, cellPosition);
+                    bool clear = this.outer.buildingChase(allbinaryLayer, cellPosition);
                     if (clear) {
                         this.getList().clear();
                         this.positionList.clear();
@@ -512,8 +515,13 @@ public class UnitWaypointBehavior2 : UnitWaypointBehavior
             return this.positionList;
         }
 
+        public BuildingSteeringVisitor(UnitWaypointBehavior2 outer)
+        {
+            this.outer = outer;
+        }
+
     }
-    private readonly BuildingSteeringVisitor buildingSteeringVisitor = new BuildingSteeringVisitor();
+    private readonly BuildingSteeringVisitor buildingSteeringVisitor;
     // throws Exception
     public override void addBuildingChase(AllBinaryLayer allbinaryLayer, GeographicMapCellPosition cellPosition)
     {

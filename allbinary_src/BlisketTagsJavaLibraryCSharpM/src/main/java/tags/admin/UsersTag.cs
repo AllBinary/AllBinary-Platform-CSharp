@@ -36,7 +36,7 @@ public class UsersTag : StoreValidationTransformTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             this.setName("Admin Users View");

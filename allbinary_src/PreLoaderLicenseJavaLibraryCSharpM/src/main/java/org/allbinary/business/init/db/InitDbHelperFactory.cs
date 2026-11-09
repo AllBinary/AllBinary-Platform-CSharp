@@ -24,7 +24,7 @@ namespace org.allbinary.business.init.db;
 
 public class InitDbHelperFactory
 {
-    private static readonly string CLASSNAME = "org.allbinary.business.installer.InitDbCrypted";
+    private const string CLASSNAME = "org.allbinary.business.installer.InitDbCrypted";
     private InitDbHelperFactory()
     {
     }

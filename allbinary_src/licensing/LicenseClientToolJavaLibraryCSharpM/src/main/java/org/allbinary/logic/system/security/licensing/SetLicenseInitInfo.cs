@@ -16,14 +16,14 @@
 
 using System;
 using System.Linq;
-//using BufferedReader = java.io.BufferedReader;
-//using InputStreamReader = java.io.InputStreamReader;
+using BufferedReader = java.io.BufferedReader;
+using InputStreamReader = java.io.InputStreamReader;
 using LicenseInitInfo = org.allbinary.business.init.LicenseInitInfo;
 using LicenseInitInfoUtil = org.allbinary.business.init.LicenseInitInfoUtil;
 using FileFactory = org.allbinary.logic.io.file.FileFactory;
 using PATH_GLOBALS = org.allbinary.globals.PATH_GLOBALS;
-//using File = java.io.File;
-//using FileReader = java.io.FileReader;
+using File = java.io.File;
+using FileReader = java.io.FileReader;
 //using LineNumberReader = java.io.LineNumberReader;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 

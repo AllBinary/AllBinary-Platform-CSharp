@@ -21,11 +21,11 @@ namespace org.allbinary.business.user.commerce.inventory.item.permission;
 
 public class PermissionItemData
 {
-    public static readonly string WHO = "PERMISSIONSITEM_WHO";
-    public static readonly string WHAT = "PERMISSIONSITEM_WHAT";
-    public static readonly string TYPE = "PERMISSIONSITEM_TYPE";
-    public static readonly string START_TIME = "PERMISSIONSITEM_START_TIME";
-    public static readonly string END_TIME = "PERMISSIONSITEM_END_TIME";
-    public static readonly string REMOTE_ADDR = "PERMISSIONSITEM_REMOTE_ADDR";
+    public const string WHO = "PERMISSIONSITEM_WHO";
+    public const string WHAT = "PERMISSIONSITEM_WHAT";
+    public const string TYPE = "PERMISSIONSITEM_TYPE";
+    public const string START_TIME = "PERMISSIONSITEM_START_TIME";
+    public const string END_TIME = "PERMISSIONSITEM_END_TIME";
+    public const string REMOTE_ADDR = "PERMISSIONSITEM_REMOTE_ADDR";
 }
 

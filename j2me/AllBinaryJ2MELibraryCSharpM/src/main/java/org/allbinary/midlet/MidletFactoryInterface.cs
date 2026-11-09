@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using MIDlet = javax.microedition.midlet.MIDlet;
+using MIDlet = javax.microedition.midlet.MIDlet;
 
 namespace org.allbinary.midlet;
 

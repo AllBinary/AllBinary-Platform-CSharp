@@ -61,7 +61,7 @@ public class AngleInfo
         return this.angleIncrementInfo;
     }
 
-    private static readonly string ANGLE = "Angle: ";
+    private const string ANGLE = "Angle: ";
     public override string ToString()
     {
         StringMaker stringBuffer = new StringMaker();

@@ -25,20 +25,20 @@ public class ShippingAddressData
     {
     }
 
-    public static readonly string SETTOBILLINGADDRESS = "Set To Billing Address";
-    public static readonly string SELECT = "Select Shipping Address";
-    public static readonly string SELECTNAME = "SELECTSHIPPINGADDRESS";
-    public static readonly string MULTIPLE = "SHIPPINGADDRESSES";
-    public static readonly string SHIPPINGADDRESSES = "SHIPPINGADDRESSES";
-    public static readonly string SHIPPINGADDRESS = "SHIPPINGADDRESS";
-    public static readonly string ID = "SHIPPINGADDRESS_ID";
-    public static readonly string ADDRESS = "SHIPPINGADDRESS_ADDRESS";
-    public static readonly string NAME = "SHIPPINGADDRESS_NAME";
-    public static readonly string STREET = "SHIPPINGADDRESS_STREET";
-    public static readonly string CITY = "SHIPPINGADDRESS_CITY";
-    public static readonly string STATE = "SHIPPINGADDRESS_STATE";
-    public static readonly string CODE = "SHIPPINGADDRESS_CODE";
-    public static readonly string COUNTRY = "SHIPPINGADDRESS_COUNTRY";
-    public static readonly string TAX = "SHIPPINGADDRESS_TAX";
+    public const string SETTOBILLINGADDRESS = "Set To Billing Address";
+    public const string SELECT = "Select Shipping Address";
+    public const string SELECTNAME = "SELECTSHIPPINGADDRESS";
+    public const string MULTIPLE = "SHIPPINGADDRESSES";
+    public const string SHIPPINGADDRESSES = "SHIPPINGADDRESSES";
+    public const string SHIPPINGADDRESS = "SHIPPINGADDRESS";
+    public const string ID = "SHIPPINGADDRESS_ID";
+    public const string ADDRESS = "SHIPPINGADDRESS_ADDRESS";
+    public const string NAME = "SHIPPINGADDRESS_NAME";
+    public const string STREET = "SHIPPINGADDRESS_STREET";
+    public const string CITY = "SHIPPINGADDRESS_CITY";
+    public const string STATE = "SHIPPINGADDRESS_STATE";
+    public const string CODE = "SHIPPINGADDRESS_CODE";
+    public const string COUNTRY = "SHIPPINGADDRESS_COUNTRY";
+    public const string TAX = "SHIPPINGADDRESS_TAX";
 }
 

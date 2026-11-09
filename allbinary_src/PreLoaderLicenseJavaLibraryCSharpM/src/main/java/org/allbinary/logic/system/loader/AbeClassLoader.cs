@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using FileInputStream = java.io.FileInputStream;
+using FileInputStream = java.io.FileInputStream;
 //using IOException = java.io.IOException;
 using java.util;
 using StdUtil = org.allbinary.logic.StdUtil;
@@ -31,7 +31,7 @@ using AbCryptUtil = org.allbinary.logic.system.security.AbCryptUtil;
 
 namespace org.allbinary.logic.system.loader;
 
-public class AbeClassLoader : ClassLoader
+public class AbeClassLoader : global::java.lang.ClassLoader
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly AbCryptUtil abCryptUtil = AbCryptUtil.getInstance();
@@ -40,7 +40,7 @@ public class AbeClassLoader : ClassLoader
     private readonly string ENCRYPTED_EXTENSION = AbPathData.getInstance().EXTENSION_SEP + "abc";
     private static string PATH;
     private string key;
-    public AbeClassLoader(ClassLoader parent, string key) : base(parent)
+    public AbeClassLoader(global::java.lang.ClassLoader parent, string key) : base(parent)
     {
         // base(parent) is called from the constructor declaration
         this.key = key;
@@ -113,7 +113,7 @@ public class AbeClassLoader : ClassLoader
             @in = new FileInputStream(cname);
             sbyte[] decrypted = this.abCryptUtil.decrypt(@in, this.key);
             return decrypted;
-        } catch (IOException e) {
+        } catch (System.IO.IOException e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().LOADERERROR)) {
                 this.logUtil.put("(Before LogBuffer Output) Failure loading Encrypted: " + name + " File: " + cname, "AbeClassLoader", "loadClassBytes", e);
             }

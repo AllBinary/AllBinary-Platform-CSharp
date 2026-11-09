@@ -25,13 +25,13 @@ public class SingleSensorGameUpdateProcessor : SensorGameUpdateProcessor
     private readonly Processor accelerometerSensorUpdateProcessor = new AccelerometerSensorUpdateProcessor();
     private readonly Processor gyroSensorUpdateProcessor = new GyroSensorUpdateProcessor();
     // throws Exception
-    public virtual void process(object anyType)
+    public override void process(object anyType)
     {
         this.setNoSensors();
     }
 
     // throws Exception
-    public virtual void sendNotifications(object anyType)
+    public override void sendNotifications(object anyType)
     {
     }
 

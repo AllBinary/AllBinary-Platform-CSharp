@@ -16,13 +16,13 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Display = javax.microedition.lcdui.Display;
-//using Displayable = javax.microedition.lcdui.Displayable;
-//using NullCanvas = javax.microedition.lcdui.NullCanvas;
-//using MIDlet = javax.microedition.midlet.MIDlet;
-//using MIDletStateChangeException = javax.microedition.midlet.MIDletStateChangeException;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Display = javax.microedition.lcdui.Display;
+using Displayable = javax.microedition.lcdui.Displayable;
+using NullCanvas = javax.microedition.lcdui.NullCanvas;
+using MIDlet = javax.microedition.midlet.MIDlet;
+using MIDletStateChangeException = javax.microedition.midlet.MIDletStateChangeException;
 using StdUtil = org.allbinary.logic.StdUtil;
 using ForcedLogUtil = org.allbinary.logic.communication.log.ForcedLogUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
@@ -62,7 +62,7 @@ public class AllBinaryMidlet : MIDlet, CommandListener
         this.logUtil.putF(this.commonStrings.CONSTRUCTOR, this, "AllBinaryMidlet::AllBinaryMidlet");
     }
 
-    protected virtual void setDisplay(Displayable newDisplay)
+    public virtual void setDisplay(Displayable newDisplay)
     {
         string title = StringUtil.getInstance().EMPTY_STRING;
         if (newDisplay != NullCanvas.NULL_CANVAS) {
@@ -82,7 +82,7 @@ public class AllBinaryMidlet : MIDlet, CommandListener
         return Display.getDisplay(this);
     }
 
-    protected virtual Displayable getCurrentDisplayable()
+    public virtual Displayable getCurrentDisplayable()
     {
         return Display.getDisplay(this).getCurrent();
     }
@@ -98,21 +98,21 @@ public class AllBinaryMidlet : MIDlet, CommandListener
     }
 
     // throws MIDletStateChangeException
-    protected override void startApp()
+    public override void startApp()
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }
 
-    protected override void pauseApp()
+    public override void pauseApp()
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }
 
-    protected virtual void destroyAppInRunnable(bool unconditional, bool isProgress)
+    public virtual void destroyAppInRunnable(bool unconditional, bool isProgress)
     {
     }
 
-    protected override void destroyApp(bool unconditional)
+    public override void destroyApp(bool unconditional)
     {
         string METHOD_NAME = "AllBinaryMidlet::destroyApp";
         try {
@@ -145,7 +145,7 @@ public class AllBinaryMidlet : MIDlet, CommandListener
         return StdUtil.getInstance().NULL_TABLE;
     }
 
-    public override void commandAction(Command command, Displayable displayable)
+    public virtual void commandAction(Command command, Displayable displayable)
     {
     }
 

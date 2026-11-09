@@ -16,11 +16,11 @@
 
 using System;
 using System.Linq;
-//using Security = java.security.Security;
-//using KeySpec = java.security.spec.KeySpec;
-//using Cipher = javax.crypto.Cipher;
-//using SecretKey = javax.crypto.SecretKey;
-//using SecretKeyFactory = javax.crypto.SecretKeyFactory;
+using Security = java.security.Security;
+using KeySpec = java.security.spec.KeySpec;
+using Cipher = javax.crypto.Cipher;
+using SecretKey = javax.crypto.SecretKey;
+using SecretKeyFactory = javax.crypto.SecretKeyFactory;
 using TsUtil = org.allbinary.TsUtil;
 using CryptInterface = org.allbinary.init.crypt.jcehelper.CryptInterface;
 using NullUtil = org.allbinary.logic.NullUtil;

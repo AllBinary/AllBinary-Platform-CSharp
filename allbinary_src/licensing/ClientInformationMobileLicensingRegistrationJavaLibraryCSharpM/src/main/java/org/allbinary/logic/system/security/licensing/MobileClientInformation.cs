@@ -26,7 +26,7 @@ namespace org.allbinary.logic.system.security.licensing;
 
 public class MobileClientInformation : AbeClientInformation
 {
-    public static readonly string DESC = "Mobile";
+    public const string DESC = "Mobile";
     public static readonly string ANDROID_DESC = "Android" + MobileClientInformation.DESC;
     public MobileClientInformation(string name, string version, string specialName, string shortName) : base(name, version, new StringMaker().append(specialName).append(CommonSeps.getInstance().SPACE).append(PartnerIdentifierFileUtil.getInstance().get()).ToString(), shortName)
     {

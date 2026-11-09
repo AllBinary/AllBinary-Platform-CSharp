@@ -21,7 +21,7 @@ using Canvas = android.graphics.Canvas;
 using Color = android.graphics.Color;
 using Matrix = android.graphics.Matrix;
 using Paint = android.graphics.Paint;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using AndroidImageInterface = org.microemu.android.device.AndroidImageInterface;
 
 namespace org.allbinary.media.image;

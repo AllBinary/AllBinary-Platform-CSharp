@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using HelpSet = javax.help.HelpSet;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 

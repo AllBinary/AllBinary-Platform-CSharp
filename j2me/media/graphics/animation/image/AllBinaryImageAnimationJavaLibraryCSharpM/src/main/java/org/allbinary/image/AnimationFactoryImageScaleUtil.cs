@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using AnimationFactoryInitializationVisitor = org.allbinary.animation.image.AnimationFactoryInitializationVisitor;
 using BaseImageAnimationFactory = org.allbinary.animation.image.BaseImageAnimationFactory;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;

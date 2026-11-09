@@ -56,7 +56,7 @@ public class RootStoreThemeCategoryProperties : RootStoreCategoryProperties
     }
 
     // throws Exception
-    public virtual void initPath()
+    public override void initPath()
     {
         TransformInfoHttpStoreInterface transformInfoHttpStoreInterface = ((TransformInfoHttpStoreInterface) this.transformInfoInterface);
         StoreFrontInterface storeFrontInterface = StoreFrontFactory.getInstance(transformInfoHttpStoreInterface.getStoreName());

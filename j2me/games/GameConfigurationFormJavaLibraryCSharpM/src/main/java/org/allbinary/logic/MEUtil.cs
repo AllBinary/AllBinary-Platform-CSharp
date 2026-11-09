@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Item = javax.microedition.lcdui.Item;
+using Item = javax.microedition.lcdui.Item;
 using CommandForm = org.allbinary.graphics.displayable.screen.CommandForm;
 
 namespace org.allbinary.logic;

@@ -14,6 +14,7 @@
  */
 // Generated Code Do Not Modify
 
+extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
 
@@ -29,7 +30,7 @@ public class J2SEMath
 
     public virtual int round(float value)
     {
-        return Math.Round(value);
+        return global::java.lang.JavaMath.round(value);
     }
 
     public virtual float abs(float value)

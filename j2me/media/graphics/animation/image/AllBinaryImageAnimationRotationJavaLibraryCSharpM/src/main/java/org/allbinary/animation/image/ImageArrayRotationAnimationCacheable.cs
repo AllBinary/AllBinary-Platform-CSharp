@@ -30,7 +30,7 @@ public class ImageArrayRotationAnimationCacheable : AdjustedImageArrayRotationAn
         // base((((ImageArrayRotationAnimationInfo) anyType)).getImageArray(), (((ImageArrayRotationAnimationInfo) anyType)).getAngleInfoP(), (((ImageArrayRotationAnimationInfo) anyType)).getTotalAngle(), (((ImageArrayRotationAnimationInfo) anyType)).getDx(), (((ImageArrayRotationAnimationInfo) anyType)).getDy(), animationBehavior) is called from the constructor declaration
     }
 
-    public override object getKey()
+    public virtual object getKey()
     {
         return NullUtil.getInstance().NULL_OBJECT;
     }

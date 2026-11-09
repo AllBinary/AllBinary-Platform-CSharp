@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using RecordComparator = javax.microedition.rms.RecordComparator;
+using RecordComparator = javax.microedition.rms.RecordComparator;
 
 namespace org.allbinary.game.configuration.persistance;
 

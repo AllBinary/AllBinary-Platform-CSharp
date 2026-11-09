@@ -36,7 +36,7 @@ public class TitleView : DomNodeInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private string title;
-    private static readonly string NAME = "None";
+    private const string NAME = "None";
     public TitleView()
     {
         this.title = TitleView.NAME;

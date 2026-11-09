@@ -3,8 +3,8 @@
 using System;
 using System.Linq;
 using ARunnable = org.allbinary.thread.ARunnable;
-//using Player = javax.microedition.media.Player;
-//using PlayerListener = javax.microedition.media.PlayerListener;
+using Player = javax.microedition.media.Player;
+using PlayerListener = javax.microedition.media.PlayerListener;
 using AvianUtil = org.allbinary.AvianUtil;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
@@ -34,16 +34,25 @@ public class MusicManager
     //Handle Media ending for Avian
     private class MusicManagerPlayerListener : PlayerListener
     {
+        private readonly MusicManager outer;
+
+        private readonly MusicManager musicManager;
+        public MusicManagerPlayerListener(MusicManager outer, MusicManager musicManager)
+        {
+            this.outer = outer;
+            this.musicManager = musicManager;
+        }
+
         public virtual void playerUpdate(Player player, string @event, object eventData)
         {
-            PreLogUtil.put(@event, this, commonStrings.PROCESS);
+            PreLogUtil.put(@event, this, this.musicManager.commonStrings.PROCESS);
             if (@event == PlayerListener.END_OF_MEDIA || @event == PlayerListener.STOPPED || @event == PlayerListener.CLOSED) {
-                reset();
+                this.musicManager.reset();
             }
         }
 
     }
-    private readonly PlayerListener playerListener = new MusicManagerPlayerListener();
+    private readonly PlayerListener playerListener;
     private readonly string PLAY = "Play ";
     private readonly string SONG = " for: ";
     private readonly string NEXT_SONG = CommonLabels.getInstance().NEXT + " Song: ";
@@ -60,6 +69,7 @@ public class MusicManager
     private bool stopped = true;
     public MusicManager(Type musicServiceClass, BasicArrayList songList)
     {
+        this.playerListener = new MusicManagerPlayerListener(this, this);
         this.songList = songList;
     }
 

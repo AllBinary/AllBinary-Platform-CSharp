@@ -115,13 +115,13 @@ public class CssElementView : DomNodeInterface
         }
         Node node = ModDomHelper.createNodeWithValueNodes(document, CssElementData.getInstance().NAME, hashMap);
         int size = this.cssPropertyVector.size();
-        for (int index = 0; index < size; index++) {
-            DomNodeInterface cssPropertyDomNodeInterface = ((DomNodeInterface) this.cssPropertyVector.get(index));
+        for (int index_0 = 0; index_0 < size; index_0++) {
+            DomNodeInterface cssPropertyDomNodeInterface = ((DomNodeInterface) this.cssPropertyVector.get(index_0));
             node.appendChild(cssPropertyDomNodeInterface.toXmlNode(document));
         }
         int size2 = this.cssElementVector.size();
-        for (int index = 0; index < size2; index++) {
-            DomNodeInterface cssElementDomNodeInterface = ((DomNodeInterface) this.cssElementVector.get(index));
+        for (int index_1 = 0; index_1 < size2; index_1++) {
+            DomNodeInterface cssElementDomNodeInterface = ((DomNodeInterface) this.cssElementVector.get(index_1));
             node.appendChild(cssElementDomNodeInterface.toXmlNode(document));
         }
         return node;

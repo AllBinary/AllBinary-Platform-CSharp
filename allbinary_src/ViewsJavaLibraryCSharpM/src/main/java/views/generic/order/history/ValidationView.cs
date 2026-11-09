@@ -49,5 +49,11 @@ public class ValidationView : OrderHistoryView, ValidationComponentInterface
         return MESSAGES.CONTACTADMIN;
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

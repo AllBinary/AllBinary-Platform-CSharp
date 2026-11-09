@@ -36,8 +36,8 @@ public class NumberOnOwnGroupSequenceAIFactory
     {
         int?[] integerArray = NumberInSameGroupSequence.getInstance().NUMBER_ON_SAME_TEAM_SEQUENCE;
         BasicArrayList list = new BasicArrayListD();
-        for (int index = 0; index < integerArray.Length; index++) {
-            object integerCanBeNull = hashtable.get(((object) integerArray[index]));
+        for (int index_0 = 0; index_0 < integerArray.Length; index_0++) {
+            object integerCanBeNull = hashtable.get(((object) integerArray[index_0]));
             if (integerCanBeNull == null) {
                 break;
             }
@@ -58,8 +58,8 @@ public class NumberOnOwnGroupSequenceAIFactory
             throw new Exception("Too Many AI properties.");
         }
         int?[] numberOnSameTeam = new int?[list.size()];
-        for (int index = 0; index < numberOnSameTeam.Length; index++) {
-            numberOnSameTeam[index] = ((int?) list.objectArray[index]);
+        for (int index_1 = 0; index_1 < numberOnSameTeam.Length; index_1++) {
+            numberOnSameTeam[index_1] = ((int?) list.objectArray[index_1]);
         }
         return new NumberOnOwnGroupSequenceAI(numberOnSameTeam, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
     }

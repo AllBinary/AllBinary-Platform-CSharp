@@ -32,7 +32,7 @@ using AbPath = org.allbinary.logic.io.path.AbPath;
 using AbPathData = org.allbinary.logic.io.path.AbPathData;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using PATH_GLOBALS = org.allbinary.globals.PATH_GLOBALS;
-//using OutputStream = java.io.OutputStream;
+using OutputStream = java.io.OutputStream;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
@@ -205,7 +205,7 @@ public class AbSqlTableUtil
         string tableName = abSqlTable.getTableName();
         try {
             string path = org.allbinary.globals.URLGLOBALS.getMainPath() + PATH_GLOBALS.getInstance().BACKUP_PATH;
-            int current = ((int) portion.getCurrent());
+            int current = global::java.lang.JavaNumber.intValue(portion.getCurrent());
             if (current == 0) {
                 if (Directory.create(new AbPath(path))) {
                     if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
@@ -216,7 +216,7 @@ public class AbSqlTableUtil
             AbFile backupFile = AbFile.createAbFile(path, tableName + this.EXTENSION);
             BufferedLineReader bufferedLineReader = new BufferedLineReader(backupFile);
             long size = bufferedLineReader.getSize();
-            long section = size / ((int) portion.getTotal()) + 1;
+            long section = size / global::java.lang.JavaNumber.intValue(portion.getTotal()) + 1;
             long start = section * ((long) current);
             long end = start + section;
             if (end > size) {

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using GameFeatureImageCacheFactory = org.allbinary.image.GameFeatureImageCacheFactory;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
 using TimeDelayHelper = org.allbinary.time.TimeDelayHelper;

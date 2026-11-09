@@ -16,13 +16,13 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using DataInputStream = java.io.DataInputStream;
-//using DataOutputStream = java.io.DataOutputStream;
-//using RecordEnumeration = javax.microedition.rms.RecordEnumeration;
-//using RecordStore = javax.microedition.rms.RecordStore;
-//using RecordStoreException = javax.microedition.rms.RecordStoreException;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using DataInputStream = java.io.DataInputStream;
+using DataOutputStream = java.io.DataOutputStream;
+using RecordEnumeration = javax.microedition.rms.RecordEnumeration;
+using RecordStore = javax.microedition.rms.RecordStore;
+using RecordStoreException = javax.microedition.rms.RecordStoreException;
 using TsUtil = org.allbinary.TsUtil;
 using GameInfo = org.allbinary.game.GameInfo;
 using NullRecordComparator = org.allbinary.game.configuration.persistance.NullRecordComparator;
@@ -147,10 +147,10 @@ public class HighScoreNamePersistanceSingleton
         try {
             this.logUtil.putF(new StringMaker().append("Saving: ").append(name).ToString(), this, this.commonStrings.SAVE);
             recordStore = RecordStore.openRecordStore(this.getRecordId(abeClientInformation), true);
-            System.IO.MemoryStream byteArrayOutputStream = new System.IO.MemoryStream();
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             DataOutputStream outputStream = new DataOutputStream(byteArrayOutputStream);
             outputStream.writeUTF(name);
-            sbyte[] savedGameBytes = ((sbyte[]) (Array) byteArrayOutputStream.ToArray());
+            sbyte[] savedGameBytes = byteArrayOutputStream.toByteArray();
             recordStore.addRecord(savedGameBytes, 0, savedGameBytes.Length);
             this.name = name;
         } catch (Exception e) {

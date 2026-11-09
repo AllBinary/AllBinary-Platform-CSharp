@@ -47,13 +47,13 @@ public class BasicHighScoresFactory : HighScoresBase
     private readonly string PERSONAL_HIGH_SCORES = "Personal Top Scores";
     private readonly string WORLD_TOP_SCORES = "World Top Scores";
     private readonly string FETCH = "fetchHighScores";
-    public virtual void fetchHighScores(GameInfo gameInfo, HighScoresResultsListener highScoresResultsListener)
+    public override void fetchHighScores(GameInfo gameInfo, HighScoresResultsListener highScoresResultsListener)
     {
         this.logUtil.putF("Getting Remote/Local HighScores", this, this.FETCH);
         this.fetchHighScoresPreload(gameInfo, highScoresResultsListener, true);
     }
 
-    public virtual void fetchHighScoresPreload(GameInfo gameInfo, HighScoresResultsListener highScoresResultsListener, bool preload)
+    public override void fetchHighScoresPreload(GameInfo gameInfo, HighScoresResultsListener highScoresResultsListener, bool preload)
     {
         SecondaryThreadPool.getInstance().runTask(new ARunnable()
 #if JAVA_ANONYMOUS_CLASS_BODY
@@ -84,7 +84,7 @@ public class BasicHighScoresFactory : HighScoresBase
 );
     }
 
-    public virtual HighScoresHelperBaseInterface createHighScoresHelper()
+    public override HighScoresHelperBaseInterface createHighScoresHelper()
     {
         return new HighScoresHelper2();
     }

@@ -21,12 +21,12 @@ namespace org.allbinary.business.user.commerce.inventory.order;
 
 public class OrderData
 {
-    public static readonly string ORDERS = "ORDERS";
-    public static readonly string ORDER = "ORDER";
-    public static readonly string ID = "ORDER_ID";
-    public static readonly string CUSTOMERCOMMENT = "ORDER_CUSTOMER_COMMENT";
-    public static readonly string CUSTOMERCANCELCOMMENT = "ORDER_CUSTOMER_CANCEL_COMMENT";
-    public static readonly string STORECOMMENT = "ORDER_STORE_COMMENT";
-    public static readonly string STORECANCELCOMMENT = "ORDER_STORE_CANCEL_COMMENT";
+    public const string ORDERS = "ORDERS";
+    public const string ORDER = "ORDER";
+    public const string ID = "ORDER_ID";
+    public const string CUSTOMERCOMMENT = "ORDER_CUSTOMER_COMMENT";
+    public const string CUSTOMERCANCELCOMMENT = "ORDER_CUSTOMER_CANCEL_COMMENT";
+    public const string STORECOMMENT = "ORDER_STORE_COMMENT";
+    public const string STORECANCELCOMMENT = "ORDER_STORE_CANCEL_COMMENT";
 }
 

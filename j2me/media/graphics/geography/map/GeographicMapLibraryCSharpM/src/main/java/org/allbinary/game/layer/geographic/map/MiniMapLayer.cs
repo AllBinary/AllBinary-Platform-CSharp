@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
@@ -65,19 +65,19 @@ public class MiniMapLayer : AllBinaryLayer, GeographicMapCellPositionEventListen
     }
 
     // throws Exception
-    protected virtual void init()
+    public virtual void init()
     {
         this.allBinaryTiledLayer.setPosition(this.x, this.y, this.z);
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }
 
     // throws Exception
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public override void onRemoveGeographicMapCellPositionEvent(GeographicMapCellPositionEvent geographicMapCellPositionEvent)
+    public virtual void onRemoveGeographicMapCellPositionEvent(GeographicMapCellPositionEvent geographicMapCellPositionEvent)
     {
         ColorCompositeInterface colorCompositeInterface = ((ColorCompositeInterface) geographicMapCellPositionEvent.getSource());
         int index = this.list.indexOf(colorCompositeInterface);
@@ -90,7 +90,7 @@ public class MiniMapLayer : AllBinaryLayer, GeographicMapCellPositionEventListen
 
     // throws Exception
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public override void onGeographicMapCellPositionEvent(GeographicMapCellPositionEvent geographicMapCellPositionEvent)
+    public virtual void onGeographicMapCellPositionEvent(GeographicMapCellPositionEvent geographicMapCellPositionEvent)
     {
         ColorCompositeInterface colorCompositeInterface = ((ColorCompositeInterface) geographicMapCellPositionEvent.getSource());
         int layerIndex = -1;
@@ -126,7 +126,7 @@ public class MiniMapLayer : AllBinaryLayer, GeographicMapCellPositionEventListen
         for (int index = length; --index >= 0; ) {
             point = ((GPoint) localPositionList.get(index));
             basicColor = ((BasicColor) localBasicColorList.get(index));
-            graphics.setColor(((int) basicColor));
+            graphics.setColor(basicColor.intValue());
             this.animationInterface.setBasicColorP(basicColor);
             this.animationInterface.paintXY(graphics, point.getX() + this.x, point.getY() + this.y);
         }

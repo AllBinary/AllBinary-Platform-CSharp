@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using GameInput = org.allbinary.game.input.GameInput;
 using MyRandomFactory = org.allbinary.game.rand.MyRandomFactory;
 using AllBinaryLayer = org.allbinary.layer.AllBinaryLayer;
@@ -36,7 +36,7 @@ public class RandomPatrolAI : BasePatrolAI
 
     private void updateRandomDistance()
     {
-        this.currentDistance = MyRandomFactory.getInstance().getAbsoluteNextInt(((int) this.maxDistance));
+        this.currentDistance = MyRandomFactory.getInstance().getAbsoluteNextInt(global::java.lang.JavaNumber.intValue(this.maxDistance));
     }
 
     // throws Exception

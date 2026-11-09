@@ -26,7 +26,7 @@ public class UserConfigurationData
     {
     }
 
-    public static readonly string NAME = "USER_CONFIGURATION_NAME";
+    public const string NAME = "USER_CONFIGURATION_NAME";
     public static readonly string UNCRYPTED_EXTENSION = CommonDataFileStrings.getInstance().UNCRYPTED_EXTENSION;
     public static readonly string ENCRYPTED_EXTENSION = CommonDataFileStrings.getInstance().ENCRYPTED_EXTENSION;
 }

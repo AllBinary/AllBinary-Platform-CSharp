@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 using TsUtil = org.allbinary.TsUtil;
 using NullWaitGameRunnable = org.allbinary.game.displayable.canvas.NullWaitGameRunnable;
 using MyCanvas = org.allbinary.graphics.displayable.MyCanvas;
@@ -42,8 +42,8 @@ public class RunnableCanvas : MyCanvas, RunnableInterface
     public readonly StdUtil stdUtil = StdUtil.getInstance();
     public readonly ABSystemWrapper systemWrapper = ABSystemWrapper.getInstance();
     public readonly TsUtil tsUtil = TsUtil.getInstance();
-    private Thread thread = NullThread.NULL_THREAD;
-    private Thread currentThread = NullThread.NULL_THREAD;
+    private global::org.allbinary.thread.NullThread thread = NullThread.NULL_THREAD;
+    private global::org.allbinary.thread.NullThread currentThread = NullThread.NULL_THREAD;
     private bool running = false;
     public readonly TimeDelayHelper loopTimeHelper = new TimeDelayHelper(NullWaitGameRunnable.getInstance().WAIT);
     public Processor runnableCanvasRefreshHelper = Processor.getInstance();
@@ -83,12 +83,12 @@ public class RunnableCanvas : MyCanvas, RunnableInterface
         }
     }
 
-    public override void setThread(Thread thread)
+    public virtual void setThread(global::org.allbinary.thread.NullThread thread)
     {
         this.thread = thread;
     }
 
-    public override void setRunning(bool running)
+    public virtual void setRunning(bool running)
     {
         this.running = running;
         if (!this.running) {
@@ -101,7 +101,7 @@ public class RunnableCanvas : MyCanvas, RunnableInterface
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public override bool isRunning()
+    public virtual bool isRunning()
     {
         if (this.thread == this.currentThread) {
             return this.running;
@@ -126,29 +126,29 @@ public class RunnableCanvas : MyCanvas, RunnableInterface
     }
 
     private long pauseWait = 0L;
-    protected virtual void setWait(int wait)
+    public virtual void setWait(int wait)
     {
         this.loopTimeHelper.delay = wait;
         this.pauseWait = ((long) wait) * 3L;
         this.logUtil.putF(new StringMaker().append("setWait - delay: ").appendint(((int) this.loopTimeHelper.delay)).ToString(), this, this.commonStrings.CONSTRUCTOR);
     }
 
-    protected virtual int getWait()
+    public virtual int getWait()
     {
         return this.loopTimeHelper.delay;
     }
 
     public virtual void setCurrentThread()
     {
-        this.currentThread = Thread.currentThread();
+        this.currentThread = global::org.allbinary.thread.NullThread.currentThread();
     }
 
-    protected virtual void setCurrentThreadFake()
+    public virtual void setCurrentThreadFake()
     {
         this.currentThread = this.thread;
     }
 
-    protected override void showNotify()
+    public override void showNotify()
     {
         try {
             this.stopWaiting();
@@ -232,7 +232,7 @@ public class RunnableCanvas : MyCanvas, RunnableInterface
         return false;
     }
 
-    public override void run()
+    public virtual void run()
     {
         this.setCurrentThread();
     }

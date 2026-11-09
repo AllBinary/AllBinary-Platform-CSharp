@@ -34,7 +34,7 @@ public class TimeIntervalActionScriptCondition : BasicProfileActionScriptConditi
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private TimeIntervalActionScriptConditionJPanel timeIntervalActionScriptConditionJPanel = null;
     private TimeDelayHelper timeHelper = null;
-    private static readonly string NAME = "Time Interval";
+    private const string NAME = "Time Interval";
     public TimeIntervalActionScriptCondition(Node node) : base(TimeIntervalActionScriptCondition.NAME, node)
     {
         // base(TimeIntervalActionScriptCondition.NAME, node) is called from the constructor declaration
@@ -45,7 +45,7 @@ public class TimeIntervalActionScriptCondition : BasicProfileActionScriptConditi
                 Node childNode = nodeList.item(index);
                 if (childNode.getNodeName().compareTo(TimeIntervalActionScriptConditionData.TIME) == 0) {
                     string interval = DomNodeHelper.getTextNodeValue(childNode);
-                    this.setTimeDelayHelper(new TimeDelayHelper((interval).ToString()));
+                    this.setTimeDelayHelper(new TimeDelayHelper(int.Parse((interval).ToString())));
                 } else {
                     throw new Exception("Time Interval Action Script Condition Unknown Node");
                 }
@@ -68,7 +68,7 @@ public class TimeIntervalActionScriptCondition : BasicProfileActionScriptConditi
         this.timeIntervalActionScriptConditionJPanel = new TimeIntervalActionScriptConditionJPanel(this);
     }
 
-    public virtual void showDialog()
+    public override void showDialog()
     {
         this.timeIntervalActionScriptConditionJPanel.getTimeIntervalActionJDialog().setVisible(true);
     }
@@ -82,7 +82,7 @@ public class TimeIntervalActionScriptCondition : BasicProfileActionScriptConditi
     }
 
     // throws Exception
-    public virtual Node toXmlNode(Document document)
+    public override Node toXmlNode(Document document)
     {
         Node node = base.toXmlNode(document);
         node.appendChild(ModDomHelper.createNodeWithValueNodes(document, TimeIntervalActionScriptConditionData.NAME, this.toHashMap()));
@@ -105,7 +105,7 @@ public class TimeIntervalActionScriptCondition : BasicProfileActionScriptConditi
     }
 
     // throws Exception
-    public virtual bool shouldProcess(long? frame)
+    public override bool shouldProcess(long? frame)
     {
         TimeDelayHelper timeHelper = this.getTimeDelayHelper();
         if (timeHelper.isTimeTNT()) {

@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using NullCommandListener = javax.microedition.lcdui.NullCommandListener;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
+using NullCommandListener = javax.microedition.lcdui.NullCommandListener;
 using Processor = org.allbinary.canvas.Processor;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using Features = org.allbinary.game.configuration.feature.Features;
@@ -74,7 +74,7 @@ public class GameCommandCanvas : MyCanvas, MenuListener, DisplayChangeEventListe
 {
     private readonly Processor repaintProcessor;
     public readonly GameInputStrings gameInputStrings = GameInputStrings.getInstance();
-    private static readonly int id = 0;
+    private const int id = 0;
     public readonly BasicColor foregroundBasicColor;
     public readonly BasicColor backgroundBasicColor;
     public readonly InputToGameKeyMapping inputToGameKeyMapping = PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping();
@@ -101,8 +101,8 @@ public class GameCommandCanvas : MyCanvas, MenuListener, DisplayChangeEventListe
         this.repaintBehavior = RepaintBehavior.getInstance();
         this.foregroundBasicColor = foregroundBasicColor;
         this.backgroundBasicColor = backgroundBasicColor;
-        this.foregroundColor = ((int) this.foregroundBasicColor);
-        this.backgroundColor = ((int) this.backgroundBasicColor);
+        this.foregroundColor = this.foregroundBasicColor.intValue();
+        this.backgroundColor = this.backgroundBasicColor.intValue();
         this.initCommands(cmdListener);
         if (cmdListener != NullCommandListener.NULL_COMMAND_LISTENER) {
             try {
@@ -114,7 +114,7 @@ public class GameCommandCanvas : MyCanvas, MenuListener, DisplayChangeEventListe
         }
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         try {
             Font font = graphics.getFont();
@@ -129,12 +129,12 @@ public class GameCommandCanvas : MyCanvas, MenuListener, DisplayChangeEventListe
         this.myFontProcessor = MyFontProcessor.getInstance();
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }
 
-    public override void onDisplayChangeEvent(DisplayChangeEvent displayChangeEvent)
+    public virtual void onDisplayChangeEvent(DisplayChangeEvent displayChangeEvent)
     {
         this.logUtil.putF(new StringMaker().append(this.commonStrings.START).append(DisplayInfoSingleton.getInstance().ToString()).ToString(), this, this.canvasStrings.ON_DISPLAY_CHANGE_EVENT);
         this.myFontProcessor = this.updateMyFontProcessor;
@@ -148,7 +148,7 @@ public class GameCommandCanvas : MyCanvas, MenuListener, DisplayChangeEventListe
     }
 
     // throws Exception
-    protected virtual void initMenu()
+    public virtual void initMenu()
     {
         ScrollSelectionForm form = this.createForm();
         this.menuForm = form;
@@ -176,7 +176,7 @@ public class GameCommandCanvas : MyCanvas, MenuListener, DisplayChangeEventListe
         return rectangle;
     }
 
-    public override void open()
+    public virtual void open()
     {
         this.logUtil.putF(this.commonStrings.START, this, "open");
         BasicMotionGesturesHandler.getInstance().addListenerInterface(this.getMenuInputProcessor());
@@ -185,7 +185,7 @@ public class GameCommandCanvas : MyCanvas, MenuListener, DisplayChangeEventListe
     }
 
     // throws Exception
-    public override void close()
+    public virtual void close()
     {
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CLOSE);
         BasicMotionGesturesHandler.getInstance().removeListener(this.getMenuInputProcessor());
@@ -199,7 +199,7 @@ public class GameCommandCanvas : MyCanvas, MenuListener, DisplayChangeEventListe
         this.repaintProcessor.process();
     }
 
-    public override int getSourceId()
+    public virtual int getSourceId()
     {
         return GameCommandCanvas.id;
     }
@@ -281,7 +281,7 @@ public class GameCommandCanvas : MyCanvas, MenuListener, DisplayChangeEventListe
         this.menuInputProcessor = menuInputProcessor;
     }
 
-    protected virtual BasicMenuInputProcessor getMenuInputProcessor()
+    public virtual BasicMenuInputProcessor getMenuInputProcessor()
     {
         return this.menuInputProcessor;
     }

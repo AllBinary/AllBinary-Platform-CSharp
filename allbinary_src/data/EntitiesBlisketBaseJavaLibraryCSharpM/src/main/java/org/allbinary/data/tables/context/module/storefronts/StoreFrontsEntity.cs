@@ -40,7 +40,7 @@ public class StoreFrontsEntity : AbSqlBean, StoreFrontsEntityInterface
         this.setTableName(this.tableName);
     }
 
-    public virtual void insert(BasicArrayList values)
+    public override void insert(BasicArrayList values)
     {
         try {
             base.insert(values);
@@ -164,7 +164,7 @@ public class StoreFrontsEntity : AbSqlBean, StoreFrontsEntityInterface
         return base.createTable(this.createTableStatement());
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
     }

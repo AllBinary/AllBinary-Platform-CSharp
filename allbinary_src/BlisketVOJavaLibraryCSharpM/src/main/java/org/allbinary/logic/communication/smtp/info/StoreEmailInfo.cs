@@ -40,7 +40,7 @@ public class StoreEmailInfo : BasicEmailInfo
     }
 
     // throws Exception
-    public virtual void init()
+    public override void init()
     {
         ContextConfigurationInterface contextConfigurationInterface = this.storeFrontInterface.getContextConfigurationInterface();
         EmailServerConfigurationInterface emailServerConfigurationInterface = contextConfigurationInterface.getEmailServerConfigurationInterface();

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using MIDlet = javax.microedition.midlet.MIDlet;
+using MIDlet = javax.microedition.midlet.MIDlet;
 using AppletUtil = org.allbinary.AppletUtil;
 using J2MEUtil = org.allbinary.J2MEUtil;
 using Processor = org.allbinary.canvas.Processor;

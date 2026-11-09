@@ -10,7 +10,7 @@
  * AllBinary or the root directory of AllBinary's AllBinary Platform repository.
  * 
  * Created By: Travis Berthelot
- *  
+ *   
  */
 // Generated Code Do Not Modify
 
@@ -27,7 +27,7 @@ namespace org.allbinary.game.identification;
 public class GroupFactory
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private static GroupFactory instance = new GroupFactory();
+    private static readonly GroupFactory instance = new GroupFactory();
     public static GroupFactory getInstance()
     {
         return GroupFactory.instance;
@@ -58,8 +58,9 @@ public class GroupFactory
         this.list.clear();
         this.index = 0;
         int size = this.list.size();
+        string name = null;
         while (size < ((int) groups)) {
-            string name = stringUtil.EMPTY_STRING;
+            name = stringUtil.EMPTY_STRING;
             if (size < nameArray.Length) {
                 name = nameArray[size];
             } else {

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AnimationInterfaceFactoryInterface = org.allbinary.animation.AnimationInterfaceFactoryInterface;
 using ProceduralAnimationInterfaceFactoryInterface = org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface;
 using Health = org.allbinary.game.health.Health;

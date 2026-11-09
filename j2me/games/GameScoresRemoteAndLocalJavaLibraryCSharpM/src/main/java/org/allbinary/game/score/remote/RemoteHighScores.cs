@@ -79,7 +79,7 @@ public class RemoteHighScores : HighScores
         }
     }
 
-    public virtual void addHighScore(HighScore newHighScore)
+    public override void addHighScore(HighScore newHighScore)
     {
         RemoteHighScoresSubmissionProcessorFactory.getInstance().process(this, this.abeClientInformation, newHighScore);
     }

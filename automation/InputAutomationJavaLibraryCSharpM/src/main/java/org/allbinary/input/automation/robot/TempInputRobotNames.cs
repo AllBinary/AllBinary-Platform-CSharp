@@ -25,8 +25,8 @@ public class TempInputRobotNames
     {
     }
 
-    public static readonly string LOW_NAME = "Low Level";
-    public static readonly string SYS_NAME = "System Drivers";
-    public static readonly string DX_NAME = "DirectX";
+    public const string LOW_NAME = "Low Level";
+    public const string SYS_NAME = "System Drivers";
+    public const string DX_NAME = "DirectX";
 }
 

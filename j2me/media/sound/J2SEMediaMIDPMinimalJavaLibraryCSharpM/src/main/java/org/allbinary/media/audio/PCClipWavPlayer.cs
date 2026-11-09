@@ -18,11 +18,11 @@ using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using ARunnable = org.allbinary.thread.ARunnable;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
-//using InputStream = java.io.InputStream;
-//using Control = javax.microedition.media.Control;
-//using MediaException = javax.microedition.media.MediaException;
-//using PlayerListener = javax.microedition.media.PlayerListener;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using InputStream = java.io.InputStream;
+using Control = javax.microedition.media.Control;
+using MediaException = javax.microedition.media.MediaException;
+using PlayerListener = javax.microedition.media.PlayerListener;
 //using AudioInputStream = javax.sound.sampled.AudioInputStream;
 //using AudioSystem = javax.sound.sampled.AudioSystem;
 //using Clip = javax.sound.sampled.Clip;
@@ -188,7 +188,7 @@ public class PCClipWavPlayer : BasicPlayer, LineListener
         return this.clip.getMicrosecondLength() / 1000;
     }
 
-    public override void update(LineEvent @event)
+    public virtual void update(LineEvent @event)
     {
         if (@event.getType().Equals(LineEvent.Type.STOP)) {
             int size = this.listenersList.size();

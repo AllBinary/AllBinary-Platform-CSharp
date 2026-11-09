@@ -48,7 +48,7 @@ public class GeneratorStoreFrontContextView : HttpStoreComponentView
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             return this.view(TransformInfosData.getInstance().ALL);

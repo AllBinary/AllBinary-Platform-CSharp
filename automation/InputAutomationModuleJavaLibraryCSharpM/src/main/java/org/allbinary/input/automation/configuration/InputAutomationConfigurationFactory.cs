@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using File = java.io.File;
-//using FileInputStream = java.io.FileInputStream;
+using File = java.io.File;
+using FileInputStream = java.io.FileInputStream;
 //using java.util;
 //using JAXBContext = javax.xml.bind.JAXBContext;
 //using javax.xml.bind;

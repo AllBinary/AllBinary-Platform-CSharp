@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using FileFilter = java.io.FileFilter;
+using FileFilter = java.io.FileFilter;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
 using AbFile = org.allbinary.logic.io.file.AbFile;
 using FileFactory = org.allbinary.logic.io.file.FileFactory;

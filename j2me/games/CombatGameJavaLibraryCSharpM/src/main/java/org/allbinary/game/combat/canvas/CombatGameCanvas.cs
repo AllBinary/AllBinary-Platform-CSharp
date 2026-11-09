@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 using DestroyedLayerProcessor = org.allbinary.game.combat.destroy.DestroyedLayerProcessor;
 using DestroyEventCircularStaticPool = org.allbinary.game.combat.destroy.@event.DestroyEventCircularStaticPool;
 using DestroyedEventHandler = org.allbinary.game.combat.destroy.@event.DestroyedEventHandler;

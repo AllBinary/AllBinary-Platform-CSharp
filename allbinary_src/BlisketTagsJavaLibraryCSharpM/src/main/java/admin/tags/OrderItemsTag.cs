@@ -72,7 +72,7 @@ public class OrderItemsTag : TableTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             if (this.isEnabled()) {

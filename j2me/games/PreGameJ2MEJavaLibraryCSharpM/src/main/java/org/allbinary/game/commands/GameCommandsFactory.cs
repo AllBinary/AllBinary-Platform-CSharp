@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
+using Command = javax.microedition.lcdui.Command;
 using CanvasStrings = org.allbinary.graphics.displayable.CanvasStrings;
 using NullUtil = org.allbinary.logic.NullUtil;
 using StringUtil = org.allbinary.logic.@string.StringUtil;

@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 using GameInfo = org.allbinary.game.GameInfo;
 using HighScore = org.allbinary.game.score.HighScore;
 using HighScoreNamePersistanceSingleton = org.allbinary.game.score.HighScoreNamePersistanceSingleton;

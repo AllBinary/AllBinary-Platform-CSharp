@@ -37,7 +37,7 @@ public class WeblisketFinder
         return WeblisketFinder.instance;
     }
 
-    private static readonly string KEY = "installerdata.dat";
+    private const string KEY = "installerdata.dat";
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private readonly SubDirectory subDirectory = SubDirectory.getInstance();
     private WeblisketFinder()

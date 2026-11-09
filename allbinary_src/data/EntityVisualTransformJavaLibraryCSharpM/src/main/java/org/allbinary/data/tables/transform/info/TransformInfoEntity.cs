@@ -56,7 +56,7 @@ public class TransformInfoEntity : AbSqlBean, TransformInfoEntityInterface
         this.transformInfoFactoryInterface = transformInfoFactoryInterface;
     }
 
-    public virtual void insert(BasicArrayList values)
+    public override void insert(BasicArrayList values)
     {
         try {
             base.insert(values);
@@ -181,7 +181,7 @@ public class TransformInfoEntity : AbSqlBean, TransformInfoEntityInterface
         base.updateWhere(TransformInfoData.getInstance().NAME, ((string) updatedValues.get(TransformInfoData.getInstance().NAME)), updatedValues);
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
     }

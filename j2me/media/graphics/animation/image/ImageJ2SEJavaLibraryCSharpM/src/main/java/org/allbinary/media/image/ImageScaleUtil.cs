@@ -19,7 +19,7 @@ using System.Linq;
 //using Graphics2D = java.awt.Graphics2D;
 //using AffineTransform = java.awt.geom.AffineTransform;
 //using BufferedImage = java.awt.image.BufferedImage;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using ImageCache = org.allbinary.image.ImageCache;
 
 namespace org.allbinary.media.image;

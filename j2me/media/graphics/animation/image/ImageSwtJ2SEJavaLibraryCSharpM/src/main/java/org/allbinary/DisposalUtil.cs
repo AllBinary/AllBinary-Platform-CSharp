@@ -14,9 +14,10 @@
  */
 // Generated Code Do Not Modify
 
+extern alias OpenGLESJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Resource = org.eclipse.swt.graphics.Resource;
 using SwtMutableImage = org.microemu.device.swt.SwtMutableImage;

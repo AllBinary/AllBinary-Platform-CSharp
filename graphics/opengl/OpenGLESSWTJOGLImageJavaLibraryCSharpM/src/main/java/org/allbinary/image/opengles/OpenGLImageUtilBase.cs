@@ -14,10 +14,11 @@
  */
 // Generated Code Do Not Modify
 
+extern alias OpenGLESBaseJavaLibraryCSharp;
 using System;
 using System.Linq;
 //using IOException = java.io.IOException;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 using OpenGLBitmap = org.allbinary.graphics.OpenGLBitmap;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 

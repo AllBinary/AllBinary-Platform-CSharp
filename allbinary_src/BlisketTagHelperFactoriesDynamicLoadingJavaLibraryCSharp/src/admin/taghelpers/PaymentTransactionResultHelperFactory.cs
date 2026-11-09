@@ -24,8 +24,8 @@ namespace admin.taghelpers;
 
 public class PaymentTransactionResultHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "admin.taghelpers.PaymentTransactionResultHelper";
-    private static readonly string FACTORYNAME = "PaymentTransactionResultFactory";
+    private const string CLASSNAME = "admin.taghelpers.PaymentTransactionResultHelper";
+    private const string FACTORYNAME = "PaymentTransactionResultFactory";
     public PaymentTransactionResultHelperFactory()
     {
     }

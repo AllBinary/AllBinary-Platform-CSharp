@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
+using Command = javax.microedition.lcdui.Command;
 using ResourceUtil = org.allbinary.data.resource.ResourceUtil;
 using TsUtil = org.allbinary.TsUtil;
 

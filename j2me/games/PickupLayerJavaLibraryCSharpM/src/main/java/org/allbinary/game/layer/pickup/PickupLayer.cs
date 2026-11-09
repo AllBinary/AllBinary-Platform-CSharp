@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using GL = javax.microedition.khronos.opengles.GL;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Animation = org.allbinary.animation.Animation;
 using NullAnimationFactory = org.allbinary.animation.NullAnimationFactory;
 using CollidableAlwaysPickupNeverCollideBehaviorFactory = org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehaviorFactory;
@@ -73,12 +73,12 @@ public class PickupLayer : MultiPlayerGameLayer, PickedUpLayerInterface, Pickupa
         this.animationInterface.paintThreedXYZ(graphics, viewX, viewY, 3);
     }
 
-    public override PickedUpLayerInterfaceFactoryInterface getPickedUpLayerInterfaceFactoryInterface()
+    public virtual PickedUpLayerInterfaceFactoryInterface getPickedUpLayerInterfaceFactoryInterface()
     {
         return this.pickedUpLayerInterfaceFactoryInterface;
     }
 
-    public override void setPickedUp()
+    public virtual void setPickedUp()
     {
         this.setDestroyed(true);
     }

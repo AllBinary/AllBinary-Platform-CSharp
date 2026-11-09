@@ -43,7 +43,7 @@ public class GameKeyCompleteMotionGestureInputEvent : CompleteMotionGestureInput
         this.update();
     }
 
-    public override int getSourceId()
+    public virtual int getSourceId()
     {
         return this.SOURCE_ID;
     }
@@ -59,7 +59,7 @@ public class GameKeyCompleteMotionGestureInputEvent : CompleteMotionGestureInput
         }
     }
 
-    protected virtual void setGameKeyEvent(GameKeyEvent gameKeyEvent)
+    public virtual void setGameKeyEvent(GameKeyEvent gameKeyEvent)
     {
         this.gameKeyEvent = gameKeyEvent;
     }
@@ -69,7 +69,7 @@ public class GameKeyCompleteMotionGestureInputEvent : CompleteMotionGestureInput
         return this.gameKeyEvent;
     }
 
-    protected virtual void setGameKey(GameKey gameKey)
+    public virtual void setGameKey(GameKey gameKey)
     {
         this.gameKey = gameKey;
     }

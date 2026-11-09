@@ -34,19 +34,19 @@ public class TestModuleFactory : AbstractInputAutomationFactory
         // base(NAME, new BlankModuleConfigurationJPanel()) is called from the constructor declaration
     }
 
-    public virtual string getName()
+    public override string getName()
     {
         return TestModuleFactory.NAME;
     }
 
-    public virtual JPanel getConfigurationJPanel()
+    public override JPanel getConfigurationJPanel()
     {
         return this.blankModuleConfigurationJPanel;
     }
 
     // throws Exception
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public virtual RunnableInterface getInstance()
+    public override RunnableInterface getInstance()
     {
         return null;
     }

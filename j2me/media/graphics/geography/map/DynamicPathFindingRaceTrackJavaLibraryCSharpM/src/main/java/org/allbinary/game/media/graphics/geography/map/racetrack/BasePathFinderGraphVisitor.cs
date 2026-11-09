@@ -46,7 +46,7 @@ public class BasePathFinderGraphVisitor<V, E> : PathFinderGraphVisitorBase
     }
 
     // throws Exception
-    public virtual void fixPath(BasicArrayList startPathFindingNodeList, BasicArrayList endPathFindingNodeList, BasicArrayList pathList)
+    public override void fixPath(BasicArrayList startPathFindingNodeList, BasicArrayList endPathFindingNodeList, BasicArrayList pathList)
     {
         for (int index = startPathFindingNodeList.size() - 1; index >= 0; index--) {
             PathFindingNode startPathFindingNode = ((PathFindingNode) startPathFindingNodeList.get(index));

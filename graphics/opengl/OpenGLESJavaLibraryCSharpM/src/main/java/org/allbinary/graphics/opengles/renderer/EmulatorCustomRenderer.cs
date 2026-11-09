@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias ImageCacheOpenGLESJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using EGLConfig = javax.microedition.khronos.egl.EGLConfig;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
+using EGLConfig = javax.microedition.khronos.egl.EGLConfig;
+using GL10 = javax.microedition.khronos.opengles.GL10;
 using InitEmulatorFactory = org.allbinary.emulator.InitEmulatorFactory;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
@@ -29,7 +31,7 @@ public class EmulatorCustomRenderer
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    public readonly RendererStrings renderStrings = RendererStrings.getInstance();
+    public readonly OpenGLNoneOtherJavaLibraryCSharp::org.allbinary.graphics.opengles.renderer.RendererStrings renderStrings = OpenGLNoneOtherJavaLibraryCSharp::org.allbinary.graphics.opengles.renderer.RendererStrings.getInstance();
     public virtual void onSurfaceCreated(GL10 gl, EGLConfig eglConfig)
     {
         this.logUtil.putF(this.commonStrings.START, this, this.renderStrings.ON_SURFACE_CREATED);

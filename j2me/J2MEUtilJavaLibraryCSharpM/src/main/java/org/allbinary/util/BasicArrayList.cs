@@ -15,7 +15,7 @@ namespace org.allbinary.util;
 //This is a very fast and simple resizable list.
 public class BasicArrayList
 {
-    private static readonly string SIZE = ", Size: ";
+    private const string SIZE = ", Size: ";
     private readonly ArrayUtil arrayUtil = ArrayUtil.getInstance();
     public object[] objectArray;
     private int currentIndex = 0;
@@ -69,22 +69,22 @@ public class BasicArrayList
     public virtual bool remove(object anyType)
     {
         if (anyType == null) {
-            for (int index = 0; index < this.currentIndex; index++) {
-                if (this.objectArray[index] == null) {
-                    int numMoved = this.currentIndex - index - 1;
+            for (int index_1 = 0; index_1 < this.currentIndex; index_1++) {
+                if (this.objectArray[index_1] == null) {
+                    int numMoved = this.currentIndex - index_1 - 1;
                     if (numMoved > 0) {
-                        Array.Copy((Array) this.objectArray, index + 1, (Array) this.objectArray, index, numMoved);
+                        Array.Copy((Array) this.objectArray, index_1 + 1, (Array) this.objectArray, index_1, numMoved);
                     }
                     this.objectArray[--this.currentIndex] = null;
                     return true;
                 }
             }
         } else {
-            for (int index = 0; index < this.currentIndex; index++) {
-                if (anyType == this.objectArray[index] || anyType.Equals(this.objectArray[index])) {
-                    int numMoved = this.currentIndex - index - 1;
+            for (int index_0 = 0; index_0 < this.currentIndex; index_0++) {
+                if (anyType == this.objectArray[index_0] || anyType.Equals(this.objectArray[index_0])) {
+                    int numMoved = this.currentIndex - index_0 - 1;
                     if (numMoved > 0) {
-                        Array.Copy((Array) this.objectArray, index + 1, (Array) this.objectArray, index, numMoved);
+                        Array.Copy((Array) this.objectArray, index_0 + 1, (Array) this.objectArray, index_0, numMoved);
                     }
                     this.objectArray[--this.currentIndex] = null;
                     return true;
@@ -155,15 +155,15 @@ public class BasicArrayList
     public virtual int indexOf(object anyType)
     {
         if (anyType == null) {
-            for (int i = 0; i < this.currentIndex; i++) {
-                if (this.objectArray[i] == null) {
-                    return i;
+            for (int i_5 = 0; i_5 < this.currentIndex; i_5++) {
+                if (this.objectArray[i_5] == null) {
+                    return i_5;
                 }
             }
         } else {
-            for (int i = 0; i < this.currentIndex; i++) {
-                if (anyType.Equals(this.objectArray[i])) {
-                    return i;
+            for (int i_4 = 0; i_4 < this.currentIndex; i_4++) {
+                if (anyType.Equals(this.objectArray[i_4])) {
+                    return i_4;
                 }
             }
         }
@@ -173,15 +173,15 @@ public class BasicArrayList
     public virtual int lastIndexOf(object anyType)
     {
         if (anyType == null) {
-            for (int i = this.currentIndex - 1; i >= 0; i--) {
-                if (this.objectArray[i] == null) {
-                    return i;
+            for (int i_7 = this.currentIndex - 1; i_7 >= 0; i_7--) {
+                if (this.objectArray[i_7] == null) {
+                    return i_7;
                 }
             }
         } else {
-            for (int i = this.currentIndex - 1; i >= 0; i--) {
-                if (anyType.Equals(this.objectArray[i])) {
-                    return i;
+            for (int i_6 = this.currentIndex - 1; i_6 >= 0; i_6--) {
+                if (anyType.Equals(this.objectArray[i_6])) {
+                    return i_6;
                 }
             }
         }

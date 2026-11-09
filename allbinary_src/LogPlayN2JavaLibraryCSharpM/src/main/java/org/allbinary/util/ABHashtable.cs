@@ -48,7 +48,7 @@ public class ABHashtable<K, V> : Hashtable<K, V>
         return base.contains(value);
     }
 
-    public override bool containsValue(object value)
+    public virtual bool containsValue(object value)
     {
         return base.containsValue(value);
     }
@@ -68,7 +68,7 @@ public class ABHashtable<K, V> : Hashtable<K, V>
         base.clear();
     }
 
-    public override object clone()
+    public virtual object clone()
     {
         return base.clone();
     }

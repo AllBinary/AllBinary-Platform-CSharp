@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
-//using ImageItem = javax.microedition.lcdui.ImageItem;
+using Image = javax.microedition.lcdui.Image;
+using ImageItem = javax.microedition.lcdui.ImageItem;
 using RTSGameStrings = org.allbinary.game.layer.RTSGameStrings;
 using LayerInterfaceFactoryImageItem = org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem;
 using RTSLayerTextAnimation = org.allbinary.game.layer.item.RTSLayerTextAnimation;

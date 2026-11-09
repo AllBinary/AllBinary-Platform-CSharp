@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 //using StringBufferInputStream = java.io.StringBufferInputStream;
 //using URIResolver = javax.xml.transform.URIResolver;
 //using StreamSource = javax.xml.transform.stream.StreamSource;

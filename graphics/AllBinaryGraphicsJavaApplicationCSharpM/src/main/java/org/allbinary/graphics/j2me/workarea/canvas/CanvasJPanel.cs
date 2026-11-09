@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 using java.util;
 //using DefaultMutableTreeNode = javax.swing.tree.DefaultMutableTreeNode;
 //using MutableTreeNode = javax.swing.tree.MutableTreeNode;
@@ -67,8 +67,8 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
     private DefaultMutableTreeNode canvasTreeNode = null;
     private CanvasTreeLabel frameLabel = null;
     private WorkAreaJTreeJPanel workAreaJTreeJPanel = null;
-    private static readonly Color gridColor = new Color(((int) BasicColorFactory.getInstance().WHITE));
-    private static readonly Color backgroundColor = new Color(((int) BasicColorFactory.getInstance().CLEAR_COLOR));
+    private static readonly Color gridColor = new Color(global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().WHITE));
+    private static readonly Color backgroundColor = new Color(global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().CLEAR_COLOR));
     private readonly Grid grid;
     public CanvasJPanel(WorkAreaJTreeJPanel workAreaJTreeJPanel, Dimension dimension, int x, int y)
     {
@@ -212,8 +212,8 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
         BasicArrayList newPoints = new BasicArrayListD();
         object[] graphicItemArray = this.getGraphicItemHashMap().keySet().toArray();
         int size = graphicItemArray.Length;
-        for (int index = 0; index < size; index++) {
-            MutableTreeNode graphicItemNode = ((MutableTreeNode) graphicItemArray[index]);
+        for (int index_1 = 0; index_1 < size; index_1++) {
+            MutableTreeNode graphicItemNode = ((MutableTreeNode) graphicItemArray[index_1]);
             GraphicItemInterface graphicItem = ((GraphicItemInterface) this.getGraphicItemHashMap().get(graphicItemNode));
             if (graphicItem.getName() == LinesGraphicItem.getStaticName()) {
                 while (graphicItem.getPointsInterface().getSize() > 2) {
@@ -229,8 +229,8 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
             }
         }
         int size2 = newPoints.size();
-        for (int index = 0; index < size2; index++) {
-            GraphicItemInterface newGraphicItem = ((GraphicItemInterface) newPoints.get(index));
+        for (int index_2 = 0; index_2 < size2; index_2++) {
+            GraphicItemInterface newGraphicItem = ((GraphicItemInterface) newPoints.get(index_2));
             this.canvasTreeNode.add(newGraphicItem.getTreeNode());
             this.getGraphicItemHashMap().put(newGraphicItem.getTreeNode(), newGraphicItem);
         }
@@ -364,11 +364,11 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
         int xRight = this.getWidth() - xAdjust;
         int yLower = this.getHeight() - yAdjust;
         graphics.setColor(CanvasJPanel.gridColor);
-        for (int value = yAdjust; value <= this.getHeight() - yAdjust; value += this.getYPixelsPerWorkAreaPixel()) {
-            graphics.drawLine(xLeft, value, xRight, value);
+        for (int value_7 = yAdjust; value_7 <= this.getHeight() - yAdjust; value_7 += this.getYPixelsPerWorkAreaPixel()) {
+            graphics.drawLine(xLeft, value_7, xRight, value_7);
         }
-        for (int value = xAdjust; value <= this.getWidth() - xAdjust; value += this.getYPixelsPerWorkAreaPixel()) {
-            graphics.drawLine(value, yUpper, value, yLower);
+        for (int value_8 = xAdjust; value_8 <= this.getWidth() - xAdjust; value_8 += this.getYPixelsPerWorkAreaPixel()) {
+            graphics.drawLine(value_8, yUpper, value_8, yLower);
         }
     }
 

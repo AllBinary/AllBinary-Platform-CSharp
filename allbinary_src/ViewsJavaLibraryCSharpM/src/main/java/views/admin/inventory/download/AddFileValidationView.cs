@@ -48,8 +48,8 @@ public class AddFileValidationView : DownloadableInventoryItemView, ValidationCo
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly BasicItemData basicItemData = BasicItemData.getInstance();
-    private static readonly string ADDPRODUCT = "Finish";
-    private static readonly string ADDANOTHERDOWNLOADABLE = "Add Another";
+    private const string ADDPRODUCT = "Finish";
+    private const string ADDANOTHERDOWNLOADABLE = "Add Another";
     public AddFileValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
@@ -319,6 +319,12 @@ public class AddFileValidationView : DownloadableInventoryItemView, ValidationCo
                 stringBuffer.append("<br/>");
             }
         }
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

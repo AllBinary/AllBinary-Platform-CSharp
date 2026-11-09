@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using BasicColorSetUtil = org.allbinary.graphics.color.BasicColorSetUtil;
 using Paintable = org.allbinary.graphics.paint.Paintable;
@@ -41,12 +41,12 @@ public class TouchButtonsPaintable : Paintable
         BasicArrayList list = this.touchButtonFactory.getList();
         this.basicSetColorUtil.setBasicColorP3(graphics, this.foregroundBasicColor, this.foregroundColor);
         TouchButton touchButton = null;
-        for (int index = list.size(); --index >= 0; ) {
-            touchButton = ((TouchButton) list.objectArray[index]);
+        for (int index_0 = list.size(); --index_0 >= 0; ) {
+            touchButton = ((TouchButton) list.objectArray[index_0]);
             touchButton.paint(graphics);
         }
-        for (int index = list.size(); --index >= 0; ) {
-            touchButton = ((TouchButton) list.objectArray[index]);
+        for (int index_1 = list.size(); --index_1 >= 0; ) {
+            touchButton = ((TouchButton) list.objectArray[index_1]);
             touchButton.paintHint(graphics);
         }
     }

@@ -42,7 +42,7 @@ public class OverrideStoreTransformInfoObjectConfig : GenericStoreTransformInfoO
     }
 
     // throws Exception
-    public virtual Document generate(Document objectConfigDocument)
+    public override Document generate(Document objectConfigDocument)
     {
         Document newObjectConfigDocument = base.generate(objectConfigDocument);
         return newObjectConfigDocument;

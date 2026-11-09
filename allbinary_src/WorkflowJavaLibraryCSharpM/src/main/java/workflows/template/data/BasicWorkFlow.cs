@@ -70,12 +70,12 @@ public class BasicWorkFlow : WorkFlowInterface
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().WORKFLOW)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.PROCESS);
         }
-        if (this.validationDomNodeInterface.isValid()) {
+        if (((bool) (this.validationDomNodeInterface.isValid()))) {
             this.pageContext.getOut().print(this.validationDomNodeInterface.view());
-            return (TagSupport.EVAL_BODY_INCLUDE).ToString();
+            return int.Parse((TagSupport.EVAL_BODY_INCLUDE).ToString());
         } else {
             this.pageContext.getOut().print(this.validationDomNodeInterface.validationInfo());
-            return (TagSupport.SKIP_BODY).ToString();
+            return int.Parse((TagSupport.SKIP_BODY).ToString());
         }
     }
 

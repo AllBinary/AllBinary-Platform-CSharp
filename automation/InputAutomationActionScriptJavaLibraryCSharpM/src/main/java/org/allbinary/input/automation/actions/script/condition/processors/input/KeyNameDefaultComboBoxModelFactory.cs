@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using KeyEvent = java.awt.@event.KeyEvent;
+using KeyEvent = java.awt.@event.KeyEvent;
 //using javax.swing;
 using KeySingletonFactory = org.allbinary.input.KeySingletonFactory;
 

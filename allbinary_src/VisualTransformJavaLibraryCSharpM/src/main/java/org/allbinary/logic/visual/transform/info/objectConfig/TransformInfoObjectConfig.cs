@@ -227,8 +227,8 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
         if (componentsNodeList != null && componentsNodeList.getLength() > 0) {
             Node componentsNode = componentsNodeList.item(0);
             int length = componentsNodeList.getLength();
-            for (int index = 0; index < length; index++) {
-                Node node = componentsNodeList.item(index);
+            for (int index_3 = 0; index_3 < length; index_3++) {
+                Node node = componentsNodeList.item(index_3);
                 NamedNodeMap attributes = node.getAttributes();
                 Attr attrNode = ((Attr) attributes.getNamedItem(GROUP));
                 string value = attrNode.getValue();
@@ -243,8 +243,8 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
                 this.logUtil.putF("Number Of Nodes: " + numberOfViews, this, "getTransformsGroup()");
             }
             int size = viewNodeVector.size();
-            for (int index = 0; index < size; index++) {
-                Node viewNode = ((Node) viewNodeVector.get(index));
+            for (int index_4 = 0; index_4 < size; index_4++) {
+                Node viewNode = ((Node) viewNodeVector.get(index_4));
                 viewVector.add(new TransformInfoDomNode(viewNode));
             }
         } else {

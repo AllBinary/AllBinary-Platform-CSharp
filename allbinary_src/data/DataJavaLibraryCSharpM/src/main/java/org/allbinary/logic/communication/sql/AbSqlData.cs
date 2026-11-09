@@ -25,11 +25,11 @@ public class AbSqlData
     {
     }
 
-    public static readonly string ANYSINGLECHARACTERMATCH = "_";
-    public static readonly string ANYMULTICHARACTERMATCH = "%";
-    public static readonly int MAXNUM = 19;
-    public static readonly int MINSTRING = 1;
-    public static readonly int MAXSTRING = 255;
-    public static readonly int MAXBLOB = 32000;
+    public const string ANYSINGLECHARACTERMATCH = "_";
+    public const string ANYMULTICHARACTERMATCH = "%";
+    public const int MAXNUM = 19;
+    public const int MINSTRING = 1;
+    public const int MAXSTRING = 255;
+    public const int MAXBLOB = 32000;
 }
 

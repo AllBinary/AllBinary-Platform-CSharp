@@ -20,7 +20,7 @@ using TsUtil = org.allbinary.TsUtil;
 
 namespace org.allbinary.logic.math.permutations;
 
-public class ComparableObject : Comparable<object>
+public class ComparableObject : global::java.lang.Comparable<object>
 {
     public virtual int compareTo(object anyType)
     {

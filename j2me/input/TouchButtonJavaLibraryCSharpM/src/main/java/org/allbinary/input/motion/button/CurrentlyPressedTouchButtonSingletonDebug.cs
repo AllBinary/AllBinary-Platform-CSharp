@@ -33,7 +33,7 @@ public class CurrentlyPressedTouchButtonSingletonDebug : CurrentlyPressedTouchBu
 
     private string @string = StringUtil.getInstance().EMPTY_STRING;
     private string listString = StringUtil.getInstance().EMPTY_STRING;
-    private string append = StringUtil.getInstance().EMPTY_STRING;
+    private string appendText = StringUtil.getInstance().EMPTY_STRING;
     private readonly string PRESSED_AND_FIRED = "pressed & fired";
     private readonly string PRESSED_AND_NOT_FIRED = "pressed in button but not fired";
     private readonly string ASSOCIATED_RELEASED_AND_FIRED = "assoc. rel & fired";
@@ -46,20 +46,20 @@ public class CurrentlyPressedTouchButtonSingletonDebug : CurrentlyPressedTouchBu
         stringBuffer.append(touchButtonInput.ToString());
         stringBuffer.append(CommonSeps.getInstance().SPACE);
         stringBuffer.append(append);
-        this.append = stringBuffer.ToString();
-        this.@string = new StringMaker().append(this.listString).append(this.append).ToString();
+        this.appendText = stringBuffer.ToString();
+        this.@string = new StringMaker().append(this.listString).append(this.appendText).ToString();
     }
 
     private void append(string append)
     {
-        this.append = new StringMaker().append(this.append).append(append).ToString();
-        this.@string = new StringMaker().append(this.listString).append(this.append).ToString();
+        this.appendText = new StringMaker().append(this.appendText).append(append).ToString();
+        this.@string = new StringMaker().append(this.listString).append(this.appendText).ToString();
     }
 
     public virtual void clearLog(int x, int y)
     {
-        this.append = new StringMaker().append(GPoint.toStringStatic(x, y, 0)).append(CommonSeps.getInstance().SPACE).ToString();
-        this.@string = new StringMaker().append(this.listString).append(this.append).ToString();
+        this.appendText = new StringMaker().append(GPoint.toStringStatic(x, y, 0)).append(CommonSeps.getInstance().SPACE).ToString();
+        this.@string = new StringMaker().append(this.listString).append(this.appendText).ToString();
     }
 
     public virtual void releaseAndNotFired()
@@ -96,7 +96,7 @@ public class CurrentlyPressedTouchButtonSingletonDebug : CurrentlyPressedTouchBu
     {
         TouchButtonInput touchButtonInput = base.removeAt(index);
         this.listString = this.list.ToString();
-        this.@string = new StringMaker().append(this.listString).append(this.append).ToString();
+        this.@string = new StringMaker().append(this.listString).append(this.appendText).ToString();
         return touchButtonInput;
     }
 
@@ -104,7 +104,7 @@ public class CurrentlyPressedTouchButtonSingletonDebug : CurrentlyPressedTouchBu
     {
         bool isRemoved = base.remove(touchButtonInput);
         this.listString = this.list.ToString();
-        this.@string = new StringMaker().append(this.listString).append(this.append).ToString();
+        this.@string = new StringMaker().append(this.listString).append(this.appendText).ToString();
         return isRemoved;
     }
 
@@ -112,7 +112,7 @@ public class CurrentlyPressedTouchButtonSingletonDebug : CurrentlyPressedTouchBu
     {
         base.add(touchButtonInput);
         this.listString = this.list.ToString();
-        this.@string = new StringMaker().append(this.listString).append(this.append).ToString();
+        this.@string = new StringMaker().append(this.listString).append(this.appendText).ToString();
     }
 
     public override string ToString()

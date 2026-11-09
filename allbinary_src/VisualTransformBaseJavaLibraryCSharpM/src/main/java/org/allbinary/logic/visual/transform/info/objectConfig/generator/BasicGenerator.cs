@@ -27,7 +27,7 @@ public class BasicGenerator : TransformInfoObjectConfigGenerator
     {
     }
 
-    public virtual string process(string input)
+    public override string process(string input)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Processing", this, this.commonStrings.PROCESS);

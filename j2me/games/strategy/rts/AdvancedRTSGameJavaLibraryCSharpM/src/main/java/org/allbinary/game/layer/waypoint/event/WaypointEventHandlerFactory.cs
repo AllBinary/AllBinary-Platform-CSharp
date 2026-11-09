@@ -25,7 +25,8 @@ public class WaypointEventHandlerFactory
     private static readonly WaypointEventHandler[] eventHandlerArray = new WaypointEventHandler[] { new WaypointEventHandler(), new WaypointEventHandler(), new WaypointEventHandler(), new WaypointEventHandler(), new WaypointEventHandler(), new WaypointEventHandler(), new WaypointEventHandler(), new WaypointEventHandler(), new WaypointEventHandler(), new WaypointEventHandler() };
     public static WaypointEventHandler getInstance(Group groupInterface)
     {
-        return WaypointEventHandlerFactory.eventHandlerArray[((int) groupInterface.getGroupId())];
+        int groupId = ((int) groupInterface.getGroupId());
+        return WaypointEventHandlerFactory.eventHandlerArray[groupId];
     }
 
     public static void removeAll()

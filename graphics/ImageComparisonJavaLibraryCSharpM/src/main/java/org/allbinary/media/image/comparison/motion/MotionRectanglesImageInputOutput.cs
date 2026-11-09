@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
@@ -93,8 +93,8 @@ public class MotionRectanglesImageInputOutput : ImageIOInterface
         BufferedImage originalBufferedImage = imageComparisonInfo.getBufferedImages()[0];
         BufferedImageInfo bufferedImageInfo = BufferedImageInfoFactory.getInstance(imageComparisonInfo.imageWidth, imageComparisonInfo.imageHeight, originalBufferedImage.getType());
         PoolInterface poolInterface = BufferedImagePoolSingleton.getInstance();
-        for (int index = 0; index < this.NUMBER_OF_IMAGES; index++) {
-            bufferedImageCacheables[index] = ((BufferedImageCacheable) poolInterface.remove(bufferedImageInfo));
+        for (int index_0 = 0; index_0 < this.NUMBER_OF_IMAGES; index_0++) {
+            bufferedImageCacheables[index_0] = ((BufferedImageCacheable) poolInterface.remove(bufferedImageInfo));
         }
         bufferedImageCacheables[0].getBufferedImage().setData(imageComparisonInfo.getBufferedImages()[1].getData());
         if (this.NUMBER_OF_IMAGES > 1) {
@@ -102,17 +102,17 @@ public class MotionRectanglesImageInputOutput : ImageIOInterface
         }
         Graphics[] bufferedImageGraphicsArray = null;
         bufferedImageGraphicsArray = new Graphics[this.NUMBER_OF_IMAGES];
-        for (int index = 0; index < this.NUMBER_OF_IMAGES; index++) {
-            bufferedImageGraphicsArray[index] = bufferedImageCacheables[index].getBufferedImage().getGraphics();
+        for (int index_1 = 0; index_1 < this.NUMBER_OF_IMAGES; index_1++) {
+            bufferedImageGraphicsArray[index_1] = bufferedImageCacheables[index_1].getBufferedImage().getGraphics();
         }
         BasicArrayList rectangelList = motionRectangles.getVector();
         int size = rectangelList.size();
         for (int index2 = 0; index2 < size; index2++) {
             MotionRectangle motionRectangle = ((MotionRectangle) rectangelList.get(index2));
             Rectangle rectangle = motionRectangle.getRectangle();
-            for (int index = 0; index < this.NUMBER_OF_IMAGES; index++) {
-                bufferedImageGraphicsArray[index].setColor(Color.ORANGE);
-                bufferedImageGraphicsArray[index].drawRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+            for (int index_2 = 0; index_2 < this.NUMBER_OF_IMAGES; index_2++) {
+                bufferedImageGraphicsArray[index_2].setColor(Color.ORANGE);
+                bufferedImageGraphicsArray[index_2].drawRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
             }
         }
         ImagePersistanceUtil imagePersistanceUtil = ImagePersistanceUtil.getInstance();

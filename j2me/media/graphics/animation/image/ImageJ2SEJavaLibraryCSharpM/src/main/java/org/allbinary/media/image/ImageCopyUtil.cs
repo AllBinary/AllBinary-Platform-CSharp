@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 //using BufferedImage = java.awt.image.BufferedImage;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using Anchor = org.allbinary.graphics.Anchor;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using J2SEImmutableImage = org.microemu.device.j2se.J2SEImmutableImage;

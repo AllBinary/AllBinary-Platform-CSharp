@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using URL = java.net.URL;
+using URL = java.net.URL;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 //using HelpSet = javax.help.HelpSet;

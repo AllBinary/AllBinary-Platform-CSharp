@@ -21,7 +21,7 @@ using CommonLabels = org.allbinary.@string.CommonLabels;
 
 namespace org.allbinary.media.graphics.geography.pathfinding;
 
-public class PathFindingNodeCostInfo : Comparable<PathFindingNodeCostInfo>
+public class PathFindingNodeCostInfo : global::java.lang.Comparable<PathFindingNodeCostInfo>
 {
     private readonly PathFindingNodeCostInfoData pathFindingNodeCostInfoData = PathFindingNodeCostInfoData.getInstance();
     public long costFromStartP;
@@ -65,7 +65,12 @@ public class PathFindingNodeCostInfo : Comparable<PathFindingNodeCostInfo>
 
     public virtual int compareTo(PathFindingNodeCostInfo pathFindingNodeCostInfo)
     {
-        return java.lang.Long.compare(this.totalCostP, pathFindingNodeCostInfo.totalCostP);
+        if (this.totalCostP < pathFindingNodeCostInfo.totalCostP) {
+            return -1;
+        } else if (this.totalCostP > pathFindingNodeCostInfo.totalCostP) {
+            return 1;
+        }
+        return 0;
     }
 
     public override string ToString()

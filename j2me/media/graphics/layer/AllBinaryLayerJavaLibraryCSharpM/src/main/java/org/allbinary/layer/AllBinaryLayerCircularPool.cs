@@ -31,7 +31,7 @@ public class AllBinaryLayerCircularPool : BaseCircularPool
     public virtual void initAllBinaryLayerCircularPool(AllBinaryLayerFactoryInterface allbinaryLayerFactoryInterface, int total)
     {
         this.circularIndexUtil = CircularIndexUtil.createInstance(total);
-        this.OBJECT_ARRAY = new AllBinaryLayer[total];
+        this.OBJECT_ARRAY = new object[total];
         for (int localIndex = 0; localIndex < total; localIndex++) {
             this.OBJECT_ARRAY[localIndex] = allbinaryLayerFactoryInterface.getInstance();
         }

@@ -34,7 +34,7 @@ public class PathFinderGraphHackVisitorFactory : PathFinderGraphVisitorFactoryBa
         this.maxPathWeight = maxPathWeight;
     }
 
-    public virtual PathFinderGraphVisitorBase getInstance(BasicGeographicMap geographicMapInterface)
+    public override PathFinderGraphVisitorBase getInstance(BasicGeographicMap geographicMapInterface)
     {
         return new PathFinderGraphHackVisitor(geographicMapInterface, this.edgeMinimum, this.minPathWeight, this.maxPathWeight);
     }

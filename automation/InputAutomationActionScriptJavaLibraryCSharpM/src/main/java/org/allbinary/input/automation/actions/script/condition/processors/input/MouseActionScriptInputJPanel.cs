@@ -81,7 +81,7 @@ public class MouseActionScriptInputJPanel : javax.swing.JPanel
     private void update()
     {
         this.updateInputType();
-        this.mouseActionScriptInputInterface.setTime((this.mouseDelayJTextField.getText()).ToString());
+        this.mouseActionScriptInputInterface.setTime(int.Parse((this.mouseDelayJTextField.getText()).ToString()));
         this.logUtil.putF("Button State: " + this.mouseActionScriptInputInterface.getButtonClicks(), this, "update");
         if (this.button1JCheckBox.isSelected()) {
             if ((this.mouseActionScriptInputInterface.getButtonClicks() & InputEvent.BUTTON1_MASK) == 0) {

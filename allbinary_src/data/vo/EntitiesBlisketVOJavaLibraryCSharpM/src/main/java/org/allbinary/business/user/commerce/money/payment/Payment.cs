@@ -54,7 +54,7 @@ public class Payment : PaymentInterface, DomNodeInterface
         this.type = ((string) payment.get(PaymentData.TYPE));
         this.expiration = ((string) payment.get(PaymentData.EXPIRATION));
         this.encryption = ((string) payment.get(EntryData.getInstance().ENCRYPTION));
-        this.number = ((string) new SuperCrypt(((int) this.encryption)).decrypt(((string) payment.get(PaymentData.NUMBER))));
+        this.number = ((string) new SuperCrypt(global::java.lang.JavaNumber.intValue(int.Parse(this.encryption))).decrypt(((string) payment.get(PaymentData.NUMBER))));
         this.id = ((string) payment.get(PaymentData.ID));
         string def = ((string) payment.get(EntryData.getInstance().DEFAULT));
         if (def != null && string.CompareOrdinal(def, EntryData.getInstance().DEFAULT) == 0) {

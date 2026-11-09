@@ -53,16 +53,16 @@ public class HealthBarAnimation : Animation
         int quarter = (this.allbinaryLayer.getWidth() >> 2);
         if (this.x2 > quarter * 3) {
             this.basicColor = this.basicColorFactory.GREEN;
-            this.colorP = ((int) this.basicColor);
+            this.colorP = global::java.lang.JavaNumber.intValue(this.basicColor);
         } else if (this.x2 > quarter * 2) {
             this.basicColor = this.basicColorFactory.YELLOW;
-            this.colorP = ((int) this.basicColor);
+            this.colorP = global::java.lang.JavaNumber.intValue(this.basicColor);
         } else if (this.x2 > quarter) {
             this.basicColor = this.basicColorFactory.ORANGE;
-            this.colorP = ((int) this.basicColor);
+            this.colorP = global::java.lang.JavaNumber.intValue(this.basicColor);
         } else {
             this.basicColor = this.basicColorFactory.RED;
-            this.colorP = ((int) this.basicColor);
+            this.colorP = global::java.lang.JavaNumber.intValue(this.basicColor);
         }
     }
 

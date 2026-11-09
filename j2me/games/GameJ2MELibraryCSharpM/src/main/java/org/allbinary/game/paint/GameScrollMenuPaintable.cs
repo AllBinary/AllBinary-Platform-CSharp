@@ -14,6 +14,8 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -42,11 +44,11 @@ public class GameScrollMenuPaintable : BasicGameDemoPaintable, ColorChangeListen
         this.setCurrentStatePaintable(this.getMainDemoStatePaintable());
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
     }
 
-    protected virtual void setColor(BasicColor basicColor)
+    public virtual void setColor(BasicColor basicColor)
     {
         MainGameDemoStatePaintable mainGameDemoStatePaintable = ((MainGameDemoStatePaintable) this.getMainDemoStatePaintable());
         FormPaintable formPaintable = ((FormPaintable) mainGameDemoStatePaintable.getMenuPaintableInterface());

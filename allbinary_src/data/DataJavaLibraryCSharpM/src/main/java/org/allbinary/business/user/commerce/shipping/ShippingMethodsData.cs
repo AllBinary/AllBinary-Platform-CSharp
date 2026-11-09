@@ -21,14 +21,14 @@ namespace org.allbinary.business.user.commerce.shipping;
 
 public class ShippingMethodsData
 {
-    public static readonly string SHIPPINGMETHODSORDERSUMMARIES = "SHIPPINGMETHODS_ORDERSUMMARIES";
-    public static readonly string SHIPPINGMETHODORDERSUMMARY = "SHIPPINGMETHOD_ORDERSUMMARY";
-    public static readonly string SHIPPINGMETHODS = "SHIPPINGMETHODS";
-    public static readonly string NAME = "SHIPPINGMETHODS_NAME";
-    public static readonly string SHIPPINGCOST = "SHIPPINGMETHOD_SHIPPINGCOST";
-    public static readonly string TAXRATE = "SHIPPINGMETHOD_TAXRATE";
-    public static readonly string SUBTOTAL = "SHIPPINGMETHOD_SUBTOTAL";
-    public static readonly string TAX = "SHIPPINGMETHOD_TAX";
-    public static readonly string TOTAL = "SHIPPINGMETHOD_TOTAL";
+    public const string SHIPPINGMETHODSORDERSUMMARIES = "SHIPPINGMETHODS_ORDERSUMMARIES";
+    public const string SHIPPINGMETHODORDERSUMMARY = "SHIPPINGMETHOD_ORDERSUMMARY";
+    public const string SHIPPINGMETHODS = "SHIPPINGMETHODS";
+    public const string NAME = "SHIPPINGMETHODS_NAME";
+    public const string SHIPPINGCOST = "SHIPPINGMETHOD_SHIPPINGCOST";
+    public const string TAXRATE = "SHIPPINGMETHOD_TAXRATE";
+    public const string SUBTOTAL = "SHIPPINGMETHOD_SUBTOTAL";
+    public const string TAX = "SHIPPINGMETHOD_TAX";
+    public const string TOTAL = "SHIPPINGMETHOD_TOTAL";
 }
 

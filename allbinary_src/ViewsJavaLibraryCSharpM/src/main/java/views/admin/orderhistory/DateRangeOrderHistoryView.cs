@@ -100,7 +100,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             this.addDomNodeInterfaces();
@@ -132,8 +132,8 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
                 }
                 BasicArrayList orderHistoryVector = OrderHistoryEntityFactory.getInstance().getOrders(OrderHistoryData.PREPROCESSING, fromDate, toDate);
                 int size = orderHistoryVector.size();
-                for (int index = 0; index < size; index++) {
-                    OrderHistory orderHistory = ((OrderHistory) orderHistoryVector.get(index));
+                for (int index_0 = 0; index_0 < size; index_0++) {
+                    OrderHistory orderHistory = ((OrderHistory) orderHistoryVector.get(index_0));
                     node.appendChild(orderHistory.toXmlNode(document));
                 }
             }
@@ -143,8 +143,8 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
                 }
                 BasicArrayList orderHistoryVector = OrderHistoryEntityFactory.getInstance().getOrders(OrderHistoryData.SHIPPED, fromDate, toDate);
                 int size = orderHistoryVector.size();
-                for (int index = 0; index < size; index++) {
-                    OrderHistory orderHistory = ((OrderHistory) orderHistoryVector.get(index));
+                for (int index_1 = 0; index_1 < size; index_1++) {
+                    OrderHistory orderHistory = ((OrderHistory) orderHistoryVector.get(index_1));
                     node.appendChild(orderHistory.toXmlNode(document));
                 }
             }
@@ -154,8 +154,8 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
                 }
                 BasicArrayList orderHistoryVector = OrderHistoryEntityFactory.getInstance().getOrders(OrderHistoryData.PARTIALLYSHIPPED, fromDate, toDate);
                 int size = orderHistoryVector.size();
-                for (int index = 0; index < size; index++) {
-                    OrderHistory orderHistory = ((OrderHistory) orderHistoryVector.get(index));
+                for (int index_2 = 0; index_2 < size; index_2++) {
+                    OrderHistory orderHistory = ((OrderHistory) orderHistoryVector.get(index_2));
                     node.appendChild(orderHistory.toXmlNode(document));
                 }
             }
@@ -165,8 +165,8 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
                 }
                 BasicArrayList orderHistoryVector = OrderHistoryEntityFactory.getInstance().getOrders(OrderHistoryData.PROCESSING, fromDate, toDate);
                 int size = orderHistoryVector.size();
-                for (int index = 0; index < size; index++) {
-                    OrderHistory orderHistory = ((OrderHistory) orderHistoryVector.get(index));
+                for (int index_3 = 0; index_3 < size; index_3++) {
+                    OrderHistory orderHistory = ((OrderHistory) orderHistoryVector.get(index_3));
                     node.appendChild(orderHistory.toXmlNode(document));
                 }
             }
@@ -176,8 +176,8 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
                 }
                 BasicArrayList orderHistoryVector = OrderHistoryEntityFactory.getInstance().getOrders(OrderHistoryData.CANCELLED, fromDate, toDate);
                 int size = orderHistoryVector.size();
-                for (int index = 0; index < size; index++) {
-                    OrderHistory orderHistory = ((OrderHistory) orderHistoryVector.get(index));
+                for (int index_4 = 0; index_4 < size; index_4++) {
+                    OrderHistory orderHistory = ((OrderHistory) orderHistoryVector.get(index_4));
                     node.appendChild(orderHistory.toXmlNode(document));
                 }
             }
@@ -223,7 +223,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
                     } else if (string.CompareOrdinal(this.command, this.VIEWALLORDERS) == 0) {
                         rangeDate = currentTime.ToString();
                     }
-                    long rangeDateLong = ((long) rangeDate);
+                    long rangeDateLong = global::java.lang.JavaNumber.longValue(long.Parse(rangeDate));
                     this.fromDate = currentTime - rangeDateLong.ToString();
                     string time = new string((currentTime.ToString()).ToCharArray());
                     this.toDate = time;
@@ -290,6 +290,12 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
             }
             return "Error Getting Validation Info";
         }
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

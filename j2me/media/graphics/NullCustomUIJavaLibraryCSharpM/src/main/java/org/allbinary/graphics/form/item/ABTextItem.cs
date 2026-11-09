@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 
 namespace org.allbinary.graphics.form.item;
@@ -25,6 +25,26 @@ public class ABTextItem : CustomCustomItem, ABCustomItemInterface
     public virtual ABStringComponent getLabelStringComponent()
     {
         return ABStringComponent.NULL_STRING_COMPONENT;
+    }
+
+    public override int getMinimumWidth()
+    {
+        return base.getMinimumWidth();
+    }
+
+    public override int getMinimumHeight()
+    {
+        return base.getMinimumHeight();
+    }
+
+    public override string getLabel()
+    {
+        return base.getLabel();
+    }
+
+    public override void paintXY(Graphics graphics, int x, int y)
+    {
+        base.paintXY(graphics, x, y);
     }
 
 }

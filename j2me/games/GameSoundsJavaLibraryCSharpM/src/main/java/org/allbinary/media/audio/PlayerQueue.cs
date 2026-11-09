@@ -30,7 +30,7 @@ public class PlayerQueue
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private readonly BasicArrayList list = new BasicArrayListD();
     private int max;
-    private static readonly string TOTAL = "Sounds In Queue: ";
+    private const string TOTAL = "Sounds In Queue: ";
     public PlayerQueue(int max)
     {
         this.max = max;

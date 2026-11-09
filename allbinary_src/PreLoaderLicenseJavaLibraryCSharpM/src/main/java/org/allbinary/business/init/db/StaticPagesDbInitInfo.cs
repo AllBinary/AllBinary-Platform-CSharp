@@ -21,7 +21,7 @@ namespace org.allbinary.business.init.db;
 
 public class StaticPagesDbInitInfo : DbInitInfo
 {
-    private static readonly string INITFILE = "staticpagesbinitdata.dat";
+    private const string INITFILE = "staticpagesbinitdata.dat";
     public StaticPagesDbInitInfo() : base(INITFILE, true)
     {
         // base(INITFILE, true) is called from the constructor declaration

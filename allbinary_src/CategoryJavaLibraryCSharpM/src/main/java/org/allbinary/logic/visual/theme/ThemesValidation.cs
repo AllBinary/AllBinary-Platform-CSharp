@@ -43,22 +43,22 @@ public class ThemesValidation : Validation, DomNodeInterface
     {
     }
 
-    public virtual bool? isValid()
+    public override bool? isValid()
     {
         return true;
     }
 
-    public virtual string validationInfo()
+    public override string validationInfo()
     {
         return null;
     }
 
-    public virtual Document toValidationInfoDoc()
+    public override Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual Node toValidationInfoNode(Document document)
+    public override Node toValidationInfoNode(Document document)
     {
         return null;
     }

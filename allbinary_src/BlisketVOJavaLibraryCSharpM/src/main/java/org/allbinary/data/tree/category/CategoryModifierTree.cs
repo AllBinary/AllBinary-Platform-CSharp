@@ -47,7 +47,7 @@ public class CategoryModifierTree : CategoryPrivateTree, CategoryModifierTreeInt
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
                 this.logUtil.putF("Inserting", this, "insert()");
             }
-            if (parentCategoryInterface.isValid()) {
+            if (((bool) (parentCategoryInterface.isValid()))) {
                 parentCategoryInterface.addChild(newChildCategoryInterface);
                 AbPath directoryToBeCreatedAbPath = new AbPath(newChildCategoryInterface.getRootFilePath().ToString() + newChildCategoryInterface.getPath().ToString(), StringUtil.getInstance().EMPTY_STRING);
                 this.directory.create(directoryToBeCreatedAbPath);
@@ -70,7 +70,7 @@ public class CategoryModifierTree : CategoryPrivateTree, CategoryModifierTreeInt
     public virtual void delete(CategoryInterface parentCategoryInterface, CategoryInterface existingChildCategoryInterface)
     {
         try {
-            if (parentCategoryInterface.isValid()) {
+            if (((bool) (parentCategoryInterface.isValid()))) {
                 parentCategoryInterface.addChild(existingChildCategoryInterface);
                 AbPath directoryToBeDeletedAbPath = new AbPath(existingChildCategoryInterface.getRootFilePath().ToString() + existingChildCategoryInterface.getPath().ToString(), StringUtil.getInstance().EMPTY_STRING);
                 this.delete(existingChildCategoryInterface);

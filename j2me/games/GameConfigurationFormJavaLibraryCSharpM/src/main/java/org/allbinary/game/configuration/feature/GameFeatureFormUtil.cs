@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
-//using Item = javax.microedition.lcdui.Item;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
+using Item = javax.microedition.lcdui.Item;
+using NullImage = javax.microedition.lcdui.NullImage;
 using GameConfigurationGauge = org.allbinary.game.configuration.GameConfigurationGauge;
 using GameConfigurationUtil = org.allbinary.game.configuration.GameConfigurationUtil;
 using CommandForm = org.allbinary.graphics.displayable.screen.CommandForm;

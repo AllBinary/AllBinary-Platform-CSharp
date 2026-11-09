@@ -26,7 +26,7 @@ namespace org.allbinary.game.layer;
 
 public class LayerUtil
 {
-    private static readonly string HASHTABLE = "Hashtable: ";
+    private const string HASHTABLE = "Hashtable: ";
     public static string toString(ABHashtable<object, object> hashtable, int x, int y, int z)
     {
         CommonSeps commonSeps = CommonSeps.getInstance();

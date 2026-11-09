@@ -21,7 +21,7 @@ namespace org.allbinary.business.init.db;
 
 public class InventoryDbInitInfo : DbInitInfo
 {
-    private static readonly string INITFILE = "inventorydbinitdata.dat";
+    private const string INITFILE = "inventorydbinitdata.dat";
     public InventoryDbInitInfo() : base(INITFILE, true)
     {
         // base(INITFILE, true) is called from the constructor declaration

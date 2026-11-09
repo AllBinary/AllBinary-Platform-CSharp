@@ -42,7 +42,7 @@ public class DeleteValidationView : ShippingAddressView, ValidationComponentInte
             return false;
         }
         ShippingAddressesEntity billingAddressesEntity = new ShippingAddressesEntity(this.getWeblisketSession().getUserName());
-        this.streetAddress = billingAddressesEntity.get(this.value);
+        this.streetAddress = billingAddressesEntity.get(int.Parse(this.value));
         if (this.streetAddress == null) {
             return false;
         }
@@ -62,6 +62,12 @@ public class DeleteValidationView : ShippingAddressView, ValidationComponentInte
     public virtual Node toValidationInfoNode(Document document)
     {
         return null;
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

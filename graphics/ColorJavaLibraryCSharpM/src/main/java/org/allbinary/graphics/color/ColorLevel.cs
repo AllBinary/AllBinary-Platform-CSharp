@@ -21,11 +21,11 @@ namespace org.allbinary.graphics.color;
 
 public class ColorLevel
 {
-    public static readonly int COLOR_MASK = 0x00FFFFFF;
-    public static readonly int MIN = 0x44;
-    public static readonly int AVG = 0x77;
-    public static readonly int LIGHT = 0xAA;
-    public static readonly int HIGH = 0xEE;
+    public const int COLOR_MASK = 0x00FFFFFF;
+    public const int MIN = 0x44;
+    public const int AVG = 0x77;
+    public const int LIGHT = 0xAA;
+    public const int HIGH = 0xEE;
     private ColorLevel()
     {
     }

@@ -59,7 +59,7 @@ public class CollidableCompositeLayer : AllBinaryGameLayer, CollidableInterfaceC
         return ArtificialIntelligence.getInstance();
     }
 
-    public override CollidableBaseBehavior getCollidableInferface()
+    public virtual CollidableBaseBehavior getCollidableInferface()
     {
         return this.collidableInferface;
     }

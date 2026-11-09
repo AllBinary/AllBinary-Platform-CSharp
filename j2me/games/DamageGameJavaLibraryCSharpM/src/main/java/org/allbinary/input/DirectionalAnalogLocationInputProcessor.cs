@@ -88,7 +88,7 @@ public class DirectionalAnalogLocationInputProcessor : AnalogLocationInputProces
         }
     }
 
-    public override int getSourceId()
+    public virtual int getSourceId()
     {
         return 0;
     }

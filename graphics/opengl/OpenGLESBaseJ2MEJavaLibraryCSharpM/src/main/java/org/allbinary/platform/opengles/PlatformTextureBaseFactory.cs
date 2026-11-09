@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Image = javax.microedition.lcdui.Image;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Image = javax.microedition.lcdui.Image;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 
 namespace org.allbinary.platform.opengles;

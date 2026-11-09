@@ -39,7 +39,7 @@
     <ProjectReference Include="$(AllBinaryRuntimeProject)" Condition="'$(AllBinaryRuntimeProject)' != '' And Exists('$(AllBinaryRuntimeProject)')" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\replace_these_stub_projects\allbinary_src\J2MEJsInteropCompatibilityJavaLibraryCSharpM\J2MEJsInteropCompatibilityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\allbinary_src\LogCSharpM\LogCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\allbinary_src\LogNoPlatformJavaLibraryCSharpM\LogNoPlatformJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\allbinary_src\LogJ2MEJavaLibraryCSharpM\LogJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\CommonJavaLibraryCSharpM\CommonJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\J2MEExceptionLibraryCSharpM\J2MEExceptionLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

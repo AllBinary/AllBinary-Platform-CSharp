@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AndroidUtil = org.allbinary.AndroidUtil;
 using J2MEUtil = org.allbinary.J2MEUtil;
 using Anchor = org.allbinary.graphics.Anchor;

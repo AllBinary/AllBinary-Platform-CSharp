@@ -74,5 +74,11 @@ public class EditGenericBodyValidationView : GenericBodyCustomizerView, Validati
         return null;
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

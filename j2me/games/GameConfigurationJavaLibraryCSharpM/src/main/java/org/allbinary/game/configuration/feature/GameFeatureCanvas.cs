@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Graphics = javax.microedition.lcdui.Graphics;
 
 namespace org.allbinary.game.configuration.feature;
 

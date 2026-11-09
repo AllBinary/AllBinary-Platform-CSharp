@@ -40,7 +40,7 @@ public class StoreFrontInventoryStatistics : StoreFrontInventoryStatisticsInterf
         int size = itemVector.size();
         for (int index = 0; index < size; index++) {
             ItemInterface itemInterface = ((ItemInterface) itemVector.get(index));
-            int numberInStock = ((int) (itemInterface.getNumber()).ToString());
+            int numberInStock = global::java.lang.JavaNumber.intValue(int.Parse((itemInterface.getNumber()).ToString()));
             this.totalNumberOfItems = this.totalNumberOfItems + ((long) numberInStock);
             Money itemPriceMoney = itemInterface.getPrice();
             itemPriceMoney.multiply(numberInStock);

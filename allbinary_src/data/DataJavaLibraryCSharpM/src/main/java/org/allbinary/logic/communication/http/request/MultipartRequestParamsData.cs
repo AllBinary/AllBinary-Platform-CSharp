@@ -25,6 +25,6 @@ public class MultipartRequestParamsData
     {
     }
 
-    public static readonly string HASHMAP = "MULTIPART_REQUEST_HASHMAP";
+    public const string HASHMAP = "MULTIPART_REQUEST_HASHMAP";
 }
 

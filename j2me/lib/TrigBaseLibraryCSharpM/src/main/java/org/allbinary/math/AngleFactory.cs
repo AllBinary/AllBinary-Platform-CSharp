@@ -54,23 +54,23 @@ public class AngleFactory
         short total = ((short) this.angleArray.Length);
         this.UP = new NamedAngle(((short) 0), commonPhoneStrings.UP);
         this.angleArray[0] = this.UP;
-        for (int index = 1; index < 90; index++) {
-            this.angleArray[index] = new Angle(((short) index));
+        for (int index_0 = 1; index_0 < 90; index_0++) {
+            this.angleArray[index_0] = new Angle(((short) index_0));
         }
         this.RIGHT = new NamedAngle(((short) 90), commonPhoneStrings.RIGHT);
         this.angleArray[90] = this.RIGHT;
-        for (int index = 91; index < 180; index++) {
-            this.angleArray[index] = new Angle(((short) index));
+        for (int index_1 = 91; index_1 < 180; index_1++) {
+            this.angleArray[index_1] = new Angle(((short) index_1));
         }
         this.DOWN = new NamedAngle(((short) 180), commonPhoneStrings.DOWN);
         this.angleArray[180] = this.DOWN;
-        for (int index = 181; index < 270; index++) {
-            this.angleArray[index] = new Angle(((short) index));
+        for (int index_2 = 181; index_2 < 270; index_2++) {
+            this.angleArray[index_2] = new Angle(((short) index_2));
         }
         this.LEFT = new NamedAngle(((short) 270), commonPhoneStrings.LEFT);
         this.angleArray[270] = this.LEFT;
-        for (int index = 271; index < ((int) total); index++) {
-            this.angleArray[index] = new Angle(((short) index));
+        for (int index_3 = 271; index_3 < ((int) total); index_3++) {
+            this.angleArray[index_3] = new Angle(((short) index_3));
         }
     }
 

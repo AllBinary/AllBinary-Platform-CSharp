@@ -129,7 +129,7 @@ public class TransactionResultEntity : AbSqlBean, TransactionResultEntityInterfa
         return base.createTable(this.createTableStatement());
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
     }

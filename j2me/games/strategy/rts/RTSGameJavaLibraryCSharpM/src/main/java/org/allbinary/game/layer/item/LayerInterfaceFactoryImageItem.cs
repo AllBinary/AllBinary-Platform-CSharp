@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using ABCustomImageItem = org.allbinary.graphics.form.item.ABCustomImageItem;
 using Animation = org.allbinary.animation.Animation;
 using BasicColor = org.allbinary.graphics.color.BasicColor;

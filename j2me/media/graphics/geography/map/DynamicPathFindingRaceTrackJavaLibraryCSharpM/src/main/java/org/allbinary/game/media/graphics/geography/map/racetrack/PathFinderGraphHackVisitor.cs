@@ -41,7 +41,7 @@ public class PathFinderGraphHackVisitor<V, E> : BasePathFinderGraphVisitor<V, E>
     }
 
     // throws Exception
-    public virtual void visit(SimpleWeightedGraph graph, BasicArrayList startPathFindingNodeList, BasicArrayList endPathFindingNodeList)
+    public override void visit(SimpleWeightedGraph graph, BasicArrayList startPathFindingNodeList, BasicArrayList endPathFindingNodeList)
     {
         this.fixStart(graph, startPathFindingNodeList);
         this.fixEnd(graph, endPathFindingNodeList);
@@ -106,7 +106,7 @@ public class PathFinderGraphHackVisitor<V, E> : BasePathFinderGraphVisitor<V, E>
     }
 
     // throws Exception
-    public virtual void fixPath(BasicArrayList startPathFindingNodeList, BasicArrayList endPathFindingNodeList, BasicArrayList pathList)
+    public override void fixPath(BasicArrayList startPathFindingNodeList, BasicArrayList endPathFindingNodeList, BasicArrayList pathList)
     {
         for (int index = startPathFindingNodeList.size() - 1; index >= 0; index--) {
             PathFindingNode endPathFindingNode = ((PathFindingNode) endPathFindingNodeList.get(index));
@@ -137,7 +137,7 @@ public class PathFinderGraphHackVisitor<V, E> : BasePathFinderGraphVisitor<V, E>
         }
     }
 
-    public virtual bool isValid(GraphPath graphPath)
+    public override bool isValid(GraphPath graphPath)
     {
         if (graphPath.getEdgeList().size() > edgeMinimum && graphPath.getWeight() < maxPathWeight && graphPath.getWeight() > minPathWeight) {
             return true;

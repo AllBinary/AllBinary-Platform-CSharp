@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 using CanvasStrings = org.allbinary.graphics.displayable.CanvasStrings;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;

@@ -48,15 +48,15 @@ public class MultiKeyPressesAI : KeyPressesAI
         int?[] keys = this.keys;
         int size = keys.Length;
         if (this.isOn()) {
-            for (int index = 0; index < size; index++) {
-                int key = ((int) keys[index]);
+            for (int index_1 = 0; index_1 < size; index_1++) {
+                int key = global::java.lang.JavaNumber.intValue(keys[index_1]);
                 if (key != -1) {
                     gameInput.add(this.gameKeyEventFactory.getInstanceForKey(this, key));
                 }
             }
         } else {
-            for (int index = 0; index < size; index++) {
-                int key = ((int) keys[index]);
+            for (int index_0 = 0; index_0 < size; index_0++) {
+                int key = global::java.lang.JavaNumber.intValue(keys[index_0]);
                 if (key != -1) {
                     gameInput.addForRemoval(this.gameKeyEventFactory.getInstanceForKey(this, key));
                 }

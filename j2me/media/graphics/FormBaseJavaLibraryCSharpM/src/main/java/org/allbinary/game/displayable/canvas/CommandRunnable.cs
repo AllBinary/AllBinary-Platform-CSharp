@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 using MyCanvas = org.allbinary.graphics.displayable.MyCanvas;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;

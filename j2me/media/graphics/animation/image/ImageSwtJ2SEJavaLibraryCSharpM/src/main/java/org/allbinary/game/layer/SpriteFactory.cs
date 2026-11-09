@@ -14,10 +14,11 @@
  */
 // Generated Code Do Not Modify
 
+extern alias OpenGLESJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
-//using Sprite = javax.microedition.lcdui.game.Sprite;
+using Image = javax.microedition.lcdui.Image;
+using Sprite = javax.microedition.lcdui.game.Sprite;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using StringMaker = org.allbinary.logic.@string.StringMaker;

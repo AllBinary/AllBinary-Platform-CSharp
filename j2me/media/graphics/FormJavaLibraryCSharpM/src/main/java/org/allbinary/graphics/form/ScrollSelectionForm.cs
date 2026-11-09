@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Graphics = javax.microedition.lcdui.Graphics;
 using GPoint = org.allbinary.graphics.GPoint;
 using Rectangle = org.allbinary.graphics.Rectangle;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -73,13 +73,16 @@ public class ScrollSelectionForm : PaintableForm
         return ((ScrollSelectionForm) ScrollSelectionForm.NULL_SCROLL_SELECTION_HORIZONTAL_FORM);
     }
 
-    private static readonly string INSIDE_FORM = " inside form";
-    private static readonly string IS_IN_FORM = "isInForm";
+    private const string INSIDE_FORM = " inside form";
+    private const string IS_IN_FORM = "isInForm";
     public class ScrollSelectionFormHorizontalPaintable : ItemIndexPaintable
     {
+        private readonly ScrollSelectionForm outer;
+
         private readonly ScrollSelectionForm scrollSelectionForm;
-        public ScrollSelectionFormHorizontalPaintable(ScrollSelectionForm scrollSelectionForm)
+        public ScrollSelectionFormHorizontalPaintable(ScrollSelectionForm outer, ScrollSelectionForm scrollSelectionForm)
         {
+            this.outer = outer;
             this.scrollSelectionForm = scrollSelectionForm;
         }
 
@@ -92,9 +95,12 @@ public class ScrollSelectionForm : PaintableForm
     }
     public class ScrollSelectionFormVerticalPaintable : ItemIndexPaintable
     {
+        private readonly ScrollSelectionForm outer;
+
         private readonly ScrollSelectionForm scrollSelectionForm;
-        public ScrollSelectionFormVerticalPaintable(ScrollSelectionForm scrollSelectionForm)
+        public ScrollSelectionFormVerticalPaintable(ScrollSelectionForm outer, ScrollSelectionForm scrollSelectionForm)
         {
+            this.outer = outer;
             this.scrollSelectionForm = scrollSelectionForm;
         }
 
@@ -107,9 +113,12 @@ public class ScrollSelectionForm : PaintableForm
     }
     public class ScrollSelectionFormTempHorizontalPaintable : ItemIndexPaintable
     {
+        private readonly ScrollSelectionForm outer;
+
         private readonly ScrollSelectionForm scrollSelectionForm;
-        public ScrollSelectionFormTempHorizontalPaintable(ScrollSelectionForm scrollSelectionForm)
+        public ScrollSelectionFormTempHorizontalPaintable(ScrollSelectionForm outer, ScrollSelectionForm scrollSelectionForm)
         {
+            this.outer = outer;
             this.scrollSelectionForm = scrollSelectionForm;
         }
 
@@ -122,9 +131,12 @@ public class ScrollSelectionForm : PaintableForm
     }
     public class ScrollSelectionFormHorizontalDx : ItemIndexDx
     {
+        private readonly ScrollSelectionForm outer;
+
         private readonly ScrollSelectionForm scrollSelectionForm;
-        public ScrollSelectionFormHorizontalDx(ScrollSelectionForm multipleScrollSelectionForm)
+        public ScrollSelectionFormHorizontalDx(ScrollSelectionForm outer, ScrollSelectionForm multipleScrollSelectionForm)
         {
+            this.outer = outer;
             this.scrollSelectionForm = multipleScrollSelectionForm;
         }
 
@@ -137,9 +149,12 @@ public class ScrollSelectionForm : PaintableForm
     }
     public class ScrollSelectionFormVericalDx : ItemIndexDx
     {
+        private readonly ScrollSelectionForm outer;
+
         private readonly ScrollSelectionForm scrollSelectionForm;
-        public ScrollSelectionFormVericalDx(ScrollSelectionForm multipleScrollSelectionForm)
+        public ScrollSelectionFormVericalDx(ScrollSelectionForm outer, ScrollSelectionForm multipleScrollSelectionForm)
         {
+            this.outer = outer;
             this.scrollSelectionForm = multipleScrollSelectionForm;
         }
 
@@ -152,9 +167,12 @@ public class ScrollSelectionForm : PaintableForm
     }
     public class ScrollSelectionFormTempHorizontalDx : ItemIndexDx
     {
+        private readonly ScrollSelectionForm outer;
+
         private readonly ScrollSelectionForm scrollSelectionForm;
-        public ScrollSelectionFormTempHorizontalDx(ScrollSelectionForm multipleScrollSelectionForm)
+        public ScrollSelectionFormTempHorizontalDx(ScrollSelectionForm outer, ScrollSelectionForm multipleScrollSelectionForm)
         {
+            this.outer = outer;
             this.scrollSelectionForm = multipleScrollSelectionForm;
         }
 
@@ -189,14 +207,14 @@ public class ScrollSelectionForm : PaintableForm
         base.init(rectangle, formType);
         FormTypeFactory formTypeFactory = FormTypeFactory.getInstance();
         if (formType == formTypeFactory.HORIZONTAL_FORM) {
-            this.scrollSelectionFormFormTypeItemIndexPaintable = new ScrollSelectionFormHorizontalPaintable(this);
-            this.formTypeItemIndexDx = new ScrollSelectionFormHorizontalDx(this);
+            this.scrollSelectionFormFormTypeItemIndexPaintable = new ScrollSelectionFormHorizontalPaintable(this, this);
+            this.formTypeItemIndexDx = new ScrollSelectionFormHorizontalDx(this, this);
         } else if (formType == formTypeFactory.VERTICAL_CENTER_FORM) {
-            this.scrollSelectionFormFormTypeItemIndexPaintable = new ScrollSelectionFormVerticalPaintable(this);
-            this.formTypeItemIndexDx = new ScrollSelectionFormVericalDx(this);
+            this.scrollSelectionFormFormTypeItemIndexPaintable = new ScrollSelectionFormVerticalPaintable(this, this);
+            this.formTypeItemIndexDx = new ScrollSelectionFormVericalDx(this, this);
         } else if (formType == formTypeFactory.TEMP_HORIZONTAL_FORM) {
-            this.scrollSelectionFormFormTypeItemIndexPaintable = new ScrollSelectionFormTempHorizontalPaintable(this);
-            this.formTypeItemIndexDx = new ScrollSelectionFormTempHorizontalDx(this);
+            this.scrollSelectionFormFormTypeItemIndexPaintable = new ScrollSelectionFormTempHorizontalPaintable(this, this);
+            this.formTypeItemIndexDx = new ScrollSelectionFormTempHorizontalDx(this, this);
         } else if (formType == formTypeFactory.NULL_FORM_TYPE) {
         } else {
             throw new Exception(formTypeFactory.UNK);
@@ -270,7 +288,7 @@ public class ScrollSelectionForm : PaintableForm
         return 0;
     }
 
-    private static readonly string GET_SELECTED_INDEX = "getSelectedIndexForPoint";
+    private const string GET_SELECTED_INDEX = "getSelectedIndexForPoint";
     // throws Exception
     public virtual int getSelectedIndexForPoint(GPoint point)
     {
@@ -374,7 +392,7 @@ public class ScrollSelectionForm : PaintableForm
         item.paintXY(graphics, x, y);
         int width = item.getMinimumWidth();
         int height = item.getMinimumHeight();
-        graphics.setColor(((int) this.getButtonBasicColor()));
+        graphics.setColor(this.getButtonBasicColor().intValue());
         int adjustedBorder = 3;
         graphics.drawRect(x - this.halfBorder - adjustedBorder, y - this.halfBorder - adjustedBorder, width + this.border + this.adjustedExtraBorder, height + this.border + this.adjustedExtraBorder);
         return this.scrollSelectionFormFormTypeItemIndexPaintable.paint(graphics, index, item, x, y);
@@ -383,7 +401,7 @@ public class ScrollSelectionForm : PaintableForm
     // throws Exception
     public virtual int paintUnselectedItem(Graphics graphics, int index, ABCustomItem item, int x, int y)
     {
-        graphics.setColor(((int) this.getButtonBasicColor()));
+        graphics.setColor(this.getButtonBasicColor().intValue());
         item.paintUnselected(graphics, x, y);
         return this.scrollSelectionFormFormTypeItemIndexPaintable.paint(graphics, index, item, x, y);
     }

@@ -53,12 +53,12 @@ public class ColorAtActionScriptConditionJPanel : javax.swing.JPanel
     private void update()
     {
         ColorRangeInterface colorRangeInterface = this.colorAtActionScriptConditionInterface.getColorRangeInterface();
-        colorRangeInterface.setMinRed(((int) (this.getMinRedJTextField().getText()).ToString()));
-        colorRangeInterface.setMaxRed(((int) (this.getMaxRedJTextField().getText()).ToString()));
-        colorRangeInterface.setMinGreen(((int) (this.getMinGreenJTextField().getText()).ToString()));
-        colorRangeInterface.setMaxGreen(((int) (this.getMaxGreenJTextField().getText()).ToString()));
-        colorRangeInterface.setMinBlue(((int) (this.getMinBlueJTextField().getText()).ToString()));
-        colorRangeInterface.setMaxBlue(((int) (this.getMaxBlueJTextField().getText()).ToString()));
+        colorRangeInterface.setMinRed(global::java.lang.JavaNumber.intValue(int.Parse((this.getMinRedJTextField().getText()).ToString())));
+        colorRangeInterface.setMaxRed(global::java.lang.JavaNumber.intValue(int.Parse((this.getMaxRedJTextField().getText()).ToString())));
+        colorRangeInterface.setMinGreen(global::java.lang.JavaNumber.intValue(int.Parse((this.getMinGreenJTextField().getText()).ToString())));
+        colorRangeInterface.setMaxGreen(global::java.lang.JavaNumber.intValue(int.Parse((this.getMaxGreenJTextField().getText()).ToString())));
+        colorRangeInterface.setMinBlue(global::java.lang.JavaNumber.intValue(int.Parse((this.getMinBlueJTextField().getText()).ToString())));
+        colorRangeInterface.setMaxBlue(global::java.lang.JavaNumber.intValue(int.Parse((this.getMaxBlueJTextField().getText()).ToString())));
         string xString = this.getColorAtXJTextField().getText();
         if (!StringValidationUtil.getInstance().isEmpty(xString) && StringValidationUtil.getInstance().isNumber(xString)) {
             this.colorAtActionScriptConditionInterface.getPoint().x = int.Parse(xString);

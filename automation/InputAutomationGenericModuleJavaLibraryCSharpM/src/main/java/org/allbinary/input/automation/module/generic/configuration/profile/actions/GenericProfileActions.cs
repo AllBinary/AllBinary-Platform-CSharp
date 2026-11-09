@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using DataOutputStream = java.io.DataOutputStream;
-//using File = java.io.File;
-//using FileInputStream = java.io.FileInputStream;
-//using FileOutputStream = java.io.FileOutputStream;
+using DataOutputStream = java.io.DataOutputStream;
+using File = java.io.File;
+using FileInputStream = java.io.FileInputStream;
+using FileOutputStream = java.io.FileOutputStream;
 using java.util;
 using DomNodeInterface = org.allbinary.data.tree.dom.DomNodeInterface;
 using DomDocumentHelper = org.allbinary.data.tree.dom.document.DomDocumentHelper;

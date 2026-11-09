@@ -26,12 +26,12 @@ public class WebAppUrlGlobals : UrlGlobalsInterface
 {
     private string path = null;
     private bool isWebappPathSet = false;
-    public virtual bool isTestingMode()
+    public override bool isTestingMode()
     {
         return InitInfo.getInstance().isTesting();
     }
 
-    public virtual string getWebappPath()
+    public override string getWebappPath()
     {
         return this.path;
     }
@@ -43,13 +43,13 @@ public class WebAppUrlGlobals : UrlGlobalsInterface
         this.isWebappPathSet = true;
     }
 
-    public virtual string getTestHtmlPath()
+    public override string getTestHtmlPath()
     {
         return InitInfo.getInstance().getTestHtmlPath();
     }
 
     // throws Exception
-    public virtual string getMainPath()
+    public override string getMainPath()
     {
         string mainPath = InitInfo.getInstance().getMainPath();
         if (!StringValidationUtil.getInstance().isEmpty(mainPath)) {

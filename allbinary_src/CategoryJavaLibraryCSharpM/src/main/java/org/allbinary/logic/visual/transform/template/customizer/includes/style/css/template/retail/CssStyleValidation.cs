@@ -52,7 +52,7 @@ public class CssStyleValidation : Validation, DomNodeInterface
         this.cssStyleElementVector = StylesValidationFactory.getInstance(hashMap);
     }
 
-    public virtual bool? isValid()
+    public override bool? isValid()
     {
         try {
             bool? isValid = true;
@@ -62,7 +62,7 @@ public class CssStyleValidation : Validation, DomNodeInterface
             int size = this.cssStyleElementVector.size();
             for (int i = 0; i < size; i++) {
                 ValidationInterface styleValidationInterface = ((ValidationInterface) this.cssStyleElementVector.get(i));
-                if (!styleValidationInterface.isValid()) {
+                if (!((bool) (styleValidationInterface.isValid()))) {
                     isValid = false;
                 }
             }
@@ -78,7 +78,7 @@ public class CssStyleValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual string validationInfo()
+    public override string validationInfo()
     {
         try {
             StringMaker stringBuffer = new StringMaker();
@@ -91,12 +91,12 @@ public class CssStyleValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual Document toValidationInfoDoc()
+    public override Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual Node toValidationInfoNode(Document document)
+    public override Node toValidationInfoNode(Document document)
     {
         return null;
     }

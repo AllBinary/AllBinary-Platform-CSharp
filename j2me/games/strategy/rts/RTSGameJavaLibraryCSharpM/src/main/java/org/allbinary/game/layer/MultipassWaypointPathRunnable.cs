@@ -38,9 +38,12 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
     private object pathFindingInfo = NullUtil.getInstance().NULL_OBJECT;
     private class FirstRunnable : ARunnable
     {
+        private readonly MultipassWaypointPathRunnable outer;
+
         private readonly MultipassWaypointPathRunnable multipassWaypointPathRunnable;
-        public FirstRunnable(MultipassWaypointPathRunnable multipassWaypointPathRunnable)
+        public FirstRunnable(MultipassWaypointPathRunnable outer, MultipassWaypointPathRunnable multipassWaypointPathRunnable)
         {
+            this.outer = outer;
             this.multipassWaypointPathRunnable = multipassWaypointPathRunnable;
         }
 
@@ -54,9 +57,12 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
     //    private boolean first = true;
     private class SecondRunnable : ARunnable
     {
+        private readonly MultipassWaypointPathRunnable outer;
+
         private readonly MultipassWaypointPathRunnable multipassWaypointPathRunnable;
-        public SecondRunnable(MultipassWaypointPathRunnable multipassWaypointPathRunnable)
+        public SecondRunnable(MultipassWaypointPathRunnable outer, MultipassWaypointPathRunnable multipassWaypointPathRunnable)
         {
+            this.outer = outer;
             this.multipassWaypointPathRunnable = multipassWaypointPathRunnable;
         }
 
@@ -69,9 +75,12 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
     private readonly global::java.lang.Runnable SECOND_RUNNABLE;
     private class EndRunnable : ARunnable
     {
+        private readonly MultipassWaypointPathRunnable outer;
+
         private readonly MultipassWaypointPathRunnable multipassWaypointPathRunnable;
-        public EndRunnable(MultipassWaypointPathRunnable multipassWaypointPathRunnable)
+        public EndRunnable(MultipassWaypointPathRunnable outer, MultipassWaypointPathRunnable multipassWaypointPathRunnable)
         {
+            this.outer = outer;
             this.multipassWaypointPathRunnable = multipassWaypointPathRunnable;
         }
 
@@ -95,9 +104,9 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
     public MultipassWaypointPathRunnable()
     {
         this.list = this.basicArrayListUtil.getImmutableInstance();
-        this.FIRST_RUNNABLE = new FirstRunnable(this);
-        this.SECOND_RUNNABLE = new SecondRunnable(this);
-        this.END_RUNNABLE = new EndRunnable(this);
+        this.FIRST_RUNNABLE = new FirstRunnable(this, this);
+        this.SECOND_RUNNABLE = new SecondRunnable(this, this);
+        this.END_RUNNABLE = new EndRunnable(this, this);
         this.currentPassRunnable = this.FIRST_RUNNABLE;
     }
 

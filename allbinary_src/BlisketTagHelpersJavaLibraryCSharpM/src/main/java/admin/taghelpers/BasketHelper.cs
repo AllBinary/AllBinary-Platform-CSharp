@@ -50,7 +50,7 @@ public class BasketHelper : TagHelper
     {
         try {
             BasketInterface basket = this.weblisketSession.getOrder().getBasket();
-            if (((int) basket.getNumberOfItems()) <= 0) {
+            if (global::java.lang.JavaNumber.intValue(basket.getNumberOfItems()) <= 0) {
                 return true;
             } else {
                 return false;

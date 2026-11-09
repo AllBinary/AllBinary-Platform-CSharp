@@ -94,5 +94,11 @@ public class EditThemeValidationView : ThemeCustomizerView, ValidationComponentI
         return null;
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

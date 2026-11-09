@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Life = org.allbinary.game.ag.life.Life;
 using LifeVisitorInterface = org.allbinary.game.ag.life.LifeVisitorInterface;
 using PointFactory = org.allbinary.graphics.PointFactory;
@@ -38,7 +38,7 @@ public class LifeLayer : AllBinaryLayer, LifeVisitorInterface
     {
     }
 
-    public override void visit(Life lifeInterface)
+    public virtual void visit(Life lifeInterface)
     {
         lifeInterface.add(((short) 1));
     }

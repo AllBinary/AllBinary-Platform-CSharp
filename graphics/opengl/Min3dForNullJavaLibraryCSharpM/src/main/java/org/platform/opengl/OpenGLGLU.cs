@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
+using GL10 = javax.microedition.khronos.opengles.GL10;
 
 namespace org.platform.opengl;
 

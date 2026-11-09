@@ -16,11 +16,11 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using ActionEvent = java.awt.@event.ActionEvent;
-//using File = java.io.File;
-//using URI = java.net.URI;
-//using URL = java.net.URL;
+using File = java.io.File;
+using URI = java.net.URI;
+using URL = java.net.URL;
 //using CSH = javax.help.CSH;
 //using HelpBroker = javax.help.HelpBroker;
 //using HelpSet = javax.help.HelpSet;

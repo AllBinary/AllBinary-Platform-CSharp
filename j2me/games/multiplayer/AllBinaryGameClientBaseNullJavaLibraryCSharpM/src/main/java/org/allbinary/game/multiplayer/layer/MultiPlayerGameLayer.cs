@@ -30,7 +30,7 @@ public class MultiPlayerGameLayer : CollidableDestroyableDamageableLayer, MultiP
         // base(groupInterface, name, layerInfo, viewPosition) is called from the constructor declaration
     }
 
-    public override MultiplayerBehavior getMultiplayerBehavior()
+    public virtual MultiplayerBehavior getMultiplayerBehavior()
     {
         return MultiplayerBehavior.NULL_MULTIPLAYER_BEHAVIOR;
     }
@@ -39,11 +39,11 @@ public class MultiPlayerGameLayer : CollidableDestroyableDamageableLayer, MultiP
     {
     }
 
-    protected virtual void setFiring(short firing)
+    public virtual void setFiring(short firing)
     {
     }
 
-    protected virtual short getFiring()
+    public virtual short getFiring()
     {
         return 0;
     }

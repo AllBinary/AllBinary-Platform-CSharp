@@ -242,5 +242,10 @@ public class StreetAddressesEntity : AbSqlBean, StreetAddressesEntityInterface
         return base.dropTable();
     }
 
+    public override string dropTable()
+    {
+        return base.dropTable();
+    }
+
 }
 

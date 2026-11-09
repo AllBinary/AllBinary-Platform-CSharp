@@ -118,7 +118,7 @@ public class QuoteHelper : BasicTable
             int id = 0;
             int size = vector.size();
             for (int index = 0; index < size; index++) {
-                int nextId = ((int) (((int?) vector.get(index))));
+                int nextId = global::java.lang.JavaNumber.intValue((((int?) vector.get(index))));
                 if (id < nextId) {
                     id = nextId;
                 }
@@ -139,7 +139,7 @@ public class QuoteHelper : BasicTable
         }
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             string success = QuoteRequestEntityFactory.getInstance().getQuoteRequestEntityInstance().dropTable();
@@ -156,7 +156,7 @@ public class QuoteHelper : BasicTable
         }
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             string success = QuoteRequestEntityFactory.getInstance().getQuoteRequestEntityInstance().createTable();
@@ -173,7 +173,7 @@ public class QuoteHelper : BasicTable
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "Restore Successful";
@@ -191,7 +191,7 @@ public class QuoteHelper : BasicTable
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Restore Successful";

@@ -39,11 +39,11 @@
     <ProjectReference Include="$(AllBinaryRuntimeProject)" Condition="'$(AllBinaryRuntimeProject)' != '' And Exists('$(AllBinaryRuntimeProject)')" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\logging\LoggingJ2MEAllCSharpM\LoggingJ2MEAllCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\allbinary_src\LogJ2MEJavaLibraryCSharpM\LogJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\PathFindingNodeCostPerformantJavaLibraryCSharpM\PathFindingNodeCostPerformantJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <!-- org/allbinary/media/graphics/geography/pathfinding/PathFindingNodeCostInfoFactory is also in PathFindingNodeCostJavaLibraryCSharp that the project needs -->
+    <ProjectReference Include="..\PathFindingNodeCostPerformantJavaLibraryCSharpM\PathFindingNodeCostPerformantJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="PathFindingNodeCostPerformantJavaLibraryCSharp" />
     <ProjectReference Include="..\GeographicPathFindingLibraryCSharpM\GeographicPathFindingLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\map\GeographicMapLibraryCSharpM\GeographicMapLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/media/graphics/geography/pathfinding/PathFindingNodeCostInfoFactory is also in a nearer dependency -->
-    <ProjectReference Include="..\PathFindingNodeCostJavaLibraryCSharpM\PathFindingNodeCostJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="PathFindingNodeCostJavaLibraryCSharp" />
+    <ProjectReference Include="..\PathFindingNodeCostJavaLibraryCSharpM\PathFindingNodeCostJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\allbinary_src\LogCSharpM\LogCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\CommonJavaLibraryCSharpM\CommonJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\J2MEExceptionLibraryCSharpM\J2MEExceptionLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -100,8 +100,7 @@
     <ProjectReference Include="..\..\..\..\..\allbinary_src\hardware\BaseSystemJavaLibraryCSharpM\BaseSystemJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\sound\NoPlayerJavaLibraryCSharpM\NoPlayerJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\sound\BasicPlayerJavaLibraryCSharpM\BasicPlayerJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/math/PositionStrings is also in a nearer dependency -->
-    <ProjectReference Include="..\..\..\..\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="BaseMathLibraryCSharp" />
+    <ProjectReference Include="..\..\..\..\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\allbinary_src\cache\BaseCacheJavaLibraryCSharpM\BaseCacheJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\games\ScreenCaptureJavaLibraryCSharpM\ScreenCaptureJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\FormBaseJavaLibraryCSharpM\FormBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

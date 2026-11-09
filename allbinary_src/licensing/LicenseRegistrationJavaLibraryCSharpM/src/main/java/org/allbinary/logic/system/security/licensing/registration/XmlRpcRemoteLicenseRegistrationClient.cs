@@ -67,7 +67,7 @@ public class XmlRpcRemoteLicenseRegistrationClient : XmlRpcAbeClient
             this.logUtil.putF(RESULT + result.ToString(), this, this.commonStrings.GET);
             isOnline = true;
             return result;
-        } catch (IOException e) {
+        } catch (System.IO.IOException e) {
             this.logUtil.putF(TRYING_OTHER_SERVERS + ExceptionUtil.getInstance().getStackTrace(e), this, this.commonStrings.GET);
             if (!e.Message.StartsWith(HOST_NOT_RESOLVED)) {
                 return this.tryAnother(anyType);

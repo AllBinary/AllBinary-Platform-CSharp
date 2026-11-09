@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using SteeringVisitor = org.allbinary.game.layer.SteeringVisitor;
 using AdvancedRTSGameLayer = org.allbinary.game.layer.AdvancedRTSGameLayer;
 using CollidableCompositeLayer = org.allbinary.game.layer.CollidableCompositeLayer;
@@ -42,6 +42,7 @@ public class CollidableUnitBehavior : CollidableRTSBehavior
     private readonly LayerPartialCellPositionsUtil layerPartialCellPositionsUtil = LayerPartialCellPositionsUtil.getInstance();
     public CollidableUnitBehavior(bool collidable) : base(collidable)
     {
+        this.simpleSteeringVisitor = new SimpleSteeringVisitor(this);
         // base(collidable) is called from the constructor declaration
     }
 
@@ -57,6 +58,8 @@ public class CollidableUnitBehavior : CollidableRTSBehavior
 
     private class SimpleSteeringVisitor : SteeringVisitor
     {
+        private readonly CollidableUnitBehavior outer;
+
         public override object visit(object anyType)
         {
             LogUtil logUtil = LogUtil.getInstance();
@@ -64,7 +67,7 @@ public class CollidableUnitBehavior : CollidableRTSBehavior
                 CollidableCompositeLayer ownerLayer = ((CollidableCompositeLayer) anyType);
                 if (this.getList().size() > 0) {
                     CollidableCompositeLayer allbinaryLayer = ((CollidableCompositeLayer) this.getList().get(0));
-                    bool clear = this.steer(ownerLayer, allbinaryLayer);
+                    bool clear = this.outer.steer(ownerLayer, allbinaryLayer);
                     if (clear) {
                         this.getList().clear();
                         return NullUtil.getInstance().NULL_OBJECT;
@@ -79,8 +82,13 @@ public class CollidableUnitBehavior : CollidableRTSBehavior
             }
         }
 
+        public SimpleSteeringVisitor(CollidableUnitBehavior outer)
+        {
+            this.outer = outer;
+        }
+
     }
-    private readonly SimpleSteeringVisitor simpleSteeringVisitor = new SimpleSteeringVisitor();
+    private readonly SimpleSteeringVisitor simpleSteeringVisitor;
     // throws Exception
     private bool steer(CollidableCompositeLayer ownerLayer, CollidableCompositeLayer collidableInterfaceCompositeInterface)
     {

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
+using Font = javax.microedition.lcdui.Font;
 using Animation = org.allbinary.animation.Animation;
 using AnimationBehaviorFactory = org.allbinary.animation.AnimationBehaviorFactory;
 using AnimationInterfaceFactoryInterface = org.allbinary.animation.AnimationInterfaceFactoryInterface;

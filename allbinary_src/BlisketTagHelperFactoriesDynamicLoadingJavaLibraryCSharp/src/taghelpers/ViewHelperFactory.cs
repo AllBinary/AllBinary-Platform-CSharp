@@ -24,10 +24,10 @@ using TagHelperFactoryInterface = admin.taghelpers.TagHelperFactoryInterface;
 
 namespace taghelpers;
 
-public class ViewHelperFactory : TagHelperFactoryInterface
+public class ViewHelperFactory : global::admin.taghelpers.TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "taghelpers.ViewHelper";
-    private static readonly string FACTORYNAME = "taghelpers.ViewHelperFactory";
+    private const string CLASSNAME = "taghelpers.ViewHelper";
+    private const string FACTORYNAME = "taghelpers.ViewHelperFactory";
     public ViewHelperFactory()
     {
     }

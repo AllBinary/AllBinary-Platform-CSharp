@@ -107,7 +107,7 @@ public class SearchParams
     public virtual int? getLengthInt()
     {
         if (this.listLength != null) {
-            return this.listLength;
+            return int.Parse(this.listLength);
         } else {
             return 0;
         }
@@ -126,7 +126,7 @@ public class SearchParams
     public virtual int? getStartPageInt()
     {
         if (this.startPage != null) {
-            return this.startPage;
+            return int.Parse(this.startPage);
         } else {
             return 0;
         }
@@ -135,7 +135,7 @@ public class SearchParams
     public virtual int? getEndPageInt()
     {
         if (this.endPage != null) {
-            return this.endPage;
+            return int.Parse(this.endPage);
         } else {
             return 0;
         }

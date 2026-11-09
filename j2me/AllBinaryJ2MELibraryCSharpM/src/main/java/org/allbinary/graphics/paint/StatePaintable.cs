@@ -26,7 +26,7 @@ public class StatePaintable : Paintable, StateControlledInterface
     {
     }
 
-    public override void setState(int state)
+    public virtual void setState(int state)
     {
     }
 

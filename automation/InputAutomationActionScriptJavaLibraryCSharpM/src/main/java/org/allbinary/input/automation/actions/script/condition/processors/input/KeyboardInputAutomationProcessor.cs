@@ -39,25 +39,25 @@ public class KeyboardInputAutomationProcessor
         InputRobotInterface inputRobotInterface = keyActionScriptInputInterface.getInputRobotInterface();
         int?[] integer = keyActionScriptInputInterface.getKeyArray();
         if (keyActionScriptInputInterface.getDelayBetweenKeys() == 0) {
-            for (int index = 0; index < keyActionScriptInputInterface.getKeyArray().Length; index++) {
+            for (int index_1 = 0; index_1 < keyActionScriptInputInterface.getKeyArray().Length; index_1++) {
                 if (keyActionScriptInputInterface.isPress()) {
-                    inputRobotInterface.keyPress(integer[index]);
+                    inputRobotInterface.keyPress(integer[index_1]);
                 }
             }
             System.Threading.Thread.Sleep((int) (keyActionScriptInputInterface.getTime()));
-            for (int index = keyActionScriptInputInterface.getKeyArray().Length - 1; index >= 0; index--) {
+            for (int index_2 = keyActionScriptInputInterface.getKeyArray().Length - 1; index_2 >= 0; index_2--) {
                 if (keyActionScriptInputInterface.isRelease()) {
-                    inputRobotInterface.keyRelease(integer[index]);
+                    inputRobotInterface.keyRelease(integer[index_2]);
                 }
             }
         } else {
-            for (int index = 0; index < keyActionScriptInputInterface.getKeyArray().Length; index++) {
+            for (int index_0 = 0; index_0 < keyActionScriptInputInterface.getKeyArray().Length; index_0++) {
                 if (keyActionScriptInputInterface.isPress()) {
-                    inputRobotInterface.keyPress(integer[index]);
+                    inputRobotInterface.keyPress(integer[index_0]);
                 }
                 System.Threading.Thread.Sleep((int) (keyActionScriptInputInterface.getTime()));
                 if (keyActionScriptInputInterface.isRelease()) {
-                    inputRobotInterface.keyRelease(integer[index]);
+                    inputRobotInterface.keyRelease(integer[index_0]);
                 }
                 TimeDelayHelper timeHelper = new TimeDelayHelper(keyActionScriptInputInterface.getDelayBetweenKeys());
                 int toLong = 0;

@@ -68,10 +68,10 @@ public class Initializer
     private string staticPagesSchema = null;
     private string staticPagesServer = null;
     private string staticPagesPort = null;
-    private static readonly int MAXDB = 30;
-    private static readonly int MAX = 16;
-    private static readonly int MIN = 4;
-    private static readonly int MINPASSWORD = 0;
+    private const int MAXDB = 30;
+    private const int MAX = 16;
+    private const int MIN = 4;
+    private const int MINPASSWORD = 0;
     public Initializer(Map<object, object> map)
     {
         StringMaker stringBuffer = new StringMaker();

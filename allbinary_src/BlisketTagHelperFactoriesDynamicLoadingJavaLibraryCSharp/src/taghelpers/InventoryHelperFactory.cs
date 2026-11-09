@@ -25,8 +25,8 @@ namespace taghelpers;
 
 public class InventoryHelperFactory
 {
-    private static readonly string CLASSNAME = "taghelpers.InventoryHelper";
-    private static readonly string FACTORYNAME = "taghelpers.InventoryHelperFactory";
+    private const string CLASSNAME = "taghelpers.InventoryHelper";
+    private const string FACTORYNAME = "taghelpers.InventoryHelperFactory";
     private InventoryHelperFactory()
     {
     }

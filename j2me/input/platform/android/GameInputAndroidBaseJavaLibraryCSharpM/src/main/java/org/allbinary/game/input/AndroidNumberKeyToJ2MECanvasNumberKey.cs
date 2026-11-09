@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using KeyEvent = android.view.KeyEvent;
 
 namespace org.allbinary.game.input;

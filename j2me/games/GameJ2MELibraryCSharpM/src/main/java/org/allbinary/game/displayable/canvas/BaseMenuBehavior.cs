@@ -14,6 +14,8 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using DisplayChangeEvent = org.allbinary.graphics.displayable.@event.DisplayChangeEvent;

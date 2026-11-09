@@ -44,8 +44,7 @@
     <ProjectReference Include="..\..\j2me\lib\TrigBaseLibraryCSharpM\TrigBaseLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\J2MEUtilJavaLibraryCSharpM\J2MEUtilJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\CommonJavaLibraryCSharpM\CommonJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/math/PositionStrings is also in a nearer dependency -->
-    <ProjectReference Include="..\..\j2me\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="BaseMathLibraryCSharp" />
+    <ProjectReference Include="..\..\j2me\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\replace_these_stub_projects\allbinary_src\J2MEJsInteropCompatibilityJavaLibraryCSharpM\J2MEJsInteropCompatibilityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
   </ItemGroup>
   <!-- AllBinary references end -->

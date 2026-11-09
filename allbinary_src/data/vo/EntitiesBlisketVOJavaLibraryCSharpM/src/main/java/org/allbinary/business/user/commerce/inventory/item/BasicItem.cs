@@ -260,7 +260,7 @@ public class BasicItem : ItemInterface
     {
         this.downloads = value;
         if (!StringValidationUtil.getInstance().isEmpty(this.downloads)) {
-            int? downloadInteger = (this.downloads).ToString();
+            int? downloadInteger = int.Parse((this.downloads).ToString());
             if (((int) downloadInteger) != 0) {
                 this.setDownloadable(true);
             }
@@ -450,7 +450,7 @@ public class BasicItem : ItemInterface
     public virtual Money getTotal()
     {
         Money itemTotal = new Money(this.price);
-        itemTotal.multiply(((int) this.number));
+        itemTotal.multiply(global::java.lang.JavaNumber.intValue(int.Parse(this.number)));
         return itemTotal;
     }
 

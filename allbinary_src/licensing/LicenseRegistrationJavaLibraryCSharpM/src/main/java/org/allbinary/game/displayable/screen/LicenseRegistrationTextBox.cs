@@ -16,11 +16,11 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using TextField = javax.microedition.lcdui.TextField;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
+using TextField = javax.microedition.lcdui.TextField;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
@@ -47,7 +47,7 @@ public class LicenseRegistrationTextBox : CustomTextBox
         // base(cmdListener, "Enter Registration Code:", StringUtil.getInstance().EMPTY_STRING, 60, TextField.ANY, Font.getDefaultFont(), backgrounBasicColor, foregroundBasicColor) is called from the constructor declaration
     }
 
-    public virtual void initCommands(CommandListener cmdListener)
+    public override void initCommands(CommandListener cmdListener)
     {
         this.removeAllCommands();
         this.addCommand(GameCommandsFactory.getInstance().CLOSE_AND_SHOW_GAME_CANVAS);
@@ -56,7 +56,7 @@ public class LicenseRegistrationTextBox : CustomTextBox
         this.setCommandListener(cmdListener);
     }
 
-    public virtual void open()
+    public override void open()
     {
         try {
             VirtualKeyboardEventHandler virtualKeyboardEventHandler = VirtualKeyboardEventHandler.getInstance();
@@ -70,7 +70,7 @@ public class LicenseRegistrationTextBox : CustomTextBox
     }
 
     // throws Exception
-    public virtual void close()
+    public override void close()
     {
         try {
             VirtualKeyboardEventHandler virtualKeyboardEventHandler = VirtualKeyboardEventHandler.getInstance();
@@ -83,13 +83,13 @@ public class LicenseRegistrationTextBox : CustomTextBox
         base.close();
     }
 
-    public virtual void paint(Graphics graphics)
+    public override void paint(Graphics graphics)
     {
         base.paint(graphics);
         this.paintable.paint(graphics);
     }
 
-    public virtual void submit()
+    public override void submit()
     {
         CommandListener commandListener = this.getCustomCommandListener();
         commandListener.commandAction(SUBMIT_COMMAND, this);

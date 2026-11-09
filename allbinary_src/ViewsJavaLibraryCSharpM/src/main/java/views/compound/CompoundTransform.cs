@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 //using URIResolver = javax.xml.transform.URIResolver;
 using BasicUriResolver = org.allbinary.data.tree.dom.BasicUriResolver;
 using StoreUriResolver = org.allbinary.data.tree.dom.StoreUriResolver;

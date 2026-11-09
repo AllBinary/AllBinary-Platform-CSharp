@@ -17,10 +17,10 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using FileInputStream = java.io.FileInputStream;
+using FileInputStream = java.io.FileInputStream;
 //using FileNotFoundException = java.io.FileNotFoundException;
 //using IOException = java.io.IOException;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 //using FileChannel = java.nio.channels.FileChannel;
 
 namespace org.allbinary.logic.io;

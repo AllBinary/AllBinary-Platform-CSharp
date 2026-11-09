@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using DataInputStream = java.io.DataInputStream;
-//using InputStream = java.io.InputStream;
-//using OutputStream = java.io.OutputStream;
+using DataInputStream = java.io.DataInputStream;
+using InputStream = java.io.InputStream;
+using OutputStream = java.io.OutputStream;
 using AbDataOutputStream = org.allbinary.logic.io.AbDataOutputStream;
 using FileStreamFactory = org.allbinary.logic.io.FileStreamFactory;
 using StreamUtil = org.allbinary.logic.io.StreamUtil;

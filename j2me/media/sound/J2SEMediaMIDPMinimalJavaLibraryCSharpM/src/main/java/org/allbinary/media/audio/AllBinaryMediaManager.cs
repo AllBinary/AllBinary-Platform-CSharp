@@ -18,12 +18,12 @@ using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
 //using BufferedInputStream = java.io.BufferedInputStream;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
 //using IOException = java.io.IOException;
-//using InputStream = java.io.InputStream;
-//using Manager = javax.microedition.media.Manager;
-//using MediaException = javax.microedition.media.MediaException;
-//using Player = javax.microedition.media.Player;
+using InputStream = java.io.InputStream;
+using Manager = javax.microedition.media.Manager;
+using MediaException = javax.microedition.media.MediaException;
+using Player = javax.microedition.media.Player;
 using TsUtil = org.allbinary.TsUtil;
 using AudioContentTypeDataFactory = org.allbinary.audio.AudioContentTypeDataFactory;
 using ResourceUtil = org.allbinary.data.resource.ResourceUtil;
@@ -39,7 +39,7 @@ namespace org.allbinary.media.audio;
 //J2SEMediaMIDPMinimalJavaLibrary
 public class AllBinaryMediaManager
 {
-    private static readonly string THIS = "AllBinaryMediaManagerPC";
+    private const string THIS = "AllBinaryMediaManagerPC";
     private AllBinaryMediaManager()
     {
     }
@@ -76,7 +76,7 @@ public class AllBinaryMediaManager
         TsUtil.getInstance().gc();
     }
 
-    private static readonly string CREATE_PLAYER = "createPlayer";
+    private const string CREATE_PLAYER = "createPlayer";
     // throws Exception
     public static Player createPlayer(string resource)
     {

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace org.osgi.framework;
 
-public interface ServiceReference : Comparable
+public interface ServiceReference : global::java.lang.Comparable
 {
     object getProperty(string key);
 

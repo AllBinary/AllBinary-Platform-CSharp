@@ -66,7 +66,7 @@ public class UserNameOrderHistoryView : HttpStoreComponentView, ValidationCompon
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             this.addDomNodeInterfaces();
@@ -140,6 +140,12 @@ public class UserNameOrderHistoryView : HttpStoreComponentView, ValidationCompon
             return "Invalid User Name<br />";
         }
         return "Unknown Error<br />";
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

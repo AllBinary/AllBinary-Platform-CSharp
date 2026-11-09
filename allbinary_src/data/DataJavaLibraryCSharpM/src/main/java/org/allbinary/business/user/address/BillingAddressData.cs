@@ -25,22 +25,22 @@ public class BillingAddressData
     {
     }
 
-    public static readonly int MAX = 255;
-    public static readonly int MIN = 0;
-    public static readonly string MULTIPLE = "BILLINGADDRESSES";
-    public static readonly string STATES = "BILLINGADDRESS_STATES";
-    public static readonly string SETTOSHIPPINGADDRESS = "Set To Shipping Address";
-    public static readonly string SELECT = "Select Billing Address";
-    public static readonly string SETTOSHIPPINGADDRESSNAME = "SETTOSHIPPINGADDRESS";
-    public static readonly string BILLINGADDRESSES = "BILLINGADDRESSES";
-    public static readonly string BILLINGADDRESS = "BILLINGADDRESS";
-    public static readonly string ID = "BILLINGADDRESS_ID";
-    public static readonly string ADDRESS = "BILLINGADDRESS_ADDRESS";
-    public static readonly string NAME = "BILLINGADDRESS_NAME";
-    public static readonly string STREET = "BILLINGADDRESS_STREET";
-    public static readonly string CITY = "BILLINGADDRESS_CITY";
-    public static readonly string STATE = "BILLINGADDRESS_STATE";
-    public static readonly string CODE = "BILLINGADDRESS_CODE";
-    public static readonly string COUNTRY = "BILLINGADDRESS_COUNTRY";
+    public const int MAX = 255;
+    public const int MIN = 0;
+    public const string MULTIPLE = "BILLINGADDRESSES";
+    public const string STATES = "BILLINGADDRESS_STATES";
+    public const string SETTOSHIPPINGADDRESS = "Set To Shipping Address";
+    public const string SELECT = "Select Billing Address";
+    public const string SETTOSHIPPINGADDRESSNAME = "SETTOSHIPPINGADDRESS";
+    public const string BILLINGADDRESSES = "BILLINGADDRESSES";
+    public const string BILLINGADDRESS = "BILLINGADDRESS";
+    public const string ID = "BILLINGADDRESS_ID";
+    public const string ADDRESS = "BILLINGADDRESS_ADDRESS";
+    public const string NAME = "BILLINGADDRESS_NAME";
+    public const string STREET = "BILLINGADDRESS_STREET";
+    public const string CITY = "BILLINGADDRESS_CITY";
+    public const string STATE = "BILLINGADDRESS_STATE";
+    public const string CODE = "BILLINGADDRESS_CODE";
+    public const string COUNTRY = "BILLINGADDRESS_COUNTRY";
 }
 

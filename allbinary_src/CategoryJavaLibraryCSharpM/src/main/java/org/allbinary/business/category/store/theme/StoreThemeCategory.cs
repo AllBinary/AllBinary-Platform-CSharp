@@ -96,16 +96,16 @@ public class StoreThemeCategory : Category, StoreThemeCategoryInterface
     }
 
     // throws Exception
-    public virtual bool? isValid()
+    public override bool? isValid()
     {
-        if (!base.isValid()) {
+        if (!((bool) (base.isValid()))) {
             return false;
         }
         return true;
     }
 
     // throws Exception
-    public virtual HashMap<object, object> toHashMap()
+    public override HashMap<object, object> toHashMap()
     {
         HashMap<object, object> categoryHashMap = base.toHashMap();
         categoryHashMap.put(ThemesData.getInstance().NAME, this.themeVector);
@@ -113,7 +113,7 @@ public class StoreThemeCategory : Category, StoreThemeCategoryInterface
     }
 
     // throws Exception
-    public virtual BasicArrayList toVector()
+    public override BasicArrayList toVector()
     {
         BasicArrayList categoryVector = base.toVector();
         return categoryVector;

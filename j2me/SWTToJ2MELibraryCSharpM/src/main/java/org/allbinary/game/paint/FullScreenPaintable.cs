@@ -14,10 +14,11 @@
  */
 // Generated Code Do Not Modify
 
+extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Anchor = org.allbinary.graphics.Anchor;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
 using MyFontProcessor = org.allbinary.graphics.font.MyFontProcessor;
@@ -46,7 +47,7 @@ public class FullScreenPaintable : Paintable, UpdateMyFontInterface
         this.myFontProcessor = new UpdateMyFontProcessor(this);
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.Y = 4 * font.getHeight();

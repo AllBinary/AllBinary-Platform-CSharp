@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using GL = javax.microedition.khronos.opengles.GL;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using RotationAnimation = org.allbinary.animation.RotationAnimation;
 using Direction = org.allbinary.direction.Direction;

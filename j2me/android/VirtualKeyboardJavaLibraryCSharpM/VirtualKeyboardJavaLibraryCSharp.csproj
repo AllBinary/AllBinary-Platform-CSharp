@@ -58,8 +58,7 @@
     <ProjectReference Include="..\..\NullJ2MELibraryCSharpM\NullJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\allbinary_src\ThreadLibraryCSharpM\ThreadLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\media\sound\SoundJ2MELibraryCSharpM\SoundJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/math/PositionStrings is also in a nearer dependency -->
-    <ProjectReference Include="..\..\lib\TrigBaseLibraryCSharpM\TrigBaseLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="TrigBaseLibraryCSharp" />
+    <ProjectReference Include="..\..\lib\TrigBaseLibraryCSharpM\TrigBaseLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\time\TimeJavaLibraryCSharpM\TimeJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\media\graphics\geography\map\GraphBaseJavaLibraryCSharpM\GraphBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\replace_these_stub_projects\allbinary_src\J2MEJsInteropCompatibilityJavaLibraryCSharpM\J2MEJsInteropCompatibilityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

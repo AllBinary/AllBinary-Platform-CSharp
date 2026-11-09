@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Animation = org.allbinary.animation.Animation;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using ColorCompositeInterface = org.allbinary.graphics.color.ColorCompositeInterface;
@@ -46,7 +46,7 @@ public class LineAnimation : Animation, ColorCompositeInterface, PositionInterfa
         this.newLine = this.tempLine;
     }
 
-    public override void setPosition(int x, int y, int z)
+    public virtual void setPosition(int x, int y, int z)
     {
         this.newLine[0][0] = this.line[1][0];
         this.newLine[0][1] = this.line[1][1];
@@ -66,6 +66,16 @@ public class LineAnimation : Animation, ColorCompositeInterface, PositionInterfa
 
     public override void nextFrame()
     {
+    }
+
+    public override BasicColor getBasicColorP()
+    {
+        return base.getBasicColorP();
+    }
+
+    public override void setBasicColorP(BasicColor basicColor)
+    {
+        base.setBasicColorP(basicColor);
     }
 
 }

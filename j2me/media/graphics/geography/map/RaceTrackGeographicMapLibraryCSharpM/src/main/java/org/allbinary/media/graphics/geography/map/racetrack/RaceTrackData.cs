@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
 using CellPosition = org.allbinary.graphics.CellPosition;
 using NullUtil = org.allbinary.logic.NullUtil;
 

@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using Anchor = org.allbinary.graphics.Anchor;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using CommonStrings = org.allbinary.@string.CommonStrings;

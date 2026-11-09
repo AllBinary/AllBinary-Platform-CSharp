@@ -93,5 +93,11 @@ public class EditValidationView : InventoryItemView, ValidationComponentInterfac
         return stringBuffer.ToString();
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

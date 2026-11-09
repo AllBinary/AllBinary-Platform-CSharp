@@ -143,7 +143,7 @@ public class FileAuthenticationTag : CustomTagSupport
     {
         try {
             this.weblisketSession.clear();
-            return ((int) TagSupport.EVAL_BODY_INCLUDE);
+            return global::java.lang.JavaNumber.intValue(TagSupport.EVAL_BODY_INCLUDE);
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "invalidateSession()", e);
@@ -172,14 +172,14 @@ public class FileAuthenticationTag : CustomTagSupport
                         stringBuffer.appendlong(timeCreated);
                         this.logUtil.putF(stringBuffer.ToString(), this, "isSessionOld()");
                     }
-                    return true;
+                    return ((bool) (true));
                 }
             } else {
                 if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().AUTHENTICATION)) {
                     this.logUtil.putF("Role Is Not In Session", this, "isSessionOld()");
                 }
             }
-            return this.isRarelyUsedSession();
+            return this.isRarelyUsedSession().Value;
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "isSessionOld()", e);
@@ -219,7 +219,7 @@ public class FileAuthenticationTag : CustomTagSupport
     {
         try {
             this.makeSessionValid(BasicUserRoleFactory.getInstance().INSTALLER, userName);
-            return true;
+            return ((bool) (true));
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "isRoleValid()", e);
@@ -271,12 +271,12 @@ public class FileAuthenticationTag : CustomTagSupport
                 for (int index = 0; index < size; index++) {
                     BasicUserRole mustBeOfRole = ((BasicUserRole) this.roles.get(index));
                     if (this.sessionUserName != null && this.role.Equals(mustBeOfRole)) {
-                        return true;
+                        return ((bool) (true));
                     }
                 }
-                return false;
+                return ((bool) (false));
             }
-            return false;
+            return ((bool) (false));
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "isAuthenticationSessionValid()", e);
@@ -302,13 +302,13 @@ public class FileAuthenticationTag : CustomTagSupport
                 }
                 if (string.CompareOrdinal(login, org.allbinary.globals.GLOBALS2.LOGINSUCCESS) == 0) {
                     this.weblisketSession.setAttempts(0);
-                    return true;
+                    return ((bool) (true));
                 }
                 this.nextAttempt();
-                return false;
+                return ((bool) (false));
             }
             this.nextAttempt();
-            return false;
+            return ((bool) (false));
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "processIfNewLogin()", e);
@@ -323,11 +323,11 @@ public class FileAuthenticationTag : CustomTagSupport
         try {
             if (BooleanUtil.getInstance().getFromString(this.timeout)) {
                 this.invalidateSession();
-                return true;
+                return ((bool) (true));
             }
             {
                 this.weblisketSession.setTimeout(BooleanFactory.getInstance().TRUE_STRING);
-                return false;
+                return ((bool) (false));
             }
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGERROR)) {

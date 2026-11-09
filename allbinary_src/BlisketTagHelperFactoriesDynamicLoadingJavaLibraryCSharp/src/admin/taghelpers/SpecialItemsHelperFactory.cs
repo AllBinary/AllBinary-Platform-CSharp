@@ -24,8 +24,8 @@ namespace admin.taghelpers;
 
 public class SpecialItemsHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "admin.taghelpers.SpecialItemsHelper";
-    private static readonly string FACTORYNAME = "SpecialItemsHelperFactory";
+    private const string CLASSNAME = "admin.taghelpers.SpecialItemsHelper";
+    private const string FACTORYNAME = "SpecialItemsHelperFactory";
     public SpecialItemsHelperFactory()
     {
     }

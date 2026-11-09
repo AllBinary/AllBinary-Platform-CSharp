@@ -55,7 +55,7 @@ public class UserHelper : Table
         this.portion = new Portion(hashMap);
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             HashMap<object, object> requestHashMap = new RequestParams(this.request).toHashMap();
@@ -82,7 +82,7 @@ public class UserHelper : Table
     }
 
     // throws Exception
-    public virtual string insert()
+    public override string insert()
     {
         try {
             UserInterface userInterface = NewUserFactory.getInstance(this.request, hashMap);
@@ -106,7 +106,7 @@ public class UserHelper : Table
         }
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             UserInterface user = NewUserFactory.getInstance(this.request, hashMap);
@@ -126,7 +126,7 @@ public class UserHelper : Table
         }
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             string success = UserEntityFactory.getInstance().dropTable();
@@ -143,7 +143,7 @@ public class UserHelper : Table
         }
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             string success = UserEntityFactory.getInstance().createTable();
@@ -160,7 +160,7 @@ public class UserHelper : Table
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "Restore Successful";
@@ -178,7 +178,7 @@ public class UserHelper : Table
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Restore Successful";

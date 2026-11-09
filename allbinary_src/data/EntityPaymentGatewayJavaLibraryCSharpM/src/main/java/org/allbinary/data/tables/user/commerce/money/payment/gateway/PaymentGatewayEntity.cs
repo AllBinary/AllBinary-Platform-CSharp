@@ -281,7 +281,7 @@ public class PaymentGatewayEntity : AbSqlBean, PaymentGatewayEntityInterface
         return base.createTable(this.createTableStatement());
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
     }

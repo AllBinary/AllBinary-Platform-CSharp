@@ -126,7 +126,7 @@ public class PaymentGatewayHelper : BasicTable
         }
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             string success = PaymentGatewayEntityFactory.getInstance().dropTable();
@@ -143,7 +143,7 @@ public class PaymentGatewayHelper : BasicTable
         }
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             string success = PaymentGatewayEntityFactory.getInstance().createTable();
@@ -160,7 +160,7 @@ public class PaymentGatewayHelper : BasicTable
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "Restore Successful";
@@ -178,7 +178,7 @@ public class PaymentGatewayHelper : BasicTable
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Restore Successful";

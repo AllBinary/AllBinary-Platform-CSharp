@@ -14,11 +14,13 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Graphics = javax.microedition.lcdui.Graphics;
 using GameKeyEvent = org.allbinary.game.input.@event.GameKeyEvent;
 using AllBinaryGameLayer = org.allbinary.game.layer.AllBinaryGameLayer;
 using RectangleFactory = org.allbinary.graphics.RectangleFactory;
@@ -47,7 +49,7 @@ public class TestingInputSingleton : AllBinaryGameLayer, GameInputInterface
     }
 
     private PaintableInterface paintable = NullPaintable.getInstance();
-    public override void initInputProcessors()
+    public virtual void initInputProcessors()
     {
     }
 

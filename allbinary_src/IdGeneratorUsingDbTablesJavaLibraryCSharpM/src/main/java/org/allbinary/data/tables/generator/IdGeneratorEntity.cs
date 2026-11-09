@@ -54,7 +54,7 @@ public class IdGeneratorEntity : AbSqlBean, IdGeneratorEntityInterface
         return long.Parse(value);
     }
 
-    public virtual void insert(BasicArrayList values)
+    public override void insert(BasicArrayList values)
     {
         try {
             base.insert(values);
@@ -93,9 +93,14 @@ public class IdGeneratorEntity : AbSqlBean, IdGeneratorEntityInterface
         return returnStr;
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
+    }
+
+    public override void deleteWhere(string key, string value)
+    {
+        base.deleteWhere(key, value);
     }
 
 }

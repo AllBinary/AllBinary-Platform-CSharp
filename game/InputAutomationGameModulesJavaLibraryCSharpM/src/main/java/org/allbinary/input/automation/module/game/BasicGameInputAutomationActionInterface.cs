@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 using InputAutomationActionInterface = org.allbinary.input.automation.module.InputAutomationActionInterface;
 
 namespace org.allbinary.input.automation.module.game;

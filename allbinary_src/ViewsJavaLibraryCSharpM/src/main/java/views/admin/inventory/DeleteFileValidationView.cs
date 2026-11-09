@@ -91,5 +91,11 @@ public class DeleteFileValidationView : InventoryItemView, ValidationComponentIn
         }
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

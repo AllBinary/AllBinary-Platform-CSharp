@@ -25,13 +25,13 @@ public class WeblisketSessionData
     {
     }
 
-    public static readonly string INVALIDATESESSION = "SESSION_INVALIDATE_SESSION";
-    public static readonly string ATTEMPTS = "SESSION_ATTEMPTS";
-    public static readonly string TIMEOUT = "SESSION_TIMEOUT";
-    public static readonly string REMOVABLEUSERNAME = "SESSION_REMOVABLE_USER_NAME";
-    public static readonly string REMOVABLEPASSWORD = "SESSION_REMOVABLE_PASSWORD";
-    public static readonly string REMOVABLENEWPASSWORD = "SESSION_REMOVABLE_NEW_PASSWORD";
-    public static readonly string REMOVABLEREENTERNEWPASSWORD = "SESSION_REMOVABLE_REENTER_NEW_PASSWORD";
-    public static readonly string AUTHENTICATED = "SESSION_AUTHENTICATED";
+    public const string INVALIDATESESSION = "SESSION_INVALIDATE_SESSION";
+    public const string ATTEMPTS = "SESSION_ATTEMPTS";
+    public const string TIMEOUT = "SESSION_TIMEOUT";
+    public const string REMOVABLEUSERNAME = "SESSION_REMOVABLE_USER_NAME";
+    public const string REMOVABLEPASSWORD = "SESSION_REMOVABLE_PASSWORD";
+    public const string REMOVABLENEWPASSWORD = "SESSION_REMOVABLE_NEW_PASSWORD";
+    public const string REMOVABLEREENTERNEWPASSWORD = "SESSION_REMOVABLE_REENTER_NEW_PASSWORD";
+    public const string AUTHENTICATED = "SESSION_AUTHENTICATED";
 }
 

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using TextField = javax.microedition.lcdui.TextField;
+using TextField = javax.microedition.lcdui.TextField;
 using StdUtil = org.allbinary.logic.StdUtil;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using org.allbinary.util;

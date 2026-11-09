@@ -40,6 +40,7 @@
     <ProjectReference Include="..\logging\LoggingGAEAllCSharpM\LoggingGAEAllCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\licensing\ClientInfoLicensingJavaLibraryCSharpM\ClientInfoLicensingJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\ThreadJ2MELibraryCSharpM\ThreadJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\j2me\input\platform\me\TouchJ2MENoneJavaLibraryCSharpM\TouchJ2MENoneJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\PCResourceLibraryCSharpM\PCResourceLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\statistics\ApplicationStatisticsJ2SELibraryCSharpM\ApplicationStatisticsJ2SELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\CustomLoaderFakeJavaLibraryCSharpM\CustomLoaderFakeJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -105,8 +106,8 @@
     <ProjectReference Include="..\licensing\RemoteXmlRpcJavaLibraryCSharpM\RemoteXmlRpcJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\security\BasicSecurityJavaLibraryCSharpM\BasicSecurityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\BlisketTagHelpersJavaLibraryCSharpM\BlisketTagHelpersJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/logic/communication/log/config/type/LogConfigType is also in a nearer dependency -->
-    <ProjectReference Include="..\logging\BasicLogConfigTypeJavaLibraryCSharpM\BasicLogConfigTypeJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="BasicLogConfigTypeJavaLibraryCSharp" />
+    <!-- org/allbinary/logic/communication/log/config/type/LogConfigType is also in a nearer dependency but is not used -->
+    <ProjectReference Include="..\logging\BasicLogConfigTypeJavaLibraryCSharpM\BasicLogConfigTypeJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\JavaUtilLibraryCSharpM\JavaUtilLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\logic\data\file\FileAdvancedJavaLibraryCSharpM\FileAdvancedJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\replace_these_stub_projects\allbinary_src\J2MEJsInteropCompatibilityJavaLibraryCSharpM\J2MEJsInteropCompatibilityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -124,8 +125,7 @@
     <ProjectReference Include="..\..\j2me\NullJ2MELibraryCSharpM\NullJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\ThreadLibraryCSharpM\ThreadLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\media\sound\SoundJ2MELibraryCSharpM\SoundJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/math/PositionStrings is also in a nearer dependency -->
-    <ProjectReference Include="..\..\j2me\lib\TrigBaseLibraryCSharpM\TrigBaseLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="TrigBaseLibraryCSharp" />
+    <ProjectReference Include="..\..\j2me\lib\TrigBaseLibraryCSharpM\TrigBaseLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\J2MEColorJavaLibraryCSharpM\J2MEColorJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\EventJ2MELibraryCSharpM\EventJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\media\graphics\geography\map\GraphBaseJavaLibraryCSharpM\GraphBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

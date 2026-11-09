@@ -93,9 +93,15 @@ public class AddValidationUserView : HttpContextView, ValidationComponentInterfa
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         return views.ValidationOnlyTempUtil.getInstance().view(this);
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

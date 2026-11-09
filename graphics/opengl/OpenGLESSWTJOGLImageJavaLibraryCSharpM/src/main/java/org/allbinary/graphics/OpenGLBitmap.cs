@@ -1,8 +1,9 @@
 // Generated Code Do Not Modify
 
+extern alias OpenGLESBaseJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using DisposalUtil = org.allbinary.DisposalUtil;
 using PlatformBitmapBase = org.allbinary.platform.graphics.PlatformBitmapBase;
 using SwtImmutableImage = org.microemu.device.swt.SwtImmutableImage;
@@ -18,7 +19,7 @@ public class OpenGLBitmap : PlatformBitmapBase
         this.image = ((Image) bitmap);
     }
 
-    public virtual Image getImage()
+    public override Image getImage()
     {
         return this.image;
     }
@@ -50,12 +51,12 @@ public class OpenGLBitmap : PlatformBitmapBase
         this.image.setRGB2(pixels, offset, height, x, y, width, height);
     }
 
-    public override int getWidth()
+    public virtual int getWidth()
     {
         return this.image.getWidth();
     }
 
-    public override int getHeight()
+    public virtual int getHeight()
     {
         return this.image.getHeight();
     }

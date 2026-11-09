@@ -38,7 +38,7 @@ public class GenericModuleFactory : AbstractInputAutomationFactory
 
     // throws Exception
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public virtual RunnableInterface getInstance()
+    public override RunnableInterface getInstance()
     {
         GenericProfile genericProfile = (((GenericModuleConfigurationJPanel) this.getConfigurationJPanel())).getSelectedGenericProfile();
         InputAutomationActionInterface inputAutomationActionInterface = ((InputAutomationActionInterface) new GenericInputAutomationAction());

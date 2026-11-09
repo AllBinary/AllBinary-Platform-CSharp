@@ -36,7 +36,7 @@ public class InsertGlobalsValidationView : GlobalsView, ValidationComponentInter
     }
 
     // throws Exception
-    public virtual Document toXmlDoc()
+    public override Document toXmlDoc()
     {
         return null;
     }
@@ -76,6 +76,12 @@ public class InsertGlobalsValidationView : GlobalsView, ValidationComponentInter
     public virtual Node toValidationInfoNode(Document document)
     {
         return null;
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

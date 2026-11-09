@@ -21,16 +21,16 @@ namespace org.allbinary.graphics.paint;
 
 public class InitUpdatePaintable : Paintable, InitUpdatePaintableInterface
 {
-    protected InitUpdatePaintable()
+    public InitUpdatePaintable()
     {
     }
 
     // throws Exception
-    public override void init()
+    public virtual void init()
     {
     }
 
-    public override void update()
+    public virtual void update()
     {
     }
 

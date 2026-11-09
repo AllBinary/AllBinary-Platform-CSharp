@@ -58,7 +58,7 @@ public class NumberTextFieldItemValidator : ValidatorBase
         if (textLength > 0 && textLength < this.maxChars) {
             try {
                 int.Parse(this.textFieldItem.getString());
-            } catch (NumberFormatException e) {
+            } catch (FormatException e) {
                 result = BooleanFactory.getInstance().FALSE;
             }
         } else {
@@ -90,7 +90,7 @@ public class NumberTextFieldItemValidator : ValidatorBase
                     stringMaker.delete(0, stringMaker.length());
                     list.add(stringMaker.append(name).append(" is to large").ToString());
                 }
-            } catch (NumberFormatException e) {
+            } catch (FormatException e) {
                 stringMaker.delete(0, stringMaker.length());
                 list.add(stringMaker.append(name).append(" is not a number").ToString());
             }

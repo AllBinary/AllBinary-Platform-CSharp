@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using InputStream = java.io.InputStream;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using InputStream = java.io.InputStream;
 //using URIResolver = javax.xml.transform.URIResolver;
 using BasicUriResolver = org.allbinary.data.tree.dom.BasicUriResolver;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
@@ -52,14 +52,14 @@ public class BasicTransformer : AbTransformer
     // throws Exception
     private void setEncryptedTemplateFileAsInputStream(AbFile file)
     {
-        System.IO.MemoryStream outputStream = null;
+        ByteArrayOutputStream outputStream = null;
         AbFileInputStream inputStream = null;
         try {
-            outputStream = new System.IO.MemoryStream();
+            outputStream = new ByteArrayOutputStream();
             inputStream = new AbFileInputStream(file);
-            outputStream = ((System.IO.MemoryStream) this.streamUtil.get(inputStream, outputStream, new sbyte[16384]));
+            outputStream = ((ByteArrayOutputStream) this.streamUtil.get(inputStream, outputStream, new sbyte[16384]));
             AbCrypt abCrypt = new AbCrypt(KeySpecFactory.DESEDE, AbKeys.getInstance().getKey(this.abeClientInformation, file.getAbsolutePath()));
-            sbyte[] decrypted = abCrypt.decrypt(((sbyte[]) (Array) outputStream.ToArray()));
+            sbyte[] decrypted = abCrypt.decrypt(outputStream.toByteArray());
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORY)) {
                 this.logUtil.putF("Decrypted Template: \n" + System.Text.Encoding.UTF8.GetString((byte[]) (Array) decrypted), this, "setEncryptedTemplateFileAsInputStream(file)");
             }
@@ -84,14 +84,14 @@ public class BasicTransformer : AbTransformer
     // throws Exception
     private void setEncryptedTemplateAsInputStream()
     {
-        System.IO.MemoryStream outputStream = null;
+        ByteArrayOutputStream outputStream = null;
         ByteArrayInputStream inputStream = null;
         try {
-            outputStream = new System.IO.MemoryStream();
+            outputStream = new ByteArrayOutputStream();
             inputStream = new ByteArrayInputStream(this.getTransformInfoInterface().getTemplate().getBytes());
-            outputStream = ((System.IO.MemoryStream) this.streamUtil.get(inputStream, outputStream, new sbyte[16384]));
+            outputStream = ((ByteArrayOutputStream) this.streamUtil.get(inputStream, outputStream, new sbyte[16384]));
             AbCrypt abCrypt = new AbCrypt(KeySpecFactory.DESEDE, AbKeys.getInstance().getKey(this.abeClientInformation, this.getTransformInfoInterface().getName()));
-            sbyte[] decrypted = abCrypt.decrypt(((sbyte[]) (Array) outputStream.ToArray()));
+            sbyte[] decrypted = abCrypt.decrypt(outputStream.toByteArray());
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORY)) {
                 this.logUtil.putF("Decrypted Template: \n" + decrypted.ToString(), this, "setEncryptedTemplateAsInputStream()");
             }
@@ -112,7 +112,7 @@ public class BasicTransformer : AbTransformer
     private void setTemplateAsInputStream()
     {
         AbFileInputStream inputStream = null;
-        System.IO.MemoryStream outputStream = null;
+        ByteArrayOutputStream outputStream = null;
         try {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORY)) {
                 this.logUtil.putF(this.getTransformInfoInterface().log(), this, "setTemplateAsInputStream()");
@@ -155,12 +155,12 @@ public class BasicTransformer : AbTransformer
                         }
                         if (file.isFile()) {
                             inputStream = new AbFileInputStream(file);
-                            outputStream = new System.IO.MemoryStream();
-                            outputStream = ((System.IO.MemoryStream) this.streamUtil.get(inputStream, outputStream, new sbyte[16384]));
+                            outputStream = new ByteArrayOutputStream();
+                            outputStream = ((ByteArrayOutputStream) this.streamUtil.get(inputStream, outputStream, new sbyte[16384]));
                             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORY)) {
-                                this.logUtil.putF("Template: " + System.Text.Encoding.UTF8.GetString(outputStream.ToArray()), this, "getTemplateAsInputStream()");
+                                this.logUtil.putF("Template: " + outputStream.ToString(), this, "getTemplateAsInputStream()");
                             }
-                            this.setInputStream(((InputStream) new ByteArrayInputStream(((sbyte[]) (Array) outputStream.ToArray()))));
+                            this.setInputStream(((InputStream) new ByteArrayInputStream(outputStream.toByteArray())));
                             this.setURIResolver(((URIResolver) new BasicUriResolver(transformInfoTemplateData.UNCRYPTED_EXTENSION)));
                             return;
                         }

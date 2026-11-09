@@ -73,7 +73,7 @@ public class ABVector<E> : Vector<E>
         return base.lastElement();
     }
 
-    public override void setElementAt(E obj, int index)
+    public virtual void setElementAt(E obj, int index)
     {
         base.setElementAt(obj, index);
     }
@@ -83,12 +83,12 @@ public class ABVector<E> : Vector<E>
         base.removeElementAt(index);
     }
 
-    public override void addElement(E obj)
+    public virtual void addElement(E obj)
     {
         base.addElement(obj);
     }
 
-    public override void insertElementAt(E obj, int index)
+    public virtual void insertElementAt(E obj, int index)
     {
         base.insertElementAt(obj, index);
     }
@@ -103,42 +103,42 @@ public class ABVector<E> : Vector<E>
         base.removeAllElements();
     }
 
-    public override object clone()
+    public virtual object clone()
     {
         return base.clone();
     }
 
-    public override object[] toArray()
+    public virtual object[] toArray()
     {
         return base.toArray();
     }
 
-    public override E set(int index, E element)
+    public virtual E set(int index, E element)
     {
         return base.set(index, element);
     }
 
-    public override bool add(E element)
+    public virtual bool add(E element)
     {
         return base.add(element);
     }
 
-    public override bool remove(object obj)
+    public virtual bool remove(object obj)
     {
         return base.remove(obj);
     }
 
-    public override void add(int index, E element)
+    public virtual void add(int index, E element)
     {
         base.add(index, element);
     }
 
-    public override E remove(int index)
+    public virtual E remove(int index)
     {
         return base.remove(index);
     }
 
-    public override void clear()
+    public virtual void clear()
     {
         base.clear();
     }
@@ -158,7 +158,7 @@ public class ABVector<E> : Vector<E>
         return base.ToString();
     }
 
-    protected override void removeRange(int fromIndex, int toIndex)
+    public virtual void removeRange(int fromIndex, int toIndex)
     {
         base.removeRange(fromIndex, toIndex);
     }

@@ -25,6 +25,6 @@ public class HeadingData
     {
     }
 
-    public static readonly string NAME = "HEADER_NAME";
+    public const string NAME = "HEADER_NAME";
 }
 

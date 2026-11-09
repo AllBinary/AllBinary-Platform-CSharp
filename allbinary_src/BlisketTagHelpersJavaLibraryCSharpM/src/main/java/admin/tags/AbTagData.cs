@@ -25,6 +25,6 @@ public class AbTagData
     {
     }
 
-    public static readonly string PARENT = "TAG_PARENT";
+    public const string PARENT = "TAG_PARENT";
 }
 

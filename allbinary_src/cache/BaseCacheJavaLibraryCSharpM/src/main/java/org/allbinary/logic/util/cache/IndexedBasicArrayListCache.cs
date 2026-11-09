@@ -64,9 +64,9 @@ public class IndexedBasicArrayListCache : BaseBasicArrayListCache, CacheInterfac
     }
 
     // throws Exception
-    public virtual void addObject(object @object)
+    public virtual void addObject(object anyType)
     {
-        this.list.add(@object);
+        this.list.add(anyType);
     }
 
     // throws Exception
@@ -87,3 +87,4 @@ public class IndexedBasicArrayListCache : BaseBasicArrayListCache, CacheInterfac
     }
 
 }
+

@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
-//using InputStream = java.io.InputStream;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using InputStream = java.io.InputStream;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using DocumentToNode = org.allbinary.data.tree.dom.document.DocumentToNode;
@@ -110,7 +110,7 @@ public class CompoundContextTransformInfoObjectConfig : GenericStoreTransformInf
     // throws Exception
     public virtual InputStream createInputStream()
     {
-        sbyte[] completeTemplateViewBytes = this.get().getBytes();
+        sbyte[] completeTemplateViewBytes = System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(this.get()), value => unchecked((sbyte) value));
         ByteArrayInputStream bais = new ByteArrayInputStream(completeTemplateViewBytes);
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Template: " + System.Text.Encoding.UTF8.GetString((byte[]) (Array) completeTemplateViewBytes).ToString(), this, "createInputStream()");

@@ -240,10 +240,10 @@ public class OrderHistory : Order, OrderHistoryInterface
         hashMap.put(OrderHistoryData.SHIPPEDDATE, this.shipDate);
         hashMap.put(OrderHistoryData.TRANSDATE, this.transDate);
         hashMap.put(OrderHistoryData.CANCELDATE, this.cancelDate);
-        hashMap.put(OrderHistoryData.ORDERDATEFORMATTED, new Date(((long) this.orderDate)).ToString());
-        hashMap.put(OrderHistoryData.SHIPPEDDATEFORMATTED, new Date(((long) this.shipDate)).ToString());
-        hashMap.put(OrderHistoryData.TRANSDATEFORMATTED, new Date(((long) this.transDate)).ToString());
-        hashMap.put(OrderHistoryData.CANCELDATEFORMATTED, new Date(((long) this.cancelDate)).ToString());
+        hashMap.put(OrderHistoryData.ORDERDATEFORMATTED, new Date(global::java.lang.JavaNumber.longValue(long.Parse(this.orderDate))).ToString());
+        hashMap.put(OrderHistoryData.SHIPPEDDATEFORMATTED, new Date(global::java.lang.JavaNumber.longValue(long.Parse(this.shipDate))).ToString());
+        hashMap.put(OrderHistoryData.TRANSDATEFORMATTED, new Date(global::java.lang.JavaNumber.longValue(long.Parse(this.transDate))).ToString());
+        hashMap.put(OrderHistoryData.CANCELDATEFORMATTED, new Date(global::java.lang.JavaNumber.longValue(long.Parse(this.cancelDate))).ToString());
         hashMap.put(OrderHistoryData.STATUS, this.status);
         hashMap.put(OrderHistoryData.SUBTOTAL, this.subTotal.ToString());
         hashMap.put(OrderHistoryData.TOTAL, this.total.ToString());
@@ -253,7 +253,7 @@ public class OrderHistory : Order, OrderHistoryInterface
     }
 
     // throws Exception
-    public virtual Node toXmlNode(Document document)
+    public override Node toXmlNode(Document document)
     {
         HashMap<object, object> hashMap = this.toHashMap();
         Set<object> keySet = hashMap.keySet();
@@ -275,6 +275,11 @@ public class OrderHistory : Order, OrderHistoryInterface
             node.appendChild(ModDomHelper.createNameValueNodes(document, name, value));
         }
         return node;
+    }
+
+    public override string getPaymentMethod()
+    {
+        return base.getPaymentMethod();
     }
 
 }

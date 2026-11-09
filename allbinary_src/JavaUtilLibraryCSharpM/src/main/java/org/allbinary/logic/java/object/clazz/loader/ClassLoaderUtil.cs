@@ -28,7 +28,7 @@ public class ClassLoaderUtil
     // throws Exception
     public static string getName(object anyType)
     {
-        ClassLoader classLoader = anyType.GetType().getClassLoader();
+        global::java.lang.ClassLoader classLoader = global::java.lang.ClassLoader.getSystemClassLoader();
         if (classLoader != null) {
             return "ClassLoader: " + classLoader.GetType().FullName;
         }

@@ -14,12 +14,14 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using NullCommandListener = javax.microedition.lcdui.NullCommandListener;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Graphics = javax.microedition.lcdui.Graphics;
+using NullCommandListener = javax.microedition.lcdui.NullCommandListener;
 using BasicBuildGameInitializerFactory = org.allbinary.game.init.BasicBuildGameInitializerFactory;
 using AllBinaryGameLayerManager = org.allbinary.game.layer.AllBinaryGameLayerManager;
 using NoHighScoresFactory = org.allbinary.game.score.NoHighScoresFactory;
@@ -59,7 +61,7 @@ public class NullGameCanvas : AllBinaryGameCanvas
         return nullGameCanvas;
     }
 
-    public static readonly string NO_GAME = "No Background Game";
+    public const string NO_GAME = "No Background Game";
     public NullGameCanvas(AllBinaryGameLayerManager gameLayerManager) : base(NullCommandListener.NULL_COMMAND_LISTENER, gameLayerManager, NoHighScoresFactory.getInstance(), BasicBuildGameInitializerFactory.NULL_BASE_BUILD_GMAE_INITIALIZER_FACTORY, false)
     {
         // base(NullCommandListener.NULL_COMMAND_LISTENER, gameLayerManager, NoHighScoresFactory.getInstance(), BasicBuildGameInitializerFactory.NULL_BASE_BUILD_GMAE_INITIALIZER_FACTORY, false) is called from the constructor declaration
@@ -121,7 +123,7 @@ public class NullGameCanvas : AllBinaryGameCanvas
         }
     }
 
-    public static readonly int TYPE = 1;
+    public const int TYPE = 1;
     public override int getType()
     {
         return NullGameCanvas.TYPE;

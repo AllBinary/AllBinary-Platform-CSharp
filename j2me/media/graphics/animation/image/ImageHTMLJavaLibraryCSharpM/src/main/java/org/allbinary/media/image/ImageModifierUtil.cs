@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using PlaynMutableImage = org.microemu.device.playn.PlaynMutableImage;
 using CanvasImage = playn.core.CanvasImage;

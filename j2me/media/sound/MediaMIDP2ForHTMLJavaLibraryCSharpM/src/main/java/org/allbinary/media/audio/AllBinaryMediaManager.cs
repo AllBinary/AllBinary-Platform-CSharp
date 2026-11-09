@@ -17,9 +17,9 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using Manager = javax.microedition.media.Manager;
-//using MediaException = javax.microedition.media.MediaException;
-//using Player = javax.microedition.media.Player;
+using Manager = javax.microedition.media.Manager;
+using MediaException = javax.microedition.media.MediaException;
+using Player = javax.microedition.media.Player;
 using TsUtil = org.allbinary.TsUtil;
 using Features = org.allbinary.game.configuration.feature.Features;
 using GameFeatureFactory = org.allbinary.game.configuration.feature.GameFeatureFactory;
@@ -32,7 +32,7 @@ namespace org.allbinary.media.audio;
 //MediaMIDP2ForHTMLJavaLibrary
 public class AllBinaryMediaManager
 {
-    private static readonly string THIS = "AllBinaryMediaManagerHTML5";
+    private const string THIS = "AllBinaryMediaManagerHTML5";
     private AllBinaryMediaManager()
     {
     }

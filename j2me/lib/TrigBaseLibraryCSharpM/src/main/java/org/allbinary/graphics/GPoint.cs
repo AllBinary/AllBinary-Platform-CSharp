@@ -77,7 +77,7 @@ public class GPoint
         return GPoint.toStringStatic(this.getX(), this.getY(), this.getZ());
     }
 
-    private static readonly string POINT_LABEL = "Point: ";
+    private const string POINT_LABEL = "Point: ";
     public static string toStringStatic(int x, int y, int z)
     {
         StringMaker stringBuffer = new StringMaker();

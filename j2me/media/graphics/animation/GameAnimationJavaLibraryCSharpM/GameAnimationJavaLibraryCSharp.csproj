@@ -64,8 +64,7 @@
     <ProjectReference Include="..\..\geography\map\GraphBaseJavaLibraryCSharpM\GraphBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\lib\TrigJ2MELibraryCSharpM\TrigJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\geography\map\LayerPlacementLibraryCSharpM\LayerPlacementLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/math/PositionStrings is also in a nearer dependency -->
-    <ProjectReference Include="..\..\..\..\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="BaseMathLibraryCSharp" />
+    <ProjectReference Include="..\..\..\..\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\GroupLibraryCSharpM\GroupLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\replace_these_stub_projects\allbinary_src\J2MEJsInteropCompatibilityJavaLibraryCSharpM\J2MEJsInteropCompatibilityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\allbinary_src\hardware\BaseHardwareJavaLibraryCSharpM\BaseHardwareJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

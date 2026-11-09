@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 //using HelpSet = javax.help.HelpSet;
 using PointHelper = org.allbinary.input.automation.PointHelper;
@@ -30,7 +30,7 @@ public class InputRobot : InputRobotInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private Robot robot;
-    public static readonly string NAME = "Java Robot";
+    public const string NAME = "Java Robot";
     public InputRobot(GraphicsDevice graphicsDevice)
     {
         this.robot = new Robot(graphicsDevice);

@@ -38,7 +38,7 @@ public class NewHeaderValidationView : TopBarView, ValidationComponentInterface
     }
 
     // throws Exception
-    public virtual Document toXmlDoc()
+    public override Document toXmlDoc()
     {
         return null;
     }
@@ -78,6 +78,12 @@ public class NewHeaderValidationView : TopBarView, ValidationComponentInterface
     public virtual Node toValidationInfoNode(Document document)
     {
         return null;
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

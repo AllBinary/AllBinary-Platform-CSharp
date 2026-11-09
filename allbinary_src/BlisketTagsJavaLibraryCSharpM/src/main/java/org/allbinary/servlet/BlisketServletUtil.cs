@@ -37,7 +37,7 @@ public class BlisketServletUtil
         AppUrlGlobals urlGlobals = new AppUrlGlobals();
         urlGlobals.setWebappPath(request.getServletContext().getRealPath(AbPathData.getInstance().SEPARATOR));
         URLGLOBALS.init(urlGlobals);
-        WebappClassLoaderInfo.setLoader(GetType().getClassLoader());
+        WebappClassLoaderInfo.setLoader(global::java.lang.ClassLoader.getSystemClassLoader());
     }
 
 }

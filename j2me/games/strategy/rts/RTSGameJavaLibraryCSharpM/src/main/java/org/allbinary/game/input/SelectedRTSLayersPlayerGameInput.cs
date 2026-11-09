@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using RTSGameStrings = org.allbinary.game.layer.RTSGameStrings;
 using RTSLayer = org.allbinary.game.layer.RTSLayer;
 using RTSLayerInfoPaintable = org.allbinary.game.layer.RTSLayerInfoPaintable;

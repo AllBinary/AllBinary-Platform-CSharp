@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Closeable = java.io.Closeable;
+using Closeable = java.io.Closeable;
 //using IOException = java.io.IOException;
 
 namespace org.allbinary.logic.io;

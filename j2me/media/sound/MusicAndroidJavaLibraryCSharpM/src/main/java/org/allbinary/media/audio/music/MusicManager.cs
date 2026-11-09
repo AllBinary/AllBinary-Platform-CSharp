@@ -105,7 +105,7 @@ public class MusicManager
             long duration = ((long) this.currentSongSound.getDuration());
             PreLogUtil.put(new StringMaker().append(this.PLAY).append(this.currentSongSound.getResource()).append(this.FOR).appendlong(duration).ToString(), this, this.commonStrings.PROCESS);
             this.timeDelayHelper.delay = ((int) duration);
-            this.currentIntent.putExtra(this.musicStrings.SONG_EXTRA, ((int) this.resourceUtil.getResourceId(this.currentSongSound.getResource())));
+            this.currentIntent.putExtra(this.musicStrings.SONG_EXTRA, global::java.lang.JavaNumber.intValue(this.resourceUtil.getResourceId(this.currentSongSound.getResource())));
             this.currentIntent.putExtra(this.musicStrings.LEFT_VOLUME, this.leftVolume);
             this.currentIntent.putExtra(this.musicStrings.RIGHT_VOLUME, this.rightVolume);
             this.resourceUtil.getContext().startService(this.currentIntent);

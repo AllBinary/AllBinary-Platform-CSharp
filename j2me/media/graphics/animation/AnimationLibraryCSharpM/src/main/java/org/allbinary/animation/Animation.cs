@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using GL = javax.microedition.khronos.opengles.GL;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
 using BasicColorSetUtil = org.allbinary.graphics.color.BasicColorSetUtil;

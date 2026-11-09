@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using Canvas = javax.microedition.lcdui.Canvas;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 
 namespace org.allbinary.canvas;
 

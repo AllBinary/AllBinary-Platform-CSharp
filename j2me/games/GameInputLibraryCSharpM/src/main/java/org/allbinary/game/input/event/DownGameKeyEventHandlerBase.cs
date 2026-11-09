@@ -82,8 +82,8 @@ public class DownGameKeyEventHandlerBase : BasicEventHandler
         downGameKeyEventListenerInterface.onDownGameKeyEvent(((GameKeyEvent) eventObject));
     }
 
-    private static readonly string TOTAL_LISTENERS = " Total PlayerGameInput Listeners: ";
-    private static readonly string LISTENER_LABEL = " PlayerGameInput Listener: ";
+    private const string TOTAL_LISTENERS = " Total PlayerGameInput Listeners: ";
+    private const string LISTENER_LABEL = " PlayerGameInput Listener: ";
     public override string ToString()
     {
         StringMaker stringBuffer = new StringMaker();

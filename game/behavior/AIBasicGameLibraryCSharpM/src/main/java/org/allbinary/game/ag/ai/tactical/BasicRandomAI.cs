@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using BasicAI = org.allbinary.game.ai.BasicAI;
 using InputProbability = org.allbinary.game.ag.ai.InputProbability;
 using GameInput = org.allbinary.game.input.GameInput;
@@ -49,7 +49,7 @@ public class BasicRandomAI : BasicAI
             this.i_random = this.myRandomFactory.getAbsoluteNextInt(this.inputProbability.getMax());
             bool repeat = false;
             int?[] repeatLikelyhoodIntegerArray = this.inputProbability.getRepeatLikelyhoodIntegerArray();
-            if (this.getLastKey() != -1 && ((int) repeatLikelyhoodIntegerArray[this.getLastKey()]) >= this.i_random) {
+            if (this.getLastKey() != -1 && global::java.lang.JavaNumber.intValue(repeatLikelyhoodIntegerArray[this.getLastKey()]) >= this.i_random) {
                 repeat = true;
             }
             if (!repeat) {
@@ -61,7 +61,7 @@ public class BasicRandomAI : BasicAI
                     int key = this.keyArray[index];
                     likelyhoodIntegerKeyArray = likelyhoodIntegerArray[key];
                     if (likelyhoodIntegerArray.Length >= key && likelyhoodIntegerKeyArray[0] != null) {
-                        if (this.i_random >= ((int) likelyhoodIntegerKeyArray[0]) && this.i_random < ((int) likelyhoodIntegerKeyArray[1])) {
+                        if (this.i_random >= global::java.lang.JavaNumber.intValue(likelyhoodIntegerKeyArray[0]) && this.i_random < global::java.lang.JavaNumber.intValue(likelyhoodIntegerKeyArray[1])) {
                             this.setLastKey(key);
                             break;
                         }

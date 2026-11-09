@@ -63,10 +63,10 @@ public class FileTableMapping : TableMappingInterface
         string rootFileName = pathData.getNameFromPath(pathUtil.getWithoutExtension(this.file.getPath()));
         FileData fileData = FileData.getInstance();
         filePropertyHashMap.put(fileData.ROOT_NAME, rootFileName);
-        filePropertyHashMap.put(fileData.ISFILE, (this.file.isFile()).ToString().ToString());
-        filePropertyHashMap.put(fileData.ISDIRECTORY, (this.file.isDirectory()).ToString().ToString());
-        filePropertyHashMap.put(fileData.ISHIDDEN, (this.file.isHidden()).ToString().ToString());
-        filePropertyHashMap.put(fileData.ISABSOLUTE, (this.file.isAbsolute()).ToString().ToString());
+        filePropertyHashMap.put(fileData.ISFILE, bool.Parse((this.file.isFile()).ToString()).ToString());
+        filePropertyHashMap.put(fileData.ISDIRECTORY, bool.Parse((this.file.isDirectory()).ToString()).ToString());
+        filePropertyHashMap.put(fileData.ISHIDDEN, bool.Parse((this.file.isHidden()).ToString()).ToString());
+        filePropertyHashMap.put(fileData.ISABSOLUTE, bool.Parse((this.file.isAbsolute()).ToString()).ToString());
         filePropertyHashMap.put(fileData.ABSOLUTE_PATH, file.getAbsolutePath());
         filePropertyHashMap.put(fileData.CANONICAL_PATH, file.getCanonicalPath());
         filePropertyHashMap.put(fileData.NAME, file.getName());

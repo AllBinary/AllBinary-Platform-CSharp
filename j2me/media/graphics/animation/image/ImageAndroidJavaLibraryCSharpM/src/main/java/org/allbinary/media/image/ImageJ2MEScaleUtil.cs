@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using GameFeatureImageCacheFactory = org.allbinary.image.GameFeatureImageCacheFactory;
 
 namespace org.allbinary.media.image;

@@ -188,5 +188,15 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
         return base.dropTable();
     }
 
+    public override void insert(BasicArrayList values)
+    {
+        base.insert(values);
+    }
+
+    public override string dropTable()
+    {
+        return base.dropTable();
+    }
+
 }
 

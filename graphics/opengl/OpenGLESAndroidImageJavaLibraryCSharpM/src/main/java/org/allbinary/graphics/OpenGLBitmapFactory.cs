@@ -2,8 +2,8 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
-//using Image = javax.microedition.lcdui.Image;
+using InputStream = java.io.InputStream;
+using Image = javax.microedition.lcdui.Image;
 using Bitmap = android.graphics.Bitmap;
 using BitmapFactory = android.graphics.BitmapFactory;
 //using IOException = java.io.IOException;
@@ -23,14 +23,17 @@ public class OpenGLBitmapFactory : PlatformBitmapBaseFactory
 
     public class Config
     {
+        private readonly OpenGLBitmapFactory outer;
+
         public readonly Bitmap.Config bitmapConfig;
-        public Config(Bitmap.Config bitmapConfig)
+        public Config(OpenGLBitmapFactory outer, Bitmap.Config bitmapConfig)
         {
+            this.outer = outer;
             this.bitmapConfig = bitmapConfig;
         }
 
     }
-    public readonly Config ARGB_8888 = new Config(Bitmap.Config.ARGB_8888);
+    public readonly Config ARGB_8888;
     public virtual OpenGLBitmap createBitmap(int width, int height, OpenGLBitmapFactory.Config config)
     {
         return new OpenGLBitmap(Bitmap.createBitmap(width, height, config.bitmapConfig));
@@ -45,6 +48,11 @@ public class OpenGLBitmapFactory : PlatformBitmapBaseFactory
     public override PlatformBitmapBase createBitmap(Image image)
     {
         return new OpenGLBitmap((((AndroidImageInterface) image)).getBitmap());
+    }
+
+    public OpenGLBitmapFactory()
+    {
+        this.ARGB_8888 = new Config(this, Bitmap.Config.ARGB_8888);
     }
 
 }

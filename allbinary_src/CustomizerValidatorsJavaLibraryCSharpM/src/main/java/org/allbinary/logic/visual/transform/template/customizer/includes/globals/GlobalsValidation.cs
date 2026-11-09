@@ -43,7 +43,7 @@ public class GlobalsValidation : Validation, DomNodeInterface
         throw new Exception(CommonStrings.getInstance().NOT_IMPLEMENTED);
     }
 
-    public virtual bool? isValid()
+    public override bool? isValid()
     {
         try {
             bool? valid = true;
@@ -56,7 +56,7 @@ public class GlobalsValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual string validationInfo()
+    public override string validationInfo()
     {
         try {
             StringMaker stringBuffer = new StringMaker();
@@ -69,12 +69,12 @@ public class GlobalsValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual Document toValidationInfoDoc()
+    public override Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual Node toValidationInfoNode(Document document)
+    public override Node toValidationInfoNode(Document document)
     {
         return null;
     }

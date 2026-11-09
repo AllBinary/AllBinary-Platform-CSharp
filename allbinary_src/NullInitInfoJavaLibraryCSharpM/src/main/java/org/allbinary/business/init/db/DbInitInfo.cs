@@ -29,7 +29,7 @@ public class DbInitInfo : DbConnectionInfo
         // base() is called from the constructor declaration
     }
 
-    public virtual string getUrl()
+    public override string getUrl()
     {
         string url = base.getUrl();
         PreLogUtil.put("Url: " + url, this, "getUrl");

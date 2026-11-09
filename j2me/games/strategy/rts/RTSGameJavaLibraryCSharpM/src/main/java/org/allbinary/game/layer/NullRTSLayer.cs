@@ -38,79 +38,79 @@ public class NullRTSLayer : NullPathFindingLayer, RTSPlayerLayerInterface
     }
 
     // throws Exception
-    public override void processInput(AllBinaryLayerManager layerManager)
+    public virtual void processInput(AllBinaryLayerManager layerManager)
     {
         throw new SystemException();
     }
 
-    public override void initInputProcessors()
+    public virtual void initInputProcessors()
     {
         throw new SystemException();
     }
 
-    public override GameNotificationHud getGameNotificationHud()
+    public virtual GameNotificationHud getGameNotificationHud()
     {
         throw new SystemException();
     }
 
-    public override ScrollSelectionForm getCurrentScrollSelectionForm()
+    public virtual ScrollSelectionForm getCurrentScrollSelectionForm()
     {
         throw new SystemException();
     }
 
-    public override void setCurrentScrollSelectionForm(ScrollSelectionForm currentScrollSelectionForm)
+    public virtual void setCurrentScrollSelectionForm(ScrollSelectionForm currentScrollSelectionForm)
     {
         throw new SystemException();
     }
 
-    public override ScrollSelectionForm getBuildingScrollSelectionForm()
+    public virtual ScrollSelectionForm getBuildingScrollSelectionForm()
     {
         throw new SystemException();
     }
 
-    public override PlayerGameInput getPlayerGameInput()
+    public virtual PlayerGameInput getPlayerGameInput()
     {
         throw new SystemException();
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
-    {
-        throw new SystemException();
-    }
-
-    // throws Exception
-    public override void onDestroyed(DestroyedEvent destroyedEvent)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         throw new SystemException();
     }
 
     // throws Exception
-    public override void processTick(AllBinaryLayerManager allBinaryLayerManager)
+    public virtual void onDestroyed(DestroyedEvent destroyedEvent)
     {
         throw new SystemException();
     }
 
-    public override Capital getCapital()
+    // throws Exception
+    public virtual void processTick(AllBinaryLayerManager allBinaryLayerManager)
     {
         throw new SystemException();
     }
 
-    public override RTSFormInput getRTSFormInput()
+    public virtual Capital getCapital()
+    {
+        throw new SystemException();
+    }
+
+    public virtual RTSFormInput getRTSFormInput()
     {
         return NullRTSFormInputFactory.getInstance();
     }
 
-    public override void add(Sound sound)
+    public virtual void add(Sound sound)
     {
         throw new SystemException();
     }
 
-    public override PlayerOwnedRTSLayers getPlayerOwnedRTSLayers()
+    public virtual PlayerOwnedRTSLayers getPlayerOwnedRTSLayers()
     {
         throw new SystemException();
     }
 
-    public override bool implmentsArtificialIntelligenceCompositeInterface()
+    public virtual bool implmentsArtificialIntelligenceCompositeInterface()
     {
         throw new SystemException();
     }

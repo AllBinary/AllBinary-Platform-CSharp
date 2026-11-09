@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
-//using Item = javax.microedition.lcdui.Item;
-//using ItemCommandListener = javax.microedition.lcdui.ItemCommandListener;
+using Command = javax.microedition.lcdui.Command;
+using Item = javax.microedition.lcdui.Item;
+using ItemCommandListener = javax.microedition.lcdui.ItemCommandListener;
 using GameConfigurationGauge = org.allbinary.game.configuration.GameConfigurationGauge;
 using GameConfigurationUtil = org.allbinary.game.configuration.GameConfigurationUtil;
 using GameOptionsForm = org.allbinary.game.configuration.GameOptionsForm;

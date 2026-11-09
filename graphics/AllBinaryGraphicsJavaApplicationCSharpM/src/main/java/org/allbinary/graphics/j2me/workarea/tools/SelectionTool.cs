@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 using java.util;
 //using MutableTreeNode = javax.swing.tree.MutableTreeNode;
 using GPoint = org.allbinary.graphics.GPoint;
@@ -134,7 +134,7 @@ public class SelectionTool : GraphicItemInterface
         }
     }
 
-    private readonly Color rectColor = new Color(((int) BasicColorFactory.getInstance().RED));
+    private readonly Color rectColor = new Color(global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().RED));
     public virtual int getXRect()
     {
         int xDiff = this.endPoint.getX() - this.startPoint.getX();
@@ -180,7 +180,7 @@ public class SelectionTool : GraphicItemInterface
     {
     }
 
-    private static readonly string NAME = "Selection Tool";
+    private const string NAME = "Selection Tool";
     public virtual string getName()
     {
         return SelectionTool.NAME;

@@ -130,19 +130,19 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
     }
 
     // throws Exception
-    public virtual AbPath getTemplateFilePath()
+    public override AbPath getTemplateFilePath()
     {
         return new AbPath(URLGLOBALS.getMainPath() + FREEBLISKET_PATH_GLOBALS.getInstance().XSLPATH, this.getTemplateFile());
     }
 
     // throws Exception
-    public virtual AbPath getObjectConfigFilePath()
+    public override AbPath getObjectConfigFilePath()
     {
         return new AbPath(URLGLOBALS.getMainPath() + FREEBLISKET_PATH_GLOBALS.getInstance().XSLPATH, this.getObjectConfigFile());
     }
 
     // throws Exception
-    public virtual AbPath getDataFilePath()
+    public override AbPath getDataFilePath()
     {
         return new AbPath(URLGLOBALS.getMainPath() + FREEBLISKET_PATH_GLOBALS.getInstance().XSLPATH, this.getDataFile());
     }

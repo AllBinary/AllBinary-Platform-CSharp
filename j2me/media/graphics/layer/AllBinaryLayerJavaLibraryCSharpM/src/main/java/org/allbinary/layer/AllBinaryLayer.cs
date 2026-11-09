@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicGroupFactory = org.allbinary.game.identification.BasicGroupFactory;
 using Group = org.allbinary.game.identification.Group;
 using GPoint = org.allbinary.graphics.GPoint;
@@ -61,51 +61,101 @@ public class AllBinaryLayer : Layer, LayerInterface
         this.viewPosition.setAllbinaryLayer(this);
     }
 
+    public override void setPosition(int x, int y, int z)
+    {
+        base.setPosition(x, y, z);
+    }
+
+    public override void moveDXYZ(int dx, int dy, int dz)
+    {
+        base.moveDXYZ(dx, dy, dz);
+    }
+
+    public override int getXP()
+    {
+        return base.getXP();
+    }
+
+    public override int getYP()
+    {
+        return base.getYP();
+    }
+
+    public override int getZP()
+    {
+        return base.getZP();
+    }
+
+    public override int getWidth()
+    {
+        return base.getWidth();
+    }
+
+    public override int getHeight()
+    {
+        return base.getHeight();
+    }
+
+    public override void setVisible(bool visible)
+    {
+        base.setVisible(visible);
+    }
+
+    public override bool isVisible()
+    {
+        return base.isVisible();
+    }
+
+    public override void paint(Graphics graphics)
+    {
+        base.paint(graphics);
+    }
+
     // throws Exception
     public virtual void onChangeEvent(ViewPositionEvent layerManagerEvent)
     {
     }
 
-    public override void paintThreed(Graphics graphics)
+    public virtual void paintThreed(Graphics graphics)
     {
     }
 
-    public override int getX2()
+    public virtual int getX2()
     {
         return this.getXP() + this.getWidth();
     }
 
-    public override int getY2()
+    public virtual int getY2()
     {
         return this.getYP() + this.getHeight();
     }
 
-    public override int getZ2()
+    public virtual int getZ2()
     {
         return ((int) (this.getZP() + this.getDepth()));
     }
 
-    public override string getName()
+    public virtual string getName()
     {
         return this.name;
     }
 
-    protected virtual void setHalfWidth(int halfWidth)
+    public virtual void setHalfWidth(int halfWidth)
     {
         this.halfWidth = halfWidth;
     }
 
-    public override int getHalfWidth()
+    public virtual int getHalfWidth()
     {
         return this.halfWidth;
     }
 
-    protected virtual void setHalfHeight(int halfHeight)
+    public virtual void setHalfHeight(int halfHeight)
     {
         this.halfHeight = halfHeight;
     }
 
-    public override int getHalfHeight()
+    public virtual int getHalfHeight()
     {
         return this.halfHeight;
     }
@@ -125,27 +175,27 @@ public class AllBinaryLayer : Layer, LayerInterface
         this.viewPosition = viewPosition;
     }
 
-    public override Group[] getGroupInterface()
+    public virtual Group[] getGroupInterface()
     {
         return BasicGroupFactory.getInstance().NONE_ARRAY;
     }
 
-    public override bool implmentsTickableInterface()
+    public virtual bool implmentsTickableInterface()
     {
         return false;
     }
 
-    public override bool implmentsGameInputInterface()
+    public virtual bool implmentsGameInputInterface()
     {
         return false;
     }
 
-    public override bool implmentsArtificialIntelligenceCompositeInterface()
+    public virtual bool implmentsArtificialIntelligenceCompositeInterface()
     {
         return false;
     }
 
-    public override bool implmentsCollidableInterface()
+    public virtual bool implmentsCollidableInterface()
     {
         return false;
     }
@@ -155,7 +205,7 @@ public class AllBinaryLayer : Layer, LayerInterface
         return OpenGLFeatureUtil.getInstance().isAnyThreed();
     }
 
-    public override int getType()
+    public virtual int getType()
     {
         return -1;
     }
@@ -165,7 +215,7 @@ public class AllBinaryLayer : Layer, LayerInterface
         return -1;
     }
 
-    private static readonly string TYPE = "Type: ";
+    private const string TYPE = "Type: ";
     public override void toStringAppend(StringMaker stringBuffer)
     {
         CommonSeps commonSeps = CommonSeps.getInstance();
@@ -177,19 +227,19 @@ public class AllBinaryLayer : Layer, LayerInterface
         stringBuffer.appendint(this.getType());
         stringBuffer.append(commonSeps.SPACE);
         stringBuffer.append(positionStrings.X_LABEL);
-        stringBuffer.appendint(((int) this.getXP()));
+        stringBuffer.appendint(this.getXP());
         stringBuffer.append(commonSeps.SPACE);
         stringBuffer.append(positionStrings.Y_LABEL);
-        stringBuffer.appendint(((int) this.getYP()));
+        stringBuffer.appendint(this.getYP());
         stringBuffer.append(commonSeps.SPACE);
         stringBuffer.append(positionStrings.Z_LABEL);
-        stringBuffer.appendint(((int) this.getZP()));
+        stringBuffer.appendint(this.getZP());
         stringBuffer.append(commonSeps.SPACE);
         stringBuffer.append(commonLabels.WIDTH_LABEL);
-        stringBuffer.appendint(((int) this.getWidth()));
+        stringBuffer.appendint(this.getWidth());
         stringBuffer.append(commonSeps.SPACE);
         stringBuffer.append(commonLabels.HEIGHT_LABEL);
-        stringBuffer.appendint(((int) this.getHeight()));
+        stringBuffer.appendint(this.getHeight());
     }
 
     public override string ToString()

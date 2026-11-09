@@ -25,6 +25,7 @@ using GroupData = org.allbinary.business.user.group.GroupData;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbSqlBean = org.allbinary.logic.communication.sql.AbSqlBean;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
+using BasicArrayList = org.allbinary.util.BasicArrayList;
 
 namespace org.allbinary.data.tables.advertisement.sales;
 
@@ -74,9 +75,14 @@ public class AffiliateSalesEntity : AbSqlBean, AffiliateSalesEntityInterface
         base.updateWhere(EntryData.getInstance().ID, ((string) updatedValues.get(EntryData.getInstance().ID)), updatedValues);
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
+    }
+
+    public override void insert(BasicArrayList values)
+    {
+        base.insert(values);
     }
 
 }

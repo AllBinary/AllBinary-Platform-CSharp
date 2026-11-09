@@ -56,7 +56,7 @@ public class PaymentProcessTag : StoreValidationTransformTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR) == 0 || this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.AUTHORIZEORDERANDEVALBODY) == 0 || this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR) == 0) {

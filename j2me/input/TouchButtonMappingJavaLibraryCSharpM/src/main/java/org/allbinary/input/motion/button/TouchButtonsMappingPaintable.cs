@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using CellPositionFactory = org.allbinary.graphics.CellPositionFactory;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using Paintable = org.allbinary.graphics.paint.Paintable;

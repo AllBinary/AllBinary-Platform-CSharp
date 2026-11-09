@@ -25,6 +25,6 @@ public class UserEmailEventsConfigurationData
     {
     }
 
-    public static readonly string NAME = "EMAIL_EVENTS_CONFIGURATION_NAME";
+    public const string NAME = "EMAIL_EVENTS_CONFIGURATION_NAME";
 }
 

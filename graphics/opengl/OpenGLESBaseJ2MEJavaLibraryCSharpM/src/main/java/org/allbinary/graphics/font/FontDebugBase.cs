@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
+using Font = javax.microedition.lcdui.Font;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 
 namespace org.allbinary.graphics.font;

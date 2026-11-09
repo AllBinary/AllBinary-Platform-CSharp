@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
 using Activity = android.app.Activity;
 using AndroidUtil = org.allbinary.AndroidUtil;
 using GameFeatureImageCacheFactory = org.allbinary.image.GameFeatureImageCacheFactory;
@@ -48,7 +48,7 @@ namespace org.allbinary.graphics.canvas.transition.progress;
 
 public class AndroidBasicTitleProgressBar : ProgressCanvas, DisplayChangeEventListener
 {
-    public static readonly string RESOURCE = "ProgressImage";
+    public const string RESOURCE = "ProgressImage";
     private ARunnable showTitleProgressBarRunnable = NullRunnable.getInstance();
     private ARunnable dismissTitleProgressBarRunnable = NullRunnable.getInstance();
     private ARunnable titleProgressDialogPortionSetProgressRunnable = NullRunnable.getInstance();
@@ -124,12 +124,12 @@ public class AndroidBasicTitleProgressBar : ProgressCanvas, DisplayChangeEventLi
         }
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }
 
-    public override void onDisplayChangeEvent(DisplayChangeEvent displayChangeEvent)
+    public virtual void onDisplayChangeEvent(DisplayChangeEvent displayChangeEvent)
     {
         try {
             this.loadProgressImages();
@@ -226,7 +226,7 @@ public class AndroidBasicTitleProgressBar : ProgressCanvas, DisplayChangeEventLi
         }
     }
 
-    protected override void setValue(int value)
+    public override void setValue(int value)
     {
         try {
             base.setValue(value);
@@ -315,18 +315,18 @@ public class AndroidBasicTitleProgressBar : ProgressCanvas, DisplayChangeEventLi
         AndroidBasicTitleProgressBar.background = background;
     }
 
-    protected override void setBackground(bool background)
+    public override void setBackground(bool background)
     {
         base.setBackground(background);
         this.updateCurrent();
     }
 
-    protected virtual void setPortion(int portion)
+    public virtual void setPortion(int portion)
     {
         this.portion = portion;
     }
 
-    protected virtual int getPortion()
+    public virtual int getPortion()
     {
         return this.portion;
     }

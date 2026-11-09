@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using FileFilter = java.io.FileFilter;
+using FileFilter = java.io.FileFilter;
 using AbFile = org.allbinary.logic.io.file.AbFile;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonSeps = org.allbinary.@string.CommonSeps;

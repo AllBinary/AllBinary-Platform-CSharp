@@ -35,7 +35,7 @@ namespace org.allbinary.logic.communication.log.config;
 
 public class LoggingInitInfo
 {
-    private static readonly string INITFILENAME = "logConfig.xml";
+    private const string INITFILENAME = "logConfig.xml";
     private static readonly string PACKAGE = PATH_GLOBALS.getInstance().INIT_PATH;
     private static BasicArrayList logConfigInfoList = null;
     private static bool hasRead = false;

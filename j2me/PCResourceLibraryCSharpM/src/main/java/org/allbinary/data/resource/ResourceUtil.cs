@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using FileInputStream = java.io.FileInputStream;
-//using InputStream = java.io.InputStream;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using FileInputStream = java.io.FileInputStream;
+using InputStream = java.io.InputStream;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StreamUtil = org.allbinary.logic.io.StreamUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
@@ -49,7 +49,7 @@ public class ResourceUtil
         this.ext = ext;
     }
 
-    public virtual void setClassLoader(ClassLoader classLoader)
+    public virtual void setClassLoader(global::java.lang.ClassLoader classLoader)
     {
     }
 
@@ -72,7 +72,7 @@ public class ResourceUtil
         InputStream inputStream = new FileInputStream(new StringMaker().append(this.path).append(resource).append(this.ext).ToString());
         if (inputStream != null) {
             sbyte[] byteArray = new sbyte[inputStream.available()];
-            StreamUtil.getInstance().getByteArray(inputStream, new System.IO.MemoryStream(), byteArray);
+            StreamUtil.getInstance().getByteArray(inputStream, new ByteArrayOutputStream(), byteArray);
             return new ByteArrayInputStream(byteArray);
         }
         return inputStream;

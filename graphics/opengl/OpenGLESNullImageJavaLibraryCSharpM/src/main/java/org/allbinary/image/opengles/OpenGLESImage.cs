@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using GL = javax.microedition.khronos.opengles.GL;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
 using PlatformBitmapBase = org.allbinary.platform.graphics.PlatformBitmapBase;
 using PlatformBitmapBaseFactory = org.allbinary.platform.graphics.PlatformBitmapBaseFactory;
 using PlatformTextureBaseFactory = org.allbinary.platform.opengles.PlatformTextureBaseFactory;
@@ -47,12 +47,12 @@ public class OpenGLESImage : Image, OpenGLSurfaceChangedInterface
     }
 
     // throws Exception
-    public override void set(GL gl)
+    public virtual void set(GL gl)
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
 
-    protected virtual bool initTexture(GL10 gl)
+    public virtual bool initTexture(GL10 gl)
     {
         return false;
     }
@@ -65,7 +65,7 @@ public class OpenGLESImage : Image, OpenGLSurfaceChangedInterface
     {
     }
 
-    public static readonly int TYPE = 4;
+    public const int TYPE = 4;
     public virtual int getType()
     {
         return OpenGLESImage.TYPE;

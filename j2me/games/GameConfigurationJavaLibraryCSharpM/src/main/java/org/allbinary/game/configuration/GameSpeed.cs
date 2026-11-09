@@ -25,13 +25,13 @@ public class GameSpeed
     public int getSpeed()
     {
         GameConfiguration speedGameConfiguration = GameConfigurationCentral.getInstance().SPEED;
-        return (((int) speedGameConfiguration.getMaxValue()) - ((int) speedGameConfiguration.getValue()) + 1);
+        return (global::java.lang.JavaNumber.intValue(speedGameConfiguration.getMaxValue()) - global::java.lang.JavaNumber.intValue(speedGameConfiguration.getValue()) + 1);
     }
 
     public int getDelay()
     {
         GameConfiguration speedGameConfiguration = GameConfigurationCentral.getInstance().SPEED;
-        return 19 * (((int) speedGameConfiguration.getMaxValue()) - ((int) speedGameConfiguration.getValue()));
+        return 19 * (global::java.lang.JavaNumber.intValue(speedGameConfiguration.getMaxValue()) - global::java.lang.JavaNumber.intValue(speedGameConfiguration.getValue()));
     }
 
     public static GameSpeed getInstance()

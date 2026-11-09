@@ -29,7 +29,7 @@ namespace org.allbinary.logic.communication.log.config.type;
 
 public class LogConfigTypes
 {
-    public static readonly string JSP_ERROR_NO_FUNCTION = "in JSP Not In Function";
+    public const string JSP_ERROR_NO_FUNCTION = "in JSP Not In Function";
     public static BasicArrayList LOGGING = new BasicArrayListD();
     static LogConfigTypes()
     {

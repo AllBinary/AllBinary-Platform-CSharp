@@ -32,7 +32,7 @@ public class CompoundComponentView : HttpStoreComponentView
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             string success = XmlDocumentHelper.toString(this.getDoc());

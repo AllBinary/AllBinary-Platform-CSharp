@@ -16,11 +16,11 @@
 
 using System;
 using System.Linq;
-//using File = java.io.File;
-//using FileFilter = java.io.FileFilter;
-//using FilenameFilter = java.io.FilenameFilter;
+using File = java.io.File;
+using FileFilter = java.io.FileFilter;
+using FilenameFilter = java.io.FilenameFilter;
 //using IOException = java.io.IOException;
-//using URI = java.net.URI;
+using URI = java.net.URI;
 using TsUtil = org.allbinary.TsUtil;
 using AbPath = org.allbinary.logic.io.path.AbPath;
 using StringUtil = org.allbinary.logic.@string.StringUtil;

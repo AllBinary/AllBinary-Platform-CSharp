@@ -102,7 +102,7 @@ public class Waypoint : WaypointBase, BuildingEventListenerInterface
         return pathsList;
     }
 
-    protected virtual GeographicMapCellPosition getEndGeographicMapCellPosition(GeographicMapCellPosition startGeographicMapCellPosition)
+    public virtual GeographicMapCellPosition getEndGeographicMapCellPosition(GeographicMapCellPosition startGeographicMapCellPosition)
     {
         GeographicMapCellPosition endGeographicMapCellPosition = ((GeographicMapCellPosition) this.basicArrayListUtil.getRandom(this.endList));
         if (startGeographicMapCellPosition == endGeographicMapCellPosition) {
@@ -156,7 +156,7 @@ public class Waypoint : WaypointBase, BuildingEventListenerInterface
     }
 
     // throws Exception
-    public override void onBuildingEvent(RTSLayerEvent @event)
+    public virtual void onBuildingEvent(RTSLayerEvent @event)
     {
         this.clearPaths();
     }

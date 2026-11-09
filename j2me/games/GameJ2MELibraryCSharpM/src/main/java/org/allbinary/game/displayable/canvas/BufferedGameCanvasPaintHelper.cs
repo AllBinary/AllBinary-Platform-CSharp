@@ -14,13 +14,15 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
-//using NullCanvas = javax.microedition.lcdui.NullCanvas;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
+using NullCanvas = javax.microedition.lcdui.NullCanvas;
+using NullImage = javax.microedition.lcdui.NullImage;
 using Anchor = org.allbinary.graphics.Anchor;
 using MyCanvas = org.allbinary.graphics.displayable.MyCanvas;
 using ProcessPaintable = org.allbinary.graphics.paint.ProcessPaintable;
@@ -31,7 +33,7 @@ namespace org.allbinary.game.displayable.canvas;
 public class BufferedGameCanvasPaintHelper : ProcessPaintable
 {
     private Canvas gameCanvas = NullCanvas.NULL_CANVAS;
-    private static readonly int MAX_IMAGES = 4;
+    private const int MAX_IMAGES = 4;
     private readonly Image[] offScreenImage = new Image[BufferedGameCanvasPaintHelper.MAX_IMAGES];
     private Image previousImage = NullImage.NULL_IMAGE;
     private readonly CircularIndexUtil circularIndexUtil = CircularIndexUtil.createInstance(BufferedGameCanvasPaintHelper.MAX_IMAGES);

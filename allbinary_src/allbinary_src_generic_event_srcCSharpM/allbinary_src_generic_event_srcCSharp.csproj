@@ -37,6 +37,14 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="$(AllBinaryRuntimeProject)" Condition="'$(AllBinaryRuntimeProject)' != '' And Exists('$(AllBinaryRuntimeProject)')" GlobalPropertiesToRemove="OutputPath" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- org/allbinary/logic/util/event/BasicEventListenerInterface is also in a dependency -->
+    <Compile Remove="src\main\java\org\allbinary\logic\util\event\BasicEventListenerInterface.cs" />
+    <!-- org/allbinary/logic/util/event/handler/BasicCompositeEventHandlerInterface is also in a dependency -->
+    <Compile Remove="src\main\java\org\allbinary\logic\util\event\handler\BasicCompositeEventHandlerInterface.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\j2me\logging\LoggingAndroidAllCSharpM\LoggingAndroidAllCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\EventJ2MELibraryCSharpM\EventJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\LogCSharpM\LogCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

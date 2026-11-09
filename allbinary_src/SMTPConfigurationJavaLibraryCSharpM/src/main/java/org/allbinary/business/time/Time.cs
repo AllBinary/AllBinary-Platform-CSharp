@@ -24,7 +24,7 @@ public class Time
     private long? timeLong;
     public Time(string time)
     {
-        this.timeLong = time;
+        this.timeLong = long.Parse(time);
     }
 
     public Time(long time)

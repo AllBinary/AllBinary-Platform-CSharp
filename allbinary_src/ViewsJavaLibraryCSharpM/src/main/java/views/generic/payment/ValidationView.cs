@@ -51,5 +51,11 @@ public class ValidationView : PaymentView, ValidationComponentInterface
         return MESSAGES.CONTACTADMIN;
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

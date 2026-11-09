@@ -14,9 +14,11 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 using FeaturedAnimationInterfaceFactoryInterfaceFactory = org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory;
 using GameConfigurationCentral = org.allbinary.game.configuration.GameConfigurationCentral;
 using ChangedGameFeatureListener = org.allbinary.game.configuration.@event.ChangedGameFeatureListener;

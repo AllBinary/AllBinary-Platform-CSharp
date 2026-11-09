@@ -197,7 +197,7 @@ public class AuthenticationHelper : TagHelper
                                 if (basicUserRole.Equals(UserRoleFactory.getInstance().CUSTOMER)) {
                                     UserEntityInterface userEntityInterface = UserEntityFactory.getInstance();
                                     UserInterface userInterface = userEntityInterface.getUser(this.sessionUserName);
-                                    if (!userInterface.isSessionValid()) {
+                                    if (!((bool) (userInterface.isSessionValid()))) {
                                         return false;
                                     }
                                 }
@@ -242,7 +242,7 @@ public class AuthenticationHelper : TagHelper
                 login = userEntityInterface.login(userName, password);
                 if (string.CompareOrdinal(login, GLOBALS2.LOGINSUCCESS) == 0) {
                     UserInterface userInterface = userEntityInterface.getUser(userName);
-                    if (userInterface.isSessionValid()) {
+                    if (((bool) (userInterface.isSessionValid()))) {
                         this.weblisketSession.setAttempts(0);
                         return true;
                     }

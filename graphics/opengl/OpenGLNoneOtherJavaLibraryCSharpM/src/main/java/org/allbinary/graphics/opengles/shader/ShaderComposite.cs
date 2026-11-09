@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
+using GL10 = javax.microedition.khronos.opengles.GL10;
 using NullOpenGLProcessorFactory = org.allbinary.graphics.opengles.NullOpenGLProcessorFactory;
 using OpenGLProcessor = org.allbinary.graphics.opengles.OpenGLProcessor;
 using StringUtil = org.allbinary.logic.@string.StringUtil;

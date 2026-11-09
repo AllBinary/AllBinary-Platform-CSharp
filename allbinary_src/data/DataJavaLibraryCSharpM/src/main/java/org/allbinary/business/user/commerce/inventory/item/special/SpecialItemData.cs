@@ -21,7 +21,7 @@ namespace org.allbinary.business.user.commerce.inventory.item.special;
 
 public class SpecialItemData
 {
-    public static readonly string START_TIME = "SPECIALITEM_START_TIME";
-    public static readonly string END_TIME = "SPECIALITEM_END_TIME";
+    public const string START_TIME = "SPECIALITEM_START_TIME";
+    public const string END_TIME = "SPECIALITEM_END_TIME";
 }
 

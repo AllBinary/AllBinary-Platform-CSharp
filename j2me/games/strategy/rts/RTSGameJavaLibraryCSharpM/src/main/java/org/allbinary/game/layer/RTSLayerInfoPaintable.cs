@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using InitUpdatePaintable = org.allbinary.graphics.paint.InitUpdatePaintable;
 using NullInitUpdatePaintable = org.allbinary.graphics.paint.NullInitUpdatePaintable;
 

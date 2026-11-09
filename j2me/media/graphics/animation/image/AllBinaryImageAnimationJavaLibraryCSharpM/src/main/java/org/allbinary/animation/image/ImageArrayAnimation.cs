@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using IndexedAnimation = org.allbinary.animation.IndexedAnimation;
 using Anchor = org.allbinary.graphics.Anchor;

@@ -14,9 +14,10 @@
  */
 // Generated Code Do Not Modify
 
+extern alias OpenGLESJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using Features = org.allbinary.game.configuration.feature.Features;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using OpenGLFeatureFactory = org.allbinary.graphics.opengles.OpenGLFeatureFactory;

@@ -46,7 +46,7 @@ public class PaymentGatewayComponent : HttpStoreComponentView
         this.addDomNodeInterface(domNodeInterface);
     }
 
-    public virtual string view()
+    public override string view()
     {
         try {
             this.addDomNodeInterfaces();

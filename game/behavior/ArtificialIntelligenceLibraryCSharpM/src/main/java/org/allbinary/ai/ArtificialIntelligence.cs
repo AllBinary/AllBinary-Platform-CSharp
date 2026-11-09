@@ -22,7 +22,7 @@ namespace org.allbinary.ai;
 
 public class ArtificialIntelligence : ArtificialIntelligenceInterface
 {
-    public static readonly int AI_ID = 2;
+    public const int AI_ID = 2;
     private static readonly ArtificialIntelligence instance = new ArtificialIntelligence();
     public static ArtificialIntelligence getInstance()
     {

@@ -25,6 +25,6 @@ public class GlobalsData
     {
     }
 
-    public static readonly string NAME = "GLOBALS_NAME";
+    public const string NAME = "GLOBALS_NAME";
 }
 

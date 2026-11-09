@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using File = java.io.File;
+using File = java.io.File;
 //using IOException = java.io.IOException;
 //using StandardCharsets = java.nio.charset.StandardCharsets;
-//using java.util;
+using java.util;
 //using java.util;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbFile = org.allbinary.logic.io.file.AbFile;
@@ -61,9 +61,9 @@ public class GitProcessHelper
         sbyte[] output = process.getInputStream().readAllBytes();
         int exitCode = process.waitFor();
         if (exitCode != 0) {
-            throw new IllegalStateException(new StringMaker().append("git ls-files failed for ").append(rootAsString).append(" with exit code ").appendint(exitCode).ToString());
+            throw new InvalidOperationException(new StringMaker().append("git ls-files failed for ").append(rootAsString).append(" with exit code ").appendint(exitCode).ToString());
         }
-        List<string> files = new ArrayList();
+        List<string> files = new ArrayList<object>();
         int start = 0;
         string relativePath = null;
         for (int index = 0; index < output.Length; index++) {

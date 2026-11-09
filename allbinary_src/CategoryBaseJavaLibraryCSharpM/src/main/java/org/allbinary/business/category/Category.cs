@@ -76,7 +76,7 @@ public class Category : CategoryInterface
         return this.categoryPropertiesInterface.getKey();
     }
 
-    private static readonly string NOT_ROOT = "This is not the root so it has no file path.";
+    private const string NOT_ROOT = "This is not the root so it has no file path.";
     // throws Exception
     public virtual AbPath getRootFilePath()
     {
@@ -232,7 +232,7 @@ public class Category : CategoryInterface
     [MethodImpl(MethodImplOptions.Synchronized)]
     public virtual bool? isValid()
     {
-        if (!this.categoryPropertiesInterface.isValid()) {
+        if (!((bool) (this.categoryPropertiesInterface.isValid()))) {
             return false;
         }
         int size = this.childCategoryVector.size();
@@ -240,12 +240,12 @@ public class Category : CategoryInterface
             object anyType = this.childCategoryVector.get(index);
             if (this.PROPERTIES == this.typeVector.get(index)) {
                 CategoryPropertiesInterface categoryPropertiesInterface = ((CategoryPropertiesInterface) anyType);
-                if (!categoryPropertiesInterface.isValid()) {
+                if (!((bool) (categoryPropertiesInterface.isValid()))) {
                     return false;
                 }
             } else if (this.CATEGORY == this.typeVector.get(index)) {
                 CategoryInterface categoryInterface = ((CategoryInterface) anyType);
-                if (!categoryInterface.isValid()) {
+                if (!((bool) (categoryInterface.isValid()))) {
                     return false;
                 }
             }

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using MyFontProcessor = org.allbinary.graphics.font.MyFontProcessor;
 using UpdateMyFontInterface = org.allbinary.graphics.font.UpdateMyFontInterface;
 using UpdateMyFontProcessor = org.allbinary.graphics.font.UpdateMyFontProcessor;

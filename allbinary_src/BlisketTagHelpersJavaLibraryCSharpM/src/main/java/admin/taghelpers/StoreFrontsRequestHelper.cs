@@ -68,7 +68,7 @@ public class StoreFrontsRequestHelper : ModifyTable
         this.modifyingStoreFrontInterface = ((StoreFrontInterface) new StoreFront(this.request));
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             string success = "Updated Successfully";
@@ -123,11 +123,11 @@ public class StoreFrontsRequestHelper : ModifyTable
         try {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("Intall StoreFront Successfully: ");
-            stringBuffer.appendint(((int) ((int) this.portion.getCurrent())));
+            stringBuffer.appendint(((int) global::java.lang.JavaNumber.intValue(this.portion.getCurrent())));
             stringBuffer.append(" of ");
-            stringBuffer.appendint(((int) ((int) this.portion.getTotal())));
+            stringBuffer.appendint(((int) global::java.lang.JavaNumber.intValue(this.portion.getTotal())));
             string success = stringBuffer.ToString();
-            this.modifyingStoreFrontInterface.install(((int) this.portion.getCurrent()), ((int) this.portion.getTotal()));
+            this.modifyingStoreFrontInterface.install(global::java.lang.JavaNumber.intValue(this.portion.getCurrent()), global::java.lang.JavaNumber.intValue(this.portion.getTotal()));
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "install()");
             }
@@ -142,7 +142,7 @@ public class StoreFrontsRequestHelper : ModifyTable
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public virtual string insert()
+    public override string insert()
     {
         try {
             string success = "Added Successfully";
@@ -161,7 +161,7 @@ public class StoreFrontsRequestHelper : ModifyTable
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             string success = "Delete Successfully";

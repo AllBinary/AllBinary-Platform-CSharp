@@ -17,8 +17,8 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using File = java.io.File;
-//using FileReader = java.io.FileReader;
+using File = java.io.File;
+using FileReader = java.io.FileReader;
 //using LineNumberReader = java.io.LineNumberReader;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using LicenseInitInfo = org.allbinary.business.init.LicenseInitInfo;

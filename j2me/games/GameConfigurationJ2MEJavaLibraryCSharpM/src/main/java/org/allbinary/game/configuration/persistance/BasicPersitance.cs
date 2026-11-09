@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using RecordStore = javax.microedition.rms.RecordStore;
+using RecordStore = javax.microedition.rms.RecordStore;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;

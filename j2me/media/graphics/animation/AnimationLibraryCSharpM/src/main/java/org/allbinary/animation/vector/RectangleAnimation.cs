@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Animation = org.allbinary.animation.Animation;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using ColorCompositeInterface = org.allbinary.graphics.color.ColorCompositeInterface;
@@ -52,6 +52,16 @@ public class RectangleAnimation : Animation, ColorCompositeInterface
     public virtual void setHeight(int height)
     {
         this.height = height;
+    }
+
+    public override BasicColor getBasicColorP()
+    {
+        return base.getBasicColorP();
+    }
+
+    public override void setBasicColorP(BasicColor basicColor)
+    {
+        base.setBasicColorP(basicColor);
     }
 
 }

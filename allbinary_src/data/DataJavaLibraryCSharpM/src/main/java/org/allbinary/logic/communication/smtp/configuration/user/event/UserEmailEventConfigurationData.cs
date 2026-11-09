@@ -21,8 +21,8 @@ namespace org.allbinary.logic.communication.smtp.configuration.user.@event;
 
 public class UserEmailEventConfigurationData
 {
-    public static readonly string NAME = "EMAIL_EVENT_CONFIGURATION_NAME";
-    public static readonly string LISTENER_CLASSPATH = "EMAIL_EVENT_CONFIGURATION_LISTENER_CLASSPATH";
+    public const string NAME = "EMAIL_EVENT_CONFIGURATION_NAME";
+    public const string LISTENER_CLASSPATH = "EMAIL_EVENT_CONFIGURATION_LISTENER_CLASSPATH";
     private UserEmailEventConfigurationData()
     {
     }

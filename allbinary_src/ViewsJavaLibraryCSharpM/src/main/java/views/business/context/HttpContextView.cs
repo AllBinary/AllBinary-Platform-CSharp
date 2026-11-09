@@ -40,7 +40,7 @@ public class HttpContextView : HttpComponentView
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             this.toXmlDoc();

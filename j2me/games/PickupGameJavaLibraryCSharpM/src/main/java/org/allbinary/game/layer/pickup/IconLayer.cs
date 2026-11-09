@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Animation = org.allbinary.animation.Animation;
 using NullAnimationFactory = org.allbinary.animation.NullAnimationFactory;
 using PointFactory = org.allbinary.graphics.PointFactory;

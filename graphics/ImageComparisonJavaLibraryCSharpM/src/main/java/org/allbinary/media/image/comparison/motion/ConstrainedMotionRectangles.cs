@@ -28,7 +28,7 @@ namespace org.allbinary.media.image.comparison.motion;
 public class ConstrainedMotionRectangles : MotionRectangles
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private static readonly string NAME = "constrainedMotionRectangles_";
+    private const string NAME = "constrainedMotionRectangles_";
     private MotionRectangleConstraintsInterface motionRectangleConstraintsInterface = null;
     public ConstrainedMotionRectangles(MotionRectangleConstraintsInterface motionRectangleConstraintsInterface, MotionRectangles motionRectangles) : base(NAME, motionRectangles.getImageComparisonResult())
     {

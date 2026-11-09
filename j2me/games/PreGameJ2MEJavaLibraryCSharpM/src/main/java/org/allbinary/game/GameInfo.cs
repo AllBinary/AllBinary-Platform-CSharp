@@ -30,7 +30,7 @@ public class GameInfo
 {
     public static readonly GameInfo NONE = new GameInfo(GameTypeFactory.getInstance().NONE, GameMode.NONE, PlayerTypesFactory.getInstance().PLAYER_TYPE_ONE, -1, -1);
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    public static readonly string LEVEL_NAME = "LEVEL";
+    public const string LEVEL_NAME = "LEVEL";
     private readonly GameInfoData gameInfoData = GameInfoData.getInstance();
     private readonly GameType gameType;
     private readonly GameMode gameMode;

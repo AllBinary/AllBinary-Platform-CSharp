@@ -72,8 +72,8 @@ public class RotateJDialog : javax.swing.JDialog
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)
     {
         try {
-            this.hashMap.put((0).ToString(), (this.angleIncrementJTextField.getText()).ToString());
-            this.hashMap.put((1).ToString(), (this.totalRotationJTextField.getText()).ToString());
+            this.hashMap.put(int.Parse((0).ToString()), int.Parse((this.angleIncrementJTextField.getText()).ToString()));
+            this.hashMap.put(int.Parse((1).ToString()), int.Parse((this.totalRotationJTextField.getText()).ToString()));
             (((HashMapJDialogListenerInterface) this.getParent())).onHashMap(this.hashMap);
             this.setVisible(false);
         } catch (Exception e) {

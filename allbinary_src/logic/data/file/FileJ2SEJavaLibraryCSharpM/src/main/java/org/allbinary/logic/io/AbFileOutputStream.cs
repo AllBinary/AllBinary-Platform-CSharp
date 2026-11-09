@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 //using FileNotFoundException = java.io.FileNotFoundException;
-//using FileOutputStream = java.io.FileOutputStream;
+using FileOutputStream = java.io.FileOutputStream;
 using AbFile = org.allbinary.logic.io.file.AbFile;
 using AbFileNativeUtil = org.allbinary.logic.io.file.AbFileNativeUtil;
 

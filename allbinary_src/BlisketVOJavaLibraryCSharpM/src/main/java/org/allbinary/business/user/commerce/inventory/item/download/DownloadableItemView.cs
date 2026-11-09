@@ -45,7 +45,7 @@ public class DownloadableItemView : DomNodeInterface
             this.logUtil.putF(this.commonStrings.START, this, "toXmlNode");
         }
         HashMap<object, object> hashMap = this.downloadableItem.toHashMap();
-        long totalTime = ((long) this.downloadableItem.getValidTime());
+        long totalTime = global::java.lang.JavaNumber.longValue(this.downloadableItem.getValidTime());
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
@@ -60,12 +60,12 @@ public class DownloadableItemView : DomNodeInterface
         int hourDelta = calendar.get(Calendar.HOUR);
         int minuteDelta = calendar.get(Calendar.MINUTE);
         int secondDelta = calendar.get(Calendar.SECOND);
-        hashMap.put(DownloadItemData.VALID_TIME_YEARS, (yearDelta - year).ToString());
-        hashMap.put(DownloadItemData.VALID_TIME_MONTHS, (monthDelta - month).ToString());
-        hashMap.put(DownloadItemData.VALID_TIME_DAYS, (dayDelta - day).ToString());
-        hashMap.put(DownloadItemData.VALID_TIME_HOURS, (hourDelta - hour).ToString());
-        hashMap.put(DownloadItemData.VALID_TIME_MINUTES, (minuteDelta - minute).ToString());
-        hashMap.put(DownloadItemData.VALID_TIME_SECONDS, (secondDelta - second).ToString());
+        hashMap.put(DownloadItemData.VALID_TIME_YEARS, int.Parse((yearDelta - year).ToString()));
+        hashMap.put(DownloadItemData.VALID_TIME_MONTHS, int.Parse((monthDelta - month).ToString()));
+        hashMap.put(DownloadItemData.VALID_TIME_DAYS, int.Parse((dayDelta - day).ToString()));
+        hashMap.put(DownloadItemData.VALID_TIME_HOURS, int.Parse((hourDelta - hour).ToString()));
+        hashMap.put(DownloadItemData.VALID_TIME_MINUTES, int.Parse((minuteDelta - minute).ToString()));
+        hashMap.put(DownloadItemData.VALID_TIME_SECONDS, int.Parse((secondDelta - second).ToString()));
         Set<object> keySet = hashMap.keySet();
         Node node = document.createElement(DownloadItemData.NAME);
         StringUtil stringUtil = StringUtil.getInstance();

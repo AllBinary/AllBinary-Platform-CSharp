@@ -16,11 +16,11 @@
 
 using System;
 using System.Linq;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using NullCanvas = javax.microedition.lcdui.NullCanvas;
-//using NullCommandListener = javax.microedition.lcdui.NullCommandListener;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
+using NullCanvas = javax.microedition.lcdui.NullCanvas;
+using NullCommandListener = javax.microedition.lcdui.NullCommandListener;
 using Processor = org.allbinary.canvas.Processor;
 using RunnableCanvas = org.allbinary.canvas.RunnableCanvas;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
@@ -49,9 +49,12 @@ public class ProgressCanvas : RunnableCanvas, PaintableInterface, UpdateMyFontIn
     private readonly BasicColor backgroundBasicColor;
     public class ProgressPaintable : Paintable
     {
+        private readonly ProgressCanvas outer;
+
         public readonly ProgressCanvas progressCanvas;
-        public ProgressPaintable(ProgressCanvas progressCanvas)
+        public ProgressPaintable(ProgressCanvas outer, ProgressCanvas progressCanvas)
         {
+            this.outer = outer;
             this.progressCanvas = progressCanvas;
         }
 
@@ -88,7 +91,7 @@ public class ProgressCanvas : RunnableCanvas, PaintableInterface, UpdateMyFontIn
     public ProgressEndListener progressEndListener = ProgressEndListener.instance;
     public ProgressCanvas(string title, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(NullCommandListener.NULL_COMMAND_LISTENER, CanvasStrings.getInstance().EMPTY_CHILD_NAME_LIST, false)
     {
-        this.GAUGE_PAINTABLE = new ProgressPaintable(this);
+        this.GAUGE_PAINTABLE = new ProgressPaintable(this, this);
         this.TEXT = this.commonStrings.LOADING;
         this.updateMyFontProcessor = new UpdateMyFontProcessor(this);
         this.myFontProcessor = this.updateMyFontProcessor;
@@ -99,7 +102,7 @@ public class ProgressCanvas : RunnableCanvas, PaintableInterface, UpdateMyFontIn
         this.gauge = new ABCustomGaugeItem(StringUtil.getInstance().EMPTY_STRING, ((int) this.maxValue), 0, backgroundBasicColor, foregroundBasicColor);
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.gauge.setHeight(font.getHeight() + 2);
@@ -120,7 +123,7 @@ public class ProgressCanvas : RunnableCanvas, PaintableInterface, UpdateMyFontIn
     {
     }
 
-    protected float getMaxValue()
+    public float getMaxValue()
     {
         return this.maxValue;
     }
@@ -216,7 +219,7 @@ public class ProgressCanvas : RunnableCanvas, PaintableInterface, UpdateMyFontIn
         this.gauge.setValue(this.gauge.getValue() + this.getMaxValue() / ((float) value));
     }
 
-    protected virtual void setValue(int value)
+    public virtual void setValue(int value)
     {
         this.value = ((float) value);
         this.gauge.setValue(((float) value));
@@ -230,17 +233,17 @@ public class ProgressCanvas : RunnableCanvas, PaintableInterface, UpdateMyFontIn
     public virtual void paint2(Graphics graphics)
     {
         this.myFontProcessor.process(graphics);
-        graphics.setColor(((int) this.backgroundBasicColor));
+        graphics.setColor(this.backgroundBasicColor.intValue());
         graphics.fillRect(0, 0, this.displayInfo.getLastWidth(), this.displayInfo.getLastHeight());
         this.gauge.paintXY(graphics, 0, 0);
         this.hasPainted = true;
     }
 
-    public override void paintThreed(Graphics graphics)
+    public virtual void paintThreed(Graphics graphics)
     {
     }
 
-    protected virtual float getValue()
+    public virtual float getValue()
     {
         return this.value;
     }
@@ -255,12 +258,12 @@ public class ProgressCanvas : RunnableCanvas, PaintableInterface, UpdateMyFontIn
         return this.text;
     }
 
-    protected virtual void setBackground(bool background)
+    public virtual void setBackground(bool background)
     {
         this.background = background;
     }
 
-    protected virtual bool isBackground()
+    public virtual bool isBackground()
     {
         return this.background;
     }

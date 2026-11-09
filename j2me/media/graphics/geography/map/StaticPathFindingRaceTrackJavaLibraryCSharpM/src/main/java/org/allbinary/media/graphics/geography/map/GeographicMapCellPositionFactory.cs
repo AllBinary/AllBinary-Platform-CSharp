@@ -36,12 +36,12 @@ public class GeographicMapCellPositionFactory : GeographicMapCellPositionBaseFac
         AllBinaryTiledLayer allBinaryTiledLayer = geographicMapInterface.getAllBinaryTiledLayer();
         object geographicMapCellPositionFactoryCanBeNull = GeographicMapCellPositionFactory.hashtable.get(allBinaryTiledLayer.getDataId());
         if (geographicMapCellPositionFactoryCanBeNull == null) {
-            this.logUtil.putF(new StringMaker().append("Creating GeographicMapCellPositionFactory for TileLayer: ").appendint(((int) ((int) allBinaryTiledLayer.getDataId()))).ToString(), this, commonStrings.GET_INSTANCE);
+            this.logUtil.putF(new StringMaker().append("Creating GeographicMapCellPositionFactory for TileLayer: ").appendint(((int) global::java.lang.JavaNumber.intValue(allBinaryTiledLayer.getDataId()))).ToString(), this, commonStrings.GET_INSTANCE);
             geographicMapCellPositionFactoryCanBeNull = new BasicGeographicMapCellPositionFactory(geographicMapInterface);
             GeographicMapCellPositionFactory.hashtable.put(allBinaryTiledLayer.getDataId(), geographicMapCellPositionFactoryCanBeNull);
             return ((BasicGeographicMapCellPositionFactory) geographicMapCellPositionFactoryCanBeNull);
         } else {
-            this.logUtil.putF(new StringMaker().append("Reusing GeographicMapCellPositionFactory for TileLayer: ").appendint(((int) ((int) allBinaryTiledLayer.getDataId()))).ToString(), this, commonStrings.GET_INSTANCE);
+            this.logUtil.putF(new StringMaker().append("Reusing GeographicMapCellPositionFactory for TileLayer: ").appendint(((int) global::java.lang.JavaNumber.intValue(allBinaryTiledLayer.getDataId()))).ToString(), this, commonStrings.GET_INSTANCE);
             return ((BasicGeographicMapCellPositionFactory) geographicMapCellPositionFactoryCanBeNull);
         }
     }

@@ -42,7 +42,7 @@ public class TimeIntervalActionScriptConditionJPanel : javax.swing.JPanel
 
     private void update()
     {
-        this.timeIntervalActionScriptConditionInterface.getTimeDelayHelper().delay = (this.getTimeIntervalJTextField().getText()).ToString();
+        this.timeIntervalActionScriptConditionInterface.getTimeDelayHelper().delay = int.Parse((this.getTimeIntervalJTextField().getText()).ToString());
         this.timeIntervalActionScriptConditionInterface.log();
     }
 

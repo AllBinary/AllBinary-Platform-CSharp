@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using TextField = javax.microedition.lcdui.TextField;
+using Font = javax.microedition.lcdui.Font;
+using TextField = javax.microedition.lcdui.TextField;
 using CustomTextBox = org.allbinary.graphics.form.item.CustomTextBox;
 using Animation = org.allbinary.animation.Animation;
 using AnimationInterfaceFactoryInterface = org.allbinary.animation.AnimationInterfaceFactoryInterface;

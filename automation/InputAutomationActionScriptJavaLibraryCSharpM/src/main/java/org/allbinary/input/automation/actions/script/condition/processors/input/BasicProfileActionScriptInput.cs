@@ -48,7 +48,7 @@ public class BasicProfileActionScriptInput : BasicProfileActionScriptProcessor, 
         Node timeNode = DomSearchHelper.getNodeNoThrow(GenericProfileActionScriptInputData.DELAY, node.getChildNodes());
         if (timeNode != null) {
             string delayString = DomNodeHelper.getTextNodeValue(timeNode);
-            this.setTime(((int) (delayString).ToString()));
+            this.setTime(global::java.lang.JavaNumber.intValue(int.Parse((delayString).ToString())));
         } else {
             this.setTime(0);
         }
@@ -87,7 +87,7 @@ public class BasicProfileActionScriptInput : BasicProfileActionScriptProcessor, 
     }
 
     // throws Exception
-    public virtual Node toXmlNode(Document document)
+    public override Node toXmlNode(Document document)
     {
         Node node = ModDomHelper.createNodeWithValueNodes(document, GenericProfileActionScriptInputData.NAME, this.BasicProfileActionScriptInput_toHashMap());
         return node;

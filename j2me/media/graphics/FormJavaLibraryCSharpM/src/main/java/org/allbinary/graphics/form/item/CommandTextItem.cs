@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
+using Command = javax.microedition.lcdui.Command;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 
 namespace org.allbinary.graphics.form.item;

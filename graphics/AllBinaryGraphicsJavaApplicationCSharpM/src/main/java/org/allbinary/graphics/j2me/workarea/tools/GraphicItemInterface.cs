@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using MutableTreeNode = javax.swing.tree.MutableTreeNode;
 using GPoint = org.allbinary.graphics.GPoint;
 using CanvasDom = org.allbinary.graphics.j2me.workarea.canvas.CanvasDom;

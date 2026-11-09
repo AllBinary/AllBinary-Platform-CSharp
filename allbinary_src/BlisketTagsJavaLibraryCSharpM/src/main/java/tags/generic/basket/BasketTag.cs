@@ -29,7 +29,7 @@ public class BasketTag : StoreValidationTransformTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             this.setName("Basic Basket View");

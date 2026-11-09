@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Font = javax.microedition.lcdui.Font;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Font = javax.microedition.lcdui.Font;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using CustomTextBox = org.allbinary.graphics.form.item.CustomTextBox;
 

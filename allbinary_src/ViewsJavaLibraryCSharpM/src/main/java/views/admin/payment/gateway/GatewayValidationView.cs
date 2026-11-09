@@ -52,7 +52,7 @@ public class GatewayValidationView : HttpStoreComponentView, ValidationComponent
         throw new Exception("validationInfo");
     }
 
-    public virtual Document toXmlDoc()
+    public override Document toXmlDoc()
     {
         return null;
     }
@@ -63,9 +63,15 @@ public class GatewayValidationView : HttpStoreComponentView, ValidationComponent
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         return new GatewayView(this.getTransformInfoInterface()).view();
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

@@ -21,28 +21,28 @@ namespace org.allbinary.business.user.commerce.money.payment;
 
 public class PaymentData
 {
-    public static readonly int MIN = 4;
-    public static readonly int MAX = 19;
-    public static readonly string ADDNEW = "Add New Payment";
-    public static readonly string VIEW = "View Payment";
-    public static readonly string SELECT = "Select Payment";
-    public static readonly string CHANGE = "Change Payment";
-    public static readonly string PAYMENT = "PAYMENT";
-    public static readonly string METHOD = "PAYMENT_METHOD";
-    public static readonly string ID = "PAYMENT_ID";
-    public static readonly string NUMBER = "PAYMENT_NUMBER";
-    public static readonly string NAME = "PAYMENT_NAME";
-    public static readonly string TYPE = "PAYMENT_TYPE";
-    public static readonly string EXPIRATION = "PAYMENT_EXPIRATION";
-    public static readonly string TENDERTYPE = "PAYMENT_TENDERTYPE";
-    public static readonly string TRANSACTIONTYPE = "PAYMENT_TRANSACTIONTYPE";
-    public static readonly string ABA = "PAYMENT_ABA";
-    public static readonly string ACCOUNT = "PAYMENT_ACCOUNT";
-    public static readonly string ACCOUNTTYPE = "PAYMENT_ACCOUNTTYPE";
-    public static readonly string AUTHORIZATIONCODE = "PAYMENT_AUTHORIZATIONCODE";
-    public static readonly string CHECKNUMBER = "PAYMENT_CHECKNUMBER";
-    public static readonly string CHECKTYPE = "PAYMENT_CHECKTYPE";
-    public static readonly string DRIVERSLICENSE = "PAYMENT_DRIVERSLICENSE";
-    public static readonly string MAGNETICINKCHECKREADER = "PAYMENT_MAGNETICINKCHECKREADER";
+    public const int MIN = 4;
+    public const int MAX = 19;
+    public const string ADDNEW = "Add New Payment";
+    public const string VIEW = "View Payment";
+    public const string SELECT = "Select Payment";
+    public const string CHANGE = "Change Payment";
+    public const string PAYMENT = "PAYMENT";
+    public const string METHOD = "PAYMENT_METHOD";
+    public const string ID = "PAYMENT_ID";
+    public const string NUMBER = "PAYMENT_NUMBER";
+    public const string NAME = "PAYMENT_NAME";
+    public const string TYPE = "PAYMENT_TYPE";
+    public const string EXPIRATION = "PAYMENT_EXPIRATION";
+    public const string TENDERTYPE = "PAYMENT_TENDERTYPE";
+    public const string TRANSACTIONTYPE = "PAYMENT_TRANSACTIONTYPE";
+    public const string ABA = "PAYMENT_ABA";
+    public const string ACCOUNT = "PAYMENT_ACCOUNT";
+    public const string ACCOUNTTYPE = "PAYMENT_ACCOUNTTYPE";
+    public const string AUTHORIZATIONCODE = "PAYMENT_AUTHORIZATIONCODE";
+    public const string CHECKNUMBER = "PAYMENT_CHECKNUMBER";
+    public const string CHECKTYPE = "PAYMENT_CHECKTYPE";
+    public const string DRIVERSLICENSE = "PAYMENT_DRIVERSLICENSE";
+    public const string MAGNETICINKCHECKREADER = "PAYMENT_MAGNETICINKCHECKREADER";
 }
 

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 using NullUtil = org.allbinary.logic.NullUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
@@ -45,7 +45,7 @@ public class ResourceUtil
         this.logUtil.putF(CommonStrings.getInstance().NOT_IMPLEMENTED, this, "setLoadingPaths");
     }
 
-    public virtual void setClassLoader(ClassLoader classLoader)
+    public virtual void setClassLoader(global::java.lang.ClassLoader classLoader)
     {
         this.logUtil.putF(new StringMaker().append("Resource Loader: ").append(classLoader.GetType().FullName).ToString(), this, "setClassLoader");
         ResourceUtil.classLoader = classLoader;
@@ -70,16 +70,16 @@ public class ResourceUtil
         CommonSeps commonSeps = CommonSeps.getInstance();
         int index = resource.IndexOf(commonSeps.COLON);
         string resourcePath = resource.Substring(index + startIndex);
-        InputStream inputStream = resource.GetType().getResourceAsStream(resourcePath);
+        InputStream inputStream = global::java.lang.ClassLoader.getSystemResourceAsStream(resourcePath);
         if (inputStream != null) {
             return inputStream;
         }
-        ClassLoader classLoader = ((ClassLoader) ResourceUtil.classLoader);
+        global::java.lang.ClassLoader classLoader = ((global::java.lang.ClassLoader) ResourceUtil.classLoader);
         inputStream = classLoader.getResourceAsStream(resourcePath);
         if (inputStream != null) {
             return inputStream;
         }
-        inputStream = global::org.allbinary.thread.NullThread.currentThread().getContextClassLoader().getResourceAsStream(resourcePath);
+        inputStream = global::java.lang.ClassLoader.getSystemClassLoader().getResourceAsStream(resourcePath);
         if (inputStream != null) {
             return inputStream;
         }

@@ -51,8 +51,8 @@ public class CssPropertyValues : DomNodeInterface
             this.logUtil.putF("Number Of Properties: " + cssPropertyNodeVector.size(), this, "CssProperties()");
         }
         int size = cssPropertyNodeVector.size();
-        for (int index = 0; index < size; index++) {
-            Node cssPropertyValueNode = ((Node) cssPropertyNodeVector.get(index));
+        for (int index_0 = 0; index_0 < size; index_0++) {
+            Node cssPropertyValueNode = ((Node) cssPropertyNodeVector.get(index_0));
             Node valueNode = DomSearchHelper.getNode(DomData.VALUE, cssPropertyValueNode.getChildNodes());
             string propertyValue = DomNodeHelper.getTextNodeValue(valueNode);
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().STYLE)) {
@@ -63,8 +63,8 @@ public class CssPropertyValues : DomNodeInterface
             indexPropertyValueHashMap.put(indexValue, propertyValue);
         }
         int size2 = indexPropertyValueHashMap.keySet().size();
-        for (int index = 0; index < size2; index++) {
-            int? indexInt = index;
+        for (int index_1 = 0; index_1 < size2; index_1++) {
+            int? indexInt = index_1;
             string propertyValue = ((string) indexPropertyValueHashMap.get(indexInt.ToString()));
             this.propertyValueVector.add(propertyValue);
         }

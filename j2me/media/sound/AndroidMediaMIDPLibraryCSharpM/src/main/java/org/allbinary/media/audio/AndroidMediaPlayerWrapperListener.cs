@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using PlayerListener = javax.microedition.media.PlayerListener;
+using PlayerListener = javax.microedition.media.PlayerListener;
 using MediaPlayer = android.media.MediaPlayer;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
@@ -18,10 +18,10 @@ public class AndroidMediaPlayerWrapperListener
     private AndroidMediaPlayerWrapper androidMediaPlayerWrapper = AndroidMediaPlayerWrapper.NULL_ANDROID_MEDIA_PLAYER_WRAPPER;
     public AndroidMediaPlayerWrapperListener(AndroidMediaPlayerWrapper androidMediaPlayerWrapper)
     {
-        this.mOnBufferingUpdateListener = new AndroidMediaPlayerOnBufferingUpdateListener(this);
-        this.mOnPreparedListener = new AndroidMediaPlayerOnPreparedListener(this);
-        this.mOnErrorListener = new AndroidMediaPlayerOnErrorListener(this);
-        this.mOnCompletionListener = new AndroidMediaPlayerOnCompletionListener(this);
+        this.mOnBufferingUpdateListener = new AndroidMediaPlayerOnBufferingUpdateListener(this, this);
+        this.mOnPreparedListener = new AndroidMediaPlayerOnPreparedListener(this, this);
+        this.mOnErrorListener = new AndroidMediaPlayerOnErrorListener(this, this);
+        this.mOnCompletionListener = new AndroidMediaPlayerOnCompletionListener(this, this);
         try {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
             this.androidMediaPlayerWrapper = androidMediaPlayerWrapper;
@@ -37,39 +37,70 @@ public class AndroidMediaPlayerWrapperListener
 
     private class MediaPlayerOnBufferingUpdateListener : MediaPlayer.OnBufferingUpdateListener
     {
+        private readonly AndroidMediaPlayerWrapperListener outer;
+
         public virtual void onBufferingUpdate(MediaPlayer mediaPlayer, int i)
         {
+        }
+
+        public MediaPlayerOnBufferingUpdateListener(AndroidMediaPlayerWrapperListener outer)
+        {
+            this.outer = outer;
         }
 
     }
     private class MediaPlayerOnPreparedListener : MediaPlayer.OnPreparedListener
     {
+        private readonly AndroidMediaPlayerWrapperListener outer;
+
         public virtual void onPrepared(MediaPlayer mp)
         {
+        }
+
+        public MediaPlayerOnPreparedListener(AndroidMediaPlayerWrapperListener outer)
+        {
+            this.outer = outer;
         }
 
     }
     private class MediaPlayerOnErrorListener : MediaPlayer.OnErrorListener
     {
+        private readonly AndroidMediaPlayerWrapperListener outer;
+
         public virtual bool onError(MediaPlayer mp, int what, int extra)
         {
             return false;
         }
 
+        public MediaPlayerOnErrorListener(AndroidMediaPlayerWrapperListener outer)
+        {
+            this.outer = outer;
+        }
+
     }
     private class MediaPlayerOnCompletionListener : MediaPlayer.OnCompletionListener
     {
+        private readonly AndroidMediaPlayerWrapperListener outer;
+
         public virtual void onCompletion(MediaPlayer mp)
         {
+        }
+
+        public MediaPlayerOnCompletionListener(AndroidMediaPlayerWrapperListener outer)
+        {
+            this.outer = outer;
         }
 
     }
     private class AndroidMediaPlayerOnBufferingUpdateListener : MediaPlayerOnBufferingUpdateListener
     {
+        private readonly AndroidMediaPlayerWrapperListener outer;
+
         private readonly string ON_BUFFERING_UPDATE = "onBufferingUpdate()";
         private readonly AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener;
-        public AndroidMediaPlayerOnBufferingUpdateListener(AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener)
+        public AndroidMediaPlayerOnBufferingUpdateListener(AndroidMediaPlayerWrapperListener outer, AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener) : base(outer)
         {
+            this.outer = outer;
             this.androidMediaPlayerWrapperListener = androidMediaPlayerWrapperListener;
         }
 
@@ -84,10 +115,13 @@ public class AndroidMediaPlayerWrapperListener
     private MediaPlayer.OnBufferingUpdateListener mOnBufferingUpdateListener;
     private class AndroidMediaPlayerOnPreparedListener : MediaPlayerOnPreparedListener
     {
+        private readonly AndroidMediaPlayerWrapperListener outer;
+
         private readonly string ON_PREPARE = "onPrepare()";
         private readonly AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener;
-        public AndroidMediaPlayerOnPreparedListener(AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener)
+        public AndroidMediaPlayerOnPreparedListener(AndroidMediaPlayerWrapperListener outer, AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener) : base(outer)
         {
+            this.outer = outer;
             this.androidMediaPlayerWrapperListener = androidMediaPlayerWrapperListener;
         }
 
@@ -103,10 +137,13 @@ public class AndroidMediaPlayerWrapperListener
     private MediaPlayer.OnPreparedListener mOnPreparedListener;
     private class AndroidMediaPlayerOnErrorListener : MediaPlayerOnErrorListener
     {
+        private readonly AndroidMediaPlayerWrapperListener outer;
+
         private readonly string ON_ERROR = "onError()";
         private readonly AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener;
-        public AndroidMediaPlayerOnErrorListener(AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener)
+        public AndroidMediaPlayerOnErrorListener(AndroidMediaPlayerWrapperListener outer, AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener) : base(outer)
         {
+            this.outer = outer;
             this.androidMediaPlayerWrapperListener = androidMediaPlayerWrapperListener;
         }
 
@@ -122,10 +159,13 @@ public class AndroidMediaPlayerWrapperListener
     private MediaPlayer.OnErrorListener mOnErrorListener;
     private class AndroidMediaPlayerOnCompletionListener : MediaPlayerOnCompletionListener
     {
+        private readonly AndroidMediaPlayerWrapperListener outer;
+
         private readonly string ON_COMPLETE = "onComplete()";
         private readonly AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener;
-        public AndroidMediaPlayerOnCompletionListener(AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener)
+        public AndroidMediaPlayerOnCompletionListener(AndroidMediaPlayerWrapperListener outer, AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener) : base(outer)
         {
+            this.outer = outer;
             this.androidMediaPlayerWrapperListener = androidMediaPlayerWrapperListener;
         }
 

@@ -33,7 +33,7 @@ public class AlwaysActionScriptCondition : BasicProfileActionScriptCondition, Al
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private AlwaysActionScriptConditionJPanel alwaysActionScriptConditionJPanel = null;
     private bool isOn = false;
-    private static readonly string NAME = "Always On/Off";
+    private const string NAME = "Always On/Off";
     public AlwaysActionScriptCondition(Node node) : base(AlwaysActionScriptCondition.NAME, node)
     {
         // base(AlwaysActionScriptCondition.NAME, node) is called from the constructor declaration
@@ -44,7 +44,7 @@ public class AlwaysActionScriptCondition : BasicProfileActionScriptCondition, Al
                 Node childNode = nodeList.item(index);
                 if (childNode.getNodeName().compareTo(AlwaysActionScriptConditionData.IS_ON) == 0) {
                     string booleanString = DomNodeHelper.getTextNodeValue(childNode);
-                    this.setIsOn(booleanString);
+                    this.setIsOn(((bool) (bool.Parse(booleanString))));
                 } else {
                     throw new Exception("Action Script Condition Unknown Node");
                 }
@@ -76,7 +76,7 @@ public class AlwaysActionScriptCondition : BasicProfileActionScriptCondition, Al
         this.isOn = isOn;
     }
 
-    public virtual void showDialog()
+    public override void showDialog()
     {
         this.alwaysActionScriptConditionJPanel.getAlwaysActionJDialog().setVisible(true);
     }
@@ -90,7 +90,7 @@ public class AlwaysActionScriptCondition : BasicProfileActionScriptCondition, Al
     }
 
     // throws Exception
-    public virtual Node toXmlNode(Document document)
+    public override Node toXmlNode(Document document)
     {
         Node node = base.toXmlNode(document);
         node.appendChild(ModDomHelper.createNodeWithValueNodes(document, AlwaysActionScriptConditionData.NAME, this.toHashMap()));
@@ -98,7 +98,7 @@ public class AlwaysActionScriptCondition : BasicProfileActionScriptCondition, Al
     }
 
     // throws Exception
-    public virtual bool shouldProcess(long? frame)
+    public override bool shouldProcess(long? frame)
     {
         if (this.isIsOn()) {
             return base.shouldProcess(frame);

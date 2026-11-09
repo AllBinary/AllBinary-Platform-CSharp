@@ -41,7 +41,7 @@ public class GenericProfileActionScript : DefaultMutableTreeNode, ProfileActionS
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private GenericProfileActionJPanel genericProfileActionJPanel;
     private BasicArrayList profileActionConditionInterfaceVector = null;
-    private static readonly string NAME = "Root";
+    private const string NAME = "Root";
     public GenericProfileActionScript(GenericProfileActionJPanel genericProfileActionJPanel, Node node) : base(NAME)
     {
         // base(NAME) is called from the constructor declaration

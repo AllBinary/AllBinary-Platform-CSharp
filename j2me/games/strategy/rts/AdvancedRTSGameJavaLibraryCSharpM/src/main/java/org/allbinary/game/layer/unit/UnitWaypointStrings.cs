@@ -28,6 +28,7 @@ public class UnitWaypointStrings
         return UnitWaypointStrings.instance;
     }
 
+    public readonly string PATHING = "Pathing";
     public readonly string WANDERING = "Order?";
     public readonly string THINKING = "Thinking";
     public readonly string THINKING_ABOUT_TARGET = "Hmmm";
@@ -41,5 +42,9 @@ public class UnitWaypointStrings
     public readonly string ALREADY_THERE_SHORT = "Again?";
     public readonly string ALREADY_THERE = "Already There";
     public readonly string NEXT_PATH_NODE = CommonLabels.getInstance().NEXT + " Path Node";
+    public readonly string _ALL_VISITED_SHORT = " Arrived";
+    public readonly string _ALREADY_THERE_SHORT = " Again?";
+    public readonly string VISITED_MOST_OF_THE_PATH = " visited most of the path";
+    public readonly string RETURNING_AS_WAYPOINT_PATH_LIST = " returning as waypointPathsList was runningWaypointPathList";
 }
 

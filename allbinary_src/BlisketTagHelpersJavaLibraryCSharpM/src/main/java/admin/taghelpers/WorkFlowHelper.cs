@@ -38,7 +38,7 @@ public class WorkFlowHelper : BasicTable
         this.portion = new Portion(hashMap);
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             return WorkFlowEntityFactory.getInstance().create2().dropTable();
@@ -51,7 +51,7 @@ public class WorkFlowHelper : BasicTable
         }
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             return WorkFlowEntityFactory.getInstance().create2().createTable();
@@ -64,7 +64,7 @@ public class WorkFlowHelper : BasicTable
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "Restore Successful";
@@ -82,7 +82,7 @@ public class WorkFlowHelper : BasicTable
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Restore Successful";

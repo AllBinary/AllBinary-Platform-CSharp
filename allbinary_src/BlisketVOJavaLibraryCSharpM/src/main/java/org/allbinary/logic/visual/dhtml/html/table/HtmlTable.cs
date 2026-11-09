@@ -82,8 +82,8 @@ public class HtmlTable : HtmlTag
         result = this.before;
         result += this.START;
         result += " ";
-        for (int i = 0; i < attributeKeys.Length; i++) {
-            string key = ((string) attributeKeys[i]);
+        for (int i_0 = 0; i_0 < attributeKeys.Length; i_0++) {
+            string key = ((string) attributeKeys[i_0]);
             string value = ((string) otherAttributes.get(key));
             if (value != null && string.CompareOrdinal(value, stringUtil.EMPTY_STRING) != 0) {
                 result += key;
@@ -94,8 +94,8 @@ public class HtmlTable : HtmlTag
         }
         result += this.END;
         int size = this.htmlRowsVector.size();
-        for (int i = 0; i < size; i++) {
-            result += this.htmlRowsVector.get(i).ToString();
+        for (int i_1 = 0; i_1 < size; i_1++) {
+            result += this.htmlRowsVector.get(i_1).ToString();
             result += " ";
         }
         result += this.ENDTAG;

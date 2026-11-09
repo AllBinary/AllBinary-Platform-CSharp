@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using InputStream = java.io.InputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using InputStream = java.io.InputStream;
 using StreamUtil = org.allbinary.logic.io.StreamUtil;
 using AbCrypt = org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt;
 using KeySpecFactory = org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory;
@@ -40,12 +40,12 @@ public class AbCryptUtil
     // throws Exception
     public virtual sbyte[] decrypt(InputStream inputStream, string key)
     {
-        System.IO.MemoryStream outputStream = null;
+        ByteArrayOutputStream outputStream = null;
         try {
-            outputStream = ((System.IO.MemoryStream) this.streamUtil.get(inputStream, new System.IO.MemoryStream(), new sbyte[16384]));
+            outputStream = ((ByteArrayOutputStream) this.streamUtil.get(inputStream, new ByteArrayOutputStream(), new sbyte[16384]));
             AbCrypt abCrypt = new AbCrypt(KeySpecFactory.getInstance().DESEDE);
             abCrypt.init(key);
-            return abCrypt.decrypt(((sbyte[]) (Array) outputStream.ToArray()));
+            return abCrypt.decrypt(outputStream.toByteArray());
         } finally {
             this.streamUtil.close(outputStream);
             this.streamUtil.close(inputStream);

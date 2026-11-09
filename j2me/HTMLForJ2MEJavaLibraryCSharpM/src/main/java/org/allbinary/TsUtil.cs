@@ -16,12 +16,12 @@
 
 using System;
 using System.Linq;
-//using Displayable = javax.microedition.lcdui.Displayable;
-//using Form = javax.microedition.lcdui.Form;
-//using InvalidRecordIDException = javax.microedition.rms.InvalidRecordIDException;
-//using RecordStore = javax.microedition.rms.RecordStore;
-//using RecordStoreException = javax.microedition.rms.RecordStoreException;
-//using RecordStoreNotOpenException = javax.microedition.rms.RecordStoreNotOpenException;
+using Displayable = javax.microedition.lcdui.Displayable;
+using Form = javax.microedition.lcdui.Form;
+using InvalidRecordIDException = javax.microedition.rms.InvalidRecordIDException;
+using RecordStore = javax.microedition.rms.RecordStore;
+using RecordStoreException = javax.microedition.rms.RecordStoreException;
+using RecordStoreNotOpenException = javax.microedition.rms.RecordStoreNotOpenException;
 using NullUtil = org.allbinary.logic.NullUtil;
 
 namespace org.allbinary;

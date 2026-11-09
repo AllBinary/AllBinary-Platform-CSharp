@@ -132,7 +132,7 @@ public class TransformInfoTag : ModifyTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             return base.doStartTag();

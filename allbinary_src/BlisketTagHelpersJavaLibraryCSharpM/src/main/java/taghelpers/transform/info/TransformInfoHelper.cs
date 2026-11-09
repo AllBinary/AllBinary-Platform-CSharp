@@ -35,7 +35,7 @@ public class TransformInfoHelper : BasicTable
         this.portion = new Portion(hashMap);
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             return TransformInfoEntityBuilder.getInstance().dropTable();
@@ -48,7 +48,7 @@ public class TransformInfoHelper : BasicTable
         }
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             return TransformInfoEntityBuilder.getInstance().createTable();
@@ -61,7 +61,7 @@ public class TransformInfoHelper : BasicTable
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "Restore Successful";
@@ -79,7 +79,7 @@ public class TransformInfoHelper : BasicTable
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Backup Successful";

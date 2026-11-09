@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 
 namespace org.allbinary.animation.text;

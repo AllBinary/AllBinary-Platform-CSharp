@@ -110,6 +110,16 @@ public class BaseMusicService : Service
             if (this.player != NullAndroidCanvas.NULL_MEDIA_PLAYER && this.player.isPlaying()) {
                 MediaPlayer player = this.player;
                 this.logUtil.putF(this.ALREADY_PLAYING, this, this.commonStateStrings.ON_START_COMMAND);
+                
+                global::java.lang.Runnable runnable = new MusicRunnable(this);
+                global::org.allbinary.thread.NullThread thread = new global::org.allbinary.thread.NullThread(runnable);
+                thread.start();
+                return;
+            }
+            this.start();
+        }
+    }
+
                 class MusicRunnable : ARunnable
                 {
                     private readonly BaseMusicService baseMusicService;
@@ -135,14 +145,6 @@ public class BaseMusicService : Service
                     }
 
                 }
-                global::java.lang.Runnable runnable = new MusicRunnable(this);
-                global::org.allbinary.thread.NullThread thread = new global::org.allbinary.thread.NullThread(runnable);
-                thread.start();
-                return;
-            }
-            this.start();
-        }
-    }
 
 }
 

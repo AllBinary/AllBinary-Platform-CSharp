@@ -39,7 +39,7 @@ public class AbPathUtilOld
 
     private readonly AbPathData abPathData = AbPathData.getInstance();
     private readonly FilePathData filePathData = FilePathData.getInstance();
-    private static readonly int MIN = 4;
+    private const int MIN = 4;
     private AbPathUtilOld()
     {
     }

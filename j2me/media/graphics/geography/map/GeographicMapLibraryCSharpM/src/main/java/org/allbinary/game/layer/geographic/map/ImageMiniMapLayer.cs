@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
 using Anchor = org.allbinary.graphics.Anchor;
 using PaintableToImageUtil = org.allbinary.image.PaintableToImageUtil;
 using BasicGeographicMap = org.allbinary.media.graphics.geography.map.BasicGeographicMap;

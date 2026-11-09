@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 using NullUtil = org.allbinary.logic.NullUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringUtil = org.allbinary.logic.@string.StringUtil;

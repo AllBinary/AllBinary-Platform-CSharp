@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbFile = org.allbinary.logic.io.file.AbFile;
 

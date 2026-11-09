@@ -14,11 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using File = java.io.File;
-//using FileInputStream = java.io.FileInputStream;
-//using InputStream = java.io.InputStream;
+using File = java.io.File;
+using FileInputStream = java.io.FileInputStream;
+using InputStream = java.io.InputStream;
 using NullUtil = org.allbinary.logic.NullUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringUtil = org.allbinary.logic.@string.StringUtil;

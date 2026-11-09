@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using NullCanvas = javax.microedition.lcdui.NullCanvas;
+using Canvas = javax.microedition.lcdui.Canvas;
+using NullCanvas = javax.microedition.lcdui.NullCanvas;
 using AllBinaryGameLayerManager = org.allbinary.game.layer.AllBinaryGameLayerManager;
 
 namespace org.allbinary.game.canvas;

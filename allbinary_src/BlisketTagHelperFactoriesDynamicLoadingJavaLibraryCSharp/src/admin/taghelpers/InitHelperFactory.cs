@@ -24,8 +24,8 @@ namespace admin.taghelpers;
 
 public class InitHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "admin.taghelpers.InitHelper";
-    private static readonly string FACTORYNAME = "InitHelperFactory";
+    private const string CLASSNAME = "admin.taghelpers.InitHelper";
+    private const string FACTORYNAME = "InitHelperFactory";
     public InitHelperFactory()
     {
     }

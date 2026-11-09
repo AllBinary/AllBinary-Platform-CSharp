@@ -19,6 +19,8 @@ using System.Linq;
 using VirtualKeyboard = org.allbinary.android.input.VirtualKeyboard;
 using VirtualKeyboardEventListenerInterface = org.allbinary.input.@event.VirtualKeyboardEventListenerInterface;
 using Activity = android.app.Activity;
+using VirtualKeyboardEvent = org.allbinary.input.@event.VirtualKeyboardEvent;
+using AllBinaryEventObject = org.allbinary.logic.util.@event.AllBinaryEventObject;
 
 namespace org.allbinary.android.input.api1;
 
@@ -28,6 +30,16 @@ public class VirtualKeyboardAPI1 : VirtualKeyboard, VirtualKeyboardEventListener
     public static int MAX_API = 2;
     public VirtualKeyboardAPI1(Activity activity)
     {
+    }
+
+    public override void onVirtualKeyboardEvent(VirtualKeyboardEvent virtualKeyboardEvent)
+    {
+        base.onVirtualKeyboardEvent(virtualKeyboardEvent);
+    }
+
+    public override void onEvent(AllBinaryEventObject eventObject)
+    {
+        base.onEvent(eventObject);
     }
 
 }

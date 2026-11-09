@@ -16,11 +16,11 @@
 
 using System;
 using System.Linq;
-//using Choice = javax.microedition.lcdui.Choice;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Item = javax.microedition.lcdui.Item;
-//using TextField = javax.microedition.lcdui.TextField;
+using Choice = javax.microedition.lcdui.Choice;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Item = javax.microedition.lcdui.Item;
+using TextField = javax.microedition.lcdui.TextField;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using GameFeatureChoiceGroups = org.allbinary.game.configuration.feature.GameFeatureChoiceGroups;
 using GameFeatureFormUtil = org.allbinary.game.configuration.feature.GameFeatureFormUtil;
@@ -130,8 +130,8 @@ public class GameOptionsForm : CommandForm
     {
         int size = this.size();
         Item item = null;
-        for (int index = 0; index < size; index++) {
-            item = this.get(index);
+        for (int index_2 = 0; index_2 < size; index_2++) {
+            item = this.get(index_2);
             if (item is GameConfigurationGauge) {
                 GameConfigurationUtil.getInstance().update(((GameConfigurationGauge) item));
             } else if (item is TextField) {
@@ -141,7 +141,7 @@ public class GameOptionsForm : CommandForm
         GameConfigurationUtil.getInstance().updateCompetitionValue();
         ABHashtable<object, object> hashtable = StdUtil.getInstance().createHashtable();
         GameConfiguration SCALE = GameConfigurationCentral.getInstance().SCALE;
-        hashtable.put(SCALE.getName(), SCALE.getValue().ToString());
+        hashtable.put(SCALE.getName(), (global::java.lang.JavaNumber.intValue(SCALE.getValue())).ToString());
         KeyValuePersistance keyValuePersistance = GameConfigurationPersistanceSingleton.getInstance();
         keyValuePersistance.clear();
         keyValuePersistance.loadAll(abeClientInformation);
@@ -149,8 +149,8 @@ public class GameOptionsForm : CommandForm
         keyValuePersistance.save(abeClientInformation, hashtable);
         int size2 = list.size();
         int? integer = null;
-        for (int index = 0; index < size2; index++) {
-            integer = ((int?) list.objectArray[index]);
+        for (int index_3 = 0; index_3 < size2; index_3++) {
+            integer = ((int?) list.objectArray[index_3]);
             keyValuePersistance.delete(abeClientInformation, ((int) integer));
         }
     }

@@ -90,7 +90,7 @@ public class MultipartRequestParams : RequestParams
     }
 
     // throws Exception
-    public virtual HashMap<object, object> toHashMap()
+    public override HashMap<object, object> toHashMap()
     {
         if (this.special) {
             return ((HashMap<object, object>) this.getMap());

@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Cipher = javax.crypto.Cipher;
-//using SecretKey = javax.crypto.SecretKey;
+using Cipher = javax.crypto.Cipher;
+using SecretKey = javax.crypto.SecretKey;
 using ByteUtil = org.allbinary.logic.java.byteutil.ByteUtil;
 
 namespace org.allbinary.logic.system.security.crypt.jcehelper;

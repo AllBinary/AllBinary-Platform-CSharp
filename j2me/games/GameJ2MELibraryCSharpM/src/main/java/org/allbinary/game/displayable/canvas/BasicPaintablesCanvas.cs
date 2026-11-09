@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AllBinaryGameLayerManager = org.allbinary.game.layer.AllBinaryGameLayerManager;
 using ColorFillBasePaintable = org.allbinary.game.paint.ColorFillBasePaintable;
 using ColorFillPaintableFactory = org.allbinary.game.paint.ColorFillPaintableFactory;

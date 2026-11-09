@@ -14,15 +14,16 @@
  */
 // Generated Code Do Not Modify
 
+extern alias OpenGLESJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using Features = org.allbinary.game.configuration.feature.Features;
 using GameFeatureFactory = org.allbinary.game.configuration.feature.GameFeatureFactory;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
 using OpenGLFeatureFactory = org.allbinary.graphics.opengles.OpenGLFeatureFactory;
 using OpenGLUtil = org.allbinary.graphics.opengles.OpenGLUtil;
-using OpenGLESDeviceImageTranslate = org.allbinary.image.opengles.OpenGLESDeviceImageTranslate;
+//using OpenGLESDeviceImageTranslate = org.allbinary.image.opengles.OpenGLESDeviceImageTranslate;
 using OpenGLESImage = org.allbinary.image.opengles.OpenGLESImage;
 using OpenGLESImageExclusionUtil = org.allbinary.image.opengles.OpenGLESImageExclusionUtil;
 using OpenGLESImageProperties = org.allbinary.image.opengles.OpenGLESImageProperties;
@@ -180,8 +181,8 @@ public class ImageCopyUtil
                 openGLESImageProperties.scaleY2 = ((float) ((((float) height)) / openGLESImage.getHeight()));
                 openGLESImageProperties.scaleY = openGLESImageProperties.scaleY2;
                 if (image.getName().StartsWith(this.INFORMATION)) {
-                    openGLESImage.openGLESImageTranslate = new OpenGLESDeviceImageTranslate();
-                    OpenGLESDeviceImageTranslate openGLESDeviceImageTranslate = ((OpenGLESDeviceImageTranslate) openGLESImage.openGLESImageTranslate);
+                    openGLESImage.openGLESImageTranslate = new OpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLESDeviceImageTranslate();
+                    OpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLESDeviceImageTranslate openGLESDeviceImageTranslate = ((OpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLESDeviceImageTranslate) openGLESImage.openGLESImageTranslate);
                     openGLESDeviceImageTranslate.translateX = displayInfoSingleton.getLastWidth() / 1.4f / openGLESImageProperties.scaleX;
                     openGLESDeviceImageTranslate.translateY = displayInfoSingleton.getLastHeight() / 4 / openGLESImageProperties.scaleY;
                     openGLESImageProperties.scaleX = openGLESImageProperties.scaleX * 0.25f;
@@ -190,8 +191,8 @@ public class ImageCopyUtil
                     openGLESImageProperties.scaleX = openGLESImageProperties.scaleX * 0.75f;
                     openGLESImageProperties.scaleY = openGLESImageProperties.scaleY * 0.75f;
                     if (image.getName().StartsWith(this.LEADERBOARD)) {
-                        openGLESImage.openGLESImageTranslate = new OpenGLESDeviceImageTranslate();
-                        OpenGLESDeviceImageTranslate openGLESDeviceImageTranslate = ((OpenGLESDeviceImageTranslate) openGLESImage.openGLESImageTranslate);
+                        openGLESImage.openGLESImageTranslate = new OpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLESDeviceImageTranslate();
+                        OpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLESDeviceImageTranslate openGLESDeviceImageTranslate = ((OpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLESDeviceImageTranslate) openGLESImage.openGLESImageTranslate);
                         openGLESDeviceImageTranslate.translateX = -displayInfoSingleton.getLastWidth() / 40 / openGLESImageProperties.scaleX;
                     }
                     if (image.getName().StartsWith(this.LEADERBOARD)) {
@@ -254,12 +255,12 @@ public class ImageCopyUtil
             int[] newPixelArray = new int[image.getWidth() * image.getHeight()];
             int width = originalImage.getWidth();
             int height = originalImage.getHeight();
-            for (int i = 0; i < height; i++) {
-                originalImageData.getPixels(0, i, width, originalPixelArray, (i * width));
+            for (int i_3 = 0; i_3 < height; i_3++) {
+                originalImageData.getPixels(0, i_3, width, originalPixelArray, (i_3 * width));
             }
-            for (int index = halfWidthDelta; index < width; index++) {
-                for (int index2 = halfHeightDelta; index2 < height; index2++) {
-                    newPixelArray[index + (index2 * width)] = originalPixelArray[(index - halfWidthDelta) + ((index2 - halfHeightDelta) * width)];
+            for (int index_4 = halfWidthDelta; index_4 < width; index_4++) {
+                for (int index2_4 = halfHeightDelta; index2_4 < height; index2_4++) {
+                    newPixelArray[index_4 + (index2_4 * width)] = originalPixelArray[(index_4 - halfWidthDelta) + ((index2_4 - halfHeightDelta) * width)];
                 }
             }
             (((org.eclipse.swt.graphics.Image) mutableImage2.getImage())).getImageData().setPixels(0, 0, image.getWidth(), newPixelArray, 0);
@@ -273,12 +274,12 @@ public class ImageCopyUtil
             int[] newPixelArray = new int[image.getWidth() * image.getHeight()];
             int width = originalImage.getWidth();
             int height = originalImage.getHeight();
-            for (int i = 0; i < height; i++) {
-                originalImageData.getPixels(0, i, width, originalPixelArray, (i * width));
+            for (int i_0 = 0; i_0 < height; i_0++) {
+                originalImageData.getPixels(0, i_0, width, originalPixelArray, (i_0 * width));
             }
-            for (int index = halfWidthDelta; index < width; index++) {
-                for (int index2 = halfHeightDelta; index2 < height; index2++) {
-                    newPixelArray[index + (index2 * width)] = originalPixelArray[(index - halfWidthDelta) + ((index2 - halfHeightDelta) * width)];
+            for (int index_1 = halfWidthDelta; index_1 < width; index_1++) {
+                for (int index2_1 = halfHeightDelta; index2_1 < height; index2_1++) {
+                    newPixelArray[index_1 + (index2_1 * width)] = originalPixelArray[(index_1 - halfWidthDelta) + ((index2_1 - halfHeightDelta) * width)];
                 }
             }
             (((org.eclipse.swt.graphics.Image) originalImmutableImage.getImage())).getImageData().setPixels(0, 0, image.getWidth(), newPixelArray, 0);

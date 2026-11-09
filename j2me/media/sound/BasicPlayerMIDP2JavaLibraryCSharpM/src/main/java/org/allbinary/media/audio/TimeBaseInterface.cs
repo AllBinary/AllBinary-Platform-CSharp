@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using MediaException = javax.microedition.media.MediaException;
-//using TimeBase = javax.microedition.media.TimeBase;
+using MediaException = javax.microedition.media.MediaException;
+using TimeBase = javax.microedition.media.TimeBase;
 
 namespace org.allbinary.media.audio;
 

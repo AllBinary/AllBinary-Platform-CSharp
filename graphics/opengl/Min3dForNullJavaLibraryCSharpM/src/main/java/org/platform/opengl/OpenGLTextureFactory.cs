@@ -2,8 +2,8 @@
 
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Image = javax.microedition.lcdui.Image;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Image = javax.microedition.lcdui.Image;
 using PlatformTextureBaseFactory = org.allbinary.platform.opengles.PlatformTextureBaseFactory;
 
 namespace org.platform.opengl;

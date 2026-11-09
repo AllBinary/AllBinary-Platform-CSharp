@@ -25,12 +25,12 @@ public class OpenGLBitmap : PlatformBitmapBase
         this.bitmap.setPixels(pixels, offset, stride, x, y, width, height);
     }
 
-    public override int getWidth()
+    public virtual int getWidth()
     {
         return this.bitmap.getWidth();
     }
 
-    public override int getHeight()
+    public virtual int getHeight()
     {
         return this.bitmap.getHeight();
     }

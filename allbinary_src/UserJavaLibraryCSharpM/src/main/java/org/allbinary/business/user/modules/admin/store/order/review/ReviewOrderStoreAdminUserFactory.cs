@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using HashMap = java.util.HashMap;
+using java.util;
 using UserFactoryInterface = org.allbinary.business.user.UserFactoryInterface;
 using UserInterface = org.allbinary.business.user.UserInterface;
 
@@ -35,7 +35,7 @@ public class ReviewOrderStoreAdminUserFactory : UserFactoryInterface
     }
 
     // throws Exception
-    public virtual UserInterface getInstance(HashMap hashMap)
+    public virtual UserInterface getInstance(HashMap<object, object> hashMap)
     {
         return new ReviewOrderStoreAdminUser(hashMap);
     }

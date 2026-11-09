@@ -34,7 +34,7 @@ public class PreviewGeneratorStoreFrontContextView : GeneratorStoreFrontContextV
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             TransformInfoHttpInterface httpTransformInfoInterface = ((TransformInfoHttpInterface) this.getTransformInfoInterface());

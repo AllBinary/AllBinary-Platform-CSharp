@@ -37,7 +37,7 @@ public class BasicProfileActionScriptProcessor : ProfileActionScriptItem, Profil
         // base(label) is called from the constructor declaration
     }
 
-    public virtual void actionPerformed(ActionEvent actionEvent)
+    public override void actionPerformed(ActionEvent actionEvent)
     {
         base.actionPerformed(actionEvent);
         if (actionEvent.getActionCommand().compareTo(DELETE) == 0) {

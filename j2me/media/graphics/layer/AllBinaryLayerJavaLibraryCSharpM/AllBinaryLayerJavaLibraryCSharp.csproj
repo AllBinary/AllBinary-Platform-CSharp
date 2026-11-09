@@ -47,7 +47,7 @@
     <ProjectReference Include="..\..\..\..\J2MEColorJavaLibraryCSharpM\J2MEColorJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\J2MEUtilJavaLibraryCSharpM\J2MEUtilJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\GroupLibraryCSharpM\GroupLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\allbinary_custom_android_version\microemulator\microemu-midp\microemu-midpCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\2_0_4\microemu-midpCSharp\microemu-midp-for-polyglotCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\allbinary_src\LogCSharpM\LogCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\CommonJavaLibraryCSharpM\CommonJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\J2MEExceptionLibraryCSharpM\J2MEExceptionLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -63,9 +63,8 @@
     <ProjectReference Include="..\..\..\..\statistics\ApplicationStatisticsJavaLibraryCSharpM\ApplicationStatisticsJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\EventJ2MELibraryCSharpM\EventJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\geography\map\GraphBaseJavaLibraryCSharpM\GraphBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/math/PositionStrings is also in a nearer dependency -->
-    <ProjectReference Include="..\..\..\..\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="BaseMathLibraryCSharp" />
-    <ProjectReference Include="..\..\..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\allbinary_custom_android_version\microemulator\microemu-cldc\microemu-cldcCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\2_0_4\microemu-cldcCSharp\microemu-cldc-for-polyglotCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\replace_these_stub_projects\allbinary_src\J2MEJsInteropCompatibilityJavaLibraryCSharpM\J2MEJsInteropCompatibilityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\games\ScreenCaptureJavaLibraryCSharpM\ScreenCaptureJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\allbinary_src\hardware\BaseHardwareJavaLibraryCSharpM\BaseHardwareJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

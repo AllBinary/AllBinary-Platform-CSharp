@@ -41,7 +41,7 @@ public class QuoteRequestEntity : AbSqlBean, QuoteRequestEntityInterface
         this.setTableName(this.tableName);
     }
 
-    public virtual void insert(BasicArrayList values)
+    public override void insert(BasicArrayList values)
     {
         try {
             base.insert(values);
@@ -74,7 +74,7 @@ public class QuoteRequestEntity : AbSqlBean, QuoteRequestEntityInterface
         return base.getColumnWhere(QuoteRequestData.getInstance().ID, UserData.USERNAME, userName);
     }
 
-    public virtual void deleteWhere(string key, string value)
+    public override void deleteWhere(string key, string value)
     {
         try {
             base.deleteWhere(key, value);
@@ -121,7 +121,7 @@ public class QuoteRequestEntity : AbSqlBean, QuoteRequestEntityInterface
         return base.createTable(this.createTableStatement());
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         string result = new string((base.dropTable()).ToCharArray());
         return result;

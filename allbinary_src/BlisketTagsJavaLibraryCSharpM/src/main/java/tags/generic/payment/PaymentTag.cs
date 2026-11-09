@@ -31,7 +31,7 @@ public class PaymentTag : StoreValidationTransformTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             this.setName("Basic Payment View");

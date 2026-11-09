@@ -72,7 +72,7 @@ public class NoCacheWaypoint : WaypointBase, BuildingEventListenerInterface
     }
 
     // throws Exception
-    protected virtual GeographicMapCellPosition getEndGeographicMapCellPosition(GeographicMapCellPosition startGeographicMapCellPosition)
+    public virtual GeographicMapCellPosition getEndGeographicMapCellPosition(GeographicMapCellPosition startGeographicMapCellPosition)
     {
         BasicArrayList endList = this.ownerLayer.getEndGeographicMapCellPositionList();
         GeographicMapCellPosition endGeographicMapCellPosition = ((GeographicMapCellPosition) BasicArrayListUtil.getInstance().getRandom(endList));
@@ -124,7 +124,7 @@ public class NoCacheWaypoint : WaypointBase, BuildingEventListenerInterface
     }
 
     // throws Exception
-    public override void onBuildingEvent(RTSLayerEvent @event)
+    public virtual void onBuildingEvent(RTSLayerEvent @event)
     {
     }
 

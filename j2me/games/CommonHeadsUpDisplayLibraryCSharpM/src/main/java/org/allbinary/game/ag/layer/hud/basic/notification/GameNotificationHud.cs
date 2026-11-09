@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicHud = org.allbinary.game.graphics.hud.BasicHud;
 using BasicHudFactory = org.allbinary.game.graphics.hud.BasicHudFactory;
 using GameNotificationEvent = org.allbinary.game.layer.hud.@event.GameNotificationEvent;
@@ -45,7 +45,7 @@ public class GameNotificationHud : BasicHud, GameNotificationListenerInterface
     private readonly string METHOD_NAME = "onGameNotificationEvent";
     private GameNotificationEvent lastGameNotificationEvent = GameNotification.NULL_GAME_NOTIFICATION_EVENT;
     // throws Exception
-    public override void onGameNotificationEvent(GameNotificationEvent gameNotificationEvent)
+    public virtual void onGameNotificationEvent(GameNotificationEvent gameNotificationEvent)
     {
         if (this.lastGameNotificationEvent != gameNotificationEvent) {
             this.lastGameNotificationEvent = gameNotificationEvent;
@@ -54,7 +54,7 @@ public class GameNotificationHud : BasicHud, GameNotificationListenerInterface
         this.add(gameNotificationEvent.getString(), gameNotificationEvent.getSeconds(), gameNotificationEvent.getBasicColorP(), gameNotificationEvent.getPermanent());
     }
 
-    protected virtual void add(string @string, int? seconds, BasicColor basicColor, bool? permanent)
+    public virtual void add(string @string, int? seconds, BasicColor basicColor, bool? permanent)
     {
     }
 

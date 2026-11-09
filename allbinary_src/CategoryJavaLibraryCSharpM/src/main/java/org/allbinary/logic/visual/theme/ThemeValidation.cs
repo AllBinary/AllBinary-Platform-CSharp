@@ -175,7 +175,7 @@ public class ThemeValidation : ThemeInterface, ValidationInterface, DomNodeInter
             if (!StringValidationUtil.getInstance().isValidRequired(this.themeName, AbSqlData.MINSTRING, AbSqlData.MAXSTRING)) {
                 isValid = false;
             }
-            if (!this.getCssStyleValidation().isValid()) {
+            if (!((bool) (this.getCssStyleValidation().isValid()))) {
                 isValid = false;
             }
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {

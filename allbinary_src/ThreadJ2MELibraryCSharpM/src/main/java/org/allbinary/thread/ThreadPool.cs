@@ -27,7 +27,7 @@ namespace org.allbinary.thread;
 
 public class ThreadPool
 {
-    private static readonly string ROOT_NAME = "-PooledThread-";
+    private const string ROOT_NAME = "-PooledThread-";
     public static readonly int NORMAL_PRIORITY = global::org.allbinary.thread.NullThread.NORM_PRIORITY;
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
@@ -78,8 +78,8 @@ public class ThreadPool
                 int size = this.taskQueue.size();
                 PriorityRunnable runnable = null;
                 PriorityRunnable lowerPriorityRunnable = this.threadObjectUtil.NULL_PRIORITY_RUNNABLE;
-                for (int index = 0; index < size; index++) {
-                    runnable = ((PriorityRunnable) this.taskQueue.get(index));
+                for (int index_1 = 0; index_1 < size; index_1++) {
+                    runnable = ((PriorityRunnable) this.taskQueue.get(index_1));
                     if (runnable.getPriority() > task.getPriority()) {
                         lowerPriorityRunnable = runnable;
                         break;

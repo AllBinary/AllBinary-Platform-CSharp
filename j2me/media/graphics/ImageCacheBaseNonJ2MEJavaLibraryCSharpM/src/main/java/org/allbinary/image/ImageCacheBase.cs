@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using InputStream = java.io.InputStream;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonLabels = org.allbinary.@string.CommonLabels;
@@ -48,11 +48,11 @@ public class ImageCacheBase
         this.heights = new int[this.SIZE];
         this.listOfList = new BasicArrayList[this.SIZE];
         this.availableListOfList = new BasicArrayList[this.SIZE];
-        for (int index = this.listOfList.Length - 1; index >= 0; index--) {
-            this.listOfList[index] = new BasicArrayListD();
+        for (int index_0 = this.listOfList.Length - 1; index_0 >= 0; index_0--) {
+            this.listOfList[index_0] = new BasicArrayListD();
         }
-        for (int index = this.availableListOfList.Length - 1; index >= 0; index--) {
-            this.availableListOfList[index] = new BasicArrayListD();
+        for (int index_1 = this.availableListOfList.Length - 1; index_1 >= 0; index_1--) {
+            this.availableListOfList[index_1] = new BasicArrayListD();
         }
     }
 

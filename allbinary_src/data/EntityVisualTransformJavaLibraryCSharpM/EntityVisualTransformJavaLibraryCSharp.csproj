@@ -93,8 +93,7 @@
     <ProjectReference Include="..\..\ThreadLibraryCSharpM\ThreadLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\j2me\media\sound\SoundJ2MELibraryCSharpM\SoundJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\j2me\lib\BasicMathLibraryCSharpM\BasicMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/math/PositionStrings is also in a nearer dependency -->
-    <ProjectReference Include="..\..\..\j2me\lib\TrigBaseLibraryCSharpM\TrigBaseLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="TrigBaseLibraryCSharp" />
+    <ProjectReference Include="..\..\..\j2me\lib\TrigBaseLibraryCSharpM\TrigBaseLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\j2me\statistics\ApplicationStatisticsJavaLibraryCSharpM\ApplicationStatisticsJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\j2me\J2MEColorJavaLibraryCSharpM\J2MEColorJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\j2me\EventJ2MELibraryCSharpM\EventJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

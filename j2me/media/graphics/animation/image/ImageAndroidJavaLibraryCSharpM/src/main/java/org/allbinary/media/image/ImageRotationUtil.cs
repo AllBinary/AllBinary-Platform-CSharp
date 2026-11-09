@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using Anchor = org.allbinary.graphics.Anchor;
 using Bitmap = android.graphics.Bitmap;
 using Canvas = android.graphics.Canvas;

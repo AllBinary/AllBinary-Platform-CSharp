@@ -14,17 +14,19 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using GL = javax.microedition.khronos.opengles.GL;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Rectangle = org.allbinary.graphics.Rectangle;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
 using BasicColorSetUtil = org.allbinary.graphics.color.BasicColorSetUtil;
 using NullPaintable = org.allbinary.graphics.paint.NullPaintable;
 using Paintable = org.allbinary.graphics.paint.Paintable;
-using OpenGLSurfaceChangedInterface = org.allbinary.image.opengles.OpenGLSurfaceChangedInterface;
+//using OpenGLSurfaceChangedInterface = org.allbinary.image.opengles.OpenGLSurfaceChangedInterface;
 using AllBinaryLayer = org.allbinary.layer.AllBinaryLayer;
 using AllBinaryLayerManager = org.allbinary.layer.AllBinaryLayerManager;
 using ForcedLogUtil = org.allbinary.logic.communication.log.ForcedLogUtil;
@@ -39,7 +41,7 @@ using ViewPositionEventListenerInterface = org.allbinary.view.@event.ViewPositio
 
 namespace org.allbinary.game.layer;
 
-public class AllBinaryGameLayer : AllBinaryLayer, ViewPositionEventListenerInterface, OpenGLSurfaceChangedInterface
+public class AllBinaryGameLayer : AllBinaryLayer, ViewPositionEventListenerInterface, OpenGLNoneOtherJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLSurfaceChangedInterface
 {
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     public readonly BasicColorSetUtil basicSetColorUtil = BasicColorSetUtil.getInstance();
@@ -62,7 +64,7 @@ public class AllBinaryGameLayer : AllBinaryLayer, ViewPositionEventListenerInter
     }
 
     // throws Exception
-    public override void set(GL gl)
+    public virtual void set(GL gl)
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
@@ -88,7 +90,7 @@ public class AllBinaryGameLayer : AllBinaryLayer, ViewPositionEventListenerInter
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }

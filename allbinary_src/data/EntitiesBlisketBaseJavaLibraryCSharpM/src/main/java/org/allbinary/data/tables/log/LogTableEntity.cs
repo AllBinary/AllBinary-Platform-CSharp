@@ -21,6 +21,7 @@ using LogDbInitInfo = org.allbinary.business.init.db.LogDbInitInfo;
 using AbeHttpRequestInfoData = org.allbinary.logic.communication.http.request.AbeHttpRequestInfoData;
 using AbSqlBean = org.allbinary.logic.communication.sql.AbSqlBean;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
+using BasicArrayList = org.allbinary.util.BasicArrayList;
 
 namespace org.allbinary.data.tables.log;
 
@@ -44,6 +45,21 @@ public class LogTableEntity : AbSqlBean, LogTableEntityInterface
     public virtual string createTable()
     {
         return base.createTable(this.createTableStatement());
+    }
+
+    public override void deleteWhere(string key, string value)
+    {
+        base.deleteWhere(key, value);
+    }
+
+    public override void insert(BasicArrayList values)
+    {
+        base.insert(values);
+    }
+
+    public override string dropTable()
+    {
+        return base.dropTable();
     }
 
 }

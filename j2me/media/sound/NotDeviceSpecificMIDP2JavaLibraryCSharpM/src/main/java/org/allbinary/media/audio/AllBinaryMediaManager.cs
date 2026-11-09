@@ -17,10 +17,10 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using InputStream = java.io.InputStream;
-//using Manager = javax.microedition.media.Manager;
-//using MediaException = javax.microedition.media.MediaException;
-//using Player = javax.microedition.media.Player;
+using InputStream = java.io.InputStream;
+using Manager = javax.microedition.media.Manager;
+using MediaException = javax.microedition.media.MediaException;
+using Player = javax.microedition.media.Player;
 using TsUtil = org.allbinary.TsUtil;
 using AudioContentTypeDataFactory = org.allbinary.audio.AudioContentTypeDataFactory;
 using ResourceUtil = org.allbinary.data.resource.ResourceUtil;
@@ -35,7 +35,7 @@ namespace org.allbinary.media.audio;
 //NotDeviceSpecificMIDP2JavaLibrary
 public class AllBinaryMediaManager
 {
-    private static readonly string THIS = "AllBinaryMediaManagerNoMIPD2";
+    private const string THIS = "AllBinaryMediaManagerNoMIPD2";
     private AllBinaryMediaManager()
     {
     }

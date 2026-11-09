@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 //using IOException = java.io.IOException;
 //using MalformedURLException = java.net.MalformedURLException;
-//using URL = java.net.URL;
+using URL = java.net.URL;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using CryptInterface = org.allbinary.init.crypt.jcehelper.CryptInterface;

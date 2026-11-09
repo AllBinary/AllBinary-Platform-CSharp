@@ -45,7 +45,7 @@ public class InventoryRequestHelper : ModifyTable
     }
 
     // throws Exception
-    public virtual string insert()
+    public override string insert()
     {
         try {
             TableMappingInterface dataMappingInterface = ((TableMappingInterface) this.getItemInterface());
@@ -65,7 +65,7 @@ public class InventoryRequestHelper : ModifyTable
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             TableMappingInterface dataMappingInterface = ((TableMappingInterface) this.getItemInterface());
@@ -91,7 +91,7 @@ public class InventoryRequestHelper : ModifyTable
         }
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             this.delete();

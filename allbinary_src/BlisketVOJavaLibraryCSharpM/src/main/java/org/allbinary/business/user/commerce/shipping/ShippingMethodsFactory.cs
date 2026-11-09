@@ -57,7 +57,7 @@ public class ShippingMethodsFactory
         stringBuffer.append(sep);
         SHIPPINGMETHODSFILEPATHSTRING = stringBuffer.ToString();
     }
-    private static readonly string SHIPPINGMETHODSFILENAME = "shippingMethods.xml";
+    private const string SHIPPINGMETHODSFILENAME = "shippingMethods.xml";
     private Document document;
     private BasicArrayList shippingVector;
     public ShippingMethodsFactory(AbeClientInformationInterface abeClientInformation, StoreFrontInterface storeFrontInterface)

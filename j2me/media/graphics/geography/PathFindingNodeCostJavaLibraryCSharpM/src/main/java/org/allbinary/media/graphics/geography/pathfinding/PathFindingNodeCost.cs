@@ -23,7 +23,7 @@ using CommonLabels = org.allbinary.@string.CommonLabels;
 
 namespace org.allbinary.media.graphics.geography.pathfinding;
 
-public class PathFindingNodeCost : PathFindingNode, Comparable<PathFindingNodeCost>
+public class PathFindingNodeCost : PathFindingNode, global::java.lang.Comparable<PathFindingNodeCost>
 {
     public static readonly PathFindingNodeCost[][] NULL_PATH_FINDING_NODE_COST_ARRAY_ARRAY = System.Linq.Enumerable.Range(0, 0).Select(_ => new PathFindingNodeCost[0]).ToArray();
     private readonly CommonSeps commonSeps = CommonSeps.getInstance();
@@ -50,7 +50,7 @@ public class PathFindingNodeCost : PathFindingNode, Comparable<PathFindingNodeCo
         this.pathFindingNodeCostInfoP = pathFindingNodeCostInfo;
     }
 
-    public override int compareTo(PathFindingNodeCost pathFindingNodeCost)
+    public virtual int compareTo(PathFindingNodeCost pathFindingNodeCost)
     {
         return this.pathFindingNodeCostInfoP.compareTo(pathFindingNodeCost.pathFindingNodeCostInfoP);
     }

@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using SpecialAnimationInterface = org.allbinary.animation.special.SpecialAnimationInterface;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
@@ -41,7 +41,7 @@ public class ImageArraySpecialAnimation : ImageArrayAnimation, SpecialAnimationI
         return this.loopCount;
     }
 
-    public override void setLastFrame()
+    public virtual void setLastFrame()
     {
         this.circularIndexUtil.setIndex(this.circularIndexUtil.getSize() - 1);
     }
@@ -65,7 +65,7 @@ public class ImageArraySpecialAnimation : ImageArrayAnimation, SpecialAnimationI
     }
 
     private readonly int loopCountTotal = 1;
-    public override bool isComplete()
+    public virtual bool isComplete()
     {
         if (this.loopCount < this.loopCountTotal || this.getFrame() != 0) {
             return false;

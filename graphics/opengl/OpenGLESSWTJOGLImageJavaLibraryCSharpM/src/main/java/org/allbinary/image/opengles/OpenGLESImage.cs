@@ -14,14 +14,15 @@
  */
 // Generated Code Do Not Modify
 
+extern alias OpenGLESBaseJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
-//using OpenGLESPostLoadPlatformImage = javax.microedition.lcdui.OpenGLESPostLoadPlatformImage;
-//using PostLoadImageProcessor = javax.microedition.lcdui.PostLoadImageProcessor;
+using GL = javax.microedition.khronos.opengles.GL;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
+using OpenGLESPostLoadPlatformImage = javax.microedition.lcdui.OpenGLESPostLoadPlatformImage;
+using PostLoadImageProcessor = javax.microedition.lcdui.PostLoadImageProcessor;
 using GraphicsStrings = org.allbinary.graphics.GraphicsStrings;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
@@ -35,7 +36,7 @@ using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 namespace org.allbinary.image.opengles;
 
 //OpenGLESSWTJOGLImageJavaLibrary
-public class OpenGLESImage : Image, OpenGLSurfaceChangedInterface
+public class OpenGLESImage : Image, OpenGLESBaseJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLSurfaceChangedInterface
 {
     public static readonly OpenGLESImage NULL_OPENGL_IMAGE = new OpenGLESImage(NullImage.NULL_IMAGE, PlatformBitmapBaseFactory.NULL_PLATFORM_BITMAP_BASE_FACTORY, PlatformTextureBaseFactory.NULL_PLATFORM_TEXTURE_BASE_FACTORY);
     public readonly LogUtil logUtil = LogUtil.getInstance();
@@ -55,12 +56,12 @@ public class OpenGLESImage : Image, OpenGLSurfaceChangedInterface
         this.platformImage = OpenGLESPostLoadPlatformImage.getInstance();
     }
 
-    public virtual int getHeight()
+    public override int getHeight()
     {
         return ((int) (this.openGLBitmap.getHeight() * this.openGLESImageProperties.scaleY2));
     }
 
-    public virtual int getWidth()
+    public override int getWidth()
     {
         return ((int) (this.openGLBitmap.getWidth() * this.openGLESImageProperties.scaleX2));
     }
@@ -100,7 +101,7 @@ public class OpenGLESImage : Image, OpenGLSurfaceChangedInterface
     {
     }
 
-    public static readonly int TYPE = 4;
+    public const int TYPE = 4;
     public virtual int getType()
     {
         return OpenGLESImage.TYPE;

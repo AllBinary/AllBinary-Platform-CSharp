@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using File = java.io.File;
+using File = java.io.File;
 //using FileFilter = javax.swing.filechooser.FileFilter;
 
 namespace org.allbinary.media.image.filter;

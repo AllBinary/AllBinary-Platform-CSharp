@@ -64,7 +64,7 @@ public class HeadingValidation : Validation, DomNodeInterface
         this.logo = new LogoValidation(hashMap);
     }
 
-    public virtual bool? isValid()
+    public override bool? isValid()
     {
         try {
             bool? valid = true;
@@ -73,10 +73,10 @@ public class HeadingValidation : Validation, DomNodeInterface
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.IS_VALID);
             }
-            if (!this.title.isValid()) {
+            if (!((bool) (this.title.isValid()))) {
                 titleValid = false;
             }
-            if (!this.logo.isValid()) {
+            if (!((bool) (this.logo.isValid()))) {
                 logoValid = false;
             } else {
                 this.logo.processLogoFile();
@@ -96,17 +96,17 @@ public class HeadingValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual string validationInfo()
+    public override string validationInfo()
     {
         try {
             bool? valid = true;
             bool? titleValid = true;
             bool? logoValid = true;
             StringMaker stringBuffer = new StringMaker();
-            if (!this.title.isValid()) {
+            if (!((bool) (this.title.isValid()))) {
                 titleValid = false;
             }
-            if (!this.logo.isValid()) {
+            if (!((bool) (this.logo.isValid()))) {
                 logoValid = false;
             }
             if (!titleValid.Value && !logoValid.Value) {
@@ -124,12 +124,12 @@ public class HeadingValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual Document toValidationInfoDoc()
+    public override Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual Node toValidationInfoNode(Document document)
+    public override Node toValidationInfoNode(Document document)
     {
         return null;
     }

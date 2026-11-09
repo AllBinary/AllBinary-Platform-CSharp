@@ -52,7 +52,7 @@ public class SelectExistingValidationView : HttpStoreComponentView, ValidationCo
         throw new Exception("validationInfo");
     }
 
-    public virtual Document toXmlDoc()
+    public override Document toXmlDoc()
     {
         return null;
     }
@@ -63,9 +63,15 @@ public class SelectExistingValidationView : HttpStoreComponentView, ValidationCo
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         return new SelectExistingView(this.getTransformInfoInterface()).view();
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

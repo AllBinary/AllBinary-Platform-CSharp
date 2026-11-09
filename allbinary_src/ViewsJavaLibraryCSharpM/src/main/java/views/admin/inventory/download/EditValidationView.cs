@@ -112,5 +112,11 @@ public class EditValidationView : DownloadableInventoryItemView, ValidationCompo
         return stringBuffer.ToString();
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

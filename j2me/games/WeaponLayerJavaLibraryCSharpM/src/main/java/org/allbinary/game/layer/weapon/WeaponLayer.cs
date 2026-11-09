@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using GL = javax.microedition.khronos.opengles.GL;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Animation = org.allbinary.animation.Animation;
 using IndexedAnimation = org.allbinary.animation.IndexedAnimation;
 using NullAnimationFactory = org.allbinary.animation.NullAnimationFactory;

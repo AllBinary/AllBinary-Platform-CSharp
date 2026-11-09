@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 //using RenderedImage = java.awt.image.RenderedImage;
-//using File = java.io.File;
+using File = java.io.File;
 //using ImageIO = javax.imageio.ImageIO;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using ImageProcessorInput = org.allbinary.media.image.ImageProcessorInput;

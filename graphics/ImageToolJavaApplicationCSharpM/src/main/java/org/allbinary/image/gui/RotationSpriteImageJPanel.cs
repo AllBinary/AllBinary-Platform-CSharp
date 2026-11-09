@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 //using RenderedImage = java.awt.image.RenderedImage;
-//using File = java.io.File;
+using File = java.io.File;
 //using ImageIO = javax.imageio.ImageIO;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
@@ -59,8 +59,8 @@ public class RotationSpriteImageJPanel : javax.swing.JPanel, ImageProcessorInput
                     ImageProcessorInput imageProcessorInput = this.getImageProcessorInput();
                     BufferedImage[] bufferedImageArray = imageProcessorInput.getBufferedImageArray();
                     for (int index = 0; index < bufferedImageArray.Length; index++) {
-                        int? totalFrames = (((string) this.totalFramesJComboBox.getSelectedItem())).ToString();
-                        int? totalAngle = (((string) this.totalAngleJComboBox.getSelectedItem())).ToString();
+                        int? totalFrames = int.Parse((((string) this.totalFramesJComboBox.getSelectedItem())).ToString());
+                        int? totalAngle = int.Parse((((string) this.totalAngleJComboBox.getSelectedItem())).ToString());
                         generatedBufferedImageArray = ImageJ2SERotationUtil.getInstance().getRotatedImages(bufferedImageArray[index], totalFrames, totalAngle);
                         this.result = ImageJ2SERotationUtil.getInstance().createSpriteImage(generatedBufferedImageArray);
                         this.getParent().repaint();

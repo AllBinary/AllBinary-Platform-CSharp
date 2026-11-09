@@ -266,7 +266,7 @@ public class NameSpaceRequestParams : RequestParams
     }
 
     // throws Exception
-    public virtual HashMap<object, object> toHashMap()
+    public override HashMap<object, object> toHashMap()
     {
         Document document = DomDocumentHelper.create();
         HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();

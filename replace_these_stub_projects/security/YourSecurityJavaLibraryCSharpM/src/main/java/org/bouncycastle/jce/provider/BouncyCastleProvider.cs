@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using Provider = java.security.Provider;
+using Provider = java.security.Provider;
 
 namespace org.bouncycastle.jce.provider;
 

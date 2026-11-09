@@ -57,7 +57,7 @@ public class UserEntity : AbSqlBean, UserEntityInterface
         this.setTableName(this.tableName);
     }
 
-    public virtual void insert(BasicArrayList values)
+    public override void insert(BasicArrayList values)
     {
         try {
             base.insert(values);
@@ -148,7 +148,7 @@ public class UserEntity : AbSqlBean, UserEntityInterface
         }
     }
 
-    public virtual void deleteWhere(string key, string value)
+    public override void deleteWhere(string key, string value)
     {
         try {
             base.deleteWhere(key, value);
@@ -169,7 +169,7 @@ public class UserEntity : AbSqlBean, UserEntityInterface
             string result = base.getField(UserData.USERNAME, userName, UserData.PASSWORD);
             string encryption = base.getField(UserData.USERNAME, userName, EntryData.getInstance().ENCRYPTION);
             if (encryption != null && string.CompareOrdinal(encryption, this.stringUtil.EMPTY_STRING) != 0) {
-                isUserNameAndPasswordCorrect = string.CompareOrdinal(result, new SuperCrypt(((int) encryption)).encrypt(password));
+                isUserNameAndPasswordCorrect = string.CompareOrdinal(result, new SuperCrypt(global::java.lang.JavaNumber.intValue(int.Parse(encryption))).encrypt(password));
             } else {
                 if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     this.logUtil.putF("Command Success but login failed for user: " + userName + " because user did not exist", this, "login");
@@ -194,7 +194,7 @@ public class UserEntity : AbSqlBean, UserEntityInterface
                     stringBuffer.append(this.COMMAND_SUCCESS_BUT_LOGIN_FAILED);
                     stringBuffer.append(userName);
                     stringBuffer.append(this.INVALID_PASSWORD_LABEL);
-                    stringBuffer.append(new SuperCrypt(((int) encryption)).encrypt(password));
+                    stringBuffer.append(new SuperCrypt(global::java.lang.JavaNumber.intValue(int.Parse(encryption))).encrypt(password));
                     stringBuffer.append(this.NOT_EQUAL);
                     stringBuffer.append(result);
                     stringBuffer.append(this.END_QUOTES);
@@ -231,6 +231,11 @@ public class UserEntity : AbSqlBean, UserEntityInterface
     public virtual string createTable()
     {
         return base.createTable(this.createTableStatement());
+    }
+
+    public override string dropTable()
+    {
+        return base.dropTable();
     }
 
 }

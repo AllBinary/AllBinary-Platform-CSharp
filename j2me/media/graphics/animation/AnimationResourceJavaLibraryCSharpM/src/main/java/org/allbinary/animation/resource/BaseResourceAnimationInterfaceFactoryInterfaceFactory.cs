@@ -103,7 +103,13 @@ public class BaseResourceAnimationInterfaceFactoryInterfaceFactory : FeatureReso
     // throws Exception
     public virtual Rectangle[][] getRectangleArrayOfArrays(string resource)
     {
-        return ((Rectangle[][]) this.rectangleArrayOfArraysHashtable.get(resource));
+        object valueCanBeNull = this.rectangleArrayOfArraysHashtable.get(resource);
+        if (valueCanBeNull != null) {
+            Rectangle[][] rectangleArrayOfArrays = ((Rectangle[][]) valueCanBeNull);
+            return rectangleArrayOfArrays;
+        } else {
+            return RectangleFactory.ARRAY_OF_ARRAYS;
+        }
     }
 
     // throws Exception

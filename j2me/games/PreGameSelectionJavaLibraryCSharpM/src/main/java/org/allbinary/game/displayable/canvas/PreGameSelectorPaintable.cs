@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
 using CanvasDrawLineString = org.allbinary.graphics.draw.CanvasDrawLineString;
@@ -45,7 +45,7 @@ public class PreGameSelectorPaintable : InitUpdatePaintable
 
     public override void paint(Graphics graphics)
     {
-        graphics.setColor(((int) BasicColorFactory.getInstance().WHITE));
+        graphics.setColor(global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().WHITE));
         this.canvasDrawLineString.paint(graphics, title, 0);
         this.getPreGameSelectionForm().paint(graphics);
     }

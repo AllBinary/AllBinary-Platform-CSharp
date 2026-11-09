@@ -14,11 +14,13 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AllBinaryGameLayerManager = org.allbinary.game.layer.AllBinaryGameLayerManager;
 using ColorFillBasePaintable = org.allbinary.game.paint.ColorFillBasePaintable;
 using ColorFillPaintableFactory = org.allbinary.game.paint.ColorFillPaintableFactory;
@@ -32,7 +34,7 @@ public class GameInputMappingInstructionsCanvas : GameCommandCanvas
 {
     public static readonly Command DISPLAY = new Command("Help", StringUtil.getInstance().EMPTY_STRING, Command.SCREEN, 1);
     public static readonly Command CLOSE = new Command("Close", StringUtil.getInstance().EMPTY_STRING, Command.SCREEN, 1);
-    public static readonly string NAME = "GameInputMappingInstructionsCanvas";
+    public const string NAME = "GameInputMappingInstructionsCanvas";
     private readonly DrawStringUtil drawStringUtil = DrawStringUtil.getInstance();
     public readonly string TITLE = "Input Instructions";
     private readonly string[] instructions = new string[] { "Add Input Mapping:", "1. Select the desired action by generating a currently defined input for a given action.", "(Example: Press the '1' key to select the Fire action)", "2. Make the newly desired input for the selected action.", "(Example: Press 'f' to add it to the selected action)", "Note: If the input is already mapped to another action then it will not be added. You", "will need to deleted from the other action before adding it to another.", "Warning: Not all keys map for a given platform and show as Unknown.", StringUtil.getInstance().EMPTY_STRING, "Remove Input Mapping:", "1. Select the desired action by generating a currently defined input for a given action.", "(Example: Press the key '1' to select the Fire action)", "2. Select a mapped input for the selected action.", "(Example: Press the key '1' to select the '1' key input for the selected Fire action)", "3. Press the Delete Key." };

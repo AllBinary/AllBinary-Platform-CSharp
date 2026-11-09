@@ -17,11 +17,11 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using NullCommandListener = javax.microedition.lcdui.NullCommandListener;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Graphics = javax.microedition.lcdui.Graphics;
+using NullCommandListener = javax.microedition.lcdui.NullCommandListener;
 using MyCommandInterface = org.allbinary.graphics.displayable.command.MyCommandInterface;
 using MyCommandsFactory = org.allbinary.graphics.displayable.command.MyCommandsFactory;
 using TouchJ2ME = org.allbinary.input.TouchJ2ME;
@@ -56,13 +56,23 @@ public class MyCanvas : Canvas, DisplayableInterface, MyCommandInterface
         this.commandStack = StdUtil.getInstance().createStack();
     }
 
+    public override int getWidth()
+    {
+        return base.getWidth();
+    }
+
+    public override int getHeight()
+    {
+        return base.getHeight();
+    }
+
     public override void setFullScreenMode(bool mode)
     {
         base.setFullScreenMode(mode);
         this.displayInfo.update(this, this.canvasStrings.SET_FULL_SCREEN_MODE);
     }
 
-    protected override void sizeChanged(int w, int h)
+    public override void sizeChanged(int w, int h)
     {
         this.displayInfo.update(this, this.canvasStrings.SIZE_CHANGED);
     }
@@ -95,7 +105,7 @@ public class MyCanvas : Canvas, DisplayableInterface, MyCommandInterface
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public override void removeAllCommands()
+    public virtual void removeAllCommands()
     {
         int size = this.commandStack.size();
         for (int index = 0; index < size; index++) {
@@ -144,12 +154,12 @@ public class MyCanvas : Canvas, DisplayableInterface, MyCommandInterface
     }
 
     // throws Exception
-    protected virtual void process()
+    public virtual void process()
     {
         this.displayInfo.process();
     }
 
-    protected override void paint(Graphics graphics)
+    public override void paint(Graphics graphics)
     {
     }
 
@@ -167,7 +177,7 @@ public class MyCanvas : Canvas, DisplayableInterface, MyCommandInterface
         this.logUtil.putF("Destroyed MyCanvas", this, "destroy");
     }
 
-    protected virtual void setPaused(bool isPaused)
+    public virtual void setPaused(bool isPaused)
     {
         this.paused = isPaused;
     }
@@ -185,17 +195,17 @@ public class MyCanvas : Canvas, DisplayableInterface, MyCommandInterface
     }
 
     private readonly TouchJ2ME touchME = new TouchJ2ME();
-    protected override void pointerDragged(int x, int y)
+    public override void pointerDragged(int x, int y)
     {
         this.touchME.pointerDragged(x, y);
     }
 
-    protected override void pointerPressed(int x, int y)
+    public override void pointerPressed(int x, int y)
     {
         this.touchME.pointerPressed(x, y);
     }
 
-    protected override void pointerReleased(int x, int y)
+    public override void pointerReleased(int x, int y)
     {
         this.touchME.pointerReleased(x, y);
     }

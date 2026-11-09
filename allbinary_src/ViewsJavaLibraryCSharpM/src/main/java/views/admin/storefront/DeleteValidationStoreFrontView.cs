@@ -83,5 +83,11 @@ public class DeleteValidationStoreFrontView : StoreFrontComponent, ValidationCom
         return null;
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

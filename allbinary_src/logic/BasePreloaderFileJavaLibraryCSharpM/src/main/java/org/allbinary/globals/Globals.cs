@@ -38,7 +38,7 @@ public class Globals
     {
     }
 
-    public virtual void init(ClassLoader classLoader, string pathString)
+    public virtual void init(global::java.lang.ClassLoader classLoader, string pathString)
     {
         CommonStrings commonStrings = CommonStrings.getInstance();
         AppUrlGlobals appUrlGlobals = new AppUrlGlobals();

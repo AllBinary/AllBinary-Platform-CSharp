@@ -23,7 +23,7 @@ using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 
 namespace org.allbinary.media.image.comparison.motion;
 
-public class MotionRectangle : Cloneable
+public class MotionRectangle : global::java.lang.Cloneable
 {
     private Rectangle rectangle = null;
     private BasicArrayList pixelDeltaVector = null;

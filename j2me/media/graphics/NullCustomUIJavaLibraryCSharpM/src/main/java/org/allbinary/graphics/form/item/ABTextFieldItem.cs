@@ -2,8 +2,8 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Font = javax.microedition.lcdui.Font;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Font = javax.microedition.lcdui.Font;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using Visitor = org.allbinary.logic.util.visitor.Visitor;

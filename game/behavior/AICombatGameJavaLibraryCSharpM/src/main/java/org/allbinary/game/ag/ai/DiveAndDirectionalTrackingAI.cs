@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using ArtificialIntelligenceInterface = org.allbinary.ai.ArtificialIntelligenceInterface;
 using Direction = org.allbinary.direction.Direction;
 using DirectionFactory = org.allbinary.direction.DirectionFactory;
@@ -270,17 +270,17 @@ public class DiveAndDirectionalTrackingAI : BasicAI, TrackingEventListenerInterf
         }
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }
 
-    public override void onMovement(TrackingEvent trackingEvent)
+    public virtual void onMovement(TrackingEvent trackingEvent)
     {
         this.list.add(trackingEvent);
     }
 
-    public override void onDestroyed(DestroyedEvent destroyedEvent)
+    public virtual void onDestroyed(DestroyedEvent destroyedEvent)
     {
         if (this.getOwnerLayerInterface() == destroyedEvent.getLayerInterface()) {
             TrackingEventHandler.getInstance().removeListener(this);

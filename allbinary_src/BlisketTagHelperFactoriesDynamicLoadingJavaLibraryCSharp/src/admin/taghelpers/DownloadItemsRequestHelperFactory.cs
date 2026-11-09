@@ -24,8 +24,8 @@ namespace admin.taghelpers;
 
 public class DownloadItemsRequestHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "admin.taghelpers.DownloadItemsRequestHelper";
-    private static readonly string FACTORYNAME = "DownloadItemsRequestHelperFactory";
+    private const string CLASSNAME = "admin.taghelpers.DownloadItemsRequestHelper";
+    private const string FACTORYNAME = "DownloadItemsRequestHelperFactory";
     public DownloadItemsRequestHelperFactory()
     {
     }

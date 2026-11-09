@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using ImageCache = org.allbinary.image.ImageCache;
 
 namespace org.allbinary.media.image;

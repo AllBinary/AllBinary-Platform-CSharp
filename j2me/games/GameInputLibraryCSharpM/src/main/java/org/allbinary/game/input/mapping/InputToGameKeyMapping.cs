@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using GameKey = org.allbinary.game.input.GameKey;
 using GameKeyFactory = org.allbinary.game.input.GameKeyFactory;
 using Input = org.allbinary.game.input.Input;
@@ -166,13 +166,13 @@ public class InputToGameKeyMapping : InputMapping
                     smallestKey = -256;
                 }
                 negativePlatformToGameKeyMapping = new GameKey[-smallestKey];
-                for (int index = negativePlatformToGameKeyMapping.Length; --index >= 0; ) {
-                    negativePlatformToGameKeyMapping[index] = this.gameKeyFactory.NONE;
+                for (int index_5 = negativePlatformToGameKeyMapping.Length; --index_5 >= 0; ) {
+                    negativePlatformToGameKeyMapping[index_5] = this.gameKeyFactory.NONE;
                 }
                 this.negativePlatformToGameKeyMapping = negativePlatformToGameKeyMapping;
             }
-            for (int index = this.mappedGameKeys.Length; --index >= 0; ) {
-                this.initGameKey(canvas, this.mappedGameKeys[index]);
+            for (int index_6 = this.mappedGameKeys.Length; --index_6 >= 0; ) {
+                this.initGameKey(canvas, this.mappedGameKeys[index_6]);
             }
         } catch (Exception t) {
             this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.INIT, t);

@@ -50,7 +50,7 @@ public class LayerManagerEvent : AllBinaryEventObject
         stringBuffer.append("LayerInterface: ");
         stringBuffer.append(this.getLayerInterface().ToString());
         stringBuffer.append("\nCRUD: ");
-        stringBuffer.append(this.crud.ToString());
+        stringBuffer.append(this.crud);
         return stringBuffer.ToString();
     }
 

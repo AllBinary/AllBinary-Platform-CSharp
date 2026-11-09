@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using CostLayerInterfaceFactoryInterface = org.allbinary.game.layer.CostLayerInterfaceFactoryInterface;
 using TechEventListenerInterface = org.allbinary.game.rts.technology.@event.TechEventListenerInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
@@ -55,7 +55,7 @@ public class RTSLayerCostAnimation : Animation, TechEventListenerInterface, Upda
         this.update();
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.fontHeight = font.getHeight();
@@ -63,12 +63,12 @@ public class RTSLayerCostAnimation : Animation, TechEventListenerInterface, Upda
         this.myFontProcessor = MyFontProcessor.getInstance();
     }
 
-    public override void onEvent(AllBinaryEventObject @event)
+    public virtual void onEvent(AllBinaryEventObject @event)
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }
 
-    public override void onTechEvent(AllBinaryEventObject @event)
+    public virtual void onTechEvent(AllBinaryEventObject @event)
     {
         try {
             this.update();

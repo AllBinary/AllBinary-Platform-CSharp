@@ -118,8 +118,8 @@ public class AbSqlRow : AbSqlColumn
         try {
             object[] keyArray = updatedKeyValuePairs.keySet().toArray();
             int size = keyArray.Length;
-            for (int i = 0; i < size; i++) {
-                string columnName = keyArray[i].ToString();
+            for (int i_1 = 0; i_1 < size; i_1++) {
+                string columnName = keyArray[i_1].ToString();
                 stringBuffer.append(this.commonSeps.SPACE);
                 stringBuffer.append(columnName);
                 stringBuffer.append(this.EQUAL_QUOTE);
@@ -134,7 +134,7 @@ public class AbSqlRow : AbSqlColumn
                 }
                 stringBuffer.append(this.getValue(columnValue));
                 stringBuffer.append(this.sqlStrings.CLOSE_QUOTE);
-                if (i < size - 1) {
+                if (i_1 < size - 1) {
                     stringBuffer.append(this.commonSeps.COMMA);
                 }
             }
@@ -142,15 +142,15 @@ public class AbSqlRow : AbSqlColumn
             Set<object> set = whereKeyValuePairs.keySet();
             object[] keyArray2 = set.toArray();
             int size2 = keyArray2.Length;
-            for (int i = 0; i < size2; i++) {
-                string key = ((string) keyArray2[i]);
+            for (int i_2 = 0; i_2 < size2; i_2++) {
+                string key = ((string) keyArray2[i_2]);
                 string value = ((string) whereKeyValuePairs.get(key));
                 {
                     stringBuffer.append(key);
                     stringBuffer.append(this.sqlStrings.EQUAL_QUOTE);
                     stringBuffer.append(this.getValue(value));
                     stringBuffer.append(this.sqlStrings.CLOSE_QUOTE);
-                    if (i < size2 - 1) {
+                    if (i_2 < size2 - 1) {
                         stringBuffer.append(this.sqlStrings.AND);
                     }
                 }
@@ -268,14 +268,14 @@ public class AbSqlRow : AbSqlColumn
             Set<object> set = keysAndValues.keySet();
             object[] keyArray = set.toArray();
             int size = keyArray.Length;
-            for (int index = 0; index < size; index++) {
-                string key = ((string) keyArray[index]);
+            for (int index_5 = 0; index_5 < size; index_5++) {
+                string key = ((string) keyArray[index_5]);
                 string value = new string((((string) keysAndValues.get(key))).ToCharArray());
                 stringBuffer.append(key);
                 stringBuffer.append(this.sqlStrings.EQUAL_QUOTE);
                 stringBuffer.append(this.getValue(value));
                 stringBuffer.append(this.sqlStrings.CLOSE_QUOTE);
-                if (index < size - 1) {
+                if (index_5 < size - 1) {
                     stringBuffer.append(this.sqlStrings.AND);
                 }
             }
@@ -288,8 +288,8 @@ public class AbSqlRow : AbSqlColumn
             while (rset.next()) {
                 result = this.stdUtil.createHashMap();
                 int columnCount = resultSetMetaData.getColumnCount();
-                for (int index = 1; index <= columnCount; index++) {
-                    string columnName = resultSetMetaData.getColumnName(index);
+                for (int index_6 = 1; index_6 <= columnCount; index_6++) {
+                    string columnName = resultSetMetaData.getColumnName(index_6);
                     string field = rset.getString(columnName);
                     result.put(columnName, field);
                 }
@@ -326,14 +326,14 @@ public class AbSqlRow : AbSqlColumn
             Set<object> set = keysAndValues.keySet();
             object[] keyArray = set.toArray();
             int size = keyArray.Length;
-            for (int index = 0; index < size; index++) {
-                string key = ((string) keyArray[index]);
+            for (int index_7 = 0; index_7 < size; index_7++) {
+                string key = ((string) keyArray[index_7]);
                 string value = new string((((string) keysAndValues.get(key))).ToCharArray());
                 stringBuffer.append(key);
                 stringBuffer.append(this.sqlStrings.EQUAL_QUOTE);
                 stringBuffer.append(this.getValue(value));
                 stringBuffer.append(this.sqlStrings.CLOSE_QUOTE);
-                if (index < size - 1) {
+                if (index_7 < size - 1) {
                     stringBuffer.append(this.sqlStrings.AND);
                 }
             }
@@ -347,8 +347,8 @@ public class AbSqlRow : AbSqlColumn
             while (rset.next()) {
                 HashMap<object, object> result = this.stdUtil.createHashMap();
                 int columnCount = resultSetMetaData.getColumnCount();
-                for (int index = 1; index <= columnCount; index++) {
-                    string columnName = resultSetMetaData.getColumnName(index);
+                for (int index_8 = 1; index_8 <= columnCount; index_8++) {
+                    string columnName = resultSetMetaData.getColumnName(index_8);
                     string field = rset.getString(columnName);
                     result.put(columnName, field);
                 }
@@ -415,8 +415,8 @@ public class AbSqlRow : AbSqlColumn
             string value = null;
             object[] keyArray = set.toArray();
             int size = keyArray.Length;
-            for (int index = 0; index < size; index++) {
-                key = ((string) keyArray[index]);
+            for (int index_10 = 0; index_10 < size; index_10++) {
+                key = ((string) keyArray[index_10]);
                 value = ((string) whereKeyValuePairs.get(key));
                 stringBuffer.append(key);
                 stringBuffer.append(this.sqlStrings.EQUAL_QUOTE);
@@ -448,8 +448,8 @@ public class AbSqlRow : AbSqlColumn
                 result = this.stdUtil.createHashMap();
                 columnNames = new BasicArrayListD();
                 columnCount = resultSetMetaData.getColumnCount();
-                for (int index = 1; index <= columnCount; index++) {
-                    columnName = resultSetMetaData.getColumnName(index);
+                for (int index_11 = 1; index_11 <= columnCount; index_11++) {
+                    columnName = resultSetMetaData.getColumnName(index_11);
                     field = rset.getString(columnName);
                     result.put(columnName, field);
                 }

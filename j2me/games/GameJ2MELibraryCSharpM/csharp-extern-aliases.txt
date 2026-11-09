@@ -1,0 +1,3 @@
+org.allbinary.image.opengles.OpenGLSurfaceChangedInterface=OpenGLNoneOtherJavaLibraryCSharp
+org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory=GameLicensingNullJavaLibraryCSharp
+org.allbinary.view.EmulatorViewInterface=OpenGLNoneOtherJavaLibraryCSharp

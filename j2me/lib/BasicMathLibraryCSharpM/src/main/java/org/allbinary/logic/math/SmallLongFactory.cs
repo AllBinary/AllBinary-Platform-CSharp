@@ -36,11 +36,11 @@ public class SmallLongFactory
     public int lastNegativeMin = 0;
     public virtual void initWithRange(int value, int negativeValue)
     {
-        for (int index = value - 1; index >= this.lastMin; index--) {
-            this.INTEGER_ARRAY[index + this.NEGATIVE_MAX] = index;
+        for (int index_0 = value - 1; index_0 >= this.lastMin; index_0--) {
+            this.INTEGER_ARRAY[index_0 + this.NEGATIVE_MAX] = index_0;
         }
-        for (int index = negativeValue - 1; index >= this.lastNegativeMin; index--) {
-            this.INTEGER_ARRAY[index] = -index;
+        for (int index_1 = negativeValue - 1; index_1 >= this.lastNegativeMin; index_1--) {
+            this.INTEGER_ARRAY[index_1] = -index_1;
         }
         if (this.lastMin < value) {
             this.lastMin = value;
@@ -55,11 +55,11 @@ public class SmallLongFactory
     {
         if (this.INTEGER_ARRAY[0] == null) {
             if (this.lastMin < this.POSITIVE_MAX || this.lastNegativeMin < this.NEGATIVE_MAX) {
-                for (int index = this.POSITIVE_MAX - 1; index >= this.lastMin; index--) {
-                    this.INTEGER_ARRAY[index + this.NEGATIVE_MAX] = index;
+                for (int index_2 = this.POSITIVE_MAX - 1; index_2 >= this.lastMin; index_2--) {
+                    this.INTEGER_ARRAY[index_2 + this.NEGATIVE_MAX] = index_2;
                 }
-                for (int index = this.NEGATIVE_MAX - 1; index >= this.lastNegativeMin; index--) {
-                    this.INTEGER_ARRAY[index] = -index;
+                for (int index_3 = this.NEGATIVE_MAX - 1; index_3 >= this.lastNegativeMin; index_3--) {
+                    this.INTEGER_ARRAY[index_3] = -index_3;
                 }
                 this.lastMin = this.POSITIVE_MAX;
                 this.lastNegativeMin = this.NEGATIVE_MAX;

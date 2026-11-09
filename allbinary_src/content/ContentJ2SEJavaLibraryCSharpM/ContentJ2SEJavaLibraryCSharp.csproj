@@ -41,13 +41,17 @@
     <ProjectReference Include="..\..\LogJ2MEJavaLibraryCSharpM\LogJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\replace_these_stub_projects\allbinary_src\J2MEOnlyJavaLibraryCSharpM\J2MEOnlyJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\j2me\PCResourceLibraryCSharpM\PCResourceLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\allbinary_custom_android_version\microemulator\microemu-midp\microemu-midpCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\2_0_4\microemu-midpCSharp\microemu-midp-for-polyglotCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\LogCSharpM\LogCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\j2me\CommonJavaLibraryCSharpM\CommonJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\j2me\J2MEExceptionLibraryCSharpM\J2MEExceptionLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\logic\data\file\FileJavaLibraryCSharpM\FileJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\allbinary_custom_android_version\microemulator\microemu-cldc\microemu-cldcCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\ThreadLibraryCSharpM\ThreadLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\2_0_4\microemu-cldcCSharp\microemu-cldc-for-polyglotCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\replace_these_stub_projects\allbinary_src\J2MEJsInteropCompatibilityJavaLibraryCSharpM\J2MEJsInteropCompatibilityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\j2me\J2MEUtilJavaLibraryCSharpM\J2MEUtilJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\j2me\lib\BasicMathLibraryCSharpM\BasicMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\j2me\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
   </ItemGroup>
   <!-- AllBinary references end -->
 

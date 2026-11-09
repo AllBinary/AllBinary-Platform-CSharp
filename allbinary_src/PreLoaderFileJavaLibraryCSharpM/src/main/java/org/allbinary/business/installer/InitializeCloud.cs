@@ -33,8 +33,8 @@ namespace org.allbinary.business.installer;
 public class InitializeCloud
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    public static readonly string CLOUD = "cloud/";
-    public static readonly string CLOUD_UPDATE = "cloudupdate/";
+    public const string CLOUD = "cloud/";
+    public const string CLOUD_UPDATE = "cloudupdate/";
     public InitializeCloud()
     {
     }

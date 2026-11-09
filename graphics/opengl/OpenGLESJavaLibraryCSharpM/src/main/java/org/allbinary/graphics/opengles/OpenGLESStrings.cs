@@ -14,11 +14,13 @@
  */
 // Generated Code Do Not Modify
 
+extern alias ImageCacheOpenGLESJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 
 namespace org.allbinary.graphics.opengles;
 

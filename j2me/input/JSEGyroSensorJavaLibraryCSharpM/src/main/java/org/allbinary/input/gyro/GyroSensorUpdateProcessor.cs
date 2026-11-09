@@ -23,7 +23,7 @@ namespace org.allbinary.input.gyro;
 public class GyroSensorUpdateProcessor : Processor
 {
     // throws Exception
-    public virtual void process()
+    public override void process()
     {
     }
 

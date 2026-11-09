@@ -57,7 +57,7 @@ public class DbInitInfo : DbConnectionInfo
         }
     }
 
-    public virtual string getUrl()
+    public override string getUrl()
     {
         string url = base.getUrl();
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRELOADER)) {
@@ -162,7 +162,7 @@ public class DbInitInfo : DbConnectionInfo
         }
     }
 
-    public virtual string getName()
+    public override string getName()
     {
         this.updateIfNeeded();
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRELOADER)) {
@@ -171,7 +171,7 @@ public class DbInitInfo : DbConnectionInfo
         return base.getName();
     }
 
-    public virtual string getUserName()
+    public override string getUserName()
     {
         this.updateIfNeeded();
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRELOADER)) {
@@ -180,25 +180,25 @@ public class DbInitInfo : DbConnectionInfo
         return base.getUserName();
     }
 
-    public virtual string getPassword()
+    public override string getPassword()
     {
         this.updateIfNeeded();
         return base.getPassword();
     }
 
-    public virtual string getSchema()
+    public override string getSchema()
     {
         this.updateIfNeeded();
         return base.getSchema();
     }
 
-    public virtual string getServer()
+    public override string getServer()
     {
         this.updateIfNeeded();
         return base.getServer();
     }
 
-    public virtual string getPort()
+    public override string getPort()
     {
         this.updateIfNeeded();
         return base.getPort();

@@ -67,9 +67,9 @@ public class AbeFactory
     {
         Constructor constructor = null;
         try {
-            ClassLoader parent = WebappClassLoaderInfo.getLoader();
+            global::java.lang.ClassLoader parent = WebappClassLoaderInfo.getLoader();
             if (this.useCustomLoader) {
-                ClassLoader loader = new AbeClassLoader(parent, AbKeys.getInstance().getKey(abeClientInformation, className));
+                global::java.lang.ClassLoader loader = new AbeClassLoader(parent, AbKeys.getInstance().getKey(abeClientInformation, className));
                 Type myClass = loader.loadClass(className);
                 constructor = myClass.getConstructor(classes);
                 return constructor.newInstance(@params);
@@ -106,9 +106,9 @@ public class AbeFactory
     public virtual Type getClass(AbeClientInformationInterface abeClientInformation, string className)
     {
         try {
-            ClassLoader parent = WebappClassLoaderInfo.getLoader();
+            global::java.lang.ClassLoader parent = WebappClassLoaderInfo.getLoader();
             if (this.useCustomLoader) {
-                ClassLoader loader = new AbeClassLoader(parent, AbKeys.getInstance().getKey(abeClientInformation, className));
+                global::java.lang.ClassLoader loader = new AbeClassLoader(parent, AbKeys.getInstance().getKey(abeClientInformation, className));
                 Type c = loader.loadClass(className);
                 return c;
             } else {

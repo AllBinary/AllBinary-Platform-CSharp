@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
-//using Sprite = javax.microedition.lcdui.game.Sprite;
-//using Player = javax.microedition.media.Player;
+using Image = javax.microedition.lcdui.Image;
+using Sprite = javax.microedition.lcdui.game.Sprite;
+using Player = javax.microedition.media.Player;
 using Animation = org.allbinary.animation.Animation;
 using AnimationBehaviorFactory = org.allbinary.animation.AnimationBehaviorFactory;
 using AnimationInterfaceFactoryInterface = org.allbinary.animation.AnimationInterfaceFactoryInterface;

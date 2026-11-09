@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
-//using Sprite = javax.microedition.lcdui.game.Sprite;
+using Image = javax.microedition.lcdui.Image;
+using Sprite = javax.microedition.lcdui.game.Sprite;
 using SpriteFactory = org.allbinary.game.layer.SpriteFactory;
 using OpenGLUtil = org.allbinary.graphics.opengles.OpenGLUtil;
 using ImageCache = org.allbinary.image.ImageCache;

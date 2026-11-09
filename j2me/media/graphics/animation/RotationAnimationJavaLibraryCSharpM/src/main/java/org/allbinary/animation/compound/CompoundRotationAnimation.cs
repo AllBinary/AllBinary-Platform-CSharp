@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using GL = javax.microedition.khronos.opengles.GL;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using IndexedAnimation = org.allbinary.animation.IndexedAnimation;
 using RotationAnimation = org.allbinary.animation.RotationAnimation;
@@ -101,26 +101,26 @@ public class CompoundRotationAnimation : RotationAnimation, CompoundAnimationInt
         this.animationInterfaceArray[this.circularIndexUtil.getIndex()].paintThreedXYZ(graphics, x, y, z);
     }
 
-    public override IndexedAnimation getCurrentAnimation()
+    public virtual IndexedAnimation getCurrentAnimation()
     {
         return this.animationInterfaceArray[this.circularIndexUtil.getIndex()];
     }
 
-    public override void nextAnimation()
+    public virtual void nextAnimation()
     {
         int frame = this.getFrame();
         this.circularIndexUtil.next();
         this.setFrame(frame);
     }
 
-    public override void previousAnimation()
+    public virtual void previousAnimation()
     {
         int frame = this.getFrame();
         this.circularIndexUtil.previous();
         this.setFrame(frame);
     }
 
-    public override void setAnimation(int index)
+    public virtual void setAnimation(int index)
     {
         int frame = this.getFrame();
         this.circularIndexUtil.setIndex(index);

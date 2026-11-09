@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using Features = org.allbinary.game.configuration.feature.Features;
 using MainFeatureFactory = org.allbinary.game.configuration.feature.MainFeatureFactory;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 
 namespace org.allbinary.canvas;
 

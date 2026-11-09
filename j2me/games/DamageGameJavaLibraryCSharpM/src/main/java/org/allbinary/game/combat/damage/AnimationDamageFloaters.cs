@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using IndexedAnimation = org.allbinary.animation.IndexedAnimation;
 using CanvasStrings = org.allbinary.graphics.displayable.CanvasStrings;
 using AllBinaryLayer = org.allbinary.layer.AllBinaryLayer;

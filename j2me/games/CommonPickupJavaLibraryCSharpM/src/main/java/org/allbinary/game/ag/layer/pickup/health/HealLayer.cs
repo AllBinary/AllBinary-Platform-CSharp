@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using HealthInterface = org.allbinary.game.health.HealthInterface;
 using HealthVisitorInterface = org.allbinary.game.health.HealthVisitorInterface;
 using PointFactory = org.allbinary.graphics.PointFactory;
@@ -38,7 +38,7 @@ public class HealLayer : AllBinaryLayer, HealthVisitorInterface
     {
     }
 
-    public override void visit(HealthInterface healthInterface)
+    public virtual void visit(HealthInterface healthInterface)
     {
         if (healthInterface.isAlive()) {
             healthInterface.healMax();

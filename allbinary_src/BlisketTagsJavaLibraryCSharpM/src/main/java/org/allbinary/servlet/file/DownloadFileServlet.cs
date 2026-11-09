@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 //using IOException = java.io.IOException;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 using java.util;
 //using ServletException = javax.servlet.ServletException;
 //using HttpServlet = javax.servlet.http.HttpServlet;

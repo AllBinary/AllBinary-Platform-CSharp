@@ -31,7 +31,7 @@ namespace org.allbinary.data.generator;
 public class UniqueIdGenerator : IdGeneratorInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    public static readonly string EXT = ".unq";
+    public const string EXT = ".unq";
     private readonly IdGeneratorEntity idGeneratorEntity;
     private string name = null;
     public UniqueIdGenerator()
@@ -44,7 +44,7 @@ public class UniqueIdGenerator : IdGeneratorInterface
         try {
             BasicArrayList vector = new BasicArrayListD();
             vector.add(this.name);
-            vector.add((value).ToString().ToString());
+            vector.add(long.Parse((value).ToString()).ToString());
             this.idGeneratorEntity.insert(vector);
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().IDLOGGING)) {
@@ -67,7 +67,7 @@ public class UniqueIdGenerator : IdGeneratorInterface
     {
         try {
             long? idLong = this.idGeneratorEntity.get(this.name);
-            long? newValue = (((long) idLong) + 1).ToString();
+            long? newValue = long.Parse((((long) idLong) + 1).ToString());
             this.idGeneratorEntity.update(this.name, newValue);
             return idLong.ToString();
         } catch (Exception e) {

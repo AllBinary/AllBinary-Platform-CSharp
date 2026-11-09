@@ -24,8 +24,8 @@ namespace admin.taghelpers;
 
 public class WorkFlowRequestHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "admin.taghelpers.WorkFlowHelper";
-    private static readonly string FACTORYNAME = "WorkFlowHelperFactory";
+    private const string CLASSNAME = "admin.taghelpers.WorkFlowHelper";
+    private const string FACTORYNAME = "WorkFlowHelperFactory";
     public WorkFlowRequestHelperFactory()
     {
     }

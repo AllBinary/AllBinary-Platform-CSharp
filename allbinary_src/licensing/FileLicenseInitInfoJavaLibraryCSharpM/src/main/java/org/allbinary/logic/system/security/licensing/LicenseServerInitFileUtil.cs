@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
-//using OutputStream = java.io.OutputStream;
+using InputStream = java.io.InputStream;
+using OutputStream = java.io.OutputStream;
 using LicenseInitInfoUtil = org.allbinary.business.init.LicenseInitInfoUtil;
 using ResourceUtil = org.allbinary.data.resource.ResourceUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;

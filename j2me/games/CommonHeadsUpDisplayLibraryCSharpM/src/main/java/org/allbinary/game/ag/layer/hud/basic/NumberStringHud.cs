@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicHud = org.allbinary.game.graphics.hud.BasicHud;
 using BasicHudFactory = org.allbinary.game.graphics.hud.BasicHudFactory;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -84,7 +84,7 @@ public class NumberStringHud : BasicHud, PaintableInterface
         this.set(this.value - value);
     }
 
-    public override void paint(Graphics graphics)
+    public virtual void paint(Graphics graphics)
     {
         base.paintDX(graphics, this.PREPEND_STRING, 0, this.PREPEND_STRING.Length, this.valueString, 0, this.valueTotalDigits, this.offset);
     }
@@ -101,7 +101,7 @@ public class NumberStringHud : BasicHud, PaintableInterface
         graphics.drawChars(charArray2, 0, len2, x - this.offset, y, 0);
     }
 
-    public override void paintThreed(Graphics graphics)
+    public virtual void paintThreed(Graphics graphics)
     {
     }
 

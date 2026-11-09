@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using java.awt;
-//using File = java.io.File;
+using java.awt;
+using File = java.io.File;
 using java.util;
 //using javax.swing;
 using XslHelper = org.allbinary.data.tree.dom.XslHelper;
@@ -50,12 +50,12 @@ public class MyFrame : javax.swing.JFrame, FileJDialogListenerInterface, HashMap
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private readonly GuiLog guiLog = GuiLog.getInstance();
     private readonly XslHelper xslHelper = XslHelper.getInstance();
-    private static readonly int MAXWORKAREAS = 10;
+    private const int MAXWORKAREAS = 10;
     private static int numberOfWorkAreas = 0;
     private readonly string JAVA_TEMPLATE = "svgExport.xsl";
     private readonly string SAVEEXTENSION = ".gxml";
     private readonly string JAVAEXTENSION = ".javax";
-    private static readonly string PATH = "G:/mnt/bc/mydev/work/graphics/AllBinaryGraphicsJavaApplication";
+    private const string PATH = "G:/mnt/bc/mydev/work/graphics/AllBinaryGraphicsJavaApplication";
     private static readonly string SAVE_PATH = MyFrame.PATH + "/save";
     private static readonly string TEMPLATE_EXPORT_PATH = MyFrame.PATH + "/templates/export";
     private FileJDialog fileJDialog;
@@ -608,8 +608,8 @@ public class MyFrame : javax.swing.JFrame, FileJDialogListenerInterface, HashMap
     // throws Exception
     public virtual void onHashMap(HashMap<object, object> hashMap)
     {
-        int? angleIncrementInteger = ((int?) hashMap.get((0).ToString()));
-        int? totalRotationInteger = ((int?) hashMap.get((1).ToString()));
+        int? angleIncrementInteger = ((int?) hashMap.get(int.Parse((0).ToString())));
+        int? totalRotationInteger = ((int?) hashMap.get(int.Parse((1).ToString())));
         this.getSelectedWorkArea().autoRotate(((int) angleIncrementInteger), ((int) totalRotationInteger));
     }
 

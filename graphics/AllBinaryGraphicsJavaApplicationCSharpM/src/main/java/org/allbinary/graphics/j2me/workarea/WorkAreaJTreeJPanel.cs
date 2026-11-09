@@ -286,8 +286,8 @@ public class WorkAreaJTreeJPanel : javax.swing.JPanel
             BasicArrayList list = this.getNode(selectedTreePathArray);
             if (list.size() > 0) {
                 if ((evt.getModifiers() & evt.BUTTON3_MASK) == evt.BUTTON3_MASK) {
-                    for (int index = 0; index < selectedTreePathArray.Length; index++) {
-                        DefaultMutableTreeNode defaultMutableTreeNode = ((DefaultMutableTreeNode) list.get(index));
+                    for (int index_2 = 0; index_2 < selectedTreePathArray.Length; index_2++) {
+                        DefaultMutableTreeNode defaultMutableTreeNode = ((DefaultMutableTreeNode) list.get(index_2));
                         if (defaultMutableTreeNode.getUserObject() is CanvasTreeLabel) {
                             this.itemJPopupMenu.show(this, evt.getX(), evt.getY());
                         } else {
@@ -297,8 +297,8 @@ public class WorkAreaJTreeJPanel : javax.swing.JPanel
                 }
                 if ((evt.getModifiers() & evt.BUTTON1_MASK) == evt.BUTTON1_MASK) {
                     this.deselectAll();
-                    for (int index = 0; index < selectedTreePathArray.Length; index++) {
-                        DefaultMutableTreeNode defaultMutableTreeNode = ((DefaultMutableTreeNode) list.get(index));
+                    for (int index_3 = 0; index_3 < selectedTreePathArray.Length; index_3++) {
+                        DefaultMutableTreeNode defaultMutableTreeNode = ((DefaultMutableTreeNode) list.get(index_3));
                         if (defaultMutableTreeNode.getUserObject() is CanvasTreeLabel) {
                             MyCanvasEventService.fire(new MyCanvasEvent(((object) new MyCanvasEventSource(MyCanvasEventService.SELECT, defaultMutableTreeNode))));
                         } else {

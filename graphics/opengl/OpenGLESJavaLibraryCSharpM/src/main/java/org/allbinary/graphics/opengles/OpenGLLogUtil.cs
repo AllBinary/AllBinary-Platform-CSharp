@@ -1,9 +1,11 @@
 // Generated Code Do Not Modify
 
+extern alias ImageCacheOpenGLESJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Image = javax.microedition.lcdui.Image;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Image = javax.microedition.lcdui.Image;
 using OpenGLStrings = org.allbinary.image.opengles.OpenGLStrings;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using ForcedLogUtil = org.allbinary.logic.communication.log.ForcedLogUtil;

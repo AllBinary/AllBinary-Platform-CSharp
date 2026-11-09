@@ -18,7 +18,7 @@ using System;
 using System.Linq;
 //using BufferedImage = java.awt.image.BufferedImage;
 //using Raster = java.awt.image.Raster;
-//using File = java.io.File;
+using File = java.io.File;
 using CanvasStrings = org.allbinary.graphics.displayable.CanvasStrings;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbFile = org.allbinary.logic.io.file.AbFile;
@@ -78,8 +78,8 @@ public class CreateIconImagesJPanel : javax.swing.JPanel, ImageProcessorInputCom
                     int width = 0;
                     int height = 0;
                     for (int index2 = 0; index2 < size; index2++) {
-                        width = ((int) (((int?) iconWidthList.get(index2))));
-                        height = ((int) (((int?) iconHeightList.get(index2))));
+                        width = global::java.lang.JavaNumber.intValue((((int?) iconWidthList.get(index2))));
+                        height = global::java.lang.JavaNumber.intValue((((int?) iconHeightList.get(index2))));
                         BufferedImage[] generatedBufferedImageArray = imageUtil.createBufferedImage3(imageProcessorInput.getBufferedImageArray(), width, height, true);
                         ImagePersistanceUtil imagePersistanceUtil = ImagePersistanceUtil.getInstance();
                         for (int index = 0; index < generatedBufferedImageArray.Length; index++) {

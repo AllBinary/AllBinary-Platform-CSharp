@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using AnimationInterfaceFactoryInterface = org.allbinary.animation.AnimationInterfaceFactoryInterface;
 using NullAnimationFactory = org.allbinary.animation.NullAnimationFactory;
 using NullIndexedAnimationFactory = org.allbinary.animation.NullIndexedAnimationFactory;
@@ -35,7 +35,6 @@ using GameKeyEventFactory = org.allbinary.game.input.@event.GameKeyEventFactory;
 using NullRTSFormInputFactory = org.allbinary.game.input.form.NullRTSFormInputFactory;
 using RTSFormInput = org.allbinary.game.input.form.RTSFormInput;
 using BuildingEventHandler = org.allbinary.game.layer.building.@event.BuildingEventHandler;
-using UnitLayer = org.allbinary.game.layer.unit.UnitLayer;
 using Waypoint2LogHelper = org.allbinary.game.layer.waypoint.Waypoint2LogHelper;
 using Waypoint2SelectedLogHelper = org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper;
 using WaypointBase = org.allbinary.game.layer.waypoint.WaypointBase;
@@ -165,7 +164,7 @@ public class AdvancedRTSGameLayer : RTSLayer, DestroyedEventListenerInterface
     {
         if (this.parentLayer != NullPathFindingLayer.NULL_PATH_FINDING_LAYER) {
             AdvancedRTSGameLayer parentAdvancedRTSGameLayer = ((AdvancedRTSGameLayer) this.parentLayer);
-            if (parentAdvancedRTSGameLayer.getType() != UnitLayer.getStaticType()) {
+            if (parentAdvancedRTSGameLayer.getType() != 1) {
                 return true;
             }
         }
@@ -174,7 +173,7 @@ public class AdvancedRTSGameLayer : RTSLayer, DestroyedEventListenerInterface
 
     public override bool isWaypointListEmptyOrOnlyTargets()
     {
-        if (this.getType() != UnitLayer.getStaticType()) {
+        if (this.getType() != 1) {
             return true;
         }
         return false;

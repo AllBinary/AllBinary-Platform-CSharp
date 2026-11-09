@@ -17,9 +17,9 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using MediaException = javax.microedition.media.MediaException;
-//using Player = javax.microedition.media.Player;
-//using PlayerListener = javax.microedition.media.PlayerListener;
+using MediaException = javax.microedition.media.MediaException;
+using Player = javax.microedition.media.Player;
+using PlayerListener = javax.microedition.media.PlayerListener;
 using MediaPlayer = android.media.MediaPlayer;
 using NullAndroidCanvas = org.allbinary.android.NullAndroidCanvas;
 using ResourceUtil = org.allbinary.data.resource.ResourceUtil;
@@ -50,7 +50,7 @@ public class AndroidMediaPlayerWrapper : BasicPlayer
             if (resource == StringUtil.getInstance().EMPTY_STRING) {
             } else {
                 ResourceUtil resourceUtil = ResourceUtil.getInstance();
-                MediaPlayer mediaPlayer = MediaPlayer.create(resourceUtil.getContext(), ((int) resourceUtil.getResourceId(resource)));
+                MediaPlayer mediaPlayer = MediaPlayer.create(resourceUtil.getContext(), global::java.lang.JavaNumber.intValue(resourceUtil.getResourceId(resource)));
                 if (mediaPlayer == null) {
                     throw new Exception(new StringMaker().append("Failed to create media player for: ").append(resource).append(" with id: ").append(resourceUtil.getResourceId(resource).ToString()).ToString());
                 }

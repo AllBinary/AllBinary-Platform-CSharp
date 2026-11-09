@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using MyRandomFactory = org.allbinary.game.rand.MyRandomFactory;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using BasicColorArrayIndexer = org.allbinary.graphics.color.BasicColorArrayIndexer;

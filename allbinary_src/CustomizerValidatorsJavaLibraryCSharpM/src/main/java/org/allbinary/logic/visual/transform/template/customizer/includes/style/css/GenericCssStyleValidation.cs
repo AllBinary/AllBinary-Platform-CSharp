@@ -53,7 +53,7 @@ public class GenericCssStyleValidation : Validation, DomNodeInterface
     {
     }
 
-    public virtual bool? isValid()
+    public override bool? isValid()
     {
         try {
             bool? isValid = true;
@@ -72,7 +72,7 @@ public class GenericCssStyleValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual string validationInfo()
+    public override string validationInfo()
     {
         try {
             StringMaker stringBuffer = new StringMaker();
@@ -85,12 +85,12 @@ public class GenericCssStyleValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual Document toValidationInfoDoc()
+    public override Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual Node toValidationInfoNode(Document document)
+    public override Node toValidationInfoNode(Document document)
     {
         return null;
     }

@@ -39,7 +39,7 @@ namespace org.allbinary.business.category.properties;
 public class CategoryProperties : CategoryPropertiesInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private static readonly int MAXDEPTH = 100;
+    private const int MAXDEPTH = 100;
     private string category;
     public CategoryProperties(string name)
     {

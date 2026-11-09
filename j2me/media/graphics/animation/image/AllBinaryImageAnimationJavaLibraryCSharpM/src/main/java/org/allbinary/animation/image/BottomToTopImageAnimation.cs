@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
-//using Sprite = javax.microedition.lcdui.game.Sprite;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
+using Sprite = javax.microedition.lcdui.game.Sprite;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using Anchor = org.allbinary.graphics.Anchor;
 using PrimitiveIntUtil = org.allbinary.logic.math.PrimitiveIntUtil;

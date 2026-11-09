@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using ScoreableInterface = org.allbinary.game.score.ScoreableInterface;
 using PointFactory = org.allbinary.graphics.PointFactory;
 using Rectangle = org.allbinary.graphics.Rectangle;

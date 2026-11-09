@@ -14,9 +14,11 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Displayable = javax.microedition.lcdui.Displayable;
+using Displayable = javax.microedition.lcdui.Displayable;
 using J2MEUtil = org.allbinary.J2MEUtil;
 using Features = org.allbinary.game.configuration.feature.Features;
 using AllBinaryGameCanvas = org.allbinary.game.displayable.canvas.AllBinaryGameCanvas;

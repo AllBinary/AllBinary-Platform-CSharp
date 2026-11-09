@@ -14,12 +14,14 @@
  */
 // Generated Code Do Not Modify
 
+extern alias ImageCacheOpenGLESJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Buffer = java.nio.Buffer;
-//using ByteBuffer = java.nio.ByteBuffer;
-//using ByteOrder = java.nio.ByteOrder;
-//using FloatBuffer = java.nio.FloatBuffer;
+using Buffer = java.nio.Buffer;
+using ByteBuffer = java.nio.ByteBuffer;
+using ByteOrder = java.nio.ByteOrder;
+using FloatBuffer = java.nio.FloatBuffer;
 
 namespace org.allbinary.opengles;
 
@@ -81,7 +83,7 @@ public class GLUtil
 
     public virtual void rotateUVs(float[] uvs, float angleDegrees, float pivotU, float pivotV)
     {
-        double angleRad = Math.ToRadians(((double) angleDegrees));
+        double angleRad = ((((double) angleDegrees)) * Math.PI / 180.0);
         double cosA = Math.Cos(angleRad);
         double sinA = Math.Sin(angleRad);
         for (int i = 0; i < uvs.Length; i += 2) {

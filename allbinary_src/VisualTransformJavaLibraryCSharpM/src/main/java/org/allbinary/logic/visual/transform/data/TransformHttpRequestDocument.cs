@@ -37,8 +37,8 @@ public class TransformHttpRequestDocument : TransformDocumentInterface
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private Node baseNode = null;
     private Document document = null;
-    private static readonly string language = "en";
-    private static readonly string local = "US";
+    private const string language = "en";
+    private const string local = "US";
     public TransformHttpRequestDocument(PageContext pageContext, WeblisketSession weblisketSession)
     {
         try {

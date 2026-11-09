@@ -14,9 +14,11 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using NullPaintable = org.allbinary.graphics.paint.NullPaintable;
 using Paintable = org.allbinary.graphics.paint.Paintable;
 using StatePaintable = org.allbinary.graphics.paint.StatePaintable;

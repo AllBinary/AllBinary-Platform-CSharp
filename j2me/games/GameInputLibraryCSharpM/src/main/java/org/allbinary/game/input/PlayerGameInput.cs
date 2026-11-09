@@ -40,14 +40,14 @@ public class PlayerGameInput : GameInput, GameKeyEventListenerInterface
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public override void onPressGameKeyEvent(GameKeyEvent gameKeyEvent)
+    public virtual void onPressGameKeyEvent(GameKeyEvent gameKeyEvent)
     {
         this.add(gameKeyEvent);
         this.addForRemoval(gameKeyEvent);
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public override void onDownGameKeyEvent(GameKeyEvent gameKeyEvent)
+    public virtual void onDownGameKeyEvent(GameKeyEvent gameKeyEvent)
     {
         this.add(gameKeyEvent);
     }
@@ -66,7 +66,7 @@ public class PlayerGameInput : GameInput, GameKeyEventListenerInterface
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public override void onUpGameKeyEvent(GameKeyEvent gameKeyEvent)
+    public virtual void onUpGameKeyEvent(GameKeyEvent gameKeyEvent)
     {
         this.addForRemoval(gameKeyEvent);
     }
@@ -76,7 +76,7 @@ public class PlayerGameInput : GameInput, GameKeyEventListenerInterface
     {
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }

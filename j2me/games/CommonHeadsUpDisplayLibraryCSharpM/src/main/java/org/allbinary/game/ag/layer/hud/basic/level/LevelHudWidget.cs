@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicHud = org.allbinary.game.graphics.hud.BasicHud;
 using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
 using PaintableInterface = org.allbinary.graphics.paint.PaintableInterface;
@@ -97,12 +97,12 @@ public class LevelHudWidget : BasicHud, PaintableInterface
         }
     }
 
-    public override void paint(Graphics graphics)
+    public virtual void paint(Graphics graphics)
     {
         base.paintDX(graphics, this.levelString, 0, this.levelString.Length, this.levelNumberCharArray, 0, this.levelNumberTotalDigits, this.offset);
     }
 
-    public override void paintThreed(Graphics graphics)
+    public virtual void paintThreed(Graphics graphics)
     {
     }
 

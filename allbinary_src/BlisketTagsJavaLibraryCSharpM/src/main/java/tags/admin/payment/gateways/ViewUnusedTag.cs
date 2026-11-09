@@ -29,7 +29,7 @@ public class ViewUnusedTag : StoreValidationTransformTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             if (this.getCommand() != null) {

@@ -25,6 +25,7 @@ using StoreFrontInterface = org.allbinary.business.context.modules.storefront.St
 using AbPath = org.allbinary.logic.io.path.AbPath;
 using TransformInfoObjectConfigInterface = org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface;
 using Document = org.w3c.dom.Document;
+using WeblisketSessionInterface = org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface;
 
 namespace org.allbinary.logic.visual.transform.info;
 
@@ -177,6 +178,21 @@ public class TransformInfoBasic : AbContext, TransformInfoHttpInterface
     public virtual HashMap<object, object> toHashMap()
     {
         return null;
+    }
+
+    public override WeblisketSessionInterface getWeblisketSession()
+    {
+        return base.getWeblisketSession();
+    }
+
+    public override PageContext getPageContext()
+    {
+        return base.getPageContext();
+    }
+
+    public override HashMap<object, object> getPropertiesHashMap()
+    {
+        return base.getPropertiesHashMap();
     }
 
 }

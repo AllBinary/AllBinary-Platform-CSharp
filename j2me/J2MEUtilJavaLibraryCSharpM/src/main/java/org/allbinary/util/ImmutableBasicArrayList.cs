@@ -16,6 +16,7 @@
 
 using System;
 using System.Linq;
+//using JsType = jsinterop.annotations.JsType;
 using ForcedLogUtil = org.allbinary.logic.communication.log.ForcedLogUtil;
 
 namespace org.allbinary.util;

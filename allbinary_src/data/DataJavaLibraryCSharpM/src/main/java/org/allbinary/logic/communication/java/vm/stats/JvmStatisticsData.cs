@@ -26,7 +26,7 @@ public class JvmStatisticsData
         // base() is called from the constructor declaration
     }
 
-    public static readonly string JVM_STATISTICS = "JVM_STATISTICS_";
+    public const string JVM_STATISTICS = "JVM_STATISTICS_";
     public static readonly string NAME = JvmStatisticsData.JVM_STATISTICS + "NAME";
     public static readonly string TOTAL_MEMORY_BYTES = JvmStatisticsData.JVM_STATISTICS + "TOTAL_MEMORY_BYTES";
     public static readonly string TOTAL_MEMORY_KILOBYTES = JvmStatisticsData.JVM_STATISTICS + "TOTAL_MEMORY_KILOBYTES";

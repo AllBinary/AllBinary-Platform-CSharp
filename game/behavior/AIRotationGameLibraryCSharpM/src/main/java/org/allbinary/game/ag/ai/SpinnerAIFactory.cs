@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using ArtificialIntelligenceInterface = org.allbinary.ai.ArtificialIntelligenceInterface;
 using ArtificialIntelligenceInterfaceFactoryInterface = org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface;
 using GameInput = org.allbinary.game.input.GameInput;

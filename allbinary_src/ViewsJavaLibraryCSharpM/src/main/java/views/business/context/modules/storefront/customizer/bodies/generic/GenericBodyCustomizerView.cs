@@ -49,7 +49,7 @@ public class GenericBodyCustomizerView : HttpStoreComponentView, DomNodeInterfac
         this.addDomNodeInterface(((DomNodeInterface) this));
     }
 
-    private static readonly string NAME = "None";
+    private const string NAME = "None";
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
@@ -61,7 +61,7 @@ public class GenericBodyCustomizerView : HttpStoreComponentView, DomNodeInterfac
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             this.addDomNodeInterfaces();

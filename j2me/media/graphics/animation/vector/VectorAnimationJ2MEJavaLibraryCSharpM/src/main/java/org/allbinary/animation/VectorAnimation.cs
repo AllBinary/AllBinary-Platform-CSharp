@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using Graphics = javax.microedition.lcdui.Graphics;
+using NullImage = javax.microedition.lcdui.NullImage;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using NullUtil = org.allbinary.logic.NullUtil;
 using PrimitiveIntUtil = org.allbinary.logic.math.PrimitiveIntUtil;
@@ -50,7 +50,7 @@ public class VectorAnimation : IndexedAnimation, VectorAnimationInterface
     public override void setBasicColorP(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != ((int) basicColor)) {
+        if (this.getBasicColorP() == null || this.getBasicColorP().intValue() != basicColor.intValue()) {
             changed = true;
         }
         base.setBasicColorP(basicColor);
@@ -62,7 +62,7 @@ public class VectorAnimation : IndexedAnimation, VectorAnimationInterface
     public override void changeBasicColor(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getChangeBasicColor() == null || ((int) this.getChangeBasicColor()) != ((int) basicColor)) {
+        if (this.getChangeBasicColor() == null || global::java.lang.JavaNumber.intValue(this.getChangeBasicColor()) != basicColor.intValue()) {
             changed = true;
         }
         base.changeBasicColor(basicColor);
@@ -125,7 +125,7 @@ public class VectorAnimation : IndexedAnimation, VectorAnimationInterface
         this.circularIndexUtil.previous();
     }
 
-    protected virtual void paintVectors(Graphics graphics, int x, int y)
+    public virtual void paintVectors(Graphics graphics, int x, int y)
     {
         try {
             int nextPointX = 0;
@@ -167,7 +167,7 @@ public class VectorAnimation : IndexedAnimation, VectorAnimationInterface
         this.circularIndexUtil.setIndex(index);
     }
 
-    public override int[][] getPoints(int frame)
+    public virtual int[][] getPoints(int frame)
     {
         return this.currentPoints[frame];
     }
@@ -176,6 +176,11 @@ public class VectorAnimation : IndexedAnimation, VectorAnimationInterface
     {
         this.currentPoints = currentPoints;
         this.circularIndexUtil = CircularIndexUtil.createInstance(currentPoints.Length);
+    }
+
+    public override BasicColor getBasicColorP()
+    {
+        return base.getBasicColorP();
     }
 
 }

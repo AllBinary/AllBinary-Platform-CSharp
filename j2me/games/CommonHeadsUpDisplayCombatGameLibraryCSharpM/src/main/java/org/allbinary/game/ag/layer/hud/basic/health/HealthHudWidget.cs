@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Animation = org.allbinary.animation.Animation;
 using BasicHud = org.allbinary.game.graphics.hud.BasicHud;
 using Health = org.allbinary.game.health.Health;
@@ -71,7 +71,7 @@ public class HealthHudWidget : BasicHud, PaintableInterface, HealthListenerInter
     private readonly TimeDelayHelper slowBeatTimeDelayHelper = new TimeDelayHelper(1280);
     private readonly TimeDelayHelper mediumBeatTimeDelayHelper = new TimeDelayHelper(640);
     private readonly TimeDelayHelper fastBeatTimeDelayHelper = new TimeDelayHelper(320);
-    public override void onHealthChange()
+    public virtual void onHealthChange()
     {
         this.max = (this.healthInterface.getHealth() / this.healthScale);
         this.timeDelayHelper = NoTimeDelayHelper.SINGLETON;
@@ -87,7 +87,7 @@ public class HealthHudWidget : BasicHud, PaintableInterface, HealthListenerInter
         }
     }
 
-    public override void paint(Graphics graphics)
+    public virtual void paint(Graphics graphics)
     {
         this.myFontProcessor.process(graphics);
         for (int index = 0; index < this.max; index++) {
@@ -97,7 +97,7 @@ public class HealthHudWidget : BasicHud, PaintableInterface, HealthListenerInter
         }
     }
 
-    public override void paintThreed(Graphics graphics)
+    public virtual void paintThreed(Graphics graphics)
     {
     }
 

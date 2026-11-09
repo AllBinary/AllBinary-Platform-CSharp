@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using StdUtil = org.allbinary.logic.StdUtil;
@@ -27,7 +27,7 @@ namespace org.allbinary.media.image.comparison.motion;
 public class ConsolidateMotionRectangles : MotionRectangles
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private static readonly string NAME = "consolidatedMotionRectangles_";
+    private const string NAME = "consolidatedMotionRectangles_";
     public ConsolidateMotionRectangles(MotionRectangles motionRectangles) : base(NAME, motionRectangles.getImageComparisonResult())
     {
         // base(NAME, motionRectangles.getImageComparisonResult()) is called from the constructor declaration

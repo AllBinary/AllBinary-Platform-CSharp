@@ -58,5 +58,11 @@ public class NewValidationView : InventoryItemView, ValidationComponentInterface
         return "Error Creating New Item";
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

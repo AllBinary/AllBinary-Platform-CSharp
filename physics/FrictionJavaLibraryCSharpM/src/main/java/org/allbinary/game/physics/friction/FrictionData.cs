@@ -21,7 +21,7 @@ namespace org.allbinary.game.physics.friction;
 
 public class FrictionData
 {
-    private static readonly int FRICTION_DENOMINATOR = 100;
+    private const int FRICTION_DENOMINATOR = 100;
     private FrictionData()
     {
     }

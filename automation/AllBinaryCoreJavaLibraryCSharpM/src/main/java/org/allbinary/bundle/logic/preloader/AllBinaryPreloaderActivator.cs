@@ -36,7 +36,7 @@ public class AllBinaryPreloaderActivator : BundleActivator
     {
     }
 
-    private static readonly string CRYPT_REGISTRY_NAME = "bundle.abcs.logic.system.loader.CryptService";
+    private const string CRYPT_REGISTRY_NAME = "bundle.abcs.logic.system.loader.CryptService";
     public static BundleContext getBundleContext()
     {
         return AllBinaryPreloaderActivator.context;

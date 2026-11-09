@@ -25,7 +25,7 @@ namespace org.allbinary.logic.system.loader;
 public class NativeLibraryHelperWrapper
 {
     private string libraryName = null;
-    private ClassLoader loader = null;
+    private global::java.lang.ClassLoader loader = null;
     private object anyType = null;
     public NativeLibraryHelperWrapper(string libraryName)
     {
@@ -39,7 +39,7 @@ public class NativeLibraryHelperWrapper
         @params[0] = this.getLibraryName();
         Type[] classes = new Type[1];
         classes[0] = this.getLibraryName().GetType();
-        this.loader = new NativeLibraryClassLoader(this.GetType().getClassLoader());
+        this.loader = new NativeLibraryClassLoader(global::java.lang.ClassLoader.getSystemClassLoader());
         Type myClass = this.loader.loadClass("dynamic.NativeLibraryHelper");
         Constructor constructor = myClass.getConstructor(classes);
         this.anyType = constructor.newInstance(@params);

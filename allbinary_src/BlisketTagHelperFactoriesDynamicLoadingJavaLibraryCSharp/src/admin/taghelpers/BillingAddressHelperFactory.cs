@@ -24,8 +24,8 @@ namespace admin.taghelpers;
 
 public class BillingAddressHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "admin.taghelpers.BillingAddressHelper";
-    private static readonly string FACTORYNAME = "BillingAddressHelperFactory";
+    private const string CLASSNAME = "admin.taghelpers.BillingAddressHelper";
+    private const string FACTORYNAME = "BillingAddressHelperFactory";
     public BillingAddressHelperFactory()
     {
     }

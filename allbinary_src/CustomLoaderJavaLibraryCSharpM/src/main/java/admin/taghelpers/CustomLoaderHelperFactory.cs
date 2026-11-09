@@ -26,8 +26,8 @@ namespace admin.taghelpers;
 
 public class CustomLoaderHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "admin.taghelpers.CustomLoaderHelper";
-    private static readonly string FACTORYNAME = "CustomLoaderHelperFactory";
+    private const string CLASSNAME = "admin.taghelpers.CustomLoaderHelper";
+    private const string FACTORYNAME = "CustomLoaderHelperFactory";
     public CustomLoaderHelperFactory()
     {
     }

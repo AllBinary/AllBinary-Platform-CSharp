@@ -25,8 +25,8 @@ namespace admin.taghelpers;
 
 public class CategoryRequestHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "admin.taghelpers.CategoryRequestHelper";
-    private static readonly string FACTORYNAME = "CategoryRequestHelperFactory";
+    private const string CLASSNAME = "admin.taghelpers.CategoryRequestHelper";
+    private const string FACTORYNAME = "CategoryRequestHelperFactory";
     public CategoryRequestHelperFactory()
     {
     }

@@ -56,8 +56,8 @@ public class BasicItemView : DomNodeInterface
         Node node = document.createElement(this.basicItemData.ITEM);
         object[] nameArray = keySet.toArray();
         int size2 = nameArray.Length;
-        for (int index = 0; index < size2; index++) {
-            string name = ((string) nameArray[index]);
+        for (int index_0 = 0; index_0 < size2; index_0++) {
+            string name = ((string) nameArray[index_0]);
             string value = ((string) hashMap.get(name));
             value = stringUtil.getNonNull(value);
             node.appendChild(ModDomHelper.createNameValueNodes(document, name, value));
@@ -65,8 +65,8 @@ public class BasicItemView : DomNodeInterface
         Node totalNode = ModDomHelper.createNameValueNodes(document, this.basicItemData.TOTAL, this.itemInterface.getTotal().ToString());
         node.appendChild(totalNode);
         int size = this.vector.size();
-        for (int index = 0; index < size; index++) {
-            DomNodeInterface domNodeInterface = ((DomNodeInterface) this.vector.get(index));
+        for (int index_1 = 0; index_1 < size; index_1++) {
+            DomNodeInterface domNodeInterface = ((DomNodeInterface) this.vector.get(index_1));
             Node customNode = domNodeInterface.toXmlNode(document);
             node.appendChild(customNode);
         }

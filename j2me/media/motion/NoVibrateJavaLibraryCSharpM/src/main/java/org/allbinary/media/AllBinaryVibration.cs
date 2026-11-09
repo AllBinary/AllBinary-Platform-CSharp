@@ -34,7 +34,7 @@ public class AllBinaryVibration : AllBinaryVibrationME
 
     public static void init()
     {
-        if (((int) GameConfigurationCentral.getInstance().VIBRATION.getValue()) == 0) {
+        if (global::java.lang.JavaNumber.intValue(GameConfigurationCentral.getInstance().VIBRATION.getValue()) == 0) {
             AllBinaryVibration.VIBRATION = AllBinaryNoVibration.NO_VIBRATION;
         } else {
             AllBinaryVibration.VIBRATION = new AllBinaryVibration();

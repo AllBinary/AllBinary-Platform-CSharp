@@ -37,7 +37,7 @@ public class AdminConfigurationRequestHelper : ModifyTable
         this.request = ((HttpServletRequest) pageContext.getRequest());
     }
 
-    public virtual string insert()
+    public override string insert()
     {
         try {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
@@ -59,7 +59,7 @@ public class AdminConfigurationRequestHelper : ModifyTable
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             string success = "Successfully deleted AdminConfiguration";
@@ -76,7 +76,7 @@ public class AdminConfigurationRequestHelper : ModifyTable
         }
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             string success = "Updated AdminConfiguration Successful";

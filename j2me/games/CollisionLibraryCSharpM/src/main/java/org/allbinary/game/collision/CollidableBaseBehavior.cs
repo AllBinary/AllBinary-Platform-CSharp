@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using CollidableCompositeLayer = org.allbinary.game.layer.CollidableCompositeLayer;
 using AllBinaryLayer = org.allbinary.layer.AllBinaryLayer;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;

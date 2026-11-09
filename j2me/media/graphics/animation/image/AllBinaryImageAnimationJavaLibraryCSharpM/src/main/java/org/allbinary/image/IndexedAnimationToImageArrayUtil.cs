@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using IndexedAnimation = org.allbinary.animation.IndexedAnimation;
 
 namespace org.allbinary.image;

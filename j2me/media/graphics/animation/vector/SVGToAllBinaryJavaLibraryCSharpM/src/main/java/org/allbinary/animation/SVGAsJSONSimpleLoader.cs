@@ -16,7 +16,6 @@
 
 using System;
 using System.Linq;
-using java.util;
 using GraphicsStrings = org.allbinary.graphics.GraphicsStrings;
 using PrimitiveIntUtil = org.allbinary.logic.math.PrimitiveIntUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
@@ -68,9 +67,10 @@ public class SVGAsJSONSimpleLoader
             object svgValue = root.opt(KEY_SVG);
             JSONObject svg = (svgValue == null ? root : this.asObject(svgValue, KEY_SVG));
             BasicArrayList pointVector = new BasicArrayListD();
-            Enumeration<object> keys = svg.keys();
-            while (keys.hasMoreElements()) {
-                string key = ((string) keys.nextElement());
+            object[] objectArray = svg.keysAsArray();
+            int size = objectArray.Length;
+            for (int index = 0; index < size; index++) {
+                string key = ((string) objectArray[index]);
                 object value = svg.opt(key);
                 if (this.shapeTypeFactory.KEY_LINE.Equals(key)) {
                     this.addShapes(pointVector, value, this.shapeTypeFactory.LINE);
@@ -129,8 +129,8 @@ public class SVGAsJSONSimpleLoader
         int radius = this.readInt(circle, KEY_R);
         for (int index = 0; index <= CIRCLE_SEGMENTS; index++) {
             double angle = (Math.PI * 2.0d * index) / CIRCLE_SEGMENTS;
-            int x = ((int) Math.Round(cx + (Math.Cos(angle) * radius)));
-            int y = ((int) Math.Round(cy + (Math.Sin(angle) * radius)));
+            int x = ((int) global::java.lang.JavaMath.round(cx + (Math.Cos(angle) * radius)));
+            int y = ((int) global::java.lang.JavaMath.round(cy + (Math.Sin(angle) * radius)));
             this.addPoint(pointVector, x, y);
         }
         this.addSeparator(pointVector);
@@ -187,10 +187,10 @@ public class SVGAsJSONSimpleLoader
     private int toInt(object value, string key)
     {
         if (value is Number) {
-            return ((int) Math.Round(((double) (((Number) value)))));
+            return ((int) global::java.lang.JavaMath.round(global::java.lang.JavaNumber.doubleValue((((Number) value)))));
         }
         if (value is string) {
-            return ((int) Math.Round(double.Parse(((string) value))));
+            return ((int) global::java.lang.JavaMath.round(double.Parse(((string) value))));
         }
         throw new ArgumentException(ERROR_INVALID_NUMBER_PREFIX + key);
     }

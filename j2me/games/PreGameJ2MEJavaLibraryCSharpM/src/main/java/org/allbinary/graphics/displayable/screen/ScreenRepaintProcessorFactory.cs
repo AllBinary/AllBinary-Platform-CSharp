@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Displayable = javax.microedition.lcdui.Displayable;
+using Displayable = javax.microedition.lcdui.Displayable;
 using J2MEUtil = org.allbinary.J2MEUtil;
 using Processor = org.allbinary.canvas.Processor;
 

@@ -64,7 +64,7 @@ public class GenericBodyValidation : Validation, DomNodeInterface
         this.body = ((string) hashMap.get(BodyData.getInstance().NAME));
     }
 
-    public virtual bool? isValid()
+    public override bool? isValid()
     {
         try {
             bool? isValid = true;
@@ -86,7 +86,7 @@ public class GenericBodyValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual string validationInfo()
+    public override string validationInfo()
     {
         try {
             StringMaker stringBuffer = new StringMaker();
@@ -105,12 +105,12 @@ public class GenericBodyValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual Document toValidationInfoDoc()
+    public override Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual Node toValidationInfoNode(Document document)
+    public override Node toValidationInfoNode(Document document)
     {
         return null;
     }

@@ -43,7 +43,7 @@ public class StoreCategoryFactory : CategoryAbstractFactory, CategoryFactoryInte
         this.transformInfoInterface = transformInfoInterface;
     }
 
-    public virtual CategoryInterface getRootInstance()
+    public override CategoryInterface getRootInstance()
     {
         try {
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new RootStoreCategoryPropertiesFactory(this.transformInfoInterface));
@@ -56,7 +56,7 @@ public class StoreCategoryFactory : CategoryAbstractFactory, CategoryFactoryInte
         }
     }
 
-    public virtual CategoryInterface getRootInstance(AbPath categoryPath)
+    public override CategoryInterface getRootInstance(AbPath categoryPath)
     {
         try {
             int level = CategoryUtil.getPathLevel(categoryPath);
@@ -70,7 +70,7 @@ public class StoreCategoryFactory : CategoryAbstractFactory, CategoryFactoryInte
         }
     }
 
-    public virtual CategoryInterface getRootInstanceFromNode(Node node)
+    public override CategoryInterface getRootInstanceFromNode(Node node)
     {
         try {
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new RootStoreCategoryPropertiesFactory(this.transformInfoInterface, node));

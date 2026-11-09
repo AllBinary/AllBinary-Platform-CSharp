@@ -35,7 +35,7 @@ public class DownloadableItemValidation : Validation
         this.downloadableItem = downloadableItem;
     }
 
-    public virtual bool? isValid()
+    public override bool? isValid()
     {
         try {
             if (this.downloadableItem.getId() == null || this.downloadableItem.getId().length() < 1 || this.downloadableItem.getId().length() > AbSqlData.MAXNUM) {
@@ -92,7 +92,7 @@ public class DownloadableItemValidation : Validation
         }
     }
 
-    public virtual string validationInfo()
+    public override string validationInfo()
     {
         try {
             StringMaker stringBuffer = new StringMaker();
@@ -168,12 +168,12 @@ public class DownloadableItemValidation : Validation
         }
     }
 
-    public virtual Document toValidationInfoDoc()
+    public override Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual Node toValidationInfoNode(Document document)
+    public override Node toValidationInfoNode(Document document)
     {
         return null;
     }

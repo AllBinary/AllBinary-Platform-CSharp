@@ -14,9 +14,11 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Anchor = org.allbinary.graphics.Anchor;
 using GPoint = org.allbinary.graphics.GPoint;
 using PointFactory = org.allbinary.graphics.PointFactory;

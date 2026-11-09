@@ -24,8 +24,8 @@ namespace admin.taghelpers;
 
 public class QuoteHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "admin.taghelpers.QuoteHelper";
-    private static readonly string FACTORYNAME = "QuoteHelperFactory";
+    private const string CLASSNAME = "admin.taghelpers.QuoteHelper";
+    private const string FACTORYNAME = "QuoteHelperFactory";
     public QuoteHelperFactory()
     {
     }

@@ -52,7 +52,7 @@ public class TouchButtonsPaintableComposite : ProcessPaintable, CompleteMotionGe
         this.touchButtonsPaintable = new TouchButtonsMappingPaintable(basicColor);
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }
@@ -61,7 +61,7 @@ public class TouchButtonsPaintableComposite : ProcessPaintable, CompleteMotionGe
     private readonly string RELEASE = "Ignoring: MotionGestureInput Release";
     private readonly string FAST_REPEAT = "Ignoring: MotionGestureInput Repeated To Quickly";
     private readonly string IGNORE = "Ignoring: Until Released";
-    public override void onCompleteMotionGestureInputEvent(CompleteMotionGestureInputEvent completeMotionGestureInputEvent)
+    public virtual void onCompleteMotionGestureInputEvent(CompleteMotionGestureInputEvent completeMotionGestureInputEvent)
     {
         try {
             this.logUtil.putF(this.commonStrings.START, this, "onCompleteMotionGestureInputEvent");

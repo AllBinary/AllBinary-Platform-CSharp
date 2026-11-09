@@ -59,7 +59,7 @@ public class ShippingAddressHelper : BasicTable
         this.streetAddress = new StreetAddress(this.request);
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             string success = new ShippingAddressesEntity(this.stringUtil.EMPTY_STRING).drop();
@@ -76,7 +76,7 @@ public class ShippingAddressHelper : BasicTable
         }
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             string success = new ShippingAddressesEntity(this.stringUtil.EMPTY_STRING).createTable();
@@ -93,7 +93,7 @@ public class ShippingAddressHelper : BasicTable
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "Restore Successful";
@@ -111,7 +111,7 @@ public class ShippingAddressHelper : BasicTable
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Backup Successful";

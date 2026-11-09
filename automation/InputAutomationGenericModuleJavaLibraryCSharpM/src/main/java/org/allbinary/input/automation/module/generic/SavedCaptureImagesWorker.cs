@@ -18,7 +18,7 @@ using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
 //using BufferedImage = java.awt.image.BufferedImage;
-//using File = java.io.File;
+using File = java.io.File;
 //using ImageIO = javax.imageio.ImageIO;
 using SavedCaptureGenericProfileDataWorkerType = org.allbinary.input.automation.module.generic.configuration.profile.SavedCaptureGenericProfileDataWorkerType;
 using CaptureWorkerInterface = org.allbinary.input.media.image.capture.CaptureWorkerInterface;

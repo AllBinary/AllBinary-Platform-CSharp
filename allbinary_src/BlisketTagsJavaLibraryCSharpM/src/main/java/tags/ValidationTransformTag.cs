@@ -82,7 +82,7 @@ public class ValidationTransformTag : TransformTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
@@ -138,7 +138,7 @@ public class ValidationTransformTag : TransformTag
         }
     }
 
-    public virtual int doEndTag()
+    public override int doEndTag()
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF("Tag Ended", this, "doEndTag");

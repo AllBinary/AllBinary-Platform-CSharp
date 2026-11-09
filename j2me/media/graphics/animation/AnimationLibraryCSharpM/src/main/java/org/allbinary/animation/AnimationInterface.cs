@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using LocationPaintableInterface = org.allbinary.graphics.paint.LocationPaintableInterface;
 
 namespace org.allbinary.animation;

@@ -39,7 +39,7 @@ public class NewCssValidationView : CssCustomizerView, ValidationComponentInterf
     }
 
     // throws Exception
-    public virtual Document toXmlDoc()
+    public override Document toXmlDoc()
     {
         return null;
     }
@@ -84,9 +84,15 @@ public class NewCssValidationView : CssCustomizerView, ValidationComponentInterf
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         return views.ValidationOnlyTempUtil.getInstance().view(this);
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

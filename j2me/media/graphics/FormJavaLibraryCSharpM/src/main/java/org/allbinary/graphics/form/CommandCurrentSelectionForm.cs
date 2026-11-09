@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Command = javax.microedition.lcdui.Command;
+using Graphics = javax.microedition.lcdui.Graphics;
 using J2MEUtil = org.allbinary.J2MEUtil;
 using Animation = org.allbinary.animation.Animation;
 using NullAnimationFactory = org.allbinary.animation.NullAnimationFactory;
@@ -51,11 +51,11 @@ public class CommandCurrentSelectionForm : ScrollCurrentSelectionForm, UpdateMyF
     private void initAnimations()
     {
         Animation nullAnimation = NullAnimationFactory.getFactoryInstance().getInstance(0);
-        for (int index = this.selectedAnimationArray.Length; --index >= 0; ) {
-            this.selectedAnimationArray[index] = nullAnimation;
+        for (int index_0 = this.selectedAnimationArray.Length; --index_0 >= 0; ) {
+            this.selectedAnimationArray[index_0] = nullAnimation;
         }
-        for (int index = this.unSelectedAnimationArray.Length; --index >= 0; ) {
-            this.unSelectedAnimationArray[index] = nullAnimation;
+        for (int index_1 = this.unSelectedAnimationArray.Length; --index_1 >= 0; ) {
+            this.unSelectedAnimationArray[index_1] = nullAnimation;
         }
     }
 

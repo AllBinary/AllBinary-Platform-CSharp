@@ -25,10 +25,10 @@ public class ShippingMethodData
     {
     }
 
-    public static readonly string DESCRIPTION = "SHIPPINGMETHOD_DESCRIPTION";
-    public static readonly string DEFAULT = "SHIPPINGMETHOD_DEFAULT";
-    public static readonly string NAME = "SHIPPINGMETHOD_NAME";
-    public static readonly string GROUP = "SHIPPINGMETHOD_GROUP";
-    public static readonly string COST = "SHIPPINGMETHOD_COST";
+    public const string DESCRIPTION = "SHIPPINGMETHOD_DESCRIPTION";
+    public const string DEFAULT = "SHIPPINGMETHOD_DEFAULT";
+    public const string NAME = "SHIPPINGMETHOD_NAME";
+    public const string GROUP = "SHIPPINGMETHOD_GROUP";
+    public const string COST = "SHIPPINGMETHOD_COST";
 }
 

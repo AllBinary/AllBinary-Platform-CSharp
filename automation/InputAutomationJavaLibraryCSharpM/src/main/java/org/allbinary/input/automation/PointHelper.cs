@@ -16,13 +16,13 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 
 namespace org.allbinary.input.automation;
 
 public class PointHelper
 {
-    private static readonly double two = 2.0;
+    private const double two = 2.0;
     public PointHelper()
     {
     }

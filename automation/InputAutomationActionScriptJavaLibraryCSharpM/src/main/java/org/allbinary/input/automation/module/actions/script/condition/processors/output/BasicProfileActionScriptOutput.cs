@@ -35,7 +35,7 @@ public class BasicProfileActionScriptOutput : BasicProfileActionScriptProcessor,
     }
 
     // throws Exception
-    public virtual Node toXmlNode(Document document)
+    public override Node toXmlNode(Document document)
     {
         Node node = document.createElement(GenericProfileActionScriptOutputData.NAME);
         return node;

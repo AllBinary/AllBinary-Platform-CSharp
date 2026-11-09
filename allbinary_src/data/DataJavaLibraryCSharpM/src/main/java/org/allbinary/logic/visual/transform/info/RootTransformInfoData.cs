@@ -25,6 +25,6 @@ public class RootTransformInfoData
     {
     }
 
-    public static readonly string NAME = "ROOT_TRANSFORM_INFO_NAME";
+    public const string NAME = "ROOT_TRANSFORM_INFO_NAME";
 }
 

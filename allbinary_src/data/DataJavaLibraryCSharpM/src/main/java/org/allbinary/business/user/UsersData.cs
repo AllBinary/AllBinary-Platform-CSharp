@@ -25,6 +25,6 @@ public class UsersData
     {
     }
 
-    public static readonly string NAME = "USERS_NAME";
+    public const string NAME = "USERS_NAME";
 }
 

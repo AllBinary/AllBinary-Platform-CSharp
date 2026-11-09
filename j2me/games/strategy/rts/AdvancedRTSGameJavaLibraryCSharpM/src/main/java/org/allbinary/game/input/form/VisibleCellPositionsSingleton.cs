@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using SimpleTiledLayer = javax.microedition.lcdui.game.SimpleTiledLayer;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using SimpleTiledLayer = javax.microedition.lcdui.game.SimpleTiledLayer;
+using Graphics = javax.microedition.lcdui.Graphics;
 using RTSLayerEvent = org.allbinary.game.layer.RTSLayerEvent;
 using BuildingEventListenerInterface = org.allbinary.game.layer.building.@event.BuildingEventListenerInterface;
 using LocalPlayerBuildingEventHandler = org.allbinary.game.layer.building.@event.LocalPlayerBuildingEventHandler;

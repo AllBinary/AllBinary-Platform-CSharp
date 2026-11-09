@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using Direction = org.allbinary.direction.Direction;
 using DirectionFactory = org.allbinary.direction.DirectionFactory;
 using AngleIncrementInfo = org.allbinary.math.AngleIncrementInfo;
@@ -58,9 +58,9 @@ public class BasicDirectionAIHelper
 
     private int getAIKeyPressed(int? frame)
     {
-        short angle = ((short) this.angleInfo.getAngleIncrementInfo().getFrameAngle(frame.intValue()));
+        short angle = ((short) this.angleInfo.getAngleIncrementInfo().getFrameAngle(((int) frame)));
         if (this.angleInfo.getAngle() != angle) {
-            return this.turnAI(frame.intValue());
+            return this.turnAI(((int) frame));
         } else {
             return Canvas.UP;
         }

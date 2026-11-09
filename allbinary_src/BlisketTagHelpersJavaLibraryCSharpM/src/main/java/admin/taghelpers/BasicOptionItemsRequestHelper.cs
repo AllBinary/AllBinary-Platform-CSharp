@@ -110,7 +110,7 @@ public class BasicOptionItemsRequestHelper : ModifyTable
         return values;
     }
 
-    public virtual string insert()
+    public override string insert()
     {
         try {
             Calendar calendar = Calendar.getInstance();
@@ -139,7 +139,7 @@ public class BasicOptionItemsRequestHelper : ModifyTable
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             BasicOptionItemsEntityFactory.getInstance().getBasicOptionItemsEntityInstance().delete(this.id);
@@ -157,7 +157,7 @@ public class BasicOptionItemsRequestHelper : ModifyTable
         }
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             string success = "Update Pricing Successful";

@@ -39,9 +39,12 @@ public class TouchButtonRecognizer
     //CurrentlyPressedTouchButtonSingletonDebug.getInstance();
     public class ReleaseHelper
     {
+        private readonly TouchButtonRecognizer outer;
+
         public readonly TouchButtonRecognizer touchButtonRecognizer;
-        public ReleaseHelper(TouchButtonRecognizer touchButtonRecognizer)
+        public ReleaseHelper(TouchButtonRecognizer outer, TouchButtonRecognizer touchButtonRecognizer)
         {
+            this.outer = outer;
             this.touchButtonRecognizer = touchButtonRecognizer;
         }
 
@@ -62,8 +65,11 @@ public class TouchButtonRecognizer
     }
     public class MultitouchReleaseHelper : ReleaseHelper
     {
-        public MultitouchReleaseHelper(TouchButtonRecognizer touchButtonRecognizer) : base(touchButtonRecognizer)
+        private readonly TouchButtonRecognizer outer;
+
+        public MultitouchReleaseHelper(TouchButtonRecognizer outer, TouchButtonRecognizer touchButtonRecognizer) : base(outer, touchButtonRecognizer)
         {
+            this.outer = outer;
             // base(touchButtonRecognizer) is called from the constructor declaration
         }
 
@@ -89,9 +95,9 @@ public class TouchButtonRecognizer
     public TouchButtonRecognizer()
     {
         if (TouchScreenFactory.getInstance().isMultiTouch()) {
-            this.releaseHelper = new MultitouchReleaseHelper(this);
+            this.releaseHelper = new MultitouchReleaseHelper(this, this);
         } else {
-            this.releaseHelper = new ReleaseHelper(this);
+            this.releaseHelper = new ReleaseHelper(this, this);
         }
     }
 

@@ -37,7 +37,7 @@ public class BasicGameResources
     public virtual void init(string ROOT, string[] SIZE)
     {
         try {
-            int scale = ((int) GameConfigurationCentral.getInstance().SCALE.getValue());
+            int scale = global::java.lang.JavaNumber.intValue(GameConfigurationCentral.getInstance().SCALE.getValue());
             if (scale > 1 && scale - 1 < SIZE.Length) {
                 this.append(ROOT, SIZE[scale - 1]);
             } else {

@@ -29,7 +29,7 @@ public class AdminConfigurationHelper : BasicTable
     {
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             string success = "No Imp";
@@ -46,7 +46,7 @@ public class AdminConfigurationHelper : BasicTable
         }
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             string success = "No Imp";
@@ -63,7 +63,7 @@ public class AdminConfigurationHelper : BasicTable
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "No Imp";
@@ -77,7 +77,7 @@ public class AdminConfigurationHelper : BasicTable
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Backup Successful";

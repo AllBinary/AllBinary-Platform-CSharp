@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 using CacheableInterface = org.allbinary.logic.util.cache.CacheableInterface;
 
 namespace org.allbinary.graphics.color;
@@ -28,7 +28,7 @@ public class ColorCacheable : CacheableInterface
     public ColorCacheable(object key)
     {
         this.key = key;
-        this.color = new Color(((int) (((int?) key))));
+        this.color = new Color(global::java.lang.JavaNumber.intValue((((int?) key))));
     }
 
     public virtual object getKey()

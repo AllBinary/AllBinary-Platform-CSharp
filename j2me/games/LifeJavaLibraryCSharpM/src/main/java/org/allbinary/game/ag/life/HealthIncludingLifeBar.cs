@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Health = org.allbinary.game.health.Health;
 using HealthBarAnimation = org.allbinary.game.health.HealthBarAnimation;
 using HealthBarTwodAnimation = org.allbinary.game.health.HealthBarTwodAnimation;
@@ -49,7 +49,7 @@ public class HealthIncludingLifeBar : Paintable, HealthListenerInterface
         this.onHealthChange();
     }
 
-    public override void onHealthChange()
+    public virtual void onHealthChange()
     {
         this.animationInterface.onHealthChange(((this.healthInterface.getHealth() + (this.healthInterface.getMaxHealth() * this.life.get())) * this.allbinaryLayer.getWidth()) / (this.healthInterface.getMaxHealth() + (this.healthInterface.getMaxHealth() * this.life.getStartLives())));
     }

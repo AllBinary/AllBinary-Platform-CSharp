@@ -9,7 +9,7 @@
 using System;
 using System.Linq;
 //using BufferedImage = java.awt.image.BufferedImage;
-//using File = java.io.File;
+using File = java.io.File;
 //using IOException = java.io.IOException;
 //using Iterator = java.util.Iterator;
 //using IIOImage = javax.imageio.IIOImage;
@@ -91,7 +91,7 @@ public class ImagePersistanceUtil
                 if (writer != null) {
                     writer.dispose();
                 }
-            } catch (IOException e2) {
+            } catch (System.IO.IOException e2) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.SAVE, e2);
             }
         }

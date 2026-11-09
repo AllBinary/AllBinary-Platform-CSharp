@@ -38,18 +38,18 @@ public class AffiliateUser : User
         this.affiliateSales = new AffiliateSales();
     }
 
-    public virtual void validateSession(WeblisketSessionInterface weblisketSession)
+    public override void validateSession(WeblisketSessionInterface weblisketSession)
     {
         base.validateSession(weblisketSession);
         this.updateSession(weblisketSession);
     }
 
-    public virtual void updateSession(WeblisketSessionInterface weblisketSession)
+    public override void updateSession(WeblisketSessionInterface weblisketSession)
     {
         weblisketSession.setStoreName(this.getPermissions());
     }
 
-    public virtual bool? isSessionValid()
+    public override bool? isSessionValid()
     {
         return this.affiliateSales.isValid();
     }

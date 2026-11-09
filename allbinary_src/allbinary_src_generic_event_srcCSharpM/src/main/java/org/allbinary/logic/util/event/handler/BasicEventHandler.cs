@@ -32,7 +32,7 @@ namespace org.allbinary.logic.util.@event.handler;
 public class BasicEventHandler : BasicEventHandlerInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    public static readonly string PERFORMANCE_MESSAGE = "Use Custom onEvent Methods for needed optimization";
+    public const string PERFORMANCE_MESSAGE = "Use Custom onEvent Methods for needed optimization";
     private BasicArrayList eventListenerInterfaceList;
     public BasicEventHandler()
     {

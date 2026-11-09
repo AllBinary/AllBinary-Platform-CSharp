@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using EGLConfig = javax.microedition.khronos.egl.EGLConfig;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
+using EGLConfig = javax.microedition.khronos.egl.EGLConfig;
+using GL10 = javax.microedition.khronos.opengles.GL10;
 using NullUtil = org.allbinary.logic.NullUtil;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using CommonSeps = org.allbinary.@string.CommonSeps;

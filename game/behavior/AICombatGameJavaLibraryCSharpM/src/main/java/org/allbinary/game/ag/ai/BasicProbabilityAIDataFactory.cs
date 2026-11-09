@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using SmallIntegerSingletonFactory = org.allbinary.logic.math.SmallIntegerSingletonFactory;
 using NoTimeDelayHelper = org.allbinary.time.NoTimeDelayHelper;
 using org.allbinary.util;

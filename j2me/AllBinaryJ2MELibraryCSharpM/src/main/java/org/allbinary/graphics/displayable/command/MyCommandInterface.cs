@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
+using Command = javax.microedition.lcdui.Command;
 
 namespace org.allbinary.graphics.displayable.command;
 

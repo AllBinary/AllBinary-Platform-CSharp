@@ -14,11 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 
 namespace org.allbinary.graphics.displayable.screen;
 

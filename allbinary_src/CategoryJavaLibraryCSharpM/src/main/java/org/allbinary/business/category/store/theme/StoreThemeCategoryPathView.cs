@@ -34,7 +34,7 @@ public class StoreThemeCategoryPathView : CategoryView, DomNodeInterface
     }
 
     // throws Exception
-    public virtual Node toXmlNode(Document document)
+    public override Node toXmlNode(Document document)
     {
         Node node = base.toXmlNode(document);
         StoreThemeCategoryInterface storeThemeCategoryInterface = ((StoreThemeCategoryInterface) this.getCategoryInterface());

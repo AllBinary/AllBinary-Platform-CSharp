@@ -29,15 +29,15 @@ public class WebappClassLoaderInfo
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public static void setLoader(ClassLoader classLoader)
+    public static void setLoader(global::java.lang.ClassLoader classLoader)
     {
         WebappClassLoaderInfo.classLoader = classLoader;
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public static ClassLoader getLoader()
+    public static global::java.lang.ClassLoader getLoader()
     {
-        return ((ClassLoader) WebappClassLoaderInfo.classLoader);
+        return ((global::java.lang.ClassLoader) WebappClassLoaderInfo.classLoader);
     }
 
 }

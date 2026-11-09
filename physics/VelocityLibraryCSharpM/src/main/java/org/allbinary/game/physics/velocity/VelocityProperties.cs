@@ -30,32 +30,32 @@ public class VelocityProperties : BasicVelocityProperties, VelocityInterface
         this.setMaxReverseVelocity(maxReverseVelocity);
     }
 
-    public override int getMaxForwardVelocity()
+    public virtual int getMaxForwardVelocity()
     {
         return this.maxForwardVelocity;
     }
 
-    public override void setMaxForwardVelocity(int maxForwardVelocity)
+    public virtual void setMaxForwardVelocity(int maxForwardVelocity)
     {
         this.maxForwardVelocity = maxForwardVelocity;
     }
 
-    public override int getMaxReverseVelocity()
+    public virtual int getMaxReverseVelocity()
     {
         return this.maxReverseVelocity;
     }
 
-    public override void setMaxReverseVelocity(int maxReverseVelocity)
+    public virtual void setMaxReverseVelocity(int maxReverseVelocity)
     {
         this.maxReverseVelocity = maxReverseVelocity;
     }
 
-    public override void limitMaxXYForwardVelocity()
+    public virtual void limitMaxXYForwardVelocity()
     {
         this.limitMaxXYVelocity(this.getMaxForwardVelocity());
     }
 
-    public override void limitMaxXYReverseVelocity()
+    public virtual void limitMaxXYReverseVelocity()
     {
         this.limitMaxXYVelocity(this.getMaxReverseVelocity());
     }
@@ -90,13 +90,13 @@ public class VelocityProperties : BasicVelocityProperties, VelocityInterface
         return this.isOverXYMaxVelocity(this.getMaxReverseVelocity());
     }
 
-    public override void limitXYToForwardAndReverseMaxVelocity()
+    public virtual void limitXYToForwardAndReverseMaxVelocity()
     {
         this.limitMaxXYForwardVelocity();
         this.limitMaxXYReverseVelocity();
     }
 
-    public override void limitMaxXYVelocity(int maxVelocity)
+    public virtual void limitMaxXYVelocity(int maxVelocity)
     {
         this.limitMaxXVelocity(maxVelocity);
         this.limitMaxYVelocity(maxVelocity);

@@ -34,7 +34,7 @@ public class GameKeyCompleteMotionGestureInputEvent : CompleteMotionGestureInput
         // base(name, motionGestureInput) is called from the constructor declaration
     }
 
-    public override int getSourceId()
+    public virtual int getSourceId()
     {
         return 0;
     }
@@ -43,7 +43,7 @@ public class GameKeyCompleteMotionGestureInputEvent : CompleteMotionGestureInput
     {
     }
 
-    protected virtual void setGameKeyEvent(GameKeyEvent gameKeyEvent)
+    public virtual void setGameKeyEvent(GameKeyEvent gameKeyEvent)
     {
         this.gameKeyEvent = gameKeyEvent;
     }
@@ -53,7 +53,7 @@ public class GameKeyCompleteMotionGestureInputEvent : CompleteMotionGestureInput
         return this.gameKeyEvent;
     }
 
-    protected virtual void setGameKey(GameKey gameKey)
+    public virtual void setGameKey(GameKey gameKey)
     {
         this.gameKey = gameKey;
     }

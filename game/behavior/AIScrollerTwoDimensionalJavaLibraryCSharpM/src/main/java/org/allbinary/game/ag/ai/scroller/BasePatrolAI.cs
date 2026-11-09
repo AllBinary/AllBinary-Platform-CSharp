@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using BasicAI = org.allbinary.game.ai.BasicAI;
 using GameInput = org.allbinary.game.input.GameInput;
 using BasicVelocityProperties = org.allbinary.game.physics.velocity.BasicVelocityProperties;

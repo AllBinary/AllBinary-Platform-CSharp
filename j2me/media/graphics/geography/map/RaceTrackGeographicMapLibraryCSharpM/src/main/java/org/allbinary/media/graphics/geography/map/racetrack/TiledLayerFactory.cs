@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using TiledLayer = javax.microedition.lcdui.game.TiledLayer;
+using TiledLayer = javax.microedition.lcdui.game.TiledLayer;
 
 namespace org.allbinary.media.graphics.geography.map.racetrack;
 

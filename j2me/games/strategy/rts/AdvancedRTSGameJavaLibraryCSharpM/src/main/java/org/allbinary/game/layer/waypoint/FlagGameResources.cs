@@ -32,9 +32,9 @@ public class FlagGameResources : BasicGameResources
     {
     }
 
-    private static readonly string ICON = "_icon";
-    private static readonly string BUILD = "_build";
-    private static readonly string DESTROY = "_destroy";
+    private const string ICON = "_icon";
+    private const string BUILD = "_build";
+    private const string DESTROY = "_destroy";
     private static readonly string ICON_BUILD = "_icon" + FlagGameResources.BUILD;
     private readonly string ICON_SIZE = "_64_by_64.png";
     // throws Exception

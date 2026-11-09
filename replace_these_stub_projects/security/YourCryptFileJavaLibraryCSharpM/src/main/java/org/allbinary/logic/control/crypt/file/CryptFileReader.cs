@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 using AbPath = org.allbinary.logic.io.path.AbPath;
 
 namespace org.allbinary.logic.control.crypt.file;

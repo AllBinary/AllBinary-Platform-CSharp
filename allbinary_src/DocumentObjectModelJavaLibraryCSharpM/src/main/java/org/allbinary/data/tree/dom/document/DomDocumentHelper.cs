@@ -16,10 +16,11 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 //using StringBufferInputStream = java.io.StringBufferInputStream;
 //using DocumentBuilder = javax.xml.parsers.DocumentBuilder;
 //using DocumentBuilderFactory = javax.xml.parsers.DocumentBuilderFactory;
+using CommonPhoneStrings = org.allbinary.@string.CommonPhoneStrings;
 using Document = org.w3c.dom.Document;
 
 namespace org.allbinary.data.tree.dom.document;
@@ -32,9 +33,10 @@ public class DomDocumentHelper
 
     public static void init()
     {
-        global::java.lang.JavaSystem.setProperty("jdk.xml.maxElementDepth", "0");
-        global::java.lang.JavaSystem.setProperty("jdk.xml.xpathExprOpLimit", "0");
-        global::java.lang.JavaSystem.setProperty("jdk.xml.xpathTotalOpLimit", "0");
+        CommonPhoneStrings commonPhoneStrings = CommonPhoneStrings.getInstance();
+        global::java.lang.JavaSystem.setProperty("jdk.xml.maxElementDepth", commonPhoneStrings.ZERO);
+        global::java.lang.JavaSystem.setProperty("jdk.xml.xpathExprOpLimit", commonPhoneStrings.ZERO);
+        global::java.lang.JavaSystem.setProperty("jdk.xml.xpathTotalOpLimit", commonPhoneStrings.ZERO);
         string LIMIT = "500000";
         global::java.lang.JavaSystem.setProperty("jdk.xml.maxGeneralEntitySizeLimit", LIMIT);
         global::java.lang.JavaSystem.setProperty("jdk.xml.totalEntitySizeLimit", LIMIT);

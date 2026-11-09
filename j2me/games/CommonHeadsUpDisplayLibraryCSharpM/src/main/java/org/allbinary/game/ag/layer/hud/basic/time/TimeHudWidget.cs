@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicHud = org.allbinary.game.graphics.hud.BasicHud;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using MyFontProcessor = org.allbinary.graphics.font.MyFontProcessor;

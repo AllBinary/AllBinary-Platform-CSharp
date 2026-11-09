@@ -70,7 +70,7 @@ public class XmlOptionItemsRequestHelper : ModifyTable
         return values;
     }
 
-    public virtual string insert()
+    public override string insert()
     {
         try {
             Calendar calendar = Calendar.getInstance();
@@ -96,7 +96,7 @@ public class XmlOptionItemsRequestHelper : ModifyTable
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             XmlOptionItemsEntityFactory.getInstance().getXmlOptionItemsEntityInstance().delete(this.id);
@@ -114,7 +114,7 @@ public class XmlOptionItemsRequestHelper : ModifyTable
         }
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             string success = "Update Successful";

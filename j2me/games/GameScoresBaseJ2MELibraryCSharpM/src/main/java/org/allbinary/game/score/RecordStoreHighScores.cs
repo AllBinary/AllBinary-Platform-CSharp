@@ -17,15 +17,15 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
-//using DataInputStream = java.io.DataInputStream;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using DataInputStream = java.io.DataInputStream;
 //using EOFException = java.io.EOFException;
 //using IOException = java.io.IOException;
-//using RecordComparator = javax.microedition.rms.RecordComparator;
-//using RecordEnumeration = javax.microedition.rms.RecordEnumeration;
-//using RecordStore = javax.microedition.rms.RecordStore;
-//using RecordStoreException = javax.microedition.rms.RecordStoreException;
-//using RecordStoreNotFoundException = javax.microedition.rms.RecordStoreNotFoundException;
+using RecordComparator = javax.microedition.rms.RecordComparator;
+using RecordEnumeration = javax.microedition.rms.RecordEnumeration;
+using RecordStore = javax.microedition.rms.RecordStore;
+using RecordStoreException = javax.microedition.rms.RecordStoreException;
+using RecordStoreNotFoundException = javax.microedition.rms.RecordStoreNotFoundException;
 using TsUtil = org.allbinary.TsUtil;
 using GameInfo = org.allbinary.game.GameInfo;
 using NullRecordComparator = org.allbinary.game.configuration.persistance.NullRecordComparator;
@@ -99,7 +99,7 @@ public class RecordStoreHighScores : HighScores
             this.load();
         } catch (RecordStoreException e) {
             this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.ADD, e);
-        } catch (IOException e) {
+        } catch (System.IO.IOException e) {
             this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.ADD, e);
         } catch (Exception e) {
             this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.ADD, e);
@@ -191,7 +191,7 @@ public class RecordStoreHighScores : HighScores
                             }
                         }
                         list.addAt(lastIndex, newHighScore);
-                    } catch (EOFException e) {
+                    } catch (System.IO.EndOfStreamException e) {
                         this.logUtil.put("EOF", this, this.commonStrings.LOAD, e);
                         throw e;
                     }
@@ -201,7 +201,7 @@ public class RecordStoreHighScores : HighScores
             this.logUtil.put("No High Scores", this, this.commonStrings.LOAD, e);
         } catch (RecordStoreException e) {
             this.logUtil.put(this.commonStrings.UNKNOWN, this, this.commonStrings.LOAD, e);
-        } catch (IOException e) {
+        } catch (System.IO.IOException e) {
             this.logUtil.put(this.commonStrings.UNKNOWN, this, this.commonStrings.LOAD, e);
         } catch (Exception e) {
             this.logUtil.put(this.commonStrings.UNKNOWN, this, this.commonStrings.LOAD, e);

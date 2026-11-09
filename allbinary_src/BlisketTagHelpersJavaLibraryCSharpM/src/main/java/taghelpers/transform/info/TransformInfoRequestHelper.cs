@@ -37,7 +37,7 @@ public class TransformInfoRequestHelper : ModifyTable
         this.transformInfoInterface = new TransformInfoHttpStoreNoManipulation(propertiesHashMap, pageContext);
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             string success = "Updated Successfully";
@@ -56,7 +56,7 @@ public class TransformInfoRequestHelper : ModifyTable
         }
     }
 
-    public virtual string insert()
+    public override string insert()
     {
         try {
             string success = "Added TransformInfo Successfully";
@@ -75,7 +75,7 @@ public class TransformInfoRequestHelper : ModifyTable
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             string success = "Delete Successfully";

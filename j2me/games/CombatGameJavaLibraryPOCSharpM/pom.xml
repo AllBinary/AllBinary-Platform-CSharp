@@ -111,16 +111,16 @@
         <module>../../../../work/j2me/games/strategy/rts/RTSGameJavaLibraryP</module>
         -->
 
-        <module>../../media/graphics/OtherGraphicsMediaLibraryP</module>
+        <module>../../media/graphics/OtherGraphicsMediaLibraryCSharpP</module>
 
         <module>../../input/NoTouchButtonResourceAnimationJavaLibraryCSharpM</module>
         <module>../../input/TouchButtonResourceAnimationJavaLibraryCSharpM</module>
         <module>../../input/TouchButtonResourceOpenGLESAnimationJavaLibraryCSharpM</module>
 
         <module>../../input/TrackingEventJavaLibraryCSharpM</module>
-        <module>../../../game/behavior/BehaviorLibraryP</module>
+        <module>../../../game/behavior/BehaviorLibraryCSharpP</module>
 
-        <module>../../media/sound/OtherSoundMediaLibraryP</module>
+        <module>../../media/sound/OtherSoundMediaLibraryCSharpP</module>
 
         <module>../../../allbinary_src/licensing/ApplicationConfigurationJavaLibraryCSharpM</module>
         <module>../../../allbinary_src/licensing/ApplicationConfigurationNoFSJavaLibraryCSharpM</module>

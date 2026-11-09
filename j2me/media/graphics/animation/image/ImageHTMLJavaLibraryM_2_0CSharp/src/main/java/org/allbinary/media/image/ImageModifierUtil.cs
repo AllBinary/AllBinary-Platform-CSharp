@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using Anchor = org.allbinary.graphics.Anchor;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using CommonStrings = org.allbinary.@string.CommonStrings;
@@ -101,6 +101,41 @@ public class ImageModifierUtil
         return imageArray;
     }
 
+    public class ImageCopyCallback : Callback
+    {
+        private readonly ImageModifierUtil outer;
+
+        private readonly ImageModifierUtil imageModifierUtil;
+        private readonly Image[] imageArray;
+        private readonly int index;
+        private readonly Image image;
+        private readonly CoreImage image3;
+        public ImageCopyCallback(ImageModifierUtil outer, ImageModifierUtil imageModifierUtil, Image[] imageArray, int index, Image image, CoreImage image3)
+        {
+            this.outer = outer;
+            this.imageModifierUtil = imageModifierUtil;
+            this.imageArray = imageArray;
+            this.index = index;
+            this.image = image;
+            this.image3 = image3;
+        }
+
+        public virtual void onSuccess(object resource)
+        {
+            LogUtil logUtil = LogUtil.getInstance();
+            ResourceCallbackStrings resourceCallbackStrings = this.imageModifierUtil.resourceCallbackStrings;
+            logUtil.putF(resourceCallbackStrings.DONE + this.image.getName(), this, resourceCallbackStrings.HANDLE_IMAGE);
+            this.imageModifierUtil.copy(this.imageArray, this.index, this.image, this.image3);
+        }
+
+        public virtual void onFailure(Exception e)
+        {
+            LogUtil logUtil = LogUtil.getInstance();
+            ResourceCallbackStrings resourceCallbackStrings = this.imageModifierUtil.resourceCallbackStrings;
+            logUtil.put(new StringMaker().append(this.imageModifierUtil.commonStrings.EXCEPTION_LABEL).append(resourceCallbackStrings.ERROR).append(this.image.getName()).ToString(), this, resourceCallbackStrings.HANDLE_IMAGE, e);
+        }
+
+    }
     public virtual void handleImage(Image[] imageArray, int index, Image image)
     {
         CoreImage image3 = ((CoreImage) (((PlaynImage) image)).getImage());
@@ -108,23 +143,7 @@ public class ImageModifierUtil
             if (image3.isReady() || image3.width() + image3.height() <= 0 || image.getName() == this.resourceCallbackStrings.FROM_DATA) {
                 this.copy(imageArray, index, image, image3);
             } else {
-                Callback callback = new Callback()
-#if JAVA_ANONYMOUS_CLASS_BODY
-                    public virtual void onSuccess(object resource)
-                    {
-                        LogUtil logUtil = LogUtil.getInstance();
-                        logUtil.putF(resourceCallbackStrings.DONE + image.getName(), this, resourceCallbackStrings.HANDLE_IMAGE);
-                        copy(imageArray, index, image, image3);
-                    }
-
-                    public virtual void onFailure(Exception e)
-                    {
-                        LogUtil logUtil = LogUtil.getInstance();
-                        logUtil.put(new StringMaker().append(commonStrings.EXCEPTION_LABEL).append(resourceCallbackStrings.ERROR).append(image.getName()).ToString(), this, resourceCallbackStrings.HANDLE_IMAGE, e);
-                    }
-
-#endif
-;
+                Callback callback = new ImageCopyCallback(this, this, imageArray, index, image, image3);
                 image3.addCallback(callback);
             }
         } else {

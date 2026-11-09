@@ -37,7 +37,7 @@ public class InsertCssValidationView : CssCustomizerView, ValidationComponentInt
     }
 
     // throws Exception
-    public virtual Document toXmlDoc()
+    public override Document toXmlDoc()
     {
         return null;
     }
@@ -85,7 +85,7 @@ public class InsertCssValidationView : CssCustomizerView, ValidationComponentInt
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             return StoreCustomizerComponentUtil.getInstance().generate(this.abeClientInformation, this.getTransformInfoInterface());
@@ -95,6 +95,12 @@ public class InsertCssValidationView : CssCustomizerView, ValidationComponentInt
             }
             throw e;
         }
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

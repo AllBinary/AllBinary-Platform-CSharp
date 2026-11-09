@@ -21,7 +21,7 @@ namespace org.allbinary.business.user.commerce.money.payment.gateway;
 
 public class PaymentGatewayData
 {
-    public static readonly int CRYPTNUM = 5;
+    public const int CRYPTNUM = 5;
     private string key;
     public static readonly PaymentGatewayData ID = new PaymentGatewayData("PAYMENTGATEWAY_ID");
     public static readonly PaymentGatewayData NAME = new PaymentGatewayData("PAYMENTGATEWAY_NAME");

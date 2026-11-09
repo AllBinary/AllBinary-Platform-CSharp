@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
-//using Sprite = javax.microedition.lcdui.game.Sprite;
+using Image = javax.microedition.lcdui.Image;
+using Sprite = javax.microedition.lcdui.game.Sprite;
 using Animation = org.allbinary.animation.Animation;
 using AnimationBehaviorFactory = org.allbinary.animation.AnimationBehaviorFactory;
 using ProceduralAnimationInterfaceFactoryInterface = org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface;
@@ -106,7 +106,7 @@ public class AllBinarySpriteRotationAnimationFactory : BaseImageAnimationFactory
     }
 
     // throws Exception
-    public override Animation getInstanceAnimation(Animation animationInterface)
+    public virtual Animation getInstanceAnimation(Animation animationInterface)
     {
         return this.getInstance(0);
     }

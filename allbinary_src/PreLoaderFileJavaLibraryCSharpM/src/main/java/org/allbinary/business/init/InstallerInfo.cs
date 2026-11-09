@@ -36,7 +36,7 @@ public class InstallerInfo
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private static readonly InstallerInfo instance = new InstallerInfo();
-    private static readonly string INITFILENAME = "installerdata.dat";
+    private const string INITFILENAME = "installerdata.dat";
     private static readonly string PACKAGE = PATH_GLOBALS.getInstance().INIT_PATH;
     private static string userName = StringUtil.getInstance().EMPTY_STRING;
     private static string password = StringUtil.getInstance().EMPTY_STRING;

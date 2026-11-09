@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using Closeable = java.io.Closeable;
-//using DataInputStream = java.io.DataInputStream;
-//using InputStream = java.io.InputStream;
-//using OutputStream = java.io.OutputStream;
+using Closeable = java.io.Closeable;
+using DataInputStream = java.io.DataInputStream;
+using InputStream = java.io.InputStream;
+using OutputStream = java.io.OutputStream;
 using TsUtil = org.allbinary.TsUtil;
 using AbDataOutputStream = org.allbinary.logic.io.AbDataOutputStream;
 using FileStreamFactory = org.allbinary.logic.io.FileStreamFactory;

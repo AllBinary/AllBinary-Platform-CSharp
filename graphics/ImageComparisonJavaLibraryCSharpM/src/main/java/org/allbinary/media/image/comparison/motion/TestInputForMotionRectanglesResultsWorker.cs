@@ -19,7 +19,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 //using Rectangle = java.awt.Rectangle;
 //using InputEvent = java.awt.@event.InputEvent;
-//using KeyEvent = java.awt.@event.KeyEvent;
+using KeyEvent = java.awt.@event.KeyEvent;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using InputRobotFactory = org.allbinary.input.automation.robot.InputRobotFactory;

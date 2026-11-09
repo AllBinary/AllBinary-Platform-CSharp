@@ -25,6 +25,6 @@ public class GeneratorTransformInfoData
     {
     }
 
-    public static readonly string NAME = "GENERATOR_TRANSFORM_INFO_NAME";
+    public const string NAME = "GENERATOR_TRANSFORM_INFO_NAME";
 }
 

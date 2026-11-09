@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Player = javax.microedition.media.Player;
+using Player = javax.microedition.media.Player;
 using ProgressCanvas = org.allbinary.graphics.canvas.transition.progress.ProgressCanvas;
 using ProgressCanvasFactory = org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;

@@ -16,14 +16,14 @@
 
 using System;
 using System.Linq;
-//using KeySpec = java.security.spec.KeySpec;
+using KeySpec = java.security.spec.KeySpec;
 
 namespace org.allbinary.logic.control.crypt.jcehelper;
 
 public class KeySpecFactory
 {
-    public static readonly string DES = "DES";
-    public static readonly string DESEDE = "DESede";
+    public const string DES = "DES";
+    public const string DESEDE = "DESede";
     private KeySpecFactory()
     {
     }

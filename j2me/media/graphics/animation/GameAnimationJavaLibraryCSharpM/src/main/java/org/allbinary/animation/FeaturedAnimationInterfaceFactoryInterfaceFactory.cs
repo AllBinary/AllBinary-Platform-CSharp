@@ -53,7 +53,7 @@ public class FeaturedAnimationInterfaceFactoryInterfaceFactory : FeaturedResourc
     {
         PointFactory pointFactory = PointFactory.getInstance();
         BasicArrayList list = this.getList();
-        int scale = ((int) GameConfigurationCentral.getInstance().SCALE.getValue());
+        int scale = global::java.lang.JavaNumber.intValue(GameConfigurationCentral.getInstance().SCALE.getValue());
         int size = this.getList().size();
         for (int index = 0; index < size; index++) {
             FeatureResourceAnimationInterfaceFactoryInterface featureInterface = ((FeatureResourceAnimationInterfaceFactoryInterface) list.objectArray[index]);
@@ -87,8 +87,8 @@ public class FeaturedAnimationInterfaceFactoryInterfaceFactory : FeaturedResourc
         int size = this.getList().size();
         FeatureResourceAnimationInterfaceFactoryInterface featureInterface = null;
         BasicAnimationInterfaceFactoryInterface animationInterfaceFactoryInterface = null;
-        for (int index = 0; index < size; index++) {
-            featureInterface = ((FeatureResourceAnimationInterfaceFactoryInterface) list.objectArray[index]);
+        for (int index_1 = 0; index_1 < size; index_1++) {
+            featureInterface = ((FeatureResourceAnimationInterfaceFactoryInterface) list.objectArray[index_1]);
             if (featureInterface.isFeature()) {
                 resourceTypeAvailableList.add(featureInterface);
                 animationInterfaceFactoryInterface = featureInterface.getBasicAnimationInterfaceFactoryInstance(resource);
@@ -110,15 +110,15 @@ public class FeaturedAnimationInterfaceFactoryInterfaceFactory : FeaturedResourc
             stringBuffer.appendint(size);
             stringBuffer.append(FOR_FACTORIES);
             int size2 = resourceTypeAvailableList.size();
-            for (int index = 0; index < size2; index++) {
-                stringBuffer.append(resourceTypeAvailableList.get(index).ToString());
+            for (int index_3 = 0; index_3 < size2; index_3++) {
+                stringBuffer.append(resourceTypeAvailableList.get(index_3).ToString());
                 stringBuffer.append(CommonSeps.getInstance().COMMA_SEP);
             }
             stringBuffer.append(FOR_RESOURCE);
             stringBuffer.append(resource);
-            for (int index = 0; index < size; index++) {
+            for (int index_4 = 0; index_4 < size; index_4++) {
                 stringBuffer.append(CommonSeps.getInstance().NEW_LINE);
-                featureInterface = ((FeatureResourceAnimationInterfaceFactoryInterface) list.objectArray[index]);
+                featureInterface = ((FeatureResourceAnimationInterfaceFactoryInterface) list.objectArray[index_4]);
                 if (featureInterface.isFeature()) {
                     stringBuffer.append(StringUtil.getInstance().toString(featureInterface));
                     stringBuffer.append(HAS_KEY);
@@ -129,8 +129,8 @@ public class FeaturedAnimationInterfaceFactoryInterfaceFactory : FeaturedResourc
             throw new Exception(stringBuffer.ToString());
         } else {
             StringMaker stringBuffer = new StringMaker();
-            for (int index = 0; index < size; index++) {
-                featureInterface = ((FeatureResourceAnimationInterfaceFactoryInterface) list.objectArray[index]);
+            for (int index_2 = 0; index_2 < size; index_2++) {
+                featureInterface = ((FeatureResourceAnimationInterfaceFactoryInterface) list.objectArray[index_2]);
                 stringBuffer.append(featureInterface.ToString());
                 stringBuffer.append(CommonSeps.getInstance().SPACE);
             }

@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 //using BufferedImage = java.awt.image.BufferedImage;
-//using File = java.io.File;
+using File = java.io.File;
 
 namespace org.allbinary.media.image;
 

@@ -79,7 +79,7 @@ public class SpecialItemsRequestHelper : ModifyTable
         return values;
     }
 
-    public virtual string insert()
+    public override string insert()
     {
         try {
             Calendar calendar = Calendar.getInstance();
@@ -108,7 +108,7 @@ public class SpecialItemsRequestHelper : ModifyTable
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             SpecialItemsEntityFactory.getInstance().getSpecialItemsEntityInstance().delete(this.id);
@@ -126,7 +126,7 @@ public class SpecialItemsRequestHelper : ModifyTable
         }
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             string success = "Update Successful";

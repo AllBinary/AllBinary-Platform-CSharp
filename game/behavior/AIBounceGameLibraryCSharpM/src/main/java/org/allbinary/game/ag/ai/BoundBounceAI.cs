@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BoundsVisitorInterface = org.allbinary.bounds.BoundsVisitorInterface;
 using LayerBounds = org.allbinary.bounds.LayerBounds;
 using BasicAI = org.allbinary.game.ai.BasicAI;

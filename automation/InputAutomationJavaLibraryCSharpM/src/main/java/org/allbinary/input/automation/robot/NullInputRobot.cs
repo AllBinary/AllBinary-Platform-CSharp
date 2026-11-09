@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 //using HelpSet = javax.help.HelpSet;
 using AbstractInputRobot = org.allbinary.input.automation.AbstractInputRobot;
@@ -28,8 +28,8 @@ namespace org.allbinary.input.automation.robot;
 public class NullInputRobot : AbstractInputRobot, InputRobotInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    public static readonly string LIBRARY_NAME = "null";
-    public static readonly string NAME = "NULL";
+    public const string LIBRARY_NAME = "null";
+    public const string NAME = "NULL";
     public NullInputRobot() : base(null)
     {
         // base(null) is called from the constructor declaration
@@ -40,7 +40,7 @@ public class NullInputRobot : AbstractInputRobot, InputRobotInterface
         return NullInputRobot.NAME;
     }
 
-    public virtual HelpSet getHelpSet()
+    public override HelpSet getHelpSet()
     {
         return null;
     }
@@ -60,7 +60,7 @@ public class NullInputRobot : AbstractInputRobot, InputRobotInterface
         this.logUtil.putF("KeyCode: " + keycode, this, "keyRelease");
     }
 
-    public virtual void mouseMove(int? x, int? y)
+    public override void mouseMove(int? x, int? y)
     {
         this.logUtil.putF("X: " + x + " Y: " + y, this, "mouseMove");
     }
@@ -118,6 +118,23 @@ public class NullInputRobot : AbstractInputRobot, InputRobotInterface
 
     public virtual void waitForIdle()
     {
+    }
+
+    public override void mouseMove(Point point)
+    {
+        base.mouseMove(point);
+    }
+
+    // throws Exception
+    public override void mouseMoveToTarget(Rectangle rectangle)
+    {
+        base.mouseMoveToTarget(rectangle);
+    }
+
+    // throws Exception
+    public override void mouseMoveToTarget(Rectangle rectangle, int? x, int? y)
+    {
+        base.mouseMoveToTarget(rectangle, x, y);
     }
 
 }

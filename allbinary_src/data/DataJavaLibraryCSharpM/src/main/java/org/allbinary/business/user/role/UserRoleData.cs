@@ -25,6 +25,6 @@ public class UserRoleData
     {
     }
 
-    public static readonly string NAME = "ROLE";
+    public const string NAME = "ROLE";
 }
 

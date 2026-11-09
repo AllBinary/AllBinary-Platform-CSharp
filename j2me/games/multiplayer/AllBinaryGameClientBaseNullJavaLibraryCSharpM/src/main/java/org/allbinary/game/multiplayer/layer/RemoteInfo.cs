@@ -14,7 +14,7 @@ namespace org.allbinary.game.multiplayer.layer;
 
 public class RemoteInfo
 {
-    public static readonly int NEW_PLAYER_ID = 0;
+    public const int NEW_PLAYER_ID = 0;
     public static readonly RemoteInfo REMOTE_INFO = new RemoteInfo(StringUtil.getInstance().EMPTY_STRING, -1, -1, RemoteInfo.NEW_PLAYER_ID);
     public RemoteInfo(string username, int actorSessionId, int playerInputId, int id)
     {

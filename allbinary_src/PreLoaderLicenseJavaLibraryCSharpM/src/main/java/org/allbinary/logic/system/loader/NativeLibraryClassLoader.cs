@@ -19,10 +19,10 @@ using System.Linq;
 
 namespace org.allbinary.logic.system.loader;
 
-public class NativeLibraryClassLoader : ClassLoader
+public class NativeLibraryClassLoader : global::java.lang.ClassLoader
 {
     private string message = "This Class Loader Does Not Load Classes - Only For Loading and Unloading of Native Libraries";
-    public NativeLibraryClassLoader(ClassLoader parent) : base(parent)
+    public NativeLibraryClassLoader(global::java.lang.ClassLoader parent) : base(parent)
     {
         // base(parent) is called from the constructor declaration
     }

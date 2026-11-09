@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using NullProgressActivity = org.allbinary.android.activity.NullProgressActivity;
 using ProgressActivityInterface = org.allbinary.android.activity.ProgressActivityInterface;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -29,9 +29,12 @@ public class AndroidTitleProgressBar : ProgressCanvas
 {
     public class TitleProgressBarSetProgressRunnable : global::java.lang.Runnable
     {
+        private readonly AndroidTitleProgressBar outer;
+
         private readonly AndroidTitleProgressBar androidTitleProgressBar;
-        public TitleProgressBarSetProgressRunnable(AndroidTitleProgressBar androidTitleProgressBar)
+        public TitleProgressBarSetProgressRunnable(AndroidTitleProgressBar outer, AndroidTitleProgressBar androidTitleProgressBar)
         {
+            this.outer = outer;
             this.androidTitleProgressBar = androidTitleProgressBar;
         }
 
@@ -50,9 +53,12 @@ public class AndroidTitleProgressBar : ProgressCanvas
     }
     public class TitleProgressBarPortionSetProgressRunnable : global::java.lang.Runnable
     {
+        private readonly AndroidTitleProgressBar outer;
+
         private readonly AndroidTitleProgressBar androidTitleProgressBar;
-        public TitleProgressBarPortionSetProgressRunnable(AndroidTitleProgressBar androidTitleProgressBar)
+        public TitleProgressBarPortionSetProgressRunnable(AndroidTitleProgressBar outer, AndroidTitleProgressBar androidTitleProgressBar)
         {
+            this.outer = outer;
             this.androidTitleProgressBar = androidTitleProgressBar;
         }
 
@@ -71,9 +77,12 @@ public class AndroidTitleProgressBar : ProgressCanvas
     }
     public class ShowTitleProgressBarRunnable : global::java.lang.Runnable
     {
+        private readonly AndroidTitleProgressBar outer;
+
         private readonly AndroidTitleProgressBar androidTitleProgressBar;
-        public ShowTitleProgressBarRunnable(AndroidTitleProgressBar androidTitleProgressBar)
+        public ShowTitleProgressBarRunnable(AndroidTitleProgressBar outer, AndroidTitleProgressBar androidTitleProgressBar)
         {
+            this.outer = outer;
             this.androidTitleProgressBar = androidTitleProgressBar;
         }
 
@@ -92,9 +101,12 @@ public class AndroidTitleProgressBar : ProgressCanvas
     }
     public class DismissTitleProgressBarRunnable : global::java.lang.Runnable
     {
+        private readonly AndroidTitleProgressBar outer;
+
         private readonly AndroidTitleProgressBar androidTitleProgressBar;
-        public DismissTitleProgressBarRunnable(AndroidTitleProgressBar androidTitleProgressBar)
+        public DismissTitleProgressBarRunnable(AndroidTitleProgressBar outer, AndroidTitleProgressBar androidTitleProgressBar)
         {
+            this.outer = outer;
             this.androidTitleProgressBar = androidTitleProgressBar;
         }
 
@@ -118,10 +130,10 @@ public class AndroidTitleProgressBar : ProgressCanvas
     private int portion = 0;
     public AndroidTitleProgressBar(string title, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(title, backgroundBasicColor, foregroundBasicColor)
     {
-        this.showTitleProgressBarRunnable = new ShowTitleProgressBarRunnable(this);
-        this.dismissTitleProgressBarRunnable = new DismissTitleProgressBarRunnable(this);
-        this.progressDialogPortionSetProgressRunnable = new TitleProgressBarPortionSetProgressRunnable(this);
-        this.progressDialogSetProgressRunnable = new TitleProgressBarSetProgressRunnable(this);
+        this.showTitleProgressBarRunnable = new ShowTitleProgressBarRunnable(this, this);
+        this.dismissTitleProgressBarRunnable = new DismissTitleProgressBarRunnable(this, this);
+        this.progressDialogPortionSetProgressRunnable = new TitleProgressBarPortionSetProgressRunnable(this, this);
+        this.progressDialogSetProgressRunnable = new TitleProgressBarSetProgressRunnable(this, this);
         // base(title, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
     }
 

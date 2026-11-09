@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using CanvasStrings = org.allbinary.graphics.displayable.CanvasStrings;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using SmallIntegerSingletonFactory = org.allbinary.logic.math.SmallIntegerSingletonFactory;
@@ -61,27 +61,27 @@ public class Layer
         this.z += dz;
     }
 
-    public int getXP()
+    public virtual int getXP()
     {
         return this.x;
     }
 
-    public int getYP()
+    public virtual int getYP()
     {
         return this.y;
     }
 
-    public int getZP()
+    public virtual int getZP()
     {
         return this.z;
     }
 
-    public int getWidth()
+    public virtual int getWidth()
     {
         return this.width;
     }
 
-    public int getHeight()
+    public virtual int getHeight()
     {
         return this.height;
     }
@@ -96,7 +96,7 @@ public class Layer
         this.visible = visible;
     }
 
-    public bool isVisible()
+    public virtual bool isVisible()
     {
         return this.visible;
     }

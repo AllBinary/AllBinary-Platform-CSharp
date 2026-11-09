@@ -14,9 +14,11 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using PlayerGameInput = org.allbinary.game.input.PlayerGameInput;
 using PlayerGameInputCompositeInterface = org.allbinary.game.input.PlayerGameInputCompositeInterface;
 using PointFactory = org.allbinary.graphics.PointFactory;
@@ -40,12 +42,12 @@ public class PlayerGameInputGameLayer : AllBinaryGameLayer, PlayerGameInputCompo
         this.logUtil.putF("Danger Danger Danger: Should Not Be Called Except For Testing Input", this, canvasStrings.PAINT);
     }
 
-    public override PlayerGameInput getPlayerGameInput()
+    public virtual PlayerGameInput getPlayerGameInput()
     {
         return this.playerGameInput;
     }
 
-    public override void initInputProcessors()
+    public virtual void initInputProcessors()
     {
     }
 

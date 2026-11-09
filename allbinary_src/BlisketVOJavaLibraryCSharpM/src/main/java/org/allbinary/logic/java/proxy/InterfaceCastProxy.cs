@@ -31,7 +31,7 @@ public class InterfaceCastProxy : java.lang.reflect.InvocationHandler
 
     public static object newInstance(object anyType)
     {
-        return Proxy.newProxyInstance(anyType.GetType().getClassLoader(), anyType.GetType().getInterfaces(), new InterfaceCastProxy(anyType));
+        return Proxy.newProxyInstance(global::java.lang.ClassLoader.getSystemClassLoader(), anyType.GetType().getInterfaces(), new InterfaceCastProxy(anyType));
     }
 
     // throws Throwable

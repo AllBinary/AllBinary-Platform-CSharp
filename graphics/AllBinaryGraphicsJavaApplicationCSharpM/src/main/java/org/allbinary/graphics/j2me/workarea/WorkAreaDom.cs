@@ -26,9 +26,9 @@ namespace org.allbinary.graphics.j2me.workarea;
 
 public class WorkAreaDom
 {
-    public static readonly string WORKAREA = "workArea";
-    public static readonly string NAME = "name";
-    public static readonly string FRAMES = "frames";
+    public const string WORKAREA = "workArea";
+    public const string NAME = "name";
+    public const string FRAMES = "frames";
     private string name = null;
     private BasicArrayList canvasNodeList = null;
     public WorkAreaDom(Document document)

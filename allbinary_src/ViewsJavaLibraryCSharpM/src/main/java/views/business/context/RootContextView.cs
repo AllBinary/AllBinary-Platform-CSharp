@@ -42,7 +42,7 @@ public class RootContextView : HttpStoreComponentView, TransformTemplateInterfac
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {

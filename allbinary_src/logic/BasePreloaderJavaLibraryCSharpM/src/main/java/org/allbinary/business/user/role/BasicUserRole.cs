@@ -16,16 +16,12 @@
 
 using System;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using Serializable = java.io.Serializable;
-using BasicArrayList = org.allbinary.util.BasicArrayList;
-using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 
 namespace org.allbinary.business.user.role;
 
 public class BasicUserRole : Serializable
 {
-    private static readonly BasicArrayList roleVector = new BasicArrayListD();
     private readonly int m_int_RoleId;
     private readonly string role;
     private readonly string displayValue;
@@ -43,7 +39,7 @@ public class BasicUserRole : Serializable
         this.displayValue = aDisplayValue;
         this.sessionTimeout = aSessionTimeout;
         this.sessionInactivityTimeout = aSessionInactivityTimeout;
-        BasicUserRole.roleVector.add(this);
+        BasicUserRoles.getInstance().roleVector.add(this);
     }
 
     private int getRoleId()
@@ -77,26 +73,6 @@ public class BasicUserRole : Serializable
     public override string ToString()
     {
         return this.getRole();
-    }
-
-    // throws Exception
-    [MethodImpl(MethodImplOptions.Synchronized)]
-    public static BasicUserRole getRole(string role)
-    {
-        BasicArrayList roleVector = BasicUserRole.getAll();
-        int size = roleVector.size();
-        for (int index = 0; index < size; index++) {
-            BasicUserRole userRole = ((BasicUserRole) roleVector.get(index));
-            if (string.CompareOrdinal(role, userRole.ToString()) == 0) {
-                return userRole;
-            }
-        }
-        throw new Exception("Unable to get role - Unknown Role");
-    }
-
-    public static BasicArrayList getAll()
-    {
-        return BasicUserRole.roleVector;
     }
 
 }

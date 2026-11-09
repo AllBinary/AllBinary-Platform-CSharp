@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Anchor = org.allbinary.graphics.Anchor;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
@@ -59,12 +61,12 @@ public class StartIntermissionPaintable : InitUpdatePaintable, UpdateMyFontInter
         this.stringArray = stringArray;
         this.lastWidth = new int[this.stringArray.Length];
         this.setBasicColorP(basicColor);
-        this.color = ((int) basicColor);
+        this.color = basicColor.intValue();
         this.fontSize = font.getSize();
         this.font = font;
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.fontHeightP = font.getHeight();

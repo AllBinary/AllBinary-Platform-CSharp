@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Anchor = org.allbinary.graphics.Anchor;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
@@ -50,10 +50,10 @@ public class OwnershipPaintable : Paintable, UpdateMyFontInterface
     private OwnershipPaintable()
     {
         this.myFontProcessor = new UpdateMyFontProcessor(this);
-        this.color = ((int) this.basicColor);
+        this.color = this.basicColor.intValue();
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.COPYRIGHT_Y = 2 * font.getHeight();
@@ -64,7 +64,7 @@ public class OwnershipPaintable : Paintable, UpdateMyFontInterface
     public override void setBasicColorP(BasicColor basicColor)
     {
         this.basicColor = basicColor;
-        this.color = ((int) basicColor);
+        this.color = basicColor.intValue();
     }
 
     public virtual BasicColor getBasicColorP()

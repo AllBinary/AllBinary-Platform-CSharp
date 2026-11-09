@@ -21,6 +21,6 @@ namespace org.allbinary.business.user.commerce.inventory.item.custom;
 
 public class CustomItemData
 {
-    public static readonly string PACKAGE = "CUSTOMITEM_PACKAGE";
+    public const string PACKAGE = "CUSTOMITEM_PACKAGE";
 }
 

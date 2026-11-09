@@ -51,8 +51,8 @@
     <ProjectReference Include="..\J2SEExceptionLibraryCSharpM\J2SEExceptionLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\J2MEUtilJavaLibraryCSharpM\J2MEUtilJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\licensing\ClientInfoBaseJavaLibraryCSharpM\ClientInfoBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/logic/communication/log/config/type/LogConfigType is also in a nearer dependency -->
-    <ProjectReference Include="..\logging\LogConfigTypeFreeblisketJavaLibraryCSharpM\LogConfigTypeFreeblisketJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="LogConfigTypeFreeblisketJavaLibraryCSharp" />
+    <!-- org/allbinary/logic/communication/log/config/type/LogConfigType is also in a nearer dependency but is not used -->
+    <ProjectReference Include="..\logging\LogConfigTypeFreeblisketJavaLibraryCSharpM\LogConfigTypeFreeblisketJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\data\DataJavaLibraryCSharpM\DataJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\logic\BasePreloaderJavaLibraryCSharpM\BasePreloaderJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\allbinary_src_designpatterns_srcCSharpM\allbinary_src_designpatterns_srcCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -74,8 +74,7 @@
     <ProjectReference Include="..\ThreadLibraryCSharpM\ThreadLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\media\sound\SoundJ2MELibraryCSharpM\SoundJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\lib\BasicMathLibraryCSharpM\BasicMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/math/PositionStrings is also in a nearer dependency -->
-    <ProjectReference Include="..\..\j2me\lib\TrigBaseLibraryCSharpM\TrigBaseLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="TrigBaseLibraryCSharp" />
+    <ProjectReference Include="..\..\j2me\lib\TrigBaseLibraryCSharpM\TrigBaseLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\time\TimeJavaLibraryCSharpM\TimeJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\statistics\ApplicationStatisticsJavaLibraryCSharpM\ApplicationStatisticsJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\J2MEColorJavaLibraryCSharpM\J2MEColorJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

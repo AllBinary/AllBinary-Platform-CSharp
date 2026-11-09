@@ -16,12 +16,14 @@
 
 using System;
 using System.Linq;
+//using JsType = jsinterop.annotations.JsType;
 using FilePathData = org.allbinary.logic.io.file.FilePathData;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 
 namespace org.allbinary.logic.io.path;
 
+//Used to correct user input for paths
 public class AbPathData
 {
     private static readonly AbPathData instance = new AbPathData();

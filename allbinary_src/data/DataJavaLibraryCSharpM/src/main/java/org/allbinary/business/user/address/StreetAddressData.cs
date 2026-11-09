@@ -25,19 +25,19 @@ public class StreetAddressData
     {
     }
 
-    public static readonly int MAX = 255;
-    public static readonly int MIN = 0;
-    public static readonly string FORM = "FORM";
-    public static readonly string STATES = "STATES";
-    public static readonly string NUMBEROFADDRESSES = "STREETADDRESS_NUMBEROFADDRESSES";
-    public static readonly string ID = "STREETADDRESS_ID";
-    public static readonly string DEFAULT = "STREETADDRESS_DEFAULT_ADDRESS";
-    public static readonly string ADDRESS = "STREETADDRESS_ADDRESS";
-    public static readonly string NAME = "STREETADDRESS_NAME";
-    public static readonly string STREET = "STREETADDRESS_STREET";
-    public static readonly string CITY = "STREETADDRESS_CITY";
-    public static readonly string STATE = "STREETADDRESS_STATE";
-    public static readonly string CODE = "STREETADDRESS_CODE";
-    public static readonly string COUNTRY = "STREETADDRESS_COUNTRY";
+    public const int MAX = 255;
+    public const int MIN = 0;
+    public const string FORM = "FORM";
+    public const string STATES = "STATES";
+    public const string NUMBEROFADDRESSES = "STREETADDRESS_NUMBEROFADDRESSES";
+    public const string ID = "STREETADDRESS_ID";
+    public const string DEFAULT = "STREETADDRESS_DEFAULT_ADDRESS";
+    public const string ADDRESS = "STREETADDRESS_ADDRESS";
+    public const string NAME = "STREETADDRESS_NAME";
+    public const string STREET = "STREETADDRESS_STREET";
+    public const string CITY = "STREETADDRESS_CITY";
+    public const string STATE = "STREETADDRESS_STATE";
+    public const string CODE = "STREETADDRESS_CODE";
+    public const string COUNTRY = "STREETADDRESS_COUNTRY";
 }
 

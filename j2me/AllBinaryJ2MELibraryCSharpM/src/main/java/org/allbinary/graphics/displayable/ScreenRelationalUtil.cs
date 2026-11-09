@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 
 namespace org.allbinary.graphics.displayable;
 

@@ -64,7 +64,7 @@ public class AbeLicenseInterfaceFactory
                 this.logUtil.putF("Default Key: " + this.abeLicenseInterface.getKey(AbeClientInformationData.getInstance().KEY), this, this.commonStrings.GET);
             }
             return this.abeLicenseInterface;
-        } catch (IOException e) {
+        } catch (System.IO.IOException e) {
             this.logUtil.put("Licensing IO Error", this, this.commonStrings.GET, e);
             throw new LicensingException("License Server Connection Error");
         } catch (Exception e) {

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AndroidUtil = org.allbinary.AndroidUtil;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 

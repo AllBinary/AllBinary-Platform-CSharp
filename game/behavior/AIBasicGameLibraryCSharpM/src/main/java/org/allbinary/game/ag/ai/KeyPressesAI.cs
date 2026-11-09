@@ -45,7 +45,7 @@ public class KeyPressesAI : BasicAI
     {
         if (this.on) {
             for (int index = 0; index < this.keys.Length; index++) {
-                base.processKeyAI(((int) this.keys[index]));
+                base.processKeyAI(global::java.lang.JavaNumber.intValue(this.keys[index]));
             }
         }
     }

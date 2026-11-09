@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using BasicAI = org.allbinary.game.ai.BasicAI;
 using BasicGroupFactory = org.allbinary.game.identification.BasicGroupFactory;
 using GameInput = org.allbinary.game.input.GameInput;
@@ -37,7 +37,7 @@ public class FlockingAI : BasicAI
     {
         // base(ownerLayerInterface, gameInput) is called from the constructor declaration
         int? allowedDistance = ((int?) hashtable.get(BasePatrolAI.MAX_DISTANCE));
-        this.allowedDistance = allowedDistance.intValue();
+        this.allowedDistance = ((int) allowedDistance);
     }
 
     // throws Exception

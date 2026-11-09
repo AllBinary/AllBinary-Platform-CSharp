@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Form = javax.microedition.lcdui.Form;
-//using NullCommandListener = javax.microedition.lcdui.NullCommandListener;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Form = javax.microedition.lcdui.Form;
+using NullCommandListener = javax.microedition.lcdui.NullCommandListener;
 using Processor = org.allbinary.canvas.Processor;
 using MenuListener = org.allbinary.game.displayable.canvas.MenuListener;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -65,13 +65,13 @@ public class CommandForm : Form, MyCommandInterface, MenuListener
     {
     }
 
-    public override void open()
+    public virtual void open()
     {
         this.logUtil.putF(this.commonStrings.START, this, "open");
     }
 
     // throws Exception
-    public override void close()
+    public virtual void close()
     {
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CLOSE);
     }
@@ -82,7 +82,7 @@ public class CommandForm : Form, MyCommandInterface, MenuListener
         this.repaintProcessor.process();
     }
 
-    public override int getSourceId()
+    public virtual int getSourceId()
     {
         return 0;
     }
@@ -93,7 +93,7 @@ public class CommandForm : Form, MyCommandInterface, MenuListener
         base.addCommand(command);
     }
 
-    public override void removeAllCommands()
+    public virtual void removeAllCommands()
     {
         int size = this.commandStack.size();
         for (int index = 0; index < size; index++) {

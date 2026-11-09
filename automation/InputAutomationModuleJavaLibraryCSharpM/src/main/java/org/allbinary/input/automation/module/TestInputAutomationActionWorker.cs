@@ -44,7 +44,7 @@ public class TestInputAutomationActionWorker : AbstractInputAutomationWorker
     }
 
     // throws Exception
-    public virtual void process()
+    public override void process()
     {
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.PROCESS);
         ABHashtable<object, object> hashtable = InputRobotFactory.getInstance().get();

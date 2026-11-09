@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using InputStream = java.io.InputStream;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using InputStream = java.io.InputStream;
 using TsUtil = org.allbinary.TsUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 
@@ -38,16 +38,16 @@ public class BasicCryptUtil
     // throws Exception
     public virtual InputStream getDecryptedInputStream(InputStream inputStream, CryptInterface cryptInterface)
     {
-        System.IO.MemoryStream buffer = new System.IO.MemoryStream();
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
         int ch = 0;
         while (true) {
             ch = inputStream.read();
             if (ch == -1) {
                 break;
             }
-            buffer.WriteByte((byte) (ch));
+            buffer.write(ch);
         }
-        sbyte[] decrypted = cryptInterface.decrypt(((sbyte[]) (Array) buffer.ToArray()));
+        sbyte[] decrypted = cryptInterface.decrypt(buffer.toByteArray());
         string decryptedString = System.Text.Encoding.UTF8.GetString((byte[]) (Array) decrypted);
         int index = decryptedString.IndexOf(this.XML_START);
         if (index > 0) {

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Animation = org.allbinary.animation.Animation;
 using NullAnimationFactory = org.allbinary.animation.NullAnimationFactory;
 using WeaponProperties = org.allbinary.game.combat.weapon.WeaponProperties;

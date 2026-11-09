@@ -23,9 +23,9 @@ namespace org.allbinary.business.user.commerce.money.payment.gateway;
 
 public class PaymentGatewayPageData
 {
-    private static readonly string EXTENSION = ".jsp";
+    private const string EXTENSION = ".jsp";
     private static readonly string NAME = StringUtil.getInstance().EMPTY_STRING;
-    public static readonly string FORWARDMAKEPAYMENT = "MakePayment.jsp";
+    public const string FORWARDMAKEPAYMENT = "MakePayment.jsp";
     public readonly string MAKEPAYMENT;
     public static readonly string PAYMENTOPTIONS = "PaymentOptions" + PaymentGatewayPageData.EXTENSION;
     public static readonly string STARTCHECKOUT = "StartCheckout" + PaymentGatewayPageData.EXTENSION;

@@ -68,7 +68,7 @@ public class UsersView : HttpContextView, DomNodeInterface
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             this.addDomNodeInterfaces();

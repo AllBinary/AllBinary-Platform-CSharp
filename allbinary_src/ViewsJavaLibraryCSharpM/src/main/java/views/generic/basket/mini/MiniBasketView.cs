@@ -69,7 +69,7 @@ public class MiniBasketView : HttpStoreComponentView, DomNodeInterface
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             this.addDomNodeInterfaces();

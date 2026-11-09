@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
+using Command = javax.microedition.lcdui.Command;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
 using ScreenInfo = org.allbinary.graphics.form.ScreenInfo;

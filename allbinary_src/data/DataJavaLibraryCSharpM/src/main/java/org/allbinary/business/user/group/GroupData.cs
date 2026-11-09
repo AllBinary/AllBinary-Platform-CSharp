@@ -25,6 +25,6 @@ public class GroupData
     {
     }
 
-    public static readonly string NAME = "GROUP_NAME";
+    public const string NAME = "GROUP_NAME";
 }
 

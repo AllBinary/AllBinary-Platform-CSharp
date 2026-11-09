@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using DataInputStream = java.io.DataInputStream;
+using DataInputStream = java.io.DataInputStream;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;

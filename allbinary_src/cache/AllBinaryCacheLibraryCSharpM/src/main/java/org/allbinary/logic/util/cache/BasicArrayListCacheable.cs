@@ -23,7 +23,7 @@ namespace org.allbinary.logic.util.cache;
 
 public class BasicArrayListCacheable : BasicArrayListD, CacheableInterface
 {
-    public override object getKey()
+    public virtual object getKey()
     {
         return StringUtil.getInstance().EMPTY_STRING;
     }

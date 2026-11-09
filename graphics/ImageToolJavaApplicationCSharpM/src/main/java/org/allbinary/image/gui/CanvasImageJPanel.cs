@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 //using RenderedImage = java.awt.image.RenderedImage;
-//using File = java.io.File;
+using File = java.io.File;
 //using IOException = java.io.IOException;
 //using ImageIO = javax.imageio.ImageIO;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
@@ -61,10 +61,10 @@ public class CanvasImageJPanel : javax.swing.JPanel, ImageProcessedVisitor
                 try {
                     CanvasTrimUtil canvasTrimUtil = CanvasTrimUtil.getInstance();
                     CanvasExpandUtil canvasExpandUtil = CanvasExpandUtil.getInstance();
-                    int leftReduction = (widthReductionTextField1.getText()).ToString();
-                    int topReduction = (heightReductionTextField1.getText()).ToString();
-                    int widthReduction = (widthReductionTextField.getText()).ToString();
-                    int heightReduction = (heightReductionTextField.getText()).ToString();
+                    int leftReduction = int.Parse((widthReductionTextField1.getText()).ToString());
+                    int topReduction = int.Parse((heightReductionTextField1.getText()).ToString());
+                    int widthReduction = int.Parse((widthReductionTextField.getText()).ToString());
+                    int heightReduction = int.Parse((heightReductionTextField.getText()).ToString());
                     if (leftReduction <= 0 || topReduction <= 0 || widthReduction <= 0 || heightReduction <= 0) {
                         canvasTrimUtil.process(this.getImageProcessorInput(), -leftReduction, -topReduction, -widthReduction, -heightReduction, this);
                     } else {

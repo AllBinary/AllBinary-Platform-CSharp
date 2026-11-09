@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Paintable = org.allbinary.graphics.paint.Paintable;
 
 namespace org.allbinary.graphics.form;

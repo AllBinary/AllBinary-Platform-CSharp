@@ -21,6 +21,7 @@ using AdConfiguration = org.allbinary.business.advertisement.AdConfiguration;
 using VirtualKeyboardEvent = org.allbinary.input.@event.VirtualKeyboardEvent;
 using VirtualKeyboardEventHandler = org.allbinary.input.@event.VirtualKeyboardEventHandler;
 using VirtualKeyboardEventListenerInterface = org.allbinary.input.@event.VirtualKeyboardEventListenerInterface;
+using AllBinaryEventObject = org.allbinary.logic.util.@event.AllBinaryEventObject;
 
 namespace org.allbinary.game;
 
@@ -33,8 +34,13 @@ public class GameAdState : GameAdStateBase, VirtualKeyboardEventListenerInterfac
     }
 
     // throws Exception
-    public override void onVirtualKeyboardEvent(VirtualKeyboardEvent virtualKeyboardEvent)
+    public virtual void onVirtualKeyboardEvent(VirtualKeyboardEvent virtualKeyboardEvent)
     {
+    }
+
+    public override void onEvent(AllBinaryEventObject eventObject)
+    {
+        base.onEvent(eventObject);
     }
 
 }

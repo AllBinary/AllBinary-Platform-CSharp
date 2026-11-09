@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Command = javax.microedition.lcdui.Command;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Command = javax.microedition.lcdui.Command;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using Features = org.allbinary.game.configuration.feature.Features;
 using InputFeatureFactory = org.allbinary.game.configuration.feature.InputFeatureFactory;

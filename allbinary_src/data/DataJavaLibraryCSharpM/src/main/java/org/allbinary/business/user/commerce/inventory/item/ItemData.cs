@@ -21,6 +21,6 @@ namespace org.allbinary.business.user.commerce.inventory.item;
 
 public class ItemData
 {
-    public static readonly string ITEM = "ITEM";
+    public const string ITEM = "ITEM";
 }
 

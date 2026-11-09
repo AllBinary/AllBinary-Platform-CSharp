@@ -25,13 +25,13 @@ public class EmailData
     {
     }
 
-    public static readonly string SERVER = "EMAIL_SERVER";
-    public static readonly string NAME = "EMAIL_NAME";
-    public static readonly string FROM = "EMAIL_FROM";
-    public static readonly string TO = "EMAIL_TO";
-    public static readonly string CC = "EMAIL_CC";
-    public static readonly string BCC = "EMAIL_BCC";
-    public static readonly string SUBJECT = "EMAIL_SUBJECT";
-    public static readonly string CONTENT = "EMAIL_CONTENT";
+    public const string SERVER = "EMAIL_SERVER";
+    public const string NAME = "EMAIL_NAME";
+    public const string FROM = "EMAIL_FROM";
+    public const string TO = "EMAIL_TO";
+    public const string CC = "EMAIL_CC";
+    public const string BCC = "EMAIL_BCC";
+    public const string SUBJECT = "EMAIL_SUBJECT";
+    public const string CONTENT = "EMAIL_CONTENT";
 }
 

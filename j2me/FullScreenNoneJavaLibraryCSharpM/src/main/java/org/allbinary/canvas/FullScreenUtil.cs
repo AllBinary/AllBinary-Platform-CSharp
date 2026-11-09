@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using Canvas = javax.microedition.lcdui.Canvas;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 using Features = org.allbinary.game.configuration.feature.Features;
 using MainFeatureFactory = org.allbinary.game.configuration.feature.MainFeatureFactory;
 

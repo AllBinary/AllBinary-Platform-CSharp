@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
+using Font = javax.microedition.lcdui.Font;
 using FontDebugBase = org.allbinary.graphics.font.FontDebugBase;
 
 namespace org.allbinary.device;

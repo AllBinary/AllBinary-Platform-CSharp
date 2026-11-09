@@ -29,8 +29,9 @@ public class AllBinaryAndroidGameInitializationUtil
         ResourceUtil resourceUtil = ResourceUtil.getInstance();
         AndroidResources androidResources = AndroidResources.getInstance();
         LicenseInitInfoUtil licenseInitInfoUtil = LicenseInitInfoUtil.getInstance();
-        resourceUtil.addResource(licenseInitInfoUtil.INITFILENAME, (androidResources.raw.licenseinitdata).ToString());
-        resourceUtil.addResource(PartnerIdentifierFileUtil.getInstance().FILE_NAME, (androidResources.raw.partner).ToString());
+        resourceUtil.addResource(licenseInitInfoUtil.INITFILENAME, int.Parse((androidResources.raw.licenseinitdata).ToString()));
+        resourceUtil.addResource(PartnerIdentifierFileUtil.getInstance().FILE_NAME, int.Parse((androidResources.raw.partner).ToString()));
+        resourceUtil.addResource(licenseInitInfoUtil.ABOUT, int.Parse((androidResources.raw.about).ToString()));
     }
 
 }

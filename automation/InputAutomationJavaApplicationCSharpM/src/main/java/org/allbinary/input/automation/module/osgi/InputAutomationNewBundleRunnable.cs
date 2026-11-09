@@ -17,10 +17,10 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using File = java.io.File;
-//using FileFilter = java.io.FileFilter;
-//using FileInputStream = java.io.FileInputStream;
-//using URL = java.net.URL;
+using File = java.io.File;
+using FileFilter = java.io.FileFilter;
+using FileInputStream = java.io.FileInputStream;
+using URL = java.net.URL;
 using java.util;
 //using JarInputStream = java.util.jar.JarInputStream;
 //using Manifest = java.util.jar.Manifest;
@@ -46,10 +46,10 @@ public class InputAutomationNewBundleRunnable : RunnableInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    private static readonly string FILE = "file:";
-    private static readonly string JAR_DIR_PROP = "org.knopflerfish.gosg.jars";
-    private static readonly string INPUT_AUTMATION_MODULE_BUNDLE_JAR_PATH = "ia/auto";
-    private static readonly int MODULES_START_LEVEL = 8;
+    private const string FILE = "file:";
+    private const string JAR_DIR_PROP = "org.knopflerfish.gosg.jars";
+    private const string INPUT_AUTMATION_MODULE_BUNDLE_JAR_PATH = "ia/auto";
+    private const int MODULES_START_LEVEL = 8;
     private readonly InputAutomationBundleActivator inputAutomationBundleActivator;
     private bool running = false;
     private BasicArrayList fileBasicArrayList;

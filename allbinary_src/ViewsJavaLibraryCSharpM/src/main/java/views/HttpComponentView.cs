@@ -120,5 +120,11 @@ public class HttpComponentView : TransformInfoHttpComposite, TransformInterface
         }
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

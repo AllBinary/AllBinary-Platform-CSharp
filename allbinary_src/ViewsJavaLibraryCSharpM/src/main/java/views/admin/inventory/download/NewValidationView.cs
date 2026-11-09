@@ -60,5 +60,11 @@ public class NewValidationView : DownloadableInventoryItemView, ValidationCompon
         return "Error Creating New Downloadable Item";
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

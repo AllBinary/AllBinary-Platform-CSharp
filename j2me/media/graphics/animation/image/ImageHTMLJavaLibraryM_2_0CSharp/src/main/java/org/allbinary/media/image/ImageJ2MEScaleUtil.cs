@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using PlaynImmutableImage = org.microemu.device.playn.PlaynImmutableImage;
 using PlaynMutableImage = org.microemu.device.playn.PlaynMutableImage;
@@ -67,7 +67,7 @@ public class ImageJ2MEScaleUtil
         PlaynMutableImage htmlImage = ((PlaynMutableImage) scaledImage);
         ImageImpl scaledPlayNImage = ((ImageImpl) htmlImage.getImage());
         Canvas canvas = (((HtmlGraphics) PlayN.getInstance().graphics())).get(((HtmlImage) scaledPlayNImage));
-        (((ImageImpl) originalPlayNImage)).draw(canvas.gc(), 0, 0, scaledImage.getWidth(), scaledImage.getHeight(), 0, 0, image.getWidth(), image.getHeight());
+        canvas.drawScale(originalPlayNImage, 0, 0, scaledImage.getWidth(), scaledImage.getHeight(), 0, 0, image.getWidth(), image.getHeight());
         return scaledImage;
     }
 

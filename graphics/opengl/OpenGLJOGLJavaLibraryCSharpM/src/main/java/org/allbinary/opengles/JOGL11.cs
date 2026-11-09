@@ -241,7 +241,7 @@ public class JOGL11 : JOGL10, javax.microedition.khronos.opengles.GL11
         this.gl11.glTexParameterfv(target, pname, @params);
     }
 
-    public virtual void glTexParameteri(int target, int pname, int param)
+    public override void glTexParameteri(int target, int pname, int param)
     {
         this.gl11.glTexParameteri(target, pname, param);
     }

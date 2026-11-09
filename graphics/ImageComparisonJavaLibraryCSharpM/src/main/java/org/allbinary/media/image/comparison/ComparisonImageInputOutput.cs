@@ -33,7 +33,7 @@ namespace org.allbinary.media.image.comparison;
 public class ComparisonImageInputOutput : ImageIOInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private static readonly string ROOT_NAME = "_Changed_";
+    private const string ROOT_NAME = "_Changed_";
     public ComparisonImageInputOutput()
     {
     }

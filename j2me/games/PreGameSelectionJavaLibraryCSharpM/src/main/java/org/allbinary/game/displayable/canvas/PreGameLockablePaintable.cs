@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using GameFeatureImageCacheFactory = org.allbinary.image.GameFeatureImageCacheFactory;
 using LockedResources = org.allbinary.logic.system.security.licensing.LockedResources;
 using LockedUtil = org.allbinary.logic.system.security.licensing.LockedUtil;

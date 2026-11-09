@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using Closeable = java.io.Closeable;
-//using InputStream = java.io.InputStream;
-//using OutputStream = java.io.OutputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using Closeable = java.io.Closeable;
+using InputStream = java.io.InputStream;
+using OutputStream = java.io.OutputStream;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 
@@ -54,9 +54,9 @@ public class StreamUtil
     }
 
     // throws Exception
-    public virtual sbyte[] getByteArray(InputStream inputStream, System.IO.MemoryStream outputStream2, sbyte[] byteArray)
+    public virtual sbyte[] getByteArray(InputStream inputStream, ByteArrayOutputStream outputStream2, sbyte[] byteArray)
     {
-        System.IO.MemoryStream outputStream = outputStream2;
+        ByteArrayOutputStream outputStream = outputStream2;
         try {
             this.get(inputStream, outputStream, byteArray);
             return outputStream.toByteArray();

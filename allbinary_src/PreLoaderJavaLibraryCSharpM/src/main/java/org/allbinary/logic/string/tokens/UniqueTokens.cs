@@ -99,7 +99,7 @@ public class UniqueTokens
         try {
             int.Parse(subCleaningString);
             return true;
-        } catch (NumberFormatException e) {
+        } catch (FormatException e) {
             return false;
         }
     }

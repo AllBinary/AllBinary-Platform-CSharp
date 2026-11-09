@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using TiledLayer = javax.microedition.lcdui.game.TiledLayer;
+using TiledLayer = javax.microedition.lcdui.game.TiledLayer;
 using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
 using SmallIntegerSingletonFactory = org.allbinary.logic.math.SmallIntegerSingletonFactory;
 using AllBinaryTiledLayerFactoryInterface = org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface;
@@ -33,7 +33,7 @@ public class AllBinaryTiledLayerFactory : AllBinaryTiledLayerFactoryInterface
     {
         AllBinaryTiledLayer allbinaryTiledLayer = null;
         TiledLayer tiledLayer = new TiledLayerFactory().getInstance(raceTrackData);
-        allbinaryTiledLayer = new AllBinaryJ2METiledLayer(raceTrackData.getId(), tiledLayer, raceTrackData.getMapArray(), ((int) BasicColorFactory.getInstance().RED));
+        allbinaryTiledLayer = new AllBinaryJ2METiledLayer(raceTrackData.getId(), tiledLayer, raceTrackData.getMapArray(), global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().RED));
         allbinaryTiledLayer.setCells(raceTrackData.getMapArray());
         return allbinaryTiledLayer;
     }
@@ -43,7 +43,7 @@ public class AllBinaryTiledLayerFactory : AllBinaryTiledLayerFactoryInterface
     {
         SmallIntegerSingletonFactory smallIntegerSingletonFactory = SmallIntegerSingletonFactory.getInstance();
         TiledLayer tiledLayer = new TiledLayerFactory().getMiniInstance(raceTrackData);
-        AllBinaryTiledLayer allbinaryTiledLayer = new AllBinaryJ2METiledLayer(smallIntegerSingletonFactory.getAt(((int) raceTrackData.getId()) + 100 + 1), tiledLayer, raceTrackData.getMapArray(), ((int) BasicColorFactory.getInstance().RED));
+        AllBinaryTiledLayer allbinaryTiledLayer = new AllBinaryJ2METiledLayer(smallIntegerSingletonFactory.getAt(global::java.lang.JavaNumber.intValue(raceTrackData.getId()) + 100 + 1), tiledLayer, raceTrackData.getMapArray(), global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().RED));
         allbinaryTiledLayer.setCells(raceTrackData.getMapArray());
         return allbinaryTiledLayer;
     }

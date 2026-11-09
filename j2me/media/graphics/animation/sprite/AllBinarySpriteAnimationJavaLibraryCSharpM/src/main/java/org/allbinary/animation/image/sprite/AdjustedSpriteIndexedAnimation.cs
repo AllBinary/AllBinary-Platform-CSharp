@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
-//using Sprite = javax.microedition.lcdui.game.Sprite;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
+using Sprite = javax.microedition.lcdui.game.Sprite;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using BasicColorUtil = org.allbinary.graphics.color.BasicColorUtil;

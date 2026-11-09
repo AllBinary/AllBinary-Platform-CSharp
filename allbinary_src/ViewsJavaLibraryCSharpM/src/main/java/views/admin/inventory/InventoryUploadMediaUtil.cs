@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
 using StoreFrontInterface = org.allbinary.business.context.modules.storefront.StoreFrontInterface;
 using ItemInterface = org.allbinary.business.user.commerce.inventory.item.ItemInterface;
 using URLGLOBALS = org.allbinary.globals.URLGLOBALS;

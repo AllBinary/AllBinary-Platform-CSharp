@@ -169,7 +169,7 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
         }
     }
 
-    public virtual void insert(BasicArrayList values)
+    public override void insert(BasicArrayList values)
     {
         try {
             base.insert(values);
@@ -387,7 +387,7 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
         return base.createTable(this.createTableStatement());
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
     }

@@ -59,7 +59,7 @@ public class BillingAddressHelper : Table
         this.streetAddress = new StreetAddress(this.request);
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             string success = new BillingAddressesEntity(this.stringUtil.EMPTY_STRING).drop();
@@ -76,7 +76,7 @@ public class BillingAddressHelper : Table
         }
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             string success = new BillingAddressesEntity(this.stringUtil.EMPTY_STRING).createTable();
@@ -93,7 +93,7 @@ public class BillingAddressHelper : Table
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "Restore Successful";
@@ -112,7 +112,7 @@ public class BillingAddressHelper : Table
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Backup Successful";
@@ -130,7 +130,7 @@ public class BillingAddressHelper : Table
         }
     }
 
-    public virtual string insert()
+    public override string insert()
     {
         try {
             string success = "Successfully Added Billing Address";
@@ -148,7 +148,7 @@ public class BillingAddressHelper : Table
         }
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             string success = "Successfully Updated Billing Address";
@@ -186,7 +186,7 @@ public class BillingAddressHelper : Table
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             string success = "Successfully Removed Billing Address";

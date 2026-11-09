@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using NullUtil = org.allbinary.logic.NullUtil;
 using PrimitiveIntUtil = org.allbinary.logic.math.PrimitiveIntUtil;
@@ -102,7 +102,7 @@ public class VectorBaseRotationAnimation : RotationAnimation, VectorAnimationInt
         }
     }
 
-    public override int[][] getPoints(int frame)
+    public virtual int[][] getPoints(int frame)
     {
         return this.currentPoints[frame];
     }
@@ -111,6 +111,16 @@ public class VectorBaseRotationAnimation : RotationAnimation, VectorAnimationInt
     {
         this.currentPoints = currentPoints;
         this.circularIndexUtil = CircularIndexUtil.createInstance(this.currentPoints.Length);
+    }
+
+    public override BasicColor getBasicColorP()
+    {
+        return base.getBasicColorP();
+    }
+
+    public override void setBasicColorP(BasicColor basicColor)
+    {
+        base.setBasicColorP(basicColor);
     }
 
 }

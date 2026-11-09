@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using DataOutputStream = java.io.DataOutputStream;
-//using FileOutputStream = java.io.FileOutputStream;
+using DataOutputStream = java.io.DataOutputStream;
+using FileOutputStream = java.io.FileOutputStream;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbFileSystem = org.allbinary.logic.io.file.AbFileSystem;
 using CommonStrings = org.allbinary.@string.CommonStrings;

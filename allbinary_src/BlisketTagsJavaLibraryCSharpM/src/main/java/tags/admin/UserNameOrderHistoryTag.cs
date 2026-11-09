@@ -36,7 +36,7 @@ public class UserNameOrderHistoryTag : StoreValidationTransformTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             this.setName("Range Order History View");

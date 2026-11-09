@@ -25,6 +25,6 @@ public class DynamicObjectData
     {
     }
 
-    public static readonly string NAME = "DYNAMICCOMPONENT_NAME";
+    public const string NAME = "DYNAMICCOMPONENT_NAME";
 }
 

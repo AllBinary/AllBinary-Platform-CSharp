@@ -58,8 +58,8 @@ public class VectorRotationGenerator
             BasicArrayList pointBasicArrayList = new BasicArrayListS(points.Length);
             PointFactory pointFactory = PointFactory.getInstance();
             int size = points.Length;
-            for (int index = 0; index < size; index++) {
-                pointBasicArrayList.add(pointFactory.createXY(points[index][0], points[index][1]));
+            for (int index_0 = 0; index_0 < size; index_0++) {
+                pointBasicArrayList.add(pointFactory.createXY(points[index_0][0], points[index_0][1]));
             }
             int index = 0;
             while (index < ((int) totalAngle)) {

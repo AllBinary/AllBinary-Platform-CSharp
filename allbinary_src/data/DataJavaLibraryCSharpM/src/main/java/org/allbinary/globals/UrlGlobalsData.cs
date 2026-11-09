@@ -25,10 +25,10 @@ public class UrlGlobalsData
     {
     }
 
-    public static readonly string NAME = "URLGLOBALS_NAME";
-    public static readonly string WEBAPPPATH = "URLGLOBALS_WEBAPPPATH";
-    public static readonly string TESTINGMODE = "URLGLOBALS_TESTINGMODE";
-    public static readonly string TESTINGHTMLPATH = "URLGLOBALS_TESTINGHTMLPATH";
-    public static readonly string MAINPATH = "URLGLOBALS_MAINPATH";
+    public const string NAME = "URLGLOBALS_NAME";
+    public const string WEBAPPPATH = "URLGLOBALS_WEBAPPPATH";
+    public const string TESTINGMODE = "URLGLOBALS_TESTINGMODE";
+    public const string TESTINGHTMLPATH = "URLGLOBALS_TESTINGHTMLPATH";
+    public const string MAINPATH = "URLGLOBALS_MAINPATH";
 }
 

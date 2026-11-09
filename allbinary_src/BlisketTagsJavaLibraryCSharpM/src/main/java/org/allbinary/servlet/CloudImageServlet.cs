@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
 //using IOException = java.io.IOException;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 //using ServletException = javax.servlet.ServletException;
 //using HttpServlet = javax.servlet.http.HttpServlet;
 //using HttpServletRequest = javax.servlet.http.HttpServletRequest;
@@ -45,7 +45,7 @@ public class CloudImageServlet : HttpServlet
             string requestURI = request.getRequestURI();
             AbFile file = AbFile.createAbFile(URLGLOBALS.getWebappPath() + requestURI);
             inputStream = CloudStreamUtil.getInstance().getFile(file);
-            System.IO.MemoryStream outputStream = new System.IO.MemoryStream(8000);
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream(8000);
             sbyte[] byteArray = StreamUtil.getInstance().getByteArray(inputStream, outputStream, new sbyte[16384]);
             response.setContentType("image/jpeg;charset=utf-8");
             response.getOutputStream().write(byteArray);

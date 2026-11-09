@@ -16,12 +16,12 @@
 
 using System;
 using System.Linq;
-//using Provider = java.security.Provider;
-//using Security = java.security.Security;
-//using KeySpec = java.security.spec.KeySpec;
-//using Cipher = javax.crypto.Cipher;
-//using SecretKey = javax.crypto.SecretKey;
-//using SecretKeyFactory = javax.crypto.SecretKeyFactory;
+using Provider = java.security.Provider;
+using Security = java.security.Security;
+using KeySpec = java.security.spec.KeySpec;
+using Cipher = javax.crypto.Cipher;
+using SecretKey = javax.crypto.SecretKey;
+using SecretKeyFactory = javax.crypto.SecretKeyFactory;
 using CryptInterface = org.allbinary.init.crypt.jcehelper.CryptInterface;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
@@ -38,7 +38,7 @@ public class AbBasicCrypt : CryptInterface
     {
         try {
             this.algorithm = algorithm;
-            this.key = key.getBytes();
+            this.key = System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(key), value => unchecked((sbyte) value));
             this.init();
         } catch (Exception e) {
             CommonStrings commonStrings = CommonStrings.getInstance();
@@ -69,11 +69,11 @@ public class AbBasicCrypt : CryptInterface
             sbyte[] encrypted = this.cipher.doFinal(array);
             sbyte[] result = new sbyte[ivArray.Length + encrypted.Length];
             PreLogUtil.put("ivArray Length: " + ivArray.Length, this, "encrypt");
-            for (int index = 0; index < ivArray.Length; index++) {
-                result[index] = ivArray[index];
+            for (int index_0 = 0; index_0 < ivArray.Length; index_0++) {
+                result[index_0] = ivArray[index_0];
             }
-            for (int index = 0; index < encrypted.Length; index++) {
-                result[index + ivArray.Length] = encrypted[index];
+            for (int index_1 = 0; index_1 < encrypted.Length; index_1++) {
+                result[index_1 + ivArray.Length] = encrypted[index_1];
             }
             return result;
         } catch (Exception e) {
@@ -87,13 +87,13 @@ public class AbBasicCrypt : CryptInterface
         try {
             this.cipher.init(Cipher.DECRYPT_MODE, secretKey);
             sbyte[] ivArray = new sbyte[8];
-            for (int index = 0; index < 8; index++) {
-                ivArray[index] = array[index];
+            for (int index_2 = 0; index_2 < 8; index_2++) {
+                ivArray[index_2] = array[index_2];
             }
             PreLogUtil.put("ivArray Length: " + ivArray.Length, this, "encrypt");
             sbyte[] result = new sbyte[array.Length - ivArray.Length];
-            for (int index = ivArray.Length; index < array.Length; index++) {
-                result[index - ivArray.Length] = array[index];
+            for (int index_3 = ivArray.Length; index_3 < array.Length; index_3++) {
+                result[index_3 - ivArray.Length] = array[index_3];
             }
             sbyte[] decrypted = this.cipher.doFinal(result);
             return result;

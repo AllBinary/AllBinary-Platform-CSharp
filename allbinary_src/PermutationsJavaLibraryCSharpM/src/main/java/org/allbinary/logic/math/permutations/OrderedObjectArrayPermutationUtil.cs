@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Arrays = java.util.Arrays;
+using Arrays = java.util.Arrays;
 using TsUtil = org.allbinary.TsUtil;
 using Visitor = org.allbinary.logic.util.visitor.Visitor;
 

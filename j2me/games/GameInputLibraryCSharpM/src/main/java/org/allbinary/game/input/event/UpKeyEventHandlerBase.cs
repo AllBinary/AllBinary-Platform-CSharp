@@ -63,9 +63,9 @@ public class UpKeyEventHandlerBase : BasicEventHandler
     // throws Exception
     public virtual void fireEventForInteger(int? eventObject)
     {
-        for (int index = this.list.size(); --index >= 0; ) {
+        for (int index_0 = this.list.size(); --index_0 >= 0; ) {
             try {
-                PlayerGameInput playerGameInput = ((PlayerGameInput) this.list.objectArray[index]);
+                PlayerGameInput playerGameInput = ((PlayerGameInput) this.list.objectArray[index_0]);
                 playerGameInput.onUpKeyEvent(eventObject);
             } catch (Exception e) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, EventStrings.getInstance().FIRE_EVENT, e);
@@ -91,8 +91,8 @@ public class UpKeyEventHandlerBase : BasicEventHandler
         upKeyEventListenerInterface.onUpKeyEvent(eventObject);
     }
 
-    private static readonly string TOTAL_LISTENERS = " Total PlayerGameInput Listeners: ";
-    private static readonly string LISTENER_LABEL = " PlayerGameInput Listener: ";
+    private const string TOTAL_LISTENERS = " Total PlayerGameInput Listeners: ";
+    private const string LISTENER_LABEL = " PlayerGameInput Listener: ";
     public override string ToString()
     {
         StringMaker stringBuffer = new StringMaker();

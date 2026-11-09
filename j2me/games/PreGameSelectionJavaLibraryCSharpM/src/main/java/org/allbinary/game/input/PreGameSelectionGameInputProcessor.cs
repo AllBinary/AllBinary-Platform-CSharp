@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using LockedFeatureNotificationUtil = org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil;
 using LockedUtil = org.allbinary.logic.system.security.licensing.LockedUtil;
@@ -46,15 +46,24 @@ public class PreGameSelectionGameInputProcessor : Processor, GameInputProcessorI
     private readonly GameState nextGameState;
     private readonly PlayerGameInput playerGameInput;
     private readonly int lockedIndex;
-    private readonly ABRunnable abRunnable = new ABRunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-        public virtual void run()
+    public class PreGameSelectionRunnable : ABRunnable
+    {
+        private readonly PreGameSelectionGameInputProcessor outer;
+
+        private readonly PreGameSelectionGameInputProcessor inputProcessor;
+        public PreGameSelectionRunnable(PreGameSelectionGameInputProcessor outer, PreGameSelectionGameInputProcessor inputProcessor)
+        {
+            this.outer = outer;
+            this.inputProcessor = inputProcessor;
+        }
+
+        public override void run()
         {
             try {
                 this.setRunning(true);
                 SecondaryPlayerQueueFactory.getInstance().add(SelectSound.getInstance());
-                gameCanvas.setGameState(nextGameState);
-                GameKeyEventHandler.getInstance().removeListener(getPlayerGameInput());
+                this.inputProcessor.gameCanvas.setGameState(this.inputProcessor.nextGameState);
+                GameKeyEventHandler.getInstance().removeListener(this.inputProcessor.getPlayerGameInput());
                 this.setRunning(false);
             } catch (Exception e) {
                 this.setRunning(false);
@@ -64,10 +73,11 @@ public class PreGameSelectionGameInputProcessor : Processor, GameInputProcessorI
             }
         }
 
-#endif
-;
+    }
+    private readonly ABRunnable abRunnable;
     public PreGameSelectionGameInputProcessor(AllBinaryGameCanvas gameCanvas, PreGameSelectorPaintable preGameSelectorPaintable, GameState nextGameState, int lockedIndex)
     {
+        this.abRunnable = new PreGameSelectionRunnable(this, this);
         this.gameCanvas = gameCanvas;
         this.preGameSelectorPaintable = preGameSelectorPaintable;
         this.nextGameState = nextGameState;
@@ -82,7 +92,7 @@ public class PreGameSelectionGameInputProcessor : Processor, GameInputProcessorI
     }
 
     // throws Exception
-    public override void onInput(BasicArrayList list)
+    public virtual void onInput(BasicArrayList list)
     {
         int size = list.size();
         for (int index = 0; index < size; index++) {
@@ -116,20 +126,20 @@ public class PreGameSelectionGameInputProcessor : Processor, GameInputProcessorI
     }
 
     // throws Exception
-    public override void processInput(AllBinaryLayerManager layerManager)
+    public virtual void processInput(AllBinaryLayerManager layerManager)
     {
     }
 
-    public override void initInputProcessors()
+    public virtual void initInputProcessors()
     {
     }
 
-    public override string getName()
+    public virtual string getName()
     {
         return this.ToString();
     }
 
-    public override PlayerGameInput getPlayerGameInput()
+    public virtual PlayerGameInput getPlayerGameInput()
     {
         return this.playerGameInput;
     }

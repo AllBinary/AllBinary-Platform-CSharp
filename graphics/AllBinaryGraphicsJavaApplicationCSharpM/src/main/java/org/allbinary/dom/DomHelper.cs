@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using File = java.io.File;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using File = java.io.File;
 //using DocumentBuilder = javax.xml.parsers.DocumentBuilder;
 //using DocumentBuilderFactory = javax.xml.parsers.DocumentBuilderFactory;
 //using Transformer = javax.xml.transform.Transformer;
@@ -76,12 +76,12 @@ public class DomHelper
     {
         try {
             DOMSource domSource = new DOMSource(document);
-            System.IO.MemoryStream byteArrayOutputStream = new System.IO.MemoryStream();
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             StreamResult streamResult = new StreamResult(byteArrayOutputStream);
             TransformerFactory copyTransformerFactory = TransformerFactory.newInstance();
             Transformer copyTransformer = copyTransformerFactory.newTransformer();
             copyTransformer.transform(domSource, streamResult);
-            return System.Text.Encoding.UTF8.GetString(byteArrayOutputStream.ToArray());
+            return byteArrayOutputStream.ToString();
         } catch (Exception e) {
             throw e;
         }

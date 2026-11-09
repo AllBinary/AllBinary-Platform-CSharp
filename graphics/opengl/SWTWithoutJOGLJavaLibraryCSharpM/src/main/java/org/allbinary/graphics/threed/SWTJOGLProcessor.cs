@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using MIDlet = javax.microedition.midlet.MIDlet;
+using Font = javax.microedition.lcdui.Font;
+using MIDlet = javax.microedition.midlet.MIDlet;
 
 namespace org.allbinary.graphics.threed;
 

@@ -21,6 +21,10 @@ public class ToastUtil
 
     public virtual void makeToast(View view, Context context, string message, int time)
     {
+        
+        view.post(new MakeToast(message));
+    }
+
         class MakeToast : global::java.lang.Runnable
         {
             public readonly string @string;
@@ -41,8 +45,6 @@ public class ToastUtil
             }
 
         }
-        view.post(new MakeToast(message));
-    }
 
 }
 

@@ -33,7 +33,7 @@ namespace org.allbinary.data.generator;
 public class UniqueIdGenerator : IdGeneratorInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    public static readonly string EXT = ".unq";
+    public const string EXT = ".unq";
     private AbFile newFile = null;
     private long id = 0L;
     public UniqueIdGenerator()

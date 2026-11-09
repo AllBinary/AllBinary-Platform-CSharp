@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 using ColorCacheFactory = org.allbinary.graphics.color.ColorCacheFactory;
 using ColorCacheable = org.allbinary.graphics.color.ColorCacheable;
@@ -26,7 +26,7 @@ namespace org.allbinary.input.automation.module.game;
 
 public class GraphicsAnalysisUtil
 {
-    private static readonly int MAX = 122;
+    private const int MAX = 122;
     private GraphicsAnalysisUtil()
     {
     }
@@ -35,7 +35,7 @@ public class GraphicsAnalysisUtil
     public static double getNominator(BufferedImage bufferedImage, int? min_x, int? max_x, int? y)
     {
         for (int index = ((int) max_x); index > ((int) min_x); index -= 1) {
-            int? colorInteger = (bufferedImage.getRGB(index, ((int) y))).ToString();
+            int? colorInteger = int.Parse((bufferedImage.getRGB(index, ((int) y))).ToString());
             AutomaticCacheInterface automaticCacheInterface = ColorCacheFactory.getInstance();
             ColorCacheable colorCacheable = ((ColorCacheable) automaticCacheInterface.get(colorInteger));
             Color color = colorCacheable.getColor();

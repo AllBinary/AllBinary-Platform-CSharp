@@ -26,7 +26,7 @@ namespace org.allbinary.thread;
 
 public class ThreadPool
 {
-    public static readonly int NORMAL_PRIORITY = 5;
+    public const int NORMAL_PRIORITY = 5;
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     public readonly NullRunnable NULL_RUNNABLE = NullRunnable.getInstance();
@@ -87,8 +87,8 @@ public class ThreadPool
             int size = this.taskQueue.size();
             PriorityRunnable runnable = null;
             PriorityRunnable lowerPriorityRunnable = this.threadObjectUtil.NULL_PRIORITY_RUNNABLE;
-            for (int index = 0; index < size; index++) {
-                runnable = ((PriorityRunnable) this.taskQueue.get(index));
+            for (int index_0 = 0; index_0 < size; index_0++) {
+                runnable = ((PriorityRunnable) this.taskQueue.get(index_0));
                 if (runnable.getPriority() > task.getPriority()) {
                     lowerPriorityRunnable = runnable;
                     break;

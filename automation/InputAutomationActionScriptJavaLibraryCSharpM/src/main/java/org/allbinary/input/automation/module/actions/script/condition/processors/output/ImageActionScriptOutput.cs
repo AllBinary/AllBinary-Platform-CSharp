@@ -32,7 +32,7 @@ namespace org.allbinary.input.automation.module.actions.script.condition.process
 public class ImageActionScriptOutput : BasicProfileActionScriptOutput, ImageActionScriptOutputInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private static readonly string NAME = "Captures";
+    private const string NAME = "Captures";
     private bool saved = false;
     private bool display = false;
     private ImageTypes imageTypes = null;
@@ -48,10 +48,10 @@ public class ImageActionScriptOutput : BasicProfileActionScriptOutput, ImageActi
                 Node childNode = nodeList.item(index);
                 if (childNode.getNodeName().compareTo(ImageActionScriptOutputData.SAVE) == 0) {
                     string booleanString = DomNodeHelper.getTextNodeValue(childNode);
-                    this.setSaved(booleanString);
+                    this.setSaved(((bool) (bool.Parse(booleanString))));
                 } else if (childNode.getNodeName().compareTo(ImageActionScriptOutputData.DISPLAY) == 0) {
                     string booleanString = DomNodeHelper.getTextNodeValue(childNode);
-                    this.setSaved(booleanString);
+                    this.setSaved(((bool) (bool.Parse(booleanString))));
                 } else if (childNode.getNodeName().compareTo(ImageActionScriptOutputData.TYPES) == 0) {
                     this.setImageTypes(new ImageTypes(childNode));
                 } else {
@@ -88,7 +88,7 @@ public class ImageActionScriptOutput : BasicProfileActionScriptOutput, ImageActi
     }
 
     // throws Exception
-    public virtual Node toXmlNode(Document document)
+    public override Node toXmlNode(Document document)
     {
         Node node = base.toXmlNode(document);
         Node newNode = ModDomHelper.createNodeWithValueNodes(document, ImageActionScriptOutputData.NAME, this.toHashMap());
@@ -98,12 +98,12 @@ public class ImageActionScriptOutput : BasicProfileActionScriptOutput, ImageActi
     }
 
     // throws Exception
-    public virtual void process(long? frame)
+    public override void process(long? frame)
     {
         ImageActionScriptOutputProcessor.process(this, frame);
     }
 
-    public virtual void showDialog()
+    public override void showDialog()
     {
         this.actionScriptOutputJPanel.getCapturedImageActionJDialog().setVisible(true);
     }

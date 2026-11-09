@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using ScaleProperties = org.allbinary.media.ScaleProperties;
 
 namespace org.allbinary.animation;

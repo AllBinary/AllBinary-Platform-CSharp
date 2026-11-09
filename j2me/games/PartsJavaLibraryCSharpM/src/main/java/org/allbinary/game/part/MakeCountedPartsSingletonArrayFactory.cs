@@ -41,14 +41,14 @@ public class MakeCountedPartsSingletonArrayFactory
     public virtual PartInterface[] getUpdated(PartInterface[] partInterfaceArray)
     {
         this.list = new BasicArrayListD();
-        for (int index = 0; index < partInterfaceArray.Length; index++) {
-            this.list.add(partInterfaceArray[index]);
+        for (int index_0 = 0; index_0 < partInterfaceArray.Length; index_0++) {
+            this.list.add(partInterfaceArray[index_0]);
         }
         BasicArrayList countedBasicArrayList = CountedPickedUpLayerInterfaceFactoryPool.getInstance().getList();
         CountedPickedUpLayerInterfaceFactory layerInterfaceFactoryInterface = null;
         int size = countedBasicArrayList.size();
-        for (int index = 0; index < size; index++) {
-            layerInterfaceFactoryInterface = ((CountedPickedUpLayerInterfaceFactory) countedBasicArrayList.objectArray[index]);
+        for (int index_1 = 0; index_1 < size; index_1++) {
+            layerInterfaceFactoryInterface = ((CountedPickedUpLayerInterfaceFactory) countedBasicArrayList.objectArray[index_1]);
             this.list.add(new CountedLayerInterfaceFactoryPart(0, layerInterfaceFactoryInterface));
         }
         StringMaker stringBuffer = new StringMaker();
@@ -60,8 +60,8 @@ public class MakeCountedPartsSingletonArrayFactory
         this.logUtil.putF(stringBuffer.ToString(), this, commonStrings.GET_INSTANCE);
         PartInterface[] newPartInterfaceArray = new PartInterface[this.list.size()];
         int newSize = newPartInterfaceArray.Length;
-        for (int index = 0; index < newSize; index++) {
-            newPartInterfaceArray[index] = ((PartInterface) this.list.get(index));
+        for (int index_2 = 0; index_2 < newSize; index_2++) {
+            newPartInterfaceArray[index_2] = ((PartInterface) this.list.get(index_2));
         }
         return newPartInterfaceArray;
     }

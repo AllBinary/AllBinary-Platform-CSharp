@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using AnimationInterface = org.allbinary.animation.AnimationInterface;
 using HealthInterface = org.allbinary.game.health.HealthInterface;
 using Anchor = org.allbinary.graphics.Anchor;
@@ -33,12 +33,12 @@ public class ImageHealthGraphic : HealthGraphic
         // base(animationInterface, healthInterface, location, direction) is called from the constructor declaration
         this.image = new Image[this.healthInterface.getMaxHealth()];
         ImageCacheFactory imageCacheFactory = ImageCacheFactory.getInstance();
-        for (int numOfHealth = 0; numOfHealth <= max; numOfHealth++) {
-            this.image[numOfHealth] = imageCacheFactory.get(this, numOfHealth + 1 * 10, 10);
+        for (int numOfHealth_0 = 0; numOfHealth_0 <= max; numOfHealth_0++) {
+            this.image[numOfHealth_0] = imageCacheFactory.get(this, numOfHealth_0 + 1 * 10, 10);
         }
-        for (int numOfHealth = 0; numOfHealth <= max; numOfHealth++) {
-            for (int index = 0; index < numOfHealth; index++) {
-                this.animationInterface.paint(this.image[numOfHealth].getGraphics(), numOfHealth * 10, 0);
+        for (int numOfHealth_1 = 0; numOfHealth_1 <= max; numOfHealth_1++) {
+            for (int index = 0; index < numOfHealth_1; index++) {
+                this.animationInterface.paint(this.image[numOfHealth_1].getGraphics(), numOfHealth_1 * 10, 0);
             }
         }
     }

@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Graphics = javax.microedition.lcdui.Graphics;
 using RTSFormInput = org.allbinary.game.input.form.RTSFormInput;
 using RTSLayer = org.allbinary.game.layer.RTSLayer;
 using RTSLayerInfoPaintable = org.allbinary.game.layer.RTSLayerInfoPaintable;
@@ -199,7 +199,7 @@ public class RTSPlayerGameInput : PlayerGameInput
         GeographicMapCompositeInterface geographicMapCompositeInterface = ((GeographicMapCompositeInterface) this.gameCanvas.getLayerManager());
         BasicGeographicMap geographicMapInterface = geographicMapCompositeInterface.getGeographicMapInterface()[0];
         AllBinaryTiledLayer allBinaryTiledLayer = geographicMapInterface.getAllBinaryTiledLayer();
-        graphics.setColor(((int) BasicColorFactory.getInstance().GREEN));
+        graphics.setColor(global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().GREEN));
         BasicArrayList list = this.getSelectedBuildingPlayerGameInput().getPaintSelectedRTSLayersList();
         int width = 0;
         int height = 0;

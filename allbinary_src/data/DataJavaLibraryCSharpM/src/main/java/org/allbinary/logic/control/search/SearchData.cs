@@ -25,28 +25,28 @@ public class SearchData
     {
     }
 
-    public static readonly string TOTAL_NUMBER_PAGES = "SEARCHDATA_TOTALNUMBEROFPAGES";
-    public static readonly string TOTAL_NUMBER_ITEMS_ON_THIS_PAGE = "SEARCHDATA_TOTALNUMBEROFITEMSONTHISPAGE";
-    public static readonly string TOTAL_NUMBER_ITEMS = "SEARCHDATA_TOTALNUMBEROFITEMS";
-    public static readonly int DEFAULT_PAGE_LENGTH = 10;
-    public static readonly string GENERATESTATICPAGES = "Generate Static Pages";
-    public static readonly string SEARCHBYSUMMARY = "Search By Summary";
-    public static readonly string SEARCHBYDESCRIPTION = "Search By Description";
-    public static readonly string SEARCHBYCATEGORY = "Search By Category";
-    public static readonly string SEARCHCATEGORIES = "Search Categories";
-    public static readonly string FILENAME = "SEARCHDATA_BASEFILENAME";
-    public static readonly string COLUMNNAME = "COLUMN_NAME";
-    public static readonly string COLUMNVALUE = "COLUMN_VALUE";
-    public static readonly string PARAMS = "SEARCHDATA_PARAMS";
-    public static readonly string LENGTH = "SEARCHDATA_LENGTH";
-    public static readonly string ORDER = "SEARCHDATA_ORDER";
-    public static readonly string PAGE = "SEARCHDATA_PAGE";
-    public static readonly string FIELDS = "SEARCHDATA_FIELDS";
-    public static readonly string FIELD = "SEARCHDATA_FIELD";
-    public static readonly string SORTBY = "SEARCHDATA_SORTBY";
-    public static readonly string TYPE = "SEARCHDATA_TYPE";
-    public static readonly string PAGE_INFO = "pageInfo";
-    public static readonly string SEARCH = "search";
-    public static readonly string MAKEPUBLIC = "Make Public";
+    public const string TOTAL_NUMBER_PAGES = "SEARCHDATA_TOTALNUMBEROFPAGES";
+    public const string TOTAL_NUMBER_ITEMS_ON_THIS_PAGE = "SEARCHDATA_TOTALNUMBEROFITEMSONTHISPAGE";
+    public const string TOTAL_NUMBER_ITEMS = "SEARCHDATA_TOTALNUMBEROFITEMS";
+    public const int DEFAULT_PAGE_LENGTH = 10;
+    public const string GENERATESTATICPAGES = "Generate Static Pages";
+    public const string SEARCHBYSUMMARY = "Search By Summary";
+    public const string SEARCHBYDESCRIPTION = "Search By Description";
+    public const string SEARCHBYCATEGORY = "Search By Category";
+    public const string SEARCHCATEGORIES = "Search Categories";
+    public const string FILENAME = "SEARCHDATA_BASEFILENAME";
+    public const string COLUMNNAME = "COLUMN_NAME";
+    public const string COLUMNVALUE = "COLUMN_VALUE";
+    public const string PARAMS = "SEARCHDATA_PARAMS";
+    public const string LENGTH = "SEARCHDATA_LENGTH";
+    public const string ORDER = "SEARCHDATA_ORDER";
+    public const string PAGE = "SEARCHDATA_PAGE";
+    public const string FIELDS = "SEARCHDATA_FIELDS";
+    public const string FIELD = "SEARCHDATA_FIELD";
+    public const string SORTBY = "SEARCHDATA_SORTBY";
+    public const string TYPE = "SEARCHDATA_TYPE";
+    public const string PAGE_INFO = "pageInfo";
+    public const string SEARCH = "search";
+    public const string MAKEPUBLIC = "Make Public";
 }
 

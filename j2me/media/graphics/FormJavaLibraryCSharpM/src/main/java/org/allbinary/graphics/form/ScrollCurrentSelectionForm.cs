@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Processor = org.allbinary.canvas.Processor;
 using Rectangle = org.allbinary.graphics.Rectangle;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -32,9 +32,12 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
     private readonly bool moveForSmallScreen;
     public class TempHorizontalFormProcessor : Processor
     {
+        private readonly ScrollCurrentSelectionForm outer;
+
         private readonly ScrollCurrentSelectionForm scrollCurrentSelectionForm;
-        public TempHorizontalFormProcessor(ScrollCurrentSelectionForm scrollCurrentSelectionForm)
+        public TempHorizontalFormProcessor(ScrollCurrentSelectionForm outer, ScrollCurrentSelectionForm scrollCurrentSelectionForm)
         {
+            this.outer = outer;
             this.scrollCurrentSelectionForm = scrollCurrentSelectionForm;
         }
 
@@ -48,9 +51,12 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
     }
     public class HorizontalFormProcessor : Processor
     {
+        private readonly ScrollCurrentSelectionForm outer;
+
         private readonly ScrollCurrentSelectionForm scrollCurrentSelectionForm;
-        public HorizontalFormProcessor(ScrollCurrentSelectionForm scrollCurrentSelectionForm)
+        public HorizontalFormProcessor(ScrollCurrentSelectionForm outer, ScrollCurrentSelectionForm scrollCurrentSelectionForm)
         {
+            this.outer = outer;
             this.scrollCurrentSelectionForm = scrollCurrentSelectionForm;
         }
 
@@ -64,9 +70,12 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
     }
     public class VerticalFormProcessor : Processor
     {
+        private readonly ScrollCurrentSelectionForm outer;
+
         private readonly ScrollCurrentSelectionForm scrollCurrentSelectionForm;
-        public VerticalFormProcessor(ScrollCurrentSelectionForm scrollCurrentSelectionForm)
+        public VerticalFormProcessor(ScrollCurrentSelectionForm outer, ScrollCurrentSelectionForm scrollCurrentSelectionForm)
         {
+            this.outer = outer;
             this.scrollCurrentSelectionForm = scrollCurrentSelectionForm;
         }
 
@@ -80,9 +89,12 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
     }
     public class TempHorizontalItemIndexDx : ItemIndexDx
     {
+        private readonly ScrollCurrentSelectionForm outer;
+
         private readonly ScrollCurrentSelectionForm scrollCurrentSelectionForm;
-        public TempHorizontalItemIndexDx(ScrollCurrentSelectionForm scrollCurrentSelectionForm)
+        public TempHorizontalItemIndexDx(ScrollCurrentSelectionForm outer, ScrollCurrentSelectionForm scrollCurrentSelectionForm)
         {
+            this.outer = outer;
             this.scrollCurrentSelectionForm = scrollCurrentSelectionForm;
         }
 
@@ -95,9 +107,12 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
     }
     public class HorizontalItemIndexDx : ItemIndexDx
     {
+        private readonly ScrollCurrentSelectionForm outer;
+
         private readonly ScrollCurrentSelectionForm scrollCurrentSelectionForm;
-        public HorizontalItemIndexDx(ScrollCurrentSelectionForm scrollCurrentSelectionForm)
+        public HorizontalItemIndexDx(ScrollCurrentSelectionForm outer, ScrollCurrentSelectionForm scrollCurrentSelectionForm)
         {
+            this.outer = outer;
             this.scrollCurrentSelectionForm = scrollCurrentSelectionForm;
         }
 
@@ -110,9 +125,12 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
     }
     public class VerticalItemIndexDx : ItemIndexDx
     {
+        private readonly ScrollCurrentSelectionForm outer;
+
         private readonly ScrollCurrentSelectionForm scrollCurrentSelectionForm;
-        public VerticalItemIndexDx(ScrollCurrentSelectionForm scrollCurrentSelectionForm)
+        public VerticalItemIndexDx(ScrollCurrentSelectionForm outer, ScrollCurrentSelectionForm scrollCurrentSelectionForm)
         {
+            this.outer = outer;
             this.scrollCurrentSelectionForm = scrollCurrentSelectionForm;
         }
 
@@ -144,14 +162,14 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
         base.init(rectangle, formType);
         FormTypeFactory formTypeFactory = FormTypeFactory.getInstance();
         if (formType == formTypeFactory.TEMP_HORIZONTAL_FORM) {
-            this.processor = new TempHorizontalFormProcessor(this);
-            this.preItemIndexDx = new TempHorizontalItemIndexDx(this);
+            this.processor = new TempHorizontalFormProcessor(this, this);
+            this.preItemIndexDx = new TempHorizontalItemIndexDx(this, this);
         } else if (formType == formTypeFactory.HORIZONTAL_FORM) {
-            this.processor = new HorizontalFormProcessor(this);
-            this.preItemIndexDx = new HorizontalItemIndexDx(this);
+            this.processor = new HorizontalFormProcessor(this, this);
+            this.preItemIndexDx = new HorizontalItemIndexDx(this, this);
         } else if (formType == formTypeFactory.VERTICAL_CENTER_FORM) {
-            this.processor = new VerticalFormProcessor(this);
-            this.preItemIndexDx = new VerticalItemIndexDx(this);
+            this.processor = new VerticalFormProcessor(this, this);
+            this.preItemIndexDx = new VerticalItemIndexDx(this, this);
         } else if (formType == formTypeFactory.NULL_FORM_TYPE) {
         } else {
             this.logUtil.putF(formTypeFactory.UNK, this, this.commonStrings.INIT);
@@ -159,7 +177,7 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
         this.myFontProcessor = this.updateMyFontProcessor;
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         this.myFontProcessor = MyFontProcessor.getInstance();
     }
@@ -230,7 +248,7 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
         return this.getDiffX(item) + this.halfBorder;
     }
 
-    protected override int getDiffX(ABCustomItem item)
+    public override int getDiffX(ABCustomItem item)
     {
         return ((this.maxWidth - item.getMinimumWidth()) >> 1);
     }

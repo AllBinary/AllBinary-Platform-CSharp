@@ -58,8 +58,8 @@
 
         <module>../j2me/games/GameJ2MEOptionalLibraryPOCSharpM</module>
 
-        <module>../j2me/media/graphics/geography/map/GraphP</module>
-        <module>../j2me/games/strategy/rts/RTSGameJavaLibraryP</module>
+        <module>../j2me/media/graphics/geography/map/GraphCSharpP</module>
+        <module>../j2me/games/strategy/rts/RTSGameJavaLibraryCSharpP</module>
         
         <module>../j2me/android/AllBinaryPlatformAndroidLibraryPOCSharpM</module>
 

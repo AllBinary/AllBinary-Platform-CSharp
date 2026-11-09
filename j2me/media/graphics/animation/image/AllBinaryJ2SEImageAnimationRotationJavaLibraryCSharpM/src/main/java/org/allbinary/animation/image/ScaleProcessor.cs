@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using ImageScaleUtil = org.allbinary.media.image.ImageScaleUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;

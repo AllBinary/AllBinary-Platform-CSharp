@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AndroidUtil = org.allbinary.AndroidUtil;
 using J2MEUtil = org.allbinary.J2MEUtil;
 using Animation = org.allbinary.animation.Animation;
@@ -43,7 +43,7 @@ namespace org.allbinary.game.displayable.canvas;
 
 public class BasicPopupMenuPaintable : Paintable, UpdateMyFontInterface
 {
-    private static readonly string NAME = "MENU";
+    private const string NAME = "MENU";
     public readonly BasicColorSetUtil basicSetColorUtil = BasicColorSetUtil.getInstance();
     private readonly DrawVerticalStringUtil drawStringUtil = DrawVerticalStringUtil.getInstance();
     private readonly string label;
@@ -68,7 +68,7 @@ public class BasicPopupMenuPaintable : Paintable, UpdateMyFontInterface
         this.init(rectangle);
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         Features features = Features.getInstance();

@@ -78,7 +78,7 @@ public class PathFindingInfoFactory : BasePathFindingInfoFactory
     }
 
     // throws Exception
-    public virtual void init(BasicGeographicMap geographicMapInterface, PathFindingInfo pathFindingInfo, int[][] mapArray)
+    public override void init(BasicGeographicMap geographicMapInterface, PathFindingInfo pathFindingInfo, int[][] mapArray)
     {
         base.init(geographicMapInterface, pathFindingInfo, mapArray);
         this.buildPathFindingNodes(geographicMapInterface, pathFindingInfo, mapArray);

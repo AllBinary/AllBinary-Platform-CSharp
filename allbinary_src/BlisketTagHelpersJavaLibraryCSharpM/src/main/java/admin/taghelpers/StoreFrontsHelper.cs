@@ -41,7 +41,7 @@ public class StoreFrontsHelper : BasicTable
         this.portion = new Portion(hashMap);
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             string success = StoreFrontsEntityFactory.getInstance().getStoreFrontsEntityInstance().dropTable();
@@ -58,7 +58,7 @@ public class StoreFrontsHelper : BasicTable
         }
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             string success = StoreFrontsEntityFactory.getInstance().getStoreFrontsEntityInstance().createTable();
@@ -75,7 +75,7 @@ public class StoreFrontsHelper : BasicTable
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "Restore Successful";
@@ -93,7 +93,7 @@ public class StoreFrontsHelper : BasicTable
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Restore Successful";
@@ -112,8 +112,8 @@ public class StoreFrontsHelper : BasicTable
     }
 
     private readonly CommonPhoneStrings commonPhoneStrings = CommonPhoneStrings.getInstance();
-    private static readonly string CLASS = "class";
-    private static readonly string TEXT = "text";
+    private const string CLASS = "class";
+    private const string TEXT = "text";
     public virtual string generateSelect()
     {
         try {

@@ -32,7 +32,7 @@ public class TransformInfoHelperFactory : TagHelperFactory
     }
 
     // throws LicensingException
-    public virtual object getInstance(HashMap<object, object> hashMap, PageContext pageContext)
+    public override object getInstance(HashMap<object, object> hashMap, PageContext pageContext)
     {
         try {
             return new TransformInfoHelper(hashMap, pageContext);

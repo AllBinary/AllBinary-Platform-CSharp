@@ -1160,35 +1160,35 @@ public class NoDecimalTrigTable
             }
         }
         if ((dx >= 0 && dy < 0)) {
-            for (int index = 180; index > 90; index--) {
-                if (ratio <= this.noDecimalTan[index]) {
-                    if (ratio > this.noDecimalTan[index - 1]) {
-                        return (((short) index));
-                    } else if (this.noDecimalTan[index - 1] == MAX_VALUE && ratio > MIN_VALUE) {
-                        return (((short) index));
+            for (int index_3 = 180; index_3 > 90; index_3--) {
+                if (ratio <= this.noDecimalTan[index_3]) {
+                    if (ratio > this.noDecimalTan[index_3 - 1]) {
+                        return (((short) index_3));
+                    } else if (this.noDecimalTan[index_3 - 1] == MAX_VALUE && ratio > MIN_VALUE) {
+                        return (((short) index_3));
                     }
                 }
             }
         } else if ((dx < 0 && dy <= 0)) {
-            for (int index = 270; index > 180; index--) {
-                if (ratio < this.noDecimalTan[index] && ratio >= this.noDecimalTan[index - 1]) {
-                    return (((short) index));
+            for (int index_2 = 270; index_2 > 180; index_2--) {
+                if (ratio < this.noDecimalTan[index_2] && ratio >= this.noDecimalTan[index_2 - 1]) {
+                    return (((short) index_2));
                 }
             }
         } else if ((dx < 0 && dy > 0)) {
-            for (int index = (this.noDecimalTan.Length - 1); index > 270; index--) {
-                if (ratio < this.noDecimalTan[index]) {
-                    if (ratio >= this.noDecimalTan[index - 1]) {
-                        return (((short) index));
-                    } else if (this.noDecimalTan[index - 1] == MAX_VALUE && ratio >= MIN_VALUE) {
-                        return (((short) index));
+            for (int index_1 = (this.noDecimalTan.Length - 1); index_1 > 270; index_1--) {
+                if (ratio < this.noDecimalTan[index_1]) {
+                    if (ratio >= this.noDecimalTan[index_1 - 1]) {
+                        return (((short) index_1));
+                    } else if (this.noDecimalTan[index_1 - 1] == MAX_VALUE && ratio >= MIN_VALUE) {
+                        return (((short) index_1));
                     }
                 }
             }
         } else if ((dx >= 0 && dy >= 0)) {
-            for (int index = 90; index > 0; index--) {
-                if (ratio < this.noDecimalTan[index] && ratio >= this.noDecimalTan[index - 1]) {
-                    return (((short) index));
+            for (int index_0 = 90; index_0 > 0; index_0--) {
+                if (ratio < this.noDecimalTan[index_0] && ratio >= this.noDecimalTan[index_0 - 1]) {
+                    return (((short) index_0));
                 }
             }
         }

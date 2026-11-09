@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
-//using Item = javax.microedition.lcdui.Item;
-//using ItemStateListener = javax.microedition.lcdui.ItemStateListener;
+using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
+using Item = javax.microedition.lcdui.Item;
+using ItemStateListener = javax.microedition.lcdui.ItemStateListener;
 using GameConfigurationGauge = org.allbinary.game.configuration.GameConfigurationGauge;
 using GameConfigurationUtil = org.allbinary.game.configuration.GameConfigurationUtil;
 using GameOptionsForm = org.allbinary.game.configuration.GameOptionsForm;

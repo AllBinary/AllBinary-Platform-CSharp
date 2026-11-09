@@ -2,8 +2,8 @@
 
 using System;
 using System.Linq;
-//using BufferedReader = java.io.BufferedReader;
-//using InputStreamReader = java.io.InputStreamReader;
+using BufferedReader = java.io.BufferedReader;
+using InputStreamReader = java.io.InputStreamReader;
 //using Properties = java.util.Properties;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using GenericOperatingSystem = org.allbinary.logic.system.os.GenericOperatingSystem;

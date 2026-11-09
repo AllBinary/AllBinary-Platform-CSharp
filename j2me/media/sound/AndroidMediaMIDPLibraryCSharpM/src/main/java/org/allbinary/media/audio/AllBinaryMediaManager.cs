@@ -18,9 +18,9 @@ using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
 //using IOException = java.io.IOException;
-//using InputStream = java.io.InputStream;
-//using MediaException = javax.microedition.media.MediaException;
-//using Player = javax.microedition.media.Player;
+using InputStream = java.io.InputStream;
+using MediaException = javax.microedition.media.MediaException;
+using Player = javax.microedition.media.Player;
 using TsUtil = org.allbinary.TsUtil;
 using Features = org.allbinary.game.configuration.feature.Features;
 using GameFeatureFactory = org.allbinary.game.configuration.feature.GameFeatureFactory;
@@ -35,7 +35,7 @@ namespace org.allbinary.media.audio;
 //AndroidMediaMIDPLibrary
 public class AllBinaryMediaManager
 {
-    private static readonly string THIS = "AllBinaryMediaManagerAndroid";
+    private const string THIS = "AllBinaryMediaManagerAndroid";
     private static int mostUsedTotal = 0;
     private AllBinaryMediaManager()
     {

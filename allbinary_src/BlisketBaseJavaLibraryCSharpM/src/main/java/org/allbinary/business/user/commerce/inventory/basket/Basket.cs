@@ -38,8 +38,8 @@ public class Basket : BasketInterface, Serializable
     {
         if (this.items.containsKey(id)) {
             string oldNumStr = new string((((string) this.items.get(id))).ToCharArray());
-            int? oldNumInt = (oldNumStr).ToString();
-            int? numInt = (num).ToString();
+            int? oldNumInt = int.Parse((oldNumStr).ToString());
+            int? numInt = int.Parse((num).ToString());
             int? newNumInt = ((int) oldNumInt) + ((int) numInt);
             this.items.put(id, newNumInt.ToString());
         } else {
@@ -54,7 +54,7 @@ public class Basket : BasketInterface, Serializable
 
     public virtual void adjustItem(string id, string num)
     {
-        if (((int) (num).ToString()) > 0) {
+        if (global::java.lang.JavaNumber.intValue(int.Parse((num).ToString())) > 0) {
             this.items.put(id, num);
         } else {
             this.items.remove(id);
@@ -100,7 +100,7 @@ public class Basket : BasketInterface, Serializable
     public virtual int? getNumberOf(string product)
     {
         string numStr = ((string) this.items.get(product));
-        return (numStr).ToString();
+        return int.Parse((numStr).ToString());
     }
 
     // throws MoneyException

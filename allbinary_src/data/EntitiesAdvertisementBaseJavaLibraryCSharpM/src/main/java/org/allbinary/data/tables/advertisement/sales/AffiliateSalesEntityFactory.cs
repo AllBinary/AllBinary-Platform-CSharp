@@ -23,7 +23,7 @@ namespace org.allbinary.data.tables.advertisement.sales;
 
 public class AffiliateSalesEntityFactory
 {
-    private static readonly string CLASSNAME = "org.allbinary.data.tables.AffiliatesSalesEntity";
+    private const string CLASSNAME = "org.allbinary.data.tables.AffiliatesSalesEntity";
     private AffiliateSalesEntityFactory()
     {
     }

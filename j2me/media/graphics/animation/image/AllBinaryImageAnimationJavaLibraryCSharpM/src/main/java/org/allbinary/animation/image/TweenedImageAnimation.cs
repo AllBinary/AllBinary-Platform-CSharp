@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using DisposalUtil = org.allbinary.DisposalUtil;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using IndexedAnimation = org.allbinary.animation.IndexedAnimation;
@@ -100,7 +100,7 @@ public class TweenedImageAnimation : IndexedAnimation
     }
 
     // throws Throwable
-    protected override void finalize()
+    public virtual void finalize()
     {
         DisposalUtil.getInstance().disposeImage(this.image);
     }

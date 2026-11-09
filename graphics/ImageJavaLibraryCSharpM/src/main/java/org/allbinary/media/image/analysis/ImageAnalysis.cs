@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 using ColorCacheFactory = org.allbinary.graphics.color.ColorCacheFactory;
 using ColorCacheable = org.allbinary.graphics.color.ColorCacheable;
@@ -60,7 +60,7 @@ public class ImageAnalysis
         long blueTotal = 0L;
         for (int indexY = 0; indexY < bufferedImage.getHeight(); indexY++) {
             for (int indexX = 0; indexX < bufferedImage.getWidth(); indexX++) {
-                int? keyInteger = (bufferedImage.getRGB(indexX, indexY)).ToString();
+                int? keyInteger = int.Parse((bufferedImage.getRGB(indexX, indexY)).ToString());
                 ColorCacheable colorCacheable = ((ColorCacheable) ColorCacheFactory.getInstance().get(keyInteger));
                 Color color = colorCacheable.getColor();
                 ImageAnalysis.processColorRangeResults(imageAnalysisResults, colorRangeInterface, color);

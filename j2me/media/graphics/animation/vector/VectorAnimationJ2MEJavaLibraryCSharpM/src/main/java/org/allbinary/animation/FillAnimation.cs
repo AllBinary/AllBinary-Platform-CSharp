@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 
 namespace org.allbinary.animation;
@@ -23,7 +23,7 @@ public class FillAnimation : IndexedAnimation
     public override void setBasicColorP(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != basicColor.intValue()) {
+        if (this.getBasicColorP() == null || global::java.lang.JavaNumber.intValue(this.getBasicColorP()) != basicColor.intValue()) {
             changed = true;
         }
         base.setBasicColorP(basicColor);
@@ -35,7 +35,7 @@ public class FillAnimation : IndexedAnimation
     public override void changeBasicColor(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getChangeBasicColor() == null || ((int) this.getChangeBasicColor()) != basicColor.intValue()) {
+        if (this.getChangeBasicColor() == null || global::java.lang.JavaNumber.intValue(this.getChangeBasicColor()) != basicColor.intValue()) {
             changed = true;
         }
         base.changeBasicColor(basicColor);

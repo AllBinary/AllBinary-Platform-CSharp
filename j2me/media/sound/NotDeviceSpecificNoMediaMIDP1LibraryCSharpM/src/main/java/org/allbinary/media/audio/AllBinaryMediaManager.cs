@@ -17,8 +17,8 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using InputStream = java.io.InputStream;
-//using Player = javax.microedition.media.Player;
+using InputStream = java.io.InputStream;
+using Player = javax.microedition.media.Player;
 using TsUtil = org.allbinary.TsUtil;
 using ProgressCanvasFactory = org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
@@ -30,7 +30,7 @@ namespace org.allbinary.media.audio;
 //NotDeviceSpecificNoMediaMIDP1Library
 public class AllBinaryMediaManager
 {
-    private static readonly string THIS = "AllBinaryMediaManagerNoMediaMIDP1";
+    private const string THIS = "AllBinaryMediaManagerNoMediaMIDP1";
     private AllBinaryMediaManager()
     {
     }

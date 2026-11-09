@@ -45,7 +45,7 @@ public class CategoryHierarchy : CategoryHierarchyInterface
     public CategoryHierarchy(CategoryInterface rootCategoryInterface, CategoryInterface parentCategoryInterface, HashMap<object, object> categoryPropertiesHashMap)
     {
         string levelString = StringUtil.getInstance().getNonNull(((string) categoryPropertiesHashMap.get(CategoryData.getInstance().LEVEL)));
-        this.level = ((int) (levelString).ToString());
+        this.level = global::java.lang.JavaNumber.intValue(int.Parse((levelString).ToString()));
         this.setRoot(rootCategoryInterface);
         this.setParent(parentCategoryInterface);
     }

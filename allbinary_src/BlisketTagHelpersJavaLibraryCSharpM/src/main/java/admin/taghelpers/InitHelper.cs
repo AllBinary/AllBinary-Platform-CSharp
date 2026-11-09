@@ -30,7 +30,7 @@ public class InitHelper : BasicTable
     {
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             if (new InitInfoEntity().dropTable()) {
@@ -47,7 +47,7 @@ public class InitHelper : BasicTable
         }
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             return new InitInfoEntity().createTable();
@@ -77,7 +77,7 @@ public class InitHelper : BasicTable
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "Restore Successful";
@@ -95,7 +95,7 @@ public class InitHelper : BasicTable
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Restore Successful";

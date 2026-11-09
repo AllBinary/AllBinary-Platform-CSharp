@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Choice = javax.microedition.lcdui.Choice;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using Choice = javax.microedition.lcdui.Choice;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using GameFeatureFormUtil = org.allbinary.game.configuration.feature.GameFeatureFormUtil;
 using InGameFeatureChoiceGroups = org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups;

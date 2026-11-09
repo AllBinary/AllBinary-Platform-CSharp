@@ -41,7 +41,7 @@ public class TransformInfoObjectConfigAndManipulatorFactory : TransformInfoObjec
     }
 
     // throws Exception
-    public virtual TransformInfoObjectConfigInterface getInstance(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface, AbPath objectConfigFileAbPath)
+    public override TransformInfoObjectConfigInterface getInstance(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface, AbPath objectConfigFileAbPath)
     {
         try {
             string data = new CryptFileReader(TransformInfoObjectConfigData.getInstance().UNCRYPTED_EXTENSION, TransformInfoObjectConfigData.getInstance().ENCRYPTED_EXTENSION).get(objectConfigFileAbPath);
@@ -55,7 +55,7 @@ public class TransformInfoObjectConfigAndManipulatorFactory : TransformInfoObjec
     }
 
     // throws Exception
-    public virtual TransformInfoObjectConfigInterface getInstance(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface)
+    public override TransformInfoObjectConfigInterface getInstance(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface)
     {
         try {
             StringValidationUtil stringValidationUtil = StringValidationUtil.getInstance();
@@ -77,7 +77,7 @@ public class TransformInfoObjectConfigAndManipulatorFactory : TransformInfoObjec
     }
 
     // throws Exception
-    public virtual TransformInfoObjectConfigInterface getInstance(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface, Document document)
+    public override TransformInfoObjectConfigInterface getInstance(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface, Document document)
     {
         try {
             StringValidationUtil stringValidationUtil = StringValidationUtil.getInstance();

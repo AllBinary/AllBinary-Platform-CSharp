@@ -42,7 +42,7 @@ public class FileFactory
         try {
             this.context.openFileInput(path);
             return true;
-        } catch (FileNotFoundException e) {
+        } catch (System.IO.FileNotFoundException e) {
             return false;
         }
     }

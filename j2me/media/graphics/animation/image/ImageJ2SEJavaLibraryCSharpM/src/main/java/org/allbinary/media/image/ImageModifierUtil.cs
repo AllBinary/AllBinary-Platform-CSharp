@@ -19,7 +19,7 @@ using System.Linq;
 //using BufferedImage = java.awt.image.BufferedImage;
 //using ColorModel = java.awt.image.ColorModel;
 //using WritableRaster = java.awt.image.WritableRaster;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using Anchor = org.allbinary.graphics.Anchor;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;

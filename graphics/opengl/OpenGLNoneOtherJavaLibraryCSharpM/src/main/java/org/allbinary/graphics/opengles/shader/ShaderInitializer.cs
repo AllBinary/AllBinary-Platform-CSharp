@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
+using GL10 = javax.microedition.khronos.opengles.GL10;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 
 namespace org.allbinary.graphics.opengles.shader;

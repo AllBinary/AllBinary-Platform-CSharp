@@ -22,7 +22,7 @@ namespace org.allbinary.media.graphics.geography.map.racetrack;
 
 public class FinalPositionRaceTrackFactory
 {
-    public static readonly int FIRST_POSITION = 1;
+    public const int FIRST_POSITION = 1;
     private static int index = FinalPositionRaceTrackFactory.FIRST_POSITION;
     private FinalPositionRaceTrackFactory()
     {

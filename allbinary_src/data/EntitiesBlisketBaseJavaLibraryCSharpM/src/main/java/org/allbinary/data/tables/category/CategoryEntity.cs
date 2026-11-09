@@ -104,9 +104,14 @@ public class CategoryEntity : AbSqlBean, CategoryEntityInterface
         base.updateWhere(CategoryData.getInstance().NAME, ((string) updatedValues.get(CategoryData.getInstance().NAME)), updatedValues);
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
+    }
+
+    public override void insert(BasicArrayList values)
+    {
+        base.insert(values);
     }
 
 }

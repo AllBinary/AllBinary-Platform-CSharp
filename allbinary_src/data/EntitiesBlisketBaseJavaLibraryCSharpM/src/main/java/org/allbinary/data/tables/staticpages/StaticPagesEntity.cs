@@ -42,7 +42,7 @@ public class StaticPagesEntity : AbSqlBean, StaticPagesEntityInterface
         this.setTableName(this.TABLENAME);
     }
 
-    public virtual void insert(BasicArrayList values)
+    public override void insert(BasicArrayList values)
     {
         try {
             base.insert(values);
@@ -70,7 +70,7 @@ public class StaticPagesEntity : AbSqlBean, StaticPagesEntityInterface
         base.deleteWhere(basicItemData.KEYWORDS, keywords);
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         string returnStr = base.dropTable();
         return returnStr;

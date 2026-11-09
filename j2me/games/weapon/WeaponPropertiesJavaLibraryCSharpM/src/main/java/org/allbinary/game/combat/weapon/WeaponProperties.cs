@@ -89,9 +89,9 @@ public class WeaponProperties : SimpleWeaponProperties
         return this.getDamage() - ((this.getDissipation() * range) / this.speed.getScaled());
     }
 
-    private static readonly string DAMAGE = "Damage: ";
-    private static readonly string RANGE = "Range: ";
-    private static readonly string RELOAD = "Reload: ";
+    private const string DAMAGE = "Damage: ";
+    private const string RANGE = "Range: ";
+    private const string RELOAD = "Reload: ";
     public virtual string[] toStringArray()
     {
         int index = 0;

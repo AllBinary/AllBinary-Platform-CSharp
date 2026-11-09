@@ -47,7 +47,7 @@ public class UserTag : TableTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             if (this.isEnabled()) {

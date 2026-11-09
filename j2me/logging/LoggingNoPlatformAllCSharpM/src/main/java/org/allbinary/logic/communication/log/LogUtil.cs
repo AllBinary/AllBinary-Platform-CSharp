@@ -45,7 +45,7 @@ public class LogUtil
         throw new SystemException();
     }
 
-    public virtual void putF(string specialMessage, string className, string functionName)
+    public virtual void putFS(string specialMessage, string className, string functionName)
     {
         throw new SystemException();
     }

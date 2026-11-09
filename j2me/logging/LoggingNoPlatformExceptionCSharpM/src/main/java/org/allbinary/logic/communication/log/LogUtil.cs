@@ -41,7 +41,7 @@ public class LogUtil
     {
     }
 
-    public virtual void putF(string specialMessage, string className, string functionName)
+    public virtual void putFS(string specialMessage, string className, string functionName)
     {
     }
 

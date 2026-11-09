@@ -78,9 +78,9 @@ public class GeographicMapCellPositionEventHandler : BasicEventHandler
     public virtual void fireRemoveEvent(AllBinaryEventObject eventObject)
     {
         BasicArrayList list = this.eventListenerInterfaceList;
-        for (int index = this.list.size(); --index >= 0; ) {
+        for (int index_1 = this.list.size(); --index_1 >= 0; ) {
             try {
-                MiniMapLayer miniMapLayer = ((MiniMapLayer) this.list.get(index));
+                MiniMapLayer miniMapLayer = ((MiniMapLayer) this.list.get(index_1));
                 miniMapLayer.onRemoveGeographicMapCellPositionEvent(((GeographicMapCellPositionEvent) eventObject));
             } catch (Exception e) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, EventStrings.getInstance().FIRE_EVENT, e);
@@ -89,9 +89,9 @@ public class GeographicMapCellPositionEventHandler : BasicEventHandler
         EventListenerInterface eventListenerInterface = null;
         GeographicMapCellPositionEventListenerInterface geographicMapCellPositionEventListenerInterface = null;
         int size = list.size();
-        for (int index = 0; index < size; index++) {
+        for (int index_2 = 0; index_2 < size; index_2++) {
             try {
-                eventListenerInterface = ((EventListenerInterface) list.get(index));
+                eventListenerInterface = ((EventListenerInterface) list.get(index_2));
                 geographicMapCellPositionEventListenerInterface = (((GeographicMapCellPositionEventListenerInterface) eventListenerInterface));
                 geographicMapCellPositionEventListenerInterface.onRemoveGeographicMapCellPositionEvent(((GeographicMapCellPositionEvent) eventObject));
             } catch (Exception e) {

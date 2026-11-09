@@ -41,11 +41,11 @@ public class SpecialAnimation : IndexedAnimation, SpecialAnimationInterface
         indexedAnimationBehavior.loopIndex++;
     }
 
-    public override void setLastFrame()
+    public virtual void setLastFrame()
     {
     }
 
-    public override bool isComplete()
+    public virtual bool isComplete()
     {
         return false;
     }

@@ -52,7 +52,7 @@ public class HtmlCell : HtmlTag
     {
         StringUtil stringUtil = StringUtil.getInstance();
         string result = stringUtil.EMPTY_STRING;
-        Any[] attributeKeys = this.otherAttributes.keySet().toArray();
+        object[] attributeKeys = this.otherAttributes.keySet().toArray();
         int attributeSize = attributeKeys.Length;
         result = this.before;
         result += this.START;

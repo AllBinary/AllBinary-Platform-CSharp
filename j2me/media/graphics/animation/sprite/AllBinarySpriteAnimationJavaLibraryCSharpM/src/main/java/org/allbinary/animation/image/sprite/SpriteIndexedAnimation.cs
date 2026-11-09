@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
-//using Sprite = javax.microedition.lcdui.game.Sprite;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
+using Sprite = javax.microedition.lcdui.game.Sprite;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using IndexedAnimation = org.allbinary.animation.IndexedAnimation;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -84,7 +84,7 @@ public class SpriteIndexedAnimation : IndexedAnimation, ColorCompositeInterface
         this.sprite.paint(graphics);
     }
 
-    protected virtual void paint(Graphics graphics)
+    public virtual void paint(Graphics graphics)
     {
         this.sprite.paint(graphics);
     }
@@ -143,7 +143,7 @@ public class SpriteIndexedAnimation : IndexedAnimation, ColorCompositeInterface
     }
 
     // throws Throwable
-    protected override void finalize()
+    public virtual void finalize()
     {
     }
 

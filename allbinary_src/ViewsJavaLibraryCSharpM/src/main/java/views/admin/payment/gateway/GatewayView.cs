@@ -34,7 +34,7 @@ public class GatewayView : PaymentGatewayViewAbstract
         // base(transformInfoInterface) is called from the constructor declaration
     }
 
-    public virtual void getFormData(HttpServletRequest request)
+    public override void getFormData(HttpServletRequest request)
     {
         base.getFormData(request);
         if (StringValidationUtil.getInstance().isEmpty(this.getPaymentGatewayPrimaryKey().getName())) {

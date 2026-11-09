@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using RecordEnumeration = javax.microedition.rms.RecordEnumeration;
-//using RecordStore = javax.microedition.rms.RecordStore;
+using RecordEnumeration = javax.microedition.rms.RecordEnumeration;
+using RecordStore = javax.microedition.rms.RecordStore;
 using BasicPersitance = org.allbinary.game.configuration.persistance.BasicPersitance;
 using NullRecordComparator = org.allbinary.game.configuration.persistance.NullRecordComparator;
 using NullRecordFilter = org.allbinary.game.configuration.persistance.NullRecordFilter;

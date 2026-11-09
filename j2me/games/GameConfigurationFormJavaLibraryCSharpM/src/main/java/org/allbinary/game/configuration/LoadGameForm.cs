@@ -16,12 +16,12 @@
 
 using System;
 using System.Linq;
-//using Choice = javax.microedition.lcdui.Choice;
-//using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Item = javax.microedition.lcdui.Item;
-//using NullImage = javax.microedition.lcdui.NullImage;
-//using StringItem = javax.microedition.lcdui.StringItem;
+using Choice = javax.microedition.lcdui.Choice;
+using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Item = javax.microedition.lcdui.Item;
+using NullImage = javax.microedition.lcdui.NullImage;
+using StringItem = javax.microedition.lcdui.StringItem;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using GamePersistanceSingleton = org.allbinary.game.configuration.persistance.GamePersistanceSingleton;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -107,7 +107,7 @@ public class LoadGameForm : CommandForm
     {
         if (this.areChoices) {
             ChoiceGroup choiceGroup = ((ChoiceGroup) this.get(0));
-            int value = ((int) (choiceGroup.getString(choiceGroup.getSelectedIndex())).ToString());
+            int value = global::java.lang.JavaNumber.intValue(int.Parse((choiceGroup.getString(choiceGroup.getSelectedIndex())).ToString()));
             return value;
         } else {
             return -1;

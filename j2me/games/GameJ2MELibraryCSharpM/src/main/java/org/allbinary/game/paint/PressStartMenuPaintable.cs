@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AppletUtil = org.allbinary.AppletUtil;
 using Anchor = org.allbinary.graphics.Anchor;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
@@ -56,7 +58,7 @@ public class PressStartMenuPaintable : Paintable, UpdateMyFontInterface
     private int anchor = Anchor.TOP_LEFT;
     private int beginWidth = 0;
     private int line = 0;
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.beginWidth = (graphics.getFont().stringWidth(this.startString) >> 1);

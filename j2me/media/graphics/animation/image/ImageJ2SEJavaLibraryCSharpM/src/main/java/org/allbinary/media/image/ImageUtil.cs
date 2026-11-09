@@ -23,7 +23,7 @@ using System.Linq;
 //using Transparency = java.awt.Transparency;
 //using AffineTransform = java.awt.geom.AffineTransform;
 //using BufferedImage = java.awt.image.BufferedImage;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonLabels = org.allbinary.@string.CommonLabels;
 using CommonSeps = org.allbinary.@string.CommonSeps;

@@ -30,14 +30,14 @@ public class TransformInfoHttpStoreNoManipulation : TransformInfoHttpStore
     }
 
     // throws Exception
-    public virtual void setObjectConfigFile(string value)
+    public override void setObjectConfigFile(string value)
     {
         this.setObjectConfigFileName(value);
         this.setObjectConfigInterface(TransformInfoObjectConfigNoManipulationFactory.getInstance().getInstance(this, this.getObjectConfigFilePath()));
     }
 
     // throws Exception
-    public virtual void setObjectConfig(string value)
+    public override void setObjectConfig(string value)
     {
         throw new Exception("Should not set from config");
     }

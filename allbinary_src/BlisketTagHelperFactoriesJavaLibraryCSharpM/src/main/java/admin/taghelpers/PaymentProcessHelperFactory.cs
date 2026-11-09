@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using HashMap = java.util.HashMap;
+using java.util;
 //using PageContext = javax.servlet.jsp.PageContext;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
@@ -31,7 +31,7 @@ public class PaymentProcessHelperFactory : TagHelperFactory
     }
 
     // throws LicensingException
-    public virtual Any getInstance(HashMap hashMap, PageContext pageContext)
+    public override object getInstance(HashMap<object, object> hashMap, PageContext pageContext)
     {
         try {
             return new PaymentProcessHelper(hashMap, pageContext);

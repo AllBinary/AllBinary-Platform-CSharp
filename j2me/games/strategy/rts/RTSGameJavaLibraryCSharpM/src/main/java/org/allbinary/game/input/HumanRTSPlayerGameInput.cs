@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using RTSFormInput = org.allbinary.game.input.form.RTSFormInput;
 using MultiSelectPaintable = org.allbinary.game.layer.MultiSelectPaintable;
 using RTSGameStrings = org.allbinary.game.layer.RTSGameStrings;
@@ -321,7 +321,7 @@ public class HumanRTSPlayerGameInput : RTSPlayerGameInput, BaseMotionGestureEven
     {
         base.paint(graphics);
         if (this.startPoint != PointFactory.getInstance().ZERO_ZERO && this.endPoint != PointFactory.getInstance().ZERO_ZERO) {
-            graphics.setColor(((int) BasicColorFactory.getInstance().RED));
+            graphics.setColor(global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().RED));
             int rectX1 = this.startPoint.getX();
             int rectY1 = this.startPoint.getY();
             int rectX2 = this.endPoint.getX();
@@ -338,12 +338,12 @@ public class HumanRTSPlayerGameInput : RTSPlayerGameInput, BaseMotionGestureEven
         }
     }
 
-    public override void onMotionGestureEvent(MotionGestureEvent motionGestureEvent)
+    public virtual void onMotionGestureEvent(MotionGestureEvent motionGestureEvent)
     {
         this.getMotionGestureInputList().add(motionGestureEvent);
     }
 
-    public override void onScrolledMotionGestureEvent(MotionGestureEvent motionGestureEvent)
+    public virtual void onScrolledMotionGestureEvent(MotionGestureEvent motionGestureEvent)
     {
     }
 

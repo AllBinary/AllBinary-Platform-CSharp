@@ -14,11 +14,13 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using J2MEUtil = org.allbinary.J2MEUtil;
 using GameCommandCanvas = org.allbinary.game.displayable.canvas.GameCommandCanvas;
 using Input = org.allbinary.game.input.Input;
@@ -51,7 +53,7 @@ public class CustomTextBox : GameCommandCanvas, RawKeyEventListener
     }
 
     private readonly InputFactory inputFactory = InputFactory.getInstance();
-    public override void onEventRaw(int keyCode, int deviceId, bool repeated)
+    public virtual void onEventRaw(int keyCode, int deviceId, bool repeated)
     {
         this.logUtil.putF(new StringMaker().append(this.commonStrings.START).appendint(keyCode).ToString(), this, "onEvent");
         this.keyPressedByDevice(keyCode, deviceId);

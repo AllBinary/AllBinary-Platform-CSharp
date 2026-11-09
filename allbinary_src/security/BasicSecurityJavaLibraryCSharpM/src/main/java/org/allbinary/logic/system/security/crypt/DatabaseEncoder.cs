@@ -58,20 +58,12 @@ public class DatabaseEncoder
         try {
             Tokenizer tokenizer = new Tokenizer(CommonSeps.getInstance().SPACE);
             BasicArrayList vector = tokenizer.getTokensFromString(value, new BasicArrayListD());
-            BasicArrayList byteVector = new BasicArrayListD();
             int size = vector.size();
+            sbyte[] decode = new sbyte[size];
             string byteOfData = null;
             for (int index = 0; index < size; index++) {
                 byteOfData = ((string) vector.objectArray[index]);
-                byteVector.add(byteOfData);
-            }
-            sbyte[] decode = new sbyte[byteVector.size()];
-            int decodeIndex = 0;
-            sbyte? aByte = null;
-            for (int index = 0; index < size; index++) {
-                aByte = ((sbyte?) byteVector.objectArray[index]);
-                decode[decodeIndex] = ((sbyte) aByte);
-                decodeIndex++;
+                decode[index] = sbyte.Parse(byteOfData);
             }
             return decode;
         } catch (Exception e) {

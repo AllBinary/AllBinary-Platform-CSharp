@@ -14,11 +14,13 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Graphics = javax.microedition.lcdui.Graphics;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using GameKey = org.allbinary.game.input.GameKey;
 using GameKeyFactory = org.allbinary.game.input.GameKeyFactory;
@@ -43,7 +45,7 @@ namespace org.allbinary.game.displayable.canvas;
 public class GameInputMappingCanvas : GameCommandCanvas, InputMappingInterface
 {
     private readonly ProcessPaintable paintable;
-    public static readonly string NAME = "GameInputMappingCanvas";
+    public const string NAME = "GameInputMappingCanvas";
     public static readonly Command DISPLAY = new Command("Controls", StringUtil.getInstance().EMPTY_STRING, Command.SCREEN, 2);
     public static readonly Command DEFAULT = new Command("Default", StringUtil.getInstance().EMPTY_STRING, Command.SCREEN, 2);
     private readonly InputMappingHelpPaintable helpPaintable;
@@ -123,7 +125,7 @@ public class GameInputMappingCanvas : GameCommandCanvas, InputMappingInterface
     }
 
     // throws Exception
-    public override void processInputMapping(GameKey gameKey, Input input)
+    public virtual void processInputMapping(GameKey gameKey, Input input)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append("Start Passed GameKey: ");

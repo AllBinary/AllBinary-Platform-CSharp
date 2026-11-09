@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using MIDlet = javax.microedition.midlet.MIDlet;
+using MIDlet = javax.microedition.midlet.MIDlet;
 using Processor = org.allbinary.canvas.Processor;
 
 namespace org.allbinary.midlet;
@@ -30,7 +30,7 @@ public class MidletExitProcessor : Processor
     }
 
     // throws Exception
-    public virtual void process()
+    public override void process()
     {
     }
 

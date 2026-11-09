@@ -17,8 +17,8 @@
 using System;
 using System.Linq;
 //using BufferedImage = java.awt.image.BufferedImage;
-//using File = java.io.File;
-//using Arrays = java.util.Arrays;
+using File = java.io.File;
+using Arrays = java.util.Arrays;
 //using java.util;
 //using ImageIO = javax.imageio.ImageIO;
 using FileJDialog = org.allbinary.gui.dialog.FileJDialog;
@@ -479,12 +479,12 @@ public class ImageToolJFrame : javax.swing.JFrame, FileJDialogListenerInterface
     private ColorRangeInterface getColorRangeInterface()
     {
         ColorRangeInterface colorRangeInterface = ((ColorRangeInterface) new ColorRange());
-        colorRangeInterface.setMinRed(((int) this.getMinRedJTextField().getText()));
-        colorRangeInterface.setMaxRed(((int) this.getMaxRedJTextField().getText()));
-        colorRangeInterface.setMinGreen(((int) this.getMinGreenJTextField().getText()));
-        colorRangeInterface.setMaxGreen(((int) this.getMaxGreenJTextField().getText()));
-        colorRangeInterface.setMinBlue(((int) this.getMinBlueJTextField().getText()));
-        colorRangeInterface.setMaxBlue(((int) this.getMaxBlueJTextField().getText()));
+        colorRangeInterface.setMinRed(global::java.lang.JavaNumber.intValue(this.getMinRedJTextField().getText()));
+        colorRangeInterface.setMaxRed(global::java.lang.JavaNumber.intValue(this.getMaxRedJTextField().getText()));
+        colorRangeInterface.setMinGreen(global::java.lang.JavaNumber.intValue(this.getMinGreenJTextField().getText()));
+        colorRangeInterface.setMaxGreen(global::java.lang.JavaNumber.intValue(this.getMaxGreenJTextField().getText()));
+        colorRangeInterface.setMinBlue(global::java.lang.JavaNumber.intValue(this.getMinBlueJTextField().getText()));
+        colorRangeInterface.setMaxBlue(global::java.lang.JavaNumber.intValue(this.getMaxBlueJTextField().getText()));
         return colorRangeInterface;
     }
 

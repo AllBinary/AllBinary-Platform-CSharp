@@ -24,8 +24,8 @@ namespace admin.taghelpers;
 
 public class BasicOptionItemsHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "admin.taghelpers.BasicOptionItemsHelper";
-    private static readonly string FACTORYNAME = "BasicOptionItemsHelperFactory";
+    private const string CLASSNAME = "admin.taghelpers.BasicOptionItemsHelper";
+    private const string FACTORYNAME = "BasicOptionItemsHelperFactory";
     public BasicOptionItemsHelperFactory()
     {
     }

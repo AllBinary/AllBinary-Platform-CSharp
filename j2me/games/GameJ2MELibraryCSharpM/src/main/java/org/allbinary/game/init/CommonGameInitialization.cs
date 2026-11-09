@@ -14,9 +14,11 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 using ResourceInitialization = org.allbinary.game.resource.ResourceInitialization;
 using ResourceLoadingLevelFactory = org.allbinary.game.resource.ResourceLoadingLevelFactory;
 using PointFactory = org.allbinary.graphics.PointFactory;

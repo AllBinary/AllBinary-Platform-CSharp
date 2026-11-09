@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using DataOutputStream = java.io.DataOutputStream;
-//using OutputStream = java.io.OutputStream;
+using DataOutputStream = java.io.DataOutputStream;
+using OutputStream = java.io.OutputStream;
 
 namespace org.allbinary.logic.io;
 

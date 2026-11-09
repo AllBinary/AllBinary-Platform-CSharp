@@ -39,11 +39,11 @@ public class ImageArrayRotationUtil
     {
         int? totalAngle = null;
         if (input == this.commonStrings.UP) {
-            totalAngle = (-90).ToString();
+            totalAngle = int.Parse((-90).ToString());
         } else if (input == this.commonStrings.DOWN) {
-            totalAngle = (90).ToString();
+            totalAngle = int.Parse((90).ToString());
         } else {
-            totalAngle = (input).ToString();
+            totalAngle = int.Parse((input).ToString());
         }
         BufferedImage generatedBufferedImage = null;
         BufferedImage[] bufferedImageArray = imageProcessorInput.getBufferedImageArray();

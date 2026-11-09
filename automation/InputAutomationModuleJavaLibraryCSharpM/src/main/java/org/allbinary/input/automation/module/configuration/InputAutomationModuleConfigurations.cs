@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using File = java.io.File;
-//using FileInputStream = java.io.FileInputStream;
+using File = java.io.File;
+using FileInputStream = java.io.FileInputStream;
 using java.util;
 //using java.util;
 using DomDocumentHelper = org.allbinary.data.tree.dom.document.DomDocumentHelper;

@@ -14,15 +14,17 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Item = javax.microedition.lcdui.Item;
-//using NullCommandListener = javax.microedition.lcdui.NullCommandListener;
+using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Item = javax.microedition.lcdui.Item;
+using NullCommandListener = javax.microedition.lcdui.NullCommandListener;
 using AndroidUtil = org.allbinary.AndroidUtil;
 using J2MEUtil = org.allbinary.J2MEUtil;
 using GameAdStateFactory = org.allbinary.business.advertisement.GameAdStateFactory;
@@ -172,7 +174,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     public EndGameInfo endGameInfo = new EndGameInfo();
     private readonly IntermissionInterface startIntermissionInterface = new Intermission();
     private readonly IntermissionInterface endLevelIntermissionInterface = new Intermission();
-    private static readonly int id = 0;
+    private const int id = 0;
     public AllBinaryGameLayerManager gameLayerManager = AllBinaryGameLayerManager.getNullInstance();
     private GameState gameState;
     private bool gameOver = false;
@@ -255,7 +257,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         DisplayChangeEventHandler.getInstance().addListenerInterface(this);
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         try {
             Font font = graphics.getFont();
@@ -289,12 +291,12 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         }
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }
 
-    public override void onDisplayChangeEvent(DisplayChangeEvent displayChangeEvent)
+    public virtual void onDisplayChangeEvent(DisplayChangeEvent displayChangeEvent)
     {
         try {
             this.logUtil.putF(new StringMaker().append(this.commonStrings.START).append(DisplayInfoSingleton.getInstance().ToString()).ToString(), this, this.canvasStrings.UPDATE_MEASUREMENT);
@@ -332,7 +334,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    protected virtual void initPopupMenu()
+    public virtual void initPopupMenu()
     {
         if (this.popupMenuInputProcessor == NoMenuInputProcessor.getInstance()) {
             Features features = Features.getInstance();
@@ -345,7 +347,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         }
     }
 
-    protected virtual void initMenu()
+    public virtual void initMenu()
     {
         try {
             this.menuBehavior.initMenu(this);
@@ -355,7 +357,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    protected virtual void initMenu2()
+    public virtual void initMenu2()
     {
         this.closeMenu();
         FormType formType = FormTypeFactory.getInstance().getFormType();
@@ -435,7 +437,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    public override void popupMenu()
+    public virtual void popupMenu()
     {
         this.menuBehavior.popupMenu(this);
     }
@@ -451,7 +453,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    public override void toggleMenu()
+    public virtual void toggleMenu()
     {
         this.logUtil.putF(this.commonStrings.START, this, this.gameStrings.TOGGLE_MENU);
         if (this.getMenuPaintable() == this.getOpenMenuPaintable()) {
@@ -464,7 +466,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         }
     }
 
-    public override void closeMenu()
+    public virtual void closeMenu()
     {
         this.menuBehavior.closeMenu(this);
     }
@@ -477,13 +479,13 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.setMenuInputProcessor(this.getPopupMenuInputProcessor());
     }
 
-    public override void open()
+    public virtual void open()
     {
         this.basicMotionGesturesHandler.addListenerInterface(this.menuInputProcessor);
         this.gameKeyEventHandler.addListener(this.menuInputProcessor);
     }
 
-    public override void close()
+    public virtual void close()
     {
         this.basicMotionGesturesHandler.removeListener(this.menuInputProcessor);
         this.gameKeyEventHandler.removeListener(this.menuInputProcessor);
@@ -492,18 +494,18 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    protected virtual void processorInit()
+    public virtual void processorInit()
     {
         this.setMainStateProcessor(Processor.getInstance());
         this.setProcessGameProcessorInit();
     }
 
-    protected virtual void setProcessGameProcessorInit()
+    public virtual void setProcessGameProcessorInit()
     {
         this.setProcessGameProcessor(new GameProcessor(this));
     }
 
-    protected virtual void initSpecialPaint()
+    public virtual void initSpecialPaint()
     {
         this.menuBehavior.initSpecialPaint(this);
     }
@@ -540,7 +542,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.getStartIntermissionInterface().setListener(this);
     }
 
-    public override void notifyIntermission(bool enable)
+    public virtual void notifyIntermission(bool enable)
     {
         if (enable) {
             this.startIntermissionProcessor = this.realStartIntermissionProcessor;
@@ -562,7 +564,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
 
     // throws Exception
     [MethodImpl(MethodImplOptions.Synchronized)]
-    protected virtual void initConfigurable(AbeClientInformationInterface abeClientInformation)
+    public virtual void initConfigurable(AbeClientInformationInterface abeClientInformation)
     {
         ProgressCanvas progressCanvas = ProgressCanvasFactory.getInstance();
         progressCanvas.addNormalPortion(50, "Setting Configurables");
@@ -586,7 +588,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    protected virtual void initApp(AbeClientInformationInterface abeClientInformation)
+    public virtual void initApp(AbeClientInformationInterface abeClientInformation)
     {
         this.initConfigurable(abeClientInformation);
         this.processorInit();
@@ -596,7 +598,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    protected virtual void initTouch()
+    public virtual void initTouch()
     {
         GameInitializedEvent gameInitializedEvent = GameInitializationUtil.getInstance().EVENT;
         ResourceLoadingLevelFactory resourceLoadingLevelFactory = ResourceLoadingLevelFactory.getInstance();
@@ -618,13 +620,13 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    protected virtual void updateTouch()
+    public virtual void updateTouch()
     {
         this.gameBehavior.updateTouch(this);
     }
 
     // throws Exception
-    protected virtual void updateTouch2()
+    public virtual void updateTouch2()
     {
         Features features = Features.getInstance();
         if (features.isFeature(this.touchFeatureFactory.AUTO_HIDE_SHOW_SCREEN_BUTTONS)) {
@@ -635,7 +637,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    protected virtual void postInitTouch()
+    public virtual void postInitTouch()
     {
         this.setTouchButtonsPaintable(TouchButtonsPaintableFactory.getInstance(this.gameLayerManager.getForegroundBasicColor()));
         this.updateScreenButtonPaintable();
@@ -670,7 +672,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         }
     }
 
-    public override void itemStateChanged(Item item)
+    public virtual void itemStateChanged(Item item)
     {
         try {
             string itemLabel = item.getLabel();
@@ -713,7 +715,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         }
     }
 
-    public override AllBinaryGameLayerManager getLayerManager()
+    public virtual AllBinaryGameLayerManager getLayerManager()
     {
         return this.gameLayerManager;
     }
@@ -724,7 +726,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public override bool isGameOver()
+    public virtual bool isGameOver()
     {
         return this.gameOver;
     }
@@ -736,7 +738,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    public override void processGameOver()
+    public virtual void processGameOver()
     {
         PreLogUtil.put(this.commonStrings.START, this, this.gameStrings.SET_GAME_OVER);
         this.setGameOver(true);
@@ -745,13 +747,13 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.setEndGamePaintable(this.getEndGameStatePaintable());
     }
 
-    public override bool isHighScoreSubmitted()
+    public virtual bool isHighScoreSubmitted()
     {
         return this.highScoreSubmitted;
     }
 
     // throws Exception
-    public override void setHighScoreSubmitted(bool highScoreSubmitted)
+    public virtual void setHighScoreSubmitted(bool highScoreSubmitted)
     {
         this.highScoreSubmitted = highScoreSubmitted;
         if (highScoreSubmitted) {
@@ -760,13 +762,13 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.logUtil.putF(new StringMaker().append("isHighScoreSubmitted: ").appendboolean(highScoreSubmitted).ToString(), this, "setHighScoreSubmitted");
     }
 
-    public override GameState getGameState()
+    public virtual GameState getGameState()
     {
         return this.gameState;
     }
 
     // throws Exception
-    public override void setGameState(GameState gameState)
+    public virtual void setGameState(GameState gameState)
     {
         this.logUtil.putF(new StringMaker().append(this.gameStrings.GAME_STATE).append(this.stringUtil.toString(gameState)).ToString(), this, this.gameStrings.SET_GAME_STATE);
         this.gameState = gameState;
@@ -793,17 +795,17 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         }
     }
 
-    protected virtual void removeAllGameKeyInputListenersOnBuild()
+    public virtual void removeAllGameKeyInputListenersOnBuild()
     {
         this.removeAllGameKeyInputListeners();
     }
 
-    protected virtual void removeAllGameKeyInputListeners()
+    public virtual void removeAllGameKeyInputListeners()
     {
         this.gameBehavior.removeAllGameKeyInputListeners(this);
     }
 
-    protected virtual void removeAllGameKeyInputListeners2()
+    public virtual void removeAllGameKeyInputListeners2()
     {
         this.logUtil.putF("Remove PlayerInput Listeners", this, "removeAllGameKeyInputListeners");
         for (int index = this.localPlayerGameInputList.size() - 1; index >= 0; index--) {
@@ -819,13 +821,13 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    protected virtual void updateEndGameProcessor()
+    public virtual void updateEndGameProcessor()
     {
         this.gameBehavior.updateEndGameProcessor(this);
     }
 
     // throws Exception
-    protected virtual void updateEndGameProcessor2()
+    public virtual void updateEndGameProcessor2()
     {
         if (this.getGameState() == this.gameStateFactory.SHOW_END_RESULT_GAME_STATE || this.getGameState() == this.gameStateFactory.SHOW_HIGH_SCORE_GAME_STATE) {
             this.setEndGameProcessor(this.realEndGameProcessor);
@@ -840,7 +842,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    protected virtual void cleanupGame()
+    public virtual void cleanupGame()
     {
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CLEANUP);
         ProgressCanvas progressCanvas = ProgressCanvasFactory.getInstance();
@@ -945,26 +947,26 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         ABHashtable<object, object> hashtable = this.getLoadStateHashtable();
         if (hashtable != null && hashtable.size() > 0) {
             string levelAsString = ((string) hashtable.get(((object) GameInfo.LEVEL_NAME)));
-            int level = ((int) (levelAsString).ToString());
+            int level = global::java.lang.JavaNumber.intValue(int.Parse((levelAsString).ToString()));
             GameInfo gameInfo = this.gameLayerManager.getGameInfo();
             gameInfo.setCurrentLevel(level);
         }
     }
 
     // throws Exception
-    public override ABHashtable<object, object> getLoadStateHashtable()
+    public virtual ABHashtable<object, object> getLoadStateHashtable()
     {
         this.logUtil.putF(new StringMaker().append(this.commonLabels.START_LABEL).append(this.stringUtil.toString(this.hashtable)).ToString(), this, "getLoadStateHashtable");
         return this.hashtable;
     }
 
-    public override void setLoadStateHashtable(ABHashtable<object, object> hashtable)
+    public virtual void setLoadStateHashtable(ABHashtable<object, object> hashtable)
     {
         this.logUtil.putF(new StringMaker().append(this.commonLabels.START_LABEL).append(this.stringUtil.toString(hashtable)).ToString(), this, "setLoadStateHashtable");
         this.hashtable = hashtable;
     }
 
-    public override ABHashtable<object, object> getCurrentStateHashtable()
+    public virtual ABHashtable<object, object> getCurrentStateHashtable()
     {
         ABHashtable<object, object> hashtable = this.stdUtil.createHashtable();
         int level = this.gameLayerManager.getGameInfo().getCurrentLevel();
@@ -999,7 +1001,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.progressPaintable.paint(graphics);
     }
 
-    public override void paintThreed(Graphics graphics)
+    public virtual void paintThreed(Graphics graphics)
     {
     }
 
@@ -1060,7 +1062,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     {
     }
 
-    protected virtual int endProgress(bool isProgress)
+    public virtual int endProgress(bool isProgress)
     {
         int portion = 30;
         if (isProgress && this.isMainCanvas()) {
@@ -1074,7 +1076,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    protected virtual void processPlayingGame()
+    public virtual void processPlayingGame()
     {
         this.cheatProcessor.update();
         this.sensorGameUpdateProcessor.getInputSensor().update();
@@ -1084,12 +1086,12 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     }
 
     // throws Exception
-    protected virtual void threadInit()
+    public virtual void threadInit()
     {
     }
 
     // throws Exception
-    protected virtual void processGame()
+    public virtual void processGame()
     {
         base.process();
         if (AllBinaryMediaManager.update()) {
@@ -1256,46 +1258,27 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
             this.getCustomCommandListener().commandAction(GameCommandsFactory.getInstance().SET_MENU_DISPLAYABLE, textBox);
         }
         if (autoSubmit) {
-            class SaveHighScoreRunnable : global::java.lang.Runnable
-            {
-                private readonly ProgressCanvas progressCanvas = ProgressCanvasFactory.getInstance();
-                public virtual void run()
-                {
-                    LogUtil logUtil = LogUtil.getInstance();
-                    try {
-                        if (isLast) {
-                            textBox.submit();
-                        } else {
-                            textBox.saveHighScore();
-                        }
-                    } catch (Exception e) {
-                        CommonStrings commonStrings = CommonStrings.getInstance();
-                        logUtil.put(commonStrings.EXCEPTION, this, "run", e);
-                        this.progressCanvas.end();
-                    }
-                }
-
-            }
-            SecondaryThreadPool.getInstance().runTask(new SaveHighScoreRunnable());
+            
+            SecondaryThreadPool.getInstance().runTask(new SaveHighScoreRunnable(isLast, textBox));
         }
     }
 
-    protected virtual TimeDelayHelper getGameStateTimeHelper()
+    public virtual TimeDelayHelper getGameStateTimeHelper()
     {
         return this.gameStateTimeHelper;
     }
 
-    protected virtual void setInitialized(bool initialized)
+    public virtual void setInitialized(bool initialized)
     {
         this.initialized = initialized;
     }
 
-    public override bool isInitialized()
+    public virtual bool isInitialized()
     {
         return this.initialized;
     }
 
-    public override int getSourceId()
+    public virtual int getSourceId()
     {
         return AllBinaryGameCanvas.id;
     }
@@ -1305,17 +1288,17 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.progressPaintable = paintable;
     }
 
-    public override IntermissionInterface getStartIntermissionInterface()
+    public virtual IntermissionInterface getStartIntermissionInterface()
     {
         return this.startIntermissionInterface;
     }
 
-    public override IntermissionInterface getEndLevelIntermissionInterface()
+    public virtual IntermissionInterface getEndLevelIntermissionInterface()
     {
         return this.endLevelIntermissionInterface;
     }
 
-    protected virtual void setTouchPaintableP(Paintable paintable)
+    public virtual void setTouchPaintableP(Paintable paintable)
     {
         this.touchPaintable = paintable;
     }
@@ -1325,7 +1308,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         return this.touchPaintable;
     }
 
-    protected virtual void setEndGamePaintable(Paintable endGamePaintable)
+    public virtual void setEndGamePaintable(Paintable endGamePaintable)
     {
         this.endGamePaintable = endGamePaintable;
     }
@@ -1335,7 +1318,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         return this.endGamePaintable;
     }
 
-    protected virtual void setIntermissionPaintable(Paintable intermissionPaintable)
+    public virtual void setIntermissionPaintable(Paintable intermissionPaintable)
     {
         this.intermissionPaintable = intermissionPaintable;
     }
@@ -1360,12 +1343,12 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         return this.highScoresPaintable;
     }
 
-    protected virtual HighScoresPaintable getRealHighScoresPaintable()
+    public virtual HighScoresPaintable getRealHighScoresPaintable()
     {
         return this.realHighScoresPaintable;
     }
 
-    protected virtual void clearPlayerGameInputList()
+    public virtual void clearPlayerGameInputList()
     {
         PlayerGameInput playerGameInput = null;
         for (int index = this.localPlayerGameInputList.size() - 1; index >= 0; index--) {
@@ -1375,17 +1358,17 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.localPlayerGameInputList.clear();
     }
 
-    protected virtual void addPlayerGameInput(PlayerGameInput playerGameInput)
+    public virtual void addPlayerGameInput(PlayerGameInput playerGameInput)
     {
         this.localPlayerGameInputList.add(playerGameInput);
     }
 
-    protected virtual void setMenuInputProcessor(BasicMenuInputProcessor menuInputProcessor)
+    public virtual void setMenuInputProcessor(BasicMenuInputProcessor menuInputProcessor)
     {
         this.menuInputProcessor = menuInputProcessor;
     }
 
-    protected virtual BasicMenuInputProcessor getMenuInputProcessor()
+    public virtual BasicMenuInputProcessor getMenuInputProcessor()
     {
         return this.menuInputProcessor;
     }
@@ -1410,12 +1393,12 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.startLevel = startLevel;
     }
 
-    protected virtual void setTouchButtonsPaintable(Paintable touchButtonsPaintable)
+    public virtual void setTouchButtonsPaintable(Paintable touchButtonsPaintable)
     {
         this.touchButtonsPaintable = touchButtonsPaintable;
     }
 
-    protected virtual Paintable getTouchButtonsPaintable()
+    public virtual Paintable getTouchButtonsPaintable()
     {
         return this.touchButtonsPaintable;
     }
@@ -1425,47 +1408,47 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.gameInputProcessor = gameInputProcessor;
     }
 
-    protected virtual Processor getGameInputProcessor()
+    public virtual Processor getGameInputProcessor()
     {
         return this.gameInputProcessor;
     }
 
-    protected virtual void setEndGameProcessor(Processor endGameProcessor)
+    public virtual void setEndGameProcessor(Processor endGameProcessor)
     {
         this.endGameProcessor = endGameProcessor;
     }
 
-    protected virtual Processor getEndGameProcessor()
+    public virtual Processor getEndGameProcessor()
     {
         return this.endGameProcessor;
     }
 
-    protected virtual void setEndGameStatePaintable(Paintable endGameStatePaintable)
+    public virtual void setEndGameStatePaintable(Paintable endGameStatePaintable)
     {
         this.endGameStatePaintable = endGameStatePaintable;
     }
 
-    protected virtual Paintable getEndGameStatePaintable()
+    public virtual Paintable getEndGameStatePaintable()
     {
         return this.endGameStatePaintable;
     }
 
-    protected virtual void setNonBotPaintableP(Paintable nonBotPaintable)
+    public virtual void setNonBotPaintableP(Paintable nonBotPaintable)
     {
         this.nonBotPaintable = nonBotPaintable;
     }
 
-    protected virtual Paintable getNonBotPaintableP()
+    public virtual Paintable getNonBotPaintableP()
     {
         return this.nonBotPaintable;
     }
 
-    protected virtual void setStartIntermissionPaintable(InitUpdatePaintable startIntermissionPaintable)
+    public virtual void setStartIntermissionPaintable(InitUpdatePaintable startIntermissionPaintable)
     {
         this.startIntermissionPaintable = startIntermissionPaintable;
     }
 
-    protected virtual InitUpdatePaintable getStartIntermissionPaintable()
+    public virtual InitUpdatePaintable getStartIntermissionPaintable()
     {
         return this.startIntermissionPaintable;
     }
@@ -1475,12 +1458,12 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.mainStateProcessor = mainStateProcessor;
     }
 
-    protected virtual Processor getMainStateProcessor()
+    public virtual Processor getMainStateProcessor()
     {
         return this.mainStateProcessor;
     }
 
-    protected virtual void setProcessGameProcessor(Processor processGameProcessor)
+    public virtual void setProcessGameProcessor(Processor processGameProcessor)
     {
         this.processGameProcessor = processGameProcessor;
     }
@@ -1490,22 +1473,22 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         return this.processGameProcessor;
     }
 
-    protected virtual void setOpenMenuPaintable(Paintable openMenuPaintable)
+    public virtual void setOpenMenuPaintable(Paintable openMenuPaintable)
     {
         this.openMenuPaintable = openMenuPaintable;
     }
 
-    protected virtual Paintable getOpenMenuPaintable()
+    public virtual Paintable getOpenMenuPaintable()
     {
         return this.openMenuPaintable;
     }
 
-    protected virtual void setPopupMenuInputProcessor(BasicMenuInputProcessor popupMenuInputProcessor)
+    public virtual void setPopupMenuInputProcessor(BasicMenuInputProcessor popupMenuInputProcessor)
     {
         this.popupMenuInputProcessor = popupMenuInputProcessor;
     }
 
-    protected virtual BasicMenuInputProcessor getPopupMenuInputProcessor()
+    public virtual BasicMenuInputProcessor getPopupMenuInputProcessor()
     {
         return this.popupMenuInputProcessor;
     }
@@ -1530,17 +1513,17 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.inputProcessor = inputProcessor;
     }
 
-    protected virtual InputProcessor getInputProcessor()
+    public virtual InputProcessor getInputProcessor()
     {
         return this.inputProcessor;
     }
 
-    protected virtual void setMenuPaintable(Paintable menuPaintable)
+    public virtual void setMenuPaintable(Paintable menuPaintable)
     {
         this.menuPaintable = menuPaintable;
     }
 
-    protected virtual Paintable getMenuPaintable()
+    public virtual Paintable getMenuPaintable()
     {
         return this.menuPaintable;
     }
@@ -1550,7 +1533,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.formPaintable = formPaintable;
     }
 
-    protected virtual Paintable getFormPaintable()
+    public virtual Paintable getFormPaintable()
     {
         return this.formPaintable;
     }
@@ -1560,7 +1543,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.gameSpecificPaintable = gameSpecificPaintable;
     }
 
-    protected virtual Paintable getGameSpecificPaintableP()
+    public virtual Paintable getGameSpecificPaintableP()
     {
         return this.gameSpecificPaintable;
     }
@@ -1581,11 +1564,50 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         }
     }
 
-    public static readonly int TYPE = 2;
+    public const int TYPE = 2;
     public override int getType()
     {
         return AllBinaryGameCanvas.TYPE;
     }
+
+    public override string getTitle()
+    {
+        return base.getTitle();
+    }
+
+    public override bool isPaused()
+    {
+        return base.isPaused();
+    }
+
+            class SaveHighScoreRunnable : global::java.lang.Runnable
+            {
+                private readonly ProgressCanvas progressCanvas = ProgressCanvasFactory.getInstance();
+                private readonly bool isLast;
+                private readonly HighScoreTextBox textBox;
+                public SaveHighScoreRunnable(bool isLast, HighScoreTextBox textBox)
+                {
+                    this.isLast = isLast;
+                    this.textBox = textBox;
+                }
+
+                public virtual void run()
+                {
+                    LogUtil logUtil = LogUtil.getInstance();
+                    try {
+                        if (this.isLast) {
+                            this.textBox.submit();
+                        } else {
+                            this.textBox.saveHighScore();
+                        }
+                    } catch (Exception e) {
+                        CommonStrings commonStrings = CommonStrings.getInstance();
+                        logUtil.put(commonStrings.EXCEPTION, this, "run", e);
+                        this.progressCanvas.end();
+                    }
+                }
+
+            }
 
 }
 

@@ -26,8 +26,8 @@ namespace taghelpers.transform.info;
 
 public class TransformInfoRequestHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "taghelpers.transform.info.TransformInfoRequestHelper";
-    private static readonly string FACTORYNAME = "TransformInfoRequestHelperFactory";
+    private const string CLASSNAME = "taghelpers.transform.info.TransformInfoRequestHelper";
+    private const string FACTORYNAME = "TransformInfoRequestHelperFactory";
     public TransformInfoRequestHelperFactory()
     {
     }

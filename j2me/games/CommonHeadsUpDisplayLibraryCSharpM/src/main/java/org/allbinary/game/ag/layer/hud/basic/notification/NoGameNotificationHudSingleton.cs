@@ -37,16 +37,7 @@ public class NoGameNotificationHudSingleton
     {
         try {
             BasicHudFactory basicHudFactory = BasicHudFactory.getInstance();
-            class NoGameGameNotificationHud : GameNotificationHud
-            {
-                public NoGameGameNotificationHud() : base(basicHudFactory.TOPCENTER, basicHudFactory.HORIZONTAL, 2, BasicColorFactory.getInstance().RED)
-                {
-                    // base(basicHudFactory.TOPCENTER, basicHudFactory.HORIZONTAL, 2, BasicColorFactory.getInstance().RED) is called from the constructor declaration
-                    this.updateMaxWidth = 40;
-                    this.updateMaxHeight = 14;
-                }
-
-            }
+            
             this.gameNotificationHud = new NoGameGameNotificationHud();
         } catch (Exception e) {
             CommonStrings commonStrings = CommonStrings.getInstance();
@@ -58,6 +49,17 @@ public class NoGameNotificationHudSingleton
     {
         return this.gameNotificationHud;
     }
+
+            class NoGameGameNotificationHud : GameNotificationHud
+            {
+                public NoGameGameNotificationHud() : base(BasicHudFactory.getInstance().TOPCENTER, BasicHudFactory.getInstance().HORIZONTAL, 2, BasicColorFactory.getInstance().RED)
+                {
+                    // base(BasicHudFactory.getInstance().TOPCENTER, BasicHudFactory.getInstance().HORIZONTAL, 2, BasicColorFactory.getInstance().RED) is called from the constructor declaration
+                    this.updateMaxWidth = 40;
+                    this.updateMaxHeight = 14;
+                }
+
+            }
 
 }
 

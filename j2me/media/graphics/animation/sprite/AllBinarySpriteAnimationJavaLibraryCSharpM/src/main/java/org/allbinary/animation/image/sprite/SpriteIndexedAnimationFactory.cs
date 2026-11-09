@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
-//using Sprite = javax.microedition.lcdui.game.Sprite;
+using Image = javax.microedition.lcdui.Image;
+using Sprite = javax.microedition.lcdui.game.Sprite;
 using AndroidUtil = org.allbinary.AndroidUtil;
 using Animation = org.allbinary.animation.Animation;
 using AnimationBehaviorFactory = org.allbinary.animation.AnimationBehaviorFactory;
@@ -81,7 +81,7 @@ public class SpriteIndexedAnimationFactory : BaseImageAnimationFactory, Procedur
     }
 
     // throws Exception
-    public override Animation getInstanceAnimation(Animation animationInterface)
+    public virtual Animation getInstanceAnimation(Animation animationInterface)
     {
         return this.getInstance(0);
     }

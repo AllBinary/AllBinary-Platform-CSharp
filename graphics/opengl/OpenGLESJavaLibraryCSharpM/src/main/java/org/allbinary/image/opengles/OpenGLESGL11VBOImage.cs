@@ -14,14 +14,16 @@
  */
 // Generated Code Do Not Modify
 
+extern alias ImageCacheOpenGLESJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using ByteBuffer = java.nio.ByteBuffer;
-//using ByteOrder = java.nio.ByteOrder;
-//using FloatBuffer = java.nio.FloatBuffer;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Image = javax.microedition.lcdui.Image;
+using ByteBuffer = java.nio.ByteBuffer;
+using ByteOrder = java.nio.ByteOrder;
+using FloatBuffer = java.nio.FloatBuffer;
+using GL = javax.microedition.khronos.opengles.GL;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Image = javax.microedition.lcdui.Image;
 using OpenGLLogUtil = org.allbinary.graphics.opengles.OpenGLLogUtil;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
 using GLUtil = org.allbinary.opengles.GLUtil;

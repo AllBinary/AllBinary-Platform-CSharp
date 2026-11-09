@@ -65,7 +65,7 @@ public class LogUtil
         Console.WriteLine(message);
     }
 
-    private static readonly string LOG_SUCCESS = "org.allbinary: ";
+    private const string LOG_SUCCESS = "org.allbinary: ";
     public virtual void put(string specialMessage, object anyType, string functionName, object exception)
     {
         string className = CommonStrings.getInstance().EMPTY;

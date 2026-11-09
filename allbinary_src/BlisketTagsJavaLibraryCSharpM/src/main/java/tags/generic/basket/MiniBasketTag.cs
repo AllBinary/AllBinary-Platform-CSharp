@@ -30,7 +30,7 @@ public class MiniBasketTag : StoreValidationTransformTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             this.setName("Mini Basket View");

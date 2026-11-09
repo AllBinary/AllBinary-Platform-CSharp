@@ -21,6 +21,6 @@ namespace org.allbinary.business.user.modules.admin.configuration;
 
 public class AdminConfigurationData
 {
-    public static readonly string CONTEXTNAME = "Admin";
+    public const string CONTEXTNAME = "Admin";
 }
 

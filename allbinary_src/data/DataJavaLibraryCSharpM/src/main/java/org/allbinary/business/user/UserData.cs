@@ -26,26 +26,26 @@ public class UserData
     }
 
     public static int MAXLEN = 250;
-    public static readonly string NAME = "USER_NAME";
-    public static readonly string USERNAME = "CUSTOMER_USER_NAME";
-    public static readonly string PASSWORD = "CUSTOMER_PASSWORD";
-    public static readonly string PREFIXNAME = "CUSTOMER_PREFIX_NAME";
-    public static readonly string FIRSTNAME = "CUSTOMER_FIRST_NAME";
-    public static readonly string LASTNAME = "CUSTOMER_LAST_NAME";
-    public static readonly string MIDDLENAME = "CUSTOMER_MIDDLE_NAME";
-    public static readonly string SUFFIXNAME = "CUSTOMER_SUFFIX_NAME";
-    public static readonly string COMPANY = "CUSTOMER_COMPANY";
-    public static readonly string POSITIONATCOMPANY = "CUSTOMER_POSITION_AT_COMPANY";
-    public static readonly string MAINEMAIL = "CUSTOMER_MAIN_EMAIL";
-    public static readonly string SECONDARYEMAIL = "CUSTOMER_SECONDARY_EMAIL";
-    public static readonly string HOMEPHONE = "CUSTOMER_HOME_PHONE";
-    public static readonly string CELLPHONE = "CUSTOMER_CELL_PHONE";
-    public static readonly string WORKPHONE = "CUSTOMER_WORK_PHONE";
-    public static readonly string OTHERCONTACT = "CUSTOMER_OTHER_CONTACT";
-    public static readonly string ELECTRONICDEVICE = "CUSTOMER_ELECTRONIC_DEVICE";
-    public static readonly string FAX = "CUSTOMER_FAX";
-    public static readonly string SECRET = "CUSTOMER_SECRET";
-    public static readonly string PERMISSIONS = "CUSTOMER_PERMISSIONS";
-    public static readonly string CONFIGURATION = "CUSTOMER_CONFIGURATION";
+    public const string NAME = "USER_NAME";
+    public const string USERNAME = "CUSTOMER_USER_NAME";
+    public const string PASSWORD = "CUSTOMER_PASSWORD";
+    public const string PREFIXNAME = "CUSTOMER_PREFIX_NAME";
+    public const string FIRSTNAME = "CUSTOMER_FIRST_NAME";
+    public const string LASTNAME = "CUSTOMER_LAST_NAME";
+    public const string MIDDLENAME = "CUSTOMER_MIDDLE_NAME";
+    public const string SUFFIXNAME = "CUSTOMER_SUFFIX_NAME";
+    public const string COMPANY = "CUSTOMER_COMPANY";
+    public const string POSITIONATCOMPANY = "CUSTOMER_POSITION_AT_COMPANY";
+    public const string MAINEMAIL = "CUSTOMER_MAIN_EMAIL";
+    public const string SECONDARYEMAIL = "CUSTOMER_SECONDARY_EMAIL";
+    public const string HOMEPHONE = "CUSTOMER_HOME_PHONE";
+    public const string CELLPHONE = "CUSTOMER_CELL_PHONE";
+    public const string WORKPHONE = "CUSTOMER_WORK_PHONE";
+    public const string OTHERCONTACT = "CUSTOMER_OTHER_CONTACT";
+    public const string ELECTRONICDEVICE = "CUSTOMER_ELECTRONIC_DEVICE";
+    public const string FAX = "CUSTOMER_FAX";
+    public const string SECRET = "CUSTOMER_SECRET";
+    public const string PERMISSIONS = "CUSTOMER_PERMISSIONS";
+    public const string CONFIGURATION = "CUSTOMER_CONFIGURATION";
 }
 

@@ -14,13 +14,15 @@
  */
 // Generated Code Do Not Modify
 
+extern alias ImageCacheOpenGLESJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using GL11 = javax.microedition.khronos.opengles.GL11;
-//using GL11Ext = javax.microedition.khronos.opengles.GL11Ext;
-//using Image = javax.microedition.lcdui.Image;
+using GL = javax.microedition.khronos.opengles.GL;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using GL11 = javax.microedition.khronos.opengles.GL11;
+using GL11Ext = javax.microedition.khronos.opengles.GL11Ext;
+using Image = javax.microedition.lcdui.Image;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
 using DisplayChangeEvent = org.allbinary.graphics.displayable.@event.DisplayChangeEvent;
 using OpenGLLogUtil = org.allbinary.graphics.opengles.OpenGLLogUtil;

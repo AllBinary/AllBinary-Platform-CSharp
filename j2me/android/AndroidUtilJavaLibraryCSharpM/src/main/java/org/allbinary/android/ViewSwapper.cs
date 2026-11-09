@@ -36,22 +36,22 @@ public class ViewSwapper
     {
         ViewGroup viewGroup = ((ViewGroup) this.activity.findViewById(this.rootViewId));
         if (id != this.currentMainViewId) {
-            for (int index = 0; index < this.topViewArray.Length; index++) {
-                viewGroup.removeView(this.topViewArray[index]);
+            for (int index_0 = 0; index_0 < this.topViewArray.Length; index_0++) {
+                viewGroup.removeView(this.topViewArray[index_0]);
             }
-            for (int index = 0; index < this.mainViewArray.Length; index++) {
-                if (id != this.mainViewArray[index].getId()) {
-                    viewGroup.removeView(this.mainViewArray[index]);
+            for (int index_1 = 0; index_1 < this.mainViewArray.Length; index_1++) {
+                if (id != this.mainViewArray[index_1].getId()) {
+                    viewGroup.removeView(this.mainViewArray[index_1]);
                 }
             }
-            for (int index = 0; index < this.mainViewArray.Length; index++) {
-                if (id == this.mainViewArray[index].getId()) {
-                    viewGroup.addView(this.mainViewArray[index]);
+            for (int index_2 = 0; index_2 < this.mainViewArray.Length; index_2++) {
+                if (id == this.mainViewArray[index_2].getId()) {
+                    viewGroup.addView(this.mainViewArray[index_2]);
                     this.currentMainViewId = id;
                 }
             }
-            for (int index = 0; index < this.topViewArray.Length; index++) {
-                viewGroup.addView(this.topViewArray[index]);
+            for (int index_3 = 0; index_3 < this.topViewArray.Length; index_3++) {
+                viewGroup.addView(this.topViewArray[index_3]);
             }
         }
     }

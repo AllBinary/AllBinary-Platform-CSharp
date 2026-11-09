@@ -142,7 +142,7 @@ public class CategoryRequestHelper : ModifyTable
         }
     }
 
-    public virtual string insert()
+    public override string insert()
     {
         try {
             string success = "Successfully Added the following to the Category table";
@@ -163,7 +163,7 @@ public class CategoryRequestHelper : ModifyTable
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             string success = "Successfully Removed " + CategoryData.getInstance().NAME + "=" + this.childCategoryInterface.getPath();
@@ -227,7 +227,7 @@ public class CategoryRequestHelper : ModifyTable
         }
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             string success = "New Item Successfully added";

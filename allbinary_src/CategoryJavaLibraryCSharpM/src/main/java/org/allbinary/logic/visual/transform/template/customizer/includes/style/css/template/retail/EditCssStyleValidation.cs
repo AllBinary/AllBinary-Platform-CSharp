@@ -43,28 +43,28 @@ public class EditCssStyleValidation : CssStyleValidation, ValidationInterface, D
         // base(hashMap) is called from the constructor declaration
     }
 
-    public virtual bool? isValid()
+    public override bool? isValid()
     {
         return base.isValid();
     }
 
-    public virtual string validationInfo()
+    public override string validationInfo()
     {
         return base.validationInfo();
     }
 
-    public virtual Document toValidationInfoDoc()
+    public override Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual Node toValidationInfoNode(Document document)
+    public override Node toValidationInfoNode(Document document)
     {
         return null;
     }
 
     // throws Exception
-    public virtual Node toXmlNode(Document document)
+    public override Node toXmlNode(Document document)
     {
         Node node = document.createElement(StylesData.getInstance().NAME);
         Node styleNode = document.createElement(StyleData.getInstance().NAME);

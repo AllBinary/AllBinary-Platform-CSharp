@@ -18,7 +18,7 @@ using System;
 using System.Linq;
 //using BufferedImage = java.awt.image.BufferedImage;
 //using Raster = java.awt.image.Raster;
-//using File = java.io.File;
+using File = java.io.File;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using FileWrapperUtil = org.allbinary.logic.io.file.FileWrapperUtil;
 using ImagePersistanceUtil = org.allbinary.media.image.ImagePersistanceUtil;
@@ -62,7 +62,7 @@ public class ResizeImageJPanel : javax.swing.JPanel, ImageProcessorInputComposit
                 LogUtil logUtil = LogUtil.getInstance();
                 try {
                     ImageUtil imageUtil = ImageUtil.getInstance();
-                    int? percent = (((string) this.jComboBox1.getSelectedItem())).ToString();
+                    int? percent = int.Parse((((string) this.jComboBox1.getSelectedItem())).ToString());
                     float? percentAsFloat = float.Parse(this.floatPercentJTextField.getText());
                     ImageProcessorInput imageProcessorInput = this.getImageProcessorInput();
                     File[] files = imageProcessorInput.getFiles();
@@ -72,8 +72,8 @@ public class ResizeImageJPanel : javax.swing.JPanel, ImageProcessorInputComposit
                     } else if (((int) percent) != -1) {
                         generatedBufferedImageArray = imageUtil.createBufferedImageForResize(imageProcessorInput.getBufferedImageArray(), percent, true);
                     } else {
-                        int? width = (((string) this.jTextField1.getText())).ToString();
-                        int? height = (((string) this.jTextField2.getText())).ToString();
+                        int? width = int.Parse((((string) this.jTextField1.getText())).ToString());
+                        int? height = int.Parse((((string) this.jTextField2.getText())).ToString());
                         generatedBufferedImageArray = imageUtil.createBufferedImage3(imageProcessorInput.getBufferedImageArray(), width, height, true);
                     }
                     Raster araster = generatedBufferedImageArray[0].getAlphaRaster();

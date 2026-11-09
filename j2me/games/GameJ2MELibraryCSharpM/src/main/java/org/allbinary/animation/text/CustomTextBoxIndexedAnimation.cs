@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using IndexedAnimation = org.allbinary.animation.IndexedAnimation;
 using RawKeyEventListener = org.allbinary.game.input.@event.RawKeyEventListener;
@@ -50,20 +52,20 @@ public class CustomTextBoxIndexedAnimation : IndexedAnimation, RawKeyEventListen
         this.customTextBox.getTextFieldItem().setBackgroundBasicColorP(basicColor);
     }
 
-    public override void setTextWithOnMeasure(string text, TextChangeListener textChangeListener)
+    public virtual void setTextWithOnMeasure(string text, TextChangeListener textChangeListener)
     {
         this.setText(text);
         this.textChangeListener = textChangeListener;
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.textChangeListener.onMeasure();
         this.textChangeListener = TextChangeListener.getInstance();
     }
 
-    public override void setText(string text)
+    public virtual void setText(string text)
     {
         if (this.lastText != text) {
             this.hasChanged = true;
@@ -72,17 +74,17 @@ public class CustomTextBoxIndexedAnimation : IndexedAnimation, RawKeyEventListen
         }
     }
 
-    public override string getText()
+    public virtual string getText()
     {
         return this.customTextBox.getTextFieldItem().getString();
     }
 
-    public override void onEventRaw(int keyCode, int deviceId, bool repeated)
+    public virtual void onEventRaw(int keyCode, int deviceId, bool repeated)
     {
         this.customTextBox.onEventRaw(keyCode, deviceId, repeated);
     }
 
-    public override int getFontHeight()
+    public virtual int getFontHeight()
     {
         return this.customTextBox.getTextFieldItem().getFontHeight();
     }
@@ -94,6 +96,11 @@ public class CustomTextBoxIndexedAnimation : IndexedAnimation, RawKeyEventListen
 
     public override void paintThreedXYZ(Graphics graphics, int x, int y, int z)
     {
+    }
+
+    public override int getWidth()
+    {
+        return base.getWidth();
     }
 
 }

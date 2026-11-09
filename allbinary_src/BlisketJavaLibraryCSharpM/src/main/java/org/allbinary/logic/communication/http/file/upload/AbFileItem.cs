@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using File = java.io.File;
+using File = java.io.File;
 //using IOException = java.io.IOException;
-//using InputStream = java.io.InputStream;
-//using OutputStream = java.io.OutputStream;
+using InputStream = java.io.InputStream;
+using OutputStream = java.io.OutputStream;
 //using UnsupportedEncodingException = java.io.UnsupportedEncodingException;
 using ForcedLogUtil = org.allbinary.logic.communication.log.ForcedLogUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
@@ -50,7 +50,7 @@ public class AbFileItem : FileItem
     // throws IOException
     public virtual InputStream getInputStream()
     {
-        throw new IOException(this.commonStrings.NOT_IMPLEMENTED);
+        throw new System.IO.IOException(this.commonStrings.NOT_IMPLEMENTED);
     }
 
     public virtual string getContentType()
@@ -139,7 +139,7 @@ public class AbFileItem : FileItem
     // throws IOException
     public virtual OutputStream getOutputStream()
     {
-        throw new IOException(this.commonStrings.NOT_IMPLEMENTED);
+        throw new System.IO.IOException(this.commonStrings.NOT_IMPLEMENTED);
     }
 
     public virtual FileItemHeaders getHeaders()

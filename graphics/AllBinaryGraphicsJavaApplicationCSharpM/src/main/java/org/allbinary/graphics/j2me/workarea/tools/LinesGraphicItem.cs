@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using java.awt;
+using java.awt;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 //using DefaultMutableTreeNode = javax.swing.tree.DefaultMutableTreeNode;
@@ -52,13 +52,13 @@ public class LinesGraphicItem : GraphicItemInterface
     private GPoint fulcrumPoint = null;
     private bool active = false;
     private double theta = 0.0;
-    private static readonly string RECT = "rect";
-    private static readonly string ARC = "arc";
-    private static readonly string STRING = "string";
-    private static readonly string CHAR = "char";
-    private static readonly string IMAGE = "image";
+    private const string RECT = "rect";
+    private const string ARC = "arc";
+    private const string STRING = "string";
+    private const string CHAR = "char";
+    private const string IMAGE = "image";
     private static int item = 0;
-    private Color color = new Color(((int) BasicColorFactory.getInstance().WHITE));
+    private Color color = new Color(global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().WHITE));
     private Points points;
     public LinesGraphicItem()
     {
@@ -131,12 +131,12 @@ public class LinesGraphicItem : GraphicItemInterface
 
     public virtual void setAngle(double angle)
     {
-        this.setRotate(Math.ToRadians(angle));
+        this.setRotate(((angle) * Math.PI / 180.0));
     }
 
     public virtual void addAngle(double angle)
     {
-        this.setRotate(this.theta + Math.ToRadians(angle));
+        this.setRotate(this.theta + ((angle) * Math.PI / 180.0));
     }
 
     public virtual MutableTreeNode getTreeNode()
@@ -144,7 +144,7 @@ public class LinesGraphicItem : GraphicItemInterface
         return ((MutableTreeNode) this.treeNode);
     }
 
-    private static readonly string NAME = "Line Tool";
+    private const string NAME = "Line Tool";
     public virtual string getName()
     {
         return LinesGraphicItem.NAME;
@@ -235,7 +235,7 @@ public class LinesGraphicItem : GraphicItemInterface
 
     public virtual double getAngle()
     {
-        return Math.ToDegrees(this.theta);
+        return ((this.theta) * 180.0 / Math.PI);
     }
 
     public virtual void setFulcrumPoint(GPoint point)

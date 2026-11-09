@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using NumberStringHud = org.allbinary.game.ag.layer.hud.basic.NumberStringHud;
 using NumberStringHudFactory = org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory;
 using SelectionHudPaintable = org.allbinary.game.layer.SelectionHudPaintable;
@@ -62,80 +62,20 @@ public class BuildingInfoHudPaintable : SelectionHudPaintable
             int textX = this.textX;
             int y = this.y;
             int firstIndex = index;
-            class ProductivityNumberStringHud : NumberStringHud
-            {
-                public ProductivityNumberStringHud() : base("Productivity:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
-                {
-                    // base("Productivity:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor) is called from the constructor declaration
-                }
-
-                public override void updateMeasurement(Graphics graphics)
-                {
-                    Font font = graphics.getFont();
-                    this.updateMaxWidth = textX;
-                    this.updateMaxHeight = y + ((firstIndex + 1) * font.getHeight());
-                    base.updateMeasurement(graphics);
-                }
-
-            }
+            
             productivityHud = new ProductivityNumberStringHud();
             index++;
             int secondIndex = index;
-            class EfficiencyNumberStringHud : NumberStringHud
-            {
-                public EfficiencyNumberStringHud() : base("Efficiency:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
-                {
-                    // base("Efficiency:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor) is called from the constructor declaration
-                }
-
-                public override void updateMeasurement(Graphics graphics)
-                {
-                    base.updateMeasurement(graphics);
-                    Font font = graphics.getFont();
-                    this.updateMaxWidth = textX;
-                    this.updateMaxHeight = y + ((secondIndex + 1) * font.getHeight());
-                }
-
-            }
+            
             efficiencyHud = new EfficiencyNumberStringHud();
             index++;
             string HEALTH = this.HEALTH;
             int thirdIndex = index;
-            class HealthNumberStringHud : NumberStringHud
-            {
-                public HealthNumberStringHud() : base(HEALTH, 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
-                {
-                    // base(HEALTH, 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor) is called from the constructor declaration
-                }
-
-                public override void updateMeasurement(Graphics graphics)
-                {
-                    Font font = graphics.getFont();
-                    this.updateMaxWidth = textX;
-                    this.updateMaxHeight = y + ((thirdIndex + 1) * font.getHeight());
-                    base.updateMeasurement(graphics);
-                }
-
-            }
+            
             int totalLength = HEALTH.Length + 1;
             healthHud = new HealthNumberStringHud();
             int fourthIndex = index;
-            class MaxHealthNumberStringHud : NumberStringHud
-            {
-                public MaxHealthNumberStringHud() : base("/ ", 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
-                {
-                    // base("/ ", 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor) is called from the constructor declaration
-                }
-
-                public override void updateMeasurement(Graphics graphics)
-                {
-                    base.updateMeasurement(graphics);
-                    Font font = graphics.getFont();
-                    this.updateMaxWidth = textX + (totalLength * font.getHeight());
-                    this.updateMaxHeight = y + ((fourthIndex + 1) * font.getHeight());
-                }
-
-            }
+            
             maxHealthHud = new MaxHealthNumberStringHud();
         } catch (Exception e) {
             CommonStrings commonStrings = CommonStrings.getInstance();
@@ -192,6 +132,74 @@ public class BuildingInfoHudPaintable : SelectionHudPaintable
     {
         this.rtsLayer = rtsLayer;
     }
+
+            class ProductivityNumberStringHud : NumberStringHud
+            {
+                public ProductivityNumberStringHud() : base("Productivity:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
+                {
+                    // base("Productivity:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor) is called from the constructor declaration
+                }
+
+                public override void updateMeasurement(Graphics graphics)
+                {
+                    Font font = graphics.getFont();
+                    this.updateMaxWidth = textX;
+                    this.updateMaxHeight = y + ((firstIndex + 1) * font.getHeight());
+                    base.updateMeasurement(graphics);
+                }
+
+            }
+
+            class EfficiencyNumberStringHud : NumberStringHud
+            {
+                public EfficiencyNumberStringHud() : base("Efficiency:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
+                {
+                    // base("Efficiency:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor) is called from the constructor declaration
+                }
+
+                public override void updateMeasurement(Graphics graphics)
+                {
+                    base.updateMeasurement(graphics);
+                    Font font = graphics.getFont();
+                    this.updateMaxWidth = textX;
+                    this.updateMaxHeight = y + ((secondIndex + 1) * font.getHeight());
+                }
+
+            }
+
+            class HealthNumberStringHud : NumberStringHud
+            {
+                public HealthNumberStringHud() : base(HEALTH, 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
+                {
+                    // base(HEALTH, 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor) is called from the constructor declaration
+                }
+
+                public override void updateMeasurement(Graphics graphics)
+                {
+                    Font font = graphics.getFont();
+                    this.updateMaxWidth = textX;
+                    this.updateMaxHeight = y + ((thirdIndex + 1) * font.getHeight());
+                    base.updateMeasurement(graphics);
+                }
+
+            }
+
+            class MaxHealthNumberStringHud : NumberStringHud
+            {
+                public MaxHealthNumberStringHud() : base("/ ", 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
+                {
+                    // base("/ ", 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor) is called from the constructor declaration
+                }
+
+                public override void updateMeasurement(Graphics graphics)
+                {
+                    base.updateMeasurement(graphics);
+                    Font font = graphics.getFont();
+                    this.updateMaxWidth = textX + (totalLength * font.getHeight());
+                    this.updateMaxHeight = y + ((fourthIndex + 1) * font.getHeight());
+                }
+
+            }
 
 }
 

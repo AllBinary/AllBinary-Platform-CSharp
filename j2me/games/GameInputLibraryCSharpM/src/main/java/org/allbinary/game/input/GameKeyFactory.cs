@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using NullUtil = org.allbinary.logic.NullUtil;
 using CommonPhoneStrings = org.allbinary.@string.CommonPhoneStrings;
 

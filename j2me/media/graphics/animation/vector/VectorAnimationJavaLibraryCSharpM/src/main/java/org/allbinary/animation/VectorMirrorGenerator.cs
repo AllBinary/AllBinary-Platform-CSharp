@@ -53,13 +53,13 @@ public class VectorMirrorGenerator
                 nextPoints = points[frame];
                 size2 = nextPoints.Length;
                 pointBasicArrayList = new BasicArrayListS(size2);
-                for (int index = 0; index < size2; index++) {
-                    pointBasicArrayList.add(pointFactory.createXY(nextPoints[index][0], nextPoints[index][1]));
+                for (int index_0 = 0; index_0 < size2; index_0++) {
+                    pointBasicArrayList.add(pointFactory.createXY(nextPoints[index_0][0], nextPoints[index_0][1]));
                 }
                 pointsBasicArrayList.add(pointBasicArrayList);
             }
-            for (int index = 0; index < points.Length; index++) {
-                pointsBasicArrayList.add(this.getInstance(((BasicArrayList) pointsBasicArrayList.objectArray[index]), width));
+            for (int index_2 = 0; index_2 < points.Length; index_2++) {
+                pointsBasicArrayList.add(this.getInstance(((BasicArrayList) pointsBasicArrayList.objectArray[index_2]), width));
             }
             int[][][] newPoints = this.vectorAnimationUtil.toAnimationArrayFromListOfPointList(pointsBasicArrayList);
             return newPoints;

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Displayable = javax.microedition.lcdui.Displayable;
+using Displayable = javax.microedition.lcdui.Displayable;
 using Processor = org.allbinary.canvas.Processor;
 
 namespace org.allbinary.graphics.displayable.screen;

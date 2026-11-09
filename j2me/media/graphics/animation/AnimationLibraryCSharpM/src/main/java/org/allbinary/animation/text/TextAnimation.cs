@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using IndexedAnimation = org.allbinary.animation.IndexedAnimation;
 using Anchor = org.allbinary.graphics.Anchor;
@@ -49,7 +49,7 @@ public class TextAnimation : IndexedAnimation, UpdateMyFontInterface
         this.setText(text);
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.fontHeight = font.getHeight();
@@ -110,8 +110,8 @@ public class TextAnimation : IndexedAnimation, UpdateMyFontInterface
         if (list.size() > 0) {
             string[] textArray = new string[list.size()];
             int size = list.size();
-            for (int index = 0; index < size; index++) {
-                textArray[index] = ((string) list.get(index));
+            for (int index_1 = 0; index_1 < size; index_1++) {
+                textArray[index_1] = ((string) list.get(index_1));
             }
             this.textArrayP = textArray;
         } else {

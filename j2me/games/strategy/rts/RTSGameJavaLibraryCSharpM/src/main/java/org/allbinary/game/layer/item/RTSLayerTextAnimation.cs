@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using Animation = org.allbinary.animation.Animation;
 using MyFontProcessor = org.allbinary.graphics.font.MyFontProcessor;
 using UpdateMyFontInterface = org.allbinary.graphics.font.UpdateMyFontInterface;
@@ -39,7 +39,7 @@ public class RTSLayerTextAnimation : Animation, UpdateMyFontInterface
         this.image = image;
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.fontHeight = font.getHeight();

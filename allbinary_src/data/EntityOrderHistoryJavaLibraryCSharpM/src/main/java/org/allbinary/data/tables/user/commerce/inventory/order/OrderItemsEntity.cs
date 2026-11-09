@@ -304,9 +304,14 @@ public class OrderItemsEntity : AbSqlBean, OrderItemsEntityInterface
         return base.createTable(this.createTableStatement());
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
+    }
+
+    public override void insert(BasicArrayList values)
+    {
+        base.insert(values);
     }
 
 }

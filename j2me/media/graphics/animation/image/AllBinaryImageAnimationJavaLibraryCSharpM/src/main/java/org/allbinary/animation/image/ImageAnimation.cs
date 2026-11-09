@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using DisposalUtil = org.allbinary.DisposalUtil;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using IndexedAnimation = org.allbinary.animation.IndexedAnimation;
@@ -78,7 +78,7 @@ public class ImageAnimation : IndexedAnimation
         graphics.drawImage(this.image, x, y, this.anchor);
     }
 
-    protected virtual Image getImage()
+    public virtual Image getImage()
     {
         return this.image;
     }
@@ -90,7 +90,7 @@ public class ImageAnimation : IndexedAnimation
     }
 
     // throws Throwable
-    protected override void finalize()
+    public virtual void finalize()
     {
         DisposalUtil.getInstance().disposeImage(this.image);
     }

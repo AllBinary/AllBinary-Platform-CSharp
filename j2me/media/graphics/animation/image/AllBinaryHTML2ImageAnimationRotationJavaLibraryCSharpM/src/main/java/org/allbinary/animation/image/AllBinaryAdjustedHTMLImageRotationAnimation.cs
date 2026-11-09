@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using AngleInfo = org.allbinary.math.AngleInfo;
 
@@ -40,27 +40,27 @@ public class AllBinaryAdjustedHTMLImageRotationAnimation : AllBinaryHTMLImageRot
         this.dy = dy;
     }
 
-    public virtual void setDx(int dx)
+    public override void setDx(int dx)
     {
         this.dx = dx;
     }
 
-    public virtual int getDx()
+    public override int getDx()
     {
         return this.dx;
     }
 
-    public virtual void setDy(int dy)
+    public override void setDy(int dy)
     {
         this.dy = dy;
     }
 
-    public virtual int getDy()
+    public override int getDy()
     {
         return this.dy;
     }
 
-    public virtual void paintXY(Graphics graphics, int x, int y)
+    public override void paintXY(Graphics graphics, int x, int y)
     {
         base.paintXY(graphics, x + this.dx, y + this.dy);
     }

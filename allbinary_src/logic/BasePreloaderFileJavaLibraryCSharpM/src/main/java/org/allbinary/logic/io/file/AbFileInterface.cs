@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using FilenameFilter = java.io.FilenameFilter;
+using FilenameFilter = java.io.FilenameFilter;
 //using IOException = java.io.IOException;
-//using URI = java.net.URI;
+using URI = java.net.URI;
 
 namespace org.allbinary.logic.io.file;
 

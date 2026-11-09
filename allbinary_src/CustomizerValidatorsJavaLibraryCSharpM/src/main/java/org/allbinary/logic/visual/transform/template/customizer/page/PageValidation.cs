@@ -55,14 +55,14 @@ public class PageValidation : Validation, DomNodeInterface
         this.title = new TitleValidation(hashMap);
     }
 
-    public virtual bool? isValid()
+    public override bool? isValid()
     {
         try {
             bool? valid = true;
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("PageValidation", this, this.commonStrings.IS_VALID);
             }
-            if (!this.title.isValid()) {
+            if (!((bool) (this.title.isValid()))) {
                 valid = false;
             }
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
@@ -77,11 +77,11 @@ public class PageValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual string validationInfo()
+    public override string validationInfo()
     {
         try {
             StringMaker stringBuffer = new StringMaker();
-            if (!this.title.isValid()) {
+            if (!((bool) (this.title.isValid()))) {
                 stringBuffer.append(this.title.validationInfo());
             }
             return stringBuffer.ToString();
@@ -93,12 +93,12 @@ public class PageValidation : Validation, DomNodeInterface
         }
     }
 
-    public virtual Document toValidationInfoDoc()
+    public override Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual Node toValidationInfoNode(Document document)
+    public override Node toValidationInfoNode(Document document)
     {
         return null;
     }

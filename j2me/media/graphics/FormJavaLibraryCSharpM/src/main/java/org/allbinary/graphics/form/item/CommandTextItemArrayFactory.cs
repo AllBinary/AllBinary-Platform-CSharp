@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
-//using ImageItem = javax.microedition.lcdui.ImageItem;
+using Command = javax.microedition.lcdui.Command;
+using ImageItem = javax.microedition.lcdui.ImageItem;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
 using ScreenInfo = org.allbinary.graphics.form.ScreenInfo;
@@ -51,20 +51,20 @@ public class CommandTextItemArrayFactory
             priorityLimit = 3;
         }
         Command command = null;
-        for (int index = 0; index < size; index++) {
-            command = ((Command) vectorUtil.elementAt(vector, index));
+        for (int index_0 = 0; index_0 < size; index_0++) {
+            command = ((Command) vectorUtil.elementAt(vector, index_0));
             if (command.getPriority() < priorityLimit) {
                 bool? aBoolean = ((bool?) this.visitorInterface.visit(command));
                 if (aBoolean.Value) {
-                    textItem = new CommandTextItem(command, ImageItem.LAYOUT_DEFAULT, StringUtil.getInstance().EMPTY_STRING, backgroundBasicColor, foregroundBasicColor);
+                    textItem = new CommandTextItem(command, global::javax.microedition.lcdui.ImageItem.LAYOUT_DEFAULT, StringUtil.getInstance().EMPTY_STRING, backgroundBasicColor, foregroundBasicColor);
                     this.list.add(textItem);
                 }
             }
         }
         ABCustomItem[] textItemArray = new ABCustomItem[this.list.size()];
         int size2 = textItemArray.Length;
-        for (int index = 0; index < size2; index++) {
-            textItemArray[index] = ((ABCustomItem) this.list.objectArray[index]);
+        for (int index_1 = 0; index_1 < size2; index_1++) {
+            textItemArray[index_1] = ((ABCustomItem) this.list.objectArray[index_1]);
         }
         return textItemArray;
     }

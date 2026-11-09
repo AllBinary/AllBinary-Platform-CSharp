@@ -25,13 +25,13 @@ public class AuthorizeNetAimData
     {
     }
 
-    public static readonly string X_DELIM_DATA = "x_delim_data";
-    public static readonly string X_DELIM_CHAR = "x_delim_char";
-    public static readonly string X_ENCAP_CHAR = "x_encap_char";
-    public static readonly string X_AUTHENTICATION_INDICATOR = "x_authentication_indicator";
-    public static readonly string X_CARDHOLDER_AUTHENTICATION_VALUE = "x_cardholder_authentication_value";
-    public static readonly string X_DRIVERS_LICENSE_NUM = "x_drivers_license_num";
-    public static readonly string X_DRIVERS_LICENSE_STATE = "x_drivers_license_state";
-    public static readonly string X_DRIVERS_LICENSE_DOB = "x_drivers_license_dob";
+    public const string X_DELIM_DATA = "x_delim_data";
+    public const string X_DELIM_CHAR = "x_delim_char";
+    public const string X_ENCAP_CHAR = "x_encap_char";
+    public const string X_AUTHENTICATION_INDICATOR = "x_authentication_indicator";
+    public const string X_CARDHOLDER_AUTHENTICATION_VALUE = "x_cardholder_authentication_value";
+    public const string X_DRIVERS_LICENSE_NUM = "x_drivers_license_num";
+    public const string X_DRIVERS_LICENSE_STATE = "x_drivers_license_state";
+    public const string X_DRIVERS_LICENSE_DOB = "x_drivers_license_dob";
 }
 

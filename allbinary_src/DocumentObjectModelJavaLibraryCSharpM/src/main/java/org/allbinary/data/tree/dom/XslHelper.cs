@@ -16,10 +16,11 @@
 
 using System;
 using System.Linq;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using File = java.io.File;
-//using OutputStream = java.io.OutputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using File = java.io.File;
+using OutputStream = java.io.OutputStream;
 //using StringBufferInputStream = java.io.StringBufferInputStream;
+//using Templates = javax.xml.transform.Templates;
 //using Transformer = javax.xml.transform.Transformer;
 //using TransformerFactory = javax.xml.transform.TransformerFactory;
 //using URIResolver = javax.xml.transform.URIResolver;
@@ -71,10 +72,23 @@ public class XslHelper
     }
 
     // throws Exception
+    public virtual string translateTemplate(Templates templates, StreamSource xmlStreamSource)
+    {
+        try {
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            StreamResult streamResult = new StreamResult(outputStream);
+            templates.newTransformer().transform(xmlStreamSource, streamResult);
+            return streamResult.getOutputStream().ToString();
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    // throws Exception
     public virtual string translate(StreamSource xsltStreamSource, Document xmlDocument)
     {
         try {
-            System.IO.MemoryStream outputStream = new System.IO.MemoryStream();
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             return this.translate(xsltStreamSource, new StreamSource(new StringBufferInputStream(XmlDocumentHelper.toString(xmlDocument))), new StreamResult(outputStream)).ToString();
         } catch (Exception e) {
             throw e;
@@ -85,7 +99,7 @@ public class XslHelper
     public virtual string translate(StreamSource xsltStreamSource, StreamSource xmlStreamSource)
     {
         try {
-            System.IO.MemoryStream outputStream = new System.IO.MemoryStream();
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             return this.translate(xsltStreamSource, xmlStreamSource, new StreamResult(outputStream)).ToString();
         } catch (Exception e) {
             throw e;
@@ -96,7 +110,7 @@ public class XslHelper
     public virtual string translate(URIResolver resolver, StreamSource xsltStreamSource, StreamSource xmlStreamSource)
     {
         try {
-            System.IO.MemoryStream outputStream = new System.IO.MemoryStream();
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             return this.translate(resolver, xsltStreamSource, xmlStreamSource, new StreamResult(outputStream)).ToString();
         } catch (Exception e) {
             throw e;

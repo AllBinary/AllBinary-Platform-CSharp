@@ -14,6 +14,8 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using ArtificialIntelligence = org.allbinary.ai.ArtificialIntelligence;
@@ -96,7 +98,7 @@ public class BasicAI : ArtificialIntelligence, GameKeyEventSourceInterface
         return stringBuffer.ToString();
     }
 
-    public override int getSourceId()
+    public virtual int getSourceId()
     {
         return 1;
     }

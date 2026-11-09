@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
-//using InputStream = java.io.InputStream;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using InputStream = java.io.InputStream;
 using java.util;
 using URLGLOBALS = org.allbinary.globals.URLGLOBALS;
 using StdUtil = org.allbinary.logic.StdUtil;
@@ -93,7 +93,7 @@ public class StoreFileGenerator : TransformInfoObjectConfigGenerator
     }
 
     // throws Exception
-    public virtual string process(string input)
+    public override string process(string input)
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Processing", this, this.commonStrings.PROCESS);

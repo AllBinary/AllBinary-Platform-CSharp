@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using RTSLayer = org.allbinary.game.layer.RTSLayer;
 using WaypointInfoHudPaintable = org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
@@ -27,7 +27,7 @@ namespace org.allbinary.game.layer.geological.resources;
 
 public class GeologicalResourceInfoHudPaintable : WaypointInfoHudPaintable
 {
-    private static readonly string RESOURCES = "Resources: ";
+    private const string RESOURCES = "Resources: ";
     private readonly KeyValueDrawCharArray keyvalueDrawString;
     private int fontHeight = 0;
     public GeologicalResourceInfoHudPaintable()

@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using File = java.io.File;
-//using FileFilter = java.io.FileFilter;
+using File = java.io.File;
+using FileFilter = java.io.FileFilter;
 using VisitorInterface = org.allbinary.logic.util.visitor.VisitorInterface;
 
 namespace org.allbinary.logic.io.file.directory;
@@ -30,7 +30,7 @@ public class DirectoryFileVisitor : VisitorInterface, FileFilter
 
     public virtual bool accept(java.io.File arg0)
     {
-        return (((bool?) this.visit(((object) arg0))));
+        return ((bool) ((((bool?) this.visit(((object) arg0))))));
     }
 
     public virtual object visit(object anyType)

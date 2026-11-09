@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using Animation = org.allbinary.animation.Animation;
 using AnimationBehaviorFactory = org.allbinary.animation.AnimationBehaviorFactory;
 using GameConfigurationCentral = org.allbinary.game.configuration.GameConfigurationCentral;
@@ -53,7 +53,7 @@ public class AllBinaryHTMLImageRotationAnimationFactory : BaseImageAnimationFact
     }
 
     // throws Exception
-    public virtual Animation getInstance(int instanceId)
+    public override Animation getInstance(int instanceId)
     {
         Image scaledImage = this.animationFactoryImageScaleUtil.createImage(this.getImage(), this.animationFactoryInitializationVisitor.width, this.animationFactoryInitializationVisitor.height, this.scaleProperties.scaleWidth, this.scaleProperties.scaleHeight);
         Image copyOfScaledImage = ImageCopyUtil.getInstance().createImage(scaledImage);

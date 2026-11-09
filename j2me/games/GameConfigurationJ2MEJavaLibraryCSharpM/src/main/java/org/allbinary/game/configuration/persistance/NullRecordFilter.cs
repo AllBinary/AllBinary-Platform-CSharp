@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using RecordFilter = javax.microedition.rms.RecordFilter;
+using RecordFilter = javax.microedition.rms.RecordFilter;
 
 namespace org.allbinary.game.configuration.persistance;
 

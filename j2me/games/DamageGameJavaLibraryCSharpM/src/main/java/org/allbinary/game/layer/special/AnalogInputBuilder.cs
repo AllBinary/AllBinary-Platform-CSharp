@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using GameInputProcessor = org.allbinary.game.input.GameInputProcessor;
 
 namespace org.allbinary.game.layer.special;

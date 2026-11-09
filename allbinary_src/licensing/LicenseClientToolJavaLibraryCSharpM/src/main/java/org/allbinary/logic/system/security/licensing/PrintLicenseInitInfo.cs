@@ -26,7 +26,7 @@ namespace org.allbinary.logic.system.security.licensing;
 
 public class PrintLicenseInitInfo
 {
-    public static readonly string PATH = "G:\\mnt\\bc\\mydev\\work\\allbinary_src\\licensing\\data\\";
+    public const string PATH = "G:\\mnt\\bc\\mydev\\work\\allbinary_src\\licensing\\data\\";
     public PrintLicenseInitInfo(string[] options)
     {
         LicenseInitInfoUtil.getInstance().setFilePath(PrintLicenseInitInfo.PATH + PATH_GLOBALS.getInstance().INIT_PATH);

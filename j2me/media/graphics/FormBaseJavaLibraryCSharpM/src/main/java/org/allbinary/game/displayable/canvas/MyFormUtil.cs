@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Features = org.allbinary.game.configuration.feature.Features;
 using PointFactory = org.allbinary.graphics.PointFactory;
 using Rectangle = org.allbinary.graphics.Rectangle;

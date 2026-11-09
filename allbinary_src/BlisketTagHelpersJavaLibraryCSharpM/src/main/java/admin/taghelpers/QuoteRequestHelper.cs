@@ -59,7 +59,7 @@ public class QuoteRequestHelper : ModifyTable
         return this.quoteRequest.validationInfo();
     }
 
-    public virtual string insert()
+    public override string insert()
     {
         try {
             BasicArrayList values = this.quoteRequest.toVector();
@@ -78,7 +78,7 @@ public class QuoteRequestHelper : ModifyTable
         }
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             HashMap<object, object> values = this.quoteRequest.toHashMap();
@@ -97,7 +97,7 @@ public class QuoteRequestHelper : ModifyTable
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         return commonStrings.NOT_IMPLEMENTED;
     }

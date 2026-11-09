@@ -166,14 +166,14 @@ public class BasicProfileActionScriptCondition : ProfileActionScriptItem, Profil
         Node node = document.createElement(GenericProfileActionScriptConditionData.NAME);
         BasicArrayList profileActionConditionInterfaceVector = this.getProfileActionConditionInterfaceVector();
         int size = profileActionConditionInterfaceVector.size();
-        for (int index = 0; index < size; index++) {
-            ProfileActionScriptConditionInterface profileActionConditionInterface = ((ProfileActionScriptConditionInterface) profileActionConditionInterfaceVector.get(index));
+        for (int index_2 = 0; index_2 < size; index_2++) {
+            ProfileActionScriptConditionInterface profileActionConditionInterface = ((ProfileActionScriptConditionInterface) profileActionConditionInterfaceVector.get(index_2));
             node.appendChild(profileActionConditionInterface.toXmlNode(document));
         }
         BasicArrayList profileActionProcessorInterfaceVector = this.getProfileActionProcessorInterfaceVector();
         int size2 = profileActionProcessorInterfaceVector.size();
-        for (int index = 0; index < size2; index++) {
-            ProfileActionScriptProcessorInterface profileActionProcessorInterface = ((ProfileActionScriptProcessorInterface) profileActionProcessorInterfaceVector.get(index));
+        for (int index_3 = 0; index_3 < size2; index_3++) {
+            ProfileActionScriptProcessorInterface profileActionProcessorInterface = ((ProfileActionScriptProcessorInterface) profileActionProcessorInterfaceVector.get(index_3));
             node.appendChild(profileActionProcessorInterface.toXmlNode(document));
         }
         return node;
@@ -189,7 +189,7 @@ public class BasicProfileActionScriptCondition : ProfileActionScriptItem, Profil
         this.profileActionConditionInterfaceVector = profileActionConditionInterfaceVector;
     }
 
-    public virtual void actionPerformed(ActionEvent actionEvent)
+    public override void actionPerformed(ActionEvent actionEvent)
     {
         try {
             base.actionPerformed(actionEvent);
@@ -255,7 +255,7 @@ public class BasicProfileActionScriptCondition : ProfileActionScriptItem, Profil
     }
 
     // throws Exception
-    public virtual void process(long? frame)
+    public override void process(long? frame)
     {
         this.logUtil.putF(new StringMaker().append("Start - Processing ").appendint(this.getProfileActionProcessorInterfaceVector().size()).append(" inputs").ToString(), this, this.commonStrings.PROCESS);
         BasicArrayList profileActionProcessorInterfaceVector = this.getProfileActionProcessorInterfaceVector();

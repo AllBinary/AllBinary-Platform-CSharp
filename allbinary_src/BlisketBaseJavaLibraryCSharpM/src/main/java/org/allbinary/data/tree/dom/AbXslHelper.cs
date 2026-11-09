@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
 //using StreamResult = javax.xml.transform.stream.StreamResult;
 //using StreamSource = javax.xml.transform.stream.StreamSource;
 using AbFile = org.allbinary.logic.io.file.AbFile;
@@ -48,7 +48,7 @@ public class AbXslHelper
     public virtual string translate(string xsltFilePath, string xmlFilePath)
     {
         try {
-            System.IO.MemoryStream outputStream = new System.IO.MemoryStream();
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             return XslHelper.getInstance().translate(new StreamSource(xsltFilePath), new StreamSource(xmlFilePath), new StreamResult(outputStream)).ToString();
         } catch (Exception e) {
             throw e;

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 using MotionRectangleConstraintsInterface = org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface;
 

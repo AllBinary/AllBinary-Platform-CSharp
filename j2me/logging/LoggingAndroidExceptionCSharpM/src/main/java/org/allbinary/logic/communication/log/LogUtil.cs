@@ -59,7 +59,7 @@ public class LogUtil
         string className = this.LABEL;
         className = anyType.GetType().FullName;
         string message = this.logFormatUtil.get(className, functionName, specialMessage, exception);
-        android.util.Log.i(this.LABEL, this.LOG_SUCCESS + message);
+        Console.WriteLine((this.LABEL) + ": " + (this.LOG_SUCCESS + message));
     }
 
 }

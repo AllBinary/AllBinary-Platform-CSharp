@@ -1,0 +1,2 @@
+org.allbinary.graphics.opengles.renderer.RendererStrings=OpenGLNoneOtherJavaLibraryCSharp
+org.allbinary.image.opengles.OpenGLImageCacheFactory=ImageCacheOpenGLESJavaLibraryCSharp

@@ -2,8 +2,8 @@
 
 using System;
 using System.Linq;
-//using ByteBuffer = java.nio.ByteBuffer;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
+using ByteBuffer = java.nio.ByteBuffer;
+using GL10 = javax.microedition.khronos.opengles.GL10;
 using OpenGLBitmap = org.allbinary.graphics.OpenGLBitmap;
 using OpenGLESImage = org.allbinary.image.opengles.OpenGLESImage;
 

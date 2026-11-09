@@ -14,12 +14,14 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using TextField = javax.microedition.lcdui.TextField;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
+using TextField = javax.microedition.lcdui.TextField;
 using PostGameCommandFactory = org.allbinary.PostGameCommandFactory;
 using GameInfo = org.allbinary.game.GameInfo;
 using HighScore = org.allbinary.game.score.HighScore;
@@ -35,7 +37,7 @@ using VirtualKeyboardEventHandler = org.allbinary.input.@event.VirtualKeyboardEv
 using GenericOperatingSystem = org.allbinary.logic.system.os.GenericOperatingSystem;
 using OperatingSystemFactory = org.allbinary.logic.system.os.OperatingSystemFactory;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
-using InApplicationPurchaseFactory = org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory;
+//using InApplicationPurchaseFactory = org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory;
 
 namespace org.allbinary.game.score.displayable;
 
@@ -53,7 +55,7 @@ public class HighScoreTextBox : CustomTextBox
         this.highScoreUtil = new HighScoreUtil(highScoresFactoryInterface, highScoresHelper, abeClientInformation, gameInfo, cmdListener, name, highScore);
         GenericOperatingSystem operatingSystemInterface = OperatingSystemFactory.getInstance().getOperatingSystemInstance();
         if (operatingSystemInterface.isOverScan()) {
-            string username = InApplicationPurchaseFactory.getInstance().getUserName();
+            string username = GameLicensingNullJavaLibraryCSharp::org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory.getInstance().getUserName();
             if (username != null) {
                 this.getTextFieldItem().setString(username);
             } else {

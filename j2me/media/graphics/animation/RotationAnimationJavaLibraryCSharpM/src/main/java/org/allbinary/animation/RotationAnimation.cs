@@ -32,7 +32,7 @@ public class RotationAnimation : IndexedAnimation, RotationAnimationInterface
     public readonly DirectionUtil directionUtil = DirectionUtil.getInstance();
     public readonly AngleInfo angleInfo;
     public CircularIndexUtil circularIndexUtil;
-    protected RotationAnimation(AngleInfo angleInfo, CircularIndexUtil circularIndexUtil, AnimationBehavior animationBehavior) : base(animationBehavior)
+    public RotationAnimation(AngleInfo angleInfo, CircularIndexUtil circularIndexUtil, AnimationBehavior animationBehavior) : base(animationBehavior)
     {
         // base(animationBehavior) is called from the constructor declaration
         this.angleInfo = angleInfo;
@@ -47,12 +47,12 @@ public class RotationAnimation : IndexedAnimation, RotationAnimationInterface
     {
     }
 
-    public override void nextRotation()
+    public virtual void nextRotation()
     {
         this.angleInfo.adjustAngle(this.circularIndexUtil.next());
     }
 
-    public override void previousRotation()
+    public virtual void previousRotation()
     {
         this.angleInfo.adjustAngle(this.circularIndexUtil.previous());
     }
@@ -72,23 +72,23 @@ public class RotationAnimation : IndexedAnimation, RotationAnimationInterface
         this.angleInfo.adjustAngle(newFrame);
     }
 
-    public override void setFrameByDirection(Direction direction)
+    public virtual void setFrameByDirection(Direction direction)
     {
         Angle angle = this.directionUtil.getFrameAngle(direction);
         this.adjustFrameToAngle(angle);
     }
 
-    public override void setFrameToAngle(Angle angle)
+    public virtual void setFrameToAngle(Angle angle)
     {
         this.adjustFrameToAngle(angle);
     }
 
-    public override void adjustFrameToAngle(Angle angle)
+    public virtual void adjustFrameToAngle(Angle angle)
     {
         this.adjustFrame(angle.getValue());
     }
 
-    public override void adjustFrame(short angle)
+    public virtual void adjustFrame(short angle)
     {
         this.setFrame(this.frameUtil.getFrameForAngle(angle, ((int) this.angleInfo.getAngleIncrementInfo().getAngleIncrement())));
     }
@@ -103,7 +103,7 @@ public class RotationAnimation : IndexedAnimation, RotationAnimationInterface
         return this.circularIndexUtil.getSize();
     }
 
-    public override AngleInfo getAngleInfoP()
+    public virtual AngleInfo getAngleInfoP()
     {
         return this.angleInfo;
     }

@@ -121,7 +121,7 @@ public class AbPath
         return this.nameP;
     }
 
-    private static readonly string NETWORK_SEP = ":/";
+    private const string NETWORK_SEP = ":/";
     public override string ToString()
     {
         StringMaker stringBuffer = new StringMaker();

@@ -32,12 +32,12 @@ public class HitPointGameObject : MeteredGameObject, HitPointGameObjectInterface
     public HitPointGameObject(BufferedImage[] bufferedImage, int? minX, int? maxX, int? y) : base(bufferedImage, minX, maxX, y)
     {
         // base(bufferedImage, minX, maxX, y) is called from the constructor declaration
-        if (((double) this.getRatios()[bufferedImage.Length - 1]) < 1.0F) {
+        if (global::java.lang.JavaNumber.doubleValue(this.getRatios()[bufferedImage.Length - 1]) < 1.0F) {
             this.setDamaged(true);
         } else {
             this.setDamaged(false);
         }
-        if (((double) this.getRatios()[bufferedImage.Length - 1]) > 0.25F) {
+        if (global::java.lang.JavaNumber.doubleValue(this.getRatios()[bufferedImage.Length - 1]) > 0.25F) {
             this.closeDeath = false;
         } else {
             this.closeDeath = true;
@@ -46,7 +46,7 @@ public class HitPointGameObject : MeteredGameObject, HitPointGameObjectInterface
 
     public virtual bool isMoreThan(float aFloat)
     {
-        if (((double) this.getRatios()[this.getRatios().Length - 1]) > aFloat) {
+        if (global::java.lang.JavaNumber.doubleValue(this.getRatios()[this.getRatios().Length - 1]) > aFloat) {
             return true;
         } else {
             return false;

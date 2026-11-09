@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using GameFeatureImageCacheFactory = org.allbinary.image.GameFeatureImageCacheFactory;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
@@ -44,7 +44,7 @@ public class ImageWaitCompleteUtil : ImageCompleteUtil
     }
 
     // throws Exception
-    public virtual void handleTimeout(string name)
+    public override void handleTimeout(string name)
     {
         if (this.timeDelayHelper.isTimeTNT()) {
             throw new Exception("isReady: Timeout Waiting or GameHtmlHasLoadedResourcesProcessor does not have this Image: " + name);
@@ -67,7 +67,7 @@ public class ImageWaitCompleteUtil : ImageCompleteUtil
     }
 
     // throws Exception
-    public virtual void waitForAll()
+    public override void waitForAll()
     {
         this.allTimeDelayHelper.setStartTimeTNT();
         ABHashtable<object, object> hashtable = GameFeatureImageCacheFactory.getInstance().getHashtableP();

@@ -131,7 +131,7 @@ public class AbSqlBasic
         try {
             {
                 try {
-                    ClassLoader loader = global::org.allbinary.thread.NullThread.currentThread().getContextClassLoader();
+                    global::java.lang.ClassLoader loader = global::java.lang.ClassLoader.getSystemClassLoader();
                     Type jdbcDriverClass = loader.loadClass(this.getDatabaseConnectionInfoInterface().getJdbcDriver());
                     jdbcDriverClass.newInstance();
                 } catch (Exception e) {

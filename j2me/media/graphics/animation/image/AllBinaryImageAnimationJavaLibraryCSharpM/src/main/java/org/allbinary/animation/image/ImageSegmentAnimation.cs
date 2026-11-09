@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using CircularIndexUtil = org.allbinary.util.CircularIndexUtil;
 

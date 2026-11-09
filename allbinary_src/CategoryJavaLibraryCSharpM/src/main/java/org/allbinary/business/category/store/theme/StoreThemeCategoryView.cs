@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Arrays = java.util.Arrays;
+using Arrays = java.util.Arrays;
 using CategoryView = org.allbinary.business.category.CategoryView;
 using DomNodeInterface = org.allbinary.data.tree.dom.DomNodeInterface;
 using ThemeValidation = org.allbinary.logic.visual.theme.ThemeValidation;
@@ -33,7 +33,7 @@ public class StoreThemeCategoryView : CategoryView, DomNodeInterface
     }
 
     // throws Exception
-    public virtual Node toXmlNode(Document document)
+    public override Node toXmlNode(Document document)
     {
         Node node = base.toXmlNode(document);
         StoreThemeCategoryInterface storeThemeCategoryInterface = ((StoreThemeCategoryInterface) this.getCategoryInterface());

@@ -38,17 +38,17 @@ public class CountedPickedUpLayerInterfaceFactory : PickedUpLayerInterfaceFactor
     }
 
     // throws Exception
-    public override AllBinaryLayer getNextInstance(ABHashtable<object, object> hashtable, int x, int y, int z)
+    public virtual AllBinaryLayer getNextInstance(ABHashtable<object, object> hashtable, int x, int y, int z)
     {
         throw new Exception(CommonStrings.getInstance().NOT_IMPLEMENTED);
     }
 
-    public override int getTotal()
+    public virtual int getTotal()
     {
         return -1;
     }
 
-    public override int getId()
+    public virtual int getId()
     {
         return this.id;
     }

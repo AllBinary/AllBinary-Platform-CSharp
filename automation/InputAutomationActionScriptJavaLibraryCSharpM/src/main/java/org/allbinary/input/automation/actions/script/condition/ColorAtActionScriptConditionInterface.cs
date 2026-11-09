@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 using ColorRangeInterface = org.allbinary.media.image.analysis.ColorRangeInterface;
 
 namespace org.allbinary.input.automation.actions.script.condition;

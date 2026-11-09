@@ -129,7 +129,7 @@ public class Item : BasicItem, OrderItemInterface
         return this.special;
     }
 
-    public virtual HashMap<object, object> toHashMap()
+    public override HashMap<object, object> toHashMap()
     {
         HashMap<object, object> hashMap = base.toHashMap();
         hashMap.put(ShippingMethodData.GROUP, this.group);

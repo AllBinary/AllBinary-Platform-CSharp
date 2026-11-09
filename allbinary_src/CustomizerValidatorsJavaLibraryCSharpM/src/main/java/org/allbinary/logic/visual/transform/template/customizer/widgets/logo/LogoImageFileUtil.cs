@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
 using AbFile = org.allbinary.logic.io.file.AbFile;
 using FileUtil = org.allbinary.logic.io.file.FileUtil;
 using Directory = org.allbinary.logic.io.file.directory.Directory;

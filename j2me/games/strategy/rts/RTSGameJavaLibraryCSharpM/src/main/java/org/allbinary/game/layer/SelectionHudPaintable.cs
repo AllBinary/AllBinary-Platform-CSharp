@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using Animation = org.allbinary.animation.Animation;
 using NullAnimationFactory = org.allbinary.animation.NullAnimationFactory;
@@ -39,7 +39,7 @@ public class SelectionHudPaintable : InitUpdatePaintable, UpdateMyFontInterface
     public readonly int y = CommonButtons.getInstance().STANDARD_BUTTON_SIZE + 17;
     private readonly PrimitiveLongUtil primitiveLongUtil;
     public readonly MyFontProcessor updateMyFontProcessor;
-    public MyFontProcessor myFontProcessor = updateMyFontProcessor;
+    public MyFontProcessor myFontProcessor;
     private int x = 0;
     public int textX = 0;
     public int imageX = 0;
@@ -49,15 +49,16 @@ public class SelectionHudPaintable : InitUpdatePaintable, UpdateMyFontInterface
     private int height = 0;
     private string name = StringUtil.getInstance().EMPTY_STRING;
     private Animation animationInterface = NullAnimationFactory.getFactoryInstance().getInstance(0);
-    private readonly int backgroundColor = ((int) BasicColorFactory.getInstance().GREY);
-    protected SelectionHudPaintable()
+    private readonly int backgroundColor = global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().GREY);
+    public SelectionHudPaintable()
     {
         this.updateMyFontProcessor = new UpdateMyFontProcessor(this);
+        this.myFontProcessor = this.updateMyFontProcessor;
         this.update();
         this.primitiveLongUtil = PrimitiveLongUtil.createPowerOfTen(10000);
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         CommonButtons commonButtons = CommonButtons.getInstance();
         Font font = graphics.getFont();
@@ -85,27 +86,27 @@ public class SelectionHudPaintable : InitUpdatePaintable, UpdateMyFontInterface
     {
     }
 
-    protected virtual PrimitiveLongUtil getPrimitiveLongUtil()
+    public virtual PrimitiveLongUtil getPrimitiveLongUtil()
     {
         return this.primitiveLongUtil;
     }
 
-    protected virtual void setAnimationInterface(Animation animationInterface)
+    public virtual void setAnimationInterface(Animation animationInterface)
     {
         this.animationInterface = animationInterface;
     }
 
-    protected virtual Animation getAnimationInterface()
+    public virtual Animation getAnimationInterface()
     {
         return this.animationInterface;
     }
 
-    protected virtual void setName(string name)
+    public virtual void setName(string name)
     {
         this.name = name;
     }
 
-    protected virtual string getName()
+    public virtual string getName()
     {
         return this.name;
     }
@@ -113,10 +114,10 @@ public class SelectionHudPaintable : InitUpdatePaintable, UpdateMyFontInterface
     public override void setBasicColorP(BasicColor basicColor)
     {
         this.basicColor = basicColor;
-        this.setColor(((int) basicColor));
+        this.setColor(basicColor.intValue());
     }
 
-    protected virtual BasicColor getBasicColorP()
+    public virtual BasicColor getBasicColorP()
     {
         return this.basicColor;
     }
@@ -131,22 +132,22 @@ public class SelectionHudPaintable : InitUpdatePaintable, UpdateMyFontInterface
         return this.color;
     }
 
-    protected virtual int getWidth()
+    public virtual int getWidth()
     {
         return this.width;
     }
 
-    protected virtual void setHeight(int height)
+    public virtual void setHeight(int height)
     {
         this.height = height;
     }
 
-    protected virtual int getHeight()
+    public virtual int getHeight()
     {
         return this.height;
     }
 
-    protected virtual int getX()
+    public virtual int getX()
     {
         return this.x;
     }

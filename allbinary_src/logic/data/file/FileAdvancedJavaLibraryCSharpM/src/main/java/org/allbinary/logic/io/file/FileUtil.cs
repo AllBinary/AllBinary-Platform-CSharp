@@ -17,8 +17,8 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using InputStream = java.io.InputStream;
-//using OutputStream = java.io.OutputStream;
+using InputStream = java.io.InputStream;
+using OutputStream = java.io.OutputStream;
 using URLGLOBALS = org.allbinary.globals.URLGLOBALS;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
@@ -330,10 +330,10 @@ public class FileUtil
             } else {
                 string path = new AbPath(nextFile.getPath(), StringUtil.getInstance().EMPTY_STRING).getPath();
                 int beginIndex = fromDirectoryAbPath.getPath().length();
-                if (path.indexOf(URLGLOBALS.getWebappPath()) < 0) {
+                if (path.IndexOf(URLGLOBALS.getWebappPath()) < 0) {
                     beginIndex -= new AbPath(URLGLOBALS.getWebappPath(), StringUtil.getInstance().EMPTY_STRING).getPath().length();
                 }
-                string newPath = toDirectoryAbPath.toFileSystemString() + path.substring(beginIndex);
+                string newPath = toDirectoryAbPath.toFileSystemString() + path.Substring(beginIndex);
                 AbFile toFile = AbFile.createAbFileFromAbPath(new AbPath(newPath, StringUtil.getInstance().EMPTY_STRING));
                 this.copyFile(nextFile, toFile, overwriteNewer, overwriteAll);
             }

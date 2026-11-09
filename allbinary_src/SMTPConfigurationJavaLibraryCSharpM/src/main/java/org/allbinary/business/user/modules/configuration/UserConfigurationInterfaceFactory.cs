@@ -31,7 +31,7 @@ namespace org.allbinary.business.user.modules.configuration;
 
 public class UserConfigurationInterfaceFactory
 {
-    private static readonly string configurationName = "DefaultUserConfiguration";
+    private const string configurationName = "DefaultUserConfiguration";
     private UserConfigurationInterfaceFactory()
     {
     }

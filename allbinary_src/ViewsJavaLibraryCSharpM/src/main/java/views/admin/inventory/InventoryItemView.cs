@@ -68,7 +68,7 @@ public class InventoryItemView : HttpStoreComponentView, RequestMapInterface
     }
 
     public static int TYPE_ID = 10;
-    public virtual int getTypeId()
+    public override int getTypeId()
     {
         return InventoryItemView.TYPE_ID;
     }
@@ -117,7 +117,7 @@ public class InventoryItemView : HttpStoreComponentView, RequestMapInterface
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             this.addDomNodeInterfaces();

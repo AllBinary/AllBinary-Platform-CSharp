@@ -22,17 +22,17 @@ namespace org.allbinary.game.layer.capital.@event;
 
 public class CapitalEventHandlerFactory
 {
-    private static readonly CapitalEventHandler[] capitalEventHandlerArray = null;
+    private static readonly CapitalEventHandler[] capitalEventHandlerArray = new CapitalEventHandler[10];
     static CapitalEventHandlerFactory()
     {
-        capitalEventHandlerArray = new CapitalEventHandler[10];
         for (int index = CapitalEventHandlerFactory.capitalEventHandlerArray.Length - 1; index >= 0; index--) {
             CapitalEventHandlerFactory.capitalEventHandlerArray[index] = new CapitalEventHandler();
         }
     }
     public static CapitalEventHandler getInstance(Group groupInterface)
     {
-        return CapitalEventHandlerFactory.capitalEventHandlerArray[((int) groupInterface.getGroupId())];
+        int groupId = ((int) groupInterface.getGroupId());
+        return CapitalEventHandlerFactory.capitalEventHandlerArray[groupId];
     }
 
     public static void removeAll()

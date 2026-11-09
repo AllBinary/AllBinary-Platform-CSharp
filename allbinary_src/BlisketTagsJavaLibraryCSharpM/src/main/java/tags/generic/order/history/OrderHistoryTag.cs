@@ -44,7 +44,7 @@ public class OrderHistoryTag : StoreValidationTransformTag
     private string setOrderStatus()
     {
         try {
-            Any anyType = new OrderHistoryHelperFactory().getInstance(this.getPropertiesHashMap(), pageContext);
+            object anyType = new OrderHistoryHelperFactory().getInstance(this.getPropertiesHashMap(), pageContext);
             Type helperClass = anyType.GetType();
             Method method = helperClass.getMethod("setOrderStatus", null);
             string result = ((string) method.invoke(anyType, null));
@@ -61,7 +61,7 @@ public class OrderHistoryTag : StoreValidationTransformTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             this.setName("Basic Order History View");

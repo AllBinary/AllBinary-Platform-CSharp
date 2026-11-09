@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using AffineTransform = java.awt.geom.AffineTransform;
 //using AffineTransformOp = java.awt.image.AffineTransformOp;
 //using BufferedImage = java.awt.image.BufferedImage;
@@ -77,12 +77,12 @@ public class MirrorImageUtil
         this.logUtil.putF("numberOfFramesPerOrientation: " + numberOfFramesPerOrientation + " numberOfFrames: " + numberOfFrames, this, "getImages");
         BufferedImage[] bufferedImageArray = new BufferedImage[numberOfFrames];
         int y = 0;
-        for (int index = 0; index < numberOfFramesPerOrientation; index++) {
-            int x = index * cellWidth;
-            bufferedImageArray[index] = bufferedImage.getSubimage(x, y, cellWidth, cellHeight);
+        for (int index_0 = 0; index_0 < numberOfFramesPerOrientation; index_0++) {
+            int x = index_0 * cellWidth;
+            bufferedImageArray[index_0] = bufferedImage.getSubimage(x, y, cellWidth, cellHeight);
         }
-        for (int index = 0; index < numberOfFramesPerOrientation; index++) {
-            bufferedImageArray[index + numberOfFramesPerOrientation] = this.getImage(bufferedImageArray[index], verticle, horizontal);
+        for (int index_1 = 0; index_1 < numberOfFramesPerOrientation; index_1++) {
+            bufferedImageArray[index_1 + numberOfFramesPerOrientation] = this.getImage(bufferedImageArray[index_1], verticle, horizontal);
         }
         return bufferedImageArray;
     }

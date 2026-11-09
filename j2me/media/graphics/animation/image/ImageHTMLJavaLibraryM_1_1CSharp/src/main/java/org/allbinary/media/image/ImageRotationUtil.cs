@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using PlaynImmutableImage = org.microemu.device.playn.PlaynImmutableImage;
 using PlaynMutableImage = org.microemu.device.playn.PlaynMutableImage;
 using CanvasImage = playn.core.CanvasImage;
@@ -66,7 +66,7 @@ public class ImageRotationUtil
     public virtual Image rotateImageCanvasSurface(Image originalImage, Image image, CanvasSurface canvasSurface, int totalAngle)
     {
         if (image.isMutable()) {
-            canvasSurface.rotate(((float) Math.ToRadians(totalAngle)));
+            canvasSurface.rotate(((float) ((totalAngle) * Math.PI / 180.0)));
             return image;
         } else {
             return null;

@@ -34,7 +34,7 @@ public class PaymentTransactionResultHelper : BasicTable
         this.portion = new Portion(hashMap);
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             string success = new TransactionResultEntity().dropTable();
@@ -51,7 +51,7 @@ public class PaymentTransactionResultHelper : BasicTable
         }
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             string success = new TransactionResultEntity().createTable();
@@ -68,7 +68,7 @@ public class PaymentTransactionResultHelper : BasicTable
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "Restore Successful";
@@ -86,7 +86,7 @@ public class PaymentTransactionResultHelper : BasicTable
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Restore Successful";

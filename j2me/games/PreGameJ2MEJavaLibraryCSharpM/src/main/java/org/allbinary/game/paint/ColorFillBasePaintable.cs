@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
 using ColorCompositeInterface = org.allbinary.graphics.color.ColorCompositeInterface;
@@ -36,20 +36,20 @@ public class ColorFillBasePaintable : Paintable, ColorCompositeInterface
     public override void setBasicColorP(BasicColor basicColor)
     {
         this.basicColor = basicColor;
-        this.setColor(((int) this.getBasicColorP()));
+        this.setColor(this.getBasicColorP().intValue());
     }
 
-    public override BasicColor getBasicColorP()
+    public virtual BasicColor getBasicColorP()
     {
         return this.basicColor;
     }
 
-    protected virtual int getColor()
+    public virtual int getColor()
     {
         return this.colorP;
     }
 
-    protected virtual void setColor(int color)
+    public virtual void setColor(int color)
     {
         this.colorP = color;
     }

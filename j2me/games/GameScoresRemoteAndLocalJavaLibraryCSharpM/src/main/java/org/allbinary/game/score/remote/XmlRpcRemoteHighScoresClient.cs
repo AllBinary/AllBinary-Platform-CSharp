@@ -66,7 +66,7 @@ public class XmlRpcRemoteHighScoresClient : XmlRpcAbeClient
             this.logUtil.putF(RESULT + result.ToString(), this, this.commonStrings.GET);
             isOnline = true;
             return result;
-        } catch (IOException e) {
+        } catch (System.IO.IOException e) {
             this.logUtil.put(TRYING_OTHER_SERVERS + ExceptionUtil.getInstance().getStackTrace(e), this, this.commonStrings.GET, e);
             if (!e.Message.StartsWith(HOST_NOT_RESOLVED)) {
                 return this.tryAnother(anyType);

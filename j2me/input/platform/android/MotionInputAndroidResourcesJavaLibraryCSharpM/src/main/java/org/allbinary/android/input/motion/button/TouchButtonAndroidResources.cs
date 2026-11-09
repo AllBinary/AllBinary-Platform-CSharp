@@ -53,7 +53,7 @@ public class TouchButtonAndroidResources : Init
             RESOURCE_ARRAY[7] = androidResources.raw.touch_button_strafe_left_arrow_128_by_128;
             RESOURCE_ARRAY[8] = androidResources.raw.touch_button_strafe_right_arrow_128_by_128;
             if (OperatingSystemFactory.getInstance().getOperatingSystemInstance().isOverScan()) {
-                resourceUtil.addResource(RESOURCE_STRING_ARRAY[2].HINT, (androidResources.raw.ouya_o).ToString());
+                resourceUtil.addResource(RESOURCE_STRING_ARRAY[2].HINT, int.Parse((androidResources.raw.ouya_o).ToString()));
             }
         } else {
             RESOURCE_ARRAY[0] = androidResources.raw.touch_button_64_by_64;
@@ -67,7 +67,7 @@ public class TouchButtonAndroidResources : Init
             RESOURCE_ARRAY[8] = androidResources.raw.touch_button_strafe_right_arrow_64_by_64;
         }
         for (int index = 0; index < RESOURCE_ARRAY.Length; index++) {
-            resourceUtil.addResource(RESOURCE_STRING_ARRAY[index].RESOURCE, (RESOURCE_ARRAY[index]).ToString());
+            resourceUtil.addResource(RESOURCE_STRING_ARRAY[index].RESOURCE, int.Parse((RESOURCE_ARRAY[index]).ToString()));
         }
     }
 

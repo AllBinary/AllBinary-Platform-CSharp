@@ -21,7 +21,7 @@ namespace org.allbinary.business.init.db;
 
 public class UserDbInitInfo : DbInitInfo
 {
-    private static readonly string INITFILE = "userdbinitdata.dat";
+    private const string INITFILE = "userdbinitdata.dat";
     public UserDbInitInfo() : base(INITFILE, true)
     {
         // base(INITFILE, true) is called from the constructor declaration

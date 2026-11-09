@@ -21,7 +21,7 @@ namespace org.allbinary.business.user.commerce.inventory.item.option;
 
 public class XmlOptionItemData
 {
-    public static readonly string XML_FILE_STATUS = "XMLOPTIONITEM_XML_FILE_STATUS";
-    public static readonly string OPTION_XML_FILE = "XMLOPTIONITEM_OPTION_XML_FILE";
+    public const string XML_FILE_STATUS = "XMLOPTIONITEM_XML_FILE_STATUS";
+    public const string OPTION_XML_FILE = "XMLOPTIONITEM_OPTION_XML_FILE";
 }
 

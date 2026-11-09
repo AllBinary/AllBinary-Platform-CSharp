@@ -80,31 +80,31 @@ public class ColorsView : DomNodeInterface
         }
         Node whiteNode = ModDomHelper.createNameValueNodes(document, ColorData.getInstance().NAME, "FFFFFF");
         node.appendChild(whiteNode);
-        for (int blueIndex = this.MAX / 2; blueIndex < this.MAX; blueIndex += this.delta) {
-            for (int greenIndex = 0; greenIndex < this.MAX / 2; greenIndex += this.delta) {
-                for (int redIndex = 0; redIndex < this.MAX / 2; redIndex += this.delta) {
-                    node.appendChild(this.getColorNode(document, redIndex, greenIndex, blueIndex));
+        for (int blueIndex_1 = this.MAX / 2; blueIndex_1 < this.MAX; blueIndex_1 += this.delta) {
+            for (int greenIndex_1 = 0; greenIndex_1 < this.MAX / 2; greenIndex_1 += this.delta) {
+                for (int redIndex_1 = 0; redIndex_1 < this.MAX / 2; redIndex_1 += this.delta) {
+                    node.appendChild(this.getColorNode(document, redIndex_1, greenIndex_1, blueIndex_1));
                 }
             }
         }
-        for (int redIndex = this.MAX / 2; redIndex < this.MAX; redIndex += this.delta) {
-            for (int greenIndex = 0; greenIndex < this.MAX / 2; greenIndex += this.delta) {
-                for (int blueIndex = 0; blueIndex < this.MAX / 2; blueIndex += this.delta) {
-                    node.appendChild(this.getColorNode(document, redIndex, greenIndex, blueIndex));
+        for (int redIndex_4 = this.MAX / 2; redIndex_4 < this.MAX; redIndex_4 += this.delta) {
+            for (int greenIndex_4 = 0; greenIndex_4 < this.MAX / 2; greenIndex_4 += this.delta) {
+                for (int blueIndex_4 = 0; blueIndex_4 < this.MAX / 2; blueIndex_4 += this.delta) {
+                    node.appendChild(this.getColorNode(document, redIndex_4, greenIndex_4, blueIndex_4));
                 }
             }
         }
-        for (int greenIndex = this.MAX / 2; greenIndex < this.MAX; greenIndex += this.delta) {
-            for (int redIndex = 0; redIndex < this.MAX / 2; redIndex += this.delta) {
-                for (int blueIndex = 0; blueIndex < this.MAX / 2; blueIndex += this.delta) {
-                    node.appendChild(this.getColorNode(document, redIndex, greenIndex, blueIndex));
+        for (int greenIndex_7 = this.MAX / 2; greenIndex_7 < this.MAX; greenIndex_7 += this.delta) {
+            for (int redIndex_7 = 0; redIndex_7 < this.MAX / 2; redIndex_7 += this.delta) {
+                for (int blueIndex_7 = 0; blueIndex_7 < this.MAX / 2; blueIndex_7 += this.delta) {
+                    node.appendChild(this.getColorNode(document, redIndex_7, greenIndex_7, blueIndex_7));
                 }
             }
         }
-        for (int greenIndex = 0; greenIndex < this.MAX; greenIndex += 2 * this.delta) {
-            for (int redIndex = 0; redIndex < this.MAX; redIndex += 2 * this.delta) {
-                for (int blueIndex = 0; blueIndex < this.MAX; blueIndex += 2 * this.delta) {
-                    node.appendChild(this.getColorNode(document, redIndex, greenIndex, blueIndex));
+        for (int greenIndex_10 = 0; greenIndex_10 < this.MAX; greenIndex_10 += 2 * this.delta) {
+            for (int redIndex_10 = 0; redIndex_10 < this.MAX; redIndex_10 += 2 * this.delta) {
+                for (int blueIndex_10 = 0; blueIndex_10 < this.MAX; blueIndex_10 += 2 * this.delta) {
+                    node.appendChild(this.getColorNode(document, redIndex_10, greenIndex_10, blueIndex_10));
                 }
             }
         }

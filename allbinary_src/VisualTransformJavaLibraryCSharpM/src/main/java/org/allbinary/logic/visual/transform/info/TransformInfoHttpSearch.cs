@@ -52,19 +52,19 @@ public class TransformInfoHttpSearch : TransformInfoHttp
     }
 
     // throws Exception
-    public virtual AbPath getTemplateFilePath()
+    public override AbPath getTemplateFilePath()
     {
         return new AbPath(this.getPath(), this.getTemplateFile());
     }
 
     // throws Exception
-    public virtual AbPath getObjectConfigFilePath()
+    public override AbPath getObjectConfigFilePath()
     {
         return new AbPath(this.getPath(), this.getObjectConfigFile());
     }
 
     // throws Exception
-    public virtual AbPath getDataFilePath()
+    public override AbPath getDataFilePath()
     {
         return new AbPath(this.getPath(), this.getDataFile());
     }

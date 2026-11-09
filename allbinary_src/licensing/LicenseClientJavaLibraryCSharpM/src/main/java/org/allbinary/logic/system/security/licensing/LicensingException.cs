@@ -21,7 +21,7 @@ namespace org.allbinary.logic.system.security.licensing;
 
 public class LicensingException : Exception
 {
-    public static readonly long serialVersionUID = 1L;
+    public const long serialVersionUID = 1L;
     public LicensingException()
     {
     }

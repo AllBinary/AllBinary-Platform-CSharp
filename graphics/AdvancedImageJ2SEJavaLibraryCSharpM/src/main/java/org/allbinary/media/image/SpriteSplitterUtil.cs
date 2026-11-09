@@ -62,30 +62,30 @@ public class SpriteSplitterUtil
                 string nameEnding = null;
                 int x = 0;
                 int y = 0;
-                for (int index2 = 0; index2 < rows; index2++) {
-                    y = cellHeight * index2;
-                    for (int index3 = 0; index3 < columns; index3++) {
-                        x = cellWidth * index3;
-                        generatedBufferedImageArray[index2][index3] = bufferedImage.getSubimage(x + widthReduction, y + heightReduction, cellWidth - (widthReduction * 2), cellHeight - (heightReduction * 2));
+                for (int index2_4 = 0; index2_4 < rows; index2_4++) {
+                    y = cellHeight * index2_4;
+                    for (int index3_4 = 0; index3_4 < columns; index3_4++) {
+                        x = cellWidth * index3_4;
+                        generatedBufferedImageArray[index2_4][index3_4] = bufferedImage.getSubimage(x + widthReduction, y + heightReduction, cellWidth - (widthReduction * 2), cellHeight - (heightReduction * 2));
                         if (increaseWidth != 0 || increaseHeight != 0) {
-                            generatedBufferedImageArray[index2][index3] = imageUtil.createBufferedImageAllowTranslate(generatedBufferedImageArray[index2][index3], cellWidth + increaseWidth, cellHeight + increaseHeight, false, true);
+                            generatedBufferedImageArray[index2_4][index3_4] = imageUtil.createBufferedImageAllowTranslate(generatedBufferedImageArray[index2_4][index3_4], cellWidth + increaseWidth, cellHeight + increaseHeight, false, true);
                         }
-                        nameEnding = new StringMaker().appendint(index2).append(this.commonSeps.UNDERSCORE).appendint(index3).ToString();
-                        visitor.visit(generatedBufferedImageArray[index2][index3], nameEnding, index);
+                        nameEnding = new StringMaker().appendint(index2_4).append(this.commonSeps.UNDERSCORE).appendint(index3_4).ToString();
+                        visitor.visit(generatedBufferedImageArray[index2_4][index3_4], nameEnding, index);
                     }
                 }
                 this.logUtil.putF("Processing Rows from Cells", this, this.commonStrings.RUN);
                 ImageUnifierProperties imageUnifierProperties = new ImageUnifierProperties();
-                imageUnifierProperties.setRows((1).ToString());
-                imageUnifierProperties.setColumns((columns).ToString());
-                ImageUnifierCell imageUnifierCell = new ImageUnifierCell((cellWidth - (2 * widthReduction)).ToString(), (cellHeight - (2 * heightReduction)).ToString());
+                imageUnifierProperties.setRows(int.Parse((1).ToString()));
+                imageUnifierProperties.setColumns(int.Parse((columns).ToString()));
+                ImageUnifierCell imageUnifierCell = new ImageUnifierCell(int.Parse((cellWidth - (2 * widthReduction)).ToString()), int.Parse((cellHeight - (2 * heightReduction)).ToString()));
                 imageUnifierProperties.setImageUnifierCell(imageUnifierCell);
-                for (int index2 = 0; index2 < rows; index2++) {
-                    y = cellHeight * index2;
+                for (int index2_6 = 0; index2_6 < rows; index2_6++) {
+                    y = cellHeight * index2_6;
                     BufferedImage[] tempBufferedImageArray = new BufferedImage[columns];
-                    for (int index3 = 0; index3 < columns; index3++) {
-                        tempBufferedImageArray[index3] = generatedBufferedImageArray[index2][index3];
-                        nameEnding = new StringMaker().appendint(index2).append(this.commonSeps.UNDERSCORE).appendint(1).append(this._ROW).ToString();
+                    for (int index3_6 = 0; index3_6 < columns; index3_6++) {
+                        tempBufferedImageArray[index3_6] = generatedBufferedImageArray[index2_6][index3_6];
+                        nameEnding = new StringMaker().appendint(index2_6).append(this.commonSeps.UNDERSCORE).appendint(1).append(this._ROW).ToString();
                     }
                     BufferedImage generatedBufferedImage = ImageUnifierUtil.getInstance().getImage(tempBufferedImageArray, imageUnifierProperties);
                     visitor.visit(generatedBufferedImage, nameEnding, index);
@@ -102,30 +102,30 @@ public class SpriteSplitterUtil
                 string nameEnding = null;
                 int x = 0;
                 int y = 0;
-                for (int index2 = 0; index2 < rows; index2++) {
-                    y = cellHeight * index2;
-                    for (int index3 = 0; index3 < columns; index3++) {
-                        x = cellWidth * index3;
-                        generatedBufferedImageArray[index2][index3] = bufferedImage.getSubimage(x + widthReduction, y + heightReduction, cellWidth - (widthReduction * 2), cellHeight - (heightReduction * 2));
+                for (int index2_0 = 0; index2_0 < rows; index2_0++) {
+                    y = cellHeight * index2_0;
+                    for (int index3_0 = 0; index3_0 < columns; index3_0++) {
+                        x = cellWidth * index3_0;
+                        generatedBufferedImageArray[index2_0][index3_0] = bufferedImage.getSubimage(x + widthReduction, y + heightReduction, cellWidth - (widthReduction * 2), cellHeight - (heightReduction * 2));
                         if (increaseWidth != 0 || increaseHeight != 0) {
-                            generatedBufferedImageArray[index2][index3] = ImageUtil.getInstance().createBufferedImageAllowTranslate(generatedBufferedImageArray[index2][index3], cellWidth + increaseWidth, cellHeight + increaseHeight, false, true);
+                            generatedBufferedImageArray[index2_0][index3_0] = ImageUtil.getInstance().createBufferedImageAllowTranslate(generatedBufferedImageArray[index2_0][index3_0], cellWidth + increaseWidth, cellHeight + increaseHeight, false, true);
                         }
-                        nameEnding = new StringMaker().append(this.commonStrings.DIRECTION_NAME[index2]).append(this.commonSeps.UNDERSCORE).appendint(index3).ToString();
-                        visitor.visit(generatedBufferedImageArray[index2][index3], nameEnding, index);
+                        nameEnding = new StringMaker().append(this.commonStrings.DIRECTION_NAME[index2_0]).append(this.commonSeps.UNDERSCORE).appendint(index3_0).ToString();
+                        visitor.visit(generatedBufferedImageArray[index2_0][index3_0], nameEnding, index);
                     }
                 }
                 ImageUnifierProperties imageUnifierProperties = new ImageUnifierProperties();
-                imageUnifierProperties.setRows((1).ToString());
-                imageUnifierProperties.setColumns((columns).ToString());
-                ImageUnifierCell imageUnifierCell = new ImageUnifierCell((cellWidth - (2 * widthReduction)).ToString() + increaseWidth, (cellHeight - (2 * heightReduction) + increaseHeight).ToString());
+                imageUnifierProperties.setRows(int.Parse((1).ToString()));
+                imageUnifierProperties.setColumns(int.Parse((columns).ToString()));
+                ImageUnifierCell imageUnifierCell = new ImageUnifierCell(int.Parse((cellWidth - (2 * widthReduction)).ToString()) + increaseWidth, int.Parse((cellHeight - (2 * heightReduction) + increaseHeight).ToString()));
                 imageUnifierProperties.setImageUnifierCell(imageUnifierCell);
                 this.logUtil.putF("Processing Rows from Cells for each Direction", this, this.commonStrings.RUN);
-                for (int index2 = 0; index2 < rows; index2++) {
-                    y = cellHeight * index2;
+                for (int index2_2 = 0; index2_2 < rows; index2_2++) {
+                    y = cellHeight * index2_2;
                     BufferedImage[] tempBufferedImageArray = new BufferedImage[columns];
-                    for (int index3 = 0; index3 < columns; index3++) {
-                        tempBufferedImageArray[index3] = generatedBufferedImageArray[index2][index3];
-                        nameEnding = new StringMaker().append(this.commonStrings.DIRECTION_NAME[index2]).append(this.commonSeps.UNDERSCORE).appendint(1).append(this._ROW).ToString();
+                    for (int index3_2 = 0; index3_2 < columns; index3_2++) {
+                        tempBufferedImageArray[index3_2] = generatedBufferedImageArray[index2_2][index3_2];
+                        nameEnding = new StringMaker().append(this.commonStrings.DIRECTION_NAME[index2_2]).append(this.commonSeps.UNDERSCORE).appendint(1).append(this._ROW).ToString();
                     }
                     BufferedImage generatedBufferedImage = ImageUnifierUtil.getInstance().getImage(tempBufferedImageArray, imageUnifierProperties);
                     visitor.visit(generatedBufferedImage, nameEnding, index);

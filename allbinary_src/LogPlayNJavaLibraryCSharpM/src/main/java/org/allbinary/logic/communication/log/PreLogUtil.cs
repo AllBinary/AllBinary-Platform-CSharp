@@ -42,7 +42,7 @@ public class PreLogUtil
         PlayN.log().debug(PreLogUtil.LOG_SUCCESS + message);
     }
 
-    private static readonly string LOG_SUCCESS = "org.allbinary: ";
+    private const string LOG_SUCCESS = "org.allbinary: ";
     public static void putOE(string specialMessage, object anyType, string functionName, object exception)
     {
         string className = PreLogUtil.getClassName(anyType);

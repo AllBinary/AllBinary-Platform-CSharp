@@ -14,13 +14,14 @@
  */
 // Generated Code Do Not Modify
 
+extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Desktop = java.awt.Desktop;
-//using URI = java.net.URI;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using Desktop = java.awt.Desktop;
+using URI = java.net.URI;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using BasicArrayList = org.allbinary.util.BasicArrayList;

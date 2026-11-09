@@ -115,14 +115,14 @@ public class MotionGestureRecognizer
             diagonalToleranceHigher = ((double) (90 - conf.getDiagonalTolerance()));
             diagonalToleranceLower = ((double) conf.getDiagonalTolerance());
         }
-        if (absGradient > Math.Tan(Math.ToRadians(diagonalToleranceHigher))) {
+        if (absGradient > Math.Tan(((diagonalToleranceHigher) * Math.PI / 180.0))) {
             if (this.line.getDeltaY() > 0) {
                 newMotionGesture = touchMotionGestureFactory.UP;
             } else {
                 newMotionGesture = touchMotionGestureFactory.DOWN;
             }
         } else {
-            if (absGradient < Math.Tan(Math.ToRadians(diagonalToleranceLower))) {
+            if (absGradient < Math.Tan(((diagonalToleranceLower) * Math.PI / 180.0))) {
                 if (this.line.getDeltaX() > 0) {
                     newMotionGesture = touchMotionGestureFactory.LEFT;
                 } else {

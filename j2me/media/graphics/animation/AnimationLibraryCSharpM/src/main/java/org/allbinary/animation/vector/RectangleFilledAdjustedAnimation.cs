@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using ColorCompositeInterface = org.allbinary.graphics.color.ColorCompositeInterface;
 
@@ -52,6 +52,16 @@ public class RectangleFilledAdjustedAnimation : RectangleFilledAnimation, ColorC
     public virtual void setOffsetY(int offsetY)
     {
         this.offsetY = offsetY;
+    }
+
+    public override BasicColor getBasicColorP()
+    {
+        return base.getBasicColorP();
+    }
+
+    public override void setBasicColorP(BasicColor basicColor)
+    {
+        base.setBasicColorP(basicColor);
     }
 
 }

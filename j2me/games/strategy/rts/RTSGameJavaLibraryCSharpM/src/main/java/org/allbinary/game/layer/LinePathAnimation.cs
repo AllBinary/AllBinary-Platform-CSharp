@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using GPoint = org.allbinary.graphics.GPoint;
 using Layer = org.allbinary.layer.Layer;
 

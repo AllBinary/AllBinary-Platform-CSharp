@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using URL = java.net.URL;
+using URL = java.net.URL;
 //using HelpSet = javax.help.HelpSet;
 //using javax.swing;
 using JavaHelpUtil = org.allbinary.logic.java.help.JavaHelpUtil;
@@ -43,17 +43,17 @@ public class AbstractInputAutomationFactory : InputAutomationModuleFactoryInterf
         this.helpSet = JavaHelpUtil.getInstance().getHelpSet(url);
     }
 
-    public virtual string getName()
+    public override string getName()
     {
         return this.name;
     }
 
-    public virtual JPanel getConfigurationJPanel()
+    public override JPanel getConfigurationJPanel()
     {
         return this.jPanel;
     }
 
-    public virtual HelpSet getHelpSet()
+    public override HelpSet getHelpSet()
     {
         return this.helpSet;
     }

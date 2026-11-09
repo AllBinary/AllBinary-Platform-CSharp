@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
-//using Image = javax.microedition.lcdui.Image;
+using InputStream = java.io.InputStream;
+using Image = javax.microedition.lcdui.Image;
 
 namespace org.allbinary.image;
 

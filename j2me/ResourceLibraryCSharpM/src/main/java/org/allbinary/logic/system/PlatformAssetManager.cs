@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 using ResourceUtil = org.allbinary.data.resource.ResourceUtil;
 
 namespace org.allbinary.logic.system;

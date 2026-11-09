@@ -164,5 +164,11 @@ public class PageValidationView : PageView, ValidationComponentInterface
         return null;
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

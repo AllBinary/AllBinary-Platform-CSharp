@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Graphics = javax.microedition.lcdui.Graphics;
 using ColorBufferList = min3d.core.ColorBufferList;
 using Number3dBufferList = min3d.core.Number3dBufferList;
 using Rectangle = min3d.objectPrimitives.Rectangle;
@@ -39,7 +39,7 @@ public class HealthBarThreedAnimation : HealthBarAnimation
     {
         // base(layerInterface, location) is called from the constructor declaration
         this.basicColor = this.basicColorFactory.GREEN;
-        this.colorP = ((int) this.basicColor);
+        this.colorP = global::java.lang.JavaNumber.intValue(this.basicColor);
         this.rectangle = new Rectangle(0, 0, 1, 1, this.basicColor);
         this.rectangle.setDoubleSidedEnabled(true);
         this.rectangle.setNormalsEnabled(false);
@@ -76,7 +76,7 @@ public class HealthBarThreedAnimation : HealthBarAnimation
         }
     }
 
-    public virtual void onHealthChange(int newX2)
+    public override void onHealthChange(int newX2)
     {
         base.onHealthChange(newX2);
         this.updateColor();
@@ -84,7 +84,7 @@ public class HealthBarThreedAnimation : HealthBarAnimation
     }
 
     private readonly Object3dProcessor object3dProcessor = Object3dProcessorUtil.getInstance().getInstanceObject3dProcessor();
-    public virtual void paintThreedXYZ(Graphics graphics, int x, int y, int z)
+    public override void paintThreedXYZ(Graphics graphics, int x, int y, int z)
     {
         OpenGLESGraphics openGLESGraphics = ((OpenGLESGraphics) graphics);
         GL10 gl = openGLESGraphics.getGl10();

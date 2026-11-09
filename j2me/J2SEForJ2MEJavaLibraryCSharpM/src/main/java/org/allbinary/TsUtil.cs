@@ -16,12 +16,12 @@
 
 using System;
 using System.Linq;
-//using Displayable = javax.microedition.lcdui.Displayable;
-//using Form = javax.microedition.lcdui.Form;
-//using InvalidRecordIDException = javax.microedition.rms.InvalidRecordIDException;
-//using RecordStore = javax.microedition.rms.RecordStore;
-//using RecordStoreException = javax.microedition.rms.RecordStoreException;
-//using RecordStoreNotOpenException = javax.microedition.rms.RecordStoreNotOpenException;
+using Displayable = javax.microedition.lcdui.Displayable;
+using Form = javax.microedition.lcdui.Form;
+using InvalidRecordIDException = javax.microedition.rms.InvalidRecordIDException;
+using RecordStore = javax.microedition.rms.RecordStore;
+using RecordStoreException = javax.microedition.rms.RecordStoreException;
+using RecordStoreNotOpenException = javax.microedition.rms.RecordStoreNotOpenException;
 using NullUtil = org.allbinary.logic.NullUtil;
 
 namespace org.allbinary;
@@ -84,9 +84,9 @@ public class TsUtil
         return anyType.Equals(object2);
     }
 
-    public virtual ClassLoader getClassClassLoader(object anyType)
+    public virtual global::java.lang.ClassLoader getClassClassLoader(object anyType)
     {
-        return anyType.GetType().getClassLoader();
+        return global::java.lang.ClassLoader.getSystemClassLoader();
     }
 
     public virtual int toNumberFromChar(char value)

@@ -37,7 +37,7 @@ public class BasicItemValidation : Validation
         this.itemInterface = itemInterface;
     }
 
-    public virtual bool? isValid()
+    public override bool? isValid()
     {
         try {
             if (this.itemInterface.getId() == null || this.itemInterface.getId().length() < 1 || this.itemInterface.getId().length() > AbSqlData.MAXNUM) {
@@ -116,7 +116,7 @@ public class BasicItemValidation : Validation
         }
     }
 
-    public virtual string validationInfo()
+    public override string validationInfo()
     {
         try {
             StringMaker stringBuffer = new StringMaker();
@@ -196,12 +196,12 @@ public class BasicItemValidation : Validation
         }
     }
 
-    public virtual Document toValidationInfoDoc()
+    public override Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual Node toValidationInfoNode(Document document)
+    public override Node toValidationInfoNode(Document document)
     {
         return null;
     }

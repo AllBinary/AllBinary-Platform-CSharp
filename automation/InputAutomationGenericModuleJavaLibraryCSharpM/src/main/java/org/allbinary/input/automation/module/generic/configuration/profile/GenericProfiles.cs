@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using DataOutputStream = java.io.DataOutputStream;
-//using File = java.io.File;
-//using FileInputStream = java.io.FileInputStream;
-//using FileOutputStream = java.io.FileOutputStream;
+using DataOutputStream = java.io.DataOutputStream;
+using File = java.io.File;
+using FileInputStream = java.io.FileInputStream;
+using FileOutputStream = java.io.FileOutputStream;
 using java.util;
 using DomNodeInterface = org.allbinary.data.tree.dom.DomNodeInterface;
 using DomDocumentHelper = org.allbinary.data.tree.dom.document.DomDocumentHelper;
@@ -39,7 +39,7 @@ namespace org.allbinary.input.automation.module.generic.configuration.profile;
 public class GenericProfiles : DomNodeInterface, DomDocumentMappingInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    public static readonly string DEFAULT_PROFILES_PATH = "./modules/configs/profiles/";
+    public const string DEFAULT_PROFILES_PATH = "./modules/configs/profiles/";
     public static readonly string DEFAULT_PROFILE_ACTIONS_PATH = GenericProfiles.DEFAULT_PROFILES_PATH + "actions/";
     public static readonly string DEFAULT_FILE = GenericProfiles.DEFAULT_PROFILES_PATH + "profiles.xml";
     private HashMap<object, object> hashMap;

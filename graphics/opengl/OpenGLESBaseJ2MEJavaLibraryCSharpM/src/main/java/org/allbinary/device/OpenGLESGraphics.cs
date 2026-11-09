@@ -2,9 +2,9 @@
 
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Font = javax.microedition.lcdui.Font;
+using GL = javax.microedition.khronos.opengles.GL;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Font = javax.microedition.lcdui.Font;
 using FontDebugBase = org.allbinary.graphics.font.FontDebugBase;
 using OpenGLSurfaceChangedInterface = org.allbinary.image.opengles.OpenGLSurfaceChangedInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
 using java.util;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
@@ -67,7 +67,7 @@ public class DownloadableInventoryItemView : HttpStoreComponentView, RequestMapI
     }
 
     public static int TYPE_ID = 11;
-    public virtual int getTypeId()
+    public override int getTypeId()
     {
         return DownloadableInventoryItemView.TYPE_ID;
     }
@@ -89,7 +89,7 @@ public class DownloadableInventoryItemView : HttpStoreComponentView, RequestMapI
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             this.addDomNodeInterfaces();

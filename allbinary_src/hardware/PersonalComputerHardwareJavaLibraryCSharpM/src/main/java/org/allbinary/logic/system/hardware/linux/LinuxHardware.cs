@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using FileReader = java.io.FileReader;
+using FileReader = java.io.FileReader;
 //using LineNumberReader = java.io.LineNumberReader;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using StdUtil = org.allbinary.logic.StdUtil;
@@ -64,7 +64,7 @@ public class LinuxHardware : HardwareInterface
     private BasicArrayList hardDriveInterfaceVector = null;
     private BasicArrayList macInterfaceVector = null;
     private BasicArrayList monitorInterfaceVector = null;
-    private static readonly string PCIFILE = "/proc/pci";
+    private const string PCIFILE = "/proc/pci";
     private readonly string NAME = "Linux Hardware Profile";
     private readonly int MINHARDWARE = 5;
     public LinuxHardware(string path)

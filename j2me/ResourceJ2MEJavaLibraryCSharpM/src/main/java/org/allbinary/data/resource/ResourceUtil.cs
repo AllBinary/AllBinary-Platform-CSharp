@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonSeps = org.allbinary.@string.CommonSeps;
@@ -46,7 +46,7 @@ public class ResourceUtil
     // throws Exception
     public virtual InputStream getResourceAsStream(string resource)
     {
-        InputStream inputStream = resource.GetType().getResourceAsStream(resource);
+        InputStream inputStream = global::java.lang.ClassLoader.getSystemResourceAsStream(resource);
         if (inputStream == null) {
             inputStream = this.getResourceAsStreamAtStart(resource, 2);
             if (inputStream == null) {
@@ -55,36 +55,36 @@ public class ResourceUtil
                     StringMaker stringMaker = new StringMaker();
                     int index = resource.LastIndexOf('/');
                     string resourcePath = resource.Substring(index + 1);
-                    inputStream = resource.GetType().getResourceAsStream(resourcePath);
+                    inputStream = global::java.lang.ClassLoader.getSystemResourceAsStream(resourcePath);
                     if (inputStream == null) {
                         resourcePath = resource.Substring(index);
-                        inputStream = resource.GetType().getResourceAsStream(resourcePath);
+                        inputStream = global::java.lang.ClassLoader.getSystemResourceAsStream(resourcePath);
                         if (inputStream == null) {
                             string RES = "res";
                             resourcePath = stringMaker.append(RES).append(resource.Substring(index)).ToString();
-                            inputStream = resource.GetType().getResourceAsStream(resourcePath);
+                            inputStream = global::java.lang.ClassLoader.getSystemResourceAsStream(resourcePath);
                             if (inputStream == null) {
                                 stringMaker.delete(0, stringMaker.length());
                                 resourcePath = stringMaker.append("/").append(RES).append(resource.Substring(index)).ToString();
-                                inputStream = resource.GetType().getResourceAsStream(resourcePath);
+                                inputStream = global::java.lang.ClassLoader.getSystemResourceAsStream(resourcePath);
                                 string COLON = CommonSeps.getInstance().COLON;
                                 if (inputStream == null) {
                                     stringMaker.delete(0, stringMaker.length());
                                     resourcePath = stringMaker.append(RES).append(COLON).append(resource.Substring(index)).ToString();
-                                    inputStream = resource.GetType().getResourceAsStream(resourcePath);
+                                    inputStream = global::java.lang.ClassLoader.getSystemResourceAsStream(resourcePath);
                                     if (inputStream == null) {
                                         stringMaker.delete(0, stringMaker.length());
                                         resourcePath = stringMaker.append(RES).append(COLON).append(resource.Substring(index + 1)).ToString();
-                                        inputStream = resource.GetType().getResourceAsStream(resourcePath);
+                                        inputStream = global::java.lang.ClassLoader.getSystemResourceAsStream(resourcePath);
                                         if (inputStream == null) {
                                             string RESOURCE_STRING = "resource";
                                             stringMaker.delete(0, stringMaker.length());
                                             resourcePath = stringMaker.append(RESOURCE_STRING).append(COLON).append(resource.Substring(index)).ToString();
-                                            inputStream = resource.GetType().getResourceAsStream(resourcePath);
+                                            inputStream = global::java.lang.ClassLoader.getSystemResourceAsStream(resourcePath);
                                             if (inputStream == null) {
                                                 stringMaker.delete(0, stringMaker.length());
                                                 resourcePath = stringMaker.append(RESOURCE_STRING).append(COLON).append(resource.Substring(index + 1)).ToString();
-                                                inputStream = resource.GetType().getResourceAsStream(resourcePath);
+                                                inputStream = global::java.lang.ClassLoader.getSystemResourceAsStream(resourcePath);
                                                 if (inputStream == null) {
                                                     stringMaker.delete(0, stringMaker.length());
                                                     throw new Exception(stringMaker.append("Unable to obtain: ").append(resource).ToString());
@@ -108,7 +108,7 @@ public class ResourceUtil
         StringMaker stringMaker = new StringMaker();
         int index = resource.IndexOf(CommonSeps.getInstance().COLON);
         string resourcePath = resource.Substring(index + startIndex);
-        InputStream inputStream = resource.GetType().getResourceAsStream(resourcePath);
+        InputStream inputStream = global::java.lang.ClassLoader.getSystemResourceAsStream(resourcePath);
         if (inputStream != null) {
             return inputStream;
         }

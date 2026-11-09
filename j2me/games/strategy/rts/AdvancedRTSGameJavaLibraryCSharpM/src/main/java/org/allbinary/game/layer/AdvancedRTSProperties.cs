@@ -36,7 +36,7 @@ public class AdvancedRTSProperties
 
     public static AdvancedRTSProperties createProperties()
     {
-        return new AdvancedRTSProperties(ShakeAnimationListenerFactory.getInstance(), AllBinaryVibration.getInstance(), ((int) GameConfigurationCentral.getInstance().VIBRATION.getValue()) * 100, new WaypointBehaviorBase());
+        return new AdvancedRTSProperties(ShakeAnimationListenerFactory.getInstance(), AllBinaryVibration.getInstance(), global::java.lang.JavaNumber.intValue(GameConfigurationCentral.getInstance().VIBRATION.getValue()) * 100, new WaypointBehaviorBase());
     }
 
     public readonly ShakeAnimationListener shakeListener;

@@ -84,7 +84,7 @@ public class DbConnectionInfo : DatabaseConnectionInfoInterface
         stringBuffer.append(this.getSchema());
         stringBuffer.append(this.SCHEMA_SEP);
         stringBuffer.append(this.getServer());
-        if (this.getPort() != null && this.getPort().length() > 1) {
+        if (this.getPort() != null && this.getPort().Length > 1) {
             stringBuffer.append(CommonSeps.getInstance().COLON);
             stringBuffer.append(this.getPort());
         }

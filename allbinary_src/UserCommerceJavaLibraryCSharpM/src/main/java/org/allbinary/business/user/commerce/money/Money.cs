@@ -52,7 +52,7 @@ public class Money
 
     public virtual bool isValid()
     {
-        if (this.units != null && ((long) this.units) > 0 && ((long) this.units) < Long.MAX_VALUE) {
+        if (this.units != null && ((long) this.units) > 0 && ((long) this.units) < long.MaxValue) {
             return true;
         } else {
             return false;
@@ -76,7 +76,7 @@ public class Money
 
     public virtual void multiply(float? multiplier)
     {
-        this.units = ((long) ((long) this.units) * ((float) multiplier));
+        this.units = global::java.lang.JavaNumber.longValue(((long) this.units) * ((float) multiplier));
     }
 
     public virtual void multiply(int multiplier)
@@ -114,8 +114,8 @@ public class Money
             dollarStr = new string((usDollarStr.Substring(0, (index) - (0))).ToCharArray());
             centsStr = new string((usDollarStr.Substring(index + 1)).ToCharArray());
         }
-        localUnit = ((long) ((long) dollarStr) * 100);
-        localUnit += ((long) centsStr);
+        localUnit = global::java.lang.JavaNumber.longValue(global::java.lang.JavaNumber.longValue(long.Parse(dollarStr)) * 100);
+        localUnit += global::java.lang.JavaNumber.longValue(long.Parse(centsStr));
         return localUnit;
     }
 

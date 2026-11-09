@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Anchor = org.allbinary.graphics.Anchor;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
@@ -46,14 +46,14 @@ public class HighScoresPaintable : Paintable, ColorChangeListener, UpdateMyFontI
         this.myFontProcessor = new UpdateMyFontProcessor(this);
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.charHeight = font.getHeight();
         this.myFontProcessor = MyFontProcessor.getInstance();
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         ColorChangeEvent colorChangeEvent = ((ColorChangeEvent) eventObject);
         this.basicColor = colorChangeEvent.getBasicColorP();
@@ -64,7 +64,7 @@ public class HighScoresPaintable : Paintable, ColorChangeListener, UpdateMyFontI
         this.myFontProcessor.process(graphics);
         int width = this.displayInfoSingleton.getLastWidth();
         int height = this.displayInfoSingleton.getLastHeight();
-        graphics.setColor(((int) this.getBasicColorP()));
+        graphics.setColor(this.getBasicColorP().intValue());
         string heading = this.highScores.getHeading();
         int topScoresWidth = (graphics.getFont().stringWidth(heading) >> 1);
         int charHeight = this.charHeight;

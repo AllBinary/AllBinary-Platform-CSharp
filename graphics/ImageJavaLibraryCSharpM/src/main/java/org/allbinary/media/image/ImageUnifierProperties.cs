@@ -30,12 +30,12 @@ public class ImageUnifierProperties
 
     public virtual int getWidth()
     {
-        return ((int) this.getColumns()) * ((int) this.getImageUnifierCell().getWidth());
+        return ((int) this.getColumns()) * global::java.lang.JavaNumber.intValue(this.getImageUnifierCell().getWidth());
     }
 
     public virtual int getHeight()
     {
-        return ((int) this.getRows()) * ((int) this.getImageUnifierCell().getHeight());
+        return ((int) this.getRows()) * global::java.lang.JavaNumber.intValue(this.getImageUnifierCell().getHeight());
     }
 
     public virtual int? getRows()

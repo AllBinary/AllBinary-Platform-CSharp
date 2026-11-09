@@ -39,7 +39,7 @@ public class XmlRpcRemoteLogClient : XmlRpcAbeClient
     }
 
     // throws Exception
-    public virtual object get(object anyType)
+    public override object get(object anyType)
     {
         try {
             BasicArrayList param = new BasicArrayListD();
@@ -54,7 +54,7 @@ public class XmlRpcRemoteLogClient : XmlRpcAbeClient
             object result = xmlRpcClient.execute(this.getRemoteMethod(), param, this.noCrypt);
             Console.WriteLine(CommonLabels.getInstance().RESULT_ + CommonSeps.getInstance().NEW_LINE + result.ToString());
             return result;
-        } catch (IOException e) {
+        } catch (System.IO.IOException e) {
             Console.WriteLine("IOException Trying Other Servers");
             if (!e.Message.StartsWith(HOST_NOT_RESOLVED)) {
                 return this.tryAnother(anyType);

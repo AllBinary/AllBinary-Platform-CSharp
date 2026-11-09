@@ -41,8 +41,8 @@
     <ProjectReference Include="..\LogJ2SEJavaLibraryCSharpM\LogJ2SEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\replace_these_stub_projects\allbinary_src\J2MEOnlyJavaLibraryCSharpM\J2MEOnlyJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\NullInitInfoJavaLibraryCSharpM\NullInitInfoJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/TsUtil is also in a nearer dependency -->
-    <ProjectReference Include="..\..\j2me\J2SEForJ2MEJavaLibraryCSharpM\J2SEForJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="J2SEForJ2MEJavaLibraryCSharp" />
+    <!-- org/allbinary/TsUtil is also in a nearer dependency but is not used -->
+    <ProjectReference Include="..\..\j2me\J2SEForJ2MEJavaLibraryCSharpM\J2SEForJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\logging\LogConfigTypeThickClientJavaLibraryCSharpM\LogConfigTypeThickClientJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\TokenizerJavaLibraryCSharpM\TokenizerJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\security\BasicSecurityJavaLibraryCSharpM\BasicSecurityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -68,8 +68,7 @@
     <ProjectReference Include="..\..\j2me\NullJ2MELibraryCSharpM\NullJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\licensing\ClientInfoBaseJavaLibraryCSharpM\ClientInfoBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\media\sound\SoundJ2MELibraryCSharpM\SoundJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/math/PositionStrings is also in a nearer dependency -->
-    <ProjectReference Include="..\..\j2me\lib\TrigBaseLibraryCSharpM\TrigBaseLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="TrigBaseLibraryCSharp" />
+    <ProjectReference Include="..\..\j2me\lib\TrigBaseLibraryCSharpM\TrigBaseLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\time\TimeJavaLibraryCSharpM\TimeJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\statistics\ApplicationStatisticsJavaLibraryCSharpM\ApplicationStatisticsJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\J2MEColorJavaLibraryCSharpM\J2MEColorJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

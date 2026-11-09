@@ -69,7 +69,7 @@ public class BasicConstantVelocityMovement : Movement, VelocityInterfaceComposit
         this.velocityProperties.zero();
     }
 
-    public override BasicVelocityProperties getVelocityProperties()
+    public virtual BasicVelocityProperties getVelocityProperties()
     {
         return this.velocityProperties;
     }
@@ -79,12 +79,12 @@ public class BasicConstantVelocityMovement : Movement, VelocityInterfaceComposit
         this.velocityProperties = velocityProperties;
     }
 
-    protected virtual void setSpeedBasicDecimal(BasicDecimal speedBasicDecimal)
+    public virtual void setSpeedBasicDecimal(BasicDecimal speedBasicDecimal)
     {
         this.speedBasicDecimal = speedBasicDecimal;
     }
 
-    protected virtual BasicDecimal getSpeedBasicDecimal()
+    public virtual BasicDecimal getSpeedBasicDecimal()
     {
         return this.speedBasicDecimal;
     }

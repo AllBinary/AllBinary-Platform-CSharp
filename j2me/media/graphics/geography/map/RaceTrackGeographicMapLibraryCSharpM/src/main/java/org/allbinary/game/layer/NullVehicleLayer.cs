@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using RotationAnimation = org.allbinary.animation.RotationAnimation;
 using Group = org.allbinary.game.identification.Group;
 using BasicDecimal = org.allbinary.logic.math.BasicDecimal;

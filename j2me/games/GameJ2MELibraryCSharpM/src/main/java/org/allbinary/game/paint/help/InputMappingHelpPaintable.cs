@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using GameKey = org.allbinary.game.input.GameKey;
 using GameKeyFactory = org.allbinary.game.input.GameKeyFactory;
 using Input = org.allbinary.game.input.Input;
@@ -40,9 +42,9 @@ namespace org.allbinary.game.paint.help;
 
 public class InputMappingHelpPaintable : HelpPaintable
 {
-    private static readonly string AND = " and ";
-    private static readonly string SEP = ", ";
-    private static readonly string MORE_THAN_TWO_IN_LIST_AND = ", and ";
+    private const string AND = " and ";
+    private const string SEP = ", ";
+    private const string MORE_THAN_TWO_IN_LIST_AND = ", and ";
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     public readonly CommonSeps commonSeps = CommonSeps.getInstance();
@@ -57,17 +59,25 @@ public class InputMappingHelpPaintable : HelpPaintable
     private BasicColor selectedBasicColor = null;
     private class UpdateMyFontProperties
     {
+        private readonly InputMappingHelpPaintable outer;
+
         public string[] actionStringArray = StringUtil.getInstance().getArrayInstance();
         public int[] keymappingBeginWidthArray = NullUtil.getInstance().NULL_INT_ARRAY;
         public int[] actionStringDeltaXArray = NullUtil.getInstance().NULL_INT_ARRAY;
         public int[][] inputDeltaXArray = NullUtil.getInstance().NULL_INT_ARRAY_ARRAY;
-        public string[][] sepArray = System.Linq.Enumerable.Range(0, 0).Select(_ => new string[0]).ToArray();
+        public string[][] sepArray = StringUtil.getInstance().ONE_EMPTY_STRING_ARRAY_OF_ARRAYS;
         public int[][] sepWidthArray = NullUtil.getInstance().NULL_INT_ARRAY_ARRAY;
         public int charHeight = 0;
+        public UpdateMyFontProperties(InputMappingHelpPaintable outer)
+        {
+            this.outer = outer;
+        }
+
     }
-    private UpdateMyFontProperties updateMyFontProperties = new UpdateMyFontProperties();
+    private UpdateMyFontProperties updateMyFontProperties;
     public InputMappingHelpPaintable(GameInputMapping[] gameInputMappingArray, BasicColor backgroundBasicColor, BasicColor basicColor) : base("Input Mapping", backgroundBasicColor, basicColor)
     {
+        this.updateMyFontProperties = new UpdateMyFontProperties(this);
         // base("Input Mapping", backgroundBasicColor, basicColor) is called from the constructor declaration
         this.gameInputMappingArray = gameInputMappingArray;
         this.update(this.NONE, this.NONE);
@@ -81,7 +91,7 @@ public class InputMappingHelpPaintable : HelpPaintable
     public override void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
-        UpdateMyFontProperties updateMyFontProperties = new UpdateMyFontProperties();
+        UpdateMyFontProperties updateMyFontProperties = new UpdateMyFontProperties(this);
         updateMyFontProperties.charHeight = font.getHeight();
         StringMaker stringMaker = new StringMaker();
         string[] inputInfo = this.inputInfo;
@@ -224,13 +234,13 @@ public class InputMappingHelpPaintable : HelpPaintable
             list = this.keyMappingArray[index];
             size2 = list.size();
             beginWidth = this.updateMyFontProperties.keymappingBeginWidthArray[index];
-            graphics.setColor(((int) this.actionBasicColor[index]));
+            graphics.setColor(global::java.lang.JavaNumber.intValue(this.actionBasicColor[index]));
             actionString = this.updateMyFontProperties.actionStringArray[index];
             graphics.drawString(actionString, halfWidth - beginWidth + deltaX, y, this.anchor);
             deltaX += this.updateMyFontProperties.actionStringDeltaXArray[index];
             for (int index2 = 0; index2 < size2; index2++) {
                 input = ((Input) list.objectArray[index2]);
-                graphics.setColor(((int) this.inputBasicColorArray[index][index2]));
+                graphics.setColor(global::java.lang.JavaNumber.intValue(this.inputBasicColorArray[index][index2]));
                 graphics.drawString(input.getName(), halfWidth - beginWidth + deltaX, y, this.anchor);
                 deltaX += this.updateMyFontProperties.inputDeltaXArray[index][index2];
                 sep = this.updateMyFontProperties.sepArray[index][index2];

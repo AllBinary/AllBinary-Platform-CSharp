@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using FontDebugFactory = org.allbinary.graphics.font.FontDebugFactory;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
@@ -56,6 +56,11 @@ public class CustomTextAnimation : TextAnimation, TextInterface
         this.font = Font.getFont(Font.FACE_SYSTEM, Font.STYLE_PLAIN, ((int) (((float) this.fontSize) * scaleX)));
     }
 
+    public override void setTextWithOnMeasure(string text, TextChangeListener textChangeListener)
+    {
+        base.setTextWithOnMeasure(text, textChangeListener);
+    }
+
     public override void setText(string text)
     {
         if (this.lastText != text) {
@@ -65,7 +70,7 @@ public class CustomTextAnimation : TextAnimation, TextInterface
         }
     }
 
-    public override string getText()
+    public virtual string getText()
     {
         return this.lastText;
     }

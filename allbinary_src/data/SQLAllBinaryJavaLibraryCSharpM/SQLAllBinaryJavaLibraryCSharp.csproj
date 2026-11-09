@@ -42,8 +42,8 @@
     <ProjectReference Include="..\..\logging\LogConfigTypeFreeblisketJavaLibraryCSharpM\LogConfigTypeFreeblisketJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\logic\BasePreloaderJ2MEJavaLibraryCSharpM\BasePreloaderJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\PreLoaderJavaLibraryCSharpM\PreLoaderJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/logic/communication/log/config/type/LogConfigType is also in a nearer dependency -->
-    <ProjectReference Include="..\..\logging\BasicLogConfigTypeJavaLibraryCSharpM\BasicLogConfigTypeJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="BasicLogConfigTypeJavaLibraryCSharp" />
+    <!-- org/allbinary/logic/communication/log/config/type/LogConfigType is also in a nearer dependency but is not used -->
+    <ProjectReference Include="..\..\logging\BasicLogConfigTypeJavaLibraryCSharpM\BasicLogConfigTypeJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\DataJavaLibraryCSharpM\DataJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\JavaUtilLibraryCSharpM\JavaUtilLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\DataTableInterfacesCSharpM\DataTableInterfacesCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using File = java.io.File;
+using File = java.io.File;
 //using java.util;
 //using JAXBContext = javax.xml.bind.JAXBContext;
 //using Marshaller = javax.xml.bind.Marshaller;
@@ -41,7 +41,7 @@ namespace org.allbinary.input.automation.configuration;
 public class InputAutomationConfiguration
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private static readonly string FILENAME = "InputAutomationConfig.xml";
+    private const string FILENAME = "InputAutomationConfig.xml";
     private bool installed = false;
     private List<InputAutomationModuleConfiguration> inputAutomationModuleConfigurationList = null;
     public InputAutomationConfiguration()

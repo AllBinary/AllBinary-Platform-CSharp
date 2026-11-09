@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Command = javax.microedition.lcdui.Command;
+using Command = javax.microedition.lcdui.Command;
 using Notification = android.app.Notification;
 using NotificationManager = android.app.NotificationManager;
 using PendingIntent = android.app.PendingIntent;

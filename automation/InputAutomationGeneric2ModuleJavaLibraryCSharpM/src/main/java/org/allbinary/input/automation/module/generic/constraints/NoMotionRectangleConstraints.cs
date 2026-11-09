@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 using MotionRectangleConstraints = org.allbinary.input.automation.module.MotionRectangleConstraints;
 
@@ -32,7 +32,7 @@ public class NoMotionRectangleConstraints : MotionRectangleConstraints
         this.setMaxMotionRectangles(int.MaxValue);
     }
 
-    public virtual bool isValid(long? frame, BufferedImage bufferedImage, Rectangle rectangle)
+    public override bool isValid(long? frame, BufferedImage bufferedImage, Rectangle rectangle)
     {
         return true;
     }

@@ -25,9 +25,9 @@ public class RequestData
     {
     }
 
-    public static readonly string REQUEST = "REQUESTDATA_REQUEST";
-    public static readonly string PARAMETER = "REQUESTDATA_PARAMETER";
-    public static readonly string VIEWS = "REQUESTDATA_VIEWS";
-    public static readonly string VISITORS = "REQUESTDATA_VISITORS";
+    public const string REQUEST = "REQUESTDATA_REQUEST";
+    public const string PARAMETER = "REQUESTDATA_PARAMETER";
+    public const string VIEWS = "REQUESTDATA_VIEWS";
+    public const string VISITORS = "REQUESTDATA_VISITORS";
 }
 

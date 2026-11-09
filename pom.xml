@@ -35,14 +35,16 @@
         <module>../working_thirdpartycsharp/embedded/j2me/microemulator/2_0_4/microemu-cldcCSharp</module>
         <module>../working_thirdpartycsharp/embedded/j2me/microemulator/2_0_4/microemu-midpCSharp</module>
         <module>../working_thirdpartycsharp/embedded/j2me/microemulator/2_0_4/microemu-extensions/microemu-jsr-135CSharp</module>
+        <!-- Hand written SWT stub (org.eclipse.swt.widgets.Display) for SWTJavaLibraryCSharp -->
+        <module>../working_thirdpartycsharp/graphics/swt/org.eclipse.swt.win32.win32.x86_64</module>
         
         <module>./j2me/AllBinaryBaseLibraryPOCSharpM</module>
-        <module>./j2me/AllBinaryJ2MELibraryP</module>
-        <module>./AllBinaryPersistenceLibraryP</module>
+        <module>./j2me/AllBinaryJ2MELibraryCSharpP</module>
+        <module>./AllBinaryPersistenceLibraryCSharpP</module>
 
-        <!--<module>./automation/InputAutomationToolsP</module>-->
-        <module>./graphics/GraphicsToolsP</module>
-        <!--<module>./allbinary_src/FreeblisketJavaLibraryP</module>-->
+        <!--<module>./automation/InputAutomationToolsCSharpP</module>-->
+        <module>./graphics/GraphicsToolsCSharpP</module>
+        <!--<module>./allbinary_src/FreeblisketJavaLibraryCSharpP</module>-->
         <module>./j2me/games/platform/AllBinaryOnAllPlatformsJavaLibraryP</module>
 
         <!--

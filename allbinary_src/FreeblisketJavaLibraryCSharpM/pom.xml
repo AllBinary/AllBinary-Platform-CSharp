@@ -267,7 +267,7 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-pluginCSharp</artifactId>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <!-- 
                 <version>2.5.1</version>
@@ -298,7 +298,7 @@
             </plugin>
 
             <plugin>
-                <artifactId>maven-assembly-pluginCSharp</artifactId>
+                <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
                     <execution>
                         <phase>package</phase>

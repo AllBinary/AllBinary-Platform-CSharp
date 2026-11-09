@@ -101,7 +101,7 @@ public class BasicGeographicMap : SimpleGeographicMap, GeographicMapInterface
     }
 
     // throws Exception
-    public override GeographicMapCellPosition getCellPositionAtXY(int x, int y)
+    public virtual GeographicMapCellPosition getCellPositionAtXY(int x, int y)
     {
         AllBinaryTiledLayer allBinaryTiledLayer = this.getAllBinaryTiledLayer();
         int i_column = this.mathUtil.abs(x / allBinaryTiledLayer.getCellHeight());
@@ -109,7 +109,7 @@ public class BasicGeographicMap : SimpleGeographicMap, GeographicMapInterface
         return this.geographicMapCellPositionFactory.getAt(i_column, i_row);
     }
 
-    public override GeographicMapCellPosition getCellPositionAtXYNoThrow(int x, int y)
+    public virtual GeographicMapCellPosition getCellPositionAtXYNoThrow(int x, int y)
     {
         AllBinaryTiledLayer allBinaryTiledLayer = this.getAllBinaryTiledLayer();
         int i_column = this.mathUtil.abs(x / allBinaryTiledLayer.getCellHeight());
@@ -158,7 +158,7 @@ public class BasicGeographicMap : SimpleGeographicMap, GeographicMapInterface
     }
 
     // throws Exception
-    public override bool getCellPositionsAt(Layer layer, GeographicMapCellPosition[][] currentCellPositionArray, GeographicMapCellPosition[][] cellPositionArray)
+    public virtual bool getCellPositionsAt(Layer layer, GeographicMapCellPosition[][] currentCellPositionArray, GeographicMapCellPosition[][] cellPositionArray)
     {
         bool hasChanged = false;
         int size = cellPositionArray.Length;
@@ -179,18 +179,18 @@ public class BasicGeographicMap : SimpleGeographicMap, GeographicMapInterface
     }
 
     // throws Exception
-    public override GeographicMapCellType getCellTypeAtXY(int x, int y)
+    public virtual GeographicMapCellType getCellTypeAtXY(int x, int y)
     {
         GeographicMapCellPosition cellPosition = this.getCellPositionAtXY(x, y);
         return this.getCellTypeAt(cellPosition);
     }
 
-    public override BasicGeographicMapCellPositionFactory getGeographicMapCellPositionFactory()
+    public virtual BasicGeographicMapCellPositionFactory getGeographicMapCellPositionFactory()
     {
         return this.geographicMapCellPositionFactory;
     }
 
-    public override GeographicMapCellPositionFactoryInterface getGeographicMapCellPositionFactoryInterface()
+    public virtual GeographicMapCellPositionFactoryInterface getGeographicMapCellPositionFactoryInterface()
     {
         return this.geographicMapCellPositionFactoryInterface;
     }
@@ -198,6 +198,47 @@ public class BasicGeographicMap : SimpleGeographicMap, GeographicMapInterface
     public virtual GeographicMapCellTypeFactory getGeographicMapCellTypeFactory()
     {
         return this.geographicMapCellTypeFactory;
+    }
+
+    public override int? getId()
+    {
+        return base.getId();
+    }
+
+    public override string getName()
+    {
+        return base.getName();
+    }
+
+    public override void reset()
+    {
+        base.reset();
+    }
+
+    public override AllBinaryTiledLayer getAllBinaryTiledLayer()
+    {
+        return base.getAllBinaryTiledLayer();
+    }
+
+    public override int getCellTypeFromMapCellTypeInt(int cellTypeId)
+    {
+        return base.getCellTypeFromMapCellTypeInt(cellTypeId);
+    }
+
+    // throws Exception
+    public override GeographicMapCellType getCellTypeAt(GeographicMapCellPosition cellPosition)
+    {
+        return base.getCellTypeAt(cellPosition);
+    }
+
+    public override BasicColor getForegroundBasicColor()
+    {
+        return base.getForegroundBasicColor();
+    }
+
+    public override BasicColor getBackgroundBasicColor()
+    {
+        return base.getBackgroundBasicColor();
     }
 
 }

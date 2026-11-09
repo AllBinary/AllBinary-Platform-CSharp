@@ -41,11 +41,14 @@
     <ProjectReference Include="..\..\..\allbinary_src\LogJ2MEJavaLibraryCSharpM\LogJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\J2MEWindowingJavaLibraryCSharpM\J2MEWindowingJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\allbinary_src\hardware\NoSystemJavaLibraryCSharpM\NoSystemJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\licensing\GameLicensingNullJavaLibraryCSharpM\GameLicensingNullJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\J2MEForJ2MEJavaLibraryCSharpM\J2MEForJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/graphics/threed/SWTJOGLProcessor is also in a nearer dependency -->
-    <ProjectReference Include="..\..\..\graphics\opengl\OpenGLNoneJavaLibraryCSharpM\OpenGLNoneJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="OpenGLNoneJavaLibraryCSharp" />
-    <ProjectReference Include="..\..\..\graphics\opengl\OpenGLNoneOtherJavaLibraryCSharpM\OpenGLNoneOtherJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <!-- org/allbinary/logic/system/security/licensing/LockedUtil is also in GameLicensingOnlyDemoJavaLibraryCSharp, the shared classes use the alias -->
+    <ProjectReference Include="..\licensing\GameLicensingNullJavaLibraryCSharpM\GameLicensingNullJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="global,GameLicensingNullJavaLibraryCSharp" />
+    <!-- org/allbinary/game/paint/OwnershipPaintable is also in J2SEForJ2MEJavaLibraryCSharp that the project needs -->
+    <ProjectReference Include="..\..\J2MEForJ2MEJavaLibraryCSharpM\J2MEForJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="J2MEForJ2MEJavaLibraryCSharp" />
+    <!-- org/allbinary/graphics/threed/SWTJOGLProcessor is also in a nearer dependency but is not used -->
+    <ProjectReference Include="..\..\..\graphics\opengl\OpenGLNoneJavaLibraryCSharpM\OpenGLNoneJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <!-- org/allbinary/image/opengles/OpenGLSurfaceChangedInterface is also in OpenGLESBaseJavaLibraryCSharp, the shared classes use the alias -->
+    <ProjectReference Include="..\..\..\graphics\opengl\OpenGLNoneOtherJavaLibraryCSharpM\OpenGLNoneOtherJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="global,OpenGLNoneOtherJavaLibraryCSharp" />
     <ProjectReference Include="..\..\media\graphics\FormJMEJavaLibraryCSharpM\FormJMEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\business\advertisement\AdvertisementClientNoneJavaLibraryCSharpM\AdvertisementClientNoneJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\ScreenCaptureNoneJavaLibraryCSharpM\ScreenCaptureNoneJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -56,18 +59,17 @@
     <ProjectReference Include="..\GameScoresBaseJ2MELibraryCSharpM\GameScoresBaseJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\GameConfigurationJ2MEJavaLibraryCSharpM\GameConfigurationJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\GameNotificationJavaLibraryCSharpM\GameNotificationJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/logic/system/security/licensing/LockedUtil is also in a nearer dependency -->
-    <ProjectReference Include="..\licensing\GameLicensingOnlyDemoJavaLibraryCSharpM\GameLicensingOnlyDemoJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="GameLicensingOnlyDemoJavaLibraryCSharp" />
+    <ProjectReference Include="..\licensing\GameLicensingOnlyDemoJavaLibraryCSharpM\GameLicensingOnlyDemoJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\input\platform\pc\GameInputPCJavaLibraryCSharpM\GameInputPCJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\input\platform\pc\GameInputPCMotionJavaLibraryCSharpM\GameInputPCMotionJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\input\NoSensorJavaLibraryCSharpM\NoSensorJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\FullScreenNoneJavaLibraryCSharpM\FullScreenNoneJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\input\TouchButtonBaseJavaLibraryCSharpM\TouchButtonBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\input\NoTouchButtonJavaLibraryCSharpM\NoTouchButtonJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\statistics\ApplicationStatisticsJ2MELibraryCSharpM\ApplicationStatisticsJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\media\sound\NotDeviceSpecificNoMediaMIDP1LibraryCSharpM\NotDeviceSpecificNoMediaMIDP1LibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/game/paint/OwnershipPaintable is also in a nearer dependency -->
-    <ProjectReference Include="..\..\J2SEForJ2MEJavaLibraryCSharpM\J2SEForJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="J2SEForJ2MEJavaLibraryCSharp" />
-    <!-- org/allbinary/image/opengles/OpenGLSurfaceChangedInterface is also in a nearer dependency -->
-    <ProjectReference Include="..\..\..\graphics\opengl\OpenGLESBaseJavaLibraryCSharpM\OpenGLESBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="OpenGLESBaseJavaLibraryCSharp" />
+    <ProjectReference Include="..\..\J2SEForJ2MEJavaLibraryCSharpM\J2SEForJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\graphics\opengl\OpenGLESBaseJavaLibraryCSharpM\OpenGLESBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\GameInputPersistanceLibraryCSharpM\GameInputPersistanceLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\input\AllBinaryGyroSensorJavaLibraryCSharpM\AllBinaryGyroSensorJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\graphics\opengl\NoSWTJavaLibraryCSharpM\NoSWTJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -95,7 +97,7 @@
     <ProjectReference Include="..\GameResourceJavaLibraryCSharpM\GameResourceJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\media\graphics\animation\GameAnimationJavaLibraryCSharpM\GameAnimationJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\media\MediaDataCSharpM\MediaDataCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\allbinary_custom_android_version\microemulator\microemu-midp\microemu-midpCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\2_0_4\microemu-midpCSharp\microemu-midp-for-polyglotCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\allbinary_src\LogCSharpM\LogCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\CommonJavaLibraryCSharpM\CommonJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\J2MEExceptionLibraryCSharpM\J2MEExceptionLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -111,6 +113,10 @@
     <ProjectReference Include="..\..\media\graphics\ImageCacheBaseJ2MEJavaLibraryCSharpM\ImageCacheBaseJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\allbinary_src\licensing\ClientInfoBaseJavaLibraryCSharpM\ClientInfoBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\store\NoThirdPartyStoreJavaLibraryCSharpM\NoThirdPartyStoreJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\input\platform\pc\GameInputPCBaseJavaLibraryCSharpM\GameInputPCBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <!-- org/allbinary/input/motion/button/CancelTouchButtonInputFactory is also in a nearer dependency -->
+    <ProjectReference Include="..\..\input\TouchButtonJavaLibraryCSharpM\TouchButtonJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="TouchButtonJavaLibraryCSharp" />
+    <ProjectReference Include="..\..\input\MotionGestureBaseJavaLibraryCSharpM\MotionGestureBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\media\sound\SoundJ2MELibraryCSharpM\SoundJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\media\sound\NoPlayerJavaLibraryCSharpM\NoPlayerJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\lib\VectorThreeDimensionalLibraryCSharpM\VectorThreeDimensionalLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -120,17 +126,18 @@
     <ProjectReference Include="..\..\..\allbinary_src\allbinary_src_designpatterns_srcCSharpM\allbinary_src_designpatterns_srcCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\media\graphics\geography\map\GraphBaseJavaLibraryCSharpM\GraphBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\ScreenCaptureJavaLibraryCSharpM\ScreenCaptureJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/math/PositionStrings is also in a nearer dependency -->
-    <ProjectReference Include="..\..\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="BaseMathLibraryCSharp" />
+    <ProjectReference Include="..\..\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\media\graphics\geography\map\LayerPlacementLibraryCSharpM\LayerPlacementLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\media\graphics\animation\RotationAnimationJavaLibraryCSharpM\RotationAnimationJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\allbinary_custom_android_version\microemulator\microemu-cldc\microemu-cldcCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\2_0_4\microemu-cldcCSharp\microemu-cldc-for-polyglotCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\replace_these_stub_projects\allbinary_src\J2MEJsInteropCompatibilityJavaLibraryCSharpM\J2MEJsInteropCompatibilityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\media\graphics\FormValidationJavaLibraryCSharpM\FormValidationJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\media\graphics\FormJavaLibraryCSharpM\FormJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\allbinary_src\hardware\BaseSystemJavaLibraryCSharpM\BaseSystemJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <!-- org/allbinary/logic/system/security/licensing/LockableFeatureFactory is also in a nearer dependency -->
     <ProjectReference Include="..\..\..\store\ThirdPartyStoreJavaLibraryCSharpM\ThirdPartyStoreJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="ThirdPartyStoreJavaLibraryCSharp" />
+    <!-- org/allbinary/input/motion/button/TouchScreenFactory is also in a nearer dependency -->
+    <ProjectReference Include="..\..\input\TouchScreenJavaLibraryCSharpM\TouchScreenJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="TouchScreenJavaLibraryCSharp" />
     <ProjectReference Include="..\..\media\sound\BasicPlayerJavaLibraryCSharpM\BasicPlayerJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\allbinary_src\licensing\ClientInfoLicensingJavaLibraryCSharpM\ClientInfoLicensingJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
   </ItemGroup>

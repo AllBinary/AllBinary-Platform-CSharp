@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using CommonStrings = org.allbinary.@string.CommonStrings;
@@ -250,7 +250,7 @@ public class GeographicMapCellHistory : UpdateMyFontInterface
         this.animation.paintXY(graphics, x + this.halfWidth, y + (height));
     }
 
-    private readonly int RED = ((int) BasicColorFactory.getInstance().RED);
+    private readonly int RED = global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().RED);
     public virtual void paintNotVisited(Graphics graphics, BasicGeographicMap geographicMapInterface)
     {
         try {

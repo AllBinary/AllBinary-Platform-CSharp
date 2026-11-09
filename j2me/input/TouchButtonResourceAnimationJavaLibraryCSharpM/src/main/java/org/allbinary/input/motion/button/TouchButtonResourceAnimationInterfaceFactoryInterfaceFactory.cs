@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using AnimationBehaviorFactory = org.allbinary.animation.AnimationBehaviorFactory;
 using NullAnimationFactory = org.allbinary.animation.NullAnimationFactory;
 using OneRowSpriteIndexedAnimationFactory = org.allbinary.animation.image.sprite.OneRowSpriteIndexedAnimationFactory;

@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using Features = org.allbinary.game.configuration.feature.Features;
 using InputFeatureFactory = org.allbinary.game.configuration.feature.InputFeatureFactory;

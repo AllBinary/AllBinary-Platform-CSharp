@@ -101,7 +101,7 @@ public class KeyboardActionScriptInputJPanel : javax.swing.JPanel
     {
         this.updateInputType();
         this.updateKeys();
-        this.keyActionScriptInputInterface.setTime(((int) (this.timeJTextField.getText()).ToString()));
+        this.keyActionScriptInputInterface.setTime(global::java.lang.JavaNumber.intValue(int.Parse((this.timeJTextField.getText()).ToString())));
         this.keyActionScriptInputInterface.log();
     }
 

@@ -41,8 +41,8 @@
     <ProjectReference Include="..\..\allbinary_src\LogJ2SEJavaLibraryCSharpM\LogJ2SEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\J2SEForJ2MEJavaLibraryCSharpM\J2SEForJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\allbinary_src\hardware\PersonalComputerSystemJavaLibraryCSharpM\PersonalComputerSystemJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/logic/system/hardware/HardwareFactory is also in a nearer dependency -->
-    <ProjectReference Include="..\..\allbinary_src\hardware\NoHardwareJavaLibraryCSharpM\NoHardwareJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="NoHardwareJavaLibraryCSharp" />
+    <!-- org/allbinary/logic/system/hardware/HardwareFactory is also in a nearer dependency but is not used -->
+    <ProjectReference Include="..\..\allbinary_src\hardware\NoHardwareJavaLibraryCSharpM\NoHardwareJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\allbinary_src\logging\LogConfigTypeGameClientJavaLibraryCSharpM\LogConfigTypeGameClientJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\allbinary_src\licensing\HardCodedLicenseInitInfoJavaLibraryCSharpM\HardCodedLicenseInitInfoJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\allbinary_src\cache\AllBinaryCacheLibraryCSharpM\AllBinaryCacheLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -87,16 +87,15 @@
     <ProjectReference Include="..\..\j2me\EventJ2MELibraryCSharpM\EventJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\media\graphics\geography\map\GraphBaseJavaLibraryCSharpM\GraphBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\allbinary_src\hardware\BaseSystemJavaLibraryCSharpM\BaseSystemJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/math/PositionStrings is also in a nearer dependency -->
-    <ProjectReference Include="..\..\j2me\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="BaseMathLibraryCSharp" />
+    <ProjectReference Include="..\..\j2me\lib\BaseMathLibraryCSharpM\BaseMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\allbinary_src\logic\BasePreloaderFileJavaLibraryCSharpM\BasePreloaderFileJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\allbinary_src\TokenizerJavaLibraryCSharpM\TokenizerJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\allbinary_src\security\BasicSecurityJavaLibraryCSharpM\BasicSecurityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\allbinary_src\licensing\LicenseClientJavaLibraryCSharpM\LicenseClientJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\media\graphics\animation\vector\VectorAnimationJavaLibraryCSharpM\VectorAnimationJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\graphics\AllBinaryGraphicsUserInterfaceJavaLibraryCSharpM\AllBinaryGraphicsUserInterfaceJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <!-- org/allbinary/logic/io/file/AbFileSystem is also in a nearer dependency -->
-    <ProjectReference Include="..\..\allbinary_src\logic\data\file\FileJ2SEJavaLibraryCSharpM\FileJ2SEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="FileJ2SEJavaLibraryCSharp" />
+    <!-- org/allbinary/logic/io/file/AbFileSystem is also in a nearer dependency but is not used -->
+    <ProjectReference Include="..\..\allbinary_src\logic\data\file\FileJ2SEJavaLibraryCSharpM\FileJ2SEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\j2me\lib\TrigJ2MELibraryCSharpM\TrigJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\allbinary_src\logging\GUILoggingCSharpM\GUILoggingCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\allbinary_src\DocumentObjectModelJavaLibraryCSharpM\DocumentObjectModelJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

@@ -1,0 +1,3 @@
+org.allbinary.PostGameCommandFactory=J2MEForJ2MEJavaLibraryCSharp
+org.allbinary.game.displayable.canvas.NullDisplayable=J2MEForJ2MEJavaLibraryCSharp
+org.allbinary.persistance.PlatformRecordIdUtil=J2MEForJ2MEJavaLibraryCSharp

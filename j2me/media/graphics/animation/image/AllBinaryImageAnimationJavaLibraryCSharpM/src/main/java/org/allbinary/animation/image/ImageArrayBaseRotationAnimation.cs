@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
 using DisposalUtil = org.allbinary.DisposalUtil;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using RotationAnimation = org.allbinary.animation.RotationAnimation;
@@ -94,7 +94,7 @@ public class ImageArrayBaseRotationAnimation : RotationAnimation
         return PrimitiveIntUtil.getArrayInstance();
     }
 
-    protected virtual void setImageArray(Image[] imageArray)
+    public virtual void setImageArray(Image[] imageArray)
     {
         this.imageArray = imageArray;
         this.totalFrames = imageArray.Length;
@@ -112,27 +112,27 @@ public class ImageArrayBaseRotationAnimation : RotationAnimation
     {
         DisposalUtil disposalUtil = DisposalUtil.getInstance();
         int size2 = this.imageArray.Length;
-        for (int index = 0; index < size2; index++) {
-            disposalUtil.disposeImage(this.imageArray[index]);
+        for (int index_0 = 0; index_0 < size2; index_0++) {
+            disposalUtil.disposeImage(this.imageArray[index_0]);
         }
         int size = this.originalImageArray.Length;
-        for (int index = 0; index < size; index++) {
-            disposalUtil.disposeImage(this.originalImageArray[index]);
+        for (int index_1 = 0; index_1 < size; index_1++) {
+            disposalUtil.disposeImage(this.originalImageArray[index_1]);
         }
         disposalUtil.disposeImage(this.currentImage);
     }
 
     // throws Throwable
-    protected override void finalize()
+    public virtual void finalize()
     {
         DisposalUtil disposalUtil = DisposalUtil.getInstance();
         int size2 = this.imageArray.Length;
-        for (int index = 0; index < size2; index++) {
-            disposalUtil.disposeImage(this.imageArray[index]);
+        for (int index_2 = 0; index_2 < size2; index_2++) {
+            disposalUtil.disposeImage(this.imageArray[index_2]);
         }
         int size = this.originalImageArray.Length;
-        for (int index = 0; index < size; index++) {
-            disposalUtil.disposeImage(this.originalImageArray[index]);
+        for (int index_3 = 0; index_3 < size; index_3++) {
+            disposalUtil.disposeImage(this.originalImageArray[index_3]);
         }
         disposalUtil.disposeImage(this.currentImage);
     }

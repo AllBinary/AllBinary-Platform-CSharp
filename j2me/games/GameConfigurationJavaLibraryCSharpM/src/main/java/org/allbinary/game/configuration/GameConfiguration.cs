@@ -121,7 +121,7 @@ public class GameConfiguration
         stringBuffer.append(" Default: ");
         stringBuffer.appendint(((int) ((int) this.getDefaultValue())));
         stringBuffer.append(" Modifiable: ");
-        stringBuffer.appendboolean(this.isModifiable());
+        stringBuffer.appendboolean(this.isModifiable().Value);
         return stringBuffer.ToString();
     }
 

@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
+using GL = javax.microedition.khronos.opengles.GL;
 
 namespace org.allbinary.image.opengles;
 

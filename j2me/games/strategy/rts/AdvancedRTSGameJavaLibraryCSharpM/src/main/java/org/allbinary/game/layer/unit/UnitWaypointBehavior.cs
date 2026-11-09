@@ -45,8 +45,8 @@ namespace org.allbinary.game.layer.unit;
 
 public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerInterface
 {
-    private static readonly string PATHING = "Pathing";
-    public CommonSeps commonSeps = CommonSeps.getInstance();
+    public readonly CommonSeps commonSeps = CommonSeps.getInstance();
+    private readonly UnitWaypointStrings unitWaypointStrings = UnitWaypointStrings.getInstance();
     private int longWeaponRange = 0;
     private SensorAction sensorAction = SensorActionFactory.getInstance().ATTACK;
     private readonly TimeDelayHelper completeTimeDelayHelper;
@@ -63,7 +63,7 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
     private int currentTargetDistance = int.MaxValue;
     public CollidableDestroyableDamageableLayer currentTargetLayerInterfaceP = CollidableDestroyableDamageableLayer.getNullInstance();
     private bool trackingWaypoint = false;
-    protected UnitWaypointBehavior(UnitLayer associatedAdvancedRTSGameLayer, CollidableDestroyableDamageableLayer fakeWaypoint)
+    public UnitWaypointBehavior(UnitLayer associatedAdvancedRTSGameLayer, CollidableDestroyableDamageableLayer fakeWaypoint)
     {
         this.associatedAdvancedRTSGameLayer = associatedAdvancedRTSGameLayer;
         this.completeTimeDelayHelper = new TimeDelayHelper(30000);
@@ -74,18 +74,18 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
         this.FAKE_WAYPOINT_LAYER = fakeWaypoint;
     }
 
-    protected virtual void initRange(int weaponRange)
+    public virtual void initRange(int weaponRange)
     {
         this.longWeaponRange = weaponRange / 2;
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }
 
     // throws Exception
-    public override void onWaypointEvent(RTSLayerEvent @event)
+    public virtual void onWaypointEvent(RTSLayerEvent @event)
     {
         AdvancedRTSGameLayer advancedRTSGameLayer = ((AdvancedRTSGameLayer) @event.getRtsLayer());
         this.associatedAdvancedRTSGameLayer.waypointLogHelperP.onWaypointEvent(this.associatedAdvancedRTSGameLayer, advancedRTSGameLayer);
@@ -97,7 +97,7 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
     }
 
     // throws Exception
-    protected virtual void addWaypointFromUser(AdvancedRTSGameLayer advancedRTSGameLayer)
+    public virtual void addWaypointFromUser(AdvancedRTSGameLayer advancedRTSGameLayer)
     {
     }
 
@@ -136,7 +136,7 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
         return false;
     }
 
-    protected virtual void move()
+    public virtual void move()
     {
         if (this.isMoving()) {
             this.setMovingFromStopped(false);
@@ -147,7 +147,7 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
     }
 
     // throws Exception
-    protected virtual void setRandomGeographicMapCellHistory(BasicArrayList pathsList)
+    public virtual void setRandomGeographicMapCellHistory(BasicArrayList pathsList)
     {
         int size = pathsList.size();
         this.associatedAdvancedRTSGameLayer.waypointLogHelperP.setRandomGeographicMapCellHistoryList(this.associatedAdvancedRTSGameLayer, pathsList);
@@ -158,11 +158,11 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
     }
 
     // throws Exception
-    protected virtual void setGeographicMapCellHistoryPath(BasicArrayList geographicMapCellPositionBasicArrayList)
+    public virtual void setGeographicMapCellHistoryPath(BasicArrayList geographicMapCellPositionBasicArrayList)
     {
         this.lastPathGeographicMapCellPosition = SimpleGeographicMapCellPositionFactory.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
         if (this.associatedAdvancedRTSGameLayer.showMoreCaptionStates) {
-            this.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper().update(UnitWaypointBehavior.PATHING, BasicColorFactory.getInstance().GREEN);
+            this.associatedAdvancedRTSGameLayer.getCaptionAnimationHelper().update(this.unitWaypointStrings.PATHING, BasicColorFactory.getInstance().GREEN);
         }
         this.currentGeographicMapCellHistoryP.init();
         this.associatedAdvancedRTSGameLayer.init(this.currentGeographicMapCellHistoryP, geographicMapCellPositionBasicArrayList);
@@ -170,7 +170,7 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
         this.getCompleteTimeDelayHelper().setStartTimeTNT();
     }
 
-    protected virtual bool canInsertWaypoint(int index, CollidableDestroyableDamageableLayer rtsLayer)
+    public virtual bool canInsertWaypoint(int index, CollidableDestroyableDamageableLayer rtsLayer)
     {
         if (this.targetList.size() > 4) {
         } else if (this.targetList.contains(rtsLayer)) {
@@ -186,7 +186,7 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
     }
 
     // throws Exception
-    protected virtual void moveAwayFromBuilding(BuildingLayer buildingLayer)
+    public virtual void moveAwayFromBuilding(BuildingLayer buildingLayer)
     {
         GeographicMapCellPosition geographicMapCellPosition = this.associatedAdvancedRTSGameLayer.getCurrentGeographicMapCellPosition();
         BasicArrayList list = buildingLayer.geographicMapCellPositionAreaBase.getOccupyingGeographicMapCellPositionList();
@@ -238,7 +238,7 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
         return this.movingFromStopped;
     }
 
-    protected virtual void setMovingFromStopped(bool movingFromStopped)
+    public virtual void setMovingFromStopped(bool movingFromStopped)
     {
         this.movingFromStopped = movingFromStopped;
     }
@@ -253,12 +253,12 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
         return this.waypointPathsListP;
     }
 
-    protected virtual bool isMoving()
+    public virtual bool isMoving()
     {
         return this.moving;
     }
 
-    protected virtual void setMoving(bool moving)
+    public virtual void setMoving(bool moving)
     {
         this.moving = moving;
     }
@@ -268,22 +268,22 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
         return this.trackingWaypoint;
     }
 
-    protected virtual BasicArrayList getPossibleTargetList()
+    public virtual BasicArrayList getPossibleTargetList()
     {
         return this.possibleTargetList;
     }
 
-    protected virtual void setLastPathGeographicMapCellPosition(GeographicMapCellPosition lastPathGeographicMapCellPosition)
+    public virtual void setLastPathGeographicMapCellPosition(GeographicMapCellPosition lastPathGeographicMapCellPosition)
     {
         this.lastPathGeographicMapCellPosition = lastPathGeographicMapCellPosition;
     }
 
-    protected virtual GeographicMapCellPosition getLastPathGeographicMapCellPosition()
+    public virtual GeographicMapCellPosition getLastPathGeographicMapCellPosition()
     {
         return this.lastPathGeographicMapCellPosition;
     }
 
-    protected virtual void setCurrentPathGeographicMapCellPosition(GeographicMapCellPosition currentPathGeographicMapCellPosition)
+    public virtual void setCurrentPathGeographicMapCellPosition(GeographicMapCellPosition currentPathGeographicMapCellPosition)
     {
         this.currentPathGeographicMapCellPosition = currentPathGeographicMapCellPosition;
     }
@@ -293,17 +293,17 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
         return this.currentPathGeographicMapCellPosition;
     }
 
-    protected virtual void setSensorAction(SensorAction sensorAction)
+    public virtual void setSensorAction(SensorAction sensorAction)
     {
         this.sensorAction = sensorAction;
     }
 
-    protected virtual SensorAction getSensorAction()
+    public virtual SensorAction getSensorAction()
     {
         return this.sensorAction;
     }
 
-    protected virtual void setCurrentTargetLayerInterface(CollidableDestroyableDamageableLayer currentTargetLayerInterface)
+    public virtual void setCurrentTargetLayerInterface(CollidableDestroyableDamageableLayer currentTargetLayerInterface)
     {
         this.currentTargetLayerInterfaceP = currentTargetLayerInterface;
     }
@@ -313,17 +313,17 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
         return this.currentTargetLayerInterfaceP;
     }
 
-    protected virtual void setCurrentTargetDistance(int currentTargetDistance)
+    public virtual void setCurrentTargetDistance(int currentTargetDistance)
     {
         this.currentTargetDistance = currentTargetDistance;
     }
 
-    protected virtual int getCurrentTargetDistance()
+    public virtual int getCurrentTargetDistance()
     {
         return this.currentTargetDistance;
     }
 
-    protected virtual TimeDelayHelper getCompleteTimeDelayHelper()
+    public virtual TimeDelayHelper getCompleteTimeDelayHelper()
     {
         return this.completeTimeDelayHelper;
     }
@@ -333,7 +333,7 @@ public class UnitWaypointBehavior : WaypointBehaviorBase, WaypointEventListenerI
         return this.currentGeographicMapCellHistoryP;
     }
 
-    protected virtual void setTrackingWaypoint(bool trackingWaypoint)
+    public virtual void setTrackingWaypoint(bool trackingWaypoint)
     {
         this.trackingWaypoint = trackingWaypoint;
     }

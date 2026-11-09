@@ -17,9 +17,9 @@
 using System;
 using System.Linq;
 using ARunnable = org.allbinary.thread.ARunnable;
-//using URI = java.net.URI;
-//using URL = java.net.URL;
-//using Desktop = java.awt.Desktop;
+using URI = java.net.URI;
+using URL = java.net.URL;
+using Desktop = java.awt.Desktop;
 //using java.util;
 //using ImageIcon = javax.swing.ImageIcon;
 //using JDialog = javax.swing.JDialog;
@@ -439,7 +439,7 @@ public class InputAutomationJFrame : javax.swing.JFrame, InputAutomationConfigur
         AppUrlGlobals appUrlGlobals = new AppUrlGlobals();
         appUrlGlobals.setWebappPath("G:/mnt/bc/mydev/work_automation/automation/run/");
         URLGLOBALS.init(appUrlGlobals);
-        WebappClassLoaderInfo.setLoader(appUrlGlobals.GetType().getClassLoader());
+        WebappClassLoaderInfo.setLoader(global::java.lang.ClassLoader.getSystemClassLoader());
         java.awt.EventQueue.invokeLater(new ARunnable()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public virtual void run()

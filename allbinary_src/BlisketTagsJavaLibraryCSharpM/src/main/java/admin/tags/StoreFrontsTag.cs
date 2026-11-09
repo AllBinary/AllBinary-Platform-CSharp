@@ -95,7 +95,7 @@ public class StoreFrontsTag : TableTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             if (this.isEnabled()) {
@@ -106,7 +106,7 @@ public class StoreFrontsTag : TableTag
                     } else if (this.getCommand().compareTo(storeFrontData.INSTALL) == 0) {
                         this.getPropertiesHashMap().put("current", this.getCurrent());
                         this.getPropertiesHashMap().put("total", this.getTotal());
-                        if (((int) this.getCurrent()) == ((int) this.getTotal())) {
+                        if (global::java.lang.JavaNumber.intValue(this.getCurrent()) == global::java.lang.JavaNumber.intValue(this.getTotal())) {
                             return TagSupport.EVAL_BODY_INCLUDE;
                         }
                         this.install();

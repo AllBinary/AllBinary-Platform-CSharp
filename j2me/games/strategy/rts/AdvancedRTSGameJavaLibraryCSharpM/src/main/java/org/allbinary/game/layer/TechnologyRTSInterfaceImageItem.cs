@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
 using ABCustomImageItem = org.allbinary.graphics.form.item.ABCustomImageItem;
 using CharArrayFactory = org.allbinary.logic.java.character.CharArrayFactory;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -55,7 +55,7 @@ public class TechnologyRTSInterfaceImageItem : ABCustomImageItem, UpdateMyFontIn
         this.update();
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         int fontHeight = font.getHeight();

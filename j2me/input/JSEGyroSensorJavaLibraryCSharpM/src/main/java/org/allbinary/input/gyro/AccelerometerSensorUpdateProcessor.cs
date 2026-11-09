@@ -28,7 +28,7 @@ namespace org.allbinary.input.gyro;
 public class AccelerometerSensorUpdateProcessor : Processor
 {
     // throws Exception
-    public virtual void process()
+    public override void process()
     {
         SensorFeatureFactory sensorFeatureFactory = SensorFeatureFactory.getInstance();
         if (Features.getInstance().isFeature(sensorFeatureFactory.ORIENTATION_SENSORS)) {

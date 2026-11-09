@@ -27,7 +27,7 @@ public class NoLicense
     }
 
     // throws Exception
-    public static void init(ClassLoader classLoader, string pathString)
+    public static void init(global::java.lang.ClassLoader classLoader, string pathString)
     {
         Globals.init(classLoader, pathString);
     }

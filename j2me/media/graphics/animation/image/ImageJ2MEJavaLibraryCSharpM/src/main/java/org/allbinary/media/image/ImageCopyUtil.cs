@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using Features = org.allbinary.game.configuration.feature.Features;
 using GameFeatureFactory = org.allbinary.game.configuration.feature.GameFeatureFactory;
 using Anchor = org.allbinary.graphics.Anchor;

@@ -21,10 +21,10 @@ namespace org.allbinary.logic.communication.smtp.configuration.server;
 
 public class EmailServerConfigurationData
 {
-    public static readonly string NAME = "EMAIL_SERVER_CONFIGURATION_NAME";
-    public static readonly string SERVER = "EMAIL_SERVER_CONFIGURATION_SERVER";
-    public static readonly string ACCOUNT = "EMAIL_SERVER_CONFIGURATION_ACCOUNT";
-    public static readonly string PASSWORD = "EMAIL_SERVER_CONFIGURATION_PASSWORD";
+    public const string NAME = "EMAIL_SERVER_CONFIGURATION_NAME";
+    public const string SERVER = "EMAIL_SERVER_CONFIGURATION_SERVER";
+    public const string ACCOUNT = "EMAIL_SERVER_CONFIGURATION_ACCOUNT";
+    public const string PASSWORD = "EMAIL_SERVER_CONFIGURATION_PASSWORD";
     private EmailServerConfigurationData()
     {
     }

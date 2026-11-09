@@ -2,10 +2,10 @@
 
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using GL = javax.microedition.khronos.opengles.GL;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using FontDebugBase = org.allbinary.graphics.font.FontDebugBase;
 using OpenGLSurfaceChangedInterface = org.allbinary.image.opengles.OpenGLSurfaceChangedInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
@@ -24,7 +24,7 @@ public class OpenGLESGraphics : Graphics, OpenGLSurfaceChangedInterface, Graphic
     {
     }
 
-    public override void set(GL gl)
+    public virtual void set(GL gl)
     {
     }
 
@@ -51,7 +51,7 @@ public class OpenGLESGraphics : Graphics, OpenGLSurfaceChangedInterface, Graphic
         return this.gl;
     }
 
-    public override void setFontDebug(Font font, FontDebugBase fontDebug)
+    public virtual void setFontDebug(Font font, FontDebugBase fontDebug)
     {
         throw new SystemException();
     }

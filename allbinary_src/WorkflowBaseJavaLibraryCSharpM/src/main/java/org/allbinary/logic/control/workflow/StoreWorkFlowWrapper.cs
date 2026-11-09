@@ -31,7 +31,7 @@ public class StoreWorkFlowWrapper : WorkFlowWrapper
     }
 
     // throws Exception
-    public virtual string getStoreName()
+    public override string getStoreName()
     {
         try {
             Type helperClass = this.getWorkFlowObject().GetType();

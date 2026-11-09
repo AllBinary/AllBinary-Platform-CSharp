@@ -112,5 +112,11 @@ public class DeleteFileValidationView : DownloadableInventoryItemView, Validatio
         }
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

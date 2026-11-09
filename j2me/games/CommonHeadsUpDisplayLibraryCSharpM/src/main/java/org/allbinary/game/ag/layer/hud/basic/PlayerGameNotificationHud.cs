@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using GameAdStateFactory = org.allbinary.business.advertisement.GameAdStateFactory;
 using Processor = org.allbinary.canvas.Processor;
 using GameAdState = org.allbinary.game.GameAdState;
@@ -51,9 +51,12 @@ public class PlayerGameNotificationHud : GameNotificationHud, UpdateMyFontInterf
     private readonly GameNotification permanentGameNotification = new GameNotification();
     private class SetAndRemoveProcessor : Processor
     {
+        private readonly PlayerGameNotificationHud outer;
+
         private readonly PlayerGameNotificationHud updateMeasurementProcessor;
-        public SetAndRemoveProcessor(PlayerGameNotificationHud updateMeasurementProcessor)
+        public SetAndRemoveProcessor(PlayerGameNotificationHud outer, PlayerGameNotificationHud updateMeasurementProcessor)
         {
+            this.outer = outer;
             this.updateMeasurementProcessor = updateMeasurementProcessor;
         }
 
@@ -66,9 +69,12 @@ public class PlayerGameNotificationHud : GameNotificationHud, UpdateMyFontInterf
     }
     private class NextUnremoveableProcessor : Processor
     {
+        private readonly PlayerGameNotificationHud outer;
+
         private readonly PlayerGameNotificationHud updateMeasurementProcessor;
-        public NextUnremoveableProcessor(PlayerGameNotificationHud updateMeasurementProcessor)
+        public NextUnremoveableProcessor(PlayerGameNotificationHud outer, PlayerGameNotificationHud updateMeasurementProcessor)
         {
+            this.outer = outer;
             this.updateMeasurementProcessor = updateMeasurementProcessor;
         }
 
@@ -89,8 +95,8 @@ public class PlayerGameNotificationHud : GameNotificationHud, UpdateMyFontInterf
     private int width = 0;
     public PlayerGameNotificationHud(int location, int direction, int bufferZone, BasicColor basicColor) : base(location, direction, bufferZone, basicColor)
     {
-        this.setAndRemoveProcessor = new SetAndRemoveProcessor(this);
-        this.nextUnremoveableProcessor = new NextUnremoveableProcessor(this);
+        this.setAndRemoveProcessor = new SetAndRemoveProcessor(this, this);
+        this.nextUnremoveableProcessor = new NextUnremoveableProcessor(this, this);
         this.@string = this.EMPTY_STRING;
         // base(location, direction, bufferZone, basicColor) is called from the constructor declaration
         this.circularIndexUtil = CircularIndexUtil.createInstance(0);

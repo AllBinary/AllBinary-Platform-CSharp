@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using CollidableNeverCollideBehaviorFactory = org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory;
 using DamageableInterface = org.allbinary.game.combat.damage.DamageableInterface;
 using DestroyableInterface = org.allbinary.game.combat.destroy.DestroyableInterface;
@@ -96,19 +96,19 @@ public class CollidableDestroyableDamageableLayer : CollidableCompositeLayer, De
     }
 
     // throws Exception
-    public override void damage(int damage, int damageType)
+    public virtual void damage(int damage, int damageType)
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
 
     // throws Exception
-    public override int getDamage(int damageType)
+    public virtual int getDamage(int damageType)
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
 
     // throws Exception
-    public override bool isDestroyed()
+    public virtual bool isDestroyed()
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
@@ -137,7 +137,7 @@ public class CollidableDestroyableDamageableLayer : CollidableCompositeLayer, De
         return this.readyForExplosion;
     }
 
-    protected void setReadyForExplosion(bool isReadyForExplosion)
+    public void setReadyForExplosion(bool isReadyForExplosion)
     {
         this.readyForExplosion = isReadyForExplosion;
     }
@@ -163,62 +163,62 @@ public class CollidableDestroyableDamageableLayer : CollidableCompositeLayer, De
     }
 
     // throws Exception
-    public override void up()
+    public virtual void up()
     {
     }
 
     // throws Exception
-    public override void down()
+    public virtual void down()
     {
     }
 
     // throws Exception
-    public override void right()
+    public virtual void right()
     {
     }
 
     // throws Exception
-    public override void left()
+    public virtual void left()
     {
     }
 
     // throws Exception
-    public override void strafeLeft()
+    public virtual void strafeLeft()
     {
     }
 
     // throws Exception
-    public override void strafeRight()
+    public virtual void strafeRight()
     {
     }
 
     // throws Exception
-    public override void fire(AllBinaryLayerManager layerManager, GameKeyEvent gameKeyEvent)
+    public virtual void fire(AllBinaryLayerManager layerManager, GameKeyEvent gameKeyEvent)
     {
     }
 
     // throws Exception
-    public override void special1(AllBinaryLayerManager layerManager, GameKeyEvent gameKeyEvent)
+    public virtual void special1(AllBinaryLayerManager layerManager, GameKeyEvent gameKeyEvent)
     {
     }
 
     // throws Exception
-    public override void special2(AllBinaryLayerManager layerManager, GameKeyEvent gameKeyEvent)
+    public virtual void special2(AllBinaryLayerManager layerManager, GameKeyEvent gameKeyEvent)
     {
     }
 
     // throws Exception
-    public override void special3(AllBinaryLayerManager layerManager, GameKeyEvent gameKeyEvent)
+    public virtual void special3(AllBinaryLayerManager layerManager, GameKeyEvent gameKeyEvent)
     {
     }
 
     // throws Exception
-    public override void special4(AllBinaryLayerManager layerManager, GameKeyEvent gameKeyEvent)
+    public virtual void special4(AllBinaryLayerManager layerManager, GameKeyEvent gameKeyEvent)
     {
     }
 
     // throws Exception
-    public override void special5(AllBinaryLayerManager layerManager, GameKeyEvent gameKeyEvent)
+    public virtual void special5(AllBinaryLayerManager layerManager, GameKeyEvent gameKeyEvent)
     {
     }
 
@@ -256,12 +256,12 @@ public class CollidableDestroyableDamageableLayer : CollidableCompositeLayer, De
     {
     }
 
-    public override PickupBehavior getPickupBehavior()
+    public virtual PickupBehavior getPickupBehavior()
     {
         return this.pickupBehavior;
     }
 
-    public override void setPickupBehavior(PickupBehavior pickupBehavior)
+    public virtual void setPickupBehavior(PickupBehavior pickupBehavior)
     {
         this.pickupBehavior = pickupBehavior;
     }
@@ -281,7 +281,7 @@ public class CollidableDestroyableDamageableLayer : CollidableCompositeLayer, De
         return this.partInterfaceArrayP;
     }
 
-    private static readonly string READYFOREXPLOSION = "ReadyForExplosion: ";
+    private const string READYFOREXPLOSION = "ReadyForExplosion: ";
     public override void toStringAppend(StringMaker stringBuffer)
     {
         CommonSeps commonSeps = CommonSeps.getInstance();

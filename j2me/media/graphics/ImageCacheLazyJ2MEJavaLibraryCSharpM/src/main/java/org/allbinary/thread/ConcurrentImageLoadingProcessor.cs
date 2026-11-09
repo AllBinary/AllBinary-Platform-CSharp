@@ -29,9 +29,12 @@ public class ConcurrentImageLoadingProcessor : BaseImageLoadingProcessor
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public class ImageCacheRunnable : ABRunnable
     {
+        private readonly ConcurrentImageLoadingProcessor outer;
+
         private readonly ImageCache imageCache;
-        public ImageCacheRunnable(ImageCache imageCache)
+        public ImageCacheRunnable(ConcurrentImageLoadingProcessor outer, ImageCache imageCache)
         {
+            this.outer = outer;
             this.imageCache = imageCache;
         }
 
@@ -59,7 +62,7 @@ public class ConcurrentImageLoadingProcessor : BaseImageLoadingProcessor
     private readonly ABRunnable runnable;
     public ConcurrentImageLoadingProcessor(ImageCache imageCache)
     {
-        this.runnable = new ImageCacheRunnable(imageCache);
+        this.runnable = new ImageCacheRunnable(this, imageCache);
     }
 
     public override void runTask()

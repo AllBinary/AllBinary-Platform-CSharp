@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using ABCustomItem = org.allbinary.graphics.form.item.ABCustomItem;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;

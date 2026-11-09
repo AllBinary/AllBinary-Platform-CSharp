@@ -77,32 +77,32 @@ public class GameInputMotionEventProcessorAPI5 : BaseGameInputMotionEventProcess
             }
             int totalMinusOne = total - 1;
             if (action == MotionEvent.ACTION_DOWN) {
-                for (int pointerIndex = totalMinusOne; pointerIndex >= 0; pointerIndex--) {
-                    int pointerId = motionEvent.getPointerId(pointerIndex);
+                for (int pointerIndex_3 = totalMinusOne; pointerIndex_3 >= 0; pointerIndex_3--) {
+                    int pointerId = motionEvent.getPointerId(pointerIndex_3);
                     if (this.isValid(pointerId)) {
                         ScalableListener scalableListener = this.displayInfo.getScalableListener();
-                        int x = ((int) ((motionEvent.getX(pointerIndex) - this.displayInfo.getLeft()) / scalableListener.getRatio(this.displayInfo.getRatio())));
-                        int y = ((int) ((motionEvent.getY(pointerIndex) - this.displayInfo.getTop()) / scalableListener.getRatio(this.displayInfo.getRatio())));
+                        int x = ((int) ((motionEvent.getX(pointerIndex_3) - this.displayInfo.getLeft()) / scalableListener.getRatio(this.displayInfo.getRatio())));
+                        int y = ((int) ((motionEvent.getY(pointerIndex_3) - this.displayInfo.getTop()) / scalableListener.getRatio(this.displayInfo.getRatio())));
                         this.motionRecognizerArray[pointerId].processStartMotionEvent(x, y, motionEvent.getDeviceId(), 0);
                     }
                 }
             } else if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
-                for (int pointerIndex = totalMinusOne; pointerIndex >= 0; pointerIndex--) {
-                    int pointerId = motionEvent.getPointerId(pointerIndex);
+                for (int pointerIndex_2 = totalMinusOne; pointerIndex_2 >= 0; pointerIndex_2--) {
+                    int pointerId = motionEvent.getPointerId(pointerIndex_2);
                     if (this.isValid(pointerId)) {
                         ScalableListener scalableListener = this.displayInfo.getScalableListener();
-                        int x = ((int) ((motionEvent.getX(pointerIndex) - this.displayInfo.getLeft()) / scalableListener.getRatio(this.displayInfo.getRatio())));
-                        int y = ((int) ((motionEvent.getY(pointerIndex) - this.displayInfo.getTop()) / scalableListener.getRatio(this.displayInfo.getRatio())));
+                        int x = ((int) ((motionEvent.getX(pointerIndex_2) - this.displayInfo.getLeft()) / scalableListener.getRatio(this.displayInfo.getRatio())));
+                        int y = ((int) ((motionEvent.getY(pointerIndex_2) - this.displayInfo.getTop()) / scalableListener.getRatio(this.displayInfo.getRatio())));
                         this.motionRecognizerArray[pointerId].processEndMotionEvent(x, y, motionEvent.getDeviceId(), 0);
                     }
                 }
             } else if (action == MotionEvent.ACTION_MOVE) {
-                for (int pointerIndex = totalMinusOne; pointerIndex >= 0; pointerIndex--) {
-                    int pointerId = motionEvent.getPointerId(pointerIndex);
+                for (int pointerIndex_1 = totalMinusOne; pointerIndex_1 >= 0; pointerIndex_1--) {
+                    int pointerId = motionEvent.getPointerId(pointerIndex_1);
                     if (this.isValid(pointerId)) {
                         ScalableListener scalableListener = this.displayInfo.getScalableListener();
-                        int x = ((int) ((motionEvent.getX(pointerIndex) - this.displayInfo.getLeft()) / scalableListener.getRatio(this.displayInfo.getRatio())));
-                        int y = ((int) ((motionEvent.getY(pointerIndex) - this.displayInfo.getTop()) / scalableListener.getRatio(this.displayInfo.getRatio())));
+                        int x = ((int) ((motionEvent.getX(pointerIndex_1) - this.displayInfo.getLeft()) / scalableListener.getRatio(this.displayInfo.getRatio())));
+                        int y = ((int) ((motionEvent.getY(pointerIndex_1) - this.displayInfo.getTop()) / scalableListener.getRatio(this.displayInfo.getRatio())));
                         this.motionRecognizerArray[pointerId].processDraggedMotionEvent(x, y, motionEvent.getDeviceId(), 0);
                     }
                 }

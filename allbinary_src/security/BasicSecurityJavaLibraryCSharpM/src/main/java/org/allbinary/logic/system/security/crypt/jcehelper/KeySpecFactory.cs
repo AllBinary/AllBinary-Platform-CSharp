@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using KeySpec = java.security.spec.KeySpec;
-//using DESKeySpec = javax.crypto.spec.DESKeySpec;
-//using DESedeKeySpec = javax.crypto.spec.DESedeKeySpec;
+using KeySpec = java.security.spec.KeySpec;
+using DESKeySpec = javax.crypto.spec.DESKeySpec;
+using DESedeKeySpec = javax.crypto.spec.DESedeKeySpec;
 using TsUtil = org.allbinary.TsUtil;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;

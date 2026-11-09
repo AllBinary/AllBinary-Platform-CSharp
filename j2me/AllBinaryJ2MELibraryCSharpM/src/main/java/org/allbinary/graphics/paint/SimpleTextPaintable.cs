@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Anchor = org.allbinary.graphics.Anchor;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
@@ -45,7 +45,7 @@ public class SimpleTextPaintable : Paintable, UpdateMyFontInterface
         this.basicColor = basicColor;
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.topScoresWidth = (font.stringWidth(this.text) >> 1);
@@ -57,7 +57,7 @@ public class SimpleTextPaintable : Paintable, UpdateMyFontInterface
     {
         this.myFontProcessor.process(graphics);
         int width = this.displayInfoSingleton.getLast()[this.displayInfoSingleton.WIDTH];
-        graphics.setColor(((int) this.getBasicColorP()));
+        graphics.setColor(this.getBasicColorP().intValue());
         graphics.drawString(this.text, (width >> 1) - this.topScoresWidth, this.fontHeight, this.anchor);
     }
 

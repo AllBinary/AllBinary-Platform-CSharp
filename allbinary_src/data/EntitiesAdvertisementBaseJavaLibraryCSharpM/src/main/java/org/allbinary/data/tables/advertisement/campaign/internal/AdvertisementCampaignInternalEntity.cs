@@ -111,9 +111,14 @@ public class AdvertisementCampaignInternalEntity : AbSqlBean, AdvertisementCampa
         return returnStr;
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
+    }
+
+    public override void insert(BasicArrayList values)
+    {
+        base.insert(values);
     }
 
 }

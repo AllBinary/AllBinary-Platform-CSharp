@@ -53,7 +53,7 @@ public class HealPickedUpLayerInterfaceFactory : PickedUpLayerInterfaceFactory, 
     }
 
     // throws Exception
-    public override void process(AllBinaryLayer sourceLayerInterface)
+    public virtual void process(AllBinaryLayer sourceLayerInterface)
     {
         this.pool.visit(sourceLayerInterface);
     }

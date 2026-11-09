@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Displayable = javax.microedition.lcdui.Displayable;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Displayable = javax.microedition.lcdui.Displayable;
 
 namespace org.allbinary.graphics.displayable.screen;
 

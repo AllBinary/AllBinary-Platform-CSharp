@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using AngleInfo = org.allbinary.math.AngleInfo;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -60,10 +60,10 @@ public class AllBinaryHTMLImageRotationAnimation : ImageBaseRotationAnimation
         return canvasSurface;
     }
 
-    public virtual void setBasicColorP(BasicColor basicColor)
+    public override void setBasicColorP(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != basicColor.intValue()) {
+        if (this.getBasicColorP() == null || global::java.lang.JavaNumber.intValue(this.getBasicColorP()) != basicColor.intValue()) {
             changed = true;
         }
         base.setBasicColorP(basicColor);
@@ -72,7 +72,7 @@ public class AllBinaryHTMLImageRotationAnimation : ImageBaseRotationAnimation
         }
     }
 
-    public virtual void setAlpha(int alpha)
+    public override void setAlpha(int alpha)
     {
         bool changed = false;
         if (this.alphaP != alpha) {
@@ -85,13 +85,13 @@ public class AllBinaryHTMLImageRotationAnimation : ImageBaseRotationAnimation
         }
     }
 
-    public virtual void nextRotation()
+    public override void nextRotation()
     {
         base.nextRotation();
         this.updateImage();
     }
 
-    public virtual void previousRotation()
+    public override void previousRotation()
     {
         base.previousRotation();
         this.updateImage();
@@ -108,7 +108,7 @@ public class AllBinaryHTMLImageRotationAnimation : ImageBaseRotationAnimation
         this.swap();
     }
 
-    public virtual void setFrame(int index)
+    public override void setFrame(int index)
     {
         base.setFrame(index);
         this.updateImage();
@@ -124,7 +124,7 @@ public class AllBinaryHTMLImageRotationAnimation : ImageBaseRotationAnimation
         }
     }
 
-    public virtual void paintXY(Graphics graphics, int x, int y)
+    public override void paintXY(Graphics graphics, int x, int y)
     {
         graphics.drawImage(this.imageToShow, x, y, this.anchor);
     }

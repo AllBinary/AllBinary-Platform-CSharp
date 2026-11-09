@@ -45,12 +45,12 @@ public class MeteredGameObject : MeteredGameObjectInterface
             double nominator = GraphicsAnalysisUtil.getNominator(bufferedImage[index], this.getMinX(), this.getMaxX(), this.getY());
             this.getRatios()[index] = nominator / this.getSize();
         }
-        if (((double) this.getRatios()[bufferedImage.Length - 1]) > 0.93F) {
+        if (global::java.lang.JavaNumber.doubleValue(this.getRatios()[bufferedImage.Length - 1]) > 0.93F) {
             this.setGood(true);
         } else {
             this.setGood(false);
         }
-        if (((double) this.getRatios()[bufferedImage.Length - 1]) < ((double) this.getRatios()[0])) {
+        if (global::java.lang.JavaNumber.doubleValue(this.getRatios()[bufferedImage.Length - 1]) < global::java.lang.JavaNumber.doubleValue(this.getRatios()[0])) {
             this.setDropping(true);
         } else {
             this.setDropping(false);

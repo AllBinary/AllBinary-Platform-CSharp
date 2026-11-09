@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using InputEvent = java.awt.@event.InputEvent;
 using java.util;
 using DomNodeHelper = org.allbinary.data.tree.dom.DomNodeHelper;
@@ -37,7 +37,7 @@ public class MouseActionScriptInput : BasicProfileActionScriptInput, MouseAction
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private Point point;
     private int buttons = 0;
-    private static readonly string NAME = "Mouse";
+    private const string NAME = "Mouse";
     private MouseActionScriptInputJPanel mouseActionScriptInputJPanel;
     public MouseActionScriptInput(Node node) : base(NAME, node)
     {
@@ -51,14 +51,14 @@ public class MouseActionScriptInput : BasicProfileActionScriptInput, MouseAction
                 Node childNode = nodeList.item(index);
                 if (childNode.getNodeName().compareTo(MouseActionScriptInputData.BUTTONS) == 0) {
                     string buttons = DomNodeHelper.getTextNodeValue(childNode);
-                    this.setButtonClicks(((int) (buttons).ToString()));
+                    this.setButtonClicks(global::java.lang.JavaNumber.intValue(int.Parse((buttons).ToString())));
                 } else if (childNode.getNodeName().compareTo(MouseActionScriptInputData.MOVE) == 0) {
                     Node mouseXNode = DomSearchHelper.getNode(MouseActionScriptInputData.MOVE_X, childNode.getChildNodes());
                     string mouseXString = DomNodeHelper.getTextNodeValue(mouseXNode);
-                    int? mouseXInteger = (mouseXString).ToString();
+                    int? mouseXInteger = int.Parse((mouseXString).ToString());
                     Node mouseYNode = DomSearchHelper.getNode(MouseActionScriptInputData.MOVE_Y, childNode.getChildNodes());
                     string mouseYString = DomNodeHelper.getTextNodeValue(mouseYNode);
-                    int? mouseYInteger = (mouseYString).ToString();
+                    int? mouseYInteger = int.Parse((mouseYString).ToString());
                     Point newPoint = new Point(((int) mouseXInteger), ((int) mouseYInteger));
                     this.setPoint(newPoint);
                 } else {
@@ -100,7 +100,7 @@ public class MouseActionScriptInput : BasicProfileActionScriptInput, MouseAction
         this.buttons = buttons;
     }
 
-    public virtual void showDialog()
+    public override void showDialog()
     {
         this.mouseActionScriptInputJPanel.getMouseActionJDialog().setVisible(true);
     }
@@ -114,7 +114,7 @@ public class MouseActionScriptInput : BasicProfileActionScriptInput, MouseAction
     }
 
     // throws Exception
-    public virtual Node toXmlNode(Document document)
+    public override Node toXmlNode(Document document)
     {
         Node node = base.toXmlNode(document);
         Node mouseNode = ModDomHelper.createNodeWithValueNodes(document, MouseActionScriptInputData.NAME, this.toHashMap());
@@ -127,7 +127,7 @@ public class MouseActionScriptInput : BasicProfileActionScriptInput, MouseAction
     }
 
     // throws Exception
-    public virtual void process(long? frame)
+    public override void process(long? frame)
     {
         MouseInputAutomationProcessor.process(this);
     }

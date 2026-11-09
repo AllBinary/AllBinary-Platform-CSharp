@@ -14,12 +14,13 @@
  */
 // Generated Code Do Not Modify
 
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using InputStream = java.io.InputStream;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
 using NullGL10 = org.allbinary.device.NullGL10;
 using AllBinaryRendererBase3 = org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3;
 using BasicArrayList = org.allbinary.util.BasicArrayList;

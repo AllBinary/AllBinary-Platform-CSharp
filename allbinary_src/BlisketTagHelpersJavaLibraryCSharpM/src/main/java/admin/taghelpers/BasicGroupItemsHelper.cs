@@ -35,7 +35,7 @@ public class BasicGroupItemsHelper : BasicTable
         this.portion = new Portion(hashMap);
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             string success = BasicGroupItemsEntityFactory.getInstance().getBasicGroupItemsEntityInstance().createTable();
@@ -52,7 +52,7 @@ public class BasicGroupItemsHelper : BasicTable
         }
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             string success = BasicGroupItemsEntityFactory.getInstance().getBasicGroupItemsEntityInstance().dropTable();
@@ -69,7 +69,7 @@ public class BasicGroupItemsHelper : BasicTable
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "Restore Successful";
@@ -88,7 +88,7 @@ public class BasicGroupItemsHelper : BasicTable
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Backup Successful";

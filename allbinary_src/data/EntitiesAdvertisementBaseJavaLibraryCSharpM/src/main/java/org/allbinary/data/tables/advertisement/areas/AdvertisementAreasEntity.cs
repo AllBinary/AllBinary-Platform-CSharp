@@ -110,9 +110,14 @@ public class AdvertisementAreasEntity : AbSqlBean, AdvertisementAreasEntityInter
         base.updateWhere(AdvertisementAreaData.getInstance().NAME, ((string) updatedValues.get(AdvertisementAreaData.getInstance().NAME)), updatedValues);
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
+    }
+
+    public override void insert(BasicArrayList values)
+    {
+        base.insert(values);
     }
 
 }

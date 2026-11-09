@@ -16,11 +16,11 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
-//using DataInputStream = java.io.DataInputStream;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using DataInputStream = java.io.DataInputStream;
 //using EOFException = java.io.EOFException;
 //using IOException = java.io.IOException;
-//using RecordComparator = javax.microedition.rms.RecordComparator;
+using RecordComparator = javax.microedition.rms.RecordComparator;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 
@@ -53,10 +53,10 @@ public class ScoreComparator : RecordComparator
             inputStreamTwo.readUTF();
             scoreOne = inputStreamOne.readLong();
             scoreTwo = inputStreamTwo.readLong();
-        } catch (EOFException e) {
+        } catch (System.IO.EndOfStreamException e) {
             CommonStrings commonStrings = CommonStrings.getInstance();
             this.logUtil.put(commonStrings.EXCEPTION, this, "compare", e);
-        } catch (IOException e) {
+        } catch (System.IO.IOException e) {
             CommonStrings commonStrings = CommonStrings.getInstance();
             this.logUtil.put(commonStrings.EXCEPTION, this, "compare", e);
         } catch (Exception e) {

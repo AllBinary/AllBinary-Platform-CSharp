@@ -23,12 +23,12 @@ namespace org.allbinary.data.tree.dom.document;
 
 public class DocumentToNode
 {
-    private static readonly string XMLROOT = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
-    private static readonly string XMLROOTSTART = "<?xml";
-    private static readonly string XMLROOTEND = "?>";
-    private static readonly string XMLJSPROOTSTART = "<jsp:root";
-    private static readonly string XMLEND = ">";
-    private static readonly string XMLJSPROOTENDSTART = "</jsp:root";
+    private const string XMLROOT = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+    private const string XMLROOTSTART = "<?xml";
+    private const string XMLROOTEND = "?>";
+    private const string XMLJSPROOTSTART = "<jsp:root";
+    private const string XMLEND = ">";
+    private const string XMLJSPROOTENDSTART = "</jsp:root";
     private DocumentToNode()
     {
     }

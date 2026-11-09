@@ -49,7 +49,7 @@ public class TitleBodyCustomizerView : HttpStoreComponentView, DomNodeInterface
         this.addDomNodeInterface(((DomNodeInterface) this));
     }
 
-    private static readonly string NAME = "None";
+    private const string NAME = "None";
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
@@ -61,7 +61,7 @@ public class TitleBodyCustomizerView : HttpStoreComponentView, DomNodeInterface
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             string success = XmlDocumentHelper.toString(this.getDoc());

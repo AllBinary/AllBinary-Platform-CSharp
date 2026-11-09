@@ -118,7 +118,7 @@ public class AuthenticationRequestHelper : TagHelper
                 this.logUtil.putF("Changing Password For User: " + userName, this, "changePassword()");
             }
             Password password = new Password(newPassword);
-            if (!password.isValid()) {
+            if (!((bool) (password.isValid()))) {
                 if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
                     this.logUtil.putF("New Password Is Not Valid", this, "changePassword()");
                 }

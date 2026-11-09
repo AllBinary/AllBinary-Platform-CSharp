@@ -130,9 +130,9 @@ public class AbSqlBean : AbSqlRow
             int size = keyArray.Length;
             stringBuffer.append(this.commonSeps.SPACE);
             stringBuffer.append(key);
-            for (int i = 0; i < size; i++) {
+            for (int i_1 = 0; i_1 < size; i_1++) {
                 stringBuffer.append(this.commonSeps.SPACE);
-                stringBuffer.append(keyArray[i].ToString());
+                stringBuffer.append(keyArray[i_1].ToString());
             }
             stringBuffer.append(this.sqlStrings.FROM);
             stringBuffer.append(this.getTableName());
@@ -148,8 +148,8 @@ public class AbSqlBean : AbSqlRow
             while (rset.next()) {
                 object[] keyArray2 = columnsAndValues.keySet().toArray();
                 int size2 = keyArray2.Length;
-                for (int i = 0; i < size2; i++) {
-                    columnName = keyArray2[i].ToString();
+                for (int i_2 = 0; i_2 < size2; i_2++) {
+                    columnName = keyArray2[i_2].ToString();
                     field = rset.getObject(columnName).ToString();
                     if (string.CompareOrdinal(field, ((string) columnsAndValues.get(columnName))) != 0) {
                         return org.allbinary.globals.GLOBALS2.NOTASUBSET;

@@ -25,6 +25,6 @@ public class CustomizerTransformInfoData
     {
     }
 
-    public static readonly string NAME = "CUSTOMIZER_TRANSFORM_INFO_NAME";
+    public const string NAME = "CUSTOMIZER_TRANSFORM_INFO_NAME";
 }
 

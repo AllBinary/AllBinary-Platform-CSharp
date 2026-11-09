@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 
 namespace org.allbinary.graphics.form.item;
@@ -38,7 +38,7 @@ public class SelectableTextItem : ABTextItem
         this.myFontProcessor.process(graphics);
         ABStringComponent stringComponent = this.getLabelStringComponent();
         if (stringComponent != null) {
-            graphics.setColor(((int) stringComponent.getForegroundBasicColor()));
+            graphics.setColor(global::java.lang.JavaNumber.intValue(stringComponent.getForegroundBasicColor()));
         }
         graphics.drawString(this.getLabel(), x + 2, y, 0);
     }

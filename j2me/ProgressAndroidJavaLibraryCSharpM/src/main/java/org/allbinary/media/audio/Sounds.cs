@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Player = javax.microedition.media.Player;
+using Player = javax.microedition.media.Player;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;

@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Displayable = javax.microedition.lcdui.Displayable;
-//using MIDlet = javax.microedition.midlet.MIDlet;
+using Displayable = javax.microedition.lcdui.Displayable;
+using MIDlet = javax.microedition.midlet.MIDlet;
 
 namespace org.allbinary.view;
 

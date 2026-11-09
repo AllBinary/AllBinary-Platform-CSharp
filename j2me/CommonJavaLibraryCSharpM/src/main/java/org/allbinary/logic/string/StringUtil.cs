@@ -35,6 +35,7 @@ public class StringUtil
     public readonly string NULL_STRING = "null";
     public readonly string EMPTY_STRING = "";
     public string[] ONE_EMPTY_STRING_ARRAY;
+    public string[][] ONE_EMPTY_STRING_ARRAY_OF_ARRAYS = System.Linq.Enumerable.Range(0, 0).Select(_ => new string[0]).ToArray();
     private readonly string[] stringArray = new string[0];
     private StringUtil()
     {

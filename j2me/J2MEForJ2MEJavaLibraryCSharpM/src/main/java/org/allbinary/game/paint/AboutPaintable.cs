@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Anchor = org.allbinary.graphics.Anchor;
 using CanvasStrings = org.allbinary.graphics.displayable.CanvasStrings;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
@@ -57,18 +57,18 @@ public class AboutPaintable : Paintable, UpdateMyFontInterface
         this.developersBeginWidth = new int[this.developers.Length];
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.charHeight = font.getHeight();
         this.aboutBeginWidth = (font.stringWidth(this.ABOUT) >> 1);
         int infoSize = this.info.Length;
-        for (int index = 0; index < infoSize; index++) {
-            this.infoBeginWidth[index] = (font.stringWidth(this.info[index]) >> 1);
+        for (int index_0 = 0; index_0 < infoSize; index_0++) {
+            this.infoBeginWidth[index_0] = (font.stringWidth(this.info[index_0]) >> 1);
         }
         int size = this.developers.Length;
-        for (int index = 0; index < size; index++) {
-            this.developersBeginWidth[index] = (font.stringWidth(this.developers[index]) >> 1);
+        for (int index_1 = 0; index_1 < size; index_1++) {
+            this.developersBeginWidth[index_1] = (font.stringWidth(this.developers[index_1]) >> 1);
         }
         this.myFontProcessor = MyFontProcessor.getInstance();
     }
@@ -84,12 +84,12 @@ public class AboutPaintable : Paintable, UpdateMyFontInterface
         int halfWidth = this.displayInfoSingleton.getLastHalfWidth();
         graphics.drawString(this.ABOUT, halfWidth - this.aboutBeginWidth, 2 * this.charHeight, this.anchor);
         int infoSize = this.info.Length;
-        for (int index = 0; index < infoSize; index++) {
-            graphics.drawString(this.info[index], halfWidth - this.infoBeginWidth[index], (4 + index) * this.charHeight, this.anchor);
+        for (int index_2 = 0; index_2 < infoSize; index_2++) {
+            graphics.drawString(this.info[index_2], halfWidth - this.infoBeginWidth[index_2], (4 + index_2) * this.charHeight, this.anchor);
         }
         int size = this.developers.Length;
-        for (int index = 0; index < size; index++) {
-            graphics.drawString(this.developers[index], halfWidth - this.developersBeginWidth[index], (5 + infoSize + index) * this.charHeight, this.anchor);
+        for (int index_3 = 0; index_3 < size; index_3++) {
+            graphics.drawString(this.developers[index_3], halfWidth - this.developersBeginWidth[index_3], (5 + infoSize + index_3) * this.charHeight, this.anchor);
         }
     }
 

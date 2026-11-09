@@ -14,12 +14,14 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using GameKeyEventHandler = org.allbinary.game.input.@event.GameKeyEventHandler;
 using GameKeyEventUtil = org.allbinary.game.input.@event.GameKeyEventUtil;
 using HighScoresCanvas = org.allbinary.game.score.displayable.HighScoresCanvas;
@@ -45,7 +47,7 @@ public class HighScoresCanvasLevelChangeInputProcessor : HighScoresCanvasInputPr
         // base(highScoresCanvas) is called from the constructor declaration
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.fontHeight = font.getHeight();

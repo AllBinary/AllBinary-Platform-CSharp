@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using NullCanvas = javax.microedition.lcdui.NullCanvas;
+using NullCanvas = javax.microedition.lcdui.NullCanvas;
 using RunnableCanvas = org.allbinary.canvas.RunnableCanvas;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using GameInputStrings = org.allbinary.game.input.GameInputStrings;

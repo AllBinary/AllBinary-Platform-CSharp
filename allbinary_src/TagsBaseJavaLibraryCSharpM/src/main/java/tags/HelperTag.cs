@@ -50,7 +50,7 @@ public class HelperTag : PropertiesTag
         return this.anyType;
     }
 
-    public virtual int doEndTag()
+    public override int doEndTag()
     {
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF("Tag Ended", this, "doEndTag");

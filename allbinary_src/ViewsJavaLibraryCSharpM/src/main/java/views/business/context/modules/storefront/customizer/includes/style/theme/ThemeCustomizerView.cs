@@ -40,7 +40,7 @@ public class ThemeCustomizerView : HttpStoreComponentView
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             this.addDomNodeInterfaces();

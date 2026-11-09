@@ -17,9 +17,9 @@
 using System;
 using System.Linq;
 using Context = android.content.Context;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
 using Intent = android.content.Intent;
 using TsUtil = org.allbinary.TsUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;

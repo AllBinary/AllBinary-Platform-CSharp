@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonLabels = org.allbinary.@string.CommonLabels;
@@ -87,18 +87,18 @@ public class ImagesRatioUtil
             BufferedImage firstColumnBufferedImage = bufferedImage.getSubimage(0, 0, 1, bufferedImage.getHeight());
             BufferedImage lastColumnBufferedImage = bufferedImage.getSubimage(bufferedImage.getWidth() - 1, 0, 1, bufferedImage.getHeight());
             this.logUtil.putF("Draw some columns to fill in gap", this, "fudge");
-            for (int index = 0; index < point.x; index++) {
-                g.drawImage(firstColumnBufferedImage, index, 0, null);
-                g.drawImage(lastColumnBufferedImage, newWidth - index, 0, null);
+            for (int index_2 = 0; index_2 < point.x; index_2++) {
+                g.drawImage(firstColumnBufferedImage, index_2, 0, null);
+                g.drawImage(lastColumnBufferedImage, newWidth - index_2, 0, null);
             }
         }
         if (point.y > 0) {
             BufferedImage firstRowBufferedImage = bufferedImage.getSubimage(0, 0, bufferedImage.getWidth(), 1);
             BufferedImage lastRowBufferedImage = bufferedImage.getSubimage(0, bufferedImage.getHeight() - 1, bufferedImage.getWidth(), 1);
             this.logUtil.putF("Draw some rows to fill in gap", this, "fudge");
-            for (int index = 0; index < point.y; index++) {
-                g.drawImage(firstRowBufferedImage, 0, index, null);
-                g.drawImage(lastRowBufferedImage, 0, newHeight - index, null);
+            for (int index_3 = 0; index_3 < point.y; index_3++) {
+                g.drawImage(firstRowBufferedImage, 0, index_3, null);
+                g.drawImage(lastRowBufferedImage, 0, newHeight - index_3, null);
             }
         }
         g.drawImage(bufferedImage, point.x, point.y, bufferedImage.getWidth(), bufferedImage.getHeight(), null);

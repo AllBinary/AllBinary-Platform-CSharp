@@ -14,11 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using SWT = org.eclipse.swt.SWT;
 using ImageData = org.eclipse.swt.graphics.ImageData;
 using ImageLoader = org.eclipse.swt.graphics.ImageLoader;

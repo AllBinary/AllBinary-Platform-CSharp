@@ -25,16 +25,16 @@ public class BasketData
     {
     }
 
-    public static readonly string BASKET = "BASKET";
-    public static readonly string NAME = "NAME";
-    public static readonly string BASKETREVIEW = "BASKET_REVIEW";
-    public static readonly string TOTALWEIGHT = "BASKET_TOTALWEIGTH";
-    public static readonly string ITEMTOTAL = "BASKET_ITEMTOTAL";
-    public static readonly string ITEMTOTALINBASKET = "BASKET_ITEMTOTALINBASKET";
-    public static readonly string SUBTOTAL = "BASKET_SUBTOTAL";
-    public static readonly string ISEMPTY = "BASKET_ISEMPTY";
-    public static readonly string INSERT = "BASKET_INSERT";
-    public static readonly string DELETE = "BASKET_DELETE";
-    public static readonly string ADJUST = "BASKET_ADJUST";
+    public const string BASKET = "BASKET";
+    public const string NAME = "NAME";
+    public const string BASKETREVIEW = "BASKET_REVIEW";
+    public const string TOTALWEIGHT = "BASKET_TOTALWEIGTH";
+    public const string ITEMTOTAL = "BASKET_ITEMTOTAL";
+    public const string ITEMTOTALINBASKET = "BASKET_ITEMTOTALINBASKET";
+    public const string SUBTOTAL = "BASKET_SUBTOTAL";
+    public const string ISEMPTY = "BASKET_ISEMPTY";
+    public const string INSERT = "BASKET_INSERT";
+    public const string DELETE = "BASKET_DELETE";
+    public const string ADJUST = "BASKET_ADJUST";
 }
 

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AllBinaryLayer = org.allbinary.layer.AllBinaryLayer;
 
 namespace org.allbinary.game.health;

@@ -43,20 +43,20 @@ public class UploadMediaSingleton
         Set<object> set = hashMap.keySet();
         object[] mediaDataNameArray = set.toArray();
         int size = mediaDataNameArray.Length;
-        for (int index = 0; index < size; index++) {
-            string mediaDataName = ((string) mediaDataNameArray[index]);
+        for (int index_0 = 0; index_0 < size; index_0++) {
+            string mediaDataName = ((string) mediaDataNameArray[index_0]);
             MediaData mediaData = ((MediaData) hashMap.get(mediaDataName));
             this.readerFileTypesHashMap.put(mediaData.getName(), mediaData.getType());
         }
         MediaIOUtil mediaIOUtil = MediaIOUtil.getInstance();
         string RESIZABLE_MEDIA = MediaTypeData.getInstance().RESIZABLE_MEDIA;
         string[] readerFileTypes = mediaIOUtil.getReaderFormatNames();
-        for (int index = 0; index < readerFileTypes.Length; index++) {
-            this.readerFileTypesHashMap.put(readerFileTypes[index], RESIZABLE_MEDIA);
+        for (int index_1 = 0; index_1 < readerFileTypes.Length; index_1++) {
+            this.readerFileTypesHashMap.put(readerFileTypes[index_1], RESIZABLE_MEDIA);
         }
         string[] writerFileTypes = mediaIOUtil.getWriterFormatNames();
-        for (int index = 0; index < writerFileTypes.Length; index++) {
-            this.writerFileTypesHashMap.put(writerFileTypes[index], RESIZABLE_MEDIA);
+        for (int index_2 = 0; index_2 < writerFileTypes.Length; index_2++) {
+            this.writerFileTypesHashMap.put(writerFileTypes[index_2], RESIZABLE_MEDIA);
         }
         if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
             StringMaker stringBuffer = new StringMaker();

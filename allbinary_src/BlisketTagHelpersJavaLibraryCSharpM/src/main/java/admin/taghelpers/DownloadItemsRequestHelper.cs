@@ -42,7 +42,7 @@ public class DownloadItemsRequestHelper : ModifyTable
         this.downloadableItem = downloadableInventoryItemView.getDownloadableItem();
     }
 
-    public virtual string insert()
+    public override string insert()
     {
         try {
             BasicArrayList vector = this.downloadableItem.toVector();
@@ -61,7 +61,7 @@ public class DownloadItemsRequestHelper : ModifyTable
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             DownloadItemsEntityFactory.getInstance().getDownloadItemsEntityInstance().delete(this.downloadableItem.getId());
@@ -79,7 +79,7 @@ public class DownloadItemsRequestHelper : ModifyTable
         }
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             string success = "Update Successful";

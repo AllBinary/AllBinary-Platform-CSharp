@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using PaintableInterface = org.allbinary.graphics.paint.PaintableInterface;
@@ -85,7 +85,7 @@ public class AllBinaryTiledLayer : Layer, NamedInterface, PaintableInterface
         }
     }
 
-    public override string getName()
+    public virtual string getName()
     {
         return this.GetType().FullName;
     }
@@ -94,7 +94,7 @@ public class AllBinaryTiledLayer : Layer, NamedInterface, PaintableInterface
     {
     }
 
-    public override void paintThreed(Graphics graphics)
+    public virtual void paintThreed(Graphics graphics)
     {
     }
 

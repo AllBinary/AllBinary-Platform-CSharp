@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Arrays = java.util.Arrays;
+using Arrays = java.util.Arrays;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using TransformInfoEntityBuilder = org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder;
@@ -57,16 +57,16 @@ public class CustomizersView : HttpStoreComponentView, DomNodeInterface
             Node node = document.createElement(TransformTemplateCustomizersData.NAME);
             BasicArrayList unsortedCustomizerViewVector = new BasicArrayListD();
             int size = this.customizersVector.size();
-            for (int index = 0; index < size; index++) {
-                string viewName = ((string) this.customizersVector.get(index));
+            for (int index_0 = 0; index_0 < size; index_0++) {
+                string viewName = ((string) this.customizersVector.get(index_0));
                 if (viewName.IndexOf(CustomizerTransformInfoData.NAME) > 0 && viewName.IndexOf(GLOBALS2.EDIT) > 0 && viewName.IndexOf(BodyData.getInstance().VIEWNAMEKEY) > 0 && viewName.IndexOf(TitleData.getInstance().VIEWNAMEKEY) > 0) {
                     unsortedCustomizerViewVector.add(viewName);
                 }
             }
             object[] objectArray = ((object[]) unsortedCustomizerViewVector.toArray());
             Arrays.sort(objectArray, new StringComparator());
-            for (int index = 0; index < objectArray.Length; index++) {
-                string viewName = ((string) objectArray[index]);
+            for (int index_1 = 0; index_1 < objectArray.Length; index_1++) {
+                string viewName = ((string) objectArray[index_1]);
                 Node viewNameNode = ModDomHelper.createNameValueNodes(document, TransformTemplateCustomizerData.NAME, viewName, TransformTemplateCustomizerUtil.getInstance().getPageNameHack(viewName, this.getWeblisketSession().getStoreName()));
                 node.appendChild(viewNameNode);
             }
@@ -85,7 +85,7 @@ public class CustomizersView : HttpStoreComponentView, DomNodeInterface
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             this.addDomNodeInterfaces();

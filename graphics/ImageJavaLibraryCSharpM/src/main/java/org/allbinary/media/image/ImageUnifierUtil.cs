@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonLabels = org.allbinary.@string.CommonLabels;
@@ -53,11 +53,11 @@ public class ImageUnifierUtil
         int columnIndex = 0;
         int rowIndex = 0;
         for (int index = 0; index < bufferedImageArray.Length; index++) {
-            int x = ((int) imageUnifierProperties.getImageUnifierCell().getWidth()) * columnIndex++;
-            int y = ((int) imageUnifierProperties.getImageUnifierCell().getHeight()) * rowIndex;
+            int x = global::java.lang.JavaNumber.intValue(imageUnifierProperties.getImageUnifierCell().getWidth()) * columnIndex++;
+            int y = global::java.lang.JavaNumber.intValue(imageUnifierProperties.getImageUnifierCell().getHeight()) * rowIndex;
             this.logUtil.putF("Adding Image: " + index + " x: " + x + " y: " + y, this, "getImage");
-            g.drawImage(bufferedImageArray[index], x, y, ((int) imageUnifierProperties.getImageUnifierCell().getWidth()), ((int) imageUnifierProperties.getImageUnifierCell().getHeight()), null);
-            int totalColumnsMinusOne = (((int) imageUnifierProperties.getColumns()) - 1);
+            g.drawImage(bufferedImageArray[index], x, y, global::java.lang.JavaNumber.intValue(imageUnifierProperties.getImageUnifierCell().getWidth()), global::java.lang.JavaNumber.intValue(imageUnifierProperties.getImageUnifierCell().getHeight()), null);
+            int totalColumnsMinusOne = (global::java.lang.JavaNumber.intValue(imageUnifierProperties.getColumns()) - 1);
             if (columnIndex > totalColumnsMinusOne) {
                 rowIndex++;
                 columnIndex = 0;

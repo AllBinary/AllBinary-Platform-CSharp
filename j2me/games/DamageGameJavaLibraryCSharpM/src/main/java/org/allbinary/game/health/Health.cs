@@ -25,7 +25,7 @@ namespace org.allbinary.game.health;
 public class Health : HealthInterface
 {
     public static readonly Health NULL_HEALTH = new Health(0);
-    public static readonly string NAME = "Health Resource";
+    public const string NAME = "Health Resource";
     private int health = 0;
     private int maxHealth = 0;
     private HealthListenerInterface healthListenerInterface = NullHealthListener.NULL_HEALTH_LISTENER;
@@ -117,8 +117,8 @@ public class Health : HealthInterface
         this.healthListenerInterface = healthGraphic;
     }
 
-    private static readonly string HEALTH_LABEL = "Health: ";
-    private static readonly string MAX_HEALTH_LABEL = " Max: ";
+    private const string HEALTH_LABEL = "Health: ";
+    private const string MAX_HEALTH_LABEL = " Max: ";
     public override string ToString()
     {
         StringMaker stringBuffer = new StringMaker();

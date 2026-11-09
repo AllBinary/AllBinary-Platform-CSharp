@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 //using BufferedImage = java.awt.image.BufferedImage;
-//using File = java.io.File;
+using File = java.io.File;
 //using javax.swing;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using FileWrapperUtil = org.allbinary.logic.io.file.FileWrapperUtil;

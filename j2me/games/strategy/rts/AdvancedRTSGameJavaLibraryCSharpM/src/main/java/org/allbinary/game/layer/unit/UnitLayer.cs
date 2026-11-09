@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Canvas = javax.microedition.lcdui.Canvas;
+using Graphics = javax.microedition.lcdui.Graphics;
 using J2MEUtil = org.allbinary.J2MEUtil;
 using ExplosionBasicSound = org.allbinary.ag.weapon.media.audio.ExplosionBasicSound;
 using Animation = org.allbinary.animation.Animation;
@@ -161,7 +161,7 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
     public RotationAnimation rotationAnimationInterfaceP;
     private NamedAngle movementAngle;
     private GeographicMapCellPosition steeringInsideGeographicMapCellPosition = SimpleGeographicMapCellPositionFactory.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
-    protected UnitLayer(RemoteInfo remoteInfo, PathFindingLayerInterface parentLayer, AdvancedRTSProperties advancedRTSProperties, Group[] groupInterface, string rootName, string name, VehicleProperties vehicleProperties, Health healthInterface, int? maxResourceLoad, Sound moveSoundInterface, LayerInterfaceFactoryInterface waypointLayerInterfaceFactoryInterface, AnimationInterfaceFactoryInterface animationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface emptyAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface baseAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface buildAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface verticleBuildAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface decalAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface resourceAnimationInterfaceFactoryInterface, ProceduralAnimationInterfaceFactoryInterface proceduralAnimationInterfaceFactoryInterface, Rectangle rectangle, Direction direction, int x, int y, int z, ViewPositionBase viewPosition) : base(remoteInfo, parentLayer, advancedRTSProperties, groupInterface, rootName, name, healthInterface, new WaypointRTSFormInput(groupInterface, true), animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, viewPosition)
+    public UnitLayer(RemoteInfo remoteInfo, PathFindingLayerInterface parentLayer, AdvancedRTSProperties advancedRTSProperties, Group[] groupInterface, string rootName, string name, VehicleProperties vehicleProperties, Health healthInterface, int? maxResourceLoad, Sound moveSoundInterface, LayerInterfaceFactoryInterface waypointLayerInterfaceFactoryInterface, AnimationInterfaceFactoryInterface animationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface emptyAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface baseAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface buildAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface verticleBuildAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface decalAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface resourceAnimationInterfaceFactoryInterface, ProceduralAnimationInterfaceFactoryInterface proceduralAnimationInterfaceFactoryInterface, Rectangle rectangle, Direction direction, int x, int y, int z, ViewPositionBase viewPosition) : base(remoteInfo, parentLayer, advancedRTSProperties, groupInterface, rootName, name, healthInterface, new WaypointRTSFormInput(groupInterface, true), animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, viewPosition)
     {
         this.movementAngle = this.angleFactory.NOT_ANGLE;
         this.CAPITAL_EVENT = new CapitalEvent(this);
@@ -288,7 +288,7 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
         base.deselect();
     }
 
-    protected override void setSelected(bool selected)
+    public override void setSelected(bool selected)
     {
         base.setSelected(selected);
         if (selected) {
@@ -355,7 +355,7 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
         }
     }
 
-    private static readonly int SENSOR_RANGE_MULTIPLIER = 6;
+    private const int SENSOR_RANGE_MULTIPLIER = 6;
     public virtual void initRangeHack()
     {
         BasicWeaponPart basicWeaponPart = ((BasicWeaponPart) this.getPartInterfaceArray()[0]);
@@ -489,7 +489,7 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
     }
 
     // throws Exception
-    protected virtual void fireAll(AllBinaryLayerManager layerManager)
+    public virtual void fireAll(AllBinaryLayerManager layerManager)
     {
         AngleInfo angleInfo = this.rotationAnimationInterfaceP.getAngleInfoP();
         int angle = ((int) (angleInfo.getAngle() + this.slightAngle));
@@ -511,7 +511,7 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
         this.initRangeHack();
     }
 
-    protected virtual void groundFriction()
+    public virtual void groundFriction()
     {
         VehicleFrictionProperties vehicleFrictionProperties = this.getVehicleProperties().getVehicleFrictionProperties();
         this.getVehicleProperties().getVehicleFrictionProperties().friction(this.getVehicleProperties().getVelocityProperties(), vehicleFrictionProperties.getTireFrictionNominator());
@@ -651,9 +651,9 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
         }
     }
 
-    private static readonly string MOVE = "Moving";
+    private const string MOVE = "Moving";
     // throws Exception
-    protected virtual void fireOrMove()
+    public virtual void fireOrMove()
     {
         GameKeyEventFactory gameKeyEventFactory = GameKeyEventFactory.getInstance();
         if (this.getUnitWaypointBehavior().needToMove()) {
@@ -737,7 +737,7 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
     }
 
     // throws Exception
-    public override void onBuildingEvent(RTSLayerEvent @event)
+    public virtual void onBuildingEvent(RTSLayerEvent @event)
     {
         BuildingLayer buildingLayer = ((BuildingLayer) @event.getRtsLayer());
         this.getUnitWaypointBehavior().moveAwayFromBuilding(buildingLayer);
@@ -846,7 +846,7 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
 
     public override int getType()
     {
-        return UnitLayer.getStaticType();
+        return 1;
     }
 
     public static int getStaticType()
@@ -854,7 +854,7 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
         return 1;
     }
 
-    protected virtual UnitWaypointBehavior getUnitWaypointBehavior()
+    public virtual UnitWaypointBehavior getUnitWaypointBehavior()
     {
         return ((UnitWaypointBehavior) this.getWaypointBehavior());
     }

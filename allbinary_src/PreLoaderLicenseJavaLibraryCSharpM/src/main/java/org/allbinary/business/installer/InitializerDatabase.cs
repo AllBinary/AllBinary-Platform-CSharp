@@ -38,10 +38,10 @@ public class InitializerDatabase
     private string adminSchema = null;
     private string adminServer = null;
     private string adminPort = null;
-    private static readonly int MAXDB = 30;
-    private static readonly int MAX = 16;
-    private static readonly int MIN = 4;
-    private static readonly int MINPASSWORD = 0;
+    private const int MAXDB = 30;
+    private const int MAX = 16;
+    private const int MIN = 4;
+    private const int MINPASSWORD = 0;
     private DynamicInitDb initDb = null;
     public InitializerDatabase(AbeClientInformationInterface abeClientInformation, Map<object, object> map)
     {

@@ -63,7 +63,7 @@ public class LogUtil
         string className = this.LABEL;
         className = new string((new StringMaker().append(anyType.GetType().FullName).append(this.commonSeps.COLON).append(Convert.ToString(TsUtil.getInstance().hashCode(anyType), 16)).ToString()).ToCharArray());
         string message = this.logFormatUtil.get(className, functionName, specialMessage, exception);
-        android.util.Log.i(this.LABEL, message);
+        Console.WriteLine((this.LABEL) + ": " + (message));
     }
 
     public virtual void putS(string specialMessage, string @string, string functionName, object exception)
@@ -71,7 +71,7 @@ public class LogUtil
         string className = this.LABEL;
         className = new string((new StringMaker().append(@string).append(this.commonSeps.COLON).append(Convert.ToString(TsUtil.getInstance().hashCode(@string), 16)).ToString()).ToCharArray());
         string message = this.logFormatUtil.get(className, functionName, specialMessage, exception);
-        android.util.Log.i(this.LABEL, message);
+        Console.WriteLine((this.LABEL) + ": " + (message));
     }
 
 }

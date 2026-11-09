@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
 //using PrintStream = java.io.PrintStream;
 using java.util;
 //using Properties = java.util.Properties;
@@ -47,14 +47,14 @@ public class Email : EmailInterface
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
     private MimeMessage msg = null;
     private Properties properties = null;
-    private System.IO.MemoryStream bs = null;
+    private ByteArrayOutputStream bs = null;
     private bool isDebug;
-    private static readonly string DEBUG = "mail.debug";
-    private static readonly string SMTP_HOST = "mail.smtp.host";
-    private static readonly string SMTP_PORT = "mail.smtp.port";
-    private static readonly string SMTP_USER = "mail.smtp.user";
-    private static readonly string SMTP_RETURN_ADDRESS = "mail.from";
-    private static readonly string SMTP_LOCAL_HOST = "mail.smtp.localhost";
+    private const string DEBUG = "mail.debug";
+    private const string SMTP_HOST = "mail.smtp.host";
+    private const string SMTP_PORT = "mail.smtp.port";
+    private const string SMTP_USER = "mail.smtp.user";
+    private const string SMTP_RETURN_ADDRESS = "mail.from";
+    private const string SMTP_LOCAL_HOST = "mail.smtp.localhost";
     public Email(string from, string to, string subject, string server, string textBody, string htmlAttachment, string contentBase)
     {
         this.isDebug = false;
@@ -118,7 +118,7 @@ public class Email : EmailInterface
         Session session = Session.getInstance(this.properties, authenticator);
         if (this.isDebug) {
             session.setDebug(true);
-            this.bs = new System.IO.MemoryStream();
+            this.bs = new ByteArrayOutputStream();
             System.IO.StreamWriter printStream = new System.IO.StreamWriter(this.bs) { AutoFlush = true };
             session.setDebugOut(printStream);
         }
@@ -143,7 +143,7 @@ public class Email : EmailInterface
     public virtual string getDebugInfo()
     {
         if (this.isDebug) {
-            return "More Logging Before This To Standard Out: " + new string((System.Text.Encoding.UTF8.GetString(this.bs.ToArray())).ToCharArray());
+            return "More Logging Before This To Standard Out: " + new string((this.bs.ToString()).ToCharArray());
         } else {
             return "Debugging Is Off";
         }
@@ -163,33 +163,33 @@ public class Email : EmailInterface
             hashMap.put(EmailData.SERVER, ((string) this.properties.get(Email.SMTP_HOST)));
             Address[] addresses = this.msg.getFrom();
             if (addresses != null) {
-                for (int index = 0; index < addresses.Length; index++) {
-                    hashMap.put(EmailData.FROM, addresses[index].ToString());
+                for (int index_1 = 0; index_1 < addresses.Length; index_1++) {
+                    hashMap.put(EmailData.FROM, addresses[index_1].ToString());
                 }
             }
             addresses = this.msg.getRecipients(Message.RecipientType.TO);
             if (addresses != null) {
-                for (int index = 0; index < addresses.Length; index++) {
-                    hashMap.put(EmailData.TO, addresses[index].ToString());
+                for (int index_2 = 0; index_2 < addresses.Length; index_2++) {
+                    hashMap.put(EmailData.TO, addresses[index_2].ToString());
                 }
             }
             addresses = this.msg.getRecipients(Message.RecipientType.CC);
             if (addresses != null) {
-                for (int index = 0; index < addresses.Length; index++) {
-                    hashMap.put(EmailData.CC, addresses[index].ToString());
+                for (int index_3 = 0; index_3 < addresses.Length; index_3++) {
+                    hashMap.put(EmailData.CC, addresses[index_3].ToString());
                 }
             }
             addresses = this.msg.getRecipients(Message.RecipientType.BCC);
             if (addresses != null) {
-                for (int index = 0; index < addresses.Length; index++) {
-                    hashMap.put(EmailData.BCC, addresses[index].ToString());
+                for (int index_4 = 0; index_4 < addresses.Length; index_4++) {
+                    hashMap.put(EmailData.BCC, addresses[index_4].ToString());
                 }
             }
             hashMap.put(EmailData.SUBJECT, this.msg.getSubject());
             MimeMultipart mimeMultipart = ((MimeMultipart) msg.getContent());
             if (mimeMultipart != null) {
-                for (int index = 0; index < mimeMultipart.getCount(); index++) {
-                    string content = ((string) mimeMultipart.getBodyPart(index).getContent());
+                for (int index_5 = 0; index_5 < mimeMultipart.getCount(); index_5++) {
+                    string content = ((string) mimeMultipart.getBodyPart(index_5).getContent());
                     hashMap.put(EmailData.CONTENT, content);
                 }
             }

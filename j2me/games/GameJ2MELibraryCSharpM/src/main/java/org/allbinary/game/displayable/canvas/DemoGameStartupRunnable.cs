@@ -14,6 +14,8 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
@@ -46,7 +48,7 @@ public class DemoGameStartupRunnable : ABRunnable
         }
     }
 
-    public static readonly int TYPE = 4;
+    public const int TYPE = 4;
     public override int getType()
     {
         return DemoGameStartupRunnable.TYPE;

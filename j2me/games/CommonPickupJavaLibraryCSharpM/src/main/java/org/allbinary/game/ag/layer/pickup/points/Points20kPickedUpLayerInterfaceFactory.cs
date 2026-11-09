@@ -54,7 +54,7 @@ public class Points20kPickedUpLayerInterfaceFactory : PickedUpLayerInterfaceFact
     }
 
     // throws Exception
-    public override void process(AllBinaryLayer sourceLayerInterface)
+    public virtual void process(AllBinaryLayer sourceLayerInterface)
     {
         this.pool.visit(sourceLayerInterface);
     }

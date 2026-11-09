@@ -16,15 +16,16 @@
 
 using System;
 using System.Linq;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using IOException = java.io.IOException;
-//using InputStream = java.io.InputStream;
-//using OutputStream = java.io.OutputStream;
-//using Reader = java.io.Reader;
-//using Writer = java.io.Writer;
-//using CharBuffer = java.nio.CharBuffer;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using InputStream = java.io.InputStream;
+using OutputStream = java.io.OutputStream;
+using Reader = java.io.Reader;
+using Writer = java.io.Writer;
 using NullUtil = org.allbinary.logic.NullUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using NullOutputStream = org.allbinary.logic.io.NullOutputStream;
+using NullReader = org.allbinary.logic.io.NullReader;
+using NullWriter = org.allbinary.logic.io.NullWriter;
 using StreamUtil = org.allbinary.logic.io.StreamUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonStrings = org.allbinary.@string.CommonStrings;
@@ -44,123 +45,17 @@ public class SimpleFileUtil
 
     public static OutputStream nullOutputStream()
     {
-        return new OutputStream()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            // throws IOException
-            public virtual void write(int b)
-            {
-            }
-
-            // throws IOException
-            public virtual void write(sbyte[] b, int off, int len)
-            {
-            }
-
-            public virtual void close()
-            {
-            }
-
-#endif
-;
+        return NullOutputStream.NULL_OUTPUT_STREAM;
     }
 
     public static Writer nullWriter()
     {
-        return new Writer()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            private bool closed = false;
-            // throws IOException
-            public virtual Writer append(char c)
-            {
-                return this;
-            }
-
-            // throws IOException
-            public virtual Writer append(CharSequence csq)
-            {
-                return this;
-            }
-
-            // throws IOException
-            public virtual Writer append(CharSequence csq, int start, int end)
-            {
-                return this;
-            }
-
-            // throws IOException
-            public virtual void write(int c)
-            {
-            }
-
-            // throws IOException
-            public virtual void write(char[] cbuf, int off, int len)
-            {
-            }
-
-            // throws IOException
-            public virtual void write(string str)
-            {
-            }
-
-            // throws IOException
-            public virtual void write(string str, int off, int len)
-            {
-            }
-
-            // throws IOException
-            public virtual void flush()
-            {
-            }
-
-            // throws IOException
-            public virtual void close()
-            {
-            }
-
-#endif
-;
+        return NullWriter.NULL_WRITER;
     }
 
     public static Reader nullReader()
     {
-        return new Reader()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            // throws IOException
-            public virtual int read()
-            {
-                return -1;
-            }
-
-            // throws IOException
-            public virtual int read(char[] cbuf, int off, int len)
-            {
-                return -1;
-            }
-
-            // throws IOException
-            public virtual int read(CharBuffer target)
-            {
-                return -1;
-            }
-
-            // throws IOException
-            public virtual bool ready()
-            {
-                return false;
-            }
-
-            // throws IOException
-            public virtual long skip(long n)
-            {
-                return 0L;
-            }
-
-            public virtual void close()
-            {
-            }
-
-#endif
-;
+        return NullReader.NULL_READER;
     }
 
     public readonly Writer NULL_WRITER = SimpleFileUtil.nullWriter();
@@ -181,7 +76,7 @@ public class SimpleFileUtil
         }
         sbyte[] byteArray = this.nullUtil.NULL_BYTE_ARRAY;
         try {
-            System.IO.MemoryStream outputStream2 = new System.IO.MemoryStream(max);
+            ByteArrayOutputStream outputStream2 = new ByteArrayOutputStream(max);
             byteArray = this.streamUtil.getByteArray(inputStream, outputStream2, byteArray1);
             this.streamUtil.close(inputStream);
         } catch (Exception e) {

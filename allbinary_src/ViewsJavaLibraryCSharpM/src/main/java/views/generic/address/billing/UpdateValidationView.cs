@@ -56,5 +56,11 @@ public class UpdateValidationView : BillingAddressView, ValidationComponentInter
         return null;
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

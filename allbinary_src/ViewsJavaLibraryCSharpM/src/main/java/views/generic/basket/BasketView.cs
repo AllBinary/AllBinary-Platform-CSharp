@@ -70,7 +70,7 @@ public class BasketView : HttpStoreComponentView, DomNodeInterface
                     node.appendChild(ModDomHelper.createNameValueNodes(document, BasketData.ITEMTOTALINBASKET, numberInBasket));
                     Money itemPrice = itemInterface.getPrice();
                     Money itemTotal = new Money(itemPrice);
-                    itemTotal.multiply(((int) basketInterface.getNumberOf(product)));
+                    itemTotal.multiply(global::java.lang.JavaNumber.intValue(basketInterface.getNumberOf(product)));
                     node.appendChild(ModDomHelper.createNameValueNodes(document, BasketData.ITEMTOTAL, itemTotal.ToString()));
                     basketNode.appendChild(node);
                 } else {
@@ -105,7 +105,7 @@ public class BasketView : HttpStoreComponentView, DomNodeInterface
     }
 
     // throws Exception
-    public virtual string view()
+    public override string view()
     {
         try {
             this.addDomNodeInterfaces();

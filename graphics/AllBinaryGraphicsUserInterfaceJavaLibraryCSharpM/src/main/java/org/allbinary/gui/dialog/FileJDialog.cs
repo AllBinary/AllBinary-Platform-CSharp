@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using ARunnable = org.allbinary.thread.ARunnable;
-//using File = java.io.File;
+using File = java.io.File;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 
 namespace org.allbinary.gui.dialog;

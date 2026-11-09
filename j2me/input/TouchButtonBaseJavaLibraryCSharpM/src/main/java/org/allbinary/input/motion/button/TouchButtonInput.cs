@@ -53,7 +53,7 @@ public class TouchButtonInput : Input, GameKeyEventSourceInterface
         }
     }
 
-    public override int getSourceId()
+    public virtual int getSourceId()
     {
         return this.TOUCH_BUTTON_SOURCE_ID;
     }

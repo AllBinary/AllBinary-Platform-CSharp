@@ -16,78 +16,120 @@ public class R
 {
     public class attr
     {
+        private readonly R outer;
+
+        public attr(R outer)
+        {
+            this.outer = outer;
+        }
+
     }
     public class drawable
     {
-        public static readonly int testgamedemo_icon = 0x7f020000;
-        public static readonly int testgamedemo_wait_256_by_256 = 0x7f020001;
+        private readonly R outer;
+
+        public const int testgamedemo_icon = 0x7f020000;
+        public const int testgamedemo_wait_256_by_256 = 0x7f020001;
+        public drawable(R outer)
+        {
+            this.outer = outer;
+        }
+
     }
     public class id
     {
-        public static readonly int ad_area_bottom = 0x7f060002;
-        public static readonly int ad_area_left = 0x7f060003;
-        public static readonly int ad_area_right = 0x7f060004;
-        public static readonly int ad_area_top = 0x7f060001;
-        public static readonly int testgamedemo = 0x7f060000;
-        public static readonly int testgamedemo_gl = 0x7f060005;
+        private readonly R outer;
+
+        public const int ad_area_bottom = 0x7f060002;
+        public const int ad_area_left = 0x7f060003;
+        public const int ad_area_right = 0x7f060004;
+        public const int ad_area_top = 0x7f060001;
+        public const int testgamedemo = 0x7f060000;
+        public const int testgamedemo_gl = 0x7f060005;
+        public id(R outer)
+        {
+            this.outer = outer;
+        }
+
     }
     public class layout
     {
-        public static readonly int testgamedemo_ad_overlay_layout = 0x7f030000;
-        public static readonly int testgamedemo_gl_layout = 0x7f030001;
-        public static readonly int testgamedemo_layout = 0x7f030002;
+        private readonly R outer;
+
+        public const int testgamedemo_ad_overlay_layout = 0x7f030000;
+        public const int testgamedemo_gl_layout = 0x7f030001;
+        public const int testgamedemo_layout = 0x7f030002;
+        public layout(R outer)
+        {
+            this.outer = outer;
+        }
+
     }
     public class raw
     {
-        public static readonly int error = 0x7f040000;
-        public static readonly int licenseinitdata = 0x7f040001;
-        public static readonly int partner = 0x7f040002;
-        public static readonly int select = 0x7f040003;
-        public static readonly int test = 0x7f040004;
-        public static readonly int testgamedemo_wait_256_by_256 = 0x7f040005;
-        public static readonly int ouya_a = 0x7f040012;
-        public static readonly int ouya_key = 0x7f040013;
-        public static readonly int ouya_o = 0x7f040014;
-        public static readonly int ouya_u = 0x7f040015;
-        public static readonly int ouya_y = 0x7f040016;
-        public static readonly int touch_button_128_by_128 = 0x7f040026;
-        public static readonly int touch_button_64_by_64 = 0x7f040027;
-        public static readonly int touch_button_create_128_by_128 = 0x7f040028;
-        public static readonly int touch_button_create_64_by_64 = 0x7f040029;
-        public static readonly int touch_button_down_arrow_128_by_128 = 0x7f04002a;
-        public static readonly int touch_button_down_arrow_64_by_64 = 0x7f04002b;
-        public static readonly int touch_button_generic_action_128_by_128 = 0x7f04002c;
-        public static readonly int touch_button_generic_action_64_by_64 = 0x7f04002d;
-        public static readonly int touch_button_join_128_by_128 = 0x7f04002e;
-        public static readonly int touch_button_join_64_by_64 = 0x7f04002f;
-        public static readonly int touch_button_leave_128_by_128 = 0x7f040030;
-        public static readonly int touch_button_leave_64_by_64 = 0x7f040031;
-        public static readonly int touch_button_login_128_by_128 = 0x7f040032;
-        public static readonly int touch_button_login_64_by_64 = 0x7f040033;
-        public static readonly int touch_button_next_128_by_128 = 0x7f040034;
-        public static readonly int touch_button_next_64_by_64 = 0x7f040035;
-        public static readonly int touch_button_refresh_128_by_128 = 0x7f040036;
-        public static readonly int touch_button_refresh_64_by_64 = 0x7f040037;
-        public static readonly int touch_button_start_128_by_128 = 0x7f040038;
-        public static readonly int touch_button_start_64_by_64 = 0x7f040039;
-        public static readonly int touch_button_add_local_player_128_by_128 = 0x7f040038;
-        public static readonly int touch_button_add_local_player_64_by_64 = 0x7f040039;
-        public static readonly int touch_button_strafe_left_arrow_128_by_128 = 0x7f04003a;
-        public static readonly int touch_button_strafe_left_arrow_64_by_64 = 0x7f04003b;
-        public static readonly int touch_button_strafe_right_arrow_128_by_128 = 0x7f04003c;
-        public static readonly int touch_button_strafe_right_arrow_64_by_64 = 0x7f04003d;
-        public static readonly int touch_button_turn_left_arrow_128_by_128 = 0x7f04003e;
-        public static readonly int touch_button_turn_left_arrow_64_by_64 = 0x7f04003f;
-        public static readonly int touch_button_turn_right_arrow_128_by_128 = 0x7f040040;
-        public static readonly int touch_button_turn_right_arrow_64_by_64 = 0x7f040041;
-        public static readonly int touch_button_up_arrow_128_by_128 = 0x7f040042;
-        public static readonly int touch_button_up_arrow_64_by_64 = 0x7f040043;
-        public static readonly int touch_button_generic_action_arrow_64_by_64 = 0x7f040009;
+        private readonly R outer;
+
+        public const int error = 0x7f040000;
+        public const int licenseinitdata = 0x7f040001;
+        public const int partner = 0x7f040002;
+        public const int select = 0x7f040003;
+        public const int test = 0x7f040004;
+        public const int testgamedemo_wait_256_by_256 = 0x7f040005;
+        public const int ouya_a = 0x7f040012;
+        public const int ouya_key = 0x7f040013;
+        public const int ouya_o = 0x7f040014;
+        public const int ouya_u = 0x7f040015;
+        public const int ouya_y = 0x7f040016;
+        public const int touch_button_128_by_128 = 0x7f040026;
+        public const int touch_button_64_by_64 = 0x7f040027;
+        public const int touch_button_create_128_by_128 = 0x7f040028;
+        public const int touch_button_create_64_by_64 = 0x7f040029;
+        public const int touch_button_down_arrow_128_by_128 = 0x7f04002a;
+        public const int touch_button_down_arrow_64_by_64 = 0x7f04002b;
+        public const int touch_button_generic_action_128_by_128 = 0x7f04002c;
+        public const int touch_button_generic_action_64_by_64 = 0x7f04002d;
+        public const int touch_button_join_128_by_128 = 0x7f04002e;
+        public const int touch_button_join_64_by_64 = 0x7f04002f;
+        public const int touch_button_leave_128_by_128 = 0x7f040030;
+        public const int touch_button_leave_64_by_64 = 0x7f040031;
+        public const int touch_button_login_128_by_128 = 0x7f040032;
+        public const int touch_button_login_64_by_64 = 0x7f040033;
+        public const int touch_button_next_128_by_128 = 0x7f040034;
+        public const int touch_button_next_64_by_64 = 0x7f040035;
+        public const int touch_button_refresh_128_by_128 = 0x7f040036;
+        public const int touch_button_refresh_64_by_64 = 0x7f040037;
+        public const int touch_button_start_128_by_128 = 0x7f040038;
+        public const int touch_button_start_64_by_64 = 0x7f040039;
+        public const int touch_button_add_local_player_128_by_128 = 0x7f040038;
+        public const int touch_button_add_local_player_64_by_64 = 0x7f040039;
+        public const int touch_button_strafe_left_arrow_128_by_128 = 0x7f04003a;
+        public const int touch_button_strafe_left_arrow_64_by_64 = 0x7f04003b;
+        public const int touch_button_strafe_right_arrow_128_by_128 = 0x7f04003c;
+        public const int touch_button_strafe_right_arrow_64_by_64 = 0x7f04003d;
+        public const int touch_button_turn_left_arrow_128_by_128 = 0x7f04003e;
+        public const int touch_button_turn_left_arrow_64_by_64 = 0x7f04003f;
+        public const int touch_button_turn_right_arrow_128_by_128 = 0x7f040040;
+        public const int touch_button_turn_right_arrow_64_by_64 = 0x7f040041;
+        public const int touch_button_up_arrow_128_by_128 = 0x7f040042;
+        public const int touch_button_up_arrow_64_by_64 = 0x7f040043;
+        public const int touch_button_generic_action_arrow_64_by_64 = 0x7f040009;
+        public raw(R outer)
+        {
+            this.outer = outer;
+        }
+
     }
     public class string
     {
-        public static readonly int progressbar_in_title_string = 0x7f050001;
-        public static readonly int testgamedemo_app_name = 0x7f050000;
+        private readonly R outer;
+
+        public const int progressbar_in_title_string = 0x7f050001;
+        public const int testgamedemo_app_name = 0x7f050000;
+        public string(R outer)
+        {
+            this.outer = outer;
+        }
+
     }
 }
 

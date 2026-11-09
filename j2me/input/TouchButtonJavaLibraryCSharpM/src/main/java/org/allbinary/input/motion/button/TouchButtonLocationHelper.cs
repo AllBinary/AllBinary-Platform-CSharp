@@ -33,8 +33,8 @@ public class TouchButtonLocationHelper
     {
         int buttonSize = CommonButtons.getInstance().STANDARD_BUTTON_SIZE;
         DisplayInfoSingleton displayInfo = DisplayInfoSingleton.getInstance();
-        this.totalColumns = Math.Round(((float) displayInfo.getLastWidth()) / ((float) buttonSize));
-        this.totalRows = Math.Round(((float) displayInfo.getLastHeight()) / ((float) buttonSize));
+        this.totalColumns = global::java.lang.JavaMath.round(((float) displayInfo.getLastWidth()) / ((float) buttonSize));
+        this.totalRows = global::java.lang.JavaMath.round(((float) displayInfo.getLastHeight()) / ((float) buttonSize));
         this.columnsRemainder = displayInfo.getLastWidth() % buttonSize;
         this.columnsRemainderHalf = (this.columnsRemainder >> 1);
         this.rowsRemainder = displayInfo.getLastHeight() % buttonSize;

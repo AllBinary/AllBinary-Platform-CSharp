@@ -2,8 +2,8 @@
 
 using System;
 using System.Linq;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using InputStream = java.io.InputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using InputStream = java.io.InputStream;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StreamUtil = org.allbinary.logic.io.StreamUtil;
 using AbFile = org.allbinary.logic.io.file.AbFile;
@@ -39,10 +39,10 @@ public class FileItemUtil
     {
         StreamUtil streamUtil = StreamUtil.getInstance();
         InputStream inputStream = null;
-        System.IO.MemoryStream outputStream = null;
+        ByteArrayOutputStream outputStream = null;
         try {
             inputStream = fileItem.openStream();
-            outputStream = new System.IO.MemoryStream();
+            outputStream = new ByteArrayOutputStream();
             if (fileItem.isFormField()) {
                 this.logUtil.putF("FileItemStream FieldName: " + fileItem.getFieldName(), this, "write()");
             } else {
@@ -53,8 +53,8 @@ public class FileItemUtil
                 stringBuffer.append(fileItem.getName());
                 this.logUtil.putF(stringBuffer.ToString(), this, "write()");
             }
-            outputStream = ((System.IO.MemoryStream) streamUtil.get(inputStream, outputStream, new sbyte[16384]));
-            return ((sbyte[]) (Array) outputStream.ToArray());
+            outputStream = ((ByteArrayOutputStream) streamUtil.get(inputStream, outputStream, new sbyte[16384]));
+            return outputStream.toByteArray();
         } finally {
             streamUtil.close(outputStream);
             streamUtil.close(inputStream);

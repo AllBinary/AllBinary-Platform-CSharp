@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using ArrayList = java.util.ArrayList;
+using java.util;
 //using List = java.util.List;
 //using HttpServletRequest = javax.servlet.http.HttpServletRequest;
 using AbFileItemFactory = org.allbinary.logic.communication.http.AbFileItemFactory;
@@ -47,7 +47,7 @@ public class AbFileUploadFactory
         try {
             AbFileUpload fileUpload = new AbFileUpload(new AbFileItemFactory());
             FileItemIterator iterator = fileUpload.getItemIterator(httpServletRequest);
-            List items = new ArrayList();
+            List items = new ArrayList<object>();
             while (iterator.hasNext()) {
                 FileItemStream fileItemStream = iterator.next();
                 HttpFileUploadUtil.log(fileItemStream);

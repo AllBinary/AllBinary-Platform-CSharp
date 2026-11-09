@@ -48,7 +48,7 @@ public class XmlValidationTransformTag : TransformTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             this.setHelper();

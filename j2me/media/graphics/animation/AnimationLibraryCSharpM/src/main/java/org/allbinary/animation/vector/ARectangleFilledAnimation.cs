@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
 
 namespace org.allbinary.animation.vector;

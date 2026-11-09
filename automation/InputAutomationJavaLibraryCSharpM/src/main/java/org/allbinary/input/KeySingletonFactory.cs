@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using KeyEvent = java.awt.@event.KeyEvent;
+using KeyEvent = java.awt.@event.KeyEvent;
 using StdUtil = org.allbinary.logic.StdUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
@@ -54,7 +54,7 @@ public class KeySingletonFactory
 
     public static int? getInstance(int index)
     {
-        return (index).ToString();
+        return int.Parse((index).ToString());
     }
 
     public static int?[] getArray()

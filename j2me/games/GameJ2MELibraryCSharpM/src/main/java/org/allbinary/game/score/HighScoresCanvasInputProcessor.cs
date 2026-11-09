@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using PlayerGameInput = org.allbinary.game.input.PlayerGameInput;
 using GameKeyEvent = org.allbinary.game.input.@event.GameKeyEvent;
 using HighScoresCanvas = org.allbinary.game.score.displayable.HighScoresCanvas;

@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
-//using Image = javax.microedition.lcdui.Image;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using InputStream = java.io.InputStream;
+using Image = javax.microedition.lcdui.Image;
+using NullImage = javax.microedition.lcdui.NullImage;
 using J2MEUtil = org.allbinary.J2MEUtil;
 using TsUtil = org.allbinary.TsUtil;
 using ResourceUtil = org.allbinary.data.resource.ResourceUtil;

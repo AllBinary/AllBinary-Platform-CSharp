@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using PlaynImmutableImage = org.microemu.device.playn.PlaynImmutableImage;
 using PlaynMutableImage = org.microemu.device.playn.PlaynMutableImage;
 using CanvasImage = playn.core.CanvasImage;
@@ -53,7 +53,7 @@ public class ImageRotationUtil
             CanvasImage canvasImage = ((CanvasImage) htmlImage.getImage());
             CanvasSurface canvasSurface = htmlImage.getCanvasSurface(canvasImage);
             canvasSurface.translate(originalPlayNImage.width() / 2, originalPlayNImage.height() / 2);
-            canvasSurface.rotate(((float) Math.ToRadians(rotationInDegrees)));
+            canvasSurface.rotate(((float) ((rotationInDegrees) * Math.PI / 180.0)));
             canvasSurface.drawImage(originalPlayNImage, -originalPlayNImage.width() / 2, -originalPlayNImage.height() / 2);
             return image;
         } else {

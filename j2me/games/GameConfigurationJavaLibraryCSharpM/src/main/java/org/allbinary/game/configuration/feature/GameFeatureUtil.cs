@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using java.util;
-//using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
+using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
 using TsUtil = org.allbinary.TsUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;

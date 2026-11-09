@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using Choice = javax.microedition.lcdui.Choice;
-//using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using NullImage = javax.microedition.lcdui.NullImage;
+using Choice = javax.microedition.lcdui.Choice;
+using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using NullImage = javax.microedition.lcdui.NullImage;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using GameDifficultyFactory = org.allbinary.game.configuration.persistance.GameDifficultyFactory;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -120,7 +120,7 @@ public class GameDifficultyOptions : CommandForm
     public virtual int getSelectedText()
     {
         ChoiceGroup choiceGroup = ((ChoiceGroup) this.get(0));
-        int value = ((int) (choiceGroup.getString(choiceGroup.getSelectedIndex())).ToString());
+        int value = global::java.lang.JavaNumber.intValue(int.Parse((choiceGroup.getString(choiceGroup.getSelectedIndex())).ToString()));
         return value;
     }
 

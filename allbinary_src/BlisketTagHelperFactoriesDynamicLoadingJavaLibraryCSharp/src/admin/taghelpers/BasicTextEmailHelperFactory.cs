@@ -24,8 +24,8 @@ namespace admin.taghelpers;
 
 public class BasicTextEmailHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "admin.taghelpers.BasicTextEmailHelper";
-    private static readonly string FACTORYNAME = "BasicTextEmailHelperFactory";
+    private const string CLASSNAME = "admin.taghelpers.BasicTextEmailHelper";
+    private const string FACTORYNAME = "BasicTextEmailHelperFactory";
     public BasicTextEmailHelperFactory()
     {
     }

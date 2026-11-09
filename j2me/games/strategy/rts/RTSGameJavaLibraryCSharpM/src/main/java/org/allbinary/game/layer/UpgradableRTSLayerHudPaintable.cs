@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using CollidableDestroyableDamageableLayer = org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer;
 using CharArrayFactory = org.allbinary.logic.java.character.CharArrayFactory;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using LockedFeatureNotificationUtil = org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil;
 using LockedUtil = org.allbinary.logic.system.security.licensing.LockedUtil;
@@ -46,18 +46,27 @@ public class MapSelectionGameInputProcessor : Processor, GameInputProcessorInter
     private readonly TimeDelayHelper inputTimeHelper = new TimeDelayHelper(650);
     private readonly PlayerGameInput playerGameInput;
     private readonly int lockedIndex;
-    private readonly ABRunnable abRunnable = new ABRunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-        public virtual void run()
+    public class MapSelectionRunnable : ABRunnable
+    {
+        private readonly MapSelectionGameInputProcessor outer;
+
+        private readonly MapSelectionGameInputProcessor inputProcessor;
+        public MapSelectionRunnable(MapSelectionGameInputProcessor outer, MapSelectionGameInputProcessor inputProcessor)
+        {
+            this.outer = outer;
+            this.inputProcessor = inputProcessor;
+        }
+
+        public override void run()
         {
             try {
                 this.setRunning(true);
                 SecondaryPlayerQueueFactory.getInstance().add(SelectSound.getInstance());
-                int track = preGameSelectorPaintable.getPreGameSelectionForm().getSelectedIndex() + 1;
-                int wave = raceTrackGeographicMapInterfaceFactoryInterface.getFirstWaveWithTrack(track);
-                gameCanvas.getLayerManager().getGameInfo().setCurrentLevel(wave);
-                gameCanvas.buildGameInit(false);
-                GameKeyEventHandler.getInstance().removeListener(getPlayerGameInput());
+                int track = this.inputProcessor.preGameSelectorPaintable.getPreGameSelectionForm().getSelectedIndex() + 1;
+                int wave = this.inputProcessor.raceTrackGeographicMapInterfaceFactoryInterface.getFirstWaveWithTrack(track);
+                this.inputProcessor.gameCanvas.getLayerManager().getGameInfo().setCurrentLevel(wave);
+                this.inputProcessor.gameCanvas.buildGameInit(false);
+                GameKeyEventHandler.getInstance().removeListener(this.inputProcessor.getPlayerGameInput());
                 this.setRunning(false);
             } catch (Exception e) {
                 this.setRunning(false);
@@ -67,10 +76,11 @@ public class MapSelectionGameInputProcessor : Processor, GameInputProcessorInter
             }
         }
 
-#endif
-;
+    }
+    private readonly ABRunnable abRunnable;
     public MapSelectionGameInputProcessor(AllBinaryGameCanvas gameCanvas, MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface raceTrackGeographicMapInterfaceFactoryInterface, PreGameSelectorPaintable mapSelectorPaintable, int lockedIndex)
     {
+        this.abRunnable = new MapSelectionRunnable(this, this);
         this.gameCanvas = gameCanvas;
         this.raceTrackGeographicMapInterfaceFactoryInterface = raceTrackGeographicMapInterfaceFactoryInterface;
         this.preGameSelectorPaintable = mapSelectorPaintable;
@@ -85,7 +95,7 @@ public class MapSelectionGameInputProcessor : Processor, GameInputProcessorInter
     }
 
     // throws Exception
-    public override void onInput(BasicArrayList list)
+    public virtual void onInput(BasicArrayList list)
     {
         int size = list.size();
         for (int index = 0; index < size; index++) {
@@ -114,20 +124,20 @@ public class MapSelectionGameInputProcessor : Processor, GameInputProcessorInter
     }
 
     // throws Exception
-    public override void processInput(AllBinaryLayerManager layerManager)
+    public virtual void processInput(AllBinaryLayerManager layerManager)
     {
     }
 
-    public override void initInputProcessors()
+    public virtual void initInputProcessors()
     {
     }
 
-    public override string getName()
+    public virtual string getName()
     {
         return this.ToString();
     }
 
-    public override PlayerGameInput getPlayerGameInput()
+    public virtual PlayerGameInput getPlayerGameInput()
     {
         return this.playerGameInput;
     }

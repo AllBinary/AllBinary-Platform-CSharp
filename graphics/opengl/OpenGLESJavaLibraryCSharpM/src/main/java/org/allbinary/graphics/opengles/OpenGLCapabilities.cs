@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias ImageCacheOpenGLESJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using GL11 = javax.microedition.khronos.opengles.GL11;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using GL11 = javax.microedition.khronos.opengles.GL11;
 using AndroidUtil = org.allbinary.AndroidUtil;
 using OpenGLESGL10ImageFactory = org.allbinary.image.opengles.OpenGLESGL10ImageFactory;
 using OpenGLESGL11VBOImageFactory = org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory;

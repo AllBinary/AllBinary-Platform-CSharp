@@ -37,6 +37,12 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="$(AllBinaryRuntimeProject)" Condition="'$(AllBinaryRuntimeProject)' != '' And Exists('$(AllBinaryRuntimeProject)')" GlobalPropertiesToRemove="OutputPath" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- org/allbinary/math/PositionStrings is also in a dependency -->
+    <Compile Remove="src\main\java\org\allbinary\math\PositionStrings.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\..\replace_these_stub_projects\allbinary_src\J2MEJsInteropCompatibilityJavaLibraryCSharpM\J2MEJsInteropCompatibilityJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\logging\LoggingJ2MEAllCSharpM\LoggingJ2MEAllCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\allbinary_src\LogJ2MEJavaLibraryCSharpM\LogJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

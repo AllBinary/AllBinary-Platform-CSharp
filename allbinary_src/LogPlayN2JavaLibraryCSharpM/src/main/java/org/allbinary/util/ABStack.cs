@@ -23,7 +23,7 @@ namespace org.allbinary.util;
 
 public class ABStack<E> : Stack<E>
 {
-    public override E push(E item)
+    public virtual E push(E item)
     {
         return base.push(item);
     }

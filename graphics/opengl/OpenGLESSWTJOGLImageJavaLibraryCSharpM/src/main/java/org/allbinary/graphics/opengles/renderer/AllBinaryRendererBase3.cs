@@ -14,10 +14,11 @@
  */
 // Generated Code Do Not Modify
 
+extern alias OpenGLESBaseJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using GL10 = javax.microedition.khronos.opengles.GL10;
-//using Image = javax.microedition.lcdui.Image;
+using GL10 = javax.microedition.khronos.opengles.GL10;
+using Image = javax.microedition.lcdui.Image;
 using OpenGLESImage = org.allbinary.image.opengles.OpenGLESImage;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;

@@ -14,10 +14,12 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Anchor = org.allbinary.graphics.Anchor;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
@@ -50,7 +52,7 @@ public class HelpPaintable : Paintable, UpdateMyFontInterface
         this.basicColor = basicColor;
     }
 
-    public override void updateMeasurement(Graphics graphics)
+    public virtual void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
         this.titleBeginWidth = (font.stringWidth(this.title) >> 1);
@@ -73,7 +75,7 @@ public class HelpPaintable : Paintable, UpdateMyFontInterface
     {
         this.myFontProcessor.process(graphics);
         int halfWidth = this.displayInfo.getLastHalfWidth();
-        graphics.setColor(((int) this.basicColor));
+        graphics.setColor(this.basicColor.intValue());
         graphics.drawString(this.title, halfWidth - this.titleBeginWidth, this.charHeight, this.anchor);
         int size = this.inputInfo.Length;
         for (int index = 0; index < size; index++) {

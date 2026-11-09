@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Displayable = javax.microedition.lcdui.Displayable;
+using Displayable = javax.microedition.lcdui.Displayable;
 using AndroidUtil = org.allbinary.AndroidUtil;
 using Features = org.allbinary.game.configuration.feature.Features;
 using DisplayChangeEvent = org.allbinary.graphics.displayable.@event.DisplayChangeEvent;

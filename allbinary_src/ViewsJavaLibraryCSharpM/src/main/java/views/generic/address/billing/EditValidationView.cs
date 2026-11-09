@@ -40,7 +40,7 @@ public class EditValidationView : BillingAddressView, ValidationComponentInterfa
             return false;
         }
         BillingAddressesEntity billingAddressesEntity = new BillingAddressesEntity(this.getWeblisketSession().getUserName());
-        this.streetAddress = billingAddressesEntity.get(this.value);
+        this.streetAddress = billingAddressesEntity.get(int.Parse(this.value));
         if (this.streetAddress == null) {
             return false;
         }
@@ -60,6 +60,12 @@ public class EditValidationView : BillingAddressView, ValidationComponentInterfa
     public virtual Node toValidationInfoNode(Document document)
     {
         return null;
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

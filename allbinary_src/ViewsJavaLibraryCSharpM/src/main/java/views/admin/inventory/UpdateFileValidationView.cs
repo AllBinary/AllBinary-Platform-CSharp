@@ -195,5 +195,11 @@ public class UpdateFileValidationView : InventoryItemView, ValidationComponentIn
         }
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

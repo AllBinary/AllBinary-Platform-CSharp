@@ -16,9 +16,9 @@
 
 using System;
 using System.Linq;
-//using GL = javax.microedition.khronos.opengles.GL;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Image = javax.microedition.lcdui.Image;
+using GL = javax.microedition.khronos.opengles.GL;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using IndexedAnimation = org.allbinary.animation.IndexedAnimation;
 using NullRotationAnimationFactory = org.allbinary.animation.NullRotationAnimationFactory;
@@ -55,53 +55,11 @@ public class LazyImageRotationAnimation : RotationAnimation
         imageCache.add(this);
         this.scaleProperties = scaleProperties;
         this.NULL_INDEX_ANIMATION = ((IndexedAnimation) NullRotationAnimationFactory.getFactoryInstance().getInstance(0));
-        class ActualRotationAnimation : RotationAnimation
-        {
-            private readonly LazyImageRotationAnimation lazyImageRotationAnimation;
-            private int index = 0;
-            public ActualRotationAnimation(LazyImageRotationAnimation lazyImageRotationAnimation) : base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior)
-            {
-                // base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior) is called from the constructor declaration
-                this.lazyImageRotationAnimation = lazyImageRotationAnimation;
-            }
-
-            public override void setFrame(int index)
-            {
-                this.index = index;
-            }
-
-            public override int getFrame()
-            {
-                return this.index;
-            }
-
-            public override void paintXY(Graphics graphics, int x, int y)
-            {
-                try {
-                    ImageCacheFactory.getInstance().insertFirst(this);
-                    this.lazyImageRotationAnimation.animation = this.lazyImageRotationAnimation.NULL_INDEX_ANIMATION;
-                } catch (Exception e) {
-                    LogUtil logUtil = LogUtil.getInstance();
-                    logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.PROCESS, e);
-                }
-            }
-
-            public override void paintThreedXYZ(Graphics graphics, int x, int y, int z)
-            {
-                try {
-                    ImageCacheFactory.getInstance().insertFirst(this);
-                    this.lazyImageRotationAnimation.animation = this.lazyImageRotationAnimation.NULL_INDEX_ANIMATION;
-                } catch (Exception e) {
-                    LogUtil logUtil = LogUtil.getInstance();
-                    logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.PROCESS, e);
-                }
-            }
-
-        }
+        
         this.animation = new ActualRotationAnimation(this);
     }
 
-    private static readonly string SET_REAL_ANIMATION = "setRealAnimation";
+    private const string SET_REAL_ANIMATION = "setRealAnimation";
     public virtual void setRealAnimation()
     {
         try {
@@ -307,6 +265,50 @@ public class LazyImageRotationAnimation : RotationAnimation
         Image image = this.animationInterfaceFactoryInterface.getImage();
         return new StringMaker().append(base.ToString()).append(commonSeps.SPACE).append(image.getName()).append(commonSeps.SPACE).appendint(((int) image.getWidth())).append(commonSeps.SPACE).appendint(((int) image.getHeight())).ToString();
     }
+
+        class ActualRotationAnimation : RotationAnimation
+        {
+            private readonly LazyImageRotationAnimation lazyImageRotationAnimation;
+            private int index = 0;
+            public ActualRotationAnimation(LazyImageRotationAnimation lazyImageRotationAnimation) : base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior)
+            {
+                // base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior) is called from the constructor declaration
+                this.lazyImageRotationAnimation = lazyImageRotationAnimation;
+            }
+
+            public override void setFrame(int index)
+            {
+                this.index = index;
+            }
+
+            public override int getFrame()
+            {
+                return this.index;
+            }
+
+            public override void paintXY(Graphics graphics, int x, int y)
+            {
+                try {
+                    ImageCacheFactory.getInstance().insertFirst(this);
+                    this.lazyImageRotationAnimation.animation = this.lazyImageRotationAnimation.NULL_INDEX_ANIMATION;
+                } catch (Exception e) {
+                    LogUtil logUtil = LogUtil.getInstance();
+                    logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.PROCESS, e);
+                }
+            }
+
+            public override void paintThreedXYZ(Graphics graphics, int x, int y, int z)
+            {
+                try {
+                    ImageCacheFactory.getInstance().insertFirst(this);
+                    this.lazyImageRotationAnimation.animation = this.lazyImageRotationAnimation.NULL_INDEX_ANIMATION;
+                } catch (Exception e) {
+                    LogUtil logUtil = LogUtil.getInstance();
+                    logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.PROCESS, e);
+                }
+            }
+
+        }
 
 }
 

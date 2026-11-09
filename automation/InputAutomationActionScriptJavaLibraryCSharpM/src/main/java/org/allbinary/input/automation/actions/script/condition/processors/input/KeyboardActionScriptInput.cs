@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using KeyEvent = java.awt.@event.KeyEvent;
+using KeyEvent = java.awt.@event.KeyEvent;
 using java.util;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
@@ -39,7 +39,7 @@ public class KeyboardActionScriptInput : BasicProfileActionScriptInput, Keyboard
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private int?[] keyArray = new int?[] { KeySingletonFactory.getInstance(KeyEvent.VK_0) };
-    private static readonly string NAME = "Keyboard";
+    private const string NAME = "Keyboard";
     private KeyboardActionScriptInputJPanel keyboardActionScriptInputJPanel;
     private bool press = false;
     private bool release = false;
@@ -56,16 +56,16 @@ public class KeyboardActionScriptInput : BasicProfileActionScriptInput, Keyboard
                 Node childNode = nodeList.item(index);
                 if (childNode.getNodeName().startsWith(KeyboardActionScriptInputData.KEY)) {
                     string keyString = DomNodeHelper.getTextNodeValue(childNode);
-                    vector.add((keyString).ToString());
+                    vector.add(int.Parse((keyString).ToString()));
                 } else if (childNode.getNodeName().compareTo(KeyboardActionScriptInputData.DELAY_BETWEEN_KEYS) == 0) {
                     string time = DomNodeHelper.getTextNodeValue(childNode);
-                    this.setDelayBetweenKeys(((int) (time).ToString()));
+                    this.setDelayBetweenKeys(global::java.lang.JavaNumber.intValue(int.Parse((time).ToString())));
                 } else if (childNode.getNodeName().compareTo(KeyboardActionScriptInputData.PRESS) == 0) {
                     string value = DomNodeHelper.getTextNodeValue(childNode);
-                    this.setPress((value).ToString());
+                    this.setPress(bool.Parse((value).ToString()));
                 } else if (childNode.getNodeName().compareTo(KeyboardActionScriptInputData.RELEASE) == 0) {
                     string value = DomNodeHelper.getTextNodeValue(childNode);
-                    this.setRelease((value).ToString());
+                    this.setRelease(bool.Parse((value).ToString()));
                 } else {
                     throw new Exception("Action Script Input Unknown Node");
                 }
@@ -146,7 +146,7 @@ public class KeyboardActionScriptInput : BasicProfileActionScriptInput, Keyboard
         this.keyArray = keyArray;
     }
 
-    public virtual void showDialog()
+    public override void showDialog()
     {
         this.keyboardActionScriptInputJPanel.getKeyActionJDialog().setVisible(true);
     }
@@ -192,7 +192,7 @@ public class KeyboardActionScriptInput : BasicProfileActionScriptInput, Keyboard
                     if (endIndex != -1) {
                         string nextCharString = text.Substring(index + 2, (endIndex) - (index + 2));
                         this.logUtil.putF(CommonLabels.getInstance().NEXT + " Char String: " + nextCharString, this, "integerArrayValue");
-                        vector.add((nextCharString.Substring(index, (nextCharString.Length) - (index))).ToString());
+                        vector.add(int.Parse((nextCharString.Substring(index, (nextCharString.Length) - (index))).ToString()));
                         index = index + nextCharString.Length + 3;
                         continue;
                     }
@@ -219,7 +219,7 @@ public class KeyboardActionScriptInput : BasicProfileActionScriptInput, Keyboard
     }
 
     // throws Exception
-    public virtual Node toXmlNode(Document document)
+    public override Node toXmlNode(Document document)
     {
         Node node = base.toXmlNode(document);
         node.appendChild(ModDomHelper.createNodeWithValueNodes(document, KeyboardActionScriptInputData.NAME, this.toHashMap()));
@@ -227,7 +227,7 @@ public class KeyboardActionScriptInput : BasicProfileActionScriptInput, Keyboard
     }
 
     // throws Exception
-    public virtual void process(long? frame)
+    public override void process(long? frame)
     {
         KeyboardInputAutomationProcessor.process(this);
     }

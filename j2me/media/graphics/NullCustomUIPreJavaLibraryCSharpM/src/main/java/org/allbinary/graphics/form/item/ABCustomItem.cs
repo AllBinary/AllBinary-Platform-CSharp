@@ -2,8 +2,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Screen = javax.microedition.lcdui.Screen;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Screen = javax.microedition.lcdui.Screen;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
 using NullUtil = org.allbinary.logic.NullUtil;

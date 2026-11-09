@@ -55,9 +55,11 @@
             <!-- AllBinary Platform Version End -->
 
         </dependency>
+        <!-- C# classes such as ABHashtable are different types in each platform assembly. LogJ2MEJavaLibraryCSharp is the one
+             the other C# projects use (Java uses LogNoPlatformJavaLibrary here since only the class names are needed). -->
         <dependency>
             <groupId>org.allbinary</groupId>
-            <artifactId>LogNoPlatformJavaLibraryCSharp</artifactId>
+            <artifactId>LogJ2MEJavaLibraryCSharp</artifactId>
             <!-- AllBinary Platform Version Start -->
             <version>1.0.0-SNAPSHOT</version>
             <!-- AllBinary Platform Version End -->
@@ -112,7 +114,7 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-pluginCSharp</artifactId>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <!-- 
                 <version>2.5.1</version>

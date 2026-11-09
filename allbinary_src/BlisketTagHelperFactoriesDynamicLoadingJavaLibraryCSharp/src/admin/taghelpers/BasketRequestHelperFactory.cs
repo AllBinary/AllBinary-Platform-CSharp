@@ -24,8 +24,8 @@ namespace admin.taghelpers;
 
 public class BasketRequestHelperFactory : TagHelperFactoryInterface
 {
-    private static readonly string CLASSNAME = "admin.taghelpers.BasketRequestHelper";
-    private static readonly string FACTORYNAME = "BasketRequestHelperFactory";
+    private const string CLASSNAME = "admin.taghelpers.BasketRequestHelper";
+    private const string FACTORYNAME = "BasketRequestHelperFactory";
     public BasketRequestHelperFactory()
     {
     }

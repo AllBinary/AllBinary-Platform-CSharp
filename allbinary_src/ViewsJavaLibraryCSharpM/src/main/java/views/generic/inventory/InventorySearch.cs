@@ -85,7 +85,7 @@ public class InventorySearch : InventoryViewSearchInterface
     {
         try {
             string[] str = this.search();
-            return str[((int) this.searchRequest.getParams().getStartPageInt())];
+            return str[global::java.lang.JavaNumber.intValue(this.searchRequest.getParams().getStartPageInt())];
         } catch (Exception e) {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "searchSingleDynamicPage", e);

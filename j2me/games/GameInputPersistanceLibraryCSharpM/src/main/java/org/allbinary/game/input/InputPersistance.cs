@@ -16,12 +16,12 @@
 
 using System;
 using System.Linq;
-//using ByteArrayInputStream = java.io.ByteArrayInputStream;
-//using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
-//using DataInputStream = java.io.DataInputStream;
-//using DataOutputStream = java.io.DataOutputStream;
-//using RecordEnumeration = javax.microedition.rms.RecordEnumeration;
-//using RecordStore = javax.microedition.rms.RecordStore;
+using ByteArrayInputStream = java.io.ByteArrayInputStream;
+using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
+using DataInputStream = java.io.DataInputStream;
+using DataOutputStream = java.io.DataOutputStream;
+using RecordEnumeration = javax.microedition.rms.RecordEnumeration;
+using RecordStore = javax.microedition.rms.RecordStore;
 using TsUtil = org.allbinary.TsUtil;
 using BasicPersitance = org.allbinary.game.configuration.persistance.BasicPersitance;
 using NullRecordComparator = org.allbinary.game.configuration.persistance.NullRecordComparator;
@@ -133,7 +133,7 @@ public class InputPersistance : BasicPersitance
             StringMaker stringBuffer = new StringMaker();
             PreLogUtil.put(stringBuffer.append(this.persistanceStrings.SAVING).append(StringUtil.getInstance().toString(hashtable)).ToString(), this, this.commonStrings.SAVE);
             recordStore = RecordStore.openRecordStore(this.getRecordId(abeClientInformation), true);
-            System.IO.MemoryStream byteArrayOutputStream = new System.IO.MemoryStream();
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             DataOutputStream outputStream = new DataOutputStream(byteArrayOutputStream);
             Input gameActionInput = null;
             BasicArrayList list = null;
@@ -155,7 +155,7 @@ public class InputPersistance : BasicPersitance
                     outputStream.writeUTF(inputIdAsString);
                 }
             }
-            savedGameBytes = ((sbyte[]) (Array) byteArrayOutputStream.ToArray());
+            savedGameBytes = byteArrayOutputStream.toByteArray();
             recordStore.addRecord(savedGameBytes, 0, savedGameBytes.Length);
         } catch (Exception e) {
             throw e;

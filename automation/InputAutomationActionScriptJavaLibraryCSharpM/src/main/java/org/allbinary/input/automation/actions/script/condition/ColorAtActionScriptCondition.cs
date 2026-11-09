@@ -46,7 +46,7 @@ public class ColorAtActionScriptCondition : BasicProfileActionScriptCondition, C
     private ColorAtActionScriptConditionJPanel colorAtActionScriptConditionJPanel = null;
     private Point point;
     private ColorRangeInterface colorRangeInterface = ((ColorRangeInterface) new ColorRange());
-    private static readonly string NAME = "If Color At";
+    private const string NAME = "If Color At";
     public ColorAtActionScriptCondition(Node node) : base(ColorAtActionScriptCondition.NAME, node)
     {
         // base(ColorAtActionScriptCondition.NAME, node) is called from the constructor declaration
@@ -58,28 +58,28 @@ public class ColorAtActionScriptCondition : BasicProfileActionScriptCondition, C
                 Node childNode = nodeList.item(index);
                 if (childNode.getNodeName().compareTo(ColorAtActionScriptConditionData.LOCATION_X) == 0) {
                     string locationX = DomNodeHelper.getTextNodeValue(childNode);
-                    this.point.x = (locationX).ToString();
+                    this.point.x = int.Parse((locationX).ToString());
                 } else if (childNode.getNodeName().compareTo(ColorAtActionScriptConditionData.LOCATION_Y) == 0) {
                     string locationY = DomNodeHelper.getTextNodeValue(childNode);
-                    this.point.y = (locationY).ToString();
+                    this.point.y = int.Parse((locationY).ToString());
                 } else if (childNode.getNodeName().compareTo(ColorAtActionScriptConditionData.MIN_RED) == 0) {
                     string @string = DomNodeHelper.getTextNodeValue(childNode);
-                    this.getColorRangeInterface().setMinRed((@string).ToString());
+                    this.getColorRangeInterface().setMinRed(int.Parse((@string).ToString()));
                 } else if (childNode.getNodeName().compareTo(ColorAtActionScriptConditionData.MAX_RED) == 0) {
                     string @string = DomNodeHelper.getTextNodeValue(childNode);
-                    this.getColorRangeInterface().setMaxRed((@string).ToString());
+                    this.getColorRangeInterface().setMaxRed(int.Parse((@string).ToString()));
                 } else if (childNode.getNodeName().compareTo(ColorAtActionScriptConditionData.MIN_GREEN) == 0) {
                     string @string = DomNodeHelper.getTextNodeValue(childNode);
-                    this.getColorRangeInterface().setMinGreen((@string).ToString());
+                    this.getColorRangeInterface().setMinGreen(int.Parse((@string).ToString()));
                 } else if (childNode.getNodeName().compareTo(ColorAtActionScriptConditionData.MAX_GREEN) == 0) {
                     string @string = DomNodeHelper.getTextNodeValue(childNode);
-                    this.getColorRangeInterface().setMaxGreen((@string).ToString());
+                    this.getColorRangeInterface().setMaxGreen(int.Parse((@string).ToString()));
                 } else if (childNode.getNodeName().compareTo(ColorAtActionScriptConditionData.MIN_BLUE) == 0) {
                     string @string = DomNodeHelper.getTextNodeValue(childNode);
-                    this.getColorRangeInterface().setMinBlue((@string).ToString());
+                    this.getColorRangeInterface().setMinBlue(int.Parse((@string).ToString()));
                 } else if (childNode.getNodeName().compareTo(ColorAtActionScriptConditionData.MAX_BLUE) == 0) {
                     string @string = DomNodeHelper.getTextNodeValue(childNode);
-                    this.getColorRangeInterface().setMaxBlue((@string).ToString());
+                    this.getColorRangeInterface().setMaxBlue(int.Parse((@string).ToString()));
                 }
             }
         } else {
@@ -110,7 +110,7 @@ public class ColorAtActionScriptCondition : BasicProfileActionScriptCondition, C
         this.point = point;
     }
 
-    public virtual void showDialog()
+    public override void showDialog()
     {
         this.colorAtActionScriptConditionJPanel.getColorAtActionJDialog().setVisible(true);
     }
@@ -131,7 +131,7 @@ public class ColorAtActionScriptCondition : BasicProfileActionScriptCondition, C
     }
 
     // throws Exception
-    public virtual Node toXmlNode(Document document)
+    public override Node toXmlNode(Document document)
     {
         Node node = base.toXmlNode(document);
         node.appendChild(ModDomHelper.createNodeWithValueNodes(document, ColorAtActionScriptConditionData.NAME, this.toHashMap()));
@@ -141,10 +141,10 @@ public class ColorAtActionScriptCondition : BasicProfileActionScriptCondition, C
     // throws Exception
     public virtual bool shouldProcess(long frame)
     {
-        BufferedImageFrameCacheable capturedBufferedImageCacheable = ((BufferedImageFrameCacheable) (((AutomaticCacheInterface) CapturedBufferedImagesCacheSingleton.getInstance())).get((frame).ToString()));
+        BufferedImageFrameCacheable capturedBufferedImageCacheable = ((BufferedImageFrameCacheable) (((AutomaticCacheInterface) CapturedBufferedImagesCacheSingleton.getInstance())).get(long.Parse((frame).ToString())));
         BufferedImage bufferedImage = capturedBufferedImageCacheable.getBufferedImage();
         AutomaticCacheInterface automaticCacheInterface = ColorCacheFactory.getInstance();
-        int? colorInteger = (bufferedImage.getRGB(this.getPoint().x, this.getPoint().y)).ToString();
+        int? colorInteger = int.Parse((bufferedImage.getRGB(this.getPoint().x, this.getPoint().y)).ToString());
         ColorCacheable colorCacheable = ((ColorCacheable) automaticCacheInterface.get(colorInteger));
         Color color = colorCacheable.getColor();
         if (this.colorRangeInterface.isInRange(color)) {

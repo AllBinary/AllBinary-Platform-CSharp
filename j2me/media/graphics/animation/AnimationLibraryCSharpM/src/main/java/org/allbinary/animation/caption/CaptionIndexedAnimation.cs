@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Player = javax.microedition.media.Player;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Player = javax.microedition.media.Player;
 using Animation = org.allbinary.animation.Animation;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using AnimationEventHandler = org.allbinary.animation.AnimationEventHandler;

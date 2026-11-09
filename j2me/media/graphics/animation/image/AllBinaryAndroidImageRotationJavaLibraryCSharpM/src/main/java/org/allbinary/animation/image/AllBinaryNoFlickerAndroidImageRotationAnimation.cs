@@ -17,8 +17,8 @@
 using System;
 using System.Linq;
 using Matrix = android.graphics.Matrix;
-//using Image = javax.microedition.lcdui.Image;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Image = javax.microedition.lcdui.Image;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AngleInfo = org.allbinary.math.AngleInfo;
 using AnimationBehavior = org.allbinary.animation.AnimationBehavior;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -55,7 +55,7 @@ public class AllBinaryNoFlickerAndroidImageRotationAnimation : ImageBaseRotation
     public override void setBasicColorP(BasicColor basicColor)
     {
         bool changed = false;
-        if (this.getBasicColorP() == null || ((int) this.getBasicColorP()) != basicColor.intValue()) {
+        if (this.getBasicColorP() == null || global::java.lang.JavaNumber.intValue(this.getBasicColorP()) != basicColor.intValue()) {
             this.imageModifierUtil.setColor(this.originalImage, this.imageToShow, 0, basicColor);
             changed = true;
         }

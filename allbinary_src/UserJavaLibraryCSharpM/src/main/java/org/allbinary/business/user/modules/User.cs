@@ -134,10 +134,10 @@ public class User : UserInterface
     {
         try {
             bool? valid = true;
-            if (!UserName.getInstance().isValid(this.userName)) {
+            if (!((bool) (UserName.getInstance().isValid(this.userName)))) {
                 valid = false;
             }
-            if (!this.password.isValid()) {
+            if (!((bool) (this.password.isValid()))) {
                 valid = false;
             }
             StringValidationUtil stringValidationUtil = StringValidationUtil.getInstance();

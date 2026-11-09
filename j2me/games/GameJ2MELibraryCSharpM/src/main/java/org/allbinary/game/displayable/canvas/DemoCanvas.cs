@@ -14,13 +14,15 @@
  */
 // Generated Code Do Not Modify
 
+extern alias GameLicensingNullJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using Command = javax.microedition.lcdui.Command;
-//using CommandListener = javax.microedition.lcdui.CommandListener;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Item = javax.microedition.lcdui.Item;
+using Command = javax.microedition.lcdui.Command;
+using CommandListener = javax.microedition.lcdui.CommandListener;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Item = javax.microedition.lcdui.Item;
 using J2MEUtil = org.allbinary.J2MEUtil;
 using Animation = org.allbinary.animation.Animation;
 using IndexedAnimationBehavior = org.allbinary.animation.IndexedAnimationBehavior;
@@ -99,7 +101,7 @@ using StringMaker = org.allbinary.logic.@string.StringMaker;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using OperatingSystemFactory = org.allbinary.logic.system.os.OperatingSystemFactory;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
-using InApplicationPurchaseFactory = org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory;
+//using InApplicationPurchaseFactory = org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory;
 using LockableFeature = org.allbinary.logic.system.security.licensing.LockableFeature;
 using LockableFeatureFactory = org.allbinary.logic.system.security.licensing.LockableFeatureFactory;
 using AllBinaryEventObject = org.allbinary.logic.util.@event.AllBinaryEventObject;
@@ -138,7 +140,7 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
     private readonly HighScoresPaintable realHighScoresPaintable = new HighScoresPaintable();
     private Paintable highScoresPaintable = NullPaintable.getInstance();
     private int state = 0;
-    private Thread canvasThread = NullThread.NULL_THREAD;
+    private global::org.allbinary.thread.NullThread canvasThread = NullThread.NULL_THREAD;
     private readonly TimeDelayHelper timeDelayHelper = new TimeDelayHelper(6000);
     private BasicColor basicColor;
     public readonly AbeClientInformationInterface abeClientInformation;
@@ -178,12 +180,12 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         DisplayChangeEventHandler.getInstance().addListenerInterface(this);
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }
 
-    public override void onDisplayChangeEvent(DisplayChangeEvent displayChangeEvent)
+    public virtual void onDisplayChangeEvent(DisplayChangeEvent displayChangeEvent)
     {
         try {
             this.logUtil.putF(new StringMaker().append(this.commonLabels.START_LABEL).append(this.displayInfo.ToString()).ToString(), this, this.canvasStrings.ON_DISPLAY_CHANGE_EVENT);
@@ -199,7 +201,7 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         }
     }
 
-    protected virtual object[] getCustomCommands()
+    public virtual object[] getCustomCommands()
     {
         GameCommandsFactory gameCommandsFactory = GameCommandsFactory.getInstance();
         if (J2MEUtil.isHTML()) {
@@ -208,7 +210,7 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         } else {
             BasicArrayList commandList = new BasicArrayListD();
             commandList.add(gameCommandsFactory.START_COMMAND);
-            InApplicationPurchaseFactory inApplicationPurchaseFactory = InApplicationPurchaseFactory.getInstance();
+            GameLicensingNullJavaLibraryCSharp::org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory inApplicationPurchaseFactory = GameLicensingNullJavaLibraryCSharp::org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory.getInstance();
             if (inApplicationPurchaseFactory.isEnabled()) {
                 BasicArrayList list = LockableFeatureFactory.getInstance().getList();
                 if (list.size() > 0 && !inApplicationPurchaseFactory.isPurchased(((LockableFeature) list.get(0)))) {
@@ -256,13 +258,13 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         AllBinaryMediaManager.init(EarlySoundsFactory.getInstance());
     }
 
-    public override void itemStateChanged(Item item)
+    public virtual void itemStateChanged(Item item)
     {
         ForcedLogUtil.log(this.commonStrings.NOT_IMPLEMENTED, this);
     }
 
     // throws Exception
-    protected virtual void initMenu()
+    public virtual void initMenu()
     {
         this.close();
         CommandTextItemArrayFactory commandTextItemArrayFactory = DemoLimitedCommandTextItemArrayFactory.getInstance().getCommandTextItemArrayFactory();
@@ -281,20 +283,20 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         this.open();
     }
 
-    public override void open()
+    public virtual void open()
     {
         BasicMotionGesturesHandler.getInstance().addListenerInterface(this.getMenuInputProcessor());
         GameKeyEventHandler.getInstance().addListener(this.getMenuInputProcessor());
     }
 
-    public override void close()
+    public virtual void close()
     {
         BasicMotionGesturesHandler.getInstance().removeListener(this.getMenuInputProcessor());
         GameKeyEventHandler.getInstance().removeListener(this.getMenuInputProcessor());
     }
 
-    private static readonly int id = 0;
-    public override int getSourceId()
+    private const int id = 0;
+    public virtual int getSourceId()
     {
         return DemoCanvas.id;
     }
@@ -395,33 +397,33 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         }
     }
 
-    public override bool isGameOver()
+    public virtual bool isGameOver()
     {
         this.logUtil.putF(new StringMaker().append(this.commonStrings.NOT_IMPLEMENTED).append(" since not a game").ToString(), this, "isGameOver");
         return false;
     }
 
     // throws Exception
-    public override void setLoadStateHashtable(ABHashtable<object, object> hashtable)
+    public virtual void setLoadStateHashtable(ABHashtable<object, object> hashtable)
     {
         this.logUtil.putF("Trying to continue a demo lol - only continue a game canvas not the demo", this, "setLoadStateHashtable");
     }
 
     // throws Exception
-    public override ABHashtable<object, object> getLoadStateHashtable()
+    public virtual ABHashtable<object, object> getLoadStateHashtable()
     {
         this.logUtil.putF("Trying to continue a demo lol - only continue a game canvas not the demo", this, "getLoadStateHashtable");
         return this.stdUtil.NULL_TABLE;
     }
 
     // throws Exception
-    public override ABHashtable<object, object> getCurrentStateHashtable()
+    public virtual ABHashtable<object, object> getCurrentStateHashtable()
     {
         this.logUtil.putF("Trying to save the AI lol", this, "getCurrentStateHashtable");
         return this.stdUtil.NULL_TABLE;
     }
 
-    public override void setHighScoreSubmitted(bool isNotUsed)
+    public virtual void setHighScoreSubmitted(bool isNotUsed)
     {
     }
 
@@ -436,19 +438,19 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         this.progressPaintable.paint(graphics);
     }
 
-    public override void paintThreed(Graphics graphics)
+    public virtual void paintThreed(Graphics graphics)
     {
         this.paintableInterface.paintThreed(graphics);
         this.paintedSpecialAnimationInterface.paintThreedXYZ(graphics, 0, 0, 0);
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public override void processGameOver()
+    public virtual void processGameOver()
     {
         this.logUtil.putF("Not Implemented since not a game", this, "setGameOver");
     }
 
-    protected virtual void demoStateChange()
+    public virtual void demoStateChange()
     {
         int newState = this.state + 1;
         if (newState > 2) {
@@ -470,7 +472,7 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
     }
 
     private readonly string SET_STATE = "setState";
-    protected virtual void updateDemoState()
+    public virtual void updateDemoState()
     {
         PreLogUtil.put(SmallIntegerSingletonFactory.getInstance().createInstance(this.state).ToString(), this, this.SET_STATE);
         this.getBasicGameDemoPaintable().setState(this.state);
@@ -490,25 +492,25 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
     }
 
     // throws Exception
-    protected virtual int getNextRandom()
+    public virtual int getNextRandom()
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
 
     // throws Exception
-    protected virtual AllBinaryGameLayerManager createGameLayerManager(int randomValue)
+    public virtual AllBinaryGameLayerManager createGameLayerManager(int randomValue)
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
 
     // throws Exception
-    protected virtual GameCanvasRunnableInterface createRunnable(int randomLevel)
+    public virtual GameCanvasRunnableInterface createRunnable(int randomLevel)
     {
         throw new Exception(this.commonStrings.NOT_IMPLEMENTED);
     }
 
     // throws Exception
-    protected virtual void create()
+    public virtual void create()
     {
         PreLogUtil.put(this.commonStrings.START, this, "create");
         this.highScoresPaintable = NullPaintable.getInstance();
@@ -522,7 +524,7 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
     }
 
     // throws Exception
-    protected virtual void start()
+    public virtual void start()
     {
         AllBinaryGameCanvas gameCanvas = this.gameCanvas;
         PreLogUtil.put(new StringMaker().append("Game Thread in DemoCanvas: ").append(this.stringUtil.toString(gameCanvas)).ToString(), this, this.commonStrings.START);
@@ -569,7 +571,7 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
                 if (!this.demoGameRunnable.isRunning()) {
                     this.startDemoGame();
                     this.demoGameRunnable.setRunning(true);
-                    Thread thread = this.threadFactoryUtil.getInstanceForRunnable(this.demoGameRunnable);
+                    global::org.allbinary.thread.NullThread thread = this.threadFactoryUtil.getInstanceForRunnable(this.demoGameRunnable);
                     this.demoGameRunnable.setThread(thread);
                     this.threadFactoryUtil.start(thread);
                 }
@@ -578,13 +580,13 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
     }
 
     // throws Exception
-    protected void startDemoGame()
+    public void startDemoGame()
     {
         DemoCanvasProgressUtil.showProgress(this);
     }
 
     // throws Exception
-    protected virtual void stopGameDemo()
+    public virtual void stopGameDemo()
     {
         if (this.gameCanvas != NullGameCanvas.getInstance()) {
             this.logUtil.putF("Set Running False", this, "stopGameDemo");
@@ -593,7 +595,7 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         ThreadUtil.getInstance().join(this.canvasThread);
     }
 
-    public override void showGamePaintable()
+    public virtual void showGamePaintable()
     {
         string METHOD_NAME = "showGamePaintable";
         PreLogUtil.put(this.commonStrings.START, this, METHOD_NAME);
@@ -609,13 +611,13 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         }
     }
 
-    protected virtual bool isReadyForStateChange()
+    public virtual bool isReadyForStateChange()
     {
         return !this.demoGameRunnable.isRunning() && this.gameCanvas.isInitialized();
     }
 
     // throws Exception
-    protected virtual void processGame()
+    public virtual void processGame()
     {
         this.gameRunnable.run();
         if (!this.specialAnimationInterface.isComplete() && this.isReadyForStateChange()) {
@@ -703,7 +705,7 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         }
     }
 
-    private static readonly string BOT_GAME_STATS = "Bot Game Statistics: ";
+    private const string BOT_GAME_STATS = "Bot Game Statistics: ";
     private readonly BaseGameStatistics baseGameStatistics = GameStatisticsFactory.getInstance();
     // throws Exception
     public virtual void end()
@@ -721,11 +723,11 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         this.stopGameDemo();
     }
 
-    public override void setGameState(GameState gameState)
+    public virtual void setGameState(GameState gameState)
     {
     }
 
-    public override GameState getGameState()
+    public virtual GameState getGameState()
     {
         return this.gameStateFactory.PLAYING_GAME_STATE;
     }
@@ -746,17 +748,17 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         return true;
     }
 
-    protected virtual int getState()
+    public virtual int getState()
     {
         return this.state;
     }
 
-    protected virtual void setState(int state)
+    public virtual void setState(int state)
     {
         this.state = state;
     }
 
-    public override bool isHighScoreSubmitted()
+    public virtual bool isHighScoreSubmitted()
     {
         this.logUtil.putF("Wow the AI got a high score!", this, "isHighScoreSubmitted");
         return false;
@@ -767,33 +769,33 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         return this.realHighScoresPaintable;
     }
 
-    protected virtual void setSpecialAnimationInterface(SpecialAnimation specialAnimationInterface)
+    public virtual void setSpecialAnimationInterface(SpecialAnimation specialAnimationInterface)
     {
         specialAnimationInterface.setFrame(0);
         this.specialAnimationInterface = specialAnimationInterface;
     }
 
-    protected virtual SpecialAnimation getSpecialAnimationInterface()
+    public virtual SpecialAnimation getSpecialAnimationInterface()
     {
         return this.specialAnimationInterface;
     }
 
-    protected virtual void setPaintableInterface(PaintableInterface paintableInterface)
+    public virtual void setPaintableInterface(PaintableInterface paintableInterface)
     {
         this.paintableInterface = paintableInterface;
     }
 
-    protected virtual PaintableInterface getPaintableInterface()
+    public virtual PaintableInterface getPaintableInterface()
     {
         return this.paintableInterface;
     }
 
-    protected virtual void setDefaultPaintableInterface(Paintable defaultPaintableInterface)
+    public virtual void setDefaultPaintableInterface(Paintable defaultPaintableInterface)
     {
         this.defaultPaintableInterface = defaultPaintableInterface;
     }
 
-    protected virtual Paintable getDefaultPaintableInterface()
+    public virtual Paintable getDefaultPaintableInterface()
     {
         return this.defaultPaintableInterface;
     }
@@ -803,12 +805,12 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         return this.highScoresFactoryInterface;
     }
 
-    protected virtual void setMenuInputProcessor(BasicMenuInputProcessor menuInputProcessor)
+    public virtual void setMenuInputProcessor(BasicMenuInputProcessor menuInputProcessor)
     {
         this.menuInputProcessor = menuInputProcessor;
     }
 
-    protected virtual BasicMenuInputProcessor getMenuInputProcessor()
+    public virtual BasicMenuInputProcessor getMenuInputProcessor()
     {
         return this.menuInputProcessor;
     }
@@ -823,22 +825,22 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         this.menuForm = menuForm;
     }
 
-    public override bool isInitialized()
+    public virtual bool isInitialized()
     {
         return this.initialized;
     }
 
-    protected virtual Paintable getOverlayPaintable()
+    public virtual Paintable getOverlayPaintable()
     {
         return this.overlayPaintable;
     }
 
-    protected virtual void setBasicGameDemoPaintable(StatePaintable basicGameDemoPaintable)
+    public virtual void setBasicGameDemoPaintable(StatePaintable basicGameDemoPaintable)
     {
         this.basicGameDemoPaintable = basicGameDemoPaintable;
     }
 
-    protected virtual StatePaintable getBasicGameDemoPaintable()
+    public virtual StatePaintable getBasicGameDemoPaintable()
     {
         return this.basicGameDemoPaintable;
     }
@@ -874,10 +876,20 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
         return this.gameInitializationInterfaceFactoryInterface;
     }
 
-    public static readonly int TYPE = 3;
+    public const int TYPE = 3;
     public override int getType()
     {
         return DemoCanvas.TYPE;
+    }
+
+    public override string getTitle()
+    {
+        return base.getTitle();
+    }
+
+    public override bool isPaused()
+    {
+        return base.isPaused();
     }
 
 }

@@ -36,50 +36,8 @@ public class BasePathFindingInfoFactory
     // throws Exception
     public virtual void init(BasicGeographicMap geographicMapInterface, PathFindingInfo pathFindingInfo, int[][] mapArray)
     {
-        class RaceTrackGeographicMapCellPositionFactoryInitVisitor : GeographicMapCellPositionFactoryInitVisitorInterface
-        {
-            private int startLineId;
-            private int finishLineId;
-            public RaceTrackGeographicMapCellPositionFactoryInitVisitor()
-            {
-                GeographicMapCellTypeFactory raceTrackGeographicMapCellTypeFactory = geographicMapInterface.getGeographicMapCellTypeFactory();
-                this.startLineId = raceTrackGeographicMapCellTypeFactory.getStartType();
-                this.finishLineId = raceTrackGeographicMapCellTypeFactory.getEndType();
-            }
-
-            // throws Exception
-            public virtual void visit(AllBinaryTiledLayer tiledLayer, GeographicMapCellPosition cellPosition)
-            {
-                int row = cellPosition.getRow();
-                int column = cellPosition.getColumn();
-                try {
-                    int cellTypeId = mapArray[row][column];
-                    int geographicCellType = geographicMapInterface.getCellTypeFromMapCellTypeInt(cellTypeId);
-                    if (geographicCellType == this.startLineId) {
-                        this.addStartPathFindingNode(pathFindingInfo, cellPosition);
-                    }
-                    if (geographicCellType == this.finishLineId) {
-                        if (geographicCellType == this.startLineId) {
-                            this.addEndPathFindingNode(pathFindingInfo, geographicMapInterface.getGeographicMapCellPositionFactoryInterface().getInstance(geographicMapInterface, cellPosition.getColumn(), cellPosition.getRow(), tiledLayer.getColumns(), tiledLayer.getRows(), tiledLayer.getCellWidth(), tiledLayer.getCellHeight()));
-                        } else {
-                            this.addEndPathFindingNode(pathFindingInfo, cellPosition);
-                        }
-                    }
-                    GeographicMapCellTypeFactory raceTrackGeographicMapCellTypeFactory = geographicMapInterface.getGeographicMapCellTypeFactory();
-                    GeographicMapCellTypeFactory geographicMapCellTypeFactory = GeographicMapCellTypeFactory.getInstance();
-                    if (raceTrackGeographicMapCellTypeFactory.isPath(geographicMapCellTypeFactory.get(geographicCellType))) {
-                        RaceTrackRoadsGeographicMapCellHistoryFactory.getInstance().track(cellPosition);
-                    } else {
-                    }
-                } catch (Exception e) {
-                    CommonSeps commonSeps = CommonSeps.getInstance();
-                    logUtil.put(new StringMaker().append(commonSeps.BRACKET_OPEN).appendint(row).append(commonSeps.BRACKET_CLOSE).append(commonSeps.BRACKET_OPEN).appendint(column).append("] in [").appendint(mapArray.Length).append(commonSeps.BRACKET_CLOSE).append(commonSeps.BRACKET_OPEN).appendint(mapArray[0].Length).append(commonSeps.BRACKET_CLOSE).ToString(), this, "visit", e);
-                    throw e;
-                }
-            }
-
-        }
-        geographicMapInterface.getGeographicMapCellPositionFactory().visit(new RaceTrackGeographicMapCellPositionFactoryInitVisitor());
+        
+        geographicMapInterface.getGeographicMapCellPositionFactory().visit(new RaceTrackGeographicMapCellPositionFactoryInitVisitor(this));
     }
 
     // throws Exception
@@ -99,6 +57,52 @@ public class BasePathFindingInfoFactory
     {
         throw new SystemException();
     }
+
+        class RaceTrackGeographicMapCellPositionFactoryInitVisitor : GeographicMapCellPositionFactoryInitVisitorInterface
+        {
+            private int startLineId;
+            private int finishLineId;
+            private readonly BasePathFindingInfoFactory pathFindingInfoFactory;
+            public RaceTrackGeographicMapCellPositionFactoryInitVisitor(BasePathFindingInfoFactory pathFindingInfoFactory)
+            {
+                this.pathFindingInfoFactory = pathFindingInfoFactory;
+                GeographicMapCellTypeFactory raceTrackGeographicMapCellTypeFactory = geographicMapInterface.getGeographicMapCellTypeFactory();
+                this.startLineId = raceTrackGeographicMapCellTypeFactory.getStartType();
+                this.finishLineId = raceTrackGeographicMapCellTypeFactory.getEndType();
+            }
+
+            // throws Exception
+            public virtual void visit(AllBinaryTiledLayer tiledLayer, GeographicMapCellPosition cellPosition)
+            {
+                int row = cellPosition.getRow();
+                int column = cellPosition.getColumn();
+                try {
+                    int cellTypeId = mapArray[row][column];
+                    int geographicCellType = geographicMapInterface.getCellTypeFromMapCellTypeInt(cellTypeId);
+                    if (geographicCellType == this.startLineId) {
+                        this.pathFindingInfoFactory.addStartPathFindingNode(pathFindingInfo, cellPosition);
+                    }
+                    if (geographicCellType == this.finishLineId) {
+                        if (geographicCellType == this.startLineId) {
+                            this.pathFindingInfoFactory.addEndPathFindingNode(pathFindingInfo, geographicMapInterface.getGeographicMapCellPositionFactoryInterface().getInstance(geographicMapInterface, cellPosition.getColumn(), cellPosition.getRow(), tiledLayer.getColumns(), tiledLayer.getRows(), tiledLayer.getCellWidth(), tiledLayer.getCellHeight()));
+                        } else {
+                            this.pathFindingInfoFactory.addEndPathFindingNode(pathFindingInfo, cellPosition);
+                        }
+                    }
+                    GeographicMapCellTypeFactory raceTrackGeographicMapCellTypeFactory = geographicMapInterface.getGeographicMapCellTypeFactory();
+                    GeographicMapCellTypeFactory geographicMapCellTypeFactory = GeographicMapCellTypeFactory.getInstance();
+                    if (raceTrackGeographicMapCellTypeFactory.isPath(geographicMapCellTypeFactory.get(geographicCellType))) {
+                        RaceTrackRoadsGeographicMapCellHistoryFactory.getInstance().track(cellPosition);
+                    } else {
+                    }
+                } catch (Exception e) {
+                    CommonSeps commonSeps = CommonSeps.getInstance();
+                    this.pathFindingInfoFactory.logUtil.put(new StringMaker().append(commonSeps.BRACKET_OPEN).appendint(row).append(commonSeps.BRACKET_CLOSE).append(commonSeps.BRACKET_OPEN).appendint(column).append("] in [").appendint(mapArray.Length).append(commonSeps.BRACKET_CLOSE).append(commonSeps.BRACKET_OPEN).appendint(mapArray[0].Length).append(commonSeps.BRACKET_CLOSE).ToString(), this, "visit", e);
+                    throw e;
+                }
+            }
+
+        }
 
 }
 

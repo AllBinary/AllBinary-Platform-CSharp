@@ -25,11 +25,11 @@ public class NameSpaceRequestParamData
     {
     }
 
-    public static readonly string NAME = "NAMESPACE_REQUESTDATA_NAME";
-    public static readonly string VALUE = "INPUT_VALUE";
-    public static readonly string PROPERTIES = "_PROPERTIES_";
-    public static readonly string SEP = "_DOT_";
-    public static readonly string PROPERTIESSEPARATOR = "_PROPDOT_";
-    public static readonly string DOCUMENT = "NAMESPACE_REQUESTDATA_DOCUMENT";
+    public const string NAME = "NAMESPACE_REQUESTDATA_NAME";
+    public const string VALUE = "INPUT_VALUE";
+    public const string PROPERTIES = "_PROPERTIES_";
+    public const string SEP = "_DOT_";
+    public const string PROPERTIESSEPARATOR = "_PROPDOT_";
+    public const string DOCUMENT = "NAMESPACE_REQUESTDATA_DOCUMENT";
 }
 

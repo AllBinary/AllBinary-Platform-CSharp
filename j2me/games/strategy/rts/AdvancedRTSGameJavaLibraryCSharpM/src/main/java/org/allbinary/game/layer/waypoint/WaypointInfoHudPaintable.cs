@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Font = javax.microedition.lcdui.Font;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Font = javax.microedition.lcdui.Font;
+using Graphics = javax.microedition.lcdui.Graphics;
 using NullPathFindingLayer = org.allbinary.game.layer.NullPathFindingLayer;
 using PathFindingLayerInterface = org.allbinary.game.layer.PathFindingLayerInterface;
 using RTSLayer = org.allbinary.game.layer.RTSLayer;

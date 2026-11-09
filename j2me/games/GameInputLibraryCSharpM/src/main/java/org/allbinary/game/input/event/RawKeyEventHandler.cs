@@ -107,8 +107,8 @@ public class RawKeyEventHandler
         return this.eventListenerInterfaceList;
     }
 
-    private static readonly string TOTAL_LISTENERS = "Total Listeners: ";
-    private static readonly string LISTENER_LABEL = " Listener: ";
+    private const string TOTAL_LISTENERS = "Total Listeners: ";
+    private const string LISTENER_LABEL = " Listener: ";
     public override string ToString()
     {
         StringMaker stringBuffer = new StringMaker();

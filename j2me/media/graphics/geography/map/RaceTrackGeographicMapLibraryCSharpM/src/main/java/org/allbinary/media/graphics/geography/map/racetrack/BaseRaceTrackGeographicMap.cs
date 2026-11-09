@@ -24,6 +24,9 @@ using BasicGeographicMap = org.allbinary.media.graphics.geography.map.BasicGeogr
 using GeographicMapCellPositionBaseFactory = org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory;
 using GeographicMapCellPositionFactoryInterface = org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface;
 using GeographicMapCellTypeFactory = org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory;
+using BasicColor = org.allbinary.graphics.color.BasicColor;
+using GeographicMapCellPosition = org.allbinary.media.graphics.geography.map.GeographicMapCellPosition;
+using GeographicMapCellType = org.allbinary.media.graphics.geography.map.GeographicMapCellType;
 
 namespace org.allbinary.media.graphics.geography.map.racetrack;
 
@@ -54,12 +57,12 @@ public class BaseRaceTrackGeographicMap : BasicGeographicMap, RaceTrackGeographi
         }
     }
 
-    public override RaceTrackInfo getRaceTrackInfo()
+    public virtual RaceTrackInfo getRaceTrackInfo()
     {
         return this.raceTrackInfo;
     }
 
-    public override void setRaceTrackInfo(RaceTrackInfo aRaceTrackInfo)
+    public virtual void setRaceTrackInfo(RaceTrackInfo aRaceTrackInfo)
     {
         this.raceTrackInfo = aRaceTrackInfo;
     }
@@ -74,14 +77,55 @@ public class BaseRaceTrackGeographicMap : BasicGeographicMap, RaceTrackGeographi
         return this.miniGeographicMap;
     }
 
-    public override RaceTrackData getRaceTrackData()
+    public virtual RaceTrackData getRaceTrackData()
     {
         return this.raceTrackData;
     }
 
-    public override void setRaceTrackData(RaceTrackData raceTrackData)
+    public virtual void setRaceTrackData(RaceTrackData raceTrackData)
     {
         this.raceTrackData = raceTrackData;
+    }
+
+    public override int? getId()
+    {
+        return base.getId();
+    }
+
+    public override string getName()
+    {
+        return base.getName();
+    }
+
+    public override void reset()
+    {
+        base.reset();
+    }
+
+    public override AllBinaryTiledLayer getAllBinaryTiledLayer()
+    {
+        return base.getAllBinaryTiledLayer();
+    }
+
+    public override int getCellTypeFromMapCellTypeInt(int cellTypeId)
+    {
+        return base.getCellTypeFromMapCellTypeInt(cellTypeId);
+    }
+
+    // throws Exception
+    public override GeographicMapCellType getCellTypeAt(GeographicMapCellPosition cellPosition)
+    {
+        return base.getCellTypeAt(cellPosition);
+    }
+
+    public override BasicColor getForegroundBasicColor()
+    {
+        return base.getForegroundBasicColor();
+    }
+
+    public override BasicColor getBackgroundBasicColor()
+    {
+        return base.getBackgroundBasicColor();
     }
 
 }

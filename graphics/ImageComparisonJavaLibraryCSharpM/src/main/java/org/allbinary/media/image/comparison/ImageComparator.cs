@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 using GPoint = org.allbinary.graphics.GPoint;
 using PointFactory = org.allbinary.graphics.PointFactory;
@@ -44,10 +44,10 @@ public class ImageComparator
             int rgb1 = imageComparisonInfo.getBufferedImages()[0].getRGB(point.getX(), point.getY());
             int rgb2 = imageComparisonInfo.getBufferedImages()[1].getRGB(point.getX(), point.getY());
             AutomaticCacheInterface automaticCacheInterface = ColorCacheFactory.getInstance();
-            int? colorInteger = (rgb1).ToString();
+            int? colorInteger = int.Parse((rgb1).ToString());
             ColorCacheable colorCacheable = ((ColorCacheable) automaticCacheInterface.get(colorInteger));
             Color color = colorCacheable.getColor();
-            int? colorInteger2 = (rgb2).ToString();
+            int? colorInteger2 = int.Parse((rgb2).ToString());
             ColorCacheable colorCacheable2 = ((ColorCacheable) automaticCacheInterface.get(colorInteger));
             Color color2 = colorCacheable.getColor();
             if (this.imageComparatorConstraintsInterface.isColorAllowed(0, point, color) || this.imageComparatorConstraintsInterface.isColorAllowed(1, point, color2)) {

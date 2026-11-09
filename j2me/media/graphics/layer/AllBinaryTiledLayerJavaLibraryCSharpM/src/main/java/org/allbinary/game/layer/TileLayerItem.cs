@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
-//using Screen = javax.microedition.lcdui.Screen;
+using Graphics = javax.microedition.lcdui.Graphics;
+using Screen = javax.microedition.lcdui.Screen;
 using ABCustomItem = org.allbinary.graphics.form.item.ABCustomItem;
 using ABCustomItemInterface = org.allbinary.graphics.form.item.ABCustomItemInterface;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
@@ -75,6 +75,11 @@ public class TileLayerItem : ABCustomItem, ABCustomItemInterface
 
     public override void paintUnselected(Graphics graphics, int x, int y)
     {
+    }
+
+    public override string getLabel()
+    {
+        return base.getLabel();
     }
 
 }

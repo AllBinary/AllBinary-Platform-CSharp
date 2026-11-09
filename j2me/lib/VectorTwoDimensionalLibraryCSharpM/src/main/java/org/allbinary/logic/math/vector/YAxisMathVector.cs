@@ -28,7 +28,7 @@ public class YAxisMathVector : MathVector
         this.calculate();
     }
 
-    public virtual BasicDecimal getResult()
+    public override BasicDecimal getResult()
     {
         return resultBasicDecimal;
     }

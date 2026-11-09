@@ -29,7 +29,7 @@ public class ViewCustomizersTag : StoreValidationTransformTag
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             this.setName("Add Validation Customizers View");

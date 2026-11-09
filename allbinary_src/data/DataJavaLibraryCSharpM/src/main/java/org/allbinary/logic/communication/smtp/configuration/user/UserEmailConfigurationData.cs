@@ -21,7 +21,7 @@ namespace org.allbinary.logic.communication.smtp.configuration.user;
 
 public class UserEmailConfigurationData
 {
-    public static readonly string NAME = "USER_EMAIL_CONFIGURATION_NAME";
+    public const string NAME = "USER_EMAIL_CONFIGURATION_NAME";
     private UserEmailConfigurationData()
     {
     }

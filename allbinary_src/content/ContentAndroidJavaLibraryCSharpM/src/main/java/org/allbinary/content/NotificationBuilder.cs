@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using NullParcelable = org.allbinary.android.NullParcelable;
-//using Command = javax.microedition.lcdui.Command;
+using Command = javax.microedition.lcdui.Command;
 using PendingIntent = android.app.PendingIntent;
 using Context = android.content.Context;
 using Parcelable = android.os.Parcelable;

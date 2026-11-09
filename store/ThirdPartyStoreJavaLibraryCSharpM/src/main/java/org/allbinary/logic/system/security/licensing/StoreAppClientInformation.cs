@@ -29,7 +29,7 @@ public class StoreAppClientInformation : AbeClientInformation, LongArrayIdentifi
         this.longArrayIdentifier = longArrayIdentifier;
     }
 
-    public override long[] getLongArrayIdentifier()
+    public virtual long[] getLongArrayIdentifier()
     {
         return this.longArrayIdentifier;
     }

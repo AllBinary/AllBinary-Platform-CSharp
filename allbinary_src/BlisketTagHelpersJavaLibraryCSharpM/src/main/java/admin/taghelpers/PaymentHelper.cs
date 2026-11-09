@@ -51,7 +51,7 @@ public class PaymentHelper : Table
         this.value = this.request.getParameter("VALUE");
     }
 
-    public virtual string insert()
+    public override string insert()
     {
         try {
             string success = "Successfully Added Payment";
@@ -77,7 +77,7 @@ public class PaymentHelper : Table
         try {
             string success = "Successfully Selected Payment";
             PaymentEntity paymentEntity = PaymentEntityFactory.getInstance().getPaymentEntityInstance();
-            paymentEntity.setDefault(this.weblisketSession.getUserName(), this.value);
+            paymentEntity.setDefault(this.weblisketSession.getUserName(), int.Parse(this.value));
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "selectPayment()");
             }
@@ -91,12 +91,12 @@ public class PaymentHelper : Table
         }
     }
 
-    public virtual string delete()
+    public override string delete()
     {
         try {
             string success = "Successfully Removed Payment";
             PaymentEntity paymentEntity = PaymentEntityFactory.getInstance().getPaymentEntityInstance();
-            paymentEntity.remove(this.weblisketSession.getUserName(), this.value);
+            paymentEntity.remove(this.weblisketSession.getUserName(), int.Parse(this.value));
             PaymentInterface paymentInterface = paymentEntity.getDefault(this.weblisketSession.getUserName());
             if (paymentInterface == null) {
                 paymentEntity.setDefault(this.weblisketSession.getUserName(), paymentEntity.getLastId(this.weblisketSession.getUserName()));
@@ -114,7 +114,7 @@ public class PaymentHelper : Table
         }
     }
 
-    public virtual string drop()
+    public override string drop()
     {
         try {
             PaymentEntity paymentEntity = PaymentEntityFactory.getInstance().getPaymentEntityInstance();
@@ -132,7 +132,7 @@ public class PaymentHelper : Table
         }
     }
 
-    public virtual string create()
+    public override string create()
     {
         try {
             PaymentEntity paymentEntity = PaymentEntityFactory.getInstance().getPaymentEntityInstance();
@@ -150,7 +150,7 @@ public class PaymentHelper : Table
         }
     }
 
-    public virtual string restore()
+    public override string restore()
     {
         try {
             string success = "Restore Successful";
@@ -168,7 +168,7 @@ public class PaymentHelper : Table
         }
     }
 
-    public virtual string backup()
+    public override string backup()
     {
         try {
             string success = "Backup Successful";
@@ -187,7 +187,7 @@ public class PaymentHelper : Table
     }
 
     // throws LicensingException
-    public virtual string update()
+    public override string update()
     {
         return commonStrings.NOT_IMPLEMENTED;
     }

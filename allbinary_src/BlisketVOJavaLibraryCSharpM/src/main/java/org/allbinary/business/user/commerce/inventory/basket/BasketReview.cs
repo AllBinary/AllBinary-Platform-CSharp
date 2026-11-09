@@ -80,7 +80,7 @@ public class BasketReview
         int size = itemArray.Length;
         for (int index = 0; index < size; index++) {
             Item item = ((Item) itemArray[index]);
-            weightFloat += ((float) item.getWeight());
+            weightFloat += global::java.lang.JavaNumber.floatValue(item.getWeight());
         }
         return weightFloat.ToString();
     }

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Image = javax.microedition.lcdui.Image;
+using Image = javax.microedition.lcdui.Image;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using TimeDelayHelper = org.allbinary.time.TimeDelayHelper;

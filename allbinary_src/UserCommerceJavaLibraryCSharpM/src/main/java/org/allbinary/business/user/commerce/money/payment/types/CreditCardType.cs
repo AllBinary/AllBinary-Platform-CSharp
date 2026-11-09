@@ -22,7 +22,7 @@ namespace org.allbinary.business.user.commerce.money.payment.types;
 public class CreditCardType
 {
     private string name;
-    public static readonly int MAXLEN = 19;
+    public const int MAXLEN = 19;
     public CreditCardType(string cardType)
     {
         this.name = cardType;

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using RecordStore = javax.microedition.rms.RecordStore;
+using RecordStore = javax.microedition.rms.RecordStore;
 
 namespace org.allbinary.game.configuration.persistance;
 

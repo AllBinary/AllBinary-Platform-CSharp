@@ -71,8 +71,8 @@ public class MotionGestureEvent : AllBinaryEventObject
         this.currentPoint = currentPoint;
     }
 
-    private static readonly string PREVIOUS = " Previous: ";
-    private static readonly string HASHCODE = " hashcode: ";
+    private const string PREVIOUS = " Previous: ";
+    private const string HASHCODE = " hashcode: ";
     private readonly CommonLabels commonLabels = CommonLabels.getInstance();
     public override string ToString()
     {

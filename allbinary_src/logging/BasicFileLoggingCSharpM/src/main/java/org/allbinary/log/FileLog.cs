@@ -17,11 +17,11 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using BufferedReader = java.io.BufferedReader;
-//using BufferedWriter = java.io.BufferedWriter;
-//using File = java.io.File;
-//using FileReader = java.io.FileReader;
-//using FileWriter = java.io.FileWriter;
+using BufferedReader = java.io.BufferedReader;
+using BufferedWriter = java.io.BufferedWriter;
+using File = java.io.File;
+using FileReader = java.io.FileReader;
+using FileWriter = java.io.FileWriter;
 //using RandomAccessFile = java.io.RandomAccessFile;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
@@ -33,12 +33,12 @@ namespace org.allbinary.log;
 public class FileLog
 {
     private static readonly StringUtil stringUtil = StringUtil.getInstance();
-    private static readonly long logLength = 33000000L;
-    private static readonly string logPath = "g:\\log\\";
+    private const long logLength = 33000000L;
+    private const string logPath = "g:\\log\\";
     private static readonly string extension = new string(("dat").ToCharArray());
     private static readonly string fileName = new string(("log." + FileLog.extension).ToCharArray());
     private static readonly string backupFileName = FileLog.fileName.concat(".bak");
-    private static readonly string ORG_ALLBINARY = "org.allbinary: ";
+    private const string ORG_ALLBINARY = "org.allbinary: ";
     private static bool firstTime = true;
     private static File logFile = new File(FileLog.logPath, FileLog.fileName);
     private static File logFileBak = null;

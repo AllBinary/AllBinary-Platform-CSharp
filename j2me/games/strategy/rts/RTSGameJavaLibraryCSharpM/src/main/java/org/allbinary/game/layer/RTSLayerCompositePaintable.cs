@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using Paintable = org.allbinary.graphics.paint.Paintable;
 using StringMaker = org.allbinary.logic.@string.StringMaker;

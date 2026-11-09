@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 using GPoint = org.allbinary.graphics.GPoint;
 using ImageComparatorConstraints = org.allbinary.input.automation.module.ImageComparatorConstraints;
@@ -31,12 +31,12 @@ public class NoImageComparatorConstraints : ImageComparatorConstraints
         this.setMaxNonMatchingPixelDeltas(int.MaxValue);
     }
 
-    public virtual bool isColorAllowed(int frame, GPoint point, Color color)
+    public override bool isColorAllowed(int frame, GPoint point, Color color)
     {
         return true;
     }
 
-    public virtual bool isImageValid(BufferedImage bufferedImage)
+    public override bool isImageValid(BufferedImage bufferedImage)
     {
         return true;
     }

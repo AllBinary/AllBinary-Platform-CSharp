@@ -44,6 +44,12 @@ public class NullThread
         this.threadName = name;
     }
 
+    public NullThread(global::java.lang.Runnable target, string name)
+    {
+        this.threadTarget = target;
+        this.threadName = name;
+    }
+
     public virtual void run()
     {
         if (this.threadTarget != null)
@@ -52,9 +58,27 @@ public class NullThread
         }
     }
 
+    // Java Thread.currentThread(). The NullThread that started the current thread or one for a thread it did not start.
+    [global::System.ThreadStatic]
+    private static NullThread currentNullThread;
+
+    public static NullThread currentThread()
+    {
+        if (currentNullThread == null)
+        {
+            currentNullThread = new NullThread(global::System.Threading.Thread.CurrentThread.Name);
+            currentNullThread.systemThread = global::System.Threading.Thread.CurrentThread;
+        }
+        return currentNullThread;
+    }
+
     public virtual void start()
     {
-        this.systemThread = new global::System.Threading.Thread(this.run);
+        this.systemThread = new global::System.Threading.Thread(() =>
+        {
+            currentNullThread = this;
+            this.run();
+        });
         if (!string.IsNullOrEmpty(this.threadName))
         {
             this.systemThread.Name = this.threadName;

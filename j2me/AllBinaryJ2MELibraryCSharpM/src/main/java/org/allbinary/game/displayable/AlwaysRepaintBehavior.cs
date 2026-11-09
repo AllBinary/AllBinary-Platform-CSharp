@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using ARunnable = org.allbinary.thread.ARunnable;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using Features = org.allbinary.game.configuration.feature.Features;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
 using OpenGLFeatureFactory = org.allbinary.graphics.opengles.OpenGLFeatureFactory;

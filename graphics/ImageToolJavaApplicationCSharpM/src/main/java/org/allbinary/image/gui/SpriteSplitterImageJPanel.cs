@@ -16,10 +16,10 @@
 
 using System;
 using System.Linq;
-//using java.awt;
+using java.awt;
 //using BufferedImage = java.awt.image.BufferedImage;
 //using RenderedImage = java.awt.image.RenderedImage;
-//using File = java.io.File;
+using File = java.io.File;
 //using IOException = java.io.IOException;
 //using ImageIO = javax.imageio.ImageIO;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
@@ -60,12 +60,12 @@ public class SpriteSplitterImageJPanel : javax.swing.JPanel, ImageProcessedVisit
                 try {
                     SpriteSplitterUtil spriteSplitterUtil = SpriteSplitterUtil.getInstance();
                     string spriteType = ((string) spriteTypeJComboBox.getSelectedItem());
-                    int? totalFrames = (((string) totalFramesJComboBox.getSelectedItem())).ToString();
-                    int? totalAnimations = (((string) totalAnimationsJComboBox.getSelectedItem())).ToString();
-                    int widthReduction = (widthReductionTextField.getText()).ToString();
-                    int heightReduction = (heightReductionTextField.getText()).ToString();
-                    int increaseWidth = (increaseWidthTextField.getText()).ToString();
-                    int increaseHeight = (increaseHeightTextField.getText()).ToString();
+                    int? totalFrames = int.Parse((((string) totalFramesJComboBox.getSelectedItem())).ToString());
+                    int? totalAnimations = int.Parse((((string) totalAnimationsJComboBox.getSelectedItem())).ToString());
+                    int widthReduction = int.Parse((widthReductionTextField.getText()).ToString());
+                    int heightReduction = int.Parse((heightReductionTextField.getText()).ToString());
+                    int increaseWidth = int.Parse((increaseWidthTextField.getText()).ToString());
+                    int increaseHeight = int.Parse((increaseHeightTextField.getText()).ToString());
                     spriteSplitterUtil.process(this.getImageProcessorInput(), totalFrames, totalAnimations, widthReduction, heightReduction, increaseWidth, increaseHeight, spriteType, this);
                 } catch (Exception e) {
                     logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
@@ -101,15 +101,15 @@ public class SpriteSplitterImageJPanel : javax.swing.JPanel, ImageProcessedVisit
         this.totalFramesJComboBox = new javax.swing.JComboBox();
         int size = 70;
         string[] animationStringArray2 = new string[size - 1];
-        for (int index = 1; index < size; index++) {
-            animationStringArray2[index - 1] = (index).ToString();
+        for (int index_0 = 1; index_0 < size; index_0++) {
+            animationStringArray2[index_0 - 1] = (index_0).ToString();
         }
         this.totalFramesJComboBox.setModel(new javax.swing.DefaultComboBoxModel(animationStringArray2));
         this.jLabel2 = new javax.swing.JLabel();
         this.totalAnimationsJComboBox = new javax.swing.JComboBox();
         string[] animationStringArray = new string[size - 1];
-        for (int index = 1; index < size; index++) {
-            animationStringArray[index - 1] = (index).ToString();
+        for (int index_1 = 1; index_1 < size; index_1++) {
+            animationStringArray[index_1 - 1] = (index_1).ToString();
         }
         this.totalAnimationsJComboBox.setModel(new javax.swing.DefaultComboBoxModel(animationStringArray));
         this.jLabel3 = new javax.swing.JLabel();

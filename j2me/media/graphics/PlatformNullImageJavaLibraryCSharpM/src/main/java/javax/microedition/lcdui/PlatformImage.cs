@@ -48,16 +48,16 @@ public class PlatformImage
         return height;
     }
 
-    public virtual javax.microedition.lcdui.Graphics getGraphics(object graphicsSurface, int width, int height, Image image)
+    public virtual Graphics getGraphics(object graphicsSurface, int width, int height, Image image)
     {
         throw new SystemException();
     }
 
-    public virtual void drawImage(Image image, int x, int y, int anchor, javax.microedition.lcdui.Graphics g2, object g)
+    public virtual void drawImage(Image image, int x, int y, int anchor, Graphics g2, object g)
     {
     }
 
-    public virtual void drawRegion(Image image, int x_src, int y_src, int width, int height, int transform, int x_dst, int y_dst, int anchor, javax.microedition.lcdui.Graphics g)
+    public virtual void drawRegion(Image image, int x_src, int y_src, int width, int height, int transform, int x_dst, int y_dst, int anchor, Graphics g)
     {
     }
 

@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using AngleFactory = org.allbinary.math.AngleFactory;
 using AngleInfo = org.allbinary.math.AngleInfo;
 using ScaleProperties = org.allbinary.media.ScaleProperties;
@@ -30,8 +30,11 @@ public class NullRotationAnimationFactory : AnimationInterfaceFactoryInterface, 
     public readonly RotationAnimation[] NULL_ROTATION_ANIMATION_ARRAY = new RotationAnimation[0];
     public class NullRotationAnimation2 : NullRotationAnimation
     {
-        public NullRotationAnimation2() : base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), new IndexedAnimationBehavior(1, 250))
+        private readonly NullRotationAnimationFactory outer;
+
+        public NullRotationAnimation2(NullRotationAnimationFactory outer) : base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), new IndexedAnimationBehavior(1, 250))
         {
+            this.outer = outer;
             // base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), new IndexedAnimationBehavior(1, 250)) is called from the constructor declaration
         }
 
@@ -40,9 +43,10 @@ public class NullRotationAnimationFactory : AnimationInterfaceFactoryInterface, 
         }
 
     }
-    private readonly Animation NULL_ANIMATION = new NullRotationAnimation2();
+    private readonly Animation NULL_ANIMATION;
     private NullRotationAnimationFactory()
     {
+        this.NULL_ANIMATION = new NullRotationAnimation2(this);
     }
 
     public static NullRotationAnimationFactory getFactoryInstance()

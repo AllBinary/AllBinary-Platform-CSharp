@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using RTSFormInput = org.allbinary.game.input.form.RTSFormInput;
 using MultiPlayerGameLayer = org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer;
 using Animation = org.allbinary.animation.Animation;
@@ -101,17 +101,17 @@ public class RTSLayer : MultiPlayerGameLayer, TickableInterface, GameInputInterf
     private readonly int BUILD_VALUE = 63;
     public readonly GeographicMapCellPositionAreaBase geographicMapCellPositionAreaBase;
     private Health healthInterface = Health.NULL_HEALTH;
-    private static readonly int id = 0;
+    private const int id = 0;
     private int level = 1;
     private int maxLevel = 1;
     private int hackVerticleBuild;
     public int slightAngle = 0;
-    public static readonly int MAIN_INDEX = 0;
-    public static readonly int SECONDARY_INDEX = 1;
+    public const int MAIN_INDEX = 0;
+    public const int SECONDARY_INDEX = 1;
     public int percentCompleteP = 0;
     private bool destroyed = false;
     private bool selected = false;
-    protected RTSLayer(RemoteInfo remoteInfo, Group[] groupInterface, string rootName, string name, Health healthInterface, RTSFormInput rtsFormInput, AnimationInterfaceFactoryInterface animationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface emptyAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface baseAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface buildAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface verticleBuildAnimationInterfaceFactoryInterface, ProceduralAnimationInterfaceFactoryInterface proceduralAnimationInterfaceFactoryInterface, Rectangle rectangle, int x, int y, ViewPositionBase viewPosition) : base(remoteInfo, groupInterface, name, rectangle, viewPosition)
+    public RTSLayer(RemoteInfo remoteInfo, Group[] groupInterface, string rootName, string name, Health healthInterface, RTSFormInput rtsFormInput, AnimationInterfaceFactoryInterface animationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface emptyAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface baseAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface buildAnimationInterfaceFactoryInterface, AnimationInterfaceFactoryInterface verticleBuildAnimationInterfaceFactoryInterface, ProceduralAnimationInterfaceFactoryInterface proceduralAnimationInterfaceFactoryInterface, Rectangle rectangle, int x, int y, ViewPositionBase viewPosition) : base(remoteInfo, groupInterface, name, rectangle, viewPosition)
     {
         this.showMoreCaptionStates = this.debug;
         this.hackVerticleBuild = this.BUILD_VALUE;
@@ -178,17 +178,17 @@ public class RTSLayer : MultiPlayerGameLayer, TickableInterface, GameInputInterf
         this.setSelected(false);
     }
 
-    protected virtual void setSelected(bool selected)
+    public virtual void setSelected(bool selected)
     {
         this.selected = selected;
     }
 
-    public override bool isSelected()
+    public virtual bool isSelected()
     {
         return this.selected;
     }
 
-    public override int getPercentComplete()
+    public virtual int getPercentComplete()
     {
         return this.percentCompleteP;
     }
@@ -198,7 +198,7 @@ public class RTSLayer : MultiPlayerGameLayer, TickableInterface, GameInputInterf
         return ScrollSelectionForm.getNullScrollSelectionForm();
     }
 
-    public override void initInputProcessors()
+    public virtual void initInputProcessors()
     {
         GameInputProcessorUtil.init(this.inputProcessorArray);
     }
@@ -227,7 +227,7 @@ public class RTSLayer : MultiPlayerGameLayer, TickableInterface, GameInputInterf
     {
     }
 
-    protected virtual void reload()
+    public virtual void reload()
     {
     }
 
@@ -254,23 +254,23 @@ public class RTSLayer : MultiPlayerGameLayer, TickableInterface, GameInputInterf
     {
     }
 
-    public override int getSourceId()
+    public virtual int getSourceId()
     {
         return RTSLayer.id;
     }
 
     private readonly RTSLayerUtil rtsLayerUtil = RTSLayerUtil.getInstance();
-    public override void downgrade()
+    public virtual void downgrade()
     {
         this.rtsLayerUtil.downgrade(this);
     }
 
-    public override void upgrade()
+    public virtual void upgrade()
     {
         this.rtsLayerUtil.upgrade(this);
     }
 
-    public override bool isCompleted()
+    public virtual bool isCompleted()
     {
         if (this.hackVerticleBuild < this.BUILD_VALUE) {
             return false;
@@ -291,27 +291,27 @@ public class RTSLayer : MultiPlayerGameLayer, TickableInterface, GameInputInterf
         this.getHudPaintable().updateInfo();
     }
 
-    public override bool isSelfUpgradeable()
+    public virtual bool isSelfUpgradeable()
     {
         return true;
     }
 
-    public override int getCost()
+    public virtual int getCost()
     {
         return this.rtsLayerUtil.getCost(this);
     }
 
-    public override int getDowngradeCost()
+    public virtual int getDowngradeCost()
     {
         return this.rtsLayerUtil.getDowngradeCost(this);
     }
 
-    public override int getUpgradeCost()
+    public virtual int getUpgradeCost()
     {
         return this.rtsLayerUtil.getUpgradeCost(this);
     }
 
-    public override bool isUpgradeable()
+    public virtual bool isUpgradeable()
     {
         if (this.getLevel() < this.getMaxLevel()) {
             return true;
@@ -320,7 +320,7 @@ public class RTSLayer : MultiPlayerGameLayer, TickableInterface, GameInputInterf
         }
     }
 
-    public override bool isDowngradeable()
+    public virtual bool isDowngradeable()
     {
         if (this.getLevel() > 1) {
             return true;
@@ -329,7 +329,7 @@ public class RTSLayer : MultiPlayerGameLayer, TickableInterface, GameInputInterf
         }
     }
 
-    public override int getLevel()
+    public virtual int getLevel()
     {
         return this.level;
     }
@@ -356,7 +356,7 @@ public class RTSLayer : MultiPlayerGameLayer, TickableInterface, GameInputInterf
 
     private readonly LayerDistanceUtil layerDistanceUtil = LayerDistanceUtil.getInstance();
     // throws Exception
-    public override void setTarget(PathFindingLayerInterface targetGameLayer)
+    public virtual void setTarget(PathFindingLayerInterface targetGameLayer)
     {
         int anotherTargetDistance = this.layerDistanceUtil.getDistance(((AllBinaryLayer) this), ((AllBinaryLayer) targetGameLayer));
         WaypointBehaviorBase waypointBehaviorBase = this.getWaypointBehavior();
@@ -368,12 +368,12 @@ public class RTSLayer : MultiPlayerGameLayer, TickableInterface, GameInputInterf
         throw new SystemException();
     }
 
-    public override SelectionHudPaintable getHudPaintable()
+    public virtual SelectionHudPaintable getHudPaintable()
     {
         throw new SystemException();
     }
 
-    public override int getMaxLevel()
+    public virtual int getMaxLevel()
     {
         return this.maxLevel;
     }
@@ -414,140 +414,140 @@ public class RTSLayer : MultiPlayerGameLayer, TickableInterface, GameInputInterf
         }
     }
 
-    public override BasicArrayList getEndGeographicMapCellPositionList()
+    public virtual BasicArrayList getEndGeographicMapCellPositionList()
     {
         return this.geographicMapCellPositionAreaBase.getOccupyingGeographicMapCellPositionList();
     }
 
-    public override GeographicMapCellPositionAreaBase getGeographicMapCellPositionArea()
+    public virtual GeographicMapCellPositionAreaBase getGeographicMapCellPositionArea()
     {
         return this.geographicMapCellPositionAreaBase;
     }
 
-    public override bool shouldHandleStartSameAsEnd()
+    public virtual bool shouldHandleStartSameAsEnd()
     {
         return true;
     }
 
     // throws Exception
-    public override void handleCost(PathFindingLayerInterface ownerLayer)
+    public virtual void handleCost(PathFindingLayerInterface ownerLayer)
     {
     }
 
-    public override WaypointBehaviorBase getWaypointBehavior()
-    {
-        throw new SystemException();
-    }
-
-    public override PathFindingLayerInterface getParentLayer()
+    public virtual WaypointBehaviorBase getWaypointBehavior()
     {
         throw new SystemException();
     }
 
-    public override RTSLayer2LogHelper getRTSLayer2LogHelper()
+    public virtual PathFindingLayerInterface getParentLayer()
+    {
+        throw new SystemException();
+    }
+
+    public virtual RTSLayer2LogHelper getRTSLayer2LogHelper()
     {
         return this.rtsLayer2LogHelper;
     }
 
-    public override WaypointLogHelper getWaypointLogHelper()
+    public virtual WaypointLogHelper getWaypointLogHelper()
     {
         return this.waypointLogHelperP;
     }
 
-    public override Waypoint2LogHelper getWaypoint2LogHelper()
+    public virtual Waypoint2LogHelper getWaypoint2LogHelper()
     {
         return this.waypoint2LogHelperP;
     }
 
-    public override WaypointRunnableLogHelper getWaypointRunnableLogHelper()
+    public virtual WaypointRunnableLogHelper getWaypointRunnableLogHelper()
     {
         return this.waypointRunnableLogHelperP;
     }
 
-    public override bool shouldAddWaypointFromBuilding()
+    public virtual bool shouldAddWaypointFromBuilding()
     {
         return false;
     }
 
-    public override CaptionAnimationHelperBase getCaptionAnimationHelper()
+    public virtual CaptionAnimationHelperBase getCaptionAnimationHelper()
     {
         throw new SystemException();
     }
 
-    public override bool isShowMoreCaptionStates()
+    public virtual bool isShowMoreCaptionStates()
     {
         return this.showMoreCaptionStates;
     }
 
     // throws Exception
-    public override void init(GeographicMapCellHistory geographicMapCellHistory, BasicArrayList geographicMapCellPositionBasicArrayList)
+    public virtual void init(GeographicMapCellHistory geographicMapCellHistory, BasicArrayList geographicMapCellPositionBasicArrayList)
     {
     }
 
     // throws Exception
-    public override GeographicMapCellPosition getCurrentGeographicMapCellPosition()
+    public virtual GeographicMapCellPosition getCurrentGeographicMapCellPosition()
     {
         throw new SystemException();
     }
 
     // throws Exception
-    public override GeographicMapCellPosition getTopLeftGeographicMapCellPosition()
+    public virtual GeographicMapCellPosition getTopLeftGeographicMapCellPosition()
     {
         throw new SystemException();
     }
 
-    public override BasicArrayList getMoveOutOfBuildAreaPath(GeographicMapCellPosition geographicMapCellPosition)
-    {
-        throw new SystemException();
-    }
-
-    // throws Exception
-    public override void setClosestGeographicMapCellHistory(BasicArrayList pathsList)
-    {
-    }
-
-    public override void teleportTo(GeographicMapCellPosition geographicMapCellPosition)
-    {
-    }
-
-    // throws Exception
-    public override void setLoad(int resource)
-    {
-    }
-
-    // throws Exception
-    public override BasicArrayList getSurroundingGeographicMapCellPositionList()
+    public virtual BasicArrayList getMoveOutOfBuildAreaPath(GeographicMapCellPosition geographicMapCellPosition)
     {
         throw new SystemException();
     }
 
     // throws Exception
-    public override void trackTo(string reason)
+    public virtual void setClosestGeographicMapCellHistory(BasicArrayList pathsList)
+    {
+    }
+
+    public virtual void teleportTo(GeographicMapCellPosition geographicMapCellPosition)
     {
     }
 
     // throws Exception
-    public override void trackToDXY(int dx, int dy)
+    public virtual void setLoad(int resource)
     {
     }
 
-    public override bool isWaypointListEmptyOrOnlyTargets()
+    // throws Exception
+    public virtual BasicArrayList getSurroundingGeographicMapCellPositionList()
+    {
+        throw new SystemException();
+    }
+
+    // throws Exception
+    public virtual void trackTo(string reason)
+    {
+    }
+
+    // throws Exception
+    public virtual void trackToDXY(int dx, int dy)
+    {
+    }
+
+    public virtual bool isWaypointListEmptyOrOnlyTargets()
     {
         return false;
     }
 
-    public override TrackingEvent getTrackingEvent()
+    public virtual TrackingEvent getTrackingEvent()
     {
         throw new SystemException();
     }
 
     // throws Exception
-    public override bool buildingChase(AllBinaryLayer allbinaryLayer, GeographicMapCellPosition cellPosition)
+    public virtual bool buildingChase(AllBinaryLayer allbinaryLayer, GeographicMapCellPosition cellPosition)
     {
         return false;
     }
 
-    public override void allStop()
+    public virtual void allStop()
     {
     }
 

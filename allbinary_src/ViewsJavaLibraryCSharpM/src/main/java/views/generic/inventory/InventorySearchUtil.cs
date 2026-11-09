@@ -102,9 +102,9 @@ public class InventorySearchUtil
         try {
             InventoryEntity inventoryEntityInterface = InventoryEntityFactory.getInstance().getInventoryEntityInstance();
             SearchParams searchParams = searchRequest.getParams();
-            int startPage = ((int) searchParams.getStartPageInt());
-            int endPage = ((int) searchParams.getEndPageInt());
-            int pageLength = ((int) searchParams.getLengthInt());
+            int startPage = global::java.lang.JavaNumber.intValue(searchParams.getStartPageInt());
+            int endPage = global::java.lang.JavaNumber.intValue(searchParams.getEndPageInt());
+            int pageLength = global::java.lang.JavaNumber.intValue(searchParams.getLengthInt());
             int savedPagesInRange = 0;
             HashMap<object, object> columnValueHashMap = searchParams.get();
             string keyword = new Replace("-", CommonSeps.getInstance().SPACE).all(((string) columnValueHashMap.get(basicItemData.KEYWORDS)));
@@ -133,8 +133,8 @@ public class InventorySearchUtil
                 }
                 int currentPage = -1;
                 int size = column.size();
-                for (int index = 0; index < size; index++) {
-                    string product = new string((((string) column.get(index))).ToCharArray());
+                for (int index_1 = 0; index_1 < size; index_1++) {
+                    string product = new string((((string) column.get(index_1))).ToCharArray());
                     ItemInterface itemInterface = inventoryEntityInterface.getItem(product);
                     string keywords = itemInterface.getKeywords();
                     keywords = keywords.ToUpper();
@@ -181,11 +181,11 @@ public class InventorySearchUtil
                 if (endPage > MAXPAGES - 1) {
                     endPage = MAXPAGES - 1;
                 }
-                for (int index = startPage; index <= endPage; index++) {
-                    if (index <= lastPage) {
-                        Document tempDocument = documents[index];
-                        inventoryNodes[index].appendChild(ModDomHelper.createNameValueNodes(tempDocument, SearchData.TOTAL_NUMBER_PAGES, lastPage + 1.ToString()));
-                        inventoryNodes[index].appendChild(ModDomHelper.createNameValueNodes(tempDocument, SearchData.TOTAL_NUMBER_ITEMS, numberOfResults.ToString()));
+                for (int index_2 = startPage; index_2 <= endPage; index_2++) {
+                    if (index_2 <= lastPage) {
+                        Document tempDocument = documents[index_2];
+                        inventoryNodes[index_2].appendChild(ModDomHelper.createNameValueNodes(tempDocument, SearchData.TOTAL_NUMBER_PAGES, lastPage + 1.ToString()));
+                        inventoryNodes[index_2].appendChild(ModDomHelper.createNameValueNodes(tempDocument, SearchData.TOTAL_NUMBER_ITEMS, numberOfResults.ToString()));
                         for (int pageIndex = 0; pageIndex <= lastPage; pageIndex++) {
                             stringBuffer.delete(0, stringBuffer.length());
                             stringBuffer.append(searchRequest.getFileBaseName());
@@ -193,13 +193,13 @@ public class InventorySearchUtil
                                 if (pageIndex != 0) {
                                     stringBuffer.append((pageIndex).ToString());
                                 }
-                                inventoryNodes[index].appendChild(ModDomHelper.createNameValueNodes(tempDocument, SearchData.PAGE_INFO, (pageIndex).ToString(), stringBuffer.ToString()));
+                                inventoryNodes[index_2].appendChild(ModDomHelper.createNameValueNodes(tempDocument, SearchData.PAGE_INFO, (pageIndex).ToString(), stringBuffer.ToString()));
                             } else {
-                                inventoryNodes[index].appendChild(ModDomHelper.createNameValueNodes(tempDocument, SearchData.PAGE_INFO, (pageIndex).ToString(), SearchData.SEARCH));
+                                inventoryNodes[index_2].appendChild(ModDomHelper.createNameValueNodes(tempDocument, SearchData.PAGE_INFO, (pageIndex).ToString(), SearchData.SEARCH));
                             }
                         }
                         string success = XmlDocumentHelper.toString(tempDocument);
-                        productListingPages[index] = new StoreTransformer(abeClientInformation, ((TransformInfoInterface) new TransformInfoHttpSearch(searchRequest))).translate(success);
+                        productListingPages[index_2] = new StoreTransformer(abeClientInformation, ((TransformInfoInterface) new TransformInfoHttpSearch(searchRequest))).translate(success);
                     }
                 }
                 if (savedPagesInRange == 0) {

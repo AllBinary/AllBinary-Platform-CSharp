@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = javax.microedition.lcdui.Graphics;
 using Animation = org.allbinary.animation.Animation;
 using Life = org.allbinary.game.ag.life.Life;
 using BasicHud = org.allbinary.game.graphics.hud.BasicHud;
@@ -63,7 +63,7 @@ public class LivesHudWidget : BasicHud, PaintableInterface
         this.myFontProcessor = this.updateMyFontProcessor;
     }
 
-    public override void paint(Graphics graphics)
+    public virtual void paint(Graphics graphics)
     {
         this.myFontProcessor.process(graphics);
         for (int index = ((int) this.getLifeInterface().get()); --index >= 0; ) {
@@ -71,7 +71,7 @@ public class LivesHudWidget : BasicHud, PaintableInterface
         }
     }
 
-    public override void paintThreed(Graphics graphics)
+    public virtual void paintThreed(Graphics graphics)
     {
     }
 

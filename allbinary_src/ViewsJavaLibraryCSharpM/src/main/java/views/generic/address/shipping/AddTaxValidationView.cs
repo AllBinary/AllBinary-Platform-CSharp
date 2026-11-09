@@ -118,5 +118,11 @@ public class AddTaxValidationView : ShippingAddressView, ValidationComponentInte
         return null;
     }
 
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
+    }
+
 }
 

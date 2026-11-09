@@ -93,7 +93,7 @@ public class HtmlSelect : HtmlTag
         int optionsSize = optionsArray.Length;
         for (int i = 0; i < optionsSize; i++) {
             string value = ((string) optionsArray[i]);
-            if (value != null && value.compareTo(stringUtil.EMPTY_STRING) != 0) {
+            if (value != null && string.CompareOrdinal(value, stringUtil.EMPTY_STRING) != 0) {
                 result += this.STARTOPTION;
                 result += this.END;
                 result += value;
@@ -120,7 +120,7 @@ public class HtmlSelect : HtmlTag
         for (int i = 0; i < attributeSize; i++) {
             string key = ((string) attributeKeys[i]);
             string value = ((string) otherAttributes.get(key));
-            if (value != null && value.compareTo(stringUtil.EMPTY_STRING) != 0) {
+            if (value != null && string.CompareOrdinal(value, stringUtil.EMPTY_STRING) != 0) {
                 result += key;
                 result += "=\"";
                 result += value;

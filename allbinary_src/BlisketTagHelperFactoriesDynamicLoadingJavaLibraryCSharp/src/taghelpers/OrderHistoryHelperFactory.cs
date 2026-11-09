@@ -25,8 +25,8 @@ namespace taghelpers;
 
 public class OrderHistoryHelperFactory
 {
-    private static readonly string CLASSNAME = "taghelpers.OrderHistoryHelper";
-    private static readonly string FACTORYNAME = "taghelpers.OrderHistoryHelperFactory";
+    private const string CLASSNAME = "taghelpers.OrderHistoryHelper";
+    private const string FACTORYNAME = "taghelpers.OrderHistoryHelperFactory";
     private OrderHistoryHelperFactory()
     {
     }

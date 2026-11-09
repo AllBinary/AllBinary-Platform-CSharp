@@ -41,7 +41,7 @@ public class CustomItemsEntity : AbSqlBean, CustomItemsEntityInterface
         this.setTableName(this.tableName);
     }
 
-    public virtual void insert(BasicArrayList values)
+    public override void insert(BasicArrayList values)
     {
         try {
             base.insert(values);
@@ -86,7 +86,7 @@ public class CustomItemsEntity : AbSqlBean, CustomItemsEntityInterface
         base.updateWhere(basicItemData.ID, ((string) updatedValues.get(basicItemData.ID)), updatedValues);
     }
 
-    public virtual string dropTable()
+    public override string dropTable()
     {
         return base.dropTable();
     }

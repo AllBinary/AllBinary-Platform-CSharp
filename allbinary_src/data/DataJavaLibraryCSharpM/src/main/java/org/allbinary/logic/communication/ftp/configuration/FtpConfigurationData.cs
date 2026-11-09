@@ -21,11 +21,11 @@ namespace org.allbinary.logic.communication.ftp.configuration;
 
 public class FtpConfigurationData
 {
-    public static readonly string NAME = "FTP_NAME";
-    public static readonly string SERVER = "FTP_SERVER";
-    public static readonly string PATH = "FTP_PATH";
-    public static readonly string USERNAME = "FTP_USERNAME";
-    public static readonly string PASSWORD = "FTP_PASSWORD";
+    public const string NAME = "FTP_NAME";
+    public const string SERVER = "FTP_SERVER";
+    public const string PATH = "FTP_PATH";
+    public const string USERNAME = "FTP_USERNAME";
+    public const string PASSWORD = "FTP_PASSWORD";
     private FtpConfigurationData()
     {
     }

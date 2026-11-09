@@ -32,14 +32,14 @@ public class StoreValidationTransformTag : ValidationTransformTag
         // base() is called from the constructor declaration
     }
 
-    public virtual void setStoreName(string value)
+    public override void setStoreName(string value)
     {
         this.storeName = value;
         this.getPropertiesHashMap().put(StoreFrontData.getInstance().NAME, this.storeName);
     }
 
     // throws JspTagException
-    public virtual int doStartTag()
+    public override int doStartTag()
     {
         try {
             if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {

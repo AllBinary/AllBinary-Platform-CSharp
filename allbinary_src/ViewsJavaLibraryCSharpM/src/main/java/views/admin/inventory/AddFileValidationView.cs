@@ -46,7 +46,7 @@ public class AddFileValidationView : InventoryItemView, ValidationComponentInter
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly BasicItemData basicItemData = BasicItemData.getInstance();
-    private static readonly string ADDPRODUCT = "Add Product";
+    private const string ADDPRODUCT = "Add Product";
     private static readonly string NEXTSTEP = CommonLabels.getInstance().NEXT + " Step";
     public AddFileValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
@@ -251,6 +251,12 @@ public class AddFileValidationView : InventoryItemView, ValidationComponentInter
             stringBuffer.appendint(((int) fileData.MAXIMAGEFILESIZE));
             stringBuffer.append("<br/>");
         }
+    }
+
+    // throws Exception
+    public override TransformInfoInterface getTransformInfoInterface()
+    {
+        return base.getTransformInfoInterface();
     }
 
 }

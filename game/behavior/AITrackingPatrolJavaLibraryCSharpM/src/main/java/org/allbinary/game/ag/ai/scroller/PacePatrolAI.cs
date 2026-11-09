@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Canvas = javax.microedition.lcdui.Canvas;
+using Canvas = javax.microedition.lcdui.Canvas;
 using Direction = org.allbinary.direction.Direction;
 using DirectionCompositeInterface = org.allbinary.direction.DirectionCompositeInterface;
 using DirectionFactory = org.allbinary.direction.DirectionFactory;
@@ -111,12 +111,12 @@ public class PacePatrolAI : BasePatrolAI, TrackingEventListenerInterface
     {
     }
 
-    public override void onEvent(AllBinaryEventObject eventObject)
+    public virtual void onEvent(AllBinaryEventObject eventObject)
     {
         ForcedLogUtil.log(EventStrings.getInstance().PERFORMANCE_MESSAGE, this);
     }
 
-    public override void onMovement(TrackingEvent trackingEvent)
+    public virtual void onMovement(TrackingEvent trackingEvent)
     {
         this.trackingList.clear();
         this.trackingList.add(trackingEvent);

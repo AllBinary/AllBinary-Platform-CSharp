@@ -30,10 +30,10 @@ namespace org.allbinary.media.image.comparison;
 
 public class ChangedPixelsUtil
 {
-    private static readonly int START_X = 0;
-    private static readonly int START_Y = 0;
-    private static readonly int OFFSET = 0;
-    private static readonly int SCAN_SIZE = 0;
+    private const int START_X = 0;
+    private const int START_Y = 0;
+    private const int OFFSET = 0;
+    private const int SCAN_SIZE = 0;
     private static readonly int[] CLEAR_INT_ARRAY = new int[1800 * 1600];
     private ChangedPixelsUtil()
     {
@@ -47,15 +47,15 @@ public class ChangedPixelsUtil
         bufferedImageCacheables = new BufferedImageCacheable[2];
         BufferedImageInfo bufferedImageInfo = BufferedImageInfoFactory.getInstance(imageComparisonInfo.imageWidth, imageComparisonInfo.imageHeight, originalBufferedImage.getType());
         PoolInterface poolInterface = BufferedImagePoolSingleton.getInstance();
-        for (int index = 0; index < bufferedImageCacheables.Length; index++) {
+        for (int index_0 = 0; index_0 < bufferedImageCacheables.Length; index_0++) {
             BufferedImageCacheable bufferedImageCacheable = ((BufferedImageCacheable) poolInterface.remove(bufferedImageInfo));
-            bufferedImageCacheables[index] = bufferedImageCacheable;
-            bufferedImageCacheables[index].getBufferedImage().setRGB(ChangedPixelsUtil.START_X, ChangedPixelsUtil.START_Y, bufferedImageInfo.getWidth(), bufferedImageInfo.getHeight(), ChangedPixelsUtil.CLEAR_INT_ARRAY, ChangedPixelsUtil.OFFSET, ChangedPixelsUtil.SCAN_SIZE);
+            bufferedImageCacheables[index_0] = bufferedImageCacheable;
+            bufferedImageCacheables[index_0].getBufferedImage().setRGB(ChangedPixelsUtil.START_X, ChangedPixelsUtil.START_Y, bufferedImageInfo.getWidth(), bufferedImageInfo.getHeight(), ChangedPixelsUtil.CLEAR_INT_ARRAY, ChangedPixelsUtil.OFFSET, ChangedPixelsUtil.SCAN_SIZE);
         }
         BasicArrayList vector = imageComparisonInfo.getNonMatchingPixelVector();
         int size = vector.size();
-        for (int index = 0; index < size; index++) {
-            PixelDelta pixelDelta = ((PixelDelta) vector.get(index));
+        for (int index_1 = 0; index_1 < size; index_1++) {
+            PixelDelta pixelDelta = ((PixelDelta) vector.get(index_1));
             if (pixelDelta.getColorDelta() == null) {
                 Console.Write("ColorDelta");
                 Environment.Exit(0);

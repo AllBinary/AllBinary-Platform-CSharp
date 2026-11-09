@@ -42,12 +42,12 @@ public class CompleteMotionGestureInputEvent : AllBinaryEventObject, CompleteMot
         }
     }
 
-    protected virtual void setName(string name)
+    public virtual void setName(string name)
     {
         this.name = name;
     }
 
-    public override string getName()
+    public virtual string getName()
     {
         return this.name;
     }

@@ -30,7 +30,7 @@ namespace org.allbinary.game.ag.ai.sequence;
 
 public class SequenceAI : ArrayAI
 {
-    private static readonly string SEQUENCE_AI = "Sequence AI";
+    private const string SEQUENCE_AI = "Sequence AI";
     private int index = 0;
     public SequenceAI(ArtificialIntelligenceInterface[] artificialIntelligenceInterfaceArray, AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(artificialIntelligenceInterfaceArray, ownerLayerInterface, gameInput)
     {

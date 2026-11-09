@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using NullCanvas = javax.microedition.lcdui.NullCanvas;
+using NullCanvas = javax.microedition.lcdui.NullCanvas;
 using Processor = org.allbinary.canvas.Processor;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;

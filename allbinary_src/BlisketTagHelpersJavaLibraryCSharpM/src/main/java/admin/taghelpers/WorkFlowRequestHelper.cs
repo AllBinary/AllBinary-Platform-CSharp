@@ -40,7 +40,7 @@ public class WorkFlowRequestHelper : ModifyTable
     }
 
     // throws Exception
-    public virtual string delete()
+    public override string delete()
     {
         try {
             StringUtil stringUtil = StringUtil.getInstance();
@@ -67,7 +67,7 @@ public class WorkFlowRequestHelper : ModifyTable
         }
     }
 
-    public virtual string insert()
+    public override string insert()
     {
         try {
             string success = "New User Successfully added to the Users Table";
@@ -84,7 +84,7 @@ public class WorkFlowRequestHelper : ModifyTable
         }
     }
 
-    public virtual string update()
+    public override string update()
     {
         try {
             string success = "Updated WorkFlow Successfully";

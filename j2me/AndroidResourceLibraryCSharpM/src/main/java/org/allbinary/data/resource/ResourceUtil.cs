@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using InputStream = java.io.InputStream;
+using InputStream = java.io.InputStream;
 using Activity = android.app.Activity;
 using Context = android.content.Context;
 using Resources = android.content.res.Resources;

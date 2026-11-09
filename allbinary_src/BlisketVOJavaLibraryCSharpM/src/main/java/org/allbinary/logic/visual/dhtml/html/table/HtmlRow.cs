@@ -61,8 +61,8 @@ public class HtmlRow : HtmlTag
         result = this.before;
         result += this.START;
         result += " ";
-        for (int i = 0; i < attributeSize; i++) {
-            string key = ((string) attributeKeys[i]);
+        for (int i_0 = 0; i_0 < attributeSize; i_0++) {
+            string key = ((string) attributeKeys[i_0]);
             string value = ((string) otherAttributes.get(key));
             if (value != null && string.CompareOrdinal(value, stringUtil.EMPTY_STRING) != 0) {
                 result += key;
@@ -72,8 +72,8 @@ public class HtmlRow : HtmlTag
             }
         }
         result += this.END;
-        for (int i = 0; i < cellSize; i++) {
-            result += this.htmlCellsVector.get(i).ToString();
+        for (int i_1 = 0; i_1 < cellSize; i_1++) {
+            result += this.htmlCellsVector.get(i_1).ToString();
             result += " ";
         }
         result += this.ENDTAG;

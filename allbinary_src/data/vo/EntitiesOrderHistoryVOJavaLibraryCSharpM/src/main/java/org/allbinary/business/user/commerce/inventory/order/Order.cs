@@ -64,7 +64,7 @@ public class Order : OrderInterface, Serializable
 
     public virtual bool? isIdValid()
     {
-        if (this.getId() == null || this.getId().compareTo(StringUtil.getInstance().EMPTY_STRING) == 0 || this.getId().length() > OrderHistoryData.MAXIDLEN || !StringValidationUtil.getInstance().isNumber(this.getId())) {
+        if (this.getId() == null || string.CompareOrdinal(this.getId(), StringUtil.getInstance().EMPTY_STRING) == 0 || this.getId().Length > OrderHistoryData.MAXIDLEN || !StringValidationUtil.getInstance().isNumber(this.getId())) {
             return false;
         }
         return true;
@@ -78,7 +78,7 @@ public class Order : OrderInterface, Serializable
     public virtual string getIdValidationInfo()
     {
         string EMPTY_STRING = StringUtil.getInstance().EMPTY_STRING;
-        if (this.getId() == null || this.getId().compareTo(EMPTY_STRING) == 0 || this.getId().length() > OrderHistoryData.MAXIDLEN || !StringValidationUtil.getInstance().isNumber(this.getId())) {
+        if (this.getId() == null || string.CompareOrdinal(this.getId(), EMPTY_STRING) == 0 || this.getId().Length > OrderHistoryData.MAXIDLEN || !StringValidationUtil.getInstance().isNumber(this.getId())) {
             return "Please enter a valid order Id < " + OrderHistoryData.MAXIDLEN + " digits in length.<br>";
         }
         return EMPTY_STRING;

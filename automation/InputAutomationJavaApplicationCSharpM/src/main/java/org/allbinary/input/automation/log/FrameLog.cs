@@ -16,8 +16,8 @@
 
 using System;
 using System.Linq;
-//using File = java.io.File;
-//using FileOutputStream = java.io.FileOutputStream;
+using File = java.io.File;
+using FileOutputStream = java.io.FileOutputStream;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using ImageOutputData = org.allbinary.input.automation.ImageOutputData;
