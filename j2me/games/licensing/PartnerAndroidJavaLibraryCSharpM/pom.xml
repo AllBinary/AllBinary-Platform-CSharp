@@ -55,7 +55,6 @@
 
         <dependency>
             <groupId>org.allbinary</groupId>
-            <!-- C# has no Android API so the ResourceUtil of ResourceJ2MEJavaLibraryCSharp is used instead of AndroidResourceLibraryCSharp -->
             <artifactId>ResourceJ2MEJavaLibraryCSharp</artifactId>
 <!--
             <artifactId>ResourceJ2MEJavaLibraryCSharp</artifactId>

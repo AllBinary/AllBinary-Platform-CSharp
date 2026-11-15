@@ -120,7 +120,6 @@
 
         <module>../../media/motion/AllBinaryVibrationJavaLibraryCSharpM</module>
         <module>../../media/motion/NoVibrateJavaLibraryCSharpM</module>
-        <!-- Android only. C# has no Android API such as android.os.Vibrator -->
         <!--<module>../../media/motion/VibrateAndroidJavaLibraryCSharpM</module>-->
 
         <module>../../media/graphics/NullCustomUIJavaLibraryCSharpM</module>
@@ -151,7 +150,6 @@
         <module>../../media/sound/NotDeviceSpecificNoMediaMIDP1LibraryCSharpM</module>
 
         <module>../../../allbinary_src/content/ContentNoneJavaLibraryCSharpM</module>
-        <!-- Android only. C# has no Android API such as android.app and android.content -->
         <!--<module>../../../allbinary_src/content/ContentAndroidJavaLibraryCSharpM</module>-->
 
         <module>../../games/GameConfigurationFormJavaLibraryCSharpM</module>
