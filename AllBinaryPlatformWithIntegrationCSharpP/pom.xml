@@ -38,7 +38,7 @@
 <!--        <module>../j2me/games/platform/j2se/AllBinaryOnJ2SEBasePlatformJavaLibraryCSharpM</module>-->
         <module>../j2me/games/platform/j2se/AllBinaryOnJ2SEPlatformJavaLibraryCSharpM</module>
         
-        <!--<module>../j2me/FullScreenJavaLibraryCSharpM</module>-->
+        <module>../j2me/FullScreenJavaLibraryCSharpM</module>
 
         <!--<module>../j2me/SWTToJ2MELibraryCSharpM</module>-->
         
