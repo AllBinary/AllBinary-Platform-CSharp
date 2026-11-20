@@ -14,6 +14,7 @@
  */
 // Generated Code Do Not Modify
 
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using ImageCache = org.allbinary.image.ImageCache;
@@ -26,7 +27,7 @@ public class OpenGLImageCacheFactory
     private static readonly ImageCache IMAGE_CACHE = new OpenGLImageCache();
     public static ImageCache getInstance()
     {
-        return OpenGLImageCacheFactory.IMAGE_CACHE;
+        return OpenGLNoneOtherJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLImageCacheFactory.IMAGE_CACHE;
     }
 
     public static void init()

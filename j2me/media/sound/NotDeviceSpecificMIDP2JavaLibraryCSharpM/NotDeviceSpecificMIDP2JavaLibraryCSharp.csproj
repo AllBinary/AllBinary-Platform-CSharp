@@ -39,6 +39,7 @@
     <ProjectReference Include="$(AllBinaryRuntimeProject)" Condition="'$(AllBinaryRuntimeProject)' != '' And Exists('$(AllBinaryRuntimeProject)')" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\logging\LoggingJ2MEAllCSharpM\LoggingJ2MEAllCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\J2SEForJ2MEJavaLibraryCSharpM\J2SEForJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\replace_these_stub_projects\allbinary_src\J2MEOnlyJavaLibraryCSharpM\J2MEOnlyJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="J2MEOnlyJavaLibraryCSharp" />
     <ProjectReference Include="..\..\..\PCResourceLibraryCSharpM\PCResourceLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\BasicPlayerJavaLibraryCSharpM\BasicPlayerJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\ProgressJ2MEJavaLibraryCSharpM\ProgressJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

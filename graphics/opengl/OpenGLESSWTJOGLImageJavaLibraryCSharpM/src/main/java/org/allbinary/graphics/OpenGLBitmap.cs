@@ -1,5 +1,6 @@
 // Generated Code Do Not Modify
 
+extern alias OpenGLESBaseJavaLibraryCSharp;
 using System;
 using System.Linq;
 using Image = javax.microedition.lcdui.Image;

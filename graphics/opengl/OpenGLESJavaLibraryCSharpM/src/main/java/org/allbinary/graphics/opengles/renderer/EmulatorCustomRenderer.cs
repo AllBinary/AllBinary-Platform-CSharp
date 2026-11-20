@@ -14,6 +14,8 @@
  */
 // Generated Code Do Not Modify
 
+extern alias ImageCacheOpenGLESJavaLibraryCSharp;
+extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using EGLConfig = javax.microedition.khronos.egl.EGLConfig;
@@ -29,7 +31,7 @@ public class EmulatorCustomRenderer
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    public readonly RendererStrings renderStrings = RendererStrings.getInstance();
+    public readonly OpenGLNoneOtherJavaLibraryCSharp::org.allbinary.graphics.opengles.renderer.RendererStrings renderStrings = OpenGLNoneOtherJavaLibraryCSharp::org.allbinary.graphics.opengles.renderer.RendererStrings.getInstance();
     public virtual void onSurfaceCreated(GL10 gl, EGLConfig eglConfig)
     {
         this.logUtil.putF(this.commonStrings.START, this, this.renderStrings.ON_SURFACE_CREATED);

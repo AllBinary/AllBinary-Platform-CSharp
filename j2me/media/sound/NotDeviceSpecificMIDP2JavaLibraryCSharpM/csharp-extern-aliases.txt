@@ -1,0 +1,1 @@
+org.allbinary.MIDPUtil=J2MEOnlyJavaLibraryCSharp

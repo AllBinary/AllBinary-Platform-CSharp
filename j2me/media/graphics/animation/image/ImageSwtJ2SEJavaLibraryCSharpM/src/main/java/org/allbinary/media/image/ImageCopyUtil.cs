@@ -14,6 +14,7 @@
  */
 // Generated Code Do Not Modify
 
+extern alias OpenGLESJavaLibraryCSharp;
 using System;
 using System.Linq;
 using Image = javax.microedition.lcdui.Image;
@@ -22,7 +23,7 @@ using GameFeatureFactory = org.allbinary.game.configuration.feature.GameFeatureF
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
 using OpenGLFeatureFactory = org.allbinary.graphics.opengles.OpenGLFeatureFactory;
 using OpenGLUtil = org.allbinary.graphics.opengles.OpenGLUtil;
-using OpenGLESDeviceImageTranslate = org.allbinary.image.opengles.OpenGLESDeviceImageTranslate;
+//using OpenGLESDeviceImageTranslate = org.allbinary.image.opengles.OpenGLESDeviceImageTranslate;
 using OpenGLESImage = org.allbinary.image.opengles.OpenGLESImage;
 using OpenGLESImageExclusionUtil = org.allbinary.image.opengles.OpenGLESImageExclusionUtil;
 using OpenGLESImageProperties = org.allbinary.image.opengles.OpenGLESImageProperties;
@@ -180,8 +181,8 @@ public class ImageCopyUtil
                 openGLESImageProperties.scaleY2 = ((float) ((((float) height)) / openGLESImage.getHeight()));
                 openGLESImageProperties.scaleY = openGLESImageProperties.scaleY2;
                 if (image.getName().StartsWith(this.INFORMATION)) {
-                    openGLESImage.openGLESImageTranslate = new OpenGLESDeviceImageTranslate();
-                    OpenGLESDeviceImageTranslate openGLESDeviceImageTranslate = ((OpenGLESDeviceImageTranslate) openGLESImage.openGLESImageTranslate);
+                    openGLESImage.openGLESImageTranslate = new OpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLESDeviceImageTranslate();
+                    OpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLESDeviceImageTranslate openGLESDeviceImageTranslate = ((OpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLESDeviceImageTranslate) openGLESImage.openGLESImageTranslate);
                     openGLESDeviceImageTranslate.translateX = displayInfoSingleton.getLastWidth() / 1.4f / openGLESImageProperties.scaleX;
                     openGLESDeviceImageTranslate.translateY = displayInfoSingleton.getLastHeight() / 4 / openGLESImageProperties.scaleY;
                     openGLESImageProperties.scaleX = openGLESImageProperties.scaleX * 0.25f;
@@ -190,8 +191,8 @@ public class ImageCopyUtil
                     openGLESImageProperties.scaleX = openGLESImageProperties.scaleX * 0.75f;
                     openGLESImageProperties.scaleY = openGLESImageProperties.scaleY * 0.75f;
                     if (image.getName().StartsWith(this.LEADERBOARD)) {
-                        openGLESImage.openGLESImageTranslate = new OpenGLESDeviceImageTranslate();
-                        OpenGLESDeviceImageTranslate openGLESDeviceImageTranslate = ((OpenGLESDeviceImageTranslate) openGLESImage.openGLESImageTranslate);
+                        openGLESImage.openGLESImageTranslate = new OpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLESDeviceImageTranslate();
+                        OpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLESDeviceImageTranslate openGLESDeviceImageTranslate = ((OpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLESDeviceImageTranslate) openGLESImage.openGLESImageTranslate);
                         openGLESDeviceImageTranslate.translateX = -displayInfoSingleton.getLastWidth() / 40 / openGLESImageProperties.scaleX;
                     }
                     if (image.getName().StartsWith(this.LEADERBOARD)) {

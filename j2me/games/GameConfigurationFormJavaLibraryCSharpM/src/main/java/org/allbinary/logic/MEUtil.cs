@@ -32,7 +32,7 @@ public class MEUtil
     private static readonly MEUtil instance = new MEUtil();
     public virtual void appendItem(CommandForm form, Item item)
     {
-        form.append(item);
+        form.appendItem(item);
     }
 
 }

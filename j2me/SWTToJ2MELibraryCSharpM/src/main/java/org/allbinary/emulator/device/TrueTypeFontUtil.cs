@@ -14,6 +14,7 @@
  */
 // Generated Code Do Not Modify
 
+extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
 using GL10 = javax.microedition.khronos.opengles.GL10;

@@ -14,6 +14,7 @@
  */
 // Generated Code Do Not Modify
 
+extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
 using Displayable = javax.microedition.lcdui.Displayable;

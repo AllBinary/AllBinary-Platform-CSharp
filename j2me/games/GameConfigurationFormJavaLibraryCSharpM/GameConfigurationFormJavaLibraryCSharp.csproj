@@ -46,6 +46,7 @@
     <ProjectReference Include="..\..\media\graphics\FormBaseJavaLibraryCSharpM\FormBaseJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\AllBinaryJ2MELibraryCSharpM\AllBinaryJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\EventJ2MELibraryCSharpM\EventJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\replace_these_stub_projects\allbinary_src\J2MEOnlyJavaLibraryCSharpM\J2MEOnlyJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\J2MEUtilJavaLibraryCSharpM\J2MEUtilJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\GameConfigurationJavaLibraryCSharpM\GameConfigurationJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\input\AllBinarySensorJavaLibraryCSharpM\AllBinarySensorJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
