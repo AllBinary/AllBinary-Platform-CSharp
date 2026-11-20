@@ -16,54 +16,24 @@ public class R
 {
     public class attr
     {
-        private readonly R outer;
-
-        public attr(R outer)
-        {
-            this.outer = outer;
-        }
-
     }
     public class drawable
     {
-        private readonly R outer;
-
-        public drawable(R outer)
-        {
-            this.outer = outer;
-        }
-
     }
     public class id
     {
-        private readonly R outer;
-
         public const int custom_web_view = 0x7f050000;
         public const int ad_area_bottom = 0x7f060002;
         public const int ad_area_left = 0x7f060003;
         public const int ad_area_right = 0x7f060004;
         public const int ad_area_top = 0x7f060001;
-        public id(R outer)
-        {
-            this.outer = outer;
-        }
-
     }
     public class layout
     {
-        private readonly R outer;
-
         public const int webview_layout = 0x7f020000;
-        public layout(R outer)
-        {
-            this.outer = outer;
-        }
-
     }
     public class raw
     {
-        private readonly R outer;
-
         public const int about = 0x7f030000;
         public const int privacy_policy = 0x7f030001;
         public const int error = 0x7f040000;
@@ -96,22 +66,10 @@ public class R
         public const int ouya_y = 0x7f040016;
         public const int ouya_key = 0x7f040013;
         public const int google_key = 0x7f040013;
-        public raw(R outer)
-        {
-            this.outer = outer;
-        }
-
     }
     public class string
     {
-        private readonly R outer;
-
         public const int progressbar_in_title_string = 0x7f050001;
-        public string(R outer)
-        {
-            this.outer = outer;
-        }
-
     }
 }
 

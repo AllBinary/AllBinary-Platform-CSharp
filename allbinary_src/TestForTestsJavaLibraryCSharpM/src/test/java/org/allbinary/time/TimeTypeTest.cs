@@ -23,12 +23,9 @@ public class TimeTypeTest
 
     private class TestableTimeTypeUtil : TimeTypeUtil
     {
-        private readonly TimeTypeTest outer;
-
         private readonly int hour;
-        public TestableTimeTypeUtil(TimeTypeTest outer, int hour)
+        public TestableTimeTypeUtil(int hour)
         {
-            this.outer = outer;
             this.hour = hour;
         }
 
@@ -55,9 +52,9 @@ public class TimeTypeTest
 
     public virtual void getNightOrDay_returns_expected_label()
     {
-        TimeTypeUtil nightUtil = new TestableTimeTypeUtil(this, 0);
+        TimeTypeUtil nightUtil = new TestableTimeTypeUtil(0);
         Assertions.assertEquals(nightUtil.NIGHT, nightUtil.getNightOrDay());
-        TimeTypeUtil dayUtil = new TestableTimeTypeUtil(this, 12);
+        TimeTypeUtil dayUtil = new TestableTimeTypeUtil(12);
         Assertions.assertEquals(dayUtil.DAY, dayUtil.getNightOrDay());
     }
 

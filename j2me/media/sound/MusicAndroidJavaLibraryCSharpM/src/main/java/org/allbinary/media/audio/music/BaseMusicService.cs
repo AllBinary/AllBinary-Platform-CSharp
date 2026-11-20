@@ -110,7 +110,7 @@ public class BaseMusicService : Service
             if (this.player != NullAndroidCanvas.NULL_MEDIA_PLAYER && this.player.isPlaying()) {
                 MediaPlayer player = this.player;
                 this.logUtil.putF(this.ALREADY_PLAYING, this, this.commonStateStrings.ON_START_COMMAND);
-                global::java.lang.Runnable runnable = new MusicRunnable(this, this, player, intent);
+                global::java.lang.Runnable runnable = new MusicRunnable(this, player, intent);
                 global::org.allbinary.thread.NullThread thread = new global::org.allbinary.thread.NullThread(runnable);
                 thread.start();
                 return;
@@ -122,14 +122,11 @@ public class BaseMusicService : Service
     //A member class instead of a local class using the method's player and intent since most of the converted languages do not have local classes.
     private class MusicRunnable : ARunnable
     {
-        private readonly BaseMusicService outer;
-
         private readonly BaseMusicService baseMusicService;
         private readonly MediaPlayer player;
         private readonly Intent intent;
-        public MusicRunnable(BaseMusicService outer, BaseMusicService baseMusicService, MediaPlayer player, Intent intent)
+        public MusicRunnable(BaseMusicService baseMusicService, MediaPlayer player, Intent intent)
         {
-            this.outer = outer;
             this.baseMusicService = baseMusicService;
             this.player = player;
             this.intent = intent;

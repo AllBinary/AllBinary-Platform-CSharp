@@ -16,59 +16,29 @@ public class R
 {
     public class attr
     {
-        private readonly R outer;
-
-        public attr(R outer)
-        {
-            this.outer = outer;
-        }
-
     }
     public class drawable
     {
-        private readonly R outer;
-
         public const int testgamedemo_icon = 0x7f020000;
         public const int testgamedemo_wait_256_by_256 = 0x7f020001;
-        public drawable(R outer)
-        {
-            this.outer = outer;
-        }
-
     }
     public class id
     {
-        private readonly R outer;
-
         public const int ad_area_bottom = 0x7f060002;
         public const int ad_area_left = 0x7f060003;
         public const int ad_area_right = 0x7f060004;
         public const int ad_area_top = 0x7f060001;
         public const int testgamedemo = 0x7f060000;
         public const int testgamedemo_gl = 0x7f060005;
-        public id(R outer)
-        {
-            this.outer = outer;
-        }
-
     }
     public class layout
     {
-        private readonly R outer;
-
         public const int testgamedemo_ad_overlay_layout = 0x7f030000;
         public const int testgamedemo_gl_layout = 0x7f030001;
         public const int testgamedemo_layout = 0x7f030002;
-        public layout(R outer)
-        {
-            this.outer = outer;
-        }
-
     }
     public class raw
     {
-        private readonly R outer;
-
         public const int error = 0x7f040000;
         public const int licenseinitdata = 0x7f040001;
         public const int partner = 0x7f040002;
@@ -113,23 +83,11 @@ public class R
         public const int touch_button_up_arrow_128_by_128 = 0x7f040042;
         public const int touch_button_up_arrow_64_by_64 = 0x7f040043;
         public const int touch_button_generic_action_arrow_64_by_64 = 0x7f040009;
-        public raw(R outer)
-        {
-            this.outer = outer;
-        }
-
     }
     public class string
     {
-        private readonly R outer;
-
         public const int progressbar_in_title_string = 0x7f050001;
         public const int testgamedemo_app_name = 0x7f050000;
-        public string(R outer)
-        {
-            this.outer = outer;
-        }
-
     }
 }
 
