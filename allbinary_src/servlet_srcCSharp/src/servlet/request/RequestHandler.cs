@@ -24,6 +24,8 @@ using LicensingException = org.allbinary.logic.system.security.licensing.Licensi
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using WorkFlowInterface = org.allbinary.logic.control.workflow.WorkFlowInterface;
 using RequestWorkFlowFactory = org.allbinary.logic.control.workflow.RequestWorkFlowFactory;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace servlet.request;
 
@@ -53,12 +55,12 @@ public class RequestHandler : HttpServlet
             @out.flush();
             @out.close();
         } catch (LicensingException e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SERVLETERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SERVLETERROR)) {
                 this.logUtil.put("Servlet LicensingException", this, "processRequest()", e);
             }
             response.sendRedirect(abcs.globals.URLGLOBALS.LICENSEERRORPAGE);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SERVLETERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SERVLETERROR)) {
                 this.logUtil.put("Servlet Exception", this, "processRequest()", e);
             }
             response.sendRedirect(abcs.globals.URLGLOBALS.ERRORPAGE);

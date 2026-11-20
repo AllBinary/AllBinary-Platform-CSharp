@@ -29,59 +29,6 @@ public class MultipleScrollSelectionHorizontalForm : ScrollSelectionForm, Update
         return scrollSelectionForm;
     }
 
-    public class MultipleScrollSelectionFormHorizontalPaintable : ItemIndexPaintable
-    {
-        private readonly MultipleScrollSelectionHorizontalForm outer;
-
-        private readonly MultipleScrollSelectionHorizontalForm multipleScrollSelectionForm;
-        public MultipleScrollSelectionFormHorizontalPaintable(MultipleScrollSelectionHorizontalForm outer, MultipleScrollSelectionHorizontalForm multipleScrollSelectionForm)
-        {
-            this.outer = outer;
-            this.multipleScrollSelectionForm = multipleScrollSelectionForm;
-        }
-
-        // throws Exception
-        public override int paint(Graphics graphics, int index, ABCustomItem item, int dx, int dy)
-        {
-            return this.multipleScrollSelectionForm.paintHorizontal(graphics, index, item, dx, dy);
-        }
-
-    }
-    public class MultipleScrollSelectionFormVerticalPaintable : ItemIndexPaintable
-    {
-        private readonly MultipleScrollSelectionHorizontalForm outer;
-
-        private readonly MultipleScrollSelectionHorizontalForm multipleScrollSelectionForm;
-        public MultipleScrollSelectionFormVerticalPaintable(MultipleScrollSelectionHorizontalForm outer, MultipleScrollSelectionHorizontalForm multipleScrollSelectionForm)
-        {
-            this.outer = outer;
-            this.multipleScrollSelectionForm = multipleScrollSelectionForm;
-        }
-
-        // throws Exception
-        public override int paint(Graphics graphics, int index, ABCustomItem item, int dx, int dy)
-        {
-            return this.multipleScrollSelectionForm.paintVertical(graphics, index, item, dx, dy);
-        }
-
-    }
-    public class MultipleScrollSelectionFormRectPaintable : Paintable
-    {
-        private readonly MultipleScrollSelectionHorizontalForm outer;
-
-        private readonly MultipleScrollSelectionHorizontalForm multipleScrollSelectionForm;
-        public MultipleScrollSelectionFormRectPaintable(MultipleScrollSelectionHorizontalForm outer, MultipleScrollSelectionHorizontalForm multipleScrollSelectionForm)
-        {
-            this.outer = outer;
-            this.multipleScrollSelectionForm = multipleScrollSelectionForm;
-        }
-
-        public override void paint(Graphics graphics)
-        {
-            this.multipleScrollSelectionForm.fillRect(graphics);
-        }
-
-    }
     private Paintable rectPaintable = NullPaintable.getInstance();
     private ItemIndexPaintable multipleScrollSelectionHorizontalFormTypeItemIndexPaintable = ItemIndexPaintable.getInstance();
     private readonly int backgroundColor = global::java.lang.JavaNumber.intValue(BasicColorFactory.getInstance().TRANSPARENT_GREY);
@@ -94,11 +41,11 @@ public class MultipleScrollSelectionHorizontalForm : ScrollSelectionForm, Update
         // base(title, items, formPaintableFactory, border, 3, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
         if (J2MEUtil.isJ2ME() || J2MEUtil.isHTML()) {
         } else {
-            this.rectPaintable = new MultipleScrollSelectionFormRectPaintable(this, this);
+            this.rectPaintable = new MultipleScrollSelectionFormRectPaintable(this);
         }
     }
 
-    private void fillRect(Graphics graphics)
+    public virtual void fillRect(Graphics graphics)
     {
         graphics.setColor(this.backgroundColor);
         graphics.fillRect(this.x, this.y, this.rectangle.getWidth(), this.rectangle.getHeight());
@@ -110,9 +57,9 @@ public class MultipleScrollSelectionHorizontalForm : ScrollSelectionForm, Update
         base.init(rectangle, formType);
         FormTypeFactory formTypeFactory = FormTypeFactory.getInstance();
         if (formType == formTypeFactory.HORIZONTAL_FORM) {
-            this.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable = new MultipleScrollSelectionFormHorizontalPaintable(this, this);
+            this.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable = new MultipleScrollSelectionFormHorizontalPaintable(this);
         } else if (formType == formTypeFactory.VERTICAL_CENTER_FORM) {
-            this.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable = new MultipleScrollSelectionFormVerticalPaintable(this, this);
+            this.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable = new MultipleScrollSelectionFormVerticalPaintable(this);
         } else if (formType == formTypeFactory.NULL_FORM_TYPE) {
         } else {
             throw new Exception(formTypeFactory.UNK);
@@ -127,7 +74,7 @@ public class MultipleScrollSelectionHorizontalForm : ScrollSelectionForm, Update
     }
 
     // throws Exception
-    private int paintHorizontal(Graphics graphics, int index, ABCustomItem item, int dx, int dy)
+    public virtual int paintHorizontal(Graphics graphics, int index, ABCustomItem item, int dx, int dy)
     {
         int dx2 = this.paintItem(graphics, index, item, dx, dy) + this.border;
         this.paintable.paint(graphics, index, dx, dy);
@@ -136,7 +83,7 @@ public class MultipleScrollSelectionHorizontalForm : ScrollSelectionForm, Update
     }
 
     // throws Exception
-    private int paintVertical(Graphics graphics, int index, ABCustomItem item, int dx, int dy)
+    public virtual int paintVertical(Graphics graphics, int index, ABCustomItem item, int dx, int dy)
     {
         this.paintItem(graphics, index, item, dx, dy);
         this.paintable.paint(graphics, index, dx, dy);

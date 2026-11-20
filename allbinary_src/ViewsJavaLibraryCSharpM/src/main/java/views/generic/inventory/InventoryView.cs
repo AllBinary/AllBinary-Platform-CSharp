@@ -32,6 +32,8 @@ using TransformInfoInterface = org.allbinary.logic.visual.transform.info.Transfo
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using HttpStoreComponentView = views.business.context.modules.storefront.HttpStoreComponentView;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.generic.inventory;
 
@@ -47,7 +49,7 @@ public class InventoryView : HttpStoreComponentView, DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Starting", this, "toXmlNode");
             }
             InventoryEntity inventoryEntityInterface = InventoryEntityFactory.getInstance().getInventoryEntityInstance();
@@ -66,7 +68,7 @@ public class InventoryView : HttpStoreComponentView, DomNodeInterface
             }
             return inventoryNode;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "toXmlNode", e);
             }
             throw e;
@@ -85,7 +87,7 @@ public class InventoryView : HttpStoreComponentView, DomNodeInterface
             return base.view();
         } catch (Exception e) {
             string error = "Failed to view Inventory";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             return error;

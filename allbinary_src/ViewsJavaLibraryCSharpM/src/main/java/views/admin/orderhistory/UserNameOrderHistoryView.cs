@@ -34,6 +34,8 @@ using TransformInfoInterface = org.allbinary.logic.visual.transform.info.Transfo
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using HttpStoreComponentView = views.business.context.modules.storefront.HttpStoreComponentView;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.orderhistory;
 
@@ -72,7 +74,7 @@ public class UserNameOrderHistoryView : HttpStoreComponentView, ValidationCompon
             this.addDomNodeInterfaces();
             return base.view();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             throw e;
@@ -92,7 +94,7 @@ public class UserNameOrderHistoryView : HttpStoreComponentView, ValidationCompon
                 Node orderNode = document.createElement(orderHistory.getPaymentMethod());
                 node.appendChild(orderHistory.toXmlNode(document));
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Attempt to View a users order history", this, "view");
             }
             node.appendChild(ModDomHelper.createNameValueNodes(document, OrderHistoryData.PREPROCESSINGNAME, OrderHistoryData.PREPROCESSING));
@@ -103,7 +105,7 @@ public class UserNameOrderHistoryView : HttpStoreComponentView, ValidationCompon
             node.appendChild(ModDomHelper.createNameValueNodes(document, GLOBALS2.VIEWNAME, GLOBALS2.VIEW));
             return node;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().XSLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().XSLLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "toXmlNode", e);
             }
             return null;
@@ -112,7 +114,7 @@ public class UserNameOrderHistoryView : HttpStoreComponentView, ValidationCompon
 
     public virtual bool? isValid()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Started", this, this.commonStrings.IS_VALID);
         }
         if (UserName.getInstance().isValid(this.userName) == true) {

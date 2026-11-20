@@ -33,6 +33,8 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.dhtml.style.css;
 
@@ -74,18 +76,18 @@ public class CssElementView : DomNodeInterface
             } else {
                 this.description = StringUtil.getInstance().EMPTY_STRING;
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF(new StringMaker().append("Value: ").append(this.value).append("\nTitle: ").append(this.title).append("\nDescription: ").append(this.description).ToString(), this, this.commonStrings.CONSTRUCTOR);
             }
             BasicArrayList cssElementStyleNodeVector = DomSearchHelper.getAllNodes(CssElementData.getInstance().NAME, node.getChildNodes());
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Child Css Elements: " + cssElementStyleNodeVector.size(), this, "CssElementView()");
             }
             this.cssElementVector = CssElementsValidationFactory.getInstance(cssElementStyleNodeVector);
             NodeList nodeList = node.getChildNodes();
             this.cssPropertyVector = CssPropertiesValidationFactory.getInstance(nodeList);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(new StringMaker().append("Value: ").append(this.value).append("\nTitle: ").append(this.title).append("\nDescription: ").append(this.description).ToString(), this, this.commonStrings.CONSTRUCTOR, e);
             }
             throw new Exception("CssElementView");
@@ -110,7 +112,7 @@ public class CssElementView : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         HashMap<object, object> hashMap = this.toHashMap();
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("CssView HashMap: " + hashMap.ToString(), this, "toXmlNode");
         }
         Node node = ModDomHelper.createNodeWithValueNodes(document, CssElementData.getInstance().NAME, hashMap);

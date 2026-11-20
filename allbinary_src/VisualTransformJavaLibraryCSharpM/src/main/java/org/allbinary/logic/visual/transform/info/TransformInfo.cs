@@ -48,6 +48,8 @@ using TransformInfoObjectData = org.allbinary.logic.visual.transform.info.viewOb
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.info;
 
@@ -94,7 +96,7 @@ public class TransformInfo : TransformInfoInterface
         if (!stringValidationUtil.isEmpty(aName)) {
             this.name = aName;
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("TransformInfo properties overridden for: ");
             stringBuffer.append(this.getName());
@@ -118,7 +120,7 @@ public class TransformInfo : TransformInfoInterface
         AbPath fileAbPath = new AbPath(stringBuffer.ToString(), StringUtil.getInstance().EMPTY_STRING);
         string aObject = ((string) hashMap.get(transformInfoData.OBJECT));
         if (!stringValidationUtil.isEmpty(aObject)) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("TransformInfo override view Object for: " + this.getName(), this, "override(HashMap hashMap)");
             }
             string fileDataString = new CryptFileReader(TransformInfoObjectData.getInstance().UNCRYPTED_EXTENSION, TransformInfoObjectData.getInstance().ENCRYPTED_EXTENSION).get(new AbPath(fileAbPath.ToString(), aObject));
@@ -127,14 +129,14 @@ public class TransformInfo : TransformInfoInterface
             }
         }
         if (!stringValidationUtil.isEmpty(((string) hashMap.get(transformInfoData.OBJECTCONFIG)))) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("TransformInfo override ObjectConfig for: " + this.getName(), this, "override(HashMap hashMap)");
             }
             this.setObjectConfig(((string) hashMap.get(transformInfoData.OBJECTCONFIG)));
         }
         string objectConfigFileName = ((string) hashMap.get(transformInfoData.OBJECTCONFIGFILENAME));
         if (!stringValidationUtil.isEmpty(objectConfigFileName)) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("TransformInfo override ObjectConfig File for: " + this.getName(), this, "override(HashMap hashMap)");
             }
             this.setObjectConfigFile(objectConfigFileName);
@@ -152,7 +154,7 @@ public class TransformInfo : TransformInfoInterface
         }
         string aTemplate = ((string) hashMap.get(transformInfoData.TEMPLATE));
         if (!stringValidationUtil.isEmpty(aTemplate)) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("TransformInfo override Template for: " + this.getName(), this, "override(HashMap hashMap)");
             }
             string fileDataString = new CryptFileReader(TransformInfoTemplateData.getInstance().UNCRYPTED_EXTENSION, TransformInfoTemplateData.getInstance().ENCRYPTED_EXTENSION).get(new AbPath(fileAbPath.ToString(), aTemplate));
@@ -166,7 +168,7 @@ public class TransformInfo : TransformInfoInterface
         }
         string aData = ((string) hashMap.get(transformInfoData.DATA));
         if (!stringValidationUtil.isEmpty(aData)) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("TransformInfo override Data for: " + this.getName(), this, "override(HashMap hashMap)");
             }
             string fileDataString = new CryptFileReader(TransformInfoDataData.getInstance().UNCRYPTED_EXTENSION, TransformInfoDataData.getInstance().ENCRYPTED_EXTENSION).get(new AbPath(fileAbPath.ToString(), aData));
@@ -174,7 +176,7 @@ public class TransformInfo : TransformInfoInterface
                 this.data = fileDataString;
             }
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             stringBuffer = new StringMaker();
             stringBuffer.append("Name: ");
             stringBuffer.append(aName);
@@ -193,7 +195,7 @@ public class TransformInfo : TransformInfoInterface
             stringBuffer.append("->TransformInfo");
             this.logUtil.putF(stringBuffer.ToString(), this, "TransformInfoInterface(HashMap)");
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERFACTORY)) {
             this.logUtil.putF(this.log(), this, "override");
         }
     }
@@ -341,24 +343,24 @@ public class TransformInfo : TransformInfoInterface
             try {
                 string fileData = new CryptFileReader(TransformInfoDataData.getInstance().UNCRYPTED_EXTENSION, TransformInfoDataData.getInstance().ENCRYPTED_EXTENSION).get(this.getDataFilePath());
                 if (!stringValidationUtil.isEmpty(this.data)) {
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                         this.logUtil.putF("Data File overriding existing data: " + this.getDataFilePath(), this, "getData()");
                     }
                 }
                 this.data = fileData;
             } catch (Exception e) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                     this.logUtil.put("Could Not Load Data from: " + this.getDataFile(), this, "getData()", e);
                 }
             }
         }
         try {
             if (!stringValidationUtil.isEmpty(this.data)) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                     this.logUtil.putF("Data: " + XmlDocumentHelper.toString(DomDocumentHelper.create(data)), this, "getData()");
                 }
             } else {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                     StringMaker stringBuffer = new StringMaker();
                     stringBuffer.append("Name: ");
                     stringBuffer.append(this.name);
@@ -366,13 +368,13 @@ public class TransformInfo : TransformInfoInterface
                     stringBuffer.append(dataFileString);
                     stringBuffer.append("\nPath: ");
                     stringBuffer.append(this.getDataFilePath().toFileSystemString());
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                         this.logUtil.putF(stringBuffer.ToString(), this, "getData()");
                     }
                 }
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Could Not Preview Data: " + this.data, this, "getData()", e);
             }
         }
@@ -385,7 +387,7 @@ public class TransformInfo : TransformInfoInterface
         string localData = this.getData();
         StringValidationUtil stringValidationUtil = StringValidationUtil.getInstance();
         if (stringValidationUtil.isEmpty(localData)) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.putF("No Data So Creating New Document", this, "getDataDocument()");
             }
             return DomDocumentHelper.create();

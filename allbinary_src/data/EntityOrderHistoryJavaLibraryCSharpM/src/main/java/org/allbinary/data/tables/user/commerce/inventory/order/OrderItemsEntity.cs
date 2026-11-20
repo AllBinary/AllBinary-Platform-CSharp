@@ -43,6 +43,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbSqlBean = org.allbinary.logic.communication.sql.AbSqlBean;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.data.tables.user.commerce.inventory.order;
 
@@ -117,11 +119,11 @@ public class OrderItemsEntity : AbSqlBean, OrderItemsEntityInterface
                 vector.add(ZERO_STRING);
                 this.insert(vector);
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF("Command Success Added: " + items.size(), this, INSERT);
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put("Command Failed: " + vector.ToString(), this, INSERT, e);
             }
         }
@@ -137,7 +139,7 @@ public class OrderItemsEntity : AbSqlBean, OrderItemsEntityInterface
             updateHashMap.put(OrderHistoryData.STATUS, status);
             base.updateWhere(whereHashMap, updateHashMap);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "setStatus", e);
             }
         }
@@ -156,7 +158,7 @@ public class OrderItemsEntity : AbSqlBean, OrderItemsEntityInterface
             }
             return true;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "isEverythingShipped", e);
             }
             return false;
@@ -193,7 +195,7 @@ public class OrderItemsEntity : AbSqlBean, OrderItemsEntityInterface
                 return null;
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "getBasketReview", e);
             }
             return null;

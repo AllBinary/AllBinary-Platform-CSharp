@@ -20,6 +20,7 @@ using System.Linq;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using StoreValidationTransformTag = tags.StoreValidationTransformTag;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
 
 namespace tags.generic.address.shipping;
 
@@ -34,10 +35,10 @@ public class TaxAddressTag : StoreValidationTransformTag
     {
         try {
             if (this.getCommand() != null) {
-                if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.VIEW) == 0) {
+                if (this.getCommand().compareTo(GLOBALS2.VIEW) == 0) {
                     this.setName("Basic Shipping Address View");
                     this.setObjectFile("views.generic.address.shipping.TaxValidationView");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.NEW) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.NEW) == 0) {
                     this.setName("Basic Shipping Address View");
                     this.setObjectFile("views.generic.address.shipping.NewValidationView");
                 } else if (this.getCommand().compareTo(this.commonStrings.INSERT) == 0) {

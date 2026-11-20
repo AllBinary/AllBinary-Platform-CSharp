@@ -32,72 +32,17 @@ public class TouchButtonRecognizer
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly RectangleCollisionUtil rectangleCollisionUtil = RectangleCollisionUtil.getInstance();
-    private readonly UpGameKeyEventHandler upGameKeyEventHandler = UpGameKeyEventHandler.getInstance();
+    public readonly UpGameKeyEventHandler upGameKeyEventHandler = UpGameKeyEventHandler.getInstance();
     private readonly DownGameKeyEventHandler downGameKeyEventHandler = DownGameKeyEventHandler.getInstance();
     private TouchButtonInput lastPressedTouchButtonInput = BasicTouchInputFactory.getInstance().NONE;
-    private readonly CurrentlyPressedTouchButtonSingleton currentlyPressedTouchButtonSingleton = CurrentlyPressedTouchButtonSingleton.getInstance();
-    //CurrentlyPressedTouchButtonSingletonDebug.getInstance();
-    public class ReleaseHelper
-    {
-        private readonly TouchButtonRecognizer outer;
-
-        public readonly TouchButtonRecognizer touchButtonRecognizer;
-        public ReleaseHelper(TouchButtonRecognizer outer, TouchButtonRecognizer touchButtonRecognizer)
-        {
-            this.outer = outer;
-            this.touchButtonRecognizer = touchButtonRecognizer;
-        }
-
-        // throws Exception
-        public virtual void release(TouchButtonInput touchButtonInput, int deviceId)
-        {
-            TouchButtonInput nextTouchButtonInput = null;
-            GameKeyEvent gameKeyEvent = null;
-            for (int index = this.touchButtonRecognizer.currentlyPressedTouchButtonSingleton.size() - 1; index >= 0; index--) {
-                nextTouchButtonInput = this.touchButtonRecognizer.currentlyPressedTouchButtonSingleton.get(index);
-                gameKeyEvent = nextTouchButtonInput.getGameKeyEvent();
-                this.touchButtonRecognizer.upGameKeyEventHandler.fireEvent(gameKeyEvent);
-                this.touchButtonRecognizer.upGameKeyEventHandler.getInstanceForDevice(deviceId).fireEvent(gameKeyEvent);
-                this.touchButtonRecognizer.currentlyPressedTouchButtonSingleton.removeAt(index);
-            }
-        }
-
-    }
-    public class MultitouchReleaseHelper : ReleaseHelper
-    {
-        private readonly TouchButtonRecognizer outer;
-
-        public MultitouchReleaseHelper(TouchButtonRecognizer outer, TouchButtonRecognizer touchButtonRecognizer) : base(outer, touchButtonRecognizer)
-        {
-            this.outer = outer;
-            // base(touchButtonRecognizer) is called from the constructor declaration
-        }
-
-        // throws Exception
-        public override void release(TouchButtonInput touchButtonInput, int deviceId)
-        {
-            TouchButtonInput cancelTouchButtonInput = CancelTouchButtonInputFactory.getInstance().getCancel(touchButtonInput);
-            TouchButtonInput nextTouchButtonInput = null;
-            GameKeyEvent gameKeyEvent = null;
-            for (int index = this.touchButtonRecognizer.currentlyPressedTouchButtonSingleton.size() - 1; index >= 0; index--) {
-                nextTouchButtonInput = this.touchButtonRecognizer.currentlyPressedTouchButtonSingleton.get(index);
-                if (cancelTouchButtonInput == nextTouchButtonInput) {
-                    gameKeyEvent = nextTouchButtonInput.getGameKeyEvent();
-                    this.touchButtonRecognizer.upGameKeyEventHandler.fireEvent(gameKeyEvent);
-                    this.touchButtonRecognizer.upGameKeyEventHandler.getInstanceForDevice(deviceId).fireEvent(gameKeyEvent);
-                    this.touchButtonRecognizer.currentlyPressedTouchButtonSingleton.removeAt(index);
-                }
-            }
-        }
-
-    }
+    public readonly CurrentlyPressedTouchButtonSingleton currentlyPressedTouchButtonSingleton = CurrentlyPressedTouchButtonSingleton.getInstance();
     private readonly ReleaseHelper releaseHelper = null;
     public TouchButtonRecognizer()
     {
         if (TouchScreenFactory.getInstance().isMultiTouch()) {
-            this.releaseHelper = new MultitouchReleaseHelper(this, this);
+            this.releaseHelper = new MultitouchReleaseHelper(this);
         } else {
-            this.releaseHelper = new ReleaseHelper(this, this);
+            this.releaseHelper = new ReleaseHelper(this);
         }
     }
 

@@ -23,6 +23,8 @@ using BooleanFactory = org.allbinary.logic.java.@bool.BooleanFactory;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.username;
 
@@ -50,7 +52,7 @@ public class UserName
         try {
             return this.isValid(this.userName);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put("Failed to validate form", this, "isUserNameValid()", e);
             }
             return false;
@@ -68,18 +70,18 @@ public class UserName
         try {
             BooleanFactory booleanFactory = BooleanFactory.getInstance();
             bool? valid = booleanFactory.TRUE;
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VALIDATION)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VALIDATION)) {
                 this.logUtil.putF("UserName: " + aUserName, this, commonStrings.IS_VALID);
             }
             if (!StringValidationUtil.getInstance().isValidRequired(aUserName, 5, UserData.MAXLEN)) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VALIDATION)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VALIDATION)) {
                     this.logUtil.putF("UserName is invalid", this, commonStrings.IS_VALID);
                 }
                 valid = booleanFactory.FALSE;
             }
             return valid;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put("Failed to validate form", this, commonStrings.IS_VALID, e);
             }
             return false;

@@ -20,6 +20,8 @@ using java.util;
 //using MimeMessage = javax.mail.internet.MimeMessage;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp;
 
@@ -28,7 +30,7 @@ public class AbEmail : EmailInterface
     private Email email = null;
     public AbEmail(string server, string from, string to, string subject, string textBody, string htmlAttachment, string contentBase)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
             this.email = new Email(from, to, subject, server, textBody, htmlAttachment, contentBase, true);
         } else {
             this.email = new Email(from, to, subject, server, textBody, htmlAttachment, contentBase);

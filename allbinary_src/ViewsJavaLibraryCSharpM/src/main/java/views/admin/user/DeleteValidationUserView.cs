@@ -27,6 +27,8 @@ using StringMaker = org.allbinary.logic.@string.StringMaker;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.user;
 
@@ -40,7 +42,7 @@ public class DeleteValidationUserView : UserView, ValidationComponentInterface
         HttpServletRequest httpServletRequest = ((HttpServletRequest) this.getPageContext().getRequest());
         HashMap<object, object> hashMap = new RequestParams(httpServletRequest).toHashMap();
         this.userName = new UserName(hashMap).get();
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("User Name: " + this.userName, this, this.commonStrings.CONSTRUCTOR);
         }
     }
@@ -58,7 +60,7 @@ public class DeleteValidationUserView : UserView, ValidationComponentInterface
             }
             return true;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate form", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -79,7 +81,7 @@ public class DeleteValidationUserView : UserView, ValidationComponentInterface
             }
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Validating Form";

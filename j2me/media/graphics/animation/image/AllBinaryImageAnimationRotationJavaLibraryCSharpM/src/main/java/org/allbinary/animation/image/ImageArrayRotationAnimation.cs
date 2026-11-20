@@ -35,11 +35,11 @@ public class ImageArrayRotationAnimation : ImageArrayBaseRotationAnimation
     public ImageArrayRotationAnimation(Image[] imageArray, AngleInfo angleInfo, int totalAngle, AnimationBehavior animationBehavior) : base(imageArray, angleInfo, animationBehavior)
     {
         // base(imageArray, angleInfo, animationBehavior) is called from the constructor declaration
-        this.init(imageArray, angleInfo, totalAngle);
+        this.initImageArray(imageArray, angleInfo, totalAngle);
     }
 
     // throws Exception
-    private void init(Image[] imageArray, AngleInfo angleInfo, int totalAngle)
+    private void initImageArray(Image[] imageArray, AngleInfo angleInfo, int totalAngle)
     {
         this.expectedTotalFrames = totalAngle / this.angleInfo.getAngleIncrementInfo().getAngleIncrement();
         this.angleInfo.adjustAngle(0);

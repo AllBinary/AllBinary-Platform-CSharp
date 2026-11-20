@@ -51,6 +51,8 @@ using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using StringEscapeUtils = org.apache.commons.lang3.StringEscapeUtils;
 using Document = org.w3c.dom.Document;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.context.modules.storefront;
 
@@ -157,7 +159,7 @@ public class StoreFront : StoreFrontInterface
         this.timeCreated = this.stringUtil.EMPTY_STRING;
         this.lastModified = this.stringUtil.EMPTY_STRING;
         this.getFormData(new RequestParams(request).toHashMap());
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             this.logUtil.putF("TWB- needs update for adding and updating context configuration - currently defaults to admin context config", this, "StoreFront");
         }
         this.setContextConfigurationInterface(ContextConfigurationInterfaceFactory.getInstance().getInstance("Admin"));
@@ -484,7 +486,7 @@ public class StoreFront : StoreFrontInterface
             }
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Validating Form";
@@ -493,13 +495,13 @@ public class StoreFront : StoreFrontInterface
 
     public virtual string getTestHtmlPath()
     {
-        return org.allbinary.globals.URLGLOBALS.getTestHtmlPath() + this.getCurrentHostNamePath();
+        return URLGLOBALS.getTestHtmlPath() + this.getCurrentHostNamePath();
     }
 
     public virtual string getCurrentHostName()
     {
         string location = this.EMPTY_STRING;
-        if (org.allbinary.globals.URLGLOBALS.isTestingMode()) {
+        if (URLGLOBALS.isTestingMode()) {
             location = this.getTestHostName();
         } else {
             location = this.getHostName();
@@ -510,7 +512,7 @@ public class StoreFront : StoreFrontInterface
     public virtual string getCurrentHostNamePath()
     {
         string location = this.EMPTY_STRING;
-        if (org.allbinary.globals.URLGLOBALS.isTestingMode()) {
+        if (URLGLOBALS.isTestingMode()) {
             location = this.getTestHostNamePath();
         } else {
             location = this.getHostNamePath();
@@ -521,7 +523,7 @@ public class StoreFront : StoreFrontInterface
     public virtual string getCurrentHomeHostName()
     {
         string location = this.EMPTY_STRING;
-        if (org.allbinary.globals.URLGLOBALS.isTestingMode()) {
+        if (URLGLOBALS.isTestingMode()) {
             location = this.getTestHomeHostName();
         } else {
             location = this.getHomeHostName();
@@ -532,7 +534,7 @@ public class StoreFront : StoreFrontInterface
     public virtual string getCurrentHomeHostNamePath()
     {
         string location = this.EMPTY_STRING;
-        if (org.allbinary.globals.URLGLOBALS.isTestingMode()) {
+        if (URLGLOBALS.isTestingMode()) {
             location = this.getTestHomeHostNamePath();
         } else {
             location = this.getHomeHostNamePath();
@@ -893,7 +895,7 @@ public class StoreFront : StoreFrontInterface
                 this.installMedia(fromDirectoryAbPath, current - installTotal, total - installTotal);
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "install()", e);
             }
             throw e;

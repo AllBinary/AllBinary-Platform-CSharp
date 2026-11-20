@@ -21,6 +21,7 @@ using BillingAddressData = org.allbinary.business.user.address.BillingAddressDat
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using StoreValidationTransformTag = tags.StoreValidationTransformTag;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
 
 namespace tags.generic.address.billing;
 
@@ -35,13 +36,13 @@ public class BillingAddressTag : StoreValidationTransformTag
     {
         try {
             if (this.getCommand() != null) {
-                if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.VIEW) == 0) {
+                if (this.getCommand().compareTo(GLOBALS2.VIEW) == 0) {
                     this.setName("Basic Billing Address View");
                     this.setObjectFile("views.generic.address.billing.ValidationView");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.EDIT) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.EDIT) == 0) {
                     this.setName("Basic Billing Address View");
                     this.setObjectFile("views.generic.address.billing.EditValidationView");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.NEW) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.NEW) == 0) {
                     this.setName("Basic Billing Address View");
                     this.setObjectFile("views.generic.address.billing.NewValidationView");
                 } else if (this.getCommand().compareTo(this.commonStrings.INSERT) == 0) {

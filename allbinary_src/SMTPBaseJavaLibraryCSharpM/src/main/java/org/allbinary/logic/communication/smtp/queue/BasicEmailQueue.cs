@@ -21,6 +21,8 @@ using System.Runtime.CompilerServices;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using EmailInterface = org.allbinary.logic.communication.smtp.EmailInterface;
 using BasicQueue = org.allbinary.logic.util.queue.BasicQueue;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp.queue;
 
@@ -91,16 +93,16 @@ public class BasicEmailQueue : BasicQueue, EmailQueueInterface
     private bool send(EmailInterface emailInterface)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
                 this.logUtil.putF("Sending: " + emailInterface.log(), this, "send");
             }
             Transport.send(emailInterface.getMimeMessage());
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
                 this.logUtil.putF("Email Send Debug: " + emailInterface.getDebugInfo(), this, "send");
             }
             return true;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
                 this.logUtil.put("Failed Email Send Debug: " + emailInterface.getDebugInfo(), this, "send", e);
             }
             return false;

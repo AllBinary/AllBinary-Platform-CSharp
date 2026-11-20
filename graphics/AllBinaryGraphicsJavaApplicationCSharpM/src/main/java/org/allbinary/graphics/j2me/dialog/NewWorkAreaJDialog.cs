@@ -24,19 +24,23 @@ using GraphicsException = org.allbinary.graphics.j2me.GraphicsException;
 using MyFrame = org.allbinary.graphics.j2me.MyFrame;
 using WorkAreaJPanel = org.allbinary.graphics.j2me.workarea.WorkAreaJPanel;
 using WorkAreaJPanelInterface = org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface;
+//using Frame = java.awt.Frame;
+//using WindowAdapter = java.awt.@event.WindowAdapter;
+//using WindowEvent = java.awt.@event.WindowEvent;
+//using JDialog = javax.swing.JDialog;
 
 namespace org.allbinary.graphics.j2me.dialog;
 
-public class NewWorkAreaJDialog : javax.swing.JDialog
+public class NewWorkAreaJDialog : JDialog
 {
     private MyFrame parent = null;
     private Dimension dimension = null;
     private JTextField xSizeJTextField = null;
     private JTextField ySizeJTextField = null;
     private JTextField nameJTextField = null;
-    public NewWorkAreaJDialog(MyFrame parent, bool modal, Dimension dimension, string newName) : base(((java.awt.Frame) parent), modal)
+    public NewWorkAreaJDialog(MyFrame parent, bool modal, Dimension dimension, string newName) : base(((Frame) parent), modal)
     {
-        // base(((java.awt.Frame) parent), modal) is called from the constructor declaration
+        // base(((Frame) parent), modal) is called from the constructor declaration
         try {
             this.initComponents();
             this.parent = parent;
@@ -95,9 +99,9 @@ public class NewWorkAreaJDialog : javax.swing.JDialog
 
     private void initComponents()
     {
-        addWindowListener(new java.awt.event.WindowAdapter()
+        addWindowListener(new WindowAdapter()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void windowClosing(java.awt.event.WindowEvent evt)
+            public virtual void windowClosing(WindowEvent evt)
             {
                 closeDialog(evt);
             }
@@ -107,7 +111,7 @@ public class NewWorkAreaJDialog : javax.swing.JDialog
         pack();
     }
 
-    private void closeDialog(java.awt.event.WindowEvent evt)
+    private void closeDialog(WindowEvent evt)
     {
         setVisible(false);
         dispose();

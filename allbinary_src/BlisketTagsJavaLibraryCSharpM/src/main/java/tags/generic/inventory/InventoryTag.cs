@@ -23,6 +23,9 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using InventoryHelperFactory = taghelpers.InventoryHelperFactory;
 using StoreValidationTransformTag = tags.StoreValidationTransformTag;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace tags.generic.inventory;
 
@@ -47,14 +50,14 @@ public class InventoryTag : StoreValidationTransformTag
             throw e;
         } catch (Exception e) {
             string error = "Failed to search Inventory by keyword";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "search()", e);
             }
             try {
                 pageContext.getOut().print(error + "<br>");
                 pageContext.getOut().print("Exception: " + e + "<br>");
             } catch (Exception e2) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().LICENSINGERROR)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().LICENSINGERROR)) {
                     this.logUtil.put("Exception in Exception Handling", this, "search()", e);
                 }
             }
@@ -74,14 +77,14 @@ public class InventoryTag : StoreValidationTransformTag
             throw e;
         } catch (Exception e) {
             string error = "Failed to View Summary";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "viewSummary()", e);
             }
             try {
                 pageContext.getOut().print(error + "<br>");
                 pageContext.getOut().print("Exception: " + e + "<br>");
             } catch (Exception e2) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().LICENSINGERROR)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().LICENSINGERROR)) {
                     this.logUtil.put("Exception in Exception Handling", this, "viewSummary())", e);
                 }
             }
@@ -93,17 +96,17 @@ public class InventoryTag : StoreValidationTransformTag
     {
         try {
             if (this.getCommand() != null) {
-                if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.SEARCH) == 0) {
+                if (this.getCommand().compareTo(GLOBALS2.SEARCH) == 0) {
                     this.setName("Basic Search Inventory View");
                     this.setObjectFile("views.generic.inventory.AutoSearchValidationInventoryView");
                     this.search();
                     return EVAL_BODY_INCLUDE;
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.VIEWSUMMARY) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.VIEWSUMMARY) == 0) {
                     this.setName("Basic Inventory View");
                     this.setObjectFile("views.generic.inventory.AutoValidationInventoryView");
                     this.viewSummary();
                     return EVAL_BODY_INCLUDE;
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.VIEW) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.VIEW) == 0) {
                     this.setName("Basic Inventory View");
                     this.setObjectFile("views.generic.inventory.AutoValidationInventoryView");
                     return base.doStartTag();

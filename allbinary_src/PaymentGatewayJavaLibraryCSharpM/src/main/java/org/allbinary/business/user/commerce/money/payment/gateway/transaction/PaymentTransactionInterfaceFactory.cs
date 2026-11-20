@@ -21,6 +21,8 @@ using PaymentType = org.allbinary.business.user.commerce.money.payment.types.Pay
 using PaymentTypeUtil = org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.money.payment.gateway.transaction;
 
@@ -50,7 +52,7 @@ public class PaymentTransactionInterfaceFactory
             }
             throw new Exception("Failed to create PaymentTransactionInterface: " + "GatewayName is: " + gatewayName);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 this.logUtil.put("Failed to generate test data", this, commonStrings.GET_INSTANCE, e);
             }

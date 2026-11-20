@@ -27,6 +27,7 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using XmlRpcAbeLicenseRetrievalClient = org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient;
 using PATH_GLOBALS = org.allbinary.globals.PATH_GLOBALS;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
+using CommonStrings = org.allbinary.@string.CommonStrings;
 
 namespace org.allbinary.logic.system.security.licensing;
 
@@ -44,13 +45,8 @@ public class LicenseClientAndServerTest
             File file = new File(PrintLicenseInitInfo.PATH + "testlicenseservers.txt");
             FileReader reader = new FileReader(file);
             LineNumberReader lineNumberReader = new LineNumberReader(reader);
-            while (true) {
-                string line = lineNumberReader.readLine();
-                if (line != null) {
-                    this.vector.add(line);
-                } else {
-                    break;
-                }
+            while (lineNumberReader.ready()) {
+                this.vector.add(lineNumberReader.readLine());
             }
         }
     }
@@ -101,7 +97,7 @@ public class LicenseClientAndServerTest
             licensingTest.test();
         } catch (Exception e) {
             LogUtil logUtil = LogUtil.getInstance();
-            this.logUtil.put(this.commonStrings.EXCEPTION, "main()", "main()", e);
+            logUtil.put(CommonStrings.getInstance().EXCEPTION, "main()", "main()", e);
         }
     }
 

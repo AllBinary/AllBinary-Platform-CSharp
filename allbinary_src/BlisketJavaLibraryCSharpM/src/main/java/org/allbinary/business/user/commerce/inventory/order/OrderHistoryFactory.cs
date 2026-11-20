@@ -19,6 +19,8 @@ using System.Linq;
 using OrderHistoryEntity = org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.inventory.order;
 
@@ -34,11 +36,11 @@ public class OrderHistoryFactory
     {
         LogUtil logUtil = LogUtil.getInstance();
         try {
-            OrderHistoryEntity orderHistoryEntityInterface = new org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity();
+            OrderHistoryEntity orderHistoryEntityInterface = new OrderHistoryEntity();
             return ((OrderHistory) orderHistoryEntityInterface.getOrder(id));
         } catch (Exception e) {
             CommonStrings commonStrings = CommonStrings.getInstance();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().FACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().FACTORYERROR)) {
                 logUtil.put(commonStrings.EXCEPTION, "OrderHistoryFactory", commonStrings.GET_INSTANCE, e);
             }
             return null;

@@ -19,10 +19,11 @@ using System.Linq;
 using StoreFront = org.allbinary.business.context.modules.storefront.StoreFront;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonSeps = org.allbinary.@string.CommonSeps;
+using Serializable = java.io.Serializable;
 
 namespace org.allbinary.business.user.commerce.money.payment.gateway;
 
-public class PaymentGatewayPrimaryKey : java.io.Serializable
+public class PaymentGatewayPrimaryKey : Serializable
 {
     private string storeName = null;
     private string name = null;

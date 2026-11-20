@@ -14,8 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias GameLicensingNullJavaLibraryCSharp;
-extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -48,7 +46,7 @@ public class TestingInputSingleton : AllBinaryGameLayer, GameInputInterface
         GameInputProcessorUtil.init(this.inputProcessorArray);
     }
 
-    private PaintableInterface paintable = NullPaintable.getInstance();
+    private PaintableInterface testInputPaintable = NullPaintable.getInstance();
     public virtual void initInputProcessors()
     {
     }
@@ -56,7 +54,7 @@ public class TestingInputSingleton : AllBinaryGameLayer, GameInputInterface
     public virtual void initInputProcessorsForTestInput(TestInputInterface aTestInputInterface)
     {
         TestInputInterface testInputInterface = aTestInputInterface;
-        this.paintable = testInputInterface;
+        this.testInputPaintable = testInputInterface;
         this.inputProcessorArray[Canvas.UP] = new GameInputProcessor()
 #if JAVA_ANONYMOUS_CLASS_BODY
             // throws Exception
@@ -144,7 +142,7 @@ public class TestingInputSingleton : AllBinaryGameLayer, GameInputInterface
 
     public override void paint(Graphics graphics)
     {
-        this.paintable.paint(graphics);
+        this.testInputPaintable.paint(graphics);
     }
 
     public override bool implmentsGameInputInterface()

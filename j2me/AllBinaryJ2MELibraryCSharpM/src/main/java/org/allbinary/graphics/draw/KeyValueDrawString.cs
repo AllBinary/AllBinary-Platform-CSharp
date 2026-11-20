@@ -54,9 +54,7 @@ public class KeyValueDrawString : UpdateMyFontInterface
 
     public virtual void update(string value)
     {
-        if (value != null) {
-            this.value = value;
-        }
+        this.value = value;
     }
 
 }

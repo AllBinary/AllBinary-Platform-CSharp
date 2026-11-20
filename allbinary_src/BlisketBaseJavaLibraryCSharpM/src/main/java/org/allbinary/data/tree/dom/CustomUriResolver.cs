@@ -29,6 +29,8 @@ using AbPath = org.allbinary.logic.io.path.AbPath;
 using AbPathData = org.allbinary.logic.io.path.AbPathData;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using TransformInfoTemplateData = org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.data.tree.dom;
 
@@ -53,7 +55,7 @@ public class CustomUriResolver : URIResolver
             stringBuffer.append(AbPathData.getInstance().SEPARATOR);
             stringBuffer.append(href);
             AbPath fileAbPath = ((AbPath) new AbFilePath(stringBuffer.ToString()));
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().XMLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().XMLLOGGING)) {
                 stringBuffer.delete(0, stringBuffer.length());
                 stringBuffer.append(this.uriResolverStrings.ATTEMPT);
                 stringBuffer.append(href);

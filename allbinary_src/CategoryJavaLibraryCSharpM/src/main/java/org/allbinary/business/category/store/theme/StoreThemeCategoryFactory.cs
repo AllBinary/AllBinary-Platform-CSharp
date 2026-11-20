@@ -29,6 +29,8 @@ using StringUtil = org.allbinary.logic.@string.StringUtil;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.category.store.theme;
 
@@ -39,7 +41,7 @@ public class StoreThemeCategoryFactory : CategoryFactoryInterface
     private TransformInfoInterface transformInfoInterface;
     public StoreThemeCategoryFactory(TransformInfoInterface transformInfoInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             this.logUtil.putF(this.commonStrings.START, this, "StoreCategoryFactory(TransformInfoInterface transformInfoInterface)");
         }
         this.transformInfoInterface = transformInfoInterface;
@@ -51,7 +53,7 @@ public class StoreThemeCategoryFactory : CategoryFactoryInterface
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new RootStoreThemeCategoryPropertiesFactory(this.transformInfoInterface));
             return ((CategoryInterface) new StoreThemeCategory(this.transformInfoInterface, categoryPropertiesFactoryInterface, 0));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getRootInstance()", e);
             }
             return null;
@@ -65,7 +67,7 @@ public class StoreThemeCategoryFactory : CategoryFactoryInterface
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new RootStoreThemeCategoryPropertiesFactory(this.transformInfoInterface, categoryAbPath));
             return ((CategoryInterface) new StoreThemeCategory(this.transformInfoInterface, categoryPropertiesFactoryInterface, level));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getRootInstance(String)", e);
             }
             return null;
@@ -80,7 +82,7 @@ public class StoreThemeCategoryFactory : CategoryFactoryInterface
             int level = CategoryUtil.getPathLevel(categoryPath);
             return ((CategoryInterface) new StoreThemeCategory(this.transformInfoInterface, node, categoryPropertiesFactoryInterface, level));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getRootInstance(node)", e);
             }
             return null;
@@ -93,7 +95,7 @@ public class StoreThemeCategoryFactory : CategoryFactoryInterface
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(categoryPath));
             return ((CategoryInterface) new StoreThemeCategory(this.transformInfoInterface, categoryPropertiesFactoryInterface, level));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getInstance(String, int)", e);
             }
             return null;
@@ -106,7 +108,7 @@ public class StoreThemeCategoryFactory : CategoryFactoryInterface
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(categoryPath));
             return ((CategoryInterface) new StoreThemeCategory(this.transformInfoInterface, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "getInstance(CategoryInterface, CategoryInterface , String, int)", e);
             }
             return null;
@@ -119,7 +121,7 @@ public class StoreThemeCategoryFactory : CategoryFactoryInterface
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(node));
             return ((CategoryInterface) new StoreThemeCategory(this.transformInfoInterface, categoryPropertiesFactoryInterface, level));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getInstance(Node, int)", e);
             }
             return null;
@@ -132,7 +134,7 @@ public class StoreThemeCategoryFactory : CategoryFactoryInterface
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(node));
             return ((CategoryInterface) new StoreThemeCategory(this.transformInfoInterface, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "getInstance(CategoryInterface, CategoryInterface, Node, int)", e);
             }
             return null;
@@ -145,7 +147,7 @@ public class StoreThemeCategoryFactory : CategoryFactoryInterface
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(categoryPropertiesHashMap));
             return ((CategoryInterface) new StoreThemeCategory(this.transformInfoInterface, categoryPropertiesFactoryInterface, level));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getInstance(HashMap)", e);
             }
             return null;
@@ -158,7 +160,7 @@ public class StoreThemeCategoryFactory : CategoryFactoryInterface
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(categoryPropertiesHashMap));
             return ((CategoryInterface) new StoreThemeCategory(this.transformInfoInterface, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "getInstance(CategoryInterface, CategoryInterface, HashMap)", e);
             }
             return null;

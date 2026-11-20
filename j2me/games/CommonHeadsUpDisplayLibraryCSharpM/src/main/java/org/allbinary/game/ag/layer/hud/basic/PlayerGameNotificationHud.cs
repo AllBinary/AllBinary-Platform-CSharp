@@ -49,42 +49,6 @@ public class PlayerGameNotificationHud : GameNotificationHud, UpdateMyFontInterf
     private readonly CircularIndexUtil circularIndexUtil;
     private readonly GameNotification gameNotification = new GameNotification();
     private readonly GameNotification permanentGameNotification = new GameNotification();
-    private class SetAndRemoveProcessor : Processor
-    {
-        private readonly PlayerGameNotificationHud outer;
-
-        private readonly PlayerGameNotificationHud updateMeasurementProcessor;
-        public SetAndRemoveProcessor(PlayerGameNotificationHud outer, PlayerGameNotificationHud updateMeasurementProcessor)
-        {
-            this.outer = outer;
-            this.updateMeasurementProcessor = updateMeasurementProcessor;
-        }
-
-        // throws Exception
-        public override void process()
-        {
-            this.updateMeasurementProcessor.setAndRemoveProcess();
-        }
-
-    }
-    private class NextUnremoveableProcessor : Processor
-    {
-        private readonly PlayerGameNotificationHud outer;
-
-        private readonly PlayerGameNotificationHud updateMeasurementProcessor;
-        public NextUnremoveableProcessor(PlayerGameNotificationHud outer, PlayerGameNotificationHud updateMeasurementProcessor)
-        {
-            this.outer = outer;
-            this.updateMeasurementProcessor = updateMeasurementProcessor;
-        }
-
-        // throws Exception
-        public override void process()
-        {
-            this.updateMeasurementProcessor.setNextUnremoveableProcess();
-        }
-
-    }
     private readonly Processor setAndRemoveProcessor;
     private readonly Processor nextUnremoveableProcessor;
     private Processor processor = Processor.getInstance();
@@ -95,8 +59,8 @@ public class PlayerGameNotificationHud : GameNotificationHud, UpdateMyFontInterf
     private int width = 0;
     public PlayerGameNotificationHud(int location, int direction, int bufferZone, BasicColor basicColor) : base(location, direction, bufferZone, basicColor)
     {
-        this.setAndRemoveProcessor = new SetAndRemoveProcessor(this, this);
-        this.nextUnremoveableProcessor = new NextUnremoveableProcessor(this, this);
+        this.setAndRemoveProcessor = new SetAndRemoveProcessor(this);
+        this.nextUnremoveableProcessor = new NextUnremoveableProcessor(this);
         this.@string = this.EMPTY_STRING;
         // base(location, direction, bufferZone, basicColor) is called from the constructor declaration
         this.circularIndexUtil = CircularIndexUtil.createInstance(0);
@@ -170,7 +134,7 @@ public class PlayerGameNotificationHud : GameNotificationHud, UpdateMyFontInterf
     }
 
     // throws Exception
-    private void setAndRemoveProcess()
+    public virtual void setAndRemoveProcess()
     {
         this.setX((this.displayInfo.getLastWidth() - this.width) >> 1);
         this.point.setX(this.getX());
@@ -193,7 +157,7 @@ public class PlayerGameNotificationHud : GameNotificationHud, UpdateMyFontInterf
     }
 
     // throws Exception
-    private void setNextUnremoveableProcess()
+    public virtual void setNextUnremoveableProcess()
     {
         int index = this.circularIndexUtil.getIndex();
         this.setX((this.displayInfo.getLastWidth() - this.width) >> 1);

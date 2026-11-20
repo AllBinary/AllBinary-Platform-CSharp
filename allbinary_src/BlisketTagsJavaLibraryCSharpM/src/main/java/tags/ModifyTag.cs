@@ -25,6 +25,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace tags;
 
@@ -34,7 +36,7 @@ public class ModifyTag : HelperTag
     public ModifyTag(TagHelperFactoryInterface tagHelperFactoryInterface) : base(tagHelperFactoryInterface)
     {
         // base(tagHelperFactoryInterface) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }
     }
@@ -49,7 +51,7 @@ public class ModifyTag : HelperTag
             return result;
         } catch (Exception e) {
             string error = "Failed to insert";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "insert()", e);
             }
             return error;
@@ -66,7 +68,7 @@ public class ModifyTag : HelperTag
             return result;
         } catch (Exception e) {
             string error = "Failed to delete";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "delete()", e);
             }
             return error;
@@ -83,7 +85,7 @@ public class ModifyTag : HelperTag
             return result;
         } catch (Exception e) {
             string error = "Failed to update";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "update()", e);
             }
             return error;
@@ -94,7 +96,7 @@ public class ModifyTag : HelperTag
     public virtual int doStartTag()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
                 HttpServletRequest request = ((HttpServletRequest) this.pageContext.getRequest());
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Command: ");
@@ -103,24 +105,24 @@ public class ModifyTag : HelperTag
                 stringBuffer.append(request.getRequestURI());
                 this.logUtil.putF(stringBuffer.ToString(), this, tagStrings.DO_START_TAG);
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             }
             if (this.getCommand() != null) {
                 this.setHelper();
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 if (this.getCommand().compareTo(commonStrings.INSERT) == 0) {
                     string output = this.insert();
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
                         this.pageContext.getOut().print(output + "<br />");
                     }
                 } else if (this.getCommand().compareTo(commonStrings.DELETE) == 0) {
                     string output = this.delete();
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
                         this.pageContext.getOut().print(output + "<br />");
                     }
                 } else if (this.getCommand().compareTo(commonStrings.UPDATE) == 0) {
                     string output = this.update();
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
                         this.pageContext.getOut().print(output + "<br />");
                     }
                 }

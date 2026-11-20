@@ -23,6 +23,8 @@ using ShippingInterface = org.allbinary.business.user.commerce.shipping.modules.
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.shipping;
 
@@ -55,7 +57,7 @@ public class ShippingMethods : ShippingMethodsInterface
             }
         }
         string error = "Error Finding Shipping: " + name;
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SHIPPINGERROR)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SHIPPINGERROR)) {
             this.logUtil.putF(this.commonStrings.EXCEPTION, this, "getShippingInterface(String name)");
         }
         throw new Exception(error);

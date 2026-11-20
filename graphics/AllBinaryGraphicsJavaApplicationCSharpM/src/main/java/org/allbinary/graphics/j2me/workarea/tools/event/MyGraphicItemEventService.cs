@@ -17,12 +17,14 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
+//using EventListener = java.util.EventListener;
+//using EventListenerList = javax.swing.@event.EventListenerList;
 
 namespace org.allbinary.graphics.j2me.workarea.tools.@event;
 
 public class MyGraphicItemEventService
 {
-    private static javax.swing.event.EventListenerList listenerList = new javax.swing.event.EventListenerList();
+    private static EventListenerList listenerList = new EventListenerList();
     public static string DELETE = "delete";
     public static string DESELECT = "deselect";
     public static string SELECT = "select";
@@ -35,13 +37,13 @@ public class MyGraphicItemEventService
     [MethodImpl(MethodImplOptions.Synchronized)]
     public static void addListener(MyGraphicItemEventListener listener)
     {
-        MyGraphicItemEventService.listenerList.add(((Type) listener.GetType()), ((java.util.EventListener) listener));
+        MyGraphicItemEventService.listenerList.add(((Type) (((Type) listener.GetType()))), ((EventListener) listener));
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
     public static void removeListener(MyGraphicItemEventListener listener)
     {
-        MyGraphicItemEventService.listenerList.remove(((Type) listener.GetType()), ((java.util.EventListener) listener));
+        MyGraphicItemEventService.listenerList.remove(((Type) (((Type) listener.GetType()))), ((EventListener) listener));
     }
 
     // throws Exception

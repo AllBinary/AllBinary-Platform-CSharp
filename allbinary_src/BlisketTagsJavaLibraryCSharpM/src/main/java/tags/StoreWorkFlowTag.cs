@@ -23,6 +23,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using TransformInfoData = org.allbinary.logic.visual.transform.info.TransformInfoData;
 using StoreTagWorkFlowHelperFactory = taghelpers.StoreTagWorkFlowHelperFactory;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace tags;
 
@@ -35,7 +37,7 @@ public class StoreWorkFlowTag : HelperTag
     public StoreWorkFlowTag() : base(new StoreTagWorkFlowHelperFactory())
     {
         // base(new StoreTagWorkFlowHelperFactory()) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }
     }
@@ -50,7 +52,7 @@ public class StoreWorkFlowTag : HelperTag
     private int process()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
                 this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.PROCESS);
             }
             Type helperClass = this.getHelper().GetType();
@@ -58,7 +60,7 @@ public class StoreWorkFlowTag : HelperTag
             int? result = ((int?) method.invoke(this.getHelper(), null));
             return ((int) result);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.PROCESS, e);
             }
             throw e;
@@ -69,7 +71,7 @@ public class StoreWorkFlowTag : HelperTag
     public virtual int doStartTag()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
                 this.logUtil.putF(this.commonStrings.START, this, tagStrings.DO_START_TAG);
             }
             this.setHelper();

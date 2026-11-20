@@ -17,11 +17,17 @@
 using System;
 using System.Linq;
 using GLU = com.jogamp.opengl.glu.GLU;
+using GL = com.jogamp.opengl.GL;
+using GL2 = com.jogamp.opengl.GL2;
+using Buffer = java.nio.Buffer;
+using FloatBuffer = java.nio.FloatBuffer;
+using IntBuffer = java.nio.IntBuffer;
+using GL10 = javax.microedition.khronos.opengles.GL10;
 
 namespace org.allbinary.opengles;
 
 //JOGLEToKhronosGL10
-public class JOGL10 : javax.microedition.khronos.opengles.GL10
+public class JOGL10 : global::javax.microedition.khronos.opengles.GL10
 {
     public readonly string RED = "red: ";
     public readonly string GREEN = " green: ";
@@ -34,19 +40,19 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
     public readonly string LIGHT = "light: ";
     public readonly string FACE = "face: ";
     public readonly string TARGET = "target: ";
-    private readonly com.jogamp.opengl.GL2 gl10;
+    private readonly GL2 gl10;
     public readonly GLU glu;
     public readonly int GL_LINE;
     public readonly int GL_QUAD_STRIP;
-    public JOGL10(com.jogamp.opengl.GL gl, com.jogamp.opengl.GL2 gl2)
+    public JOGL10(GL gl, GL2 gl2)
     {
         this.gl10 = gl2;
         this.glu = GLU.createGLU(this.gl10);
-        this.GL_LINE = com.jogamp.opengl.GL2.GL_LINE;
-        this.GL_QUAD_STRIP = com.jogamp.opengl.GL2.GL_QUAD_STRIP;
+        this.GL_LINE = GL2.GL_LINE;
+        this.GL_QUAD_STRIP = GL2.GL_QUAD_STRIP;
     }
 
-    public virtual com.jogamp.opengl.GL2 getJOGLGL()
+    public virtual GL2 getJOGLGL()
     {
         return this.gl10;
     }
@@ -106,17 +112,17 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glColorMask(red, green, blue, alpha);
     }
 
-    public virtual void glColorPointer(int size, int type, int stride, java.nio.Buffer pointer)
+    public virtual void glColorPointer(int size, int type, int stride, Buffer pointer)
     {
         this.gl10.glColorPointer(size, type, stride, pointer);
     }
 
-    public virtual void glCompressedTexImage2D(int target, int level, int internalformat, int width, int height, int border, int imageSize, java.nio.Buffer data)
+    public virtual void glCompressedTexImage2D(int target, int level, int internalformat, int width, int height, int border, int imageSize, Buffer data)
     {
         this.gl10.glCompressedTexImage2D(target, level, internalformat, width, height, border, imageSize, data);
     }
 
-    public virtual void glCompressedTexSubImage2D(int target, int level, int xoffset, int yoffset, int width, int height, int format, int imageSize, java.nio.Buffer data)
+    public virtual void glCompressedTexSubImage2D(int target, int level, int xoffset, int yoffset, int width, int height, int format, int imageSize, Buffer data)
     {
         this.gl10.glCompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, data);
     }
@@ -141,7 +147,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glDeleteTextures(n, textures, offset);
     }
 
-    public virtual void glDeleteTextures(int n, java.nio.IntBuffer textures)
+    public virtual void glDeleteTextures(int n, IntBuffer textures)
     {
         this.gl10.glDeleteTextures(n, textures);
     }
@@ -176,7 +182,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glDrawArrays(mode, first, count);
     }
 
-    public virtual void glDrawElements(int mode, int count, int type, java.nio.Buffer indices)
+    public virtual void glDrawElements(int mode, int count, int type, Buffer indices)
     {
         this.gl10.glDrawElements(mode, count, type, indices);
     }
@@ -211,7 +217,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glFogfv(pname, @params, offset);
     }
 
-    public virtual void glFogfv(int pname, java.nio.FloatBuffer @params)
+    public virtual void glFogfv(int pname, FloatBuffer @params)
     {
         this.gl10.glFogfv(pname, @params);
     }
@@ -231,7 +237,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glGenTextures(n, textures, offset);
     }
 
-    public virtual void glGenTextures(int n, java.nio.IntBuffer textures)
+    public virtual void glGenTextures(int n, IntBuffer textures)
     {
         this.gl10.glGenTextures(n, textures);
     }
@@ -246,7 +252,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glGetIntegerv(pname, @params, offset);
     }
 
-    public virtual void glGetIntegerv(int pname, java.nio.IntBuffer @params)
+    public virtual void glGetIntegerv(int pname, IntBuffer @params)
     {
         this.gl10.glGetIntegerv(pname, @params);
     }
@@ -271,7 +277,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glLightModelfv(pname, @params, offset);
     }
 
-    public virtual void glLightModelfv(int pname, java.nio.FloatBuffer @params)
+    public virtual void glLightModelfv(int pname, FloatBuffer @params)
     {
         this.gl10.glLightModelfv(pname, @params);
     }
@@ -286,7 +292,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glLightfv(light, pname, @params, offset);
     }
 
-    public virtual void glLightfv(int light, int pname, java.nio.FloatBuffer @params)
+    public virtual void glLightfv(int light, int pname, FloatBuffer @params)
     {
         this.gl10.glLightfv(light, pname, @params);
     }
@@ -306,7 +312,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glLoadMatrixf(m, offset);
     }
 
-    public virtual void glLoadMatrixf(java.nio.FloatBuffer m)
+    public virtual void glLoadMatrixf(FloatBuffer m)
     {
         this.gl10.glLoadMatrixf(m);
     }
@@ -326,7 +332,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glMaterialfv(face, pname, @params, offset);
     }
 
-    public virtual void glMaterialfv(int face, int pname, java.nio.FloatBuffer @params)
+    public virtual void glMaterialfv(int face, int pname, FloatBuffer @params)
     {
         this.gl10.glMaterialfv(face, pname, @params);
     }
@@ -341,7 +347,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glMultMatrixf(m, offset);
     }
 
-    public virtual void glMultMatrixf(java.nio.FloatBuffer m)
+    public virtual void glMultMatrixf(FloatBuffer m)
     {
         this.gl10.glMultMatrixf(m);
     }
@@ -356,7 +362,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glNormal3f(nx, ny, nz);
     }
 
-    public virtual void glNormalPointer(int type, int stride, java.nio.Buffer pointer)
+    public virtual void glNormalPointer(int type, int stride, Buffer pointer)
     {
         this.gl10.glNormalPointer(type, stride, pointer);
     }
@@ -391,7 +397,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glPushMatrix();
     }
 
-    public virtual void glReadPixels(int x, int y, int width, int height, int format, int type, java.nio.Buffer pixels)
+    public virtual void glReadPixels(int x, int y, int width, int height, int format, int type, Buffer pixels)
     {
         this.gl10.glReadPixels(x, y, width, height, format, type, pixels);
     }
@@ -446,7 +452,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glStencilOp(fail, zfail, zpass);
     }
 
-    public virtual void glTexCoordPointer(int size, int type, int stride, java.nio.Buffer pointer)
+    public virtual void glTexCoordPointer(int size, int type, int stride, Buffer pointer)
     {
         this.gl10.glTexCoordPointer(size, type, stride, pointer);
     }
@@ -461,12 +467,12 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glTexEnvfv(target, pname, @params, offset);
     }
 
-    public virtual void glTexEnvfv(int target, int pname, java.nio.FloatBuffer @params)
+    public virtual void glTexEnvfv(int target, int pname, FloatBuffer @params)
     {
         this.gl10.glTexEnvfv(target, pname, @params);
     }
 
-    public virtual void glTexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, java.nio.Buffer pixels)
+    public virtual void glTexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, Buffer pixels)
     {
         this.gl10.glTexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
     }
@@ -481,7 +487,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glTexParameteri(target, pname, param);
     }
 
-    public virtual void glTexSubImage2D(int target, int level, int xoffset, int yoffset, int width, int height, int format, int type, java.nio.Buffer pixels)
+    public virtual void glTexSubImage2D(int target, int level, int xoffset, int yoffset, int width, int height, int format, int type, Buffer pixels)
     {
         this.gl10.glTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixels);
     }
@@ -491,7 +497,7 @@ public class JOGL10 : javax.microedition.khronos.opengles.GL10
         this.gl10.glTranslatef(x, y, z);
     }
 
-    public virtual void glVertexPointer(int size, int type, int stride, java.nio.Buffer pointer)
+    public virtual void glVertexPointer(int size, int type, int stride, Buffer pointer)
     {
         this.gl10.glVertexPointer(size, type, stride, pointer);
     }

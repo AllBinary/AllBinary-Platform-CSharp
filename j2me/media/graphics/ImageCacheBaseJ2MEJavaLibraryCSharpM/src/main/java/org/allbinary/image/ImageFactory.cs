@@ -18,6 +18,7 @@ using System;
 using System.Linq;
 using InputStream = java.io.InputStream;
 using Image = javax.microedition.lcdui.Image;
+using MIDPUtil = org.allbinary.MIDPUtil;
 
 namespace org.allbinary.image;
 
@@ -39,20 +40,20 @@ public class ImageFactory
     // throws Exception
     public virtual Image createImage(string caller, int width, int height)
     {
-        return Image.createImage(width, height);
+        return MIDPUtil.getInstance().createImageWH(width, height);
     }
 
     // throws Exception
     public virtual Image createImageFromInputStream(object key, InputStream inputStream)
     {
-        Image image = Image.createImage(inputStream);
+        Image image = MIDPUtil.getInstance().createImageFromInputStream(inputStream);
         return image;
     }
 
     // throws Exception
     public virtual Image createImageFromInputStream(InputStream inputStream)
     {
-        return Image.createImage(inputStream);
+        return MIDPUtil.getInstance().createImageFromInputStream(inputStream);
     }
 
 }

@@ -20,10 +20,15 @@ using ProfileActionScriptConditionInterface = org.allbinary.input.automation.act
 using GenericProfileAction = org.allbinary.input.automation.module.generic.configuration.profile.actions.GenericProfileAction;
 using GenericProfileActionJPanel = org.allbinary.input.automation.module.generic.configuration.profile.actions.GenericProfileActionJPanel;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+//using GridLayout = java.awt.GridLayout;
+//using Panel = java.awt.Panel;
+//using ActionEvent = java.awt.@event.ActionEvent;
+//using ActionListener = java.awt.@event.ActionListener;
+//using JButton = javax.swing.JButton;
 
 namespace org.allbinary.input.automation.module.generic.configuration.profile.actions.script;
 
-public class RemoveActionScriptItemJPanel : java.awt.Panel
+public class RemoveActionScriptItemJPanel : Panel
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private GenericProfileActionJPanel genericProfileActionJPanel;
@@ -37,12 +42,12 @@ public class RemoveActionScriptItemJPanel : java.awt.Panel
 
     private void initComponents()
     {
-        this.removeJButton = new javax.swing.JButton();
-        setLayout(new java.awt.GridLayout());
+        this.removeJButton = new JButton();
+        setLayout(new GridLayout());
         this.removeJButton.setText("Remove");
-        this.removeJButton.addActionListener(new java.awt.event.ActionListener()
+        this.removeJButton.addActionListener(new ActionListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void actionPerformed(java.awt.event.ActionEvent evt)
+            public virtual void actionPerformed(ActionEvent evt)
             {
                 removeJButtonActionPerformed(evt);
             }
@@ -52,7 +57,7 @@ public class RemoveActionScriptItemJPanel : java.awt.Panel
         add(this.removeJButton);
     }
 
-    private void removeJButtonActionPerformed(java.awt.event.ActionEvent evt)
+    private void removeJButtonActionPerformed(ActionEvent evt)
     {
         GenericProfileAction genericProfileAction = this.genericProfileActionJPanel.getGenericProfileAction();
         if (genericProfileAction == null) {
@@ -63,6 +68,6 @@ public class RemoveActionScriptItemJPanel : java.awt.Panel
         this.genericProfileActionJPanel.updateProfileActionUI();
     }
 
-    private javax.swing.JButton removeJButton = null;
+    private JButton removeJButton = null;
 }
 

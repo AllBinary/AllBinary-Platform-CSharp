@@ -33,6 +33,8 @@ using StringUtil = org.allbinary.logic.@string.StringUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.category;
 
@@ -48,7 +50,7 @@ public class Category : CategoryInterface
     private readonly int? CATEGORY = 0;
     public Category(CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             this.logUtil.putF(this.commonStrings.CONSTRUCTOR, this, "Category(CategoryPropertiesFactoryInterface)");
         }
         this.categoryPropertiesInterface = categoryPropertiesFactoryInterface.getInstance();
@@ -119,7 +121,7 @@ public class Category : CategoryInterface
     public virtual bool addChild(CategoryInterface categoryInterface)
     {
         this.removeDuplicateChild(categoryInterface);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             this.logUtil.putF("adding", this, "addChild");
         }
         CategoryHierarchyInterface childCategoryHierarchyInterface = categoryInterface.getHierarchy();
@@ -289,7 +291,7 @@ public class Category : CategoryInterface
     // throws Exception
     public virtual void log()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("Category Name: ");
             stringBuffer.append(this.categoryPropertiesInterface.getValue());

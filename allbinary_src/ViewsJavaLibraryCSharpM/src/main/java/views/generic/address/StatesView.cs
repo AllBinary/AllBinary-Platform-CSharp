@@ -26,6 +26,8 @@ using LineReader = org.allbinary.logic.io.LineReader;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.generic.address;
 
@@ -49,7 +51,7 @@ public class StatesView : DomNodeInterface
             }
             return node;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "toXmlNode", e);
             }
             return null;

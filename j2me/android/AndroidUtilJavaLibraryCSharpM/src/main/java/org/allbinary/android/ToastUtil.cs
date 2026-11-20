@@ -21,30 +21,36 @@ public class ToastUtil
 
     public virtual void makeToast(View view, Context context, string message, int time)
     {
-        
-        view.post(new MakeToast(message));
+        view.post(new MakeToast(this, context, message, time));
     }
 
-        class MakeToast : global::java.lang.Runnable
+    //A member class instead of a local class using the method parameters since most of the converted languages do not have local classes.
+    private class MakeToast : global::java.lang.Runnable
+    {
+        private readonly ToastUtil outer;
+
+        private readonly Context context;
+        private readonly string @string;
+        private readonly int time;
+        public MakeToast(ToastUtil outer, Context context, string @string, int time)
         {
-            public readonly string @string;
-            public MakeToast(string @string)
-            {
-                this.@string = @string;
-            }
-
-            public virtual void run()
-            {
-                LogUtil logUtil = LogUtil.getInstance();
-                try {
-                    Toast.makeText(context, this.@string, time).show();
-                } catch (Exception e) {
-                    CommonStrings commonStrings = CommonStrings.getInstance();
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
-                }
-            }
-
+            this.outer = outer;
+            this.context = context;
+            this.@string = @string;
+            this.time = time;
         }
 
+        public virtual void run()
+        {
+            LogUtil logUtil = LogUtil.getInstance();
+            try {
+                Toast.makeText(this.context, this.@string, this.time).show();
+            } catch (Exception e) {
+                CommonStrings commonStrings = CommonStrings.getInstance();
+                logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+            }
+        }
+
+    }
 }
 

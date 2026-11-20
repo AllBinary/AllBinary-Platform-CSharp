@@ -24,6 +24,8 @@ using Tokenizer = org.allbinary.logic.@string.tokens.Tokenizer;
 using HtmlNameMathData = org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.http.request;
 
@@ -45,7 +47,7 @@ public class NameSpaceRequestParam
         string packages = nameSpace.Substring(beginIndex + NameSpaceRequestParamData.NAME.length() + NameSpaceRequestParamData.SEP.length());
         Tokenizer sepTokenizer = new Tokenizer(NameSpaceRequestParamData.SEP);
         BasicArrayList nameSpaceWithPropertiesVector = sepTokenizer.getTokensFromString(packages, new BasicArrayListD());
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
             this.logUtil.putF("\nSep Tokens: " + nameSpaceWithPropertiesVector.ToString(), this, "NameSpaceRequestParam()");
         }
         Tokenizer nameSpaceAndPropertiesTokenizer = new Tokenizer(NameSpaceRequestParamData.PROPERTIES);
@@ -57,7 +59,7 @@ public class NameSpaceRequestParam
             string nameSpaceWithProperties = ((string) nameSpaceWithPropertiesVector.get(index++));
             list.clear();
             BasicArrayList nameSpaceAndPropertiesVector = nameSpaceAndPropertiesTokenizer.getTokensFromString(nameSpaceWithProperties, list);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
                 this.logUtil.putF("\nPackageName and PackageName Properties Tokens: " + nameSpaceAndPropertiesVector.ToString(), this, "NameSpaceRequestParam()");
             }
             if (nameSpaceAndPropertiesVector.size() > 0) {
@@ -74,14 +76,14 @@ public class NameSpaceRequestParam
                 packageIndex++;
             }
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
             this.logUtil.putF("NameSpace: " + this.nameSpaceVector.ToString(), this, "NameSpaceRequestParam()");
         }
     }
 
     public virtual BasicArrayList getPackages()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
             this.logUtil.putF("NameSpace: " + this.nameSpaceVector.ToString(), this, "getPackages()");
         }
         return this.nameSpaceVector;
@@ -93,7 +95,7 @@ public class NameSpaceRequestParam
         if (packagePropertiesHashMap == null) {
             packagePropertiesHashMap = StdUtil.getInstance().createHashMap();
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
             this.logUtil.putF("Package Properties: " + packagePropertiesHashMap.ToString(), this, "getPackagesProperties()");
         }
         return packagePropertiesHashMap;
@@ -101,7 +103,7 @@ public class NameSpaceRequestParam
 
     public virtual string getValue()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
             this.logUtil.putF("\nValue: " + this.value, this, "getValue()");
         }
         return this.value;
@@ -126,7 +128,7 @@ public class NameSpaceRequestParam
                 string propertyName = ((string) propertyNameValueVector.get(index2++));
                 if (propertyNameValueVector.size() > 1) {
                     string propertyValue = ((string) propertyNameValueVector.get(index2++));
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
                         this.logUtil.putF("\nProperty Name: " + propertyName + "\nProperty Value: " + propertyValue, this, "generatePackagePropertiesHashMap()");
                     }
                     packagePropertiesHashMap.put(propertyName, propertyValue);

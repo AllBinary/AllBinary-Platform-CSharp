@@ -19,6 +19,8 @@ using System.Linq;
 using MESSAGES = org.allbinary.globals.MESSAGES;
 using ValidationComponentInterface = org.allbinary.logic.control.validate.ValidationComponentInterface;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
+using Document = org.w3c.dom.Document;
+using Node = org.w3c.dom.Node;
 
 namespace views.generic.shipping;
 
@@ -34,12 +36,12 @@ public class ValidationView : ShippingMethodsView, ValidationComponentInterface
         return true;
     }
 
-    public virtual org.w3c.dom.Document toValidationInfoDoc()
+    public virtual Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual org.w3c.dom.Node toValidationInfoNode(org.w3c.dom.Document document)
+    public virtual Node toValidationInfoNode(Document document)
     {
         return null;
     }

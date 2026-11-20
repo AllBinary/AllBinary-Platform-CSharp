@@ -22,6 +22,8 @@ using InitSql = org.allbinary.business.init.InitSql;
 using UserDbInitInfo = org.allbinary.business.init.db.UserDbInitInfo;
 using StdUtil = org.allbinary.logic.StdUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.context.modules.storefronts;
 
@@ -44,7 +46,7 @@ public class BasicStoreFrontsEntity : InitSql
         if (storeHashMap == null) {
             throw new Exception("No Such Store: " + name);
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().FACTORYERROR)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().FACTORYERROR)) {
             this.logUtil.putF("StoreFront: " + storeHashMap.ToString(), this, "getStore()");
         }
         return ((BasicStoreFrontInterface) new BasicStoreFront(storeHashMap));

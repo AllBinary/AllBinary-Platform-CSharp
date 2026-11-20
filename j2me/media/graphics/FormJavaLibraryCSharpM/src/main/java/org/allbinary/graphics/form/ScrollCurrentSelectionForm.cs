@@ -30,120 +30,9 @@ namespace org.allbinary.graphics.form;
 public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInterface
 {
     private readonly bool moveForSmallScreen;
-    public class TempHorizontalFormProcessor : Processor
-    {
-        private readonly ScrollCurrentSelectionForm outer;
-
-        private readonly ScrollCurrentSelectionForm scrollCurrentSelectionForm;
-        public TempHorizontalFormProcessor(ScrollCurrentSelectionForm outer, ScrollCurrentSelectionForm scrollCurrentSelectionForm)
-        {
-            this.outer = outer;
-            this.scrollCurrentSelectionForm = scrollCurrentSelectionForm;
-        }
-
-        // throws Exception
-        public override void process()
-        {
-            this.scrollCurrentSelectionForm.processTempHorizontalForm();
-            this.scrollCurrentSelectionForm.processor = Processor.getInstance();
-        }
-
-    }
-    public class HorizontalFormProcessor : Processor
-    {
-        private readonly ScrollCurrentSelectionForm outer;
-
-        private readonly ScrollCurrentSelectionForm scrollCurrentSelectionForm;
-        public HorizontalFormProcessor(ScrollCurrentSelectionForm outer, ScrollCurrentSelectionForm scrollCurrentSelectionForm)
-        {
-            this.outer = outer;
-            this.scrollCurrentSelectionForm = scrollCurrentSelectionForm;
-        }
-
-        // throws Exception
-        public override void process()
-        {
-            this.scrollCurrentSelectionForm.processHorizontalForm();
-            this.scrollCurrentSelectionForm.processor = Processor.getInstance();
-        }
-
-    }
-    public class VerticalFormProcessor : Processor
-    {
-        private readonly ScrollCurrentSelectionForm outer;
-
-        private readonly ScrollCurrentSelectionForm scrollCurrentSelectionForm;
-        public VerticalFormProcessor(ScrollCurrentSelectionForm outer, ScrollCurrentSelectionForm scrollCurrentSelectionForm)
-        {
-            this.outer = outer;
-            this.scrollCurrentSelectionForm = scrollCurrentSelectionForm;
-        }
-
-        // throws Exception
-        public override void process()
-        {
-            this.scrollCurrentSelectionForm.processVerticalForm();
-            this.scrollCurrentSelectionForm.processor = Processor.getInstance();
-        }
-
-    }
-    public class TempHorizontalItemIndexDx : ItemIndexDx
-    {
-        private readonly ScrollCurrentSelectionForm outer;
-
-        private readonly ScrollCurrentSelectionForm scrollCurrentSelectionForm;
-        public TempHorizontalItemIndexDx(ScrollCurrentSelectionForm outer, ScrollCurrentSelectionForm scrollCurrentSelectionForm)
-        {
-            this.outer = outer;
-            this.scrollCurrentSelectionForm = scrollCurrentSelectionForm;
-        }
-
-        // throws Exception
-        public override int getDx(int index, ABCustomItem item, int dx, int dy)
-        {
-            return this.scrollCurrentSelectionForm.getXTempHorizontalForm(index, item, dx, dy);
-        }
-
-    }
-    public class HorizontalItemIndexDx : ItemIndexDx
-    {
-        private readonly ScrollCurrentSelectionForm outer;
-
-        private readonly ScrollCurrentSelectionForm scrollCurrentSelectionForm;
-        public HorizontalItemIndexDx(ScrollCurrentSelectionForm outer, ScrollCurrentSelectionForm scrollCurrentSelectionForm)
-        {
-            this.outer = outer;
-            this.scrollCurrentSelectionForm = scrollCurrentSelectionForm;
-        }
-
-        // throws Exception
-        public override int getDx(int index, ABCustomItem item, int dx, int dy)
-        {
-            return this.scrollCurrentSelectionForm.getXHorizontalForm(index, item, dx, dy);
-        }
-
-    }
-    public class VerticalItemIndexDx : ItemIndexDx
-    {
-        private readonly ScrollCurrentSelectionForm outer;
-
-        private readonly ScrollCurrentSelectionForm scrollCurrentSelectionForm;
-        public VerticalItemIndexDx(ScrollCurrentSelectionForm outer, ScrollCurrentSelectionForm scrollCurrentSelectionForm)
-        {
-            this.outer = outer;
-            this.scrollCurrentSelectionForm = scrollCurrentSelectionForm;
-        }
-
-        // throws Exception
-        public override int getDx(int index, ABCustomItem item, int dx, int dy)
-        {
-            return this.scrollCurrentSelectionForm.getXVerticalForm(index, item, dx, dy);
-        }
-
-    }
     public readonly MyFontProcessor updateMyFontProcessor;
     public MyFontProcessor myFontProcessor;
-    private Processor processor = Processor.getInstance();
+    public Processor processor = Processor.getInstance();
     private ItemIndexDx preItemIndexDx = ItemIndexDx.getInstance();
     private int dx = 0;
     private int dy = 0;
@@ -162,14 +51,14 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
         base.init(rectangle, formType);
         FormTypeFactory formTypeFactory = FormTypeFactory.getInstance();
         if (formType == formTypeFactory.TEMP_HORIZONTAL_FORM) {
-            this.processor = new TempHorizontalFormProcessor(this, this);
-            this.preItemIndexDx = new TempHorizontalItemIndexDx(this, this);
+            this.processor = new TempHorizontalFormProcessor(this);
+            this.preItemIndexDx = new TempHorizontalItemIndexDx(this);
         } else if (formType == formTypeFactory.HORIZONTAL_FORM) {
-            this.processor = new HorizontalFormProcessor(this, this);
-            this.preItemIndexDx = new HorizontalItemIndexDx(this, this);
+            this.processor = new HorizontalFormProcessor(this);
+            this.preItemIndexDx = new HorizontalItemIndexDx(this);
         } else if (formType == formTypeFactory.VERTICAL_CENTER_FORM) {
-            this.processor = new VerticalFormProcessor(this, this);
-            this.preItemIndexDx = new VerticalItemIndexDx(this, this);
+            this.processor = new VerticalFormProcessor(this);
+            this.preItemIndexDx = new VerticalItemIndexDx(this);
         } else if (formType == formTypeFactory.NULL_FORM_TYPE) {
         } else {
             this.logUtil.putF(formTypeFactory.UNK, this, this.commonStrings.INIT);
@@ -182,13 +71,13 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
         this.myFontProcessor = MyFontProcessor.getInstance();
     }
 
-    private void processTempHorizontalForm()
+    public virtual void processTempHorizontalForm()
     {
         this.dx = this.x - 30 + (this.rectangle.getWidth() >> 1);
         this.dy = this.y;
     }
 
-    private void processHorizontalForm()
+    public virtual void processHorizontalForm()
     {
         int size = this.size();
         int totalWidth = 0;
@@ -207,7 +96,7 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
         }
     }
 
-    private void processVerticalForm()
+    public virtual void processVerticalForm()
     {
         int totalHeight = 0;
         int size = this.size();
@@ -233,17 +122,17 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
         }
     }
 
-    private int getXTempHorizontalForm(int index, ABCustomItem item, int dx, int dy)
+    public virtual int getXTempHorizontalForm(int index, ABCustomItem item, int dx, int dy)
     {
         return this.getDiffX(item);
     }
 
-    private int getXHorizontalForm(int index, ABCustomItem item, int dx, int dy)
+    public virtual int getXHorizontalForm(int index, ABCustomItem item, int dx, int dy)
     {
         return 0;
     }
 
-    private int getXVerticalForm(int index, ABCustomItem item, int dx, int dy)
+    public virtual int getXVerticalForm(int index, ABCustomItem item, int dx, int dy)
     {
         return this.getDiffX(item) + this.halfBorder;
     }

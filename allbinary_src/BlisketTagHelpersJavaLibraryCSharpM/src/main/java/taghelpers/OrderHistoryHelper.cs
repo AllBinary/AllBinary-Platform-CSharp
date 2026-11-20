@@ -33,6 +33,8 @@ using OrderHistoryEntityFactory = org.allbinary.data.tables.user.commerce.invent
 using OrderHistoryEntityInterface = org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityInterface;
 using WeblisketSession = org.allbinary.logic.communication.http.request.session.WeblisketSession;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace taghelpers;
 
@@ -90,13 +92,13 @@ public class OrderHistoryHelper : TagHelper
                 orderHistoryEntityInterface.setStatus(this.id, this.newStatus);
                 return "Order " + this.id + " has been cancelled.<br/>";
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "setOrderStatus()");
             }
             return "Error Setting Order Status";
         } catch (Exception e) {
             string error = "Failed to set order status";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "setOrderStatus()", e);
             }
             return error + "<br/>" + "Exception: " + e + "<br/>";

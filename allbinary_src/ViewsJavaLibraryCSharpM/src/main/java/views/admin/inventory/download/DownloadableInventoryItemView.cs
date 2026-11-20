@@ -41,6 +41,8 @@ using StringMaker = org.allbinary.logic.@string.StringMaker;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using FileItem = org.apache.commons.fileupload.FileItem;
 using HttpStoreComponentView = views.business.context.modules.storefront.HttpStoreComponentView;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.inventory.download;
 
@@ -95,7 +97,7 @@ public class DownloadableInventoryItemView : HttpStoreComponentView, RequestMapI
             this.addDomNodeInterfaces();
             return base.view();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             throw e;

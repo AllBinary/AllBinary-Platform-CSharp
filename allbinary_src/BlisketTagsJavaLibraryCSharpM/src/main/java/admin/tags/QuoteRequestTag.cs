@@ -24,6 +24,8 @@ using StoreFrontData = org.allbinary.business.context.modules.storefront.StoreFr
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.tags;
 
@@ -55,7 +57,7 @@ public class QuoteRequestTag : TableTag
             throw e;
         } catch (Exception e) {
             string error = "Failed to send QuoteRequest emails";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "sendEmail()", e);
             }
             return error;

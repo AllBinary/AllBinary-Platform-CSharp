@@ -16,7 +16,6 @@
 
 using System;
 using System.Linq;
-using Graphics = javax.microedition.lcdui.Graphics;
 using ScaleProperties = org.allbinary.media.ScaleProperties;
 
 namespace org.allbinary.animation;
@@ -25,25 +24,9 @@ public class NullIndexedAnimationFactory : AnimationInterfaceFactoryInterface, P
 {
     public static readonly IndexedAnimation[] NULL_INDEXED_ANIMATION_ARRAY = new IndexedAnimation[0];
     private static NullIndexedAnimationFactory NULL_INDEXED_ANIMATION_FACTORY = new NullIndexedAnimationFactory();
-    public class NullIndexedAnimationInner : NullIndexedAnimation
-    {
-        private readonly NullIndexedAnimationFactory outer;
-
-        public NullIndexedAnimationInner(NullIndexedAnimationFactory outer) : base(new IndexedAnimationBehavior(1, 250))
-        {
-            this.outer = outer;
-            // base(new IndexedAnimationBehavior(1, 250)) is called from the constructor declaration
-        }
-
-        public override void paintXY(Graphics graphics, int x, int y)
-        {
-        }
-
-    }
-    private readonly Animation NULL_ANIMATION;
+    private readonly Animation NULL_ANIMATION = new NullIndexedAnimationInner();
     private NullIndexedAnimationFactory()
     {
-        this.NULL_ANIMATION = new NullIndexedAnimationInner(this);
     }
 
     public static NullIndexedAnimationFactory getFactoryInstance()

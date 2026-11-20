@@ -22,6 +22,8 @@ using CryptFileReader = org.allbinary.logic.control.crypt.file.CryptFileReader;
 using AbPath = org.allbinary.logic.io.path.AbPath;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.info.objectConfig;
 
@@ -47,7 +49,7 @@ public class TransformInfoObjectConfigNoManipulationFactory
             return new TransformInfoObjectConfig(transformInfoInterface, DomDocumentHelper.create(data));
         } catch (Exception e) {
             CommonStrings commonStrings = CommonStrings.getInstance();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Could Not Load Object Config", this, commonStrings.GET_INSTANCE, e);
             }
             throw e;

@@ -30,6 +30,8 @@ using StdUtil = org.allbinary.logic.StdUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbSqlBean = org.allbinary.logic.communication.sql.AbSqlBean;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.data.tables.user.commerce.money.payment.transaction;
 
@@ -50,11 +52,11 @@ public class TransactionEntity : AbSqlBean, TransactionEntityInterface
             whereHashMap.put(OrderData.ID, ((string) orderNumber));
             whereHashMap.put(UserData.USERNAME, userName);
             base.deleteWhere(whereHashMap);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.commonStrings.SUCCESS, this, "remove");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "remove", e);
             }
         }
@@ -72,11 +74,11 @@ public class TransactionEntity : AbSqlBean, TransactionEntityInterface
             values.add(time);
             values.add(time);
             base.insert(values);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.commonStrings.SUCCESS, this, "add");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "add", e);
             }
         }

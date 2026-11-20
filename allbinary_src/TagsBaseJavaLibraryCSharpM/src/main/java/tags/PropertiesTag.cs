@@ -19,6 +19,8 @@ using System.Linq;
 using java.util;
 using StdUtil = org.allbinary.logic.StdUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace tags;
 
@@ -28,7 +30,7 @@ public class PropertiesTag : CommandTag
     private HashMap<object, object> propertiesHashMap;
     public PropertiesTag()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }
         this.propertiesHashMap = StdUtil.getInstance().createHashMap();
@@ -41,7 +43,7 @@ public class PropertiesTag : CommandTag
 
     public virtual int doEndTag()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF("Tag Ended", this, "doEndTag");
         }
         this.propertiesHashMap = StdUtil.getInstance().createHashMap();

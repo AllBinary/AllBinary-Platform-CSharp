@@ -48,6 +48,8 @@ using CssStyleValidation = org.allbinary.logic.visual.transform.template.customi
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.theme;
 
@@ -81,7 +83,7 @@ public class ThemeValidation : ThemeInterface, ValidationInterface, DomNodeInter
         PathUtil pathUtil = PathUtil.getInstance();
         this.categoryAbPath = pathUtil.removeNameFromPath(categoryThemeAbPath.ToString());
         this.themeName = pathData.getNameFromPath(categoryThemeAbPath.ToString());
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("CategoryThemePath: ");
             stringBuffer.append(categoryThemeAbPath.ToString());
@@ -166,7 +168,7 @@ public class ThemeValidation : ThemeInterface, ValidationInterface, DomNodeInter
     {
         try {
             bool? isValid = true;
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.IS_VALID);
             }
             if (!StringValidationUtil.getInstance().isValidRequired(this.categoryAbPath.ToString(), AbSqlData.MINSTRING, AbSqlData.MAXSTRING)) {
@@ -178,12 +180,12 @@ public class ThemeValidation : ThemeInterface, ValidationInterface, DomNodeInter
             if (!((bool) (this.getCssStyleValidation().isValid()))) {
                 isValid = false;
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("End: " + isValid, this, this.commonStrings.IS_VALID);
             }
             return isValid;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put("Failed to validate form", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -197,7 +199,7 @@ public class ThemeValidation : ThemeInterface, ValidationInterface, DomNodeInter
             stringBuffer.append("Theme Validation Error");
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Validating Form";

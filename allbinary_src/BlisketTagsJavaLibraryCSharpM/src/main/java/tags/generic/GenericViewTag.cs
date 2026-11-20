@@ -19,6 +19,8 @@ using System.Linq;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using InputOutputTypeData = org.allbinary.logic.io.InputOutputTypeData;
 using TransformTag = tags.TransformTag;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace tags.generic;
 
@@ -29,7 +31,7 @@ public class GenericViewTag : TransformTag
     private string file = null;
     public GenericViewTag()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }
     }

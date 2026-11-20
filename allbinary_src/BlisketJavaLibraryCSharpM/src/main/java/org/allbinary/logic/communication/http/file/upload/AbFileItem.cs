@@ -30,6 +30,8 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using FileItem = org.apache.commons.fileupload.FileItem;
 using FileItemHeaders = org.apache.commons.fileupload.FileItemHeaders;
 using FileItemUtil = org.apache.commons.fileupload.FileItemUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.http.file.upload;
 
@@ -89,7 +91,7 @@ public class AbFileItem : FileItem
         try {
             return FileItemUtil.getInstance().getString(this.byteArray);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getString", e);
             }
             return StringUtil.getInstance().EMPTY_STRING;

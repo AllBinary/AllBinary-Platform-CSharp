@@ -29,6 +29,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using RectangleCollisionPointUtil = org.allbinary.math.RectangleCollisionPointUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Node = org.w3c.dom.Node;
+using KeyEvent = java.awt.@event.KeyEvent;
+//using MouseEvent = java.awt.@event.MouseEvent;
 
 namespace org.allbinary.graphics.j2me.workarea.tools;
 
@@ -193,30 +195,30 @@ public class SelectionTool : GraphicItemInterface
 
     private GPoint startPoint = PointFactory.getInstance().ZERO_ZERO;
     private GPoint endPoint;
-    public virtual void mouseClicked(java.awt.event.MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
+    public virtual void mouseClicked(MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
     {
     }
 
-    public virtual void mouseMoved(java.awt.event.MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
+    public virtual void mouseMoved(MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
     {
     }
 
-    public virtual void mouseEntered(java.awt.event.MouseEvent mouseEvent)
+    public virtual void mouseEntered(MouseEvent mouseEvent)
     {
     }
 
-    public virtual void mouseExited(java.awt.event.MouseEvent mouseEvent)
+    public virtual void mouseExited(MouseEvent mouseEvent)
     {
     }
 
-    public virtual void mousePressed(java.awt.event.MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
+    public virtual void mousePressed(MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
     {
         this.logUtil.putF(this.commonStrings.START, this, MouseStrings.getInstance().MOUSE_PRESSED);
         this.startPoint = PointFactory.getInstance().createXY(mouseEvent.getX(), mouseEvent.getY());
         this.endPoint = this.startPoint;
     }
 
-    public virtual void mouseReleased(java.awt.event.MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
+    public virtual void mouseReleased(MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
     {
         this.logUtil.putF(this.commonStrings.START, this, MouseStrings.getInstance().MOUSE_RELEASED);
         this.endPoint = PointFactory.getInstance().createXY(mouseEvent.getX(), mouseEvent.getY());
@@ -224,26 +226,26 @@ public class SelectionTool : GraphicItemInterface
         this.makeSelection();
     }
 
-    public virtual void mouseDragged(java.awt.event.MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
+    public virtual void mouseDragged(MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
     {
         this.endPoint = PointFactory.getInstance().createXY(mouseEvent.getX(), mouseEvent.getY());
     }
 
-    public virtual void keyPressed(java.awt.event.KeyEvent keyEvent)
+    public virtual void keyPressed(KeyEvent keyEvent)
     {
         if (keyEvent.getKeyCode() == keyEvent.VK_CONTROL) {
             this.controlIdDown = true;
         }
     }
 
-    public virtual void keyReleased(java.awt.event.KeyEvent keyEvent)
+    public virtual void keyReleased(KeyEvent keyEvent)
     {
         if (keyEvent.getKeyCode() == keyEvent.VK_CONTROL) {
             this.controlIdDown = false;
         }
     }
 
-    public virtual void keyTyped(java.awt.event.KeyEvent keyEvent)
+    public virtual void keyTyped(KeyEvent keyEvent)
     {
     }
 

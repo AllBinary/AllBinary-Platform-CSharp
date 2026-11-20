@@ -22,6 +22,8 @@ using TransformInfoHttpInterface = org.allbinary.logic.visual.transform.info.Tra
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using TransformInfosData = org.allbinary.logic.visual.transform.info.TransformInfosData;
 using CommonSeps = org.allbinary.@string.CommonSeps;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context.modules.storefront.generator;
 
@@ -41,7 +43,7 @@ public class PreviewGeneratorStoreFrontContextView : GeneratorStoreFrontContextV
             httpTransformInfoInterface.getPropertiesHashMap().put(TransformInfoData.getInstance().PARTIAL, CommonSeps.getInstance().SPACE + TransformInfosData.getInstance().PREVIEW);
             return this.view(TransformInfosData.getInstance().PREVIEW);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             throw e;

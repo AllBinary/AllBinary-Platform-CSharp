@@ -30,6 +30,8 @@ using StdUtil = org.allbinary.logic.StdUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonSeps = org.allbinary.@string.CommonSeps;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -126,13 +128,13 @@ public class BasicOptionItemsRequestHelper : ModifyTable
             values.add(time);
             BasicOptionItemsEntityFactory.getInstance().getBasicOptionItemsEntityInstance().insert(values);
             string success = "Successfully inserted " + this.id + " into items table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "insert()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to insert " + this.id + " into items table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "inserts()", e);
             }
             return error;
@@ -144,13 +146,13 @@ public class BasicOptionItemsRequestHelper : ModifyTable
         try {
             BasicOptionItemsEntityFactory.getInstance().getBasicOptionItemsEntityInstance().delete(this.id);
             string success = "Successfully deleted";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "delete()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to delete";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "delete()", e);
             }
             return error;
@@ -163,13 +165,13 @@ public class BasicOptionItemsRequestHelper : ModifyTable
             string success = "Update Pricing Successful";
             HashMap<object, object> values = this.getHashMap();
             BasicOptionItemsEntityFactory.getInstance().getBasicOptionItemsEntityInstance().update(values);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(new StringMaker().append(this.id).append(CommonSeps.getInstance().SPACE).append(success).ToString(), this, "update()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to update: " + this.id;
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "update()", e);
             }
             return error;

@@ -24,6 +24,8 @@ using GenericCssStyleValidation = org.allbinary.logic.visual.transform.template.
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using CustomizerUtil = views.business.context.modules.storefront.customizer.CustomizerUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context.modules.storefront.customizer.includes.style.css;
 
@@ -43,7 +45,7 @@ public class EditCssValidationView : CssCustomizerView, ValidationComponentInter
             bool? isValid = this.styleValidationInterface.isValid();
             return isValid;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -57,7 +59,7 @@ public class EditCssValidationView : CssCustomizerView, ValidationComponentInter
             stringBuffer.append(this.styleValidationInterface.validationInfo());
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Getting Validation Info";

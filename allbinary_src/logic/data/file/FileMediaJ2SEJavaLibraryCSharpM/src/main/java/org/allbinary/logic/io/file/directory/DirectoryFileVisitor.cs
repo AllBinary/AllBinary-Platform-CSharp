@@ -28,7 +28,7 @@ public class DirectoryFileVisitor : VisitorInterface, FileFilter
     {
     }
 
-    public virtual bool accept(java.io.File arg0)
+    public virtual bool accept(File arg0)
     {
         return ((bool) ((((bool?) this.visit(((object) arg0))))));
     }

@@ -20,6 +20,8 @@ using java.util;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp.configuration.server;
 
@@ -31,7 +33,7 @@ public class EmailServerConfiguration : EmailServerConfigurationInterface
     private string smtpServer = null;
     public EmailServerConfiguration()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             CommonStrings commonStrings = CommonStrings.getInstance();
             this.logUtil.putF(commonStrings.START, this, commonStrings.CONSTRUCTOR);
         }
@@ -40,7 +42,7 @@ public class EmailServerConfiguration : EmailServerConfigurationInterface
 
     public EmailServerConfiguration(HashMap<object, object> hashMap)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             CommonStrings commonStrings = CommonStrings.getInstance();
             this.logUtil.putF(commonStrings.START, this, "EmailServerConfiguration(HashMap)");
         }
@@ -52,7 +54,7 @@ public class EmailServerConfiguration : EmailServerConfigurationInterface
 
     public EmailServerConfiguration(string account, string password, string server)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             CommonStrings commonStrings = CommonStrings.getInstance();
             this.logUtil.putF(commonStrings.START, this, "EmailServerConfiguration(HashMap)");
         }
@@ -94,7 +96,7 @@ public class EmailServerConfiguration : EmailServerConfigurationInterface
 
     public virtual void log()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             this.logUtil.putF(this.ToString(), this, "EmailServerConfiguration");
         }
     }

@@ -32,7 +32,7 @@ public class GenericValidator : ValidatorBase
         return null;
     }
 
-    public virtual Node toValidationInfoNode(org.w3c.dom.Document document)
+    public virtual Node toValidationInfoNode(Document document)
     {
         return null;
     }

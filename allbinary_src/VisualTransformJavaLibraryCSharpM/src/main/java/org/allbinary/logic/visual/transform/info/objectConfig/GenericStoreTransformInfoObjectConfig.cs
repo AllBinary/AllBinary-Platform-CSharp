@@ -35,6 +35,8 @@ using TransformTemplateInterface = org.allbinary.logic.visual.transform.template
 using TransformTemplateCustomizerUtil = org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using Document = org.w3c.dom.Document;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.info.objectConfig;
 
@@ -65,7 +67,7 @@ public class GenericStoreTransformInfoObjectConfig : TransformInfoObjectConfig
     // throws Exception
     public virtual Document generate(Document objectConfigDocument)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("TransformInfo: ");
             if (this.getTransformInfoInterface() != null) {
@@ -100,7 +102,7 @@ public class GenericStoreTransformInfoObjectConfig : TransformInfoObjectConfig
         string storeName = transformInfoHttpStoreInterface.getStoreName();
         HashMap<object, object> propertiesHashMap = transformInfoHttpStoreInterface.getPropertiesHashMap();
         string templateNameOverride = StringUtil.getInstance().getNonNull(((string) propertiesHashMap.get(TransformInfoData.getInstance().PARTIAL)));
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("TemplateNameOverride: " + templateNameOverride, this, "generate()");
         }
         StringMaker templateNameStringBuffer = new StringMaker();
@@ -122,7 +124,7 @@ public class GenericStoreTransformInfoObjectConfig : TransformInfoObjectConfig
     {
         Replace replace = new Replace(hashMap);
         Document newObjectConfigDocument = DomDocumentHelper.create(replace.all(objectConfigDocumentString));
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Final ObjectConfig: " + XmlDocumentHelper.toString(newObjectConfigDocument), this, "generate()");
         }
         return newObjectConfigDocument;

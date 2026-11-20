@@ -14,8 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias GameLicensingNullJavaLibraryCSharp;
-extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using CommandTextItemArrayFactory = org.allbinary.graphics.form.item.CommandTextItemArrayFactory;

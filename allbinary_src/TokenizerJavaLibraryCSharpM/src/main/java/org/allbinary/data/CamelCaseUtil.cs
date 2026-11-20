@@ -38,9 +38,6 @@ public class CamelCaseUtil
     // throws Exception
     public virtual string getAsCamelCase(string @string, StringMaker stringBuilder)
     {
-        if (@string == null) {
-            return StringUtil.getInstance().EMPTY_STRING;
-        }
         StringValidationUtil stringValidationUtil = StringValidationUtil.getInstance();
         stringBuilder.delete(0, stringBuilder.length());
         BasicArrayList list = new BasicArrayListD();

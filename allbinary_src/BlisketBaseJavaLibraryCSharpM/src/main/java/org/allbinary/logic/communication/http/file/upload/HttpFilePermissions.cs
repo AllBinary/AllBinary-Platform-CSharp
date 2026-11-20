@@ -24,6 +24,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbFile = org.allbinary.logic.io.file.AbFile;
 using AbPath = org.allbinary.logic.io.path.AbPath;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.http.file.upload;
 
@@ -36,13 +38,13 @@ public class HttpFilePermissions
     public HttpFilePermissions(AbPath fullPath)
     {
         this.file = AbFile.createAbFileFromAbPath(new AbPath(fullPath.toFileSystemString(), FileUploadData.getInstance().FILE));
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
             this.logUtil.putF("Loading Privileges: " + fullPath.toFileSystemString(), this, this.commonStrings.CONSTRUCTOR);
         }
         if (this.isFile()) {
             this.userRoles.add(BasicUserRoleFactory.getInstance().ADMINISTRATOR);
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
             this.logUtil.putF("User Roles: " + this.userRoles, this, this.commonStrings.CONSTRUCTOR);
         }
     }

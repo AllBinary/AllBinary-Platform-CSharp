@@ -25,6 +25,8 @@ using TransformInfoDomNode = org.allbinary.logic.visual.transform.info.Transform
 using TransformInfoHttpInterface = org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using StoreFileGenerator = org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.generator;
 
@@ -45,7 +47,7 @@ public class TransformGeneratorUtil
     public virtual void generate(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface, TransformInfoInterface ownerTransformInfoInterface)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Generating View: " + transformInfoInterface.getName(), this, "generate()");
             }
             TransformInterface componentInterface = TransformFactory.getInstance().getInstance(abeClientInformation, transformInfoInterface.getName(), ownerTransformInfoInterface);
@@ -59,7 +61,7 @@ public class TransformGeneratorUtil
             }
             new StoreFileGenerator(componentInterface.getTransformInfoInterface()).process(result);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put("Failed to generate a view", this, "generate()", e);
             }
             throw e;

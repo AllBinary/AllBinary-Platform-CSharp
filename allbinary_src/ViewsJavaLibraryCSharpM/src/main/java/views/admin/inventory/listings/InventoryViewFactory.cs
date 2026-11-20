@@ -21,6 +21,8 @@ using SearchRequest = org.allbinary.logic.control.search.SearchRequest;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using InventorySearch = views.generic.inventory.InventorySearch;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.inventory.listings;
 
@@ -37,7 +39,7 @@ public class InventoryViewFactory
         try {
             return new InventorySearch(searchRequest);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 logUtil.put(commonStrings.EXCEPTION, "InventoryViewFactory", "getInstance(SearchRequest)", e);
             }

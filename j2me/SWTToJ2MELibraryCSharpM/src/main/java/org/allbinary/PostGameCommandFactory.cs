@@ -14,7 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
 using MultiPlayerGameFeatureFactory = org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory;
@@ -24,10 +23,10 @@ namespace org.allbinary;
 
 public class PostGameCommandFactory
 {
-    private static readonly J2MEForJ2MEJavaLibraryCSharp::org.allbinary.PostGameCommandFactory instance = new J2MEForJ2MEJavaLibraryCSharp::org.allbinary.PostGameCommandFactory();
-    public static J2MEForJ2MEJavaLibraryCSharp::org.allbinary.PostGameCommandFactory getInstance()
+    private static readonly PostGameCommandFactory instance = new PostGameCommandFactory();
+    public static PostGameCommandFactory getInstance()
     {
-        return J2MEForJ2MEJavaLibraryCSharp::org.allbinary.PostGameCommandFactory.instance;
+        return PostGameCommandFactory.instance;
     }
 
     public virtual void addCommands(MyCanvas canvas)

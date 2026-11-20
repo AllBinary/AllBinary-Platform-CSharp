@@ -27,6 +27,8 @@ using TransformInfoInterface = org.allbinary.logic.visual.transform.info.Transfo
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using HttpStoreComponentView = views.business.context.modules.storefront.HttpStoreComponentView;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.generic.payment;
 
@@ -52,7 +54,7 @@ public class PaymentView : HttpStoreComponentView, DomNodeInterface
             }
             return paymentNode;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "toXmlNode", e);
             }
             throw e;
@@ -71,7 +73,7 @@ public class PaymentView : HttpStoreComponentView, DomNodeInterface
             return base.view();
         } catch (Exception e) {
             string error = "Failed to view Payment";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             return error;

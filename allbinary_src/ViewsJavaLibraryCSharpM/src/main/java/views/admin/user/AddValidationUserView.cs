@@ -26,6 +26,9 @@ using TransformInfoInterface = org.allbinary.logic.visual.transform.info.Transfo
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using HttpContextView = views.business.context.HttpContextView;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
+using ValidationOnlyTempUtil = views.ValidationOnlyTempUtil;
 
 namespace views.admin.user;
 
@@ -43,7 +46,7 @@ public class AddValidationUserView : HttpContextView, ValidationComponentInterfa
     {
         try {
             if (UserEntityFactory.getInstance().getUser(this.user.getUserName()) != null) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("User already in existance.", this, this.commonStrings.IS_VALID);
                 }
                 return false;
@@ -53,7 +56,7 @@ public class AddValidationUserView : HttpContextView, ValidationComponentInterfa
             }
             return true;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -65,7 +68,7 @@ public class AddValidationUserView : HttpContextView, ValidationComponentInterfa
         try {
             StringMaker stringBuffer = new StringMaker();
             if (UserEntityFactory.getInstance().getUser(this.user.getUserName()) != null) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("User already exists", this, "validationInfo()");
                 }
                 stringBuffer.append("The User Name you selected is already in use.<br/>  Please select another User Name.<br />");
@@ -75,7 +78,7 @@ public class AddValidationUserView : HttpContextView, ValidationComponentInterfa
             }
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Getting Validation Info";
@@ -95,7 +98,7 @@ public class AddValidationUserView : HttpContextView, ValidationComponentInterfa
     // throws Exception
     public override string view()
     {
-        return views.ValidationOnlyTempUtil.getInstance().view(this);
+        return ValidationOnlyTempUtil.getInstance().view(this);
     }
 
     // throws Exception

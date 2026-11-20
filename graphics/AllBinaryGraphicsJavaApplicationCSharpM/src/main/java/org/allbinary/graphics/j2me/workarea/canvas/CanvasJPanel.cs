@@ -51,10 +51,17 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using Node = org.w3c.dom.Node;
+//using GridLayout = java.awt.GridLayout;
+using KeyEvent = java.awt.@event.KeyEvent;
+//using KeyListener = java.awt.@event.KeyListener;
+//using MouseEvent = java.awt.@event.MouseEvent;
+//using MouseListener = java.awt.@event.MouseListener;
+//using MouseMotionListener = java.awt.@event.MouseMotionListener;
+//using JPanel = javax.swing.JPanel;
 
 namespace org.allbinary.graphics.j2me.workarea.canvas;
 
-public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, java.awt.event.MouseMotionListener, java.awt.event.KeyListener, MyGraphicItemEventListener
+public class CanvasJPanel : JPanel, MouseListener, MouseMotionListener, KeyListener, MyGraphicItemEventListener
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private static int frame = 0;
@@ -138,7 +145,7 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
 
     private void initComponents()
     {
-        setLayout(new java.awt.GridLayout(1, 1));
+        setLayout(new GridLayout(1, 1));
     }
 
     // throws Exception
@@ -409,7 +416,7 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
         this.grid.isChanged = true;
     }
 
-    public virtual void mouseClicked(java.awt.event.MouseEvent mouseEvent)
+    public virtual void mouseClicked(MouseEvent mouseEvent)
     {
         StatusFactory.getInstance().setStatusNoLog(MouseStrings.getInstance().MOUSE_CLICKED_LABEL + this.logMouseEvent(mouseEvent));
         if (this.getSelectedTool() != null && this.getSelectedTool().isActive()) {
@@ -429,17 +436,17 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
         this.workAreaJTreeJPanel.repaint();
     }
 
-    public virtual void mouseEntered(java.awt.event.MouseEvent mouseEvent)
+    public virtual void mouseEntered(MouseEvent mouseEvent)
     {
         StatusFactory.getInstance().setStatusNoLog(this.logMouseEvent(mouseEvent));
     }
 
-    public virtual void mouseExited(java.awt.event.MouseEvent mouseEvent)
+    public virtual void mouseExited(MouseEvent mouseEvent)
     {
         StatusFactory.getInstance().setStatusNoLog(this.logMouseEvent(mouseEvent));
     }
 
-    public virtual void mousePressed(java.awt.event.MouseEvent mouseEvent)
+    public virtual void mousePressed(MouseEvent mouseEvent)
     {
         StatusFactory.getInstance().setStatusNoLog(MouseStrings.getInstance().MOUSE_PRESSED_LABEL + this.logMouseEvent(mouseEvent));
         if (this.getSelectedTool() != null) {
@@ -451,7 +458,7 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
         this.repaint();
     }
 
-    public virtual void mouseReleased(java.awt.event.MouseEvent mouseEvent)
+    public virtual void mouseReleased(MouseEvent mouseEvent)
     {
         StatusFactory.getInstance().setStatusNoLog(MouseStrings.getInstance().MOUSE_RELEASED_LABEL + this.logMouseEvent(mouseEvent));
         GraphicItemInterface graphicItem = this.getSelectedTool();
@@ -463,7 +470,7 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
         this.repaint();
     }
 
-    public virtual void mouseDragged(java.awt.event.MouseEvent mouseEvent)
+    public virtual void mouseDragged(MouseEvent mouseEvent)
     {
         StatusFactory.getInstance().setStatusNoLog(MouseStrings.getInstance().MOUSE_DRAGGED_LABEL + this.logMouseEvent(mouseEvent));
         GraphicItemInterface graphicItem = this.getSelectedTool();
@@ -475,7 +482,7 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
         this.repaint();
     }
 
-    public virtual void mouseMoved(java.awt.event.MouseEvent mouseEvent)
+    public virtual void mouseMoved(MouseEvent mouseEvent)
     {
         StatusFactory.getInstance().setStatusNoLog(MouseStrings.getInstance().MOUSE_MOVED_LABEL + this.logMouseEvent(mouseEvent));
         if (this.getSelectedTool() != null && this.getSelectedTool().isActive()) {
@@ -487,7 +494,7 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
         this.repaint();
     }
 
-    private string logMouseEvent(java.awt.event.MouseEvent mouseEvent)
+    private string logMouseEvent(MouseEvent mouseEvent)
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(PositionStrings.getInstance().X_LABEL);
@@ -498,7 +505,7 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
         return stringBuffer.ToString();
     }
 
-    public virtual void keyPressed(java.awt.event.KeyEvent keyEvent)
+    public virtual void keyPressed(KeyEvent keyEvent)
     {
         StatusFactory.getInstance().setStatus("Key Pressed");
         try {
@@ -534,11 +541,11 @@ public class CanvasJPanel : javax.swing.JPanel, java.awt.event.MouseListener, ja
         this.repaint();
     }
 
-    public virtual void keyReleased(java.awt.event.KeyEvent keyEvent)
+    public virtual void keyReleased(KeyEvent keyEvent)
     {
     }
 
-    public virtual void keyTyped(java.awt.event.KeyEvent keyEvent)
+    public virtual void keyTyped(KeyEvent keyEvent)
     {
     }
 

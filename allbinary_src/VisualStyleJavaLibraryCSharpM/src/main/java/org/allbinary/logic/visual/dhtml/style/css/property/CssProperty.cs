@@ -26,6 +26,8 @@ using StdUtil = org.allbinary.logic.StdUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.dhtml.style.css.property;
 
@@ -44,7 +46,7 @@ public class CssProperty : DomNodeInterface
     {
         Node propertyNode = DomSearchHelper.getNode(DomData.VALUE, node.getChildNodes());
         this.propertyName = DomNodeHelper.getTextNodeValue(propertyNode);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().STYLE)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().STYLE)) {
             this.logUtil.putF("Name: " + this.getName(), this, "CssProperty()");
         }
         Node propertyValuesNode = DomSearchHelper.getNode(CssPropertyData.getInstance().VALUES, node.getChildNodes());
@@ -67,7 +69,7 @@ public class CssProperty : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         HashMap<object, object> hashMap = this.toHashMap();
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("CssView HashMap: " + hashMap.ToString(), this, "toXmlNode()");
         }
         Node node = ModDomHelper.createNameValueNodes(document, CssPropertyData.getInstance().NAME, this.propertyName);

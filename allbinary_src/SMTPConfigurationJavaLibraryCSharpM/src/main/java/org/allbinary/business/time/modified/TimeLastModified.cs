@@ -22,9 +22,9 @@ namespace org.allbinary.business.time.modified;
 
 public class TimeLastModified : Time
 {
-    public TimeLastModified(string time) : base(time)
+    public TimeLastModified(string time) : base(long.Parse(time))
     {
-        // base(time) is called from the constructor declaration
+        // base(long.Parse(time)) is called from the constructor declaration
     }
 
     public TimeLastModified(long time) : base(time)

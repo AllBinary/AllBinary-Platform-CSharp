@@ -36,7 +36,7 @@ public class XmlRpcClient : XmlRpcHandler
     }
 
     // throws XmlRpcException, IOException
-    public virtual object execute(string method, BasicArrayList @params, CryptInterface cryptInterface)
+    public virtual object executeWithCrypt(string method, BasicArrayList @params, CryptInterface cryptInterface)
     {
         return NullUtil.getInstance().NULL_OBJECT;
     }

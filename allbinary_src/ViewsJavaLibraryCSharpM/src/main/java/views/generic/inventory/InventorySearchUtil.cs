@@ -47,6 +47,8 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.generic.inventory;
 
@@ -69,7 +71,7 @@ public class InventorySearchUtil
         StoreFrontInterface storeFrontInterface = searchRequest.getStoreFront();
         InventoryColumnUtil inventorySearchUtil = InventoryColumnUtil.getInstance();
         BasicArrayList column = inventorySearchUtil.getColumnWhereLike(inventoryEntityInterface, storeFrontInterface.getCategoryPath(), basicItemData.ID);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
             this.logUtil.putF("Number Of Items Found: " + column.size(), this, "search");
         }
         BasicArrayList subStoreVector = storeFrontInterface.getSubStores();
@@ -79,7 +81,7 @@ public class InventorySearchUtil
             BasicArrayList substoreIdColumn = inventorySearchUtil.getColumnWhereLike(inventoryEntityInterface, subStore, basicItemData.ID);
             column.addAllList(substoreIdColumn);
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
             this.logUtil.putF("Number Of Items Found Including SubStores: " + column.size(), this, "search");
         }
         return column;
@@ -91,7 +93,7 @@ public class InventorySearchUtil
         inventoryNode.appendChild(ModDomHelper.createNameValueNodes(viewDocumentInterface.getDoc(), SearchData.TOTAL_NUMBER_PAGES, this.commonPhoneStrings.ZERO));
         inventoryNode.appendChild(ModDomHelper.createNameValueNodes(viewDocumentInterface.getDoc(), SearchData.TOTAL_NUMBER_ITEMS, this.commonPhoneStrings.ZERO));
         string success = XmlDocumentHelper.toString(viewDocumentInterface.getDoc());
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
             this.logUtil.putF("No Results Xml: " + success, this, "search");
         }
         return success;
@@ -211,7 +213,7 @@ public class InventorySearchUtil
                 return null;
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "search", e);
             }
             return null;

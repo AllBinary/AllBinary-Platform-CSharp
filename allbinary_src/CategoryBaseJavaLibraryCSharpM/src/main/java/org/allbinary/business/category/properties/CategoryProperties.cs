@@ -33,6 +33,8 @@ using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.category.properties;
 
@@ -112,7 +114,7 @@ public class CategoryProperties : CategoryPropertiesInterface
             pathStringBuffer.append(((string) list.get(index)));
         }
         pathStringBuffer.append(abPathData.SEPARATOR);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             this.logUtil.putF("path = " + pathStringBuffer.ToString(), this, "getPath");
         }
         return new AbPath(pathStringBuffer.ToString(), StringUtil.getInstance().EMPTY_STRING);

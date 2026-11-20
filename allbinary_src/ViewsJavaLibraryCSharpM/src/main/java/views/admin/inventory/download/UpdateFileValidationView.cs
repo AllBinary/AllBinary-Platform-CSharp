@@ -42,6 +42,8 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using FileItem = org.apache.commons.fileupload.FileItem;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.inventory.download;
 
@@ -59,7 +61,7 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
         try {
             string command = ((string) this.getRequestHashMap().get(GLOBALS2.ADMINCOMMAND));
             if (StringValidationUtil.getInstance().isEmpty(command) || string.CompareOrdinal(command, this.commonStrings.UPDATE) != 0) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("Invalid AdminCommand=" + command, this, this.commonStrings.IS_VALID);
                 }
                 return false;
@@ -68,18 +70,18 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
                 InventoryEntity inventoryEntity = InventoryEntityFactory.getInstance().getInventoryEntityInstance();
                 this.itemInterface = inventoryEntity.getItem(this.id);
             } catch (MoneyException e) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.put("Existing Item With MoneyException", this, this.commonStrings.IS_VALID, e);
                 }
             }
             if (this.itemInterface == null) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("Item Does Not Exist", this, this.commonStrings.IS_VALID);
                 }
                 return false;
             }
             if (new BasicItemValidation(this.itemInterface).isValid() == false) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("BasicItem is not valid", this, this.commonStrings.IS_VALID);
                 }
                 return false;
@@ -88,7 +90,7 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
             string fullCategory = new StringMaker().append(URLGLOBALS.getWebappPath()).append(storeFrontInterface.getCurrentHostNamePath()).append(this.itemInterface.getCategory()).ToString();
             AbFile categoryFile = AbFile.createAbFile(fullCategory);
             if (!categoryFile.isDirectory()) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("Category Does Not Exist: " + fullCategory, this, this.commonStrings.IS_VALID);
                 }
                 return false;
@@ -152,14 +154,14 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
             this.downloadableItem = new DownloadableItem(hashMap);
             DownloadableItemValidation downloadableItemValidation = new DownloadableItemValidation(this.downloadableItem);
             if (downloadableItemValidation.isValid() == false) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("DownloadableItem is not valid", this, this.commonStrings.IS_VALID);
                 }
                 return false;
             }
             return true;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Exception in validation", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -186,7 +188,7 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
             }
             if (this.itemInterface == null) {
                 string ITEM_NOT_FOUND = "Item Does Not Exist";
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF(ITEM_NOT_FOUND, this, "validationInfo()");
                 }
                 return ITEM_NOT_FOUND;
@@ -198,7 +200,7 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
             }
             StoreFrontInterface storeFrontInterface = StoreFrontFactory.getInstance(this.getWeblisketSession().getStoreName());
             string fullCategory = new StringMaker().append(URLGLOBALS.getWebappPath()).append(storeFrontInterface.getCurrentHostNamePath()).append(this.itemInterface.getCategory()).ToString();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Category: " + fullCategory, this, "validationInfo()");
             }
             AbFile categoryFile = AbFile.createAbFile(fullCategory);
@@ -238,7 +240,7 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
                 DownloadableItemValidation downloadableItemValidation = new DownloadableItemValidation(this.downloadableItem);
                 if (downloadableItemValidation.isValid() == false) {
                     string log = downloadableItemValidation.validationInfo();
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                         this.logUtil.putF(log, this, this.commonStrings.IS_VALID);
                     }
                     stringBuffer.append(log);
@@ -247,7 +249,7 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
             }
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Getting Validation Info";
@@ -261,7 +263,7 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
         if (size > fileData.MINDOWNLOADABLEFILESIZE) {
             if (size < fileData.MAXDOWNLOADABLEFILESIZE) {
                 if (!StringValidationUtil.getInstance().isValidRequired(fileName, fileData.MINLEN, fileData.MAXLEN)) {
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                         StringMaker stringBuffer = new StringMaker();
                         stringBuffer.append("File name is not valid: ");
                         stringBuffer.append(fileName);
@@ -271,7 +273,7 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
                 } else {
                 }
             } else {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     StringMaker stringBuffer = new StringMaker();
                     stringBuffer.append("File Size To Large: ");
                     stringBuffer.appendlong(size);
@@ -282,7 +284,7 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
                 return false;
             }
         } else {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("File Size To Small: ");
                 stringBuffer.appendlong(size);

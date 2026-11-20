@@ -19,6 +19,8 @@ using System.Linq;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using SearchRequest = org.allbinary.logic.control.search.SearchRequest;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.inventory.listings;
 
@@ -32,9 +34,9 @@ public class ProductListingFactory
     {
         LogUtil logUtil = LogUtil.getInstance();
         try {
-            return ((ProductListingInterface) new views.admin.inventory.listings.ProductListing(searchRequest));
+            return ((ProductListingInterface) new ProductListing(searchRequest));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().FACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().FACTORYERROR)) {
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 logUtil.put(commonStrings.EXCEPTION, "ProductListingFactory", commonStrings.GET_INSTANCE, e);
             }

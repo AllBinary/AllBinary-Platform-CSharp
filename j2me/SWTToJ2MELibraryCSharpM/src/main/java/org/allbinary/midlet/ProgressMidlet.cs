@@ -14,7 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;

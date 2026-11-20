@@ -27,6 +27,8 @@ using TransformInfoInterface = org.allbinary.logic.visual.transform.info.Transfo
 using TransformTemplateInterface = org.allbinary.logic.visual.transform.template.TransformTemplateInterface;
 using HttpStoreComponentView = views.business.context.modules.storefront.HttpStoreComponentView;
 using NoTemplateTransformInfoObjectConfig = views.business.context.modules.storefront.customizer.template.objectConfig.NoTemplateTransformInfoObjectConfig;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context;
 
@@ -36,7 +38,7 @@ public class RootContextView : HttpStoreComponentView, TransformTemplateInterfac
     public RootContextView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, "RootContextView()");
         }
     }
@@ -45,14 +47,14 @@ public class RootContextView : HttpStoreComponentView, TransformTemplateInterfac
     public override string view()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("View Name: " + this.getTransformInfoInterface().getName(), this, "view()");
             }
             string viewName = this.getName();
             TransformInterface componentInterface = TransformFactory.getInstance().getInstance(this.abeClientInformation, viewName, this.getTransformInfoInterface());
             return componentInterface.view();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             throw e;
@@ -73,7 +75,7 @@ public class RootContextView : HttpStoreComponentView, TransformTemplateInterfac
             }
             TransformInfo transformInfoInterface = ((TransformInfo) componentsVector.get(0));
             string viewName = transformInfoInterface.getName();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Root Template With View Name: " + viewName, this, "getName()");
             }
             if (StringValidationUtil.getInstance().isEmpty(viewName)) {
@@ -81,7 +83,7 @@ public class RootContextView : HttpStoreComponentView, TransformTemplateInterfac
             }
             return viewName;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getName()", e);
             }
             throw e;

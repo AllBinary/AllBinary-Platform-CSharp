@@ -23,6 +23,8 @@ using PaymentGatewayEntityInterface = org.allbinary.data.tables.user.commerce.mo
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using PaymentGatewayViewAbstract = views.admin.payment.gateway.PaymentGatewayViewAbstract;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.payment.gateways;
 
@@ -42,7 +44,7 @@ public class SelectExistingView : PaymentGatewayViewAbstract
             BasicArrayList existingGateways = paymentGatewayEntityInterface.findPaymentTypeVectorByStore(this.getPaymentGatewayPrimaryKey().getStoreName());
             return new PaymentGatewaysView(this.getTransformInfoInterface(), existingGateways).view();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view", e);
             }
             throw e;

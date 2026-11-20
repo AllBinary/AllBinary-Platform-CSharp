@@ -28,6 +28,8 @@ using QuoteRequest = org.allbinary.business.user.quoterequest.QuoteRequest;
 using QuoteRequestEntityFactory = org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityFactory;
 using WeblisketSession = org.allbinary.logic.communication.http.request.session.WeblisketSession;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -65,13 +67,13 @@ public class QuoteRequestHelper : ModifyTable
             BasicArrayList values = this.quoteRequest.toVector();
             QuoteRequestEntityFactory.getInstance().getQuoteRequestEntityInstance().insert(values);
             string success = "New QuoteRequest Successfully added to the QuoteRequest Table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "add()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to add QuoteRequest";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "add()", e);
             }
             return error;
@@ -84,13 +86,13 @@ public class QuoteRequestHelper : ModifyTable
             HashMap<object, object> values = this.quoteRequest.toHashMap();
             QuoteRequestEntityFactory.getInstance().getQuoteRequestEntityInstance().update(this.quoteRequest.getUserName(), values);
             string success = "New QuoteRequest Successfully updated";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "update()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to update QuoteRequest";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "update()", e);
             }
             return error;

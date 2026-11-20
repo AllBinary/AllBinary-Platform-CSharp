@@ -14,13 +14,11 @@
  */
 // Generated Code Do Not Modify
 
-extern alias ImageCacheOpenGLESJavaLibraryCSharp;
-extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using EGLConfig = javax.microedition.khronos.egl.EGLConfig;
 using GL10 = javax.microedition.khronos.opengles.GL10;
-//using RendererStrings = org.allbinary.graphics.opengles.renderer.RendererStrings;
+using RendererStrings = org.allbinary.graphics.opengles.renderer.RendererStrings;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 
 namespace org.allbinary.graphics.opengles.shader;
@@ -34,7 +32,7 @@ public class ShaderUpdater
     }
 
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    public readonly OpenGLNoneOtherJavaLibraryCSharp::org.allbinary.graphics.opengles.renderer.RendererStrings rendererStrings = OpenGLNoneOtherJavaLibraryCSharp::org.allbinary.graphics.opengles.renderer.RendererStrings.getInstance();
+    public readonly RendererStrings rendererStrings = RendererStrings.getInstance();
     public virtual void onSurfaceCreated(GL10 gl, EGLConfig eglConfig)
     {
     }

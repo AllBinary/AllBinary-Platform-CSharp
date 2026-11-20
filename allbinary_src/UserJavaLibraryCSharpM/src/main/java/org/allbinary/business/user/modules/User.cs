@@ -44,6 +44,8 @@ using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.modules;
 
@@ -152,7 +154,7 @@ public class User : UserInterface
             }
             return valid;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VALIDATIONERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VALIDATIONERROR)) {
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 this.logUtil.put("Failed to validate form", this, commonStrings.IS_VALID, e);
             }
@@ -178,7 +180,7 @@ public class User : UserInterface
             }
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Validating Form";

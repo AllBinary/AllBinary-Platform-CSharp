@@ -22,6 +22,8 @@ using WeblisketSession = org.allbinary.logic.communication.http.request.session.
 using WeblisketSessionInterface = org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.context;
 
@@ -33,7 +35,7 @@ public class AbContext
     private PageContext pageContext;
     public AbContext(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, this.commonStrings.CONSTRUCTOR);
         }
         this.propertiesHashMap = propertiesHashMap;

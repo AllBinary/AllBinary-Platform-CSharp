@@ -37,6 +37,8 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.money.payment.types;
 
@@ -98,7 +100,7 @@ public class PaymentTypeUtil
     // throws Exception
     public virtual void initDefault(string storeName)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENT)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENT)) {
             this.logUtil.putF("initDefault Payment: " + this.defaultName, this, "initDefault");
         }
         if (StringValidationUtil.getInstance().isEmpty(this.defaultName)) {
@@ -116,7 +118,7 @@ public class PaymentTypeUtil
                 Node node = nodeList.item(index);
                 Node defaultPaymentGatewayNode = DomSearchHelper.getNode(EntryData.getInstance().DEFAULT, node.getChildNodes());
                 string defaultPaymentGatewayNodeValue = DomNodeHelper.getTextNodeValue(defaultPaymentGatewayNode);
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENT)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENT)) {
                     this.logUtil.putF("DefaultPaymentGatewayNodeValue: " + defaultPaymentGatewayNodeValue, this, "initDefault");
                 }
                 if (!StringValidationUtil.getInstance().isEmpty(defaultPaymentGatewayNodeValue)) {
@@ -129,7 +131,7 @@ public class PaymentTypeUtil
     // throws Exception
     public virtual PaymentType getDefault(string storeName)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENT)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENT)) {
             this.logUtil.putF(this.commonStrings.START, this, "getDefault");
         }
         this.initDefault(storeName);

@@ -21,6 +21,8 @@ using java.util;
 using WeblisketSession = org.allbinary.logic.communication.http.request.session.WeblisketSession;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.info;
 
@@ -31,7 +33,7 @@ public class TransformInfoHttpComposite
     private TransformInfoHttpInterface transformInfoInterface;
     public TransformInfoHttpComposite(TransformInfoInterface transformInfoInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, this.commonStrings.CONSTRUCTOR);
         }
         this.transformInfoInterface = ((TransformInfoHttpInterface) transformInfoInterface);

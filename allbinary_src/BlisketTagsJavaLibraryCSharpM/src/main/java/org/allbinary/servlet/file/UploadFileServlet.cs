@@ -40,6 +40,8 @@ using StringMaker = org.allbinary.logic.@string.StringMaker;
 using BlisketServletUtil = org.allbinary.servlet.BlisketServletUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using FileItem = org.apache.commons.fileupload.FileItem;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.servlet.file;
 
@@ -79,7 +81,7 @@ public class UploadFileServlet : HttpServlet
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Please Login");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "processRequest()", e);
             }
             isError = true;
@@ -105,7 +107,7 @@ public class UploadFileServlet : HttpServlet
                     filePath = filePath + this.fileName;
                 }
                 AbFile file = AbFile.createAbFile(URLGLOBALS.getWebappPath() + filePath);
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
                     StringMaker stringBuffer = new StringMaker();
                     stringBuffer.append("Uploaded File: ");
                     stringBuffer.append(this.fileName);

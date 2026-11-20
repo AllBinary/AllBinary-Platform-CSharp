@@ -26,6 +26,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using FileItem = org.apache.commons.fileupload.FileItem;
 using InvalidContentTypeException = org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.http.request;
 
@@ -56,7 +58,7 @@ public class MultipartRequestParams : RequestParams
             HashMap<object, object> specialRequest = StdUtil.getInstance().createHashMap();
             List multipartRequestList = AbFileUploadFactory.getInstance().getFileItemStreamList(request);
             if (multipartRequestList != null) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
                     this.logUtil.putF("FileItem List Size: " + multipartRequestList.size(), this, "processMultipartRequest()");
                 }
                 object[] fileItemArray = multipartRequestList.toArray();
@@ -70,19 +72,19 @@ public class MultipartRequestParams : RequestParams
                         specialRequest.put(fileItem.getFieldName(), fileItem);
                     }
                 }
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
                     this.logUtil.putF("Special Request Data: " + specialRequest.ToString(), this, "processMultipartRequest()");
                 }
                 this.setSpecial();
                 this.setMap(specialRequest);
             }
         } catch (InvalidContentTypeException e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
                 this.logUtil.putF("Using Normal RequestParams", this, "processMultipartRequest()");
             }
             base.setMap(request.getParameterMap());
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUESTERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUESTERROR)) {
                 this.logUtil.putF("Should Not Occur", this, "processMultipartRequest()");
             }
             base.setMap(request.getParameterMap());

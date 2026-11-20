@@ -22,6 +22,8 @@ using TransformsGeneratorUtil = org.allbinary.logic.visual.transform.generator.T
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using TransformInfosData = org.allbinary.logic.visual.transform.info.TransformInfosData;
 using HttpStoreComponentView = views.business.context.modules.storefront.HttpStoreComponentView;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context.modules.storefront.generator;
 
@@ -31,7 +33,7 @@ public class GeneratorStoreFrontContextView : HttpStoreComponentView
     public GeneratorStoreFrontContextView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, this.commonStrings.CONSTRUCTOR);
         }
     }
@@ -40,7 +42,7 @@ public class GeneratorStoreFrontContextView : HttpStoreComponentView
     public virtual string view(string group)
     {
         string result = TransformsGeneratorUtil.getInstance().generateComponentsFromObjectConfig(this.abeClientInformation, this.getTransformInfoInterface(), group);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPEXTRAOUTPUT)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPEXTRAOUTPUT)) {
             return result;
         } else {
             return StringUtil.getInstance().EMPTY_STRING;
@@ -53,7 +55,7 @@ public class GeneratorStoreFrontContextView : HttpStoreComponentView
         try {
             return this.view(TransformInfosData.getInstance().ALL);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             throw e;

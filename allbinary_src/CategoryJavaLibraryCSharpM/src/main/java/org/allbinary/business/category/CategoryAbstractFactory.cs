@@ -23,6 +23,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbPath = org.allbinary.logic.io.path.AbPath;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.category;
 
@@ -52,13 +54,13 @@ public class CategoryAbstractFactory : CategoryFactoryInterface
     public virtual CategoryInterface getInstance(string categoryName)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
                 this.logUtil.putF(this.commonStrings.START, this, "getInstance(String)");
             }
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(categoryName));
             return ((CategoryInterface) new Category(categoryPropertiesFactoryInterface));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getInstance(String, int)", e);
             }
             return null;
@@ -68,13 +70,13 @@ public class CategoryAbstractFactory : CategoryFactoryInterface
     public virtual CategoryInterface getInstance(CategoryInterface rootCategoryInterface, CategoryInterface parentCategoryInterface, string categoryName)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
                 this.logUtil.putF(this.commonStrings.START, this, "getInstance(CategoryInterface, CategoryInterface, String)");
             }
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(categoryName));
             return ((CategoryInterface) new Category(rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getInstance(CategoryInterface, CategoryInterface , String, int)", e);
             }
             return null;
@@ -84,13 +86,13 @@ public class CategoryAbstractFactory : CategoryFactoryInterface
     public virtual CategoryInterface getInstance(Node node)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
                 this.logUtil.putF(this.commonStrings.START, this, "getInstance(Node)");
             }
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(node));
             return ((CategoryInterface) new Category(categoryPropertiesFactoryInterface));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getInstance(Node, int)", e);
             }
             return null;
@@ -100,13 +102,13 @@ public class CategoryAbstractFactory : CategoryFactoryInterface
     public virtual CategoryInterface getInstance(CategoryInterface rootCategoryInterface, CategoryInterface parentCategoryInterface, Node node)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
                 this.logUtil.putF(this.commonStrings.START, this, "getInstance(CategoryInterface, CategoryInterface, Node)");
             }
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(node));
             return ((CategoryInterface) new Category(rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "getInstance(CategoryInterface, CategoryInterface, Node, int)", e);
             }
             return null;
@@ -116,13 +118,13 @@ public class CategoryAbstractFactory : CategoryFactoryInterface
     public virtual CategoryInterface getInstance(CategoryInterface rootCategoryInterface, CategoryInterface parentCategoryInterface, HashMap<object, object> categoryPropertiesHashMap)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
                 this.logUtil.putF(this.commonStrings.START, this, "getInstance(CategoryInterface, CategoryInterface, HashMap)");
             }
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new CategoryPropertiesFactory(categoryPropertiesHashMap));
             return ((CategoryInterface) new Category(rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORYERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "getInstance(CategoryInterface, CategoryInterface, HashMap)", e);
             }
             return null;

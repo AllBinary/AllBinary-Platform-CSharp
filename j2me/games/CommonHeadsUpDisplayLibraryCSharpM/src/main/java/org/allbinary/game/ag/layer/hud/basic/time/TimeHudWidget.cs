@@ -28,7 +28,7 @@ namespace org.allbinary.game.ag.layer.hud.basic.time;
 public class TimeHudWidget : BasicHud
 {
     // throws Exception
-    public static TimeHudWidget getInstance(int location, int direction, BasicColor basicColor, Timer timer)
+    public static TimeHudWidget getInstance(int location, int direction, BasicColor basicColor, HudTimer timer)
     {
         return new TimeHudWidget(location, direction, 2, basicColor, timer);
     }
@@ -38,8 +38,8 @@ public class TimeHudWidget : BasicHud
     private int offset = 0;
     private char[] @string = PrimitiveLongSingleton.getInstance().ZERO;
     private int totalDigits = 1;
-    private readonly Timer timer;
-    public TimeHudWidget(int location, int direction, int bufferZone, BasicColor basicColor, Timer timer) : base(location, direction, bufferZone, basicColor)
+    private readonly HudTimer timer;
+    public TimeHudWidget(int location, int direction, int bufferZone, BasicColor basicColor, HudTimer timer) : base(location, direction, bufferZone, basicColor)
     {
         // base(location, direction, bufferZone, basicColor) is called from the constructor declaration
         this.timer = timer;
@@ -67,7 +67,7 @@ public class TimeHudWidget : BasicHud
         this.totalDigits = this.timer.getCurrentTotalDigits();
     }
 
-    public virtual Timer getTimer()
+    public virtual HudTimer getTimer()
     {
         return this.timer;
     }

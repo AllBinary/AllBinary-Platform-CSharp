@@ -14,7 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
 using CommonSeps = org.allbinary.@string.CommonSeps;
@@ -25,10 +24,10 @@ namespace org.allbinary.persistance;
 
 public class PlatformRecordIdUtil
 {
-    private static readonly J2MEForJ2MEJavaLibraryCSharp::org.allbinary.persistance.PlatformRecordIdUtil instance = new J2MEForJ2MEJavaLibraryCSharp::org.allbinary.persistance.PlatformRecordIdUtil();
-    public static J2MEForJ2MEJavaLibraryCSharp::org.allbinary.persistance.PlatformRecordIdUtil getInstance()
+    private static readonly PlatformRecordIdUtil instance = new PlatformRecordIdUtil();
+    public static PlatformRecordIdUtil getInstance()
     {
-        return J2MEForJ2MEJavaLibraryCSharp::org.allbinary.persistance.PlatformRecordIdUtil.instance;
+        return PlatformRecordIdUtil.instance;
     }
 
     private readonly string PLATFORM_SHORT_NAME = "AVN";

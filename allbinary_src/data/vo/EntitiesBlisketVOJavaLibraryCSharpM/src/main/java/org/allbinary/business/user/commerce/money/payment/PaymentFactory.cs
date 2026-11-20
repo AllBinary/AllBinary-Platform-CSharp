@@ -19,6 +19,8 @@ using System.Linq;
 //using ServletRequest = javax.servlet.ServletRequest;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.money.payment;
 
@@ -32,10 +34,10 @@ public class PaymentFactory
     {
         LogUtil logUtil = LogUtil.getInstance();
         try {
-            return ((PaymentInterface) new org.allbinary.business.user.commerce.money.payment.Payment(request));
+            return ((PaymentInterface) new Payment(request));
         } catch (Exception e) {
             CommonStrings commonStrings = CommonStrings.getInstance();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().FACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().FACTORYERROR)) {
                 logUtil.put(commonStrings.EXCEPTION, "PaymentFactory", commonStrings.GET_INSTANCE, e);
             }
             return null;

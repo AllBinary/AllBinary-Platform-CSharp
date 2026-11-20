@@ -22,6 +22,8 @@ using Portion = org.allbinary.business.installer.Portion;
 using WorkFlowEntityFactory = org.allbinary.data.tables.workflow.WorkFlowEntityFactory;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbSqlTableUtil = org.allbinary.logic.communication.sql.AbSqlTableUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -44,7 +46,7 @@ public class WorkFlowHelper : BasicTable
             return WorkFlowEntityFactory.getInstance().create2().dropTable();
         } catch (Exception e) {
             string error = "Failed to drop view info table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.DROP, e);
             }
             return error;
@@ -57,7 +59,7 @@ public class WorkFlowHelper : BasicTable
             return WorkFlowEntityFactory.getInstance().create2().createTable();
         } catch (Exception e) {
             string error = "Failed to create workflow table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "create()", e);
             }
             return error;
@@ -69,13 +71,13 @@ public class WorkFlowHelper : BasicTable
         try {
             string success = "Restore Successful";
             string result = AbSqlTableUtil.getInstance().restoreTable(WorkFlowEntityFactory.getInstance().create2(), this.portion);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "restore()");
             }
             return result;
         } catch (Exception e) {
             string error = "Failed to restore backup";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "restore()", e);
             }
             return error;
@@ -87,13 +89,13 @@ public class WorkFlowHelper : BasicTable
         try {
             string success = "Restore Successful";
             string result = AbSqlTableUtil.getInstance().backupTable(WorkFlowEntityFactory.getInstance().create2());
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "backup()");
             }
             return result;
         } catch (Exception e) {
             string error = "Failed to make backup";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "backup()", e);
             }
             return error;

@@ -20,6 +20,7 @@ using System.Linq;
 using UserRoleData = org.allbinary.business.user.role.UserRoleData;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using StoreValidationTransformTag = tags.StoreValidationTransformTag;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
 
 namespace tags.generic.user;
 
@@ -43,7 +44,7 @@ public class UsersTag : StoreValidationTransformTag
             this.setObjectFile("views.generic.user.UsersValidationView");
             if (this.getCommand() != null) {
                 this.getPropertiesHashMap().put(UserRoleData.NAME, this.role);
-                if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.VIEW) == 0) {
+                if (this.getCommand().compareTo(GLOBALS2.VIEW) == 0) {
                 } else {
                     throw new Exception("No Such View Command: " + this.getCommand());
                 }

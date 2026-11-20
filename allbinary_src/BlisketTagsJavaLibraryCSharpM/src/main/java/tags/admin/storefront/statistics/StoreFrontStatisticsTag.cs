@@ -20,6 +20,7 @@ using System.Linq;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using StoreValidationTransformTag = tags.StoreValidationTransformTag;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
 
 namespace tags.admin.storefront.statistics;
 
@@ -34,7 +35,7 @@ public class StoreFrontStatisticsTag : StoreValidationTransformTag
     {
         try {
             if (this.getCommand() != null) {
-                if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.VIEW) == 0) {
+                if (this.getCommand().compareTo(GLOBALS2.VIEW) == 0) {
                     this.setName("Validation StoreFrontStatistics View");
                     this.setObjectFile("views.admin.storefront.statistics.ValidationStoreFrontStatisticsView");
                 } else {

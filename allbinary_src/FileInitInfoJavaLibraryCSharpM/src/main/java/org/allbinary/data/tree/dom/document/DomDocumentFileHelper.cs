@@ -39,7 +39,7 @@ public class DomDocumentFileHelper
     public static Document createDocument(AbFile xmlFile)
     {
         try {
-            return DomDocumentHelper.create(new AbFileInputStream(xmlFile));
+            return DomDocumentHelper.create(AbFileInputStream.createFromAbFile(xmlFile));
         } catch (Exception e) {
             throw e;
         }

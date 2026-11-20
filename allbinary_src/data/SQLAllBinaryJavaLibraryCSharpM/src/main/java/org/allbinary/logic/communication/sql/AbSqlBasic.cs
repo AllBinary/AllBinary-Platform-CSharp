@@ -28,6 +28,8 @@ using SqlConnectionPool = org.allbinary.logic.communication.sql.connection.pool.
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.sql;
 
@@ -79,7 +81,7 @@ public class AbSqlBasic
             this.sqlConnectionPool.add(this.getDatabaseConnectionInfoInterface().getUrl(), tempConnection);
             return rset;
         } catch (SQLException e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + statement, this, METHOD_EXECUTED_SQL_STATEMENT, e);
             }
             this.conn.close();
@@ -92,12 +94,12 @@ public class AbSqlBasic
     {
         try {
             this.executeSQLStatement(this.sqlStrings.CREATE_DATABASE + databaseName);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.DATABASE_CREATED_LABEL + databaseName, this, this.METHOD_CREATE);
             }
             return databaseName + this.sqlStrings.CREATE_RETURN;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.DATABASE_CREATION_FAILED_LABEL + databaseName, this, this.METHOD_CREATE, e);
             }
             return this.DATABASE_CREATION_FAILED_LABEL + databaseName;
@@ -109,7 +111,7 @@ public class AbSqlBasic
         try {
             this.conn = this.sqlConnectionPool.get(this.getDatabaseConnectionInfoInterface().getUrl());
         } catch (SQLException se) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.SQL_CONNECTION_RETRYING, this, METHOD_CREATE_CONNECTION, se);
             }
             try {
@@ -119,7 +121,7 @@ public class AbSqlBasic
                     this.initialize();
                 }
             } catch (Exception e) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                     this.logUtil.put(this.SQL_CONNECTION_RETRY + se.Message, this, this.METHOD_CREATE_CONNECTION, e);
                 }
             }
@@ -135,14 +137,14 @@ public class AbSqlBasic
                     Type jdbcDriverClass = loader.loadClass(this.getDatabaseConnectionInfoInterface().getJdbcDriver());
                     jdbcDriverClass.newInstance();
                 } catch (Exception e) {
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                         this.logUtil.put(this.LOAD_JDBC_DRIVER_FAILED_LABEL + this.getDatabaseConnectionInfoInterface().getJdbcDriver(), this, METHOD_INITIALIZE, e);
                     }
                 }
             }
             this.createConnection();
         } catch (Exception se) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.SQL_CONNECTION_FAILED, this, this.METHOD_INITIALIZE, se);
             }
         }

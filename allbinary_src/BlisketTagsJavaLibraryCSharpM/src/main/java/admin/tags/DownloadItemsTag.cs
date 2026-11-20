@@ -21,6 +21,7 @@ using System.Linq;
 using DownloadItemsHelperFactory = admin.taghelpers.DownloadItemsHelperFactory;
 using DownloadItemsRequestHelperFactory = admin.taghelpers.DownloadItemsRequestHelperFactory;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
 
 namespace admin.tags;
 
@@ -38,7 +39,7 @@ public class DownloadItemsTag : TableTag
         try {
             if (this.isEnabled()) {
                 if (this.getCommand() != null) {
-                    if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.BACKUP) != 0 && this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.RESTORE) != 0 && this.getCommand().compareTo(this.commonStrings.CREATE) != 0 && this.getCommand().compareTo(this.commonStrings.DROP) != 0) {
+                    if (this.getCommand().compareTo(GLOBALS2.BACKUP) != 0 && this.getCommand().compareTo(GLOBALS2.RESTORE) != 0 && this.getCommand().compareTo(this.commonStrings.CREATE) != 0 && this.getCommand().compareTo(this.commonStrings.DROP) != 0) {
                         Tag parentTag = this.getParent();
                         ParentInventoryTagHelper.getInstance().isValid(this, parentTag);
                         this.getPropertiesHashMap().put(AbTagData.PARENT, parentTag);

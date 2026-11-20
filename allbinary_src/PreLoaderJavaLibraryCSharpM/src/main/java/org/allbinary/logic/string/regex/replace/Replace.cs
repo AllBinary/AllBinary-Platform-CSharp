@@ -25,6 +25,7 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
 
 namespace org.allbinary.logic.@string.regex.replace;
 
@@ -113,7 +114,7 @@ public class Replace
             }
         }
         if (totalNumberOfReplaces > 0) {
-            if (LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().REPLACE)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().REPLACE)) {
                 this.logUtil.putF("Total Number Of Replaces: " + totalNumberOfReplaces, this, this.ALL);
             }
         }
@@ -150,7 +151,7 @@ public class Replace
                 }
             }
         }
-        if (LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().REPLACE)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().REPLACE)) {
             this.logUtil.putF("Total Number Of Replaces: " + totalNumberOfReplaces, this, this.ALL);
         }
         return replace;

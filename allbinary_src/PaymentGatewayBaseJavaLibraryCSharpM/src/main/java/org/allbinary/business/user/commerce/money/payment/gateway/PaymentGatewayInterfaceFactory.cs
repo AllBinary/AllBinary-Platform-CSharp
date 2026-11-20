@@ -24,6 +24,8 @@ using StdUtil = org.allbinary.logic.StdUtil;
 using RequestParams = org.allbinary.logic.communication.http.request.RequestParams;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.money.payment.gateway;
 
@@ -39,12 +41,12 @@ public class PaymentGatewayInterfaceFactory : PaymentGatewayInterfaceFactoryInte
     {
         CommonStrings commonStrings = CommonStrings.getInstance();
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENT)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENT)) {
                 this.logUtil.putF("Getting", this, commonStrings.GET_INSTANCE);
             }
             return this.getInstance(new RequestParams(httpServletRequest).toHashMap());
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "getInstance(HttpServletRequest)", e);
             }
             throw e;
@@ -66,13 +68,13 @@ public class PaymentGatewayInterfaceFactory : PaymentGatewayInterfaceFactoryInte
         try {
             string gatewayName = ((string) hashMap.get(PaymentGatewayData.NAME.ToString()));
             BasicPaymentType paymentType = BasicPaymentTypeUtil.getInstance().get(gatewayName);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENT)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENT)) {
                 this.logUtil.putF("Getting PaymentGatewayInterface for PaymentType: " + paymentType.getName() + " with: " + hashMap, this, commonStrings.GET_INSTANCE);
             }
             PaymentGatewayInterfaceFactoryInterface paymentGatewayInterfaceFactoryInterface = paymentType.getPaymentGatewayInterfaceFactoryInterface();
             return paymentGatewayInterfaceFactoryInterface.getInstance(hashMap);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, commonStrings.GET_INSTANCE, e);
             }
             throw e;

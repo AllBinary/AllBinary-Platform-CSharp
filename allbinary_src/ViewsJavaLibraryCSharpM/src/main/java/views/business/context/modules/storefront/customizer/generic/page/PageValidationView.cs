@@ -35,6 +35,8 @@ using TitleData = org.allbinary.logic.visual.transform.template.customizer.widge
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using CustomizerUtil = views.business.context.modules.storefront.customizer.CustomizerUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context.modules.storefront.customizer.generic.page;
 
@@ -44,7 +46,7 @@ public class PageValidationView : PageView, ValidationComponentInterface
     public PageValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, "PageViewValidation()");
         }
     }
@@ -53,20 +55,20 @@ public class PageValidationView : PageView, ValidationComponentInterface
     {
         try {
             bool? isValid = true;
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.IS_VALID);
             }
             TransformInfoEntity transformInfoEntityInterface = TransformInfoEntityBuilder.getInstance();
             TransformInfoObjectConfigInterface pageObjectConfigInterface = this.getTransformInfoInterface().getObjectConfigInterface();
             BasicArrayList allViewsToBeModifiedVector = pageObjectConfigInterface.getGroupTransforms();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Views To Be Modified: " + allViewsToBeModifiedVector.size(), this, "get(transformInfoInterface)");
             }
             int size = allViewsToBeModifiedVector.size();
             for (int index = 0; index < size; index++) {
                 TransformInfo transformInfoInterface = ((TransformInfo) allViewsToBeModifiedVector.get(index));
                 string viewNameOfViewToBeModified = transformInfoInterface.getName();
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     StringMaker stringBuffer = new StringMaker();
                     stringBuffer.append(this.getTransformInfoInterface().getName());
                     stringBuffer.append(" is modifying view: ");
@@ -75,7 +77,7 @@ public class PageValidationView : PageView, ValidationComponentInterface
                 }
                 TransformInfoHttpInterface httpTransformInfoInterface = ((TransformInfoHttpInterface) this.getTransformInfoInterface());
                 TransformInfoInterface specifiedTransformInfoInterface = transformInfoEntityInterface.get(viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap(), httpTransformInfoInterface.getPageContext());
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     StringMaker stringBuffer = new StringMaker();
                     stringBuffer.append(this.getTransformInfoInterface().getName());
                     stringBuffer.append(" is adding data to view: ");
@@ -97,7 +99,7 @@ public class PageValidationView : PageView, ValidationComponentInterface
                     Document document = DomDocumentHelper.create();
                     document.appendChild(pageValidation.toXmlNode(document));
                     string documentString = XmlDocumentHelper.toString(document);
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                         StringMaker stringBuffer = new StringMaker();
                         stringBuffer.append(viewNameOfViewToBeModified);
                         stringBuffer.append(" is changing data in ");
@@ -111,7 +113,7 @@ public class PageValidationView : PageView, ValidationComponentInterface
             }
             return isValid;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -147,7 +149,7 @@ public class PageValidationView : PageView, ValidationComponentInterface
             }
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "An auto generated page name was invalid.";

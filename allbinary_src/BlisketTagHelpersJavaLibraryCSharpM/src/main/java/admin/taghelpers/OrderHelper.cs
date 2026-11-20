@@ -36,6 +36,8 @@ using WeblisketSession = org.allbinary.logic.communication.http.request.session.
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -80,7 +82,7 @@ public class OrderHelper : TagHelper
                 orderInterface.setPaymentMethod(paymentGateway);
                 paymentGatewayBoolean = true;
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Successfully set PaymentGateway Order: ");
                 stringBuffer.append(orderInterface.getId());
@@ -90,7 +92,7 @@ public class OrderHelper : TagHelper
             }
             return paymentGatewayBoolean;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Failed to set PaymentGateway for Order: ");
                 try {
@@ -115,7 +117,7 @@ public class OrderHelper : TagHelper
             OrderInterface order = this.weblisketSession.getOrder();
             order.setStoreName(this.storeFrontInterface.getName());
             string result = OrderProcessorUtil.getInstance().process(this.weblisketSession.getUserName(), ((Order) order));
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF("Successfully Processed Order: " + result, this, "processOrder()");
             }
             return result;
@@ -128,7 +130,7 @@ public class OrderHelper : TagHelper
                 stringBuffer.append(" Exception Getting Id");
             }
             string error = stringBuffer.ToString();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.PROCESS, e);
             }
             return error;

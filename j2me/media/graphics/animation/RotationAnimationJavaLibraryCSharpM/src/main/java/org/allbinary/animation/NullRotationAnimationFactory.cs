@@ -16,11 +16,7 @@
 
 using System;
 using System.Linq;
-using Graphics = javax.microedition.lcdui.Graphics;
-using AngleFactory = org.allbinary.math.AngleFactory;
-using AngleInfo = org.allbinary.math.AngleInfo;
 using ScaleProperties = org.allbinary.media.ScaleProperties;
-using CircularIndexUtil = org.allbinary.util.CircularIndexUtil;
 
 namespace org.allbinary.animation;
 
@@ -28,25 +24,9 @@ public class NullRotationAnimationFactory : AnimationInterfaceFactoryInterface, 
 {
     private static NullRotationAnimationFactory NULL_ROTATION_ANIMATION_FACTORY = new NullRotationAnimationFactory();
     public readonly RotationAnimation[] NULL_ROTATION_ANIMATION_ARRAY = new RotationAnimation[0];
-    public class NullRotationAnimation2 : NullRotationAnimation
-    {
-        private readonly NullRotationAnimationFactory outer;
-
-        public NullRotationAnimation2(NullRotationAnimationFactory outer) : base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), new IndexedAnimationBehavior(1, 250))
-        {
-            this.outer = outer;
-            // base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), new IndexedAnimationBehavior(1, 250)) is called from the constructor declaration
-        }
-
-        public override void paintXY(Graphics graphics, int x, int y)
-        {
-        }
-
-    }
-    private readonly Animation NULL_ANIMATION;
+    private readonly Animation NULL_ANIMATION = new NullRotationAnimation2();
     private NullRotationAnimationFactory()
     {
-        this.NULL_ANIMATION = new NullRotationAnimation2(this);
     }
 
     public static NullRotationAnimationFactory getFactoryInstance()

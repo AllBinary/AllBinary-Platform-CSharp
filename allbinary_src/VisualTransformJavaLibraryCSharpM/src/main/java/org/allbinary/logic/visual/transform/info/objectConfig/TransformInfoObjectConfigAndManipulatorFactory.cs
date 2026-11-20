@@ -24,6 +24,8 @@ using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using Document = org.w3c.dom.Document;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.info.objectConfig;
 
@@ -47,7 +49,7 @@ public class TransformInfoObjectConfigAndManipulatorFactory : TransformInfoObjec
             string data = new CryptFileReader(TransformInfoObjectConfigData.getInstance().UNCRYPTED_EXTENSION, TransformInfoObjectConfigData.getInstance().ENCRYPTED_EXTENSION).get(objectConfigFileAbPath);
             return this.getInstance(abeClientInformation, transformInfoInterface, DomDocumentHelper.create(data));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Could Not Load Object Config", getInstance(), this.commonStrings.GET_INSTANCE, e);
             }
             throw e;
@@ -69,7 +71,7 @@ public class TransformInfoObjectConfigAndManipulatorFactory : TransformInfoObjec
             if (transformInfoInterface != null) {
                 error = error + transformInfoInterface.getName();
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, getInstance(), commonStrings.GET_INSTANCE, e);
             }
             throw e;
@@ -91,7 +93,7 @@ public class TransformInfoObjectConfigAndManipulatorFactory : TransformInfoObjec
             if (transformInfoInterface != null) {
                 error = error + transformInfoInterface.getName();
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, getInstance(), "getInstance(document)", e);
             }
             throw e;

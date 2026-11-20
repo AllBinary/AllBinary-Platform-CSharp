@@ -25,6 +25,8 @@ using OrderHistoryData = org.allbinary.business.user.commerce.inventory.order.Or
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.tags;
 
@@ -66,7 +68,7 @@ public class OrderHistoryTag : TableTag
             throw e;
         } catch (Exception e) {
             string error = "Failed to set Order Status";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "setOrderStatus()", e);
             }
             return error;

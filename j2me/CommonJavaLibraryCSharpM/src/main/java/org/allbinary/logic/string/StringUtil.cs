@@ -44,11 +44,7 @@ public class StringUtil
 
     public virtual string getNonNull(string @string)
     {
-        if (@string == null) {
-            return this.EMPTY_STRING;
-        } else {
-            return @string;
-        }
+        return @string;
     }
 
     public virtual string[] getArrayInstance()

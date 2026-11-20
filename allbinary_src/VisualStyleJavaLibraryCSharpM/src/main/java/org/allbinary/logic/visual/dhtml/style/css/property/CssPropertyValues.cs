@@ -30,6 +30,8 @@ using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.dhtml.style.css.property;
 
@@ -47,7 +49,7 @@ public class CssPropertyValues : DomNodeInterface
         HashMap<object, object> indexPropertyValueHashMap = StdUtil.getInstance().createHashMap();
         this.propertyValueVector = new BasicArrayListD();
         BasicArrayList cssPropertyNodeVector = DomSearchHelper.getAllNodes(CssPropertyValueData.getInstance().NAME, node.getChildNodes());
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().STYLE)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().STYLE)) {
             this.logUtil.putF("Number Of Properties: " + cssPropertyNodeVector.size(), this, "CssProperties()");
         }
         int size = cssPropertyNodeVector.size();
@@ -55,7 +57,7 @@ public class CssPropertyValues : DomNodeInterface
             Node cssPropertyValueNode = ((Node) cssPropertyNodeVector.get(index_0));
             Node valueNode = DomSearchHelper.getNode(DomData.VALUE, cssPropertyValueNode.getChildNodes());
             string propertyValue = DomNodeHelper.getTextNodeValue(valueNode);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().STYLE)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().STYLE)) {
                 this.logUtil.putF("Property Value: " + propertyValue, this, "CssProperties()");
             }
             Node indexNode = DomSearchHelper.getNode(DomData.INDEX, cssPropertyValueNode.getChildNodes());
@@ -93,7 +95,7 @@ public class CssPropertyValues : DomNodeInterface
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             HashMap<object, object> hashMap = this.toHashMap();
             this.logUtil.putF("CssPropertyValues HashMap: " + hashMap.ToString(), this, "toXmlNode()");
         }

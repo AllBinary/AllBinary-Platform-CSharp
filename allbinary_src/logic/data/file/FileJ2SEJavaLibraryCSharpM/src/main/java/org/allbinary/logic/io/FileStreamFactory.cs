@@ -42,7 +42,7 @@ public class FileStreamFactory
     {
         AbPath FILEABPATH = new AbPath(path, fileName);
         AbFile file = AbFile.createAbFileFromAbPath(FILEABPATH);
-        return new AbFileInputStream(file);
+        return AbFileInputStream.createFromAbFile(file);
     }
 
     // throws Exception

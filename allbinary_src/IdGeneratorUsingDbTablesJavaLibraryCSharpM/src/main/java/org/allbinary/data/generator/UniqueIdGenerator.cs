@@ -25,6 +25,8 @@ using IdGeneratorEntityFactory = org.allbinary.data.tables.generator.IdGenerator
 using StdUtil = org.allbinary.logic.StdUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.data.generator;
 
@@ -47,7 +49,7 @@ public class UniqueIdGenerator : IdGeneratorInterface
             vector.add(long.Parse((value).ToString()).ToString());
             this.idGeneratorEntity.insert(vector);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().IDLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().IDLOGGING)) {
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 this.logUtil.put(commonStrings.EXCEPTION, this, "initialize", e);
             }
@@ -71,7 +73,7 @@ public class UniqueIdGenerator : IdGeneratorInterface
             this.idGeneratorEntity.update(this.name, newValue);
             return idLong.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().IDLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().IDLOGGING)) {
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 this.logUtil.put(commonStrings.EXCEPTION, this, "getNext", e);
             }

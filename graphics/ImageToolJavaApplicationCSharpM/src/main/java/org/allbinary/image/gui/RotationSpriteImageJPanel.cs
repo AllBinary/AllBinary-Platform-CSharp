@@ -30,10 +30,18 @@ using ImageStrings = org.allbinary.media.image.ImageStrings;
 using CommonPhoneStrings = org.allbinary.@string.CommonPhoneStrings;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+//using ActionEvent = java.awt.@event.ActionEvent;
+//using ActionListener = java.awt.@event.ActionListener;
+//using DefaultComboBoxModel = javax.swing.DefaultComboBoxModel;
+//using JButton = javax.swing.JButton;
+//using JCheckBox = javax.swing.JCheckBox;
+//using JComboBox = javax.swing.JComboBox;
+//using JLabel = javax.swing.JLabel;
+//using JPanel = javax.swing.JPanel;
 
 namespace org.allbinary.image.gui;
 
-public class RotationSpriteImageJPanel : javax.swing.JPanel, ImageProcessorInputCompositeInterface
+public class RotationSpriteImageJPanel : JPanel, ImageProcessorInputCompositeInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
@@ -86,7 +94,7 @@ public class RotationSpriteImageJPanel : javax.swing.JPanel, ImageProcessorInput
 
     private void initComponents()
     {
-        this.jPanel1 = new javax.swing.JPanel()
+        this.jPanel1 = new JPanel()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public virtual void paint(Graphics graphics)
             {
@@ -97,35 +105,35 @@ public class RotationSpriteImageJPanel : javax.swing.JPanel, ImageProcessorInput
 
 #endif
 ;
-        this.jPanel2 = new javax.swing.JPanel();
-        this.totalFramesJComboBox = new javax.swing.JComboBox();
-        this.jLabel1 = new javax.swing.JLabel();
-        this.generateJButton = new javax.swing.JButton();
-        this.totalAngleJComboBox = new javax.swing.JComboBox();
-        this.jLabel3 = new javax.swing.JLabel();
-        this.writeOverOriginalJCheckBox = new javax.swing.JCheckBox();
-        this.jPanel3 = new javax.swing.JPanel();
-        this.jLabel2 = new javax.swing.JLabel();
+        this.jPanel2 = new JPanel();
+        this.totalFramesJComboBox = new JComboBox();
+        this.jLabel1 = new JLabel();
+        this.generateJButton = new JButton();
+        this.totalAngleJComboBox = new JComboBox();
+        this.jLabel3 = new JLabel();
+        this.writeOverOriginalJCheckBox = new JCheckBox();
+        this.jPanel3 = new JPanel();
+        this.jLabel2 = new JLabel();
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(this.jPanel1);
         this.jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING).add(0, 436, short.MaxValue));
         jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING).add(0, 227, short.MaxValue));
-        this.totalFramesJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new string[] { CommonPhoneStrings.getInstance().FOUR, CommonPhoneStrings.getInstance().NINE, "18", "20", "36" }));
+        this.totalFramesJComboBox.setModel(new DefaultComboBoxModel(new string[] { CommonPhoneStrings.getInstance().FOUR, CommonPhoneStrings.getInstance().NINE, "18", "20", "36" }));
         this.jLabel1.setText("Total Frames:");
         this.generateJButton.setText("Generate");
-        this.generateJButton.addActionListener(new java.awt.event.ActionListener()
+        this.generateJButton.addActionListener(new ActionListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void actionPerformed(java.awt.event.ActionEvent evt)
+            public virtual void actionPerformed(ActionEvent evt)
             {
                 generateJButtonActionPerformed(evt);
             }
 
 #endif
 );
-        this.totalAngleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new string[] { "360", "90" }));
-        this.totalAngleJComboBox.addActionListener(new java.awt.event.ActionListener()
+        this.totalAngleJComboBox.setModel(new DefaultComboBoxModel(new string[] { "360", "90" }));
+        this.totalAngleJComboBox.addActionListener(new ActionListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void actionPerformed(java.awt.event.ActionEvent evt)
+            public virtual void actionPerformed(ActionEvent evt)
             {
                 totalAngleJComboBoxActionPerformed(evt);
             }
@@ -149,25 +157,25 @@ public class RotationSpriteImageJPanel : javax.swing.JPanel, ImageProcessorInput
         layout.setVerticalGroup(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING).add(layout.createSequentialGroup().add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED).add(jPanel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED).add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, short.MaxValue)));
     }
 
-    private void generateJButtonActionPerformed(java.awt.event.ActionEvent evt)
+    private void generateJButtonActionPerformed(ActionEvent evt)
     {
         this.process();
     }
 
-    private void totalAngleJComboBoxActionPerformed(java.awt.event.ActionEvent evt)
+    private void totalAngleJComboBoxActionPerformed(ActionEvent evt)
     {
     }
 
-    private javax.swing.JButton generateJButton = null;
-    private javax.swing.JLabel jLabel1 = null;
-    private javax.swing.JLabel jLabel2 = null;
-    private javax.swing.JLabel jLabel3 = null;
-    private javax.swing.JPanel jPanel1 = null;
-    private javax.swing.JPanel jPanel2 = null;
-    private javax.swing.JPanel jPanel3 = null;
-    private javax.swing.JComboBox totalAngleJComboBox = null;
-    private javax.swing.JComboBox totalFramesJComboBox = null;
-    private javax.swing.JCheckBox writeOverOriginalJCheckBox = null;
+    private JButton generateJButton = null;
+    private JLabel jLabel1 = null;
+    private JLabel jLabel2 = null;
+    private JLabel jLabel3 = null;
+    private JPanel jPanel1 = null;
+    private JPanel jPanel2 = null;
+    private JPanel jPanel3 = null;
+    private JComboBox totalAngleJComboBox = null;
+    private JComboBox totalFramesJComboBox = null;
+    private JCheckBox writeOverOriginalJCheckBox = null;
     public virtual ImageProcessorInput getImageProcessorInput()
     {
         return this.imageProcessorInput;

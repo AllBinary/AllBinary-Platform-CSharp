@@ -1,6 +1,5 @@
 // Generated Code Do Not Modify
 
-extern alias OpenGLESBaseJavaLibraryCSharp;
 using System;
 using System.Linq;
 //using IOException = java.io.IOException;
@@ -20,22 +19,10 @@ public class OpenGLBitmapFactory : PlatformBitmapBaseFactory
         return OpenGLBitmapFactory.instance;
     }
 
-    public class Config
+    public readonly OpenGLBitmapConfig ARGB_8888 = new OpenGLBitmapConfig(null);
+    public virtual OpenGLBitmap createBitmap(int width, int height, OpenGLBitmapConfig config)
     {
-        private readonly OpenGLBitmapFactory outer;
-
-        public readonly object bitmapConfig;
-        private Config(OpenGLBitmapFactory outer, object bitmapConfig)
-        {
-            this.outer = outer;
-            this.bitmapConfig = bitmapConfig;
-        }
-
-    }
-    public readonly Config ARGB_8888;
-    public virtual OpenGLBitmap createBitmap(int width, int height, OpenGLBitmapFactory.Config config)
-    {
-        return new OpenGLBitmap(Image.createImage(width, height));
+        return new OpenGLBitmap(Image.createImageWH(width, height));
     }
 
     // throws Exception
@@ -47,11 +34,6 @@ public class OpenGLBitmapFactory : PlatformBitmapBaseFactory
     public override PlatformBitmapBase createBitmap(Image image)
     {
         return new OpenGLBitmap(image);
-    }
-
-    public OpenGLBitmapFactory()
-    {
-        this.ARGB_8888 = new Config(this, null);
     }
 
 }

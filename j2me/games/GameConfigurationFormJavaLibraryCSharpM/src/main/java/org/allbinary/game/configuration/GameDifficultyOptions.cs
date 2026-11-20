@@ -20,11 +20,11 @@ using Choice = javax.microedition.lcdui.Choice;
 using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
 using CommandListener = javax.microedition.lcdui.CommandListener;
 using NullImage = javax.microedition.lcdui.NullImage;
+using MIDPUtil = org.allbinary.MIDPUtil;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using GameDifficultyFactory = org.allbinary.game.configuration.persistance.GameDifficultyFactory;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using CommandForm = org.allbinary.graphics.displayable.screen.CommandForm;
-using MEUtil = org.allbinary.logic.MEUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
@@ -33,7 +33,7 @@ namespace org.allbinary.game.configuration;
 
 public class GameDifficultyOptions : CommandForm
 {
-    private readonly MEUtil meUtil = MEUtil.getInstance();
+    private readonly MIDPUtil meUtil = MIDPUtil.getInstance();
     private readonly BasicArrayList list;
     public GameDifficultyOptions(CommandListener commandListener, string title, BasicArrayList list, BasicColor backgrounBasicColor, BasicColor foregroundBasicColor) : base(commandListener, title, backgrounBasicColor, foregroundBasicColor)
     {

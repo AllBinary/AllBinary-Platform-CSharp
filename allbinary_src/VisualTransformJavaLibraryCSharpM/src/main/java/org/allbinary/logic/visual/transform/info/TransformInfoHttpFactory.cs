@@ -24,6 +24,8 @@ using WeblisketSession = org.allbinary.logic.communication.http.request.session.
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.info;
 
@@ -50,7 +52,7 @@ public class TransformInfoHttpFactory
                 return ((TransformInfoInterface) new TransformInfoHttpContext(propertiesHashMap, pageContext));
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 logUtil.put(commonStrings.EXCEPTION, "TransformInfoFactory", commonStrings.GET_INSTANCE, e);
             }

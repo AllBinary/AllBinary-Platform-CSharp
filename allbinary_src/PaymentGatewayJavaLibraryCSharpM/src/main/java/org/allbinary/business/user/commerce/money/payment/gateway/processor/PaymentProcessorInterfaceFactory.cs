@@ -25,6 +25,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.money.payment.gateway.processor;
 
@@ -55,7 +57,7 @@ public class PaymentProcessorInterfaceFactory
             }
             throw new Exception("Error Getting PaymentProcessorInterface");
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 this.logUtil.put(commonStrings.EXCEPTION, this, commonStrings.GET_INSTANCE, e);
             }

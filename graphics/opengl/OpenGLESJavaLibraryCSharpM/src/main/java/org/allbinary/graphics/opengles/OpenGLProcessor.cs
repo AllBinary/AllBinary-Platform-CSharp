@@ -1,7 +1,5 @@
 // Generated Code Do Not Modify
 
-extern alias ImageCacheOpenGLESJavaLibraryCSharp;
-extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using GL10 = javax.microedition.khronos.opengles.GL10;

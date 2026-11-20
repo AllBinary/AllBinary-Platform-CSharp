@@ -20,6 +20,7 @@ using ARunnable = org.allbinary.thread.ARunnable;
 using ImageToolJFrame = org.allbinary.image.gui.ImageToolJFrame;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+//using EventQueue = java.awt.EventQueue;
 
 namespace org.allbinary.image;
 
@@ -32,7 +33,7 @@ public class ImageTool
 
     public static void main(string[] args)
     {
-        java.awt.EventQueue.invokeLater(new ARunnable()
+        EventQueue.invokeLater(new ARunnable()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public virtual void run()
             {

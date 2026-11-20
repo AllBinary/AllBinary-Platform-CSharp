@@ -31,10 +31,19 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
+//using GridLayout = java.awt.GridLayout;
+//using MouseAdapter = java.awt.@event.MouseAdapter;
+//using MouseEvent = java.awt.@event.MouseEvent;
+//using JMenuItem = javax.swing.JMenuItem;
+//using JPanel = javax.swing.JPanel;
+//using JPopupMenu = javax.swing.JPopupMenu;
+//using JScrollPane = javax.swing.JScrollPane;
+//using PopupMenuEvent = javax.swing.@event.PopupMenuEvent;
+//using PopupMenuListener = javax.swing.@event.PopupMenuListener;
 
 namespace org.allbinary.graphics.j2me.workarea;
 
-public class WorkAreaJTreeJPanel : javax.swing.JPanel
+public class WorkAreaJTreeJPanel : JPanel
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
@@ -58,9 +67,9 @@ public class WorkAreaJTreeJPanel : javax.swing.JPanel
     public virtual void updateTree()
     {
         this.workAreaJTree = new JTree(this.rootTreeNode);
-        this.workAreaJTree.addMouseListener(new java.awt.event.MouseAdapter()
+        this.workAreaJTree.addMouseListener(new MouseAdapter()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void mousePressed(java.awt.event.MouseEvent evt)
+            public virtual void mousePressed(MouseEvent evt)
             {
                 workAreaJTreeMousePressed(evt);
             }
@@ -194,24 +203,24 @@ public class WorkAreaJTreeJPanel : javax.swing.JPanel
 
     private void initComponents()
     {
-        itemJPopupMenu = new javax.swing.JPopupMenu();
-        this.deleteJMenuItem = new javax.swing.JMenuItem();
-        this.copyJMenuItem = new javax.swing.JMenuItem();
-        this.rotateJMenuItem = new javax.swing.JMenuItem();
-        this.itemJScrollPane1 = new javax.swing.JScrollPane();
-        this.workAreaPropertiesJPanel = new javax.swing.JPanel();
-        itemJPopupMenu.addPopupMenuListener(new javax.swing.event.PopupMenuListener()
+        itemJPopupMenu = new JPopupMenu();
+        this.deleteJMenuItem = new JMenuItem();
+        this.copyJMenuItem = new JMenuItem();
+        this.rotateJMenuItem = new JMenuItem();
+        this.itemJScrollPane1 = new JScrollPane();
+        this.workAreaPropertiesJPanel = new JPanel();
+        itemJPopupMenu.addPopupMenuListener(new PopupMenuListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt)
+            public virtual void popupMenuCanceled(PopupMenuEvent evt)
             {
             }
 
-            public virtual void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt)
+            public virtual void popupMenuWillBecomeInvisible(PopupMenuEvent evt)
             {
                 itemJPopupMenuPopupMenuWillBecomeInvisible(evt);
             }
 
-            public virtual void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt)
+            public virtual void popupMenuWillBecomeVisible(PopupMenuEvent evt)
             {
                 itemJPopupMenuPopupMenuWillBecomeVisible(evt);
             }
@@ -219,9 +228,9 @@ public class WorkAreaJTreeJPanel : javax.swing.JPanel
 #endif
 );
         this.deleteJMenuItem.setText("Delete");
-        this.deleteJMenuItem.addMouseListener(new java.awt.event.MouseAdapter()
+        this.deleteJMenuItem.addMouseListener(new MouseAdapter()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void mousePressed(java.awt.event.MouseEvent evt)
+            public virtual void mousePressed(MouseEvent evt)
             {
                 deleteJMenuItemMousePressed(evt);
             }
@@ -230,9 +239,9 @@ public class WorkAreaJTreeJPanel : javax.swing.JPanel
 );
         this.itemJPopupMenu.add(this.deleteJMenuItem);
         this.copyJMenuItem.setText("Copy");
-        this.copyJMenuItem.addMouseListener(new java.awt.event.MouseAdapter()
+        this.copyJMenuItem.addMouseListener(new MouseAdapter()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void mousePressed(java.awt.event.MouseEvent evt)
+            public virtual void mousePressed(MouseEvent evt)
             {
                 copyJMenuItemMousePressed(evt);
             }
@@ -241,9 +250,9 @@ public class WorkAreaJTreeJPanel : javax.swing.JPanel
 );
         this.itemJPopupMenu.add(this.copyJMenuItem);
         this.rotateJMenuItem.setText("Rotate 45*");
-        this.rotateJMenuItem.addMouseListener(new java.awt.event.MouseAdapter()
+        this.rotateJMenuItem.addMouseListener(new MouseAdapter()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void mousePressed(java.awt.event.MouseEvent evt)
+            public virtual void mousePressed(MouseEvent evt)
             {
                 rotateJMenuItemMousePressed(evt);
             }
@@ -251,22 +260,22 @@ public class WorkAreaJTreeJPanel : javax.swing.JPanel
 #endif
 );
         this.itemJPopupMenu.add(this.rotateJMenuItem);
-        setLayout(new java.awt.GridLayout(1, 1));
-        this.workAreaPropertiesJPanel.addMouseListener(new java.awt.event.MouseAdapter()
+        setLayout(new GridLayout(1, 1));
+        this.workAreaPropertiesJPanel.addMouseListener(new MouseAdapter()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void mousePressed(java.awt.event.MouseEvent evt)
+            public virtual void mousePressed(MouseEvent evt)
             {
                 workAreaPropertiesJPanelMousePressed(evt);
             }
 
 #endif
 );
-        this.workAreaPropertiesJPanel.setLayout(new java.awt.GridLayout(1, 0));
+        this.workAreaPropertiesJPanel.setLayout(new GridLayout(1, 0));
         this.itemJScrollPane1.setViewportView(this.workAreaPropertiesJPanel);
         add(this.itemJScrollPane1);
     }
 
-    private void rotateJMenuItemMousePressed(java.awt.event.MouseEvent evt)
+    private void rotateJMenuItemMousePressed(MouseEvent evt)
     {
         try {
             TreePath treePath = this.workAreaJTree.getSelectionPath();
@@ -279,7 +288,7 @@ public class WorkAreaJTreeJPanel : javax.swing.JPanel
         }
     }
 
-    private void workAreaJTreeMousePressed(java.awt.event.MouseEvent evt)
+    private void workAreaJTreeMousePressed(MouseEvent evt)
     {
         try {
             TreePath[] selectedTreePathArray = this.workAreaJTree.getSelectionPaths();
@@ -312,15 +321,15 @@ public class WorkAreaJTreeJPanel : javax.swing.JPanel
         }
     }
 
-    private void itemJPopupMenuPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt)
+    private void itemJPopupMenuPopupMenuWillBecomeInvisible(PopupMenuEvent evt)
     {
     }
 
-    private void itemJPopupMenuPopupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt)
+    private void itemJPopupMenuPopupMenuWillBecomeVisible(PopupMenuEvent evt)
     {
     }
 
-    private void copyJMenuItemMousePressed(java.awt.event.MouseEvent evt)
+    private void copyJMenuItemMousePressed(MouseEvent evt)
     {
         try {
             this.copy();
@@ -329,7 +338,7 @@ public class WorkAreaJTreeJPanel : javax.swing.JPanel
         }
     }
 
-    private void deleteJMenuItemMousePressed(java.awt.event.MouseEvent evt)
+    private void deleteJMenuItemMousePressed(MouseEvent evt)
     {
         try {
             TreePath[] selectedTreePathArray = this.workAreaJTree.getSelectionPaths();
@@ -345,15 +354,15 @@ public class WorkAreaJTreeJPanel : javax.swing.JPanel
         }
     }
 
-    private void workAreaPropertiesJPanelMousePressed(java.awt.event.MouseEvent evt)
+    private void workAreaPropertiesJPanelMousePressed(MouseEvent evt)
     {
     }
 
-    private javax.swing.JMenuItem copyJMenuItem = null;
-    private javax.swing.JMenuItem deleteJMenuItem = null;
-    private javax.swing.JPopupMenu itemJPopupMenu = null;
-    private javax.swing.JScrollPane itemJScrollPane1 = null;
-    private javax.swing.JMenuItem rotateJMenuItem = null;
-    private javax.swing.JPanel workAreaPropertiesJPanel = null;
+    private JMenuItem copyJMenuItem = null;
+    private JMenuItem deleteJMenuItem = null;
+    private JPopupMenu itemJPopupMenu = null;
+    private JScrollPane itemJScrollPane1 = null;
+    private JMenuItem rotateJMenuItem = null;
+    private JPanel workAreaPropertiesJPanel = null;
 }
 

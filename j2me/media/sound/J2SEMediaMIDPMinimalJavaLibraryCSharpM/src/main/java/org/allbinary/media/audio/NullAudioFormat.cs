@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using AudioFormat = javax.sound.sampled.AudioFormat;
+using AudioFormat = javax.sound.sampled.AudioFormat;
 
 namespace org.allbinary.media.audio;
 

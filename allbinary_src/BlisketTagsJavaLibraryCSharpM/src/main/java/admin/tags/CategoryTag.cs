@@ -25,6 +25,8 @@ using AbResponseHandler = org.allbinary.logic.communication.http.request.AbRespo
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using TransformInfoData = org.allbinary.logic.visual.transform.info.TransformInfoData;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.tags;
 
@@ -56,7 +58,7 @@ public class CategoryTag : TableTag
             throw e;
         } catch (Exception e) {
             string error = "Failed to view a Category";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "viewCategory()", e);
             }
             return error;
@@ -76,7 +78,7 @@ public class CategoryTag : TableTag
             throw e;
         } catch (Exception e) {
             string error = "Failed to view a Categories";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "viewCategories()", e);
             }
             return error;
@@ -92,12 +94,12 @@ public class CategoryTag : TableTag
                     this.getPropertiesHashMap().put(TransformInfoData.getInstance().TEMPLATEFILENAME, this.xsl);
                     if (this.getCommand().compareTo(CategoryData.getInstance().VIEW) == 0) {
                         string output = this.viewCategory();
-                        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
+                        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
                             pageContext.getOut().print(output);
                         }
                     } else if (this.getCommand().compareTo(CategoryData.getInstance().VIEW) == 0) {
                         string output = this.viewCategories();
-                        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
+                        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
                             pageContext.getOut().print(output);
                         }
                     } else {

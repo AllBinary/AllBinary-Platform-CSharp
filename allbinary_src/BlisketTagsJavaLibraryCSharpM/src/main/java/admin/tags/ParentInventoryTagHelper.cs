@@ -18,6 +18,7 @@ using System;
 using System.Linq;
 //using Tag = javax.servlet.jsp.tagext.Tag;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
+using HelperTag = tags.HelperTag;
 
 namespace admin.tags;
 
@@ -34,7 +35,7 @@ public class ParentInventoryTagHelper
     {
         if (parentTag == null) {
             throw new Exception("Must have parent tag.");
-        } else if (!(parentTag is tags.HelperTag)) {
+        } else if (!(parentTag is HelperTag)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("Must have at least a ");
             stringBuffer.append("tags.HelperTag");

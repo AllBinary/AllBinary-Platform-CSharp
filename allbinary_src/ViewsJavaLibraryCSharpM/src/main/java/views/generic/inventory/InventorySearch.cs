@@ -35,6 +35,8 @@ using ServiceClientInformationInterfaceFactory = org.allbinary.logic.system.secu
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using InventoryViewSearchInterface = views.admin.inventory.listings.InventoryViewSearchInterface;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.generic.inventory;
 
@@ -73,7 +75,7 @@ public class InventorySearch : InventoryViewSearchInterface
                 return filePath;
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "searchSingleStaticPage", e);
             }
             throw new Exception("Failed retrieve Single Product Page Static");
@@ -87,7 +89,7 @@ public class InventorySearch : InventoryViewSearchInterface
             string[] str = this.search();
             return str[global::java.lang.JavaNumber.intValue(this.searchRequest.getParams().getStartPageInt())];
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "searchSingleDynamicPage", e);
             }
             throw new Exception("Failed retrieve Single Product Page Dynamically");

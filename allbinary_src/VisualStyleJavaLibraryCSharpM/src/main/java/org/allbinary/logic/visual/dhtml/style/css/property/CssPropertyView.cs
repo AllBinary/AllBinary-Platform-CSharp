@@ -37,6 +37,11 @@ public class CssPropertyView : DomNodeInterface
         this.cssProperty = new CssProperty(node);
     }
 
+    public CssPropertyView(CssProperty cssProperty)
+    {
+        this.cssProperty = cssProperty;
+    }
+
     public virtual CssProperty getProperty()
     {
         return this.cssProperty;

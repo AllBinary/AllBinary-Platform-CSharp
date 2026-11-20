@@ -17,10 +17,15 @@
 using System;
 using System.Linq;
 //using javax.swing;
+//using Font = java.awt.Font;
+//using GridLayout = java.awt.GridLayout;
+//using JButton = javax.swing.JButton;
+//using JPanel = javax.swing.JPanel;
+//using JTextField = javax.swing.JTextField;
 
 namespace org.allbinary.graphics.j2me.workarea.properties;
 
-public class PropertiesJPanel : javax.swing.JPanel
+public class PropertiesJPanel : JPanel
 {
     public PropertiesJPanel()
     {
@@ -35,67 +40,67 @@ public class PropertiesJPanel : javax.swing.JPanel
 
     private void initComponents()
     {
-        this.workAreaPropertiesJPanel = new javax.swing.JPanel();
-        this.modifierJPanel = new javax.swing.JPanel();
-        this.copyVerticalJButton = new javax.swing.JButton();
-        this.copyHorizontalJButton = new javax.swing.JButton();
-        this.rotateJPanel = new javax.swing.JPanel();
-        this.rotateJButton = new javax.swing.JButton();
-        this.angleJTextField = new javax.swing.JTextField();
-        this.jPanel7 = new javax.swing.JPanel();
-        this.upJButton = new javax.swing.JButton();
-        this.downJButton = new javax.swing.JButton();
-        this.jPanel8 = new javax.swing.JPanel();
-        this.leftJButton = new javax.swing.JButton();
-        this.rightJButton = new javax.swing.JButton();
-        setLayout(new java.awt.GridLayout(2, 1));
-        this.workAreaPropertiesJPanel.setLayout(new java.awt.GridLayout());
+        this.workAreaPropertiesJPanel = new JPanel();
+        this.modifierJPanel = new JPanel();
+        this.copyVerticalJButton = new JButton();
+        this.copyHorizontalJButton = new JButton();
+        this.rotateJPanel = new JPanel();
+        this.rotateJButton = new JButton();
+        this.angleJTextField = new JTextField();
+        this.jPanel7 = new JPanel();
+        this.upJButton = new JButton();
+        this.downJButton = new JButton();
+        this.jPanel8 = new JPanel();
+        this.leftJButton = new JButton();
+        this.rightJButton = new JButton();
+        setLayout(new GridLayout(2, 1));
+        this.workAreaPropertiesJPanel.setLayout(new GridLayout());
         add(this.workAreaPropertiesJPanel);
-        this.modifierJPanel.setLayout(new java.awt.GridLayout(6, 0));
-        this.copyVerticalJButton.setFont(new java.awt.Font("Dialog", 0, 10));
+        this.modifierJPanel.setLayout(new GridLayout(6, 0));
+        this.copyVerticalJButton.setFont(new Font("Dialog", 0, 10));
         this.copyVerticalJButton.setText("Copy Vertical");
         this.modifierJPanel.add(this.copyVerticalJButton);
-        this.copyHorizontalJButton.setFont(new java.awt.Font("Dialog", 0, 10));
+        this.copyHorizontalJButton.setFont(new Font("Dialog", 0, 10));
         this.copyHorizontalJButton.setText("Copy Horizontal");
         this.modifierJPanel.add(this.copyHorizontalJButton);
-        this.rotateJPanel.setLayout(new java.awt.GridLayout(1, 2));
-        this.rotateJButton.setFont(new java.awt.Font("Dialog", 0, 10));
+        this.rotateJPanel.setLayout(new GridLayout(1, 2));
+        this.rotateJButton.setFont(new Font("Dialog", 0, 10));
         this.rotateJButton.setText("Rotate");
         this.rotateJPanel.add(this.rotateJButton);
         this.angleJTextField.setText("Angle");
         this.rotateJPanel.add(this.angleJTextField);
         this.modifierJPanel.add(this.rotateJPanel);
-        this.jPanel7.setLayout(new java.awt.GridLayout(1, 2));
-        this.upJButton.setFont(new java.awt.Font("Dialog", 0, 10));
+        this.jPanel7.setLayout(new GridLayout(1, 2));
+        this.upJButton.setFont(new Font("Dialog", 0, 10));
         this.upJButton.setText("Up");
         this.jPanel7.add(this.upJButton);
-        this.downJButton.setFont(new java.awt.Font("Dialog", 0, 10));
+        this.downJButton.setFont(new Font("Dialog", 0, 10));
         this.downJButton.setText("Down");
         this.jPanel7.add(this.downJButton);
         this.modifierJPanel.add(this.jPanel7);
-        this.jPanel8.setLayout(new java.awt.GridLayout(1, 2));
-        this.leftJButton.setFont(new java.awt.Font("Dialog", 0, 10));
+        this.jPanel8.setLayout(new GridLayout(1, 2));
+        this.leftJButton.setFont(new Font("Dialog", 0, 10));
         this.leftJButton.setText("Left");
         this.jPanel8.add(this.leftJButton);
-        this.rightJButton.setFont(new java.awt.Font("Dialog", 0, 10));
+        this.rightJButton.setFont(new Font("Dialog", 0, 10));
         this.rightJButton.setText("Right");
         this.jPanel8.add(this.rightJButton);
         this.modifierJPanel.add(this.jPanel8);
         add(this.modifierJPanel);
     }
 
-    private javax.swing.JButton rotateJButton = null;
-    private javax.swing.JButton copyVerticalJButton = null;
-    private javax.swing.JButton leftJButton = null;
-    private javax.swing.JPanel rotateJPanel = null;
-    private javax.swing.JTextField angleJTextField = null;
-    private javax.swing.JPanel workAreaPropertiesJPanel = null;
-    private javax.swing.JPanel modifierJPanel = null;
-    private javax.swing.JButton upJButton = null;
-    private javax.swing.JPanel jPanel8 = null;
-    private javax.swing.JButton downJButton = null;
-    private javax.swing.JPanel jPanel7 = null;
-    private javax.swing.JButton rightJButton = null;
-    private javax.swing.JButton copyHorizontalJButton = null;
+    private JButton rotateJButton = null;
+    private JButton copyVerticalJButton = null;
+    private JButton leftJButton = null;
+    private JPanel rotateJPanel = null;
+    private JTextField angleJTextField = null;
+    private JPanel workAreaPropertiesJPanel = null;
+    private JPanel modifierJPanel = null;
+    private JButton upJButton = null;
+    private JPanel jPanel8 = null;
+    private JButton downJButton = null;
+    private JPanel jPanel7 = null;
+    private JButton rightJButton = null;
+    private JButton copyHorizontalJButton = null;
 }
 

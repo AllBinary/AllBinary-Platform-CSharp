@@ -19,6 +19,8 @@ using System.Linq;
 using InputStream = java.io.InputStream;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbFile = org.allbinary.logic.io.file.AbFile;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.io;
 
@@ -34,10 +36,10 @@ public class CloudStreamUtil
     // throws Exception
     public virtual InputStream getFile(AbFile file)
     {
-        InputStream inputStream = new AbFileInputStream(file);
+        InputStream inputStream = AbFileInputStream.createFromAbFile(file);
         int available = inputStream.available();
         if (available > 0) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Cloud File Bytes: " + available, this, "processRequest()");
             }
         }
@@ -50,14 +52,14 @@ public class CloudStreamUtil
         InputStream inputStream = new AbFileLocalInputStream(file);
         int available = inputStream.available();
         if (available > 0) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Local File Bytes: " + available, this, "processRequest()");
             }
         } else {
-            inputStream = new AbFileInputStream(file);
+            inputStream = AbFileInputStream.createFromAbFile(file);
             available = inputStream.available();
             if (available > 0) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                     this.logUtil.putF("Cloud File Bytes: " + available, this, "processRequest()");
                 }
             }
@@ -71,7 +73,7 @@ public class CloudStreamUtil
         InputStream inputStream = new AbFileLocalInputStream(file);
         int available = inputStream.available();
         if (available > 0) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Local File Bytes: " + available, this, "processRequest()");
             }
         }

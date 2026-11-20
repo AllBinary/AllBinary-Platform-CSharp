@@ -110,8 +110,7 @@ public class BaseMusicService : Service
             if (this.player != NullAndroidCanvas.NULL_MEDIA_PLAYER && this.player.isPlaying()) {
                 MediaPlayer player = this.player;
                 this.logUtil.putF(this.ALREADY_PLAYING, this, this.commonStateStrings.ON_START_COMMAND);
-                
-                global::java.lang.Runnable runnable = new MusicRunnable(this);
+                global::java.lang.Runnable runnable = new MusicRunnable(this, this, player, intent);
                 global::org.allbinary.thread.NullThread thread = new global::org.allbinary.thread.NullThread(runnable);
                 thread.start();
                 return;
@@ -120,31 +119,38 @@ public class BaseMusicService : Service
         }
     }
 
-                class MusicRunnable : ARunnable
-                {
-                    private readonly BaseMusicService baseMusicService;
-                    public MusicRunnable(BaseMusicService baseMusicService)
-                    {
-                        this.baseMusicService = baseMusicService;
-                    }
+    //A member class instead of a local class using the method's player and intent since most of the converted languages do not have local classes.
+    private class MusicRunnable : ARunnable
+    {
+        private readonly BaseMusicService outer;
 
-                    public override void run()
-                    {
-                        LogUtil logUtil = LogUtil.getInstance();
-                        CommonStrings commonStrings = CommonStrings.getInstance();
-                        CommonStateStrings commonStateStrings = CommonStateStrings.getInstance();
-                        try {
-                            while (player.isPlaying()) {
-                                logUtil.putF(this.baseMusicService.WAITING_FOR_MUSIC_TO_END, this, commonStateStrings.ON_START_COMMAND);
-                                System.Threading.Thread.Sleep((int) (1200));
-                            }
-                            this.baseMusicService.onStartCommandIntent(intent);
-                        } catch (Exception e) {
-                            logUtil.put(commonStrings.EXCEPTION, this, commonStateStrings.ON_START_COMMAND, e);
-                        }
-                    }
+        private readonly BaseMusicService baseMusicService;
+        private readonly MediaPlayer player;
+        private readonly Intent intent;
+        public MusicRunnable(BaseMusicService outer, BaseMusicService baseMusicService, MediaPlayer player, Intent intent)
+        {
+            this.outer = outer;
+            this.baseMusicService = baseMusicService;
+            this.player = player;
+            this.intent = intent;
+        }
 
+        public override void run()
+        {
+            LogUtil logUtil = LogUtil.getInstance();
+            CommonStrings commonStrings = CommonStrings.getInstance();
+            CommonStateStrings commonStateStrings = CommonStateStrings.getInstance();
+            try {
+                while (this.player.isPlaying()) {
+                    logUtil.putF(this.baseMusicService.WAITING_FOR_MUSIC_TO_END, this, commonStateStrings.ON_START_COMMAND);
+                    System.Threading.Thread.Sleep((int) (1200));
                 }
+                this.baseMusicService.onStartCommandIntent(this.intent);
+            } catch (Exception e) {
+                logUtil.put(commonStrings.EXCEPTION, this, commonStateStrings.ON_START_COMMAND, e);
+            }
+        }
 
+    }
 }
 

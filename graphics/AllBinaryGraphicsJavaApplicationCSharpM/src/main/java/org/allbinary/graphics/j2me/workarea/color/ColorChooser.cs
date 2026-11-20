@@ -16,10 +16,13 @@
 
 using System;
 using System.Linq;
+//using BorderLayout = java.awt.BorderLayout;
+//using JColorChooser = javax.swing.JColorChooser;
+//using JPanel = javax.swing.JPanel;
 
 namespace org.allbinary.graphics.j2me.workarea.color;
 
-public class ColorChooser : javax.swing.JPanel
+public class ColorChooser : JPanel
 {
     public ColorChooser()
     {
@@ -28,11 +31,11 @@ public class ColorChooser : javax.swing.JPanel
 
     private void initComponents()
     {
-        this.jColorChooser1 = new javax.swing.JColorChooser();
-        setLayout(new java.awt.BorderLayout());
-        add(this.jColorChooser1, java.awt.BorderLayout.CENTER);
+        this.jColorChooser1 = new JColorChooser();
+        setLayout(new BorderLayout());
+        add(this.jColorChooser1, BorderLayout.CENTER);
     }
 
-    private javax.swing.JColorChooser jColorChooser1 = null;
+    private JColorChooser jColorChooser1 = null;
 }
 

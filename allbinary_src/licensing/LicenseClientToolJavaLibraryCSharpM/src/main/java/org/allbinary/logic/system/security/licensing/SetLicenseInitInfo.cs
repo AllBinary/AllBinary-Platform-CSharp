@@ -64,13 +64,8 @@ public class SetLicenseInitInfo
             File file = new File(PrintLicenseInitInfo.PATH + "licenseservers.txt");
             FileReader reader = new FileReader(file);
             LineNumberReader lineNumberReader = new LineNumberReader(reader);
-            while (true) {
-                string line = lineNumberReader.readLine();
-                if (line != null) {
-                    licenseInitInfo.addServer(line);
-                } else {
-                    break;
-                }
+            while (lineNumberReader.ready()) {
+                licenseInitInfo.addServer(lineNumberReader.readLine());
             }
             LicenseInitInfoUtil.getInstance().write(licenseInitInfo);
             LicenseInitInfoUtil.getInstance().read();

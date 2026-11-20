@@ -14,7 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
 using AboutPaintable = org.allbinary.game.paint.AboutPaintable;

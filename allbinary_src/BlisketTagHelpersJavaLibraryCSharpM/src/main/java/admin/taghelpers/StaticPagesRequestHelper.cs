@@ -44,6 +44,8 @@ using AbeClientInformationInterface = org.allbinary.logic.system.security.licens
 using ServiceClientInformationInterfaceFactory = org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory;
 using TransformInfoData = org.allbinary.logic.visual.transform.info.TransformInfoData;
 using ProductListingFactory = views.admin.inventory.listings.ProductListingFactory;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -73,7 +75,7 @@ public class StaticPagesRequestHelper : AbContext, TagHelperInterface
     private void email()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
                 this.logUtil.putF("Generated Static Pages Notification Email", this, "email");
             }
             StoreFrontInterface storeFrontInterface = StoreFrontFactory.getInstance(this.storeName);
@@ -88,7 +90,7 @@ public class StaticPagesRequestHelper : AbContext, TagHelperInterface
             storeAdminUserEmailEventHandler.receiveEmailInfo(UserEmailEventNameData.STOREGENERATINGSTATICPAGES, storeAdminEmailInfo);
             adminUserEmailEventHandler.receiveEmailInfo(UserEmailEventNameData.STOREGENERATINGSTATICPAGES, adminEmailInfo);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "email", e);
             }
         }
@@ -101,13 +103,13 @@ public class StaticPagesRequestHelper : AbContext, TagHelperInterface
             SearchRequest searchRequest = new SearchRequest(null, this.searchParams, this.xslFile, contentType, this.getPropertiesHashMap(), this.getPageContext());
             string success = ProductListingFactory.getInstance(searchRequest).generateAll(this.storeName);
             this.email();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "generateStaticPages()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to generate staticpages table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "generateStaticPages()", e);
             }
             return error;
@@ -122,13 +124,13 @@ public class StaticPagesRequestHelper : AbContext, TagHelperInterface
             AbPath toAbPath = new AbPath(URLGLOBALS.getWebappPath() + storeFrontInterface.getName() + AbPathData.getInstance().SEPARATOR + storeFrontInterface.getStaticPath(), StringUtil.getInstance().EMPTY_STRING);
             FileUtil.getInstance().copy(fromAbPath, toAbPath);
             string success = "Made Public";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "makePublic()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to makePublic";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "makePublic()", e);
             }
             return error;

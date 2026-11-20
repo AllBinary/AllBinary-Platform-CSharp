@@ -38,6 +38,8 @@ using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp;
 
@@ -85,7 +87,7 @@ public class Email : EmailInterface
             }
             this.init(server, ((Authenticator) null), new InternetAddress[] { new InternetAddress(from) }, new InternetAddress[] { new InternetAddress(to) }, ((InternetAddress[]) null), ((InternetAddress[]) null), subject, mimeBodyParts);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 this.logUtil.put(commonStrings.EXCEPTION, this, "emailConstructor", e);
             }
@@ -101,13 +103,13 @@ public class Email : EmailInterface
         try {
             string hostName = StringUtil.getInstance().EMPTY_STRING;
             if (StringValidationUtil.getInstance().isEmpty(hostName)) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
                     this.logUtil.putF("Unable to get HostName so using fake", this, "init()");
                 }
                 this.properties.put(Email.SMTP_LOCAL_HOST, "FakeHostName");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
                 this.logUtil.put("Continuing on Exception: Unable to get HostName", this, "init()", e);
             }
             this.properties.put(Email.SMTP_LOCAL_HOST, "FakeHostName");
@@ -195,7 +197,7 @@ public class Email : EmailInterface
             }
             return hashMap;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "toHashMap()", e);
             }
             throw e;

@@ -71,9 +71,6 @@ public class LogFormatUtil
 
     private StringMaker getF(string className, string functionName)
     {
-        if (functionName == null) {
-            functionName = this.NONE;
-        }
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.TIME);
         stringBuffer.append(this.timeStampUtil.getAsString());
@@ -93,11 +90,7 @@ public class LogFormatUtil
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append(this.LOG_ERROR);
             string exceptionAsString = exception.ToString();
-            if (exceptionAsString != null) {
-                stringBuffer.append(exceptionAsString);
-            } else {
-                stringBuffer.append(this.EMPTY);
-            }
+            stringBuffer.append(exceptionAsString);
             stringBuffer.append(this.STACK_TRACE);
             if (exception != this.nullUtil.NULL_OBJECT) {
                 stringBuffer.append(this.exceptionUtil.getStackTrace(((Exception) exception)));

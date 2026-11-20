@@ -25,6 +25,8 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using FileItemIterator = org.apache.commons.fileupload.FileItemIterator;
 using FileItemStream = org.apache.commons.fileupload.FileItemStream;
 using FileItemUtil = org.apache.commons.fileupload.FileItemUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.http.file.upload;
 
@@ -56,7 +58,7 @@ public class AbFileUploadFactory
             }
             return items;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPERROR)) {
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 this.logUtil.put(commonStrings.EXCEPTION, this, "get()", e);
             }
@@ -72,7 +74,7 @@ public class AbFileUploadFactory
             return abFileUpload.parseRequest(httpServletRequest);
         } catch (Exception e) {
             CommonStrings commonStrings = CommonStrings.getInstance();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "get()", e);
             }
             throw e;

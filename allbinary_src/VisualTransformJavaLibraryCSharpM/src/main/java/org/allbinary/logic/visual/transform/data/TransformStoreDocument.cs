@@ -23,6 +23,8 @@ using RequestParams = org.allbinary.logic.communication.http.request.RequestPara
 using WeblisketSession = org.allbinary.logic.communication.http.request.session.WeblisketSession;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using SearchRequest = org.allbinary.logic.control.search.SearchRequest;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.data;
 
@@ -34,13 +36,13 @@ public class TransformStoreDocument : TransformHttpRequestDocument
         // base(pageContext, weblisketSession) is called from the constructor declaration
         try {
             string storeName = weblisketSession.getStoreName();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Using Session StoreName: " + storeName, this, this.commonStrings.CONSTRUCTOR);
             }
             this.getBaseNode().appendChild(StoreFrontViewFactory.getInstance(storeName).toXmlNode(this.getDoc()));
             this.getBaseNode().appendChild(new RequestParams(((HttpServletRequest) pageContext.getRequest())).toXmlNode(this.getDoc()));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.CONSTRUCTOR, e);
             }
             throw e;
@@ -54,7 +56,7 @@ public class TransformStoreDocument : TransformHttpRequestDocument
             this.getBaseNode().appendChild(StoreFrontViewFactory.getInstance(searchRequest.getStoreFront().getName()).toXmlNode(this.getDoc()));
             this.getBaseNode().appendChild(searchRequest.getParams().getParamsNode(this.getDoc()));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.CONSTRUCTOR, e);
             }
             throw e;

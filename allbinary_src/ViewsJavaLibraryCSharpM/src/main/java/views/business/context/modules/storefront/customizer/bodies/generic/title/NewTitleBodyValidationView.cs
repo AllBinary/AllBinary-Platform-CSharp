@@ -25,6 +25,9 @@ using TitleBodyValidation = org.allbinary.logic.visual.transform.template.custom
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using CustomizerUtil = views.business.context.modules.storefront.customizer.CustomizerUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
+using ValidationOnlyTempUtil = views.ValidationOnlyTempUtil;
 
 namespace views.business.context.modules.storefront.customizer.bodies.generic.title;
 
@@ -34,7 +37,7 @@ public class NewTitleBodyValidationView : TitleBodyCustomizerView, ValidationCom
     public NewTitleBodyValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, "NewTitleBodyValidationView()");
         }
         this.titleBody = new TitleBodyValidation();
@@ -49,7 +52,7 @@ public class NewTitleBodyValidationView : TitleBodyCustomizerView, ValidationCom
     public virtual bool? isValid()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("View Name: " + this.getTransformInfoInterface().getName(), this, this.commonStrings.IS_VALID);
             }
             {
@@ -57,7 +60,7 @@ public class NewTitleBodyValidationView : TitleBodyCustomizerView, ValidationCom
             }
             return true;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -71,7 +74,7 @@ public class NewTitleBodyValidationView : TitleBodyCustomizerView, ValidationCom
             stringBuffer.append(this.titleBody.validationInfo());
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Getting Validation Info";
@@ -91,7 +94,7 @@ public class NewTitleBodyValidationView : TitleBodyCustomizerView, ValidationCom
     // throws Exception
     public override string view()
     {
-        return views.ValidationOnlyTempUtil.getInstance().view(this);
+        return ValidationOnlyTempUtil.getInstance().view(this);
     }
 
     // throws Exception

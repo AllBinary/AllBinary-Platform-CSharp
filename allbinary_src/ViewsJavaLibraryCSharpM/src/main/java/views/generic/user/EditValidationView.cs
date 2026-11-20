@@ -24,6 +24,8 @@ using StringMaker = org.allbinary.logic.@string.StringMaker;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.generic.user;
 
@@ -39,27 +41,27 @@ public class EditValidationView : UserView, ValidationComponentInterface
     {
         try {
             if (UserName.getInstance().isValid(this.getWeblisketSession().getUserName()) == false) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("Failed to validate username", this, this.commonStrings.IS_VALID);
                 }
                 return false;
             }
             this.user = UserEntityFactory.getInstance().getUser(this.getWeblisketSession().getUserName());
             if (this.user == null) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("User does not exist", this, this.commonStrings.IS_VALID);
                 }
                 return false;
             }
             if (this.user.isValid() == false) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("User exists but is invalid - Probably manually modified", this, this.commonStrings.IS_VALID);
                 }
                 return false;
             }
             return true;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -71,26 +73,26 @@ public class EditValidationView : UserView, ValidationComponentInterface
         try {
             StringMaker stringBuffer = new StringMaker();
             if (UserName.getInstance().isValid(this.getWeblisketSession().getUserName()) == false) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("Failed to validate username", this, "validationInfo()");
                 }
                 stringBuffer.append("Session User Name is not valid - Your session data has been logged!");
             }
             if (this.user == null) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("User does not exist", this, this.commonStrings.IS_VALID);
                 }
                 stringBuffer.append("User profile does not exist - Your session data has been logged!");
             }
             if (this.user.isValid() == false) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("User exists but is invalid - Probably manually modified", this, this.commonStrings.IS_VALID);
                 }
                 stringBuffer.append(this.user.validationInfo());
             }
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Getting Validation Info";

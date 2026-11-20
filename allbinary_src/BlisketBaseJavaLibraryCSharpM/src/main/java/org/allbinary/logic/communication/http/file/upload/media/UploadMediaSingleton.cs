@@ -25,6 +25,8 @@ using MediaData = org.allbinary.logic.visual.media.MediaData;
 using MediaIOUtil = org.allbinary.logic.visual.media.MediaIOUtil;
 using MediaTypeData = org.allbinary.logic.visual.media.MediaTypeData;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.http.file.upload.media;
 
@@ -58,7 +60,7 @@ public class UploadMediaSingleton
         for (int index_2 = 0; index_2 < writerFileTypes.Length; index_2++) {
             this.writerFileTypesHashMap.put(writerFileTypes[index_2], RESIZABLE_MEDIA);
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("Supported Media Readers: ");
             stringBuffer.append(this.readerFileTypesHashMap.ToString());

@@ -25,6 +25,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp;
 
@@ -42,7 +44,7 @@ public class EmailsNotUsed : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENT)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENT)) {
                 this.logUtil.putF(this.commonStrings.START, this, "toXmlNode");
             }
             Node node = document.createElement(EmailData.NAME);
@@ -54,12 +56,12 @@ public class EmailsNotUsed : DomNodeInterface
                     node.appendChild(emailNode);
                 }
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENT)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENT)) {
                 this.logUtil.putF(this.commonStrings.END, this, "toXmlNode()");
             }
             return node;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "toXmlNode()", e);
             }
             string error = "Error Processing Order.  Please contact us if error persists.<p/>";

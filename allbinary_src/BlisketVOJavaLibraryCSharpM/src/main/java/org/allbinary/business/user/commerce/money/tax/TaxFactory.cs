@@ -38,6 +38,8 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.money.tax;
 
@@ -82,12 +84,12 @@ public class TaxFactory
                     string className = DomNodeHelper.getTextNodeValue(classNameNode);
                     return ((TaxModuleInterface) AbeFactory.getInstance().getInstance(abeClientInformation, className));
                 } else {
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAX)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAX)) {
                         this.logUtil.putF("Class Node Null", this, this.commonStrings.GET_INSTANCE);
                     }
                 }
             } else {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAX)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAX)) {
                     this.logUtil.putF("Tax Name Node Node Children", this, this.commonStrings.GET_INSTANCE);
                 }
             }

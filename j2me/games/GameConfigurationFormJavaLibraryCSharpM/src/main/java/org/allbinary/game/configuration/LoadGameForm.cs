@@ -22,11 +22,11 @@ using CommandListener = javax.microedition.lcdui.CommandListener;
 using Item = javax.microedition.lcdui.Item;
 using NullImage = javax.microedition.lcdui.NullImage;
 using StringItem = javax.microedition.lcdui.StringItem;
+using MIDPUtil = org.allbinary.MIDPUtil;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using GamePersistanceSingleton = org.allbinary.game.configuration.persistance.GamePersistanceSingleton;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using CommandForm = org.allbinary.graphics.displayable.screen.CommandForm;
-using MEUtil = org.allbinary.logic.MEUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
@@ -35,7 +35,7 @@ namespace org.allbinary.game.configuration;
 
 public class LoadGameForm : CommandForm
 {
-    private readonly MEUtil meUtil = MEUtil.getInstance();
+    private readonly MIDPUtil meUtil = MIDPUtil.getInstance();
     private bool areChoices = false;
     public LoadGameForm(CommandListener commandListener, string title, BasicColor backgrounBasicColor, BasicColor foregroundBasicColor) : base(commandListener, title, backgrounBasicColor, foregroundBasicColor)
     {

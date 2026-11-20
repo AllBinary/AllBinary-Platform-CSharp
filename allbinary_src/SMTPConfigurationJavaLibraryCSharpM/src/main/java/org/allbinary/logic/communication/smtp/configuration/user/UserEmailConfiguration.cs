@@ -21,6 +21,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using UserEmailEventsConfiguration = org.allbinary.logic.communication.smtp.configuration.user.@event.UserEmailEventsConfiguration;
 using UserEmailEventsConfigurationInterface = org.allbinary.logic.communication.smtp.configuration.user.@event.UserEmailEventsConfigurationInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp.configuration.user;
 
@@ -31,7 +33,7 @@ public class UserEmailConfiguration : UserEmailConfigurationInterface
     private UserEmailEventsConfigurationInterface userEmailEventsConfigurationInterface = null;
     public UserEmailConfiguration()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             this.logUtil.putF(this.commonStrings.CONSTRUCTOR, this, this.commonStrings.CONSTRUCTOR);
         }
         this.setUserEmailEventsConfigurationInterface(new UserEmailEventsConfiguration());
@@ -39,7 +41,7 @@ public class UserEmailConfiguration : UserEmailConfigurationInterface
 
     public UserEmailConfiguration(HashMap<object, object> hashMap)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             this.logUtil.putF(this.commonStrings.CONSTRUCTOR, this, this.commonStrings.CONSTRUCTOR);
         }
         this.setUserEmailEventsConfigurationInterface(new UserEmailEventsConfiguration(hashMap));

@@ -24,6 +24,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.money.payment.gateway;
 
@@ -53,7 +55,7 @@ public class PaymentGatewayView : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF(this.commonStrings.START, this, "toXmlNode");
             }
             HashMap<object, object> hashMap = new PaymentGatewayMapping(this.paymentGatewayInterface).toHashMap();
@@ -61,7 +63,7 @@ public class PaymentGatewayView : DomNodeInterface
             Node paymentGatewayNode = ModDomHelper.createNodeWithValueNodes(document, PaymentGatewayData.NAME.ToString(), hashMap);
             return paymentGatewayNode;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().XSLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().XSLLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "toXmlNode", e);
             }
             throw e;

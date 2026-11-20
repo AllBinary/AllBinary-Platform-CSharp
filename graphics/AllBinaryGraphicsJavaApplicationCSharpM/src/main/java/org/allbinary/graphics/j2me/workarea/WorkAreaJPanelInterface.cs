@@ -17,10 +17,11 @@
 using System;
 using System.Linq;
 using Document = org.w3c.dom.Document;
+//using KeyListener = java.awt.@event.KeyListener;
 
 namespace org.allbinary.graphics.j2me.workarea;
 
-public interface WorkAreaJPanelInterface : java.awt.event.KeyListener
+public interface WorkAreaJPanelInterface : KeyListener
 {
     string getName();
 

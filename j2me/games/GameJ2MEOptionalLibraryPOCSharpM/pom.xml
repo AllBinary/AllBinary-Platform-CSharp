@@ -63,7 +63,7 @@
         <module>../../../../work/j2me/media/graphics/FormJSEJavaLibraryCSharpM</module>
         -->
 
-        <!--<module>../../media/sound/J2SEMediaMIDPMinimalJavaLibraryCSharpM</module>-->
+        <module>../../media/sound/J2SEMediaMIDPMinimalJavaLibraryCSharpM</module>
 <!--        <module>../../media/sound/NotDeviceSpecificMIDP2JavaLibraryCSharpM</module>-->
         <!--<module>../../media/sound/MediaMIDP2ForHTMLJavaLibraryCSharpM</module>-->
 

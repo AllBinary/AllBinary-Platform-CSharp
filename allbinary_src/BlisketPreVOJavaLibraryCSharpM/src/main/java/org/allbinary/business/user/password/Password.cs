@@ -28,6 +28,8 @@ using SuperCrypt = org.allbinary.logic.control.crypt.SuperCrypt;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.password;
 
@@ -55,18 +57,18 @@ public class Password
         CommonStrings commonStrings = CommonStrings.getInstance();
         try {
             bool? valid = true;
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VALIDATION)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VALIDATION)) {
                 this.logUtil.putF("Password: " + this.password, this, commonStrings.IS_VALID);
             }
             if (!StringValidationUtil.getInstance().isValidRequired(this.password, 6, UserData.MAXLEN)) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VALIDATION)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VALIDATION)) {
                     this.logUtil.putF("Password is invalid", this, commonStrings.IS_VALID);
                 }
                 valid = false;
             }
             return valid;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VALIDATIONERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VALIDATIONERROR)) {
                 this.logUtil.put("Failed to validate form", "Password", commonStrings.IS_VALID, e);
             }
             return false;

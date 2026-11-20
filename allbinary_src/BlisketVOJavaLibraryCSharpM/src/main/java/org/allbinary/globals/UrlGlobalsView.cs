@@ -35,7 +35,7 @@ public class UrlGlobalsView : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
-        hashMap.put(UrlGlobalsData.WEBAPPPATH, org.allbinary.globals.URLGLOBALS.getWebappPath());
+        hashMap.put(UrlGlobalsData.WEBAPPPATH, URLGLOBALS.getWebappPath());
         Node node = ModDomHelper.createNameValueNodes(document, UrlGlobalsData.NAME, hashMap);
         return node;
     }

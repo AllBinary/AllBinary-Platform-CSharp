@@ -20,6 +20,9 @@ using System.Runtime.CompilerServices;
 using java.awt;
 //using javax.swing;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+//using JLabel = javax.swing.JLabel;
+//using JScrollPane = javax.swing.JScrollPane;
+//using JTextArea = javax.swing.JTextArea;
 
 namespace org.allbinary.logic.communication.log;
 
@@ -50,11 +53,11 @@ public class GuiLog
         if (size > 255) {
             int y = 550;
             error.setSize(x, y);
-            error.getContentPane().add(new javax.swing.JScrollPane(new javax.swing.JTextArea(msg)));
+            error.getContentPane().add(new JScrollPane(new JTextArea(msg)));
         } else if (size > 0) {
             int y = 50;
             error.setSize(x, y);
-            error.getContentPane().add(new javax.swing.JScrollPane(new javax.swing.JLabel(msg)));
+            error.getContentPane().add(new JScrollPane(new JLabel(msg)));
         }
         error.show();
     }

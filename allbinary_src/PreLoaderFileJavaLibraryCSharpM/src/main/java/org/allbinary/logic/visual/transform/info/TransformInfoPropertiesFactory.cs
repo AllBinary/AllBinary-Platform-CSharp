@@ -24,6 +24,8 @@ using Attr = org.w3c.dom.Attr;
 using NamedNodeMap = org.w3c.dom.NamedNodeMap;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.info;
 
@@ -48,7 +50,7 @@ public class TransformInfoPropertiesFactory
         NamedNodeMap attributes = node.getAttributes();
         Attr attrNode = ((Attr) attributes.getNamedItem(transformInfoData.NAME));
         string name = attrNode.getValue();
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF(CommonLabels.getInstance().NEXT + " View Name: " + name, this, "toTransformInfoPropertiesHashMap()");
         }
         Node labelNode = DomSearchHelper.getNodeNoThrow(transformInfoData.LABEL, transformInfoChildNodeList);

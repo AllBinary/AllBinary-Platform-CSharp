@@ -21,10 +21,12 @@ using java.awt;
 using CanvasStrings = org.allbinary.graphics.displayable.CanvasStrings;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+//using GroupLayout = javax.swing.GroupLayout;
+//using JPanel = javax.swing.JPanel;
 
 namespace org.allbinary.image.gui;
 
-public class ImageJPanel : javax.swing.JPanel
+public class ImageJPanel : JPanel
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
@@ -49,10 +51,10 @@ public class ImageJPanel : javax.swing.JPanel
 
     private void initComponents()
     {
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
-        layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 400, short.MaxValue));
-        layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 300, short.MaxValue));
+        layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGap(0, 400, short.MaxValue));
+        layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGap(0, 300, short.MaxValue));
     }
 
 }

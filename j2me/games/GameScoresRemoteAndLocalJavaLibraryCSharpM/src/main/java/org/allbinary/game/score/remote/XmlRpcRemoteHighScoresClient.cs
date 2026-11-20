@@ -16,6 +16,7 @@
 
 using System;
 using System.Linq;
+using StringUtil = org.allbinary.logic.@string.StringUtil;
 //using IOException = java.io.IOException;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
@@ -58,11 +59,11 @@ public class XmlRpcRemoteHighScoresClient : XmlRpcAbeClient
             this.logUtil.putF(stringBuffer.ToString(), this, this.commonStrings.GET);
             XmlRpcClient xmlRpcClient = new XmlRpcClient(serverUrl);
             this.setClient(xmlRpcClient);
-            xmlRpcClient.setBasicAuthentication(null, null);
+            xmlRpcClient.setBasicAuthentication(StringUtil.getInstance().EMPTY_STRING, StringUtil.getInstance().EMPTY_STRING);
             ABHashtable<object, object> hashtable = ((ABHashtable<object, object>) anyType);
             this.logUtil.putF(CLIENT_INFO + hashtable.ToString(), this, this.commonStrings.GET);
             param.add(hashtable);
-            object result = xmlRpcClient.execute(this.getRemoteMethod(), param, cryptInterface);
+            object result = xmlRpcClient.executeWithCrypt(this.getRemoteMethod(), param, cryptInterface);
             this.logUtil.putF(RESULT + result.ToString(), this, this.commonStrings.GET);
             isOnline = true;
             return result;

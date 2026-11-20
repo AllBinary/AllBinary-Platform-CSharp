@@ -89,7 +89,7 @@ public class TextAnimation : IndexedAnimation, UpdateMyFontInterface
     public virtual void setText(string text)
     {
         BasicArrayList list = new BasicArrayListD();
-        if (text != null && text.Length > 0) {
+        if (text.Length > 0) {
             int index = 0;
             int startIndex = 0;
             int endIndex = 0;

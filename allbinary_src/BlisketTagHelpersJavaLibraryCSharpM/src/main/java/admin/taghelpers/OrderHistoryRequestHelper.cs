@@ -30,6 +30,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
 using ServiceClientInformationInterfaceFactory = org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory;
 using CommonPhoneStrings = org.allbinary.@string.CommonPhoneStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -66,13 +68,13 @@ public class OrderHistoryRequestHelper : TagHelper
             }
             string success = "Status successfully set to: " + this.status;
             OrderHistoryEntityFactory.getInstance().setStatus(this.id, this.status);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF("Success", this, "setOrderStatus()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to set order status";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "setOrderStatus()", e);
             }
             return error;
@@ -89,13 +91,13 @@ public class OrderHistoryRequestHelper : TagHelper
             OrderHistoryEntityFactory.getInstance().setStatus(this.id, newStatus);
             OrderHistory orderHistory = OrderHistoryEntityFactory.getInstance().getOrder(this.id);
             new OrderStatusEmail(this.abeClientInformation, orderHistory).process();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF("Success", this, "setOrderStatus()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to view order table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "setOrderStatus(newStatus)", e);
             }
             return error;

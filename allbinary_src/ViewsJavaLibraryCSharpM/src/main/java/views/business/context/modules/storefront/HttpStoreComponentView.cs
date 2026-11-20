@@ -23,6 +23,8 @@ using TransformStoreDocumentFactory = org.allbinary.logic.visual.transform.data.
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using HttpComponentView = views.HttpComponentView;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context.modules.storefront;
 
@@ -33,7 +35,7 @@ public class HttpStoreComponentView : HttpComponentView
     public HttpStoreComponentView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, this.commonStrings.CONSTRUCTOR);
         }
         this.setTransformDocumentInterface(TransformStoreDocumentFactory.getInstance(this.getPageContext(), this.getWeblisketSession()));
@@ -43,7 +45,7 @@ public class HttpStoreComponentView : HttpComponentView
     public override string view()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF(this.commonStrings.START, this, "view");
             }
             this.toXmlDoc();
@@ -51,7 +53,7 @@ public class HttpStoreComponentView : HttpComponentView
             string result = new StoreTransformer(this.abeClientInformation, this.getTransformInfoInterface()).translate(success);
             return result;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view", e);
             }
             throw e;

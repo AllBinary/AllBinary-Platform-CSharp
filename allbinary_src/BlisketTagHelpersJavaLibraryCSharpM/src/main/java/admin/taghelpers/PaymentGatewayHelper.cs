@@ -28,6 +28,8 @@ using WeblisketSession = org.allbinary.logic.communication.http.request.session.
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbSqlTableUtil = org.allbinary.logic.communication.sql.AbSqlTableUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -44,7 +46,7 @@ public class PaymentGatewayHelper : BasicTable
             this.httpServletRequest = ((HttpServletRequest) pageContext.getRequest());
             this.portion = new Portion(hashMap);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.CONSTRUCTOR, e);
             }
             throw e;
@@ -58,13 +60,13 @@ public class PaymentGatewayHelper : BasicTable
             paymentGatewayInterface.setStoreName(this.weblisketSession.getStoreName());
             PaymentGatewayEntityFactory.getInstance().add(paymentGatewayInterface);
             string success = "Successfully Added New Payment Gateway";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "insert()");
             }
             return success + "<br/>";
         } catch (Exception e) {
             string error = "Failed to add";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "add()", e);
             }
             return error + "<br>" + "Exception: " + e + "<br>";
@@ -76,7 +78,7 @@ public class PaymentGatewayHelper : BasicTable
         try {
             PaymentGatewayInterface paymentGatewayInterface = new PaymentGatewayInterfaceFactory().getInstance(this.httpServletRequest);
             paymentGatewayInterface.setStoreName(this.weblisketSession.getStoreName());
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Gateway Name: ");
                 stringBuffer.append(paymentGatewayInterface.getName());
@@ -86,13 +88,13 @@ public class PaymentGatewayHelper : BasicTable
             }
             PaymentGatewayEntityFactory.getInstance().update(paymentGatewayInterface);
             string success = "Successfully Updated Payment Gateway information";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "update()");
             }
             return success + "<br/>";
         } catch (Exception e) {
             string error = "Failed to update payment gateway information";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "update()", e);
             }
             return error + "<br/>" + "Exception: " + e + "<br/>";
@@ -113,13 +115,13 @@ public class PaymentGatewayHelper : BasicTable
             stringBuffer.append(" and gateway name=");
             stringBuffer.append(gatewayName);
             string success = stringBuffer.ToString();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "delete()");
             }
             return success + "<br/>";
         } catch (Exception e) {
             string error = "Failed to remove payment gateway from table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "remove()", e);
             }
             return error + "<br/>" + "Exception: " + e + "<br>";
@@ -130,13 +132,13 @@ public class PaymentGatewayHelper : BasicTable
     {
         try {
             string success = PaymentGatewayEntityFactory.getInstance().dropTable();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, this.commonStrings.DROP);
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to drop payment transaction result table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.DROP, e);
             }
             return error;
@@ -147,13 +149,13 @@ public class PaymentGatewayHelper : BasicTable
     {
         try {
             string success = PaymentGatewayEntityFactory.getInstance().createTable();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "create()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to create payment transaction result table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "create()", e);
             }
             return error;
@@ -165,13 +167,13 @@ public class PaymentGatewayHelper : BasicTable
         try {
             string success = "Restore Successful";
             string result = AbSqlTableUtil.getInstance().restoreTable(PaymentGatewayEntityFactory.getInstance(), this.portion);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "restore()");
             }
             return result;
         } catch (Exception e) {
             string error = "Failed to restore backup";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "restore()", e);
             }
             return error;
@@ -183,13 +185,13 @@ public class PaymentGatewayHelper : BasicTable
         try {
             string success = "Restore Successful";
             string result = AbSqlTableUtil.getInstance().backupTable(PaymentGatewayEntityFactory.getInstance());
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "backup()");
             }
             return result;
         } catch (Exception e) {
             string error = "Failed to make backup";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "backup()", e);
             }
             return error;

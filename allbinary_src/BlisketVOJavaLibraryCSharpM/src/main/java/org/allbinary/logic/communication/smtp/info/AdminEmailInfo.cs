@@ -22,6 +22,8 @@ using AdminConfigurationInterface = org.allbinary.business.user.modules.admin.co
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using EmailServerConfigurationInterface = org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp.info;
 
@@ -31,7 +33,7 @@ public class AdminEmailInfo : BasicEmailInfo
     public AdminEmailInfo(string subject, string textBody) : base(subject, textBody)
     {
         // base(subject, textBody) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             CommonStrings commonStrings = CommonStrings.getInstance();
             this.logUtil.putF(commonStrings.START, this, commonStrings.CONSTRUCTOR);
         }

@@ -20,6 +20,8 @@ using System.Linq;
 using StoreFrontData = org.allbinary.business.context.modules.storefront.StoreFrontData;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace tags;
 
@@ -42,7 +44,7 @@ public class StoreValidationTransformTag : ValidationTransformTag
     public override int doStartTag()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
                 this.logUtil.putF("Tag Start", this, tagStrings.DO_START_TAG);
             }
             return base.doStartTag();

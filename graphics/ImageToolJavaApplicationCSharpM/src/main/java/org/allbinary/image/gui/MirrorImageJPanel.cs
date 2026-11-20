@@ -27,10 +27,19 @@ using ImageProcessorInputCompositeInterface = org.allbinary.media.image.ImagePro
 using ImageStrings = org.allbinary.media.image.ImageStrings;
 using MirrorImageUtil = org.allbinary.media.image.MirrorImageUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+//using ActionEvent = java.awt.@event.ActionEvent;
+//using ActionListener = java.awt.@event.ActionListener;
+//using ButtonGroup = javax.swing.ButtonGroup;
+//using JButton = javax.swing.JButton;
+//using JCheckBox = javax.swing.JCheckBox;
+//using JLabel = javax.swing.JLabel;
+//using JLayeredPane = javax.swing.JLayeredPane;
+//using JPanel = javax.swing.JPanel;
+//using JRadioButton = javax.swing.JRadioButton;
 
 namespace org.allbinary.image.gui;
 
-public class MirrorImageJPanel : javax.swing.JPanel, ImageProcessorInputCompositeInterface
+public class MirrorImageJPanel : JPanel, ImageProcessorInputCompositeInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
@@ -81,9 +90,9 @@ public class MirrorImageJPanel : javax.swing.JPanel, ImageProcessorInputComposit
 
     private void initComponents()
     {
-        jLayeredPane1 = new javax.swing.JLayeredPane();
-        this.buttonGroup = new javax.swing.ButtonGroup();
-        this.jPanel1 = new javax.swing.JPanel()
+        jLayeredPane1 = new JLayeredPane();
+        this.buttonGroup = new ButtonGroup();
+        this.jPanel1 = new JPanel()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public virtual void paint(Graphics graphics)
             {
@@ -94,14 +103,14 @@ public class MirrorImageJPanel : javax.swing.JPanel, ImageProcessorInputComposit
 
 #endif
 ;
-        this.jPanel2 = new javax.swing.JPanel();
-        this.horizontalJCheckBox = new javax.swing.JCheckBox();
-        this.verticleJCheckBox = new javax.swing.JCheckBox();
-        this.generateJButton = new javax.swing.JButton();
-        this.renameJRadioButton = new javax.swing.JRadioButton();
-        this.writeOverOriginalJRadioButton = new javax.swing.JRadioButton();
-        this.jPanel3 = new javax.swing.JPanel();
-        this.jLabel2 = new javax.swing.JLabel();
+        this.jPanel2 = new JPanel();
+        this.horizontalJCheckBox = new JCheckBox();
+        this.verticleJCheckBox = new JCheckBox();
+        this.generateJButton = new JButton();
+        this.renameJRadioButton = new JRadioButton();
+        this.writeOverOriginalJRadioButton = new JRadioButton();
+        this.jPanel3 = new JPanel();
+        this.jLabel2 = new JLabel();
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(this.jPanel1);
         this.jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING).add(0, 522, short.MaxValue));
@@ -112,9 +121,9 @@ public class MirrorImageJPanel : javax.swing.JPanel, ImageProcessorInputComposit
         this.verticleJCheckBox.setText("Verticle");
         this.verticleJCheckBox.setEnabled(false);
         this.generateJButton.setText("Generate");
-        this.generateJButton.addActionListener(new java.awt.event.ActionListener()
+        this.generateJButton.addActionListener(new ActionListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void actionPerformed(java.awt.event.ActionEvent evt)
+            public virtual void actionPerformed(ActionEvent evt)
             {
                 generateJButtonActionPerformed(evt);
             }
@@ -122,9 +131,9 @@ public class MirrorImageJPanel : javax.swing.JPanel, ImageProcessorInputComposit
 #endif
 );
         this.renameJRadioButton.setText("Save As filename_mirror");
-        this.renameJRadioButton.addActionListener(new java.awt.event.ActionListener()
+        this.renameJRadioButton.addActionListener(new ActionListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void actionPerformed(java.awt.event.ActionEvent evt)
+            public virtual void actionPerformed(ActionEvent evt)
             {
                 renameJRadioButtonActionPerformed(evt);
             }
@@ -147,26 +156,26 @@ public class MirrorImageJPanel : javax.swing.JPanel, ImageProcessorInputComposit
         layout.setVerticalGroup(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING).add(layout.createSequentialGroup().add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED).add(jPanel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED).add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, short.MaxValue)));
     }
 
-    private void generateJButtonActionPerformed(java.awt.event.ActionEvent evt)
+    private void generateJButtonActionPerformed(ActionEvent evt)
     {
         this.process();
     }
 
-    private void renameJRadioButtonActionPerformed(java.awt.event.ActionEvent evt)
+    private void renameJRadioButtonActionPerformed(ActionEvent evt)
     {
     }
 
-    private javax.swing.ButtonGroup buttonGroup = null;
-    private javax.swing.JButton generateJButton = null;
-    private javax.swing.JCheckBox horizontalJCheckBox = null;
-    private javax.swing.JLabel jLabel2 = null;
-    private javax.swing.JLayeredPane jLayeredPane1 = null;
-    private javax.swing.JPanel jPanel1 = null;
-    private javax.swing.JPanel jPanel2 = null;
-    private javax.swing.JPanel jPanel3 = null;
-    private javax.swing.JRadioButton renameJRadioButton = null;
-    private javax.swing.JCheckBox verticleJCheckBox = null;
-    private javax.swing.JRadioButton writeOverOriginalJRadioButton = null;
+    private ButtonGroup buttonGroup = null;
+    private JButton generateJButton = null;
+    private JCheckBox horizontalJCheckBox = null;
+    private JLabel jLabel2 = null;
+    private JLayeredPane jLayeredPane1 = null;
+    private JPanel jPanel1 = null;
+    private JPanel jPanel2 = null;
+    private JPanel jPanel3 = null;
+    private JRadioButton renameJRadioButton = null;
+    private JCheckBox verticleJCheckBox = null;
+    private JRadioButton writeOverOriginalJRadioButton = null;
     public virtual ImageProcessorInput getImageProcessorInput()
     {
         return this.imageProcessorInput;

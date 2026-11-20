@@ -47,23 +47,6 @@ public class ProgressCanvas : RunnableCanvas, PaintableInterface, UpdateMyFontIn
 {
     public bool hasPainted = false;
     private readonly BasicColor backgroundBasicColor;
-    public class ProgressPaintable : Paintable
-    {
-        private readonly ProgressCanvas outer;
-
-        public readonly ProgressCanvas progressCanvas;
-        public ProgressPaintable(ProgressCanvas outer, ProgressCanvas progressCanvas)
-        {
-            this.outer = outer;
-            this.progressCanvas = progressCanvas;
-        }
-
-        public override void paint(Graphics graphics)
-        {
-            this.progressCanvas.paint2(graphics);
-        }
-
-    }
     public readonly Paintable GAUGE_PAINTABLE;
     private readonly float maxValue = 100.0f;
     public readonly ABCustomGaugeItem gauge;
@@ -91,7 +74,7 @@ public class ProgressCanvas : RunnableCanvas, PaintableInterface, UpdateMyFontIn
     public ProgressEndListener progressEndListener = ProgressEndListener.instance;
     public ProgressCanvas(string title, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(NullCommandListener.NULL_COMMAND_LISTENER, CanvasStrings.getInstance().EMPTY_CHILD_NAME_LIST, false)
     {
-        this.GAUGE_PAINTABLE = new ProgressPaintable(this, this);
+        this.GAUGE_PAINTABLE = new ProgressPaintable(this);
         this.TEXT = this.commonStrings.LOADING;
         this.updateMyFontProcessor = new UpdateMyFontProcessor(this);
         this.myFontProcessor = this.updateMyFontProcessor;

@@ -26,6 +26,8 @@ using ServiceClientInformationInterfaceFactory = org.allbinary.logic.system.secu
 using AbTransformer = org.allbinary.logic.visual.transform.AbTransformer;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using CompoundContextTransformInfoObjectConfig = views.compound.objectConfig.CompoundContextTransformInfoObjectConfig;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.compound;
 
@@ -38,7 +40,7 @@ public class CompoundTransform : AbTransformer
         // base(transformInfoInterface) is called from the constructor declaration
         this.setURIResolver(((URIResolver) new StoreUriResolver(this.getTransformInfoInterface(), ((BasicUriResolver) this.getURIResolver()))));
         CompoundContextTransformInfoObjectConfig objectConfig = new CompoundContextTransformInfoObjectConfig(this.abeClientInformation, this.getTransformInfoInterface(), this.getTransformInfoInterface().getObjectConfigInterface().toXmlDoc());
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("\nObjectConfig: \n" + objectConfig.ToString(), this, this.commonStrings.CONSTRUCTOR);
         }
         InputStream templateInputStream = objectConfig.createInputStream();

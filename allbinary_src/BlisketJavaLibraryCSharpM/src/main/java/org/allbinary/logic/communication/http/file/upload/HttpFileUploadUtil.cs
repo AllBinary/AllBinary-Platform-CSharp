@@ -22,6 +22,8 @@ using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using FileItem = org.apache.commons.fileupload.FileItem;
 using FileItemStream = org.apache.commons.fileupload.FileItemStream;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.http.file.upload;
 
@@ -70,7 +72,7 @@ public class HttpFileUploadUtil
         stringBuffer.append(commonSeps.NEW_LINE);
         stringBuffer.append("Size:");
         stringBuffer.append(" Not Calculated Yet");
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTP)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTP)) {
             logUtil.putF(stringBuffer.ToString(), getInstance(), "log()");
         }
     }
@@ -93,7 +95,7 @@ public class HttpFileUploadUtil
         stringBuffer.append(commonSeps.NEW_LINE);
         stringBuffer.append("Size:");
         stringBuffer.appendlong(((long) fileItem.getSize()));
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
             logUtil.putF(stringBuffer.ToString(), getInstance(), "log()");
         }
     }

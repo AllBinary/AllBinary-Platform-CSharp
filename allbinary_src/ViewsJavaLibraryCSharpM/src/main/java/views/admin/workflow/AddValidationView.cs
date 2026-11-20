@@ -26,6 +26,8 @@ using ServiceClientInformationInterfaceFactory = org.allbinary.logic.system.secu
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.workflow;
 
@@ -44,7 +46,7 @@ public class AddValidationView : WorkFlowView, ValidationComponentInterface
         try {
             return true;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -56,14 +58,14 @@ public class AddValidationView : WorkFlowView, ValidationComponentInterface
         try {
             StringMaker stringBuffer = new StringMaker();
             if (WorkFlowEntityFactory.getInstance().create2().get(this.workFlowInterface.getName(), this.getTransformInfoInterface().getStoreName()) != null) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("Workflow already exist", this, "validationInfo()");
                 }
                 stringBuffer.append("The WorkFlow name you selected is already in use.<br/>  Please select another Name.<br />");
             }
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Getting Validation Info";

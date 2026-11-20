@@ -19,6 +19,8 @@ using System.Linq;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using EmailEvent = org.allbinary.logic.communication.smtp.@event.EmailEvent;
 using UserEmailEventListenerInterface = org.allbinary.logic.communication.smtp.@event.UserEmailEventListenerInterface;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp.@event.modules.log;
 
@@ -32,7 +34,7 @@ public class LogUserEmailEventListenerModule : UserEmailEventListenerInterface
     // throws Exception
     public virtual void onEmailSendRequest(EmailEvent userEmailInfoEvent)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             string message = "Logging EmailEvent - Temporary Listener for debugging.\n\n" + userEmailInfoEvent.ToString();
             this.logUtil.putF(message, this, "onEmailSendRequest");
         }

@@ -26,6 +26,8 @@ using OrderInterface = org.allbinary.business.user.commerce.inventory.order.Orde
 using ShippingMethodData = org.allbinary.business.user.commerce.shipping.ShippingMethodData;
 using WeblisketSession = org.allbinary.logic.communication.http.request.session.WeblisketSession;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -61,13 +63,13 @@ public class ShippingHelper : TagHelper
             string success = "Successfully Set Shipping Type";
             OrderInterface order = this.weblisketSession.getOrder();
             order.setShippingMethod(this.shippingType);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "setShippingType()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to view Shipping Type";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "setShippingType()", e);
             }
             return error;

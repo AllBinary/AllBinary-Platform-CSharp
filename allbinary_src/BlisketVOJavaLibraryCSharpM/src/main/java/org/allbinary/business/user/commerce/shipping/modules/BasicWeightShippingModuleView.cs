@@ -23,6 +23,8 @@ using DomDocumentHelper = org.allbinary.data.tree.dom.document.DomDocumentHelper
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.shipping.modules;
 
@@ -38,12 +40,12 @@ public class BasicWeightShippingModuleView : BasicWeightShippingModule, DomNodeI
         return null;
     }
 
-    public virtual org.w3c.dom.Document toValidationInfoDoc()
+    public virtual Document toValidationInfoDoc()
     {
         return null;
     }
 
-    public virtual org.w3c.dom.Node toValidationInfoNode(org.w3c.dom.Document document)
+    public virtual Node toValidationInfoNode(Document document)
     {
         return null;
     }
@@ -53,7 +55,7 @@ public class BasicWeightShippingModuleView : BasicWeightShippingModule, DomNodeI
         return null;
     }
 
-    public virtual org.w3c.dom.Node toXmlNode(org.w3c.dom.Document document)
+    public virtual Node toXmlNode(Document document)
     {
         try {
             Node shippingMethodNode = document.createElement(ShippingMethodData.NAME);
@@ -61,20 +63,20 @@ public class BasicWeightShippingModuleView : BasicWeightShippingModule, DomNodeI
             shippingMethodNode.appendChild(ModDomHelper.createNameValueNodes(document, ShippingMethodData.DESCRIPTION, this.getDescription()));
             return shippingMethodNode;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "toXmlNode", e);
             }
             return null;
         }
     }
 
-    public virtual org.w3c.dom.Document toXmlDoc()
+    public virtual Document toXmlDoc()
     {
         try {
             Document document = DomDocumentHelper.create();
             return document;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "toXmlDoc", e);
             }
             return null;
@@ -86,7 +88,7 @@ public class BasicWeightShippingModuleView : BasicWeightShippingModule, DomNodeI
         try {
             return commonStrings.NOT_IMPLEMENTED;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view", e);
             }
             return null;

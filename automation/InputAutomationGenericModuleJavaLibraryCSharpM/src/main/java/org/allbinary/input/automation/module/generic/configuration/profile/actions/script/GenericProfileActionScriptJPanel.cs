@@ -25,10 +25,16 @@ using JTreeInterface = org.allbinary.input.automation.actions.script.JTreeInterf
 using CustomTreeNodeInterface = org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+//using Dimension = java.awt.Dimension;
+//using GridLayout = java.awt.GridLayout;
+//using MouseAdapter = java.awt.@event.MouseAdapter;
+//using JPanel = javax.swing.JPanel;
+//using JScrollPane = javax.swing.JScrollPane;
+//using JTree = javax.swing.JTree;
 
 namespace org.allbinary.input.automation.module.generic.configuration.profile.actions.script;
 
-public class GenericProfileActionScriptJPanel : javax.swing.JPanel, JTreeInterface
+public class GenericProfileActionScriptJPanel : JPanel, JTreeInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
@@ -58,30 +64,30 @@ public class GenericProfileActionScriptJPanel : javax.swing.JPanel, JTreeInterfa
         this.genericProfileActionScript = genericProfileActionScript;
     }
 
-    public virtual javax.swing.JTree getActionScriptJTree()
+    public virtual JTree getActionScriptJTree()
     {
         return this.actionScriptJTree;
     }
 
-    public virtual void setActionScriptJTree(javax.swing.JTree actionScriptJTree)
+    public virtual void setActionScriptJTree(JTree actionScriptJTree)
     {
         this.actionScriptJTree = actionScriptJTree;
     }
 
     private void initComponents()
     {
-        this.jScrollPane1 = new javax.swing.JScrollPane();
-        this.actionScriptJTree = new javax.swing.JTree();
-        setLayout(new java.awt.GridLayout(1, 0));
-        this.actionScriptJTree.setPreferredSize(new java.awt.Dimension(500, 500));
-        this.actionScriptJTree.addMouseListener(new java.awt.event.MouseAdapter()
+        this.jScrollPane1 = new JScrollPane();
+        this.actionScriptJTree = new JTree();
+        setLayout(new GridLayout(1, 0));
+        this.actionScriptJTree.setPreferredSize(new Dimension(500, 500));
+        this.actionScriptJTree.addMouseListener(new MouseAdapter()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void mouseClicked(java.awt.event.MouseEvent evt)
+            public virtual void mouseClicked(MouseEvent evt)
             {
                 actionScriptJTreeMouseClicked(evt);
             }
 
-            public virtual void mouseReleased(java.awt.event.MouseEvent evt)
+            public virtual void mouseReleased(MouseEvent evt)
             {
                 actionScriptJTreeMouseReleased(evt);
             }
@@ -92,7 +98,7 @@ public class GenericProfileActionScriptJPanel : javax.swing.JPanel, JTreeInterfa
         add(this.jScrollPane1);
     }
 
-    private void actionScriptJTreeMouseReleased(java.awt.event.MouseEvent evt)
+    private void actionScriptJTreeMouseReleased(MouseEvent evt)
     {
         int button = evt.getButton();
         if (button == MouseEvent.BUTTON3) {
@@ -108,11 +114,11 @@ public class GenericProfileActionScriptJPanel : javax.swing.JPanel, JTreeInterfa
         }
     }
 
-    private void actionScriptJTreeMouseClicked(java.awt.event.MouseEvent evt)
+    private void actionScriptJTreeMouseClicked(MouseEvent evt)
     {
     }
 
-    private javax.swing.JTree actionScriptJTree = null;
-    private javax.swing.JScrollPane jScrollPane1 = null;
+    private JTree actionScriptJTree = null;
+    private JScrollPane jScrollPane1 = null;
 }
 

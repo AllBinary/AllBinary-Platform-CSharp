@@ -85,7 +85,7 @@ public class Cpu : CpuInterface, HardwareComponentInterface
             }
             if (lineNumberReader != null) {
                 string nextLine = lineNumberReader.readLine();
-                while (lineNumberReader != null && nextLine != null) {
+                while (nextLine != null) {
                     int index = nextLine.IndexOf(':');
                     if (index >= 0) {
                         string key = nextLine.Substring(0, (index) - (0));

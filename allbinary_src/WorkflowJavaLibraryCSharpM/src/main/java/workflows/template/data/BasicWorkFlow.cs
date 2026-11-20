@@ -27,6 +27,8 @@ using AbeClientInformationInterface = org.allbinary.logic.system.security.licens
 using ServiceClientInformationInterfaceFactory = org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory;
 using TransformFactory = org.allbinary.logic.visual.transform.TransformFactory;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace workflows.template.data;
 
@@ -40,7 +42,7 @@ public class BasicWorkFlow : WorkFlowInterface
     private PageContext pageContext;
     public BasicWorkFlow(HashMap<object, object> propertiesHashMap, PageContext pageContext)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().WORKFLOW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().WORKFLOW)) {
             this.logUtil.putF("Properties: " + propertiesHashMap.ToString(), this, "BasicWorkFlow()");
         }
         this.propertiesHashMap = propertiesHashMap;
@@ -67,7 +69,7 @@ public class BasicWorkFlow : WorkFlowInterface
     // throws Exception
     public virtual int? process()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().WORKFLOW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().WORKFLOW)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.PROCESS);
         }
         if (((bool) (this.validationDomNodeInterface.isValid()))) {

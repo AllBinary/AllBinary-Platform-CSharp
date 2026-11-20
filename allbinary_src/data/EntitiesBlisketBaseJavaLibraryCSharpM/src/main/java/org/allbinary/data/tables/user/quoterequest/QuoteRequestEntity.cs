@@ -28,6 +28,8 @@ using StdUtil = org.allbinary.logic.StdUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbSqlBean = org.allbinary.logic.communication.sql.AbSqlBean;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.data.tables.user.quoterequest;
 
@@ -45,11 +47,11 @@ public class QuoteRequestEntity : AbSqlBean, QuoteRequestEntityInterface
     {
         try {
             base.insert(values);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.commonStrings.SUCCESS, this, INSERT);
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, INSERT, e);
             }
         }
@@ -63,7 +65,7 @@ public class QuoteRequestEntity : AbSqlBean, QuoteRequestEntityInterface
         row.put(QuoteRequestData.getInstance().ID, (id).ToString());
         HashMap<object, object> quoteRequestHashMap = base.getRow(row);
         if (quoteRequestHashMap != null) {
-            return new org.allbinary.business.user.quoterequest.QuoteRequest(quoteRequestHashMap);
+            return new QuoteRequest(quoteRequestHashMap);
         } else {
             return null;
         }
@@ -78,11 +80,11 @@ public class QuoteRequestEntity : AbSqlBean, QuoteRequestEntityInterface
     {
         try {
             base.deleteWhere(key, value);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.commonStrings.SUCCESS, this, "deleteWhere");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "deleteWhere", e);
             }
         }

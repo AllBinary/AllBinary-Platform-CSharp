@@ -29,6 +29,8 @@ using UserEmailEventNameData = org.allbinary.logic.communication.smtp.@event.Use
 using LogUserEmailEventListenerModule = org.allbinary.logic.communication.smtp.@event.modules.log.LogUserEmailEventListenerModule;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp.@event.handler;
 
@@ -48,7 +50,7 @@ public class EmailEventHandlerUtil
     // throws Exception
     public virtual UserEmailEventHandler getEventHandler(AbeClientInformationInterface abeClientInformation, UserEmailEventNameData userEmailEventNameData, BasicArrayList userVector)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("Returning UserEmailEventHandler for ");
             stringBuffer.appendint(userVector.size());

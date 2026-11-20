@@ -14,7 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias OpenGLESJavaLibraryCSharp;
 using System;
 using System.Linq;
 using SWT = org.eclipse.swt.SWT;
@@ -32,6 +31,7 @@ using PaintListener = org.eclipse.swt.events.PaintListener;
 using Transform = org.eclipse.swt.graphics.Transform;
 using Display = org.eclipse.swt.widgets.Display;
 using BareMain = org.microemu.app.BareMain;
+using Image = org.eclipse.swt.graphics.Image;
 
 namespace org.allbinary.media.image;
 
@@ -57,18 +57,18 @@ public class ImageUtil
         }
     }
 
-    public virtual org.eclipse.swt.graphics.Image create(int width, int height)
+    public virtual Image create(int width, int height)
     {
         Display display = BareMain.shell.getDisplay();
-        return new org.eclipse.swt.graphics.Image(display, width, height);
+        return new Image(display, width, height);
     }
 
     // throws Exception
-    public virtual org.eclipse.swt.graphics.Image[] createBufferedImage(org.eclipse.swt.graphics.Image[] bufferedImageArray, int percent, bool scale)
+    public virtual Image[] createBufferedImage(Image[] bufferedImageArray, int percent, bool scale)
     {
         int size = bufferedImageArray.Length;
-        org.eclipse.swt.graphics.Image[] scaledBufferedImageArray = new org.eclipse.swt.graphics.Image[size];
-        org.eclipse.swt.graphics.Image bufferedImage = null;
+        Image[] scaledBufferedImageArray = new Image[size];
+        Image bufferedImage = null;
         ImageData imageData = null;
         for (int index = 0; index < size; index++) {
             bufferedImage = bufferedImageArray[index];
@@ -81,11 +81,11 @@ public class ImageUtil
     }
 
     // throws Exception
-    public virtual org.eclipse.swt.graphics.Image[] createBufferedImage2(org.eclipse.swt.graphics.Image[] bufferedImageArray, float percent, bool scale)
+    public virtual Image[] createBufferedImage2(Image[] bufferedImageArray, float percent, bool scale)
     {
         int size = bufferedImageArray.Length;
-        org.eclipse.swt.graphics.Image[] scaledBufferedImageArray = new org.eclipse.swt.graphics.Image[size];
-        org.eclipse.swt.graphics.Image bufferedImage = null;
+        Image[] scaledBufferedImageArray = new Image[size];
+        Image bufferedImage = null;
         ImageData imageData = null;
         for (int index = 0; index < size; index++) {
             bufferedImage = bufferedImageArray[index];
@@ -98,10 +98,10 @@ public class ImageUtil
     }
 
     // throws Exception
-    public virtual org.eclipse.swt.graphics.Image[] createBufferedImage3(org.eclipse.swt.graphics.Image[] bufferedImageArray, int width, int height, bool scale)
+    public virtual Image[] createBufferedImage3(Image[] bufferedImageArray, int width, int height, bool scale)
     {
         int size = bufferedImageArray.Length;
-        org.eclipse.swt.graphics.Image[] scaledBufferedImageArray = new org.eclipse.swt.graphics.Image[size];
+        Image[] scaledBufferedImageArray = new Image[size];
         for (int index = 0; index < size; index++) {
             scaledBufferedImageArray[index] = this.createBufferedImage5(bufferedImageArray[index], width, height, scale);
         }
@@ -109,19 +109,19 @@ public class ImageUtil
     }
 
     // throws Exception
-    public virtual org.eclipse.swt.graphics.Image createBufferedImage4(org.eclipse.swt.graphics.Image bufferedImage, int newWidth, int newHeight)
+    public virtual Image createBufferedImage4(Image bufferedImage, int newWidth, int newHeight)
     {
         return this.createBufferedImage5(bufferedImage, newWidth, newHeight, true);
     }
 
     // throws Exception
-    public virtual org.eclipse.swt.graphics.Image createBufferedImage5(org.eclipse.swt.graphics.Image bufferedImage, int newWidth, int newHeight, bool scale)
+    public virtual Image createBufferedImage5(Image bufferedImage, int newWidth, int newHeight, bool scale)
     {
         return this.createBufferedImage6(bufferedImage, newWidth, newHeight, scale, false);
     }
 
     // throws Exception
-    public virtual org.eclipse.swt.graphics.Image createBufferedImage6(org.eclipse.swt.graphics.Image bufferedImage, int newWidth, int newHeight, bool scale, bool allowTranslate)
+    public virtual Image createBufferedImage6(Image bufferedImage, int newWidth, int newHeight, bool scale, bool allowTranslate)
     {
         ImageData imageData = bufferedImage.getImageData();
         float width = imageData.width;
@@ -144,7 +144,7 @@ public class ImageUtil
             dy = (((float) newHeight) - height) / 2f;
             this.logUtil.putF(new StringMaker().append("Translate dx: ").appendfloat(dx).append(" dy: ").appendfloat(dy).ToString(), this, this.CREATE_BUFFERED_IMAGE);
         }
-        org.eclipse.swt.graphics.Image newBufferedImage = new org.eclipse.swt.graphics.Image(BareMain.shell.getDisplay(), newWidth, newHeight);
+        Image newBufferedImage = new Image(BareMain.shell.getDisplay(), newWidth, newHeight);
         GC gc = new GC(newBufferedImage);
         Transform affineTransform = new Transform(gc.getDevice());
         affineTransform.scale(ratioX, ratioY);
@@ -157,7 +157,7 @@ public class ImageUtil
         return newBufferedImage;
     }
 
-    public virtual Canvas drawTransformedImage(org.eclipse.swt.graphics.Image image, Composite parent, int dx, int dy, int width, int height)
+    public virtual Canvas drawTransformedImage(Image image, Composite parent, int dx, int dy, int width, int height)
     {
         Canvas imageCanvas = new Canvas(parent, SWT.NONE);
         imageCanvas.addPaintListener(new PaintListener()
@@ -177,7 +177,7 @@ public class ImageUtil
         return imageCanvas;
     }
 
-    public virtual string toString(org.eclipse.swt.graphics.Image bufferedImage)
+    public virtual string toString(Image bufferedImage)
     {
         CommonLabels commonLabels = CommonLabels.getInstance();
         StringMaker stringBuffer = new StringMaker();

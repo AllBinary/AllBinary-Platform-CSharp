@@ -17,6 +17,7 @@
 using System;
 using System.Linq;
 using Visitor = org.allbinary.logic.util.visitor.Visitor;
+using StringMaker = org.allbinary.logic.@string.StringMaker;
 
 namespace org.allbinary.logic.math.permutations;
 
@@ -95,7 +96,7 @@ public class OrderedIntArrayPermutationUtil
         IntPermutationVisitor permutationVisitor = new IntPermutationVisitor(data);
         string ORIGINAL_DATA_LABEL = "Original Data: ";
         Console.Write(ORIGINAL_DATA_LABEL);
-        permutationVisitor.print(data);
+        permutationVisitor.print(data, new StringMaker());
         OrderedIntArrayPermutationUtil.getInstance().generate(data, permutationVisitor);
     }
 

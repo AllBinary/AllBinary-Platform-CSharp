@@ -26,6 +26,8 @@ using WorkFlowInterface = org.allbinary.logic.control.workflow.WorkFlowInterface
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
 using ServiceClientInformationInterfaceFactory = org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -46,20 +48,20 @@ public class WorkFlowRequestHelper : ModifyTable
             StringUtil stringUtil = StringUtil.getInstance();
             WorkFlowEntityFactory.getInstance().create2().delete(this.workFlowInterface.getName(), stringUtil.EMPTY_STRING);
             string success = "Successfully Removed the workflow with " + WorkFlowData.getInstance().NAME + "= " + this.workFlowInterface.getName() + " from ";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "delete()");
             }
             return success;
         } catch (Exception e) {
             try {
                 string error = "Failed to remove workflow with " + WorkFlowData.getInstance().NAME + "= " + this.workFlowInterface.getName() + " from ";
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                     this.logUtil.put(this.commonStrings.EXCEPTION, this, "delete()", e);
                 }
                 throw new Exception(e);
             } catch (Exception e2) {
                 string error = "Failed to get data from workflowinterface to set error string";
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                     this.logUtil.put(this.commonStrings.EXCEPTION, this, "delete()", e2);
                 }
                 return error;
@@ -71,13 +73,13 @@ public class WorkFlowRequestHelper : ModifyTable
     {
         try {
             string success = "New User Successfully added to the Users Table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "add()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to add User";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "add()", e);
             }
             return error;
@@ -88,13 +90,13 @@ public class WorkFlowRequestHelper : ModifyTable
     {
         try {
             string success = "Updated WorkFlow Successfully";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "update()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to update WorkFlow";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "update()", e);
             }
             return error;

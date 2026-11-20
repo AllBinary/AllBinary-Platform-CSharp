@@ -29,6 +29,7 @@ using LinesGraphicItem = org.allbinary.graphics.j2me.workarea.tools.LinesGraphic
 using StdUtil = org.allbinary.logic.StdUtil;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using Node = org.w3c.dom.Node;
+using Document = org.w3c.dom.Document;
 
 namespace org.allbinary.graphics.j2me.workarea.canvas;
 
@@ -135,7 +136,7 @@ public class CanvasDom
 
     private Node getPointNode(GPoint point, string pointName)
     {
-        org.w3c.dom.Document document = WorkAreaJPanel.getDocument();
+        Document document = WorkAreaJPanel.getDocument();
         Node pointNode = ((Node) document.createElement(pointName));
         Node xNode = ((Node) document.createElement(this.X));
         Node xTextNode = ((Node) document.createTextNode((point.getX()).ToString()));
@@ -151,7 +152,7 @@ public class CanvasDom
     // throws Exception
     public virtual Node toDom()
     {
-        org.w3c.dom.Document document = WorkAreaJPanel.getDocument();
+        Document document = WorkAreaJPanel.getDocument();
         Node frameNode = ((Node) document.createElement(this.FRAME));
         Node angleNode = ((Node) document.createElement(this.ROTATE));
         Node angleTextNode = ((Node) document.createTextNode(this.getAngle().ToString()));

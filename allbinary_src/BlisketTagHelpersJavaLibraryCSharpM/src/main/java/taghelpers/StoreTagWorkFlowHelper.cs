@@ -24,6 +24,8 @@ using StoreTagWorkFlowFactory = org.allbinary.logic.control.workflow.StoreTagWor
 using StoreWorkFlowInterface = org.allbinary.logic.control.workflow.StoreWorkFlowInterface;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
 using ServiceClientInformationInterfaceFactory = org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace taghelpers;
 
@@ -34,7 +36,7 @@ public class StoreTagWorkFlowHelper : TagHelper
     private StoreWorkFlowInterface storeWorkFlowInterface;
     public StoreTagWorkFlowHelper(HashMap<object, object> hashMap, PageContext pageContext)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
             this.logUtil.putF("Properties: " + hashMap.ToString(), this, "StoreTagWorkFlowHelper()");
         }
         this.storeWorkFlowInterface = StoreTagWorkFlowFactory.getInstance().getInstance(this.abeClientInformation, hashMap, pageContext);
@@ -44,13 +46,13 @@ public class StoreTagWorkFlowHelper : TagHelper
     public virtual int? process()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
                 this.logUtil.putF("Process", this, this.commonStrings.PROCESS);
             }
             return this.storeWorkFlowInterface.process();
         } catch (Exception e) {
             string error = "Failed to process workflow: ";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             throw e;

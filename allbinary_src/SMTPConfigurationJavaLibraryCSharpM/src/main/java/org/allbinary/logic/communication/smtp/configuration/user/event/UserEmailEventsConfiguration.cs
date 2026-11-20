@@ -24,6 +24,8 @@ using UserEmailEventListenerInterface = org.allbinary.logic.communication.smtp.@
 using UserEmailEventNameData = org.allbinary.logic.communication.smtp.@event.UserEmailEventNameData;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp.configuration.user.@event;
 
@@ -45,7 +47,7 @@ public class UserEmailEventsConfiguration : UserEmailEventsConfigurationInterfac
     private void init()
     {
         this.emailEventHashMap = StdUtil.getInstance().createHashMap();
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             this.logUtil.putF(this.commonStrings.CONSTRUCTOR, this, " Constructor");
         }
     }
@@ -57,7 +59,7 @@ public class UserEmailEventsConfiguration : UserEmailEventsConfigurationInterfac
 
     public virtual void addUserEmailEventConfiguration(UserEmailEventConfigurationInterface userEmailEventConfigurationInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             this.logUtil.putF("Adding: " + userEmailEventConfigurationInterface.log(), this, "addUserEmailEventConfiguration");
         }
         this.emailEventHashMap.put(userEmailEventConfigurationInterface.getName(), userEmailEventConfigurationInterface);

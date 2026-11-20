@@ -26,6 +26,7 @@ namespace org.allbinary.input.gyro;
 
 public class AllBinaryOrientationSensor : AllBinarySensor
 {
+    public static readonly AllBinaryOrientationSensor NULL_ALLBINARY_ORIENTATION_SENSOR = new AllBinaryOrientationSensor();
     public float[] sensorDataFloatArray = PrimitiveFloatUtil.getArrayInstance();
     public CompleteMotionGestureInputEventListenerInterface listener = NoCompleteMotionGestureInputEventListener.getInstance();
     public virtual void setCompleteMotionGestureInputEventListener(CompleteMotionGestureInputEventListenerInterface completeMotionGestureInputEventListenerInterface)

@@ -31,6 +31,8 @@ using TransformTemplateInterface = org.allbinary.logic.visual.transform.template
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using Document = org.w3c.dom.Document;
 using HttpStoreComponentView = views.business.context.modules.storefront.HttpStoreComponentView;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context;
 
@@ -40,7 +42,7 @@ public class OverrideObjectConfigRootContextView : HttpStoreComponentView
     public OverrideObjectConfigRootContextView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, "OverrideObjectRootContextView()");
         }
     }
@@ -49,7 +51,7 @@ public class OverrideObjectConfigRootContextView : HttpStoreComponentView
     public override string view()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("View Name: " + this.getTransformInfoInterface().getName(), this, "view()");
             }
             TransformInfoInterface rootTransformInfoInterface = ((TransformInfoInterface) new TransformInfoHttp(((TransformInfoHttp) this.getTransformInfoInterface())));
@@ -65,7 +67,7 @@ public class OverrideObjectConfigRootContextView : HttpStoreComponentView
                 throw new Exception("Override Currently Not Supported");
             }
             Document overrideObjectConfigDocument = this.getTransformInfoInterface().getObjectConfigInterface().toXmlDoc();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Retrieved OverrideObjectConfig: " + XmlDocumentHelper.toString(overrideObjectConfigDocument), this, "view()");
             }
             TransformFactory transformFactory = TransformFactory.getInstance();
@@ -74,12 +76,12 @@ public class OverrideObjectConfigRootContextView : HttpStoreComponentView
             TransformInterface componentInterface = transformFactory.getInstance(this.abeClientInformation, transformTemplateInterface.getName(), rootComponentInterface.getTransformInfoInterface());
             TransformInfoObjectConfigInterface transformInfoObjectConfigInterface = TransformInfoObjectConfigAndManipulatorFactory.getInstance().getInstance(this.abeClientInformation, componentInterface.getTransformInfoInterface(), overrideObjectConfigDocument);
             componentInterface.getTransformInfoInterface().setObjectConfigInterface(transformInfoObjectConfigInterface);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Set OverrideObjectConfig: " + componentInterface.getTransformInfoInterface().getObjectConfigInterface().ToString(), this, "view()");
             }
             return componentInterface.view();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             throw e;

@@ -21,6 +21,9 @@ using java.util;
 using DbConnectionInfo = org.allbinary.business.init.db.DbConnectionInfo;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.sql;
 
@@ -52,7 +55,7 @@ public class AbSqlBean : AbSqlRow
             ResultSet rset = executeSQLStatement(sqlStatement);
             while (rset.next()) {
                 field = rset.getString(requestedField);
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     stringBuffer.delete(0, stringBuffer.length());
                     stringBuffer.append(this.sqlStrings.SQL_STATEMENT_LABEL);
                     stringBuffer.append(sqlStatement);
@@ -64,7 +67,7 @@ public class AbSqlBean : AbSqlRow
             }
             return null;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + sqlStatement, this, METHOD_GET_FIELD, e);
             }
             return this.FAILED_SQL_STATEMENT + sqlStatement;
@@ -101,7 +104,7 @@ public class AbSqlBean : AbSqlRow
             ResultSet rset = executeSQLStatement(sqlStatement);
             while (rset.next()) {
                 field = rset.getString(requestedField);
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     stringBuffer.delete(0, stringBuffer.length());
                     stringBuffer.append(this.sqlStrings.SQL_STATEMENT_LABEL);
                     stringBuffer.append(sqlStatement);
@@ -114,7 +117,7 @@ public class AbSqlBean : AbSqlRow
             return null;
         } catch (Exception e) {
             string sqlStatement = stringBuffer.ToString();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + sqlStatement, this, METHOD_GET_FIELD, e);
             }
             return this.FAILED_SQL_STATEMENT + sqlStatement;
@@ -152,18 +155,18 @@ public class AbSqlBean : AbSqlRow
                     columnName = keyArray2[i_2].ToString();
                     field = rset.getObject(columnName).ToString();
                     if (string.CompareOrdinal(field, ((string) columnsAndValues.get(columnName))) != 0) {
-                        return org.allbinary.globals.GLOBALS2.NOTASUBSET;
+                        return GLOBALS2.NOTASUBSET;
                     }
                 }
             }
             if (rset.getRow() != 1) {
-                return org.allbinary.globals.GLOBALS2.NOTASUBSET;
+                return GLOBALS2.NOTASUBSET;
             } else {
-                return org.allbinary.globals.GLOBALS2.ISASUBSET;
+                return GLOBALS2.ISASUBSET;
             }
         } catch (Exception e) {
             string sqlStatement = stringBuffer.ToString();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + sqlStatement, this, METHOD_IS_SUBSET_OF_ENTRY, e);
             }
             return this.FAILED_SQL_STATEMENT + sqlStatement;

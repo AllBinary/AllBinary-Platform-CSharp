@@ -21,7 +21,7 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 
 namespace org.allbinary.graphics.j2me;
 
-public class GraphicsException : java.lang.Exception
+public class GraphicsException : Exception
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly GuiLog guiLog = GuiLog.getInstance();

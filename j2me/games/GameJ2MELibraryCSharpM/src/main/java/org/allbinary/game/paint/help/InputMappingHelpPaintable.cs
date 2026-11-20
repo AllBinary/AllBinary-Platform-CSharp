@@ -14,8 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias GameLicensingNullJavaLibraryCSharp;
-extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using Font = javax.microedition.lcdui.Font;
@@ -57,27 +55,9 @@ public class InputMappingHelpPaintable : HelpPaintable
     private BasicColor[] actionBasicColor = BasicColorUtil.getInstance().ZERO_ARRAY;
     private BasicColor[][] inputBasicColorArray = System.Linq.Enumerable.Range(0, 0).Select(_ => new BasicColor[0]).ToArray();
     private BasicColor selectedBasicColor = null;
-    private class UpdateMyFontProperties
-    {
-        private readonly InputMappingHelpPaintable outer;
-
-        public string[] actionStringArray = StringUtil.getInstance().getArrayInstance();
-        public int[] keymappingBeginWidthArray = NullUtil.getInstance().NULL_INT_ARRAY;
-        public int[] actionStringDeltaXArray = NullUtil.getInstance().NULL_INT_ARRAY;
-        public int[][] inputDeltaXArray = NullUtil.getInstance().NULL_INT_ARRAY_ARRAY;
-        public string[][] sepArray = StringUtil.getInstance().ONE_EMPTY_STRING_ARRAY_OF_ARRAYS;
-        public int[][] sepWidthArray = NullUtil.getInstance().NULL_INT_ARRAY_ARRAY;
-        public int charHeight = 0;
-        public UpdateMyFontProperties(InputMappingHelpPaintable outer)
-        {
-            this.outer = outer;
-        }
-
-    }
-    private UpdateMyFontProperties updateMyFontProperties;
+    private UpdateMyFontProperties updateMyFontProperties = new UpdateMyFontProperties();
     public InputMappingHelpPaintable(GameInputMapping[] gameInputMappingArray, BasicColor backgroundBasicColor, BasicColor basicColor) : base("Input Mapping", backgroundBasicColor, basicColor)
     {
-        this.updateMyFontProperties = new UpdateMyFontProperties(this);
         // base("Input Mapping", backgroundBasicColor, basicColor) is called from the constructor declaration
         this.gameInputMappingArray = gameInputMappingArray;
         this.update(this.NONE, this.NONE);
@@ -91,7 +71,7 @@ public class InputMappingHelpPaintable : HelpPaintable
     public override void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
-        UpdateMyFontProperties updateMyFontProperties = new UpdateMyFontProperties(this);
+        UpdateMyFontProperties updateMyFontProperties = new UpdateMyFontProperties();
         updateMyFontProperties.charHeight = font.getHeight();
         StringMaker stringMaker = new StringMaker();
         string[] inputInfo = this.inputInfo;

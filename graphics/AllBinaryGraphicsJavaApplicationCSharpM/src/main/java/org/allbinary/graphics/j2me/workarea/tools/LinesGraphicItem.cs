@@ -38,6 +38,8 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using KeyEvent = java.awt.@event.KeyEvent;
+//using MouseEvent = java.awt.@event.MouseEvent;
 
 namespace org.allbinary.graphics.j2me.workarea.tools;
 
@@ -302,7 +304,7 @@ public class LinesGraphicItem : GraphicItemInterface
         this.color = color;
     }
 
-    public virtual void mouseClicked(java.awt.event.MouseEvent mouseEvent, int x, int y)
+    public virtual void mouseClicked(MouseEvent mouseEvent, int x, int y)
     {
         try {
             GPoint mousePoint = PointFactory.getInstance().createXY(mouseEvent.getPoint().x, mouseEvent.getPoint().y);
@@ -320,27 +322,27 @@ public class LinesGraphicItem : GraphicItemInterface
         }
     }
 
-    public virtual void mouseEntered(java.awt.event.MouseEvent mouseEvent)
+    public virtual void mouseEntered(MouseEvent mouseEvent)
     {
     }
 
-    public virtual void mouseExited(java.awt.event.MouseEvent mouseEvent)
+    public virtual void mouseExited(MouseEvent mouseEvent)
     {
     }
 
-    public virtual void mousePressed(java.awt.event.MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
+    public virtual void mousePressed(MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
     {
     }
 
-    public virtual void mouseReleased(java.awt.event.MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
+    public virtual void mouseReleased(MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
     {
     }
 
-    public virtual void mouseDragged(java.awt.event.MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
+    public virtual void mouseDragged(MouseEvent mouseEvent, int xPixelsPerCell, int yPixelsPerCell)
     {
     }
 
-    public virtual void mouseMoved(java.awt.event.MouseEvent mouseEvent, int x, int y)
+    public virtual void mouseMoved(MouseEvent mouseEvent, int x, int y)
     {
         try {
             GPoint mousePoint = PointFactory.getInstance().createXY(mouseEvent.getPoint().x, mouseEvent.getPoint().y);
@@ -351,7 +353,7 @@ public class LinesGraphicItem : GraphicItemInterface
         }
     }
 
-    public virtual void keyPressed(java.awt.event.KeyEvent keyEvent)
+    public virtual void keyPressed(KeyEvent keyEvent)
     {
         try {
             int keyCode = keyEvent.getKeyCode();
@@ -372,11 +374,11 @@ public class LinesGraphicItem : GraphicItemInterface
         }
     }
 
-    public virtual void keyReleased(java.awt.event.KeyEvent keyEvent)
+    public virtual void keyReleased(KeyEvent keyEvent)
     {
     }
 
-    public virtual void keyTyped(java.awt.event.KeyEvent keyEvent)
+    public virtual void keyTyped(KeyEvent keyEvent)
     {
     }
 

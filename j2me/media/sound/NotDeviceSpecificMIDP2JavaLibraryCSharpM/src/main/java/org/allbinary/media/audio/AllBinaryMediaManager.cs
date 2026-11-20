@@ -21,6 +21,7 @@ using InputStream = java.io.InputStream;
 using Manager = javax.microedition.media.Manager;
 using MediaException = javax.microedition.media.MediaException;
 using Player = javax.microedition.media.Player;
+using MIDPUtil = org.allbinary.MIDPUtil;
 using TsUtil = org.allbinary.TsUtil;
 using AudioContentTypeDataFactory = org.allbinary.audio.AudioContentTypeDataFactory;
 using ResourceUtil = org.allbinary.data.resource.ResourceUtil;
@@ -80,7 +81,7 @@ public class AllBinaryMediaManager
                 return Manager.createPlayer(resource);
             } else {
                 InputStream inputStream = ResourceUtil.getInstance().getResourceAsStream(resource);
-                return Manager.createPlayer(inputStream, AudioContentTypeDataFactory.getInstance().MIME_AUDIO_WAV.getName());
+                return MIDPUtil.getInstance().createPlayerFromInputStream(inputStream, AudioContentTypeDataFactory.getInstance().MIME_AUDIO_WAV.getName());
             }
         } else {
             return NoPlayer.NO_PLAYER;

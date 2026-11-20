@@ -24,6 +24,8 @@ using AbeClientInformationInterface = org.allbinary.logic.system.security.licens
 using TransformGeneratorUtil = org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil;
 using TransformInfo = org.allbinary.logic.visual.transform.info.TransformInfo;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context.modules.storefront.customizer;
 
@@ -43,7 +45,7 @@ public class StoreCustomizerComponentUtil
     // throws Exception
     public virtual string generate(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Generating Modified Views For: " + transformInfoInterface.getName(), this, "generateModifiedViews()");
         }
         CustomizerUtil customizerUtil = CustomizerUtil.getInstance();
@@ -52,7 +54,7 @@ public class StoreCustomizerComponentUtil
         for (int index = 0; index < size; index++) {
             TransformInfo nextTransformInfoInterface = ((TransformInfo) allCustomizedViews.get(index));
             BasicArrayList allViewsToBeModified = customizerUtil.getTransformInfoObjectConfigComponentNodesToCustomize(transformInfoInterface, nextTransformInfoInterface);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("View or component that was modified by a Customizer: " + nextTransformInfoInterface.getName(), this, "generateModifiedViews()");
             }
             this.generate(abeClientInformation, transformInfoInterface, allViewsToBeModified);
@@ -68,7 +70,7 @@ public class StoreCustomizerComponentUtil
         for (int index = 0; index < size; index++) {
             TransformInfo nextTransformInfoInterface = ((TransformInfo) allViewsToBeModifiedVector.get(index));
             TransformInfoInterface specifiedTransformInfoInterface = customizerUtil.getTransformInfoInterfaceToCustomize(transformInfoInterface, nextTransformInfoInterface);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Retrieved: " + specifiedTransformInfoInterface.getName(), this, "generateModifiedViews()");
             }
             TransformGeneratorUtil.getInstance().generate(abeClientInformation, nextTransformInfoInterface, specifiedTransformInfoInterface);

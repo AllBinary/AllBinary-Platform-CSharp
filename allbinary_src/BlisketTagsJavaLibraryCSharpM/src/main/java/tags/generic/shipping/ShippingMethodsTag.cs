@@ -20,6 +20,7 @@ using System.Linq;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using StoreValidationTransformTag = tags.StoreValidationTransformTag;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
 
 namespace tags.generic.shipping;
 
@@ -36,7 +37,7 @@ public class ShippingMethodsTag : StoreValidationTransformTag
             if (this.getCommand() != null) {
                 this.setName("Basic Shipping View");
                 this.setObjectFile("views.generic.shipping.ValidationView");
-                if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.VIEW) == 0) {
+                if (this.getCommand().compareTo(GLOBALS2.VIEW) == 0) {
                 } else {
                     throw new Exception("No Such View Command: " + this.getCommand());
                 }

@@ -19,6 +19,7 @@ using System.Linq;
 //using JspTagException = javax.servlet.jsp.JspTagException;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using StoreValidationTransformTag = tags.StoreValidationTransformTag;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
 
 namespace tags.admin;
 
@@ -42,7 +43,7 @@ public class UserNameOrderHistoryTag : StoreValidationTransformTag
             this.setName("Range Order History View");
             this.setObjectFile("views.admin.orderhistory.UserNameOrderHistoryView");
             if (this.getCommand() != null) {
-                if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.VIEW) == 0) {
+                if (this.getCommand().compareTo(GLOBALS2.VIEW) == 0) {
                 } else {
                     throw new Exception("No Such View Command: " + this.getCommand());
                 }

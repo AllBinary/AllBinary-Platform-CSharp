@@ -67,11 +67,7 @@ public class AllBinaryMidlet : MIDlet, CommandListener
         string title = StringUtil.getInstance().EMPTY_STRING;
         if (newDisplay != NullCanvas.NULL_CANVAS) {
             title = newDisplay.getTitle();
-            if (title != null) {
-                this.logUtil.putF(new StringMaker().append(this.SETTING_).append(title).append(this._DISPLAY_).append(StringUtil.getInstance().toString(newDisplay)).ToString(), this, this.SET_DISPLAY);
-            } else {
-                this.logUtil.putF(new StringMaker().append(this.SETTING_NO_TITLE).append(StringUtil.getInstance().toString(newDisplay)).ToString(), this, this.SET_DISPLAY);
-            }
+            this.logUtil.putF(new StringMaker().append(this.SETTING_).append(title).append(this._DISPLAY_).append(StringUtil.getInstance().toString(newDisplay)).ToString(), this, this.SET_DISPLAY);
         }
         Display display = this.getDisplay();
         display.setCurrent(newDisplay);

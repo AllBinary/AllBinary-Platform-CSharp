@@ -14,8 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias GameLicensingNullJavaLibraryCSharp;
-extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -92,7 +90,7 @@ using SmallIntegerSingletonFactory = org.allbinary.logic.math.SmallIntegerSingle
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using OperatingSystemFactory = org.allbinary.logic.system.os.OperatingSystemFactory;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
-//using InApplicationPurchaseFactory = org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory;
+using InApplicationPurchaseFactory = org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory;
 using LockableFeature = org.allbinary.logic.system.security.licensing.LockableFeature;
 using LockableFeatureFactory = org.allbinary.logic.system.security.licensing.LockableFeatureFactory;
 using AllBinaryEventObject = org.allbinary.logic.util.@event.AllBinaryEventObject;
@@ -188,7 +186,7 @@ public class StartCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuList
         } else {
             BasicArrayList commandList = new BasicArrayListD();
             commandList.add(gameCommandsFactory.START_COMMAND);
-            GameLicensingNullJavaLibraryCSharp::org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory inApplicationPurchaseFactory = GameLicensingNullJavaLibraryCSharp::org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory.getInstance();
+            InApplicationPurchaseFactory inApplicationPurchaseFactory = InApplicationPurchaseFactory.getInstance();
             if (inApplicationPurchaseFactory.isEnabled()) {
                 BasicArrayList list = LockableFeatureFactory.getInstance().getList();
                 if (list.size() > 0 && !inApplicationPurchaseFactory.isPurchased(((LockableFeature) list.get(0)))) {

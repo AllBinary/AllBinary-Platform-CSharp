@@ -26,6 +26,7 @@ using SuperCrypt = org.allbinary.logic.control.crypt.SuperCrypt;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using CreditCardType = org.allbinary.business.user.commerce.money.payment.types.CreditCardType;
 
 namespace org.allbinary.business.user.commerce.money.payment;
 
@@ -112,7 +113,7 @@ public class Payment : PaymentInterface, DomNodeInterface
         if (this.number == null || string.CompareOrdinal(this.number, stringUtil.EMPTY_STRING) == 0) {
             return aFalse;
         }
-        if (this.number.Length > org.allbinary.business.user.commerce.money.payment.types.CreditCardType.MAXLEN) {
+        if (this.number.Length > CreditCardType.MAXLEN) {
             return aFalse;
         }
         return true;

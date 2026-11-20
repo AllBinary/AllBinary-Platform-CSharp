@@ -24,6 +24,8 @@ using OrderHistoryData = org.allbinary.business.user.commerce.inventory.order.Or
 using ShippingMethodData = org.allbinary.business.user.commerce.shipping.ShippingMethodData;
 using OrderItemsEntityFactory = org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntityFactory;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -55,13 +57,13 @@ public class OrderItemsRequestHelper : TagHelper
             }
             string success = "Status successfully set to: " + newStatus;
             OrderItemsEntityFactory.getInstance().setStatus(this.id, this.groupId, newStatus);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "setOrderStatus(newStatus)");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to view order table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "setOrderStatus(newStatus)", e);
             }
             return error;
@@ -73,13 +75,13 @@ public class OrderItemsRequestHelper : TagHelper
         try {
             string success = "Status successfully set to: " + this.status;
             OrderItemsEntityFactory.getInstance().setStatus(this.id, this.groupId, this.status);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "setOrderStatus(newStatus)");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to view order table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "setOrderStatus(newStatus)", e);
             }
             return error;

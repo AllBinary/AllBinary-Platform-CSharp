@@ -36,6 +36,8 @@ using NewPasswordEmail = org.allbinary.logic.communication.smtp.email.NewPasswor
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
 using ServiceClientInformationInterfaceFactory = org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -77,14 +79,14 @@ public class AuthenticationRequestHelper : TagHelper
         try {
             string userName = this.request.getParameter(WeblisketSessionData.REMOVABLEUSERNAME);
             string email = this.request.getParameter(UserData.MAINEMAIL);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
                 this.logUtil.putF("Generating New Password For: " + userName, this, "newPassword()");
             }
             UserEntityInterface userEntityInterface = UserEntityFactory.getInstance();
             UserInterface userInterface = userEntityInterface.getUser(userName);
             if (userInterface.getMainEmail().compareTo(email) != 0) {
                 if (userInterface.getSecondaryEmail() != null && userInterface.getSecondaryEmail().compareTo(email) != 0) {
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
                         this.logUtil.putF("Requested Email Is Not In User Profile", this, "newPassword()");
                     }
                     return false;
@@ -95,12 +97,12 @@ public class AuthenticationRequestHelper : TagHelper
             HashMap<object, object> newPasswordHashMap = userInterface.toPasswordHashMap();
             UserEntityFactory.getInstance().update(userName, newPasswordHashMap);
             new NewPasswordEmail(this.abeClientInformation, userInterface, newPassword).process();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
                 this.logUtil.putF("Generated New Password For: " + userName, this, "newPassword()");
             }
             return true;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "newPassword()", e);
             }
             return false;
@@ -114,18 +116,18 @@ public class AuthenticationRequestHelper : TagHelper
             string passwordString = this.request.getParameter(WeblisketSessionData.REMOVABLEPASSWORD);
             string newPassword = this.request.getParameter(WeblisketSessionData.REMOVABLENEWPASSWORD);
             string newReenteredPassword = this.request.getParameter(WeblisketSessionData.REMOVABLEREENTERNEWPASSWORD);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
                 this.logUtil.putF("Changing Password For User: " + userName, this, "changePassword()");
             }
             Password password = new Password(newPassword);
             if (!((bool) (password.isValid()))) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
                     this.logUtil.putF("New Password Is Not Valid", this, "changePassword()");
                 }
                 return false;
             }
             if (string.CompareOrdinal(newPassword, newReenteredPassword) != 0) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
                     this.logUtil.putF("New Password Fields Do Not Match", this, "changePassword()");
                 }
                 return false;
@@ -135,7 +137,7 @@ public class AuthenticationRequestHelper : TagHelper
             UserInterface userInterface = userEntityInterface.getUser(userName);
             string login = userEntityInterface.login(userName, passwordString);
             if (string.CompareOrdinal(login, GLOBALS2.LOGINSUCCESS) == 0) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
                     this.logUtil.putF("Authentication Successful", this, "changePassword()");
                 }
                 HashMap<object, object> newPasswordHashMap = password.toHashMap(null);
@@ -143,12 +145,12 @@ public class AuthenticationRequestHelper : TagHelper
                 new NewPasswordEmail(this.abeClientInformation, userInterface, newPassword).process();
                 return true;
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
                 this.logUtil.putF("Authentication Failed", this, "changePassword()");
             }
             return false;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put("Authentication Failed", this, "changePassword()", e);
             }
             return false;
@@ -161,7 +163,7 @@ public class AuthenticationRequestHelper : TagHelper
             UserEntityInterface userEntityInterface = UserEntityFactory.getInstance();
             UserInterface userInterface = userEntityInterface.getUser(userName);
             if (userInterface.getRole() == null) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
                     this.logUtil.putF("Role is null: " + userInterface.getRole() + " Valid Roles: " + roles.ToString(), this, "isRoleValid()");
                 }
                 return false;
@@ -177,7 +179,7 @@ public class AuthenticationRequestHelper : TagHelper
                     return true;
                 }
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Role is not valid: ");
                 stringBuffer.append(userInterface.getRole().ToString());
@@ -187,7 +189,7 @@ public class AuthenticationRequestHelper : TagHelper
             }
             return false;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "isRoleValid()", e);
             }
             return false;

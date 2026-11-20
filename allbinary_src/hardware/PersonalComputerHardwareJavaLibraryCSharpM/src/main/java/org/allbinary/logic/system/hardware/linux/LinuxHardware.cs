@@ -135,7 +135,7 @@ public class LinuxHardware : HardwareInterface
                     this.logUtil.putF("PCI File Found", this, this.commonStrings.CONSTRUCTOR);
                 }
                 string nextLine = lineNumberReader.readLine();
-                while (lineNumberReader != null && nextLine != null) {
+                while (nextLine != null) {
                     if (this.isNextHardware(nextLine)) {
                         break;
                     }
@@ -150,7 +150,7 @@ public class LinuxHardware : HardwareInterface
                     componentData.append(CommonSeps.getInstance().NEW_LINE);
                     nextLine = lineNumberReader.readLine();
                     string componentType = PCComponentFactory.getInstance().getComponentType(nextLine);
-                    while (lineNumberReader != null) {
+                    while (true) {
                         componentData.append(nextLine);
                         componentData.append(CommonSeps.getInstance().NEW_LINE);
                         nextLine = lineNumberReader.readLine();

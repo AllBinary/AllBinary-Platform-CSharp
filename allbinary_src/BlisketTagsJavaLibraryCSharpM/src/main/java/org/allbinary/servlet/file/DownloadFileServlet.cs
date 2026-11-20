@@ -37,6 +37,8 @@ using StringUtil = org.allbinary.logic.@string.StringUtil;
 using BlisketServletUtil = org.allbinary.servlet.BlisketServletUtil;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.servlet.file;
 
@@ -95,7 +97,7 @@ public class DownloadFileServlet : HttpServlet
                 response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Please Login");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "processRequest()", e);
             }
             response.sendError(HttpServletResponse.SC_NOT_FOUND);

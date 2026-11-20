@@ -24,6 +24,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.context.modules.storefront;
 
@@ -33,7 +35,7 @@ public class StoreFrontView : DomNodeInterface
     private StoreFrontInterface storeFrontInterface;
     public StoreFrontView(StoreFrontInterface storeFrontInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             CommonStrings commonStrings = CommonStrings.getInstance();
             this.logUtil.putF("Constructing: StoreFrontView for: " + storeFrontInterface.getName(), this, commonStrings.GET_INSTANCE);
         }

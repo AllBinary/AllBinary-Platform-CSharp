@@ -24,6 +24,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using TransformInfoObjectFactory = org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.template;
 
@@ -49,7 +51,7 @@ public class TransformTemplateFactory
             return ((TransformTemplateInterface) TransformInfoObjectFactory.getInstance().getInstance(abeClientInformation, transformInfoInterface));
         } catch (Exception e) {
             string error = "Failed To Get Instance";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
                 this.logUtil.put(error + templateName + "->TemplateFactory", this, "getInstance(viewName, HashMap, PageContext)", e);
             }
             throw e;

@@ -83,7 +83,8 @@ public class FileLog
             string line = "";
             BufferedWriter tmpOut = new BufferedWriter(new FileWriter(logFileBak));
             BufferedReader tmpIn = new BufferedReader(new FileReader(logFile));
-            while (((line = tmpIn.readLine())) != null) {
+            while (tmpIn.ready()) {
+                line = tmpIn.readLine();
                 tmpOut.write(line, 0, line.Length);
                 tmpOut.newLine();
             }

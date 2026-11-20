@@ -37,7 +37,7 @@ public class TimeUtil
         calendar.set(year, month, day, hour, 0);
     }
 
-    public virtual void setCalendar(Calendar calendar, string yearString, string monthString, string dayString, string hourString, string minuteString, string secondString)
+    public virtual void setCalendarWithTime(Calendar calendar, string yearString, string monthString, string dayString, string hourString, string minuteString, string secondString)
     {
         int year = global::java.lang.JavaNumber.intValue(int.Parse(yearString));
         int month = global::java.lang.JavaNumber.intValue(int.Parse(monthString));

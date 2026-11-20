@@ -24,6 +24,8 @@ using StdUtil = org.allbinary.logic.StdUtil;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CustomTagSupport = tags.CustomTagSupport;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.tags;
 
@@ -58,7 +60,7 @@ public class BasicTextEmailTag : CustomTagSupport
             return "Email Sent";
         } catch (Exception e) {
             string error = "Failed to Send Email.";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "send()", e);
             }
             return error;

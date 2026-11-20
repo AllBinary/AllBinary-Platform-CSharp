@@ -30,6 +30,8 @@ using WeblisketSessionData = org.allbinary.logic.communication.http.request.sess
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbSqlTableUtil = org.allbinary.logic.communication.sql.AbSqlTableUtil;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -63,13 +65,13 @@ public class BillingAddressHelper : Table
     {
         try {
             string success = new BillingAddressesEntity(this.stringUtil.EMPTY_STRING).drop();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, this.commonStrings.DROP);
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to drop Admin table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.DROP, e);
             }
             return error;
@@ -80,13 +82,13 @@ public class BillingAddressHelper : Table
     {
         try {
             string success = new BillingAddressesEntity(this.stringUtil.EMPTY_STRING).createTable();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "create()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to create user table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "create()", e);
             }
             return error;
@@ -99,13 +101,13 @@ public class BillingAddressHelper : Table
             string success = "Restore Successful";
             BillingAddressesEntity billingAddressesEntity = new BillingAddressesEntity(StringUtil.getInstance().EMPTY_STRING);
             string result = AbSqlTableUtil.getInstance().restoreTable(billingAddressesEntity, this.portion);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "restore()");
             }
             return result;
         } catch (Exception e) {
             string error = "Failed to restore backup";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "restore()", e);
             }
             return error;
@@ -117,13 +119,13 @@ public class BillingAddressHelper : Table
         try {
             string success = "Backup Successful";
             string result = AbSqlTableUtil.getInstance().backupTable(new BillingAddressesEntity(StringUtil.getInstance().EMPTY_STRING));
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "backup()");
             }
             return result;
         } catch (Exception e) {
             string error = "Failed to make backup";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "backup()", e);
             }
             return error;
@@ -135,13 +137,13 @@ public class BillingAddressHelper : Table
         try {
             string success = "Successfully Added Billing Address";
             BillingAddressesEntityFactory.getInstance().getInstance(this.weblisketSession.getUserName()).add(this.streetAddress);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "add()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to add Billing Address";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "add()", e);
             }
             return error;
@@ -153,13 +155,13 @@ public class BillingAddressHelper : Table
         try {
             string success = "Successfully Updated Billing Address";
             BillingAddressesEntityFactory.getInstance().getInstance(this.weblisketSession.getUserName()).update(this.streetAddress);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF("Successfull update of a user Billing Address table", this, "update()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed update of a User Billing Address Table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "update()", e);
             }
             return error;
@@ -179,7 +181,7 @@ public class BillingAddressHelper : Table
             return StringUtil.getInstance().EMPTY_STRING;
         } catch (Exception e) {
             string error = "Failed to Set Billing address to Shipping Address";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "setToShippingAddress()", e);
             }
             return error;
@@ -191,13 +193,13 @@ public class BillingAddressHelper : Table
         try {
             string success = "Successfully Removed Billing Address";
             BillingAddressesEntityFactory.getInstance().getInstance(this.weblisketSession.getUserName()).remove(this.streetAddress.getId());
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "delete()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to remove Billing Address";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "delete()", e);
             }
             return error;
@@ -209,13 +211,13 @@ public class BillingAddressHelper : Table
         try {
             string success = "Successfully Set Billing Address";
             BillingAddressesEntityFactory.getInstance().getInstance(this.weblisketSession.getUserName()).setDefault(this.streetAddress.getId());
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "set()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to set billing Address";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "set()", e);
             }
             return error;

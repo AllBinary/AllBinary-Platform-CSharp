@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using BufferedInputStream = java.io.BufferedInputStream;
+using BufferedInputStream = java.io.BufferedInputStream;
 using ByteArrayInputStream = java.io.ByteArrayInputStream;
 //using IOException = java.io.IOException;
 using InputStream = java.io.InputStream;

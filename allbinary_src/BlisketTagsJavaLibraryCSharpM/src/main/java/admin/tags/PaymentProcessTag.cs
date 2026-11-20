@@ -23,6 +23,9 @@ using AbResponseHandler = org.allbinary.logic.communication.http.request.AbRespo
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using StoreValidationTransformTag = tags.StoreValidationTransformTag;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.tags;
 
@@ -43,12 +46,12 @@ public class PaymentProcessTag : StoreValidationTransformTag
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().LICENSINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().LICENSINGERROR)) {
                 this.logUtil.put("LicensingException", this, this.commonStrings.PROCESS, e);
             }
             throw e;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.PROCESS, e);
             }
             throw e;
@@ -59,9 +62,9 @@ public class PaymentProcessTag : StoreValidationTransformTag
     public override int doStartTag()
     {
         try {
-            if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR) == 0 || this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.AUTHORIZEORDERANDEVALBODY) == 0 || this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR) == 0) {
+            if (this.getCommand().compareTo(GLOBALS2.AUTHORIZEORDEREVALBODYONERROR) == 0 || this.getCommand().compareTo(GLOBALS2.AUTHORIZEORDERANDEVALBODY) == 0 || this.getCommand().compareTo(GLOBALS2.AUTHORIZEFORMEVALBODYONERROR) == 0) {
                 this.pageContext.getOut().print(this.process() + "<br />");
-                if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR) == 0) {
+                if (this.getCommand().compareTo(GLOBALS2.AUTHORIZEORDEREVALBODYONERROR) == 0) {
                     return this.SKIP_BODY;
                 } else {
                     return this.EVAL_BODY_INCLUDE;

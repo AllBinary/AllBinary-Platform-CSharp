@@ -30,6 +30,8 @@ using StringUtil = org.allbinary.logic.@string.StringUtil;
 using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using CommonPhoneStrings = org.allbinary.@string.CommonPhoneStrings;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.inventory.item;
 
@@ -70,7 +72,7 @@ public class BasicItem : ItemInterface
     public string lastModified;
     public BasicItem(HashMap<object, object> itemHashMap)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
             this.logUtil.putF(this.commonStrings.START, this, "Constructor(HashMap)");
         }
         this.itemId = ((string) itemHashMap.get(basicItemData.ID));
@@ -106,7 +108,7 @@ public class BasicItem : ItemInterface
 
     public BasicItem()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }
         string EMPTY = StringUtil.getInstance().EMPTY_STRING;
@@ -456,7 +458,7 @@ public class BasicItem : ItemInterface
 
     public virtual HashMap<object, object> toHashMap()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
             this.logUtil.putF(this.commonStrings.START, this, "toHashMap");
         }
         HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
@@ -495,7 +497,7 @@ public class BasicItem : ItemInterface
 
     public virtual BasicArrayList toVector()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGING)) {
             this.logUtil.putF(this.commonStrings.START, this, "toVector");
         }
         BasicArrayList values = new BasicArrayListD();

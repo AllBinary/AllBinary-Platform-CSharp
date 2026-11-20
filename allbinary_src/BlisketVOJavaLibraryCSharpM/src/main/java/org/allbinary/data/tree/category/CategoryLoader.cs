@@ -31,6 +31,8 @@ using AbPath = org.allbinary.logic.io.path.AbPath;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.data.tree.category;
 
@@ -40,7 +42,7 @@ public class CategoryLoader : CategoryModifierTree, CategoryLoaderInterface
     public CategoryLoader(CategoryFactoryInterface categoryFactoryInterface) : base(categoryFactoryInterface)
     {
         // base(categoryFactoryInterface) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             this.logUtil.putF(this.commonStrings.START, this, "CategoryLoader(CategoryFactoryInterface categoryFactoryInterface)");
         }
     }
@@ -68,7 +70,7 @@ public class CategoryLoader : CategoryModifierTree, CategoryLoaderInterface
                 throw new Exception("Null Category");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 try {
                     categoryInterface.log();
                 } catch (Exception e2) {
@@ -88,7 +90,7 @@ public class CategoryLoader : CategoryModifierTree, CategoryLoaderInterface
             Node categoryNode = DomSearchHelper.getNode(CategoryData.getInstance().NAME, document.getChildNodes());
             return this.addProperties(categoryInterface, categoryNode.getChildNodes());
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, this.commonStrings.GET, e);
             }
             return null;
@@ -103,7 +105,7 @@ public class CategoryLoader : CategoryModifierTree, CategoryLoaderInterface
             CategoryInterface loadedCategoryInterface = this.categoryFactoryInterface.getRootInstanceFromNode(categoryNode);
             return this.addProperties(loadedCategoryInterface, categoryNode.getChildNodes());
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, this.commonStrings.GET, e);
             }
             return null;
@@ -117,7 +119,7 @@ public class CategoryLoader : CategoryModifierTree, CategoryLoaderInterface
             Document document = this.getDoc(categoryInterface);
             return this.getAll(document);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, this.commonStrings.GET, e);
             }
             return null;
@@ -132,7 +134,7 @@ public class CategoryLoader : CategoryModifierTree, CategoryLoaderInterface
             CategoryInterface loadedCategoryInterface = this.categoryFactoryInterface.getRootInstanceFromNode(categoryNode);
             return this.addProperties(loadedCategoryInterface, categoryNode.getChildNodes());
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, this.commonStrings.GET, e);
             }
             return null;
@@ -154,7 +156,7 @@ public class CategoryLoader : CategoryModifierTree, CategoryLoaderInterface
             }
             return parentCategoryInterface;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, this.commonStrings.GET, e);
             }
             return null;
@@ -176,7 +178,7 @@ public class CategoryLoader : CategoryModifierTree, CategoryLoaderInterface
             }
             return loadedCategoryInterface;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, this.commonStrings.GET, e);
             }
             return null;

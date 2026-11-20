@@ -28,6 +28,8 @@ using AbPath = org.allbinary.logic.io.path.AbPath;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.category.store;
 
@@ -37,7 +39,7 @@ public class StoreCategoryFactory : CategoryAbstractFactory, CategoryFactoryInte
     private TransformInfoInterface transformInfoInterface;
     public StoreCategoryFactory(TransformInfoInterface transformInfoInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             this.logUtil.putF(this.commonStrings.START, this, "StoreCategoryFactory(TransformInfoInterface transformInfoInterface)");
         }
         this.transformInfoInterface = transformInfoInterface;
@@ -49,7 +51,7 @@ public class StoreCategoryFactory : CategoryAbstractFactory, CategoryFactoryInte
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new RootStoreCategoryPropertiesFactory(this.transformInfoInterface));
             return ((CategoryInterface) new Category(categoryPropertiesFactoryInterface));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getInstance(String, int)", e);
             }
             return null;
@@ -63,7 +65,7 @@ public class StoreCategoryFactory : CategoryAbstractFactory, CategoryFactoryInte
             CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface = ((CategoryPropertiesFactoryInterface) new RootStoreCategoryPropertiesFactory(this.transformInfoInterface, categoryPath));
             return ((CategoryInterface) new Category(categoryPropertiesFactoryInterface, level));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "getInstance(String, int)", e);
             }
             return null;
@@ -78,7 +80,7 @@ public class StoreCategoryFactory : CategoryAbstractFactory, CategoryFactoryInte
             int level = CategoryUtil.getPathLevel(categoryPath);
             return ((CategoryInterface) new Category(categoryPropertiesFactoryInterface, level));
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getInstance(String, int)", e);
             }
             return null;

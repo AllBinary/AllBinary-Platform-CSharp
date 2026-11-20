@@ -19,6 +19,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using DbConnectionInfo = org.allbinary.business.init.db.DbConnectionInfo;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.sql;
 
@@ -50,12 +52,12 @@ public class AbSqlTable : AbSqlBasic
     {
         try {
             this.executeSQLStatement(data);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.TABLE_CREATION_SUCCESS + this.tableName + " with statement: " + data, this, this.METHOD_CREATED_TABLE);
             }
             return this.tableName + this.sqlStrings.CREATE_RETURN;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put("Table Creation Failed: " + this.tableName + " with statement: " + data, this, this.METHOD_CREATED_TABLE, e);
             }
             return "Failed to Create " + this.tableName + " table.";
@@ -68,12 +70,12 @@ public class AbSqlTable : AbSqlBasic
         string sqlStatement = this.sqlStrings.DROP_TABLE + this.tableName;
         try {
             this.executeSQLStatement(sqlStatement);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.SUCCESS_SQL_STATEMENT + sqlStatement, this, this.METHOD_DROP_TABLE);
             }
             return tableName + this.DROPPED_SUCCESS;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + sqlStatement, this, this.METHOD_DROP_TABLE, e);
             }
             return "Failed to Drop " + tableName + " table.";

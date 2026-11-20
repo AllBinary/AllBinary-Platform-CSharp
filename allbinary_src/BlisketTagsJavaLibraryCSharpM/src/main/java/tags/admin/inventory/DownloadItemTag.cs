@@ -20,6 +20,7 @@ using System.Linq;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using StoreValidationTransformTag = tags.StoreValidationTransformTag;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
 
 namespace tags.admin.inventory;
 
@@ -34,7 +35,7 @@ public class DownloadItemTag : StoreValidationTransformTag
     {
         try {
             if (this.getCommand() != null) {
-                if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.VIEW) == 0) {
+                if (this.getCommand().compareTo(GLOBALS2.VIEW) == 0) {
                     throw new Exception("No Such View Command: " + this.getCommand());
                 } else if (this.getCommand().compareTo(this.commonStrings.INSERT) == 0) {
                     this.setName("Add Inventory Item Validation View");
@@ -42,10 +43,10 @@ public class DownloadItemTag : StoreValidationTransformTag
                 } else if (this.getCommand().compareTo(this.commonStrings.DELETE) == 0) {
                     this.setName("Delete Inventory Item Validation View");
                     this.setObjectFile("views.admin.inventory.download.DeleteFileValidationView");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.EDIT) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.EDIT) == 0) {
                     this.setName("Edit Inventory Item Validation View");
                     this.setObjectFile("views.admin.inventory.download.EditValidationView");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.NEW) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.NEW) == 0) {
                     this.setName("New Inventory Item Validation View");
                     this.setObjectFile("views.admin.inventory.download.NewValidationView");
                 } else if (this.getCommand().compareTo(this.commonStrings.UPDATE) == 0) {

@@ -85,7 +85,7 @@ public class ServiceReferenceMap : Map<object, object>
         return null;
     }
 
-    public virtual Set<object> entrySet()
+    public virtual Set<Map.Entry<object, object>> entrySet()
     {
         return null;
     }

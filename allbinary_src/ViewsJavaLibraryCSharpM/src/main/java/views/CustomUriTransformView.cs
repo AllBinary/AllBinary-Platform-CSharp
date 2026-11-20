@@ -28,6 +28,8 @@ using TransformInfoInterface = org.allbinary.logic.visual.transform.info.Transfo
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views;
 
@@ -40,7 +42,7 @@ public class CustomUriTransformView : TransformInterface
     private TransformDocumentInterface transformDocumentInterface = null;
     public CustomUriTransformView(TransformInfoInterface transformInfoInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, this.commonStrings.CONSTRUCTOR);
         }
         this.setTransformInfoInterface(transformInfoInterface);
@@ -97,7 +99,7 @@ public class CustomUriTransformView : TransformInterface
             string result = new TransformInfoCustomUriTransformer(this.abeClientInformation, this.getTransformInfoInterface()).translate(success);
             return result;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             throw e;

@@ -31,6 +31,8 @@ using LogoData = org.allbinary.logic.visual.transform.template.customizer.widget
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using CustomizerUtil = views.business.context.modules.storefront.customizer.CustomizerUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context.modules.storefront.customizer.hedges.header;
 
@@ -57,7 +59,7 @@ public class InsertHeaderValidationView : TopBarView, ValidationComponentInterfa
     public virtual bool? isValid()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("topbarValidation", this, this.commonStrings.IS_VALID);
             }
             bool? isValid = this.heading.isValid();
@@ -66,7 +68,7 @@ public class InsertHeaderValidationView : TopBarView, ValidationComponentInterfa
             }
             return isValid;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -80,7 +82,7 @@ public class InsertHeaderValidationView : TopBarView, ValidationComponentInterfa
             stringBuffer.append(this.heading.validationInfo());
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Getting Validation Info";

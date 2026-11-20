@@ -34,11 +34,8 @@ public class BufferedIOUtil
         string line = StringUtil.getInstance().EMPTY_STRING;
         BufferedWriter tmpOut = new BufferedWriter(new FileWriter(AbFileNativeUtil.get(backupFileBak)));
         BufferedReader tmpIn = new BufferedReader(new FileReader(AbFileNativeUtil.get(backupFile)));
-        while (true) {
+        while (tmpIn.ready()) {
             line = tmpIn.readLine();
-            if (line == null) {
-                break;
-            }
             tmpOut.write(line, 0, line.Length);
             tmpOut.newLine();
         }

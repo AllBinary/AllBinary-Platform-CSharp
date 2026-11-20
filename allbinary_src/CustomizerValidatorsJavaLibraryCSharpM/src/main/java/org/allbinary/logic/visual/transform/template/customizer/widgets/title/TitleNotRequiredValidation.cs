@@ -23,6 +23,8 @@ using StringMaker = org.allbinary.logic.@string.StringMaker;
 using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.template.customizer.widgets.title;
 
@@ -47,14 +49,14 @@ public class TitleNotRequiredValidation : TitleView, ValidationInterface
     public virtual bool? isValid()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.IS_VALID);
             }
             bool? valid = true;
             if (!StringValidationUtil.getInstance().isValidNotRequired(this.getTitle(), 0, TitleData.getInstance().MAXLEN)) {
                 valid = false;
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Title: ");
                 stringBuffer.append(this.getTitle());
@@ -64,7 +66,7 @@ public class TitleNotRequiredValidation : TitleView, ValidationInterface
             }
             return valid;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate form", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -78,7 +80,7 @@ public class TitleNotRequiredValidation : TitleView, ValidationInterface
             stringBuffer.append("Title is not valid.");
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Validating Form";

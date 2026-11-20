@@ -70,7 +70,7 @@ public class StringValidationUtil
 
     public virtual bool isValidRequired(string value, int min, int max)
     {
-        if (value == null || value.Length < min || value.Length > max) {
+        if (value.Length < min || value.Length > max) {
             return false;
         }
         return true;
@@ -89,7 +89,7 @@ public class StringValidationUtil
 
     public virtual bool isValidNotRequired(string value, int min, int max)
     {
-        if (value != null) {
+        if (value.Length > 0) {
             if (value.Length < min || value.Length > max) {
                 return false;
             }
@@ -99,7 +99,7 @@ public class StringValidationUtil
 
     public virtual bool isValidNotRequiredNumber(string value, int min, int max)
     {
-        if (value != null) {
+        if (value.Length > 0) {
             if (this.tsUtil.compareTo(value, this.stringUtil.NULL_STRING) == 0 || value.Length < min || value.Length > max) {
                 return false;
             }
@@ -112,7 +112,7 @@ public class StringValidationUtil
 
     public virtual bool isEmpty(string @string)
     {
-        if (@string != null && this.tsUtil.compareTo(@string, this.stringUtil.NULL_STRING) != 0 && this.tsUtil.compareTo(@string, this.stringUtil.EMPTY_STRING) != 0) {
+        if (this.tsUtil.compareTo(@string, this.stringUtil.NULL_STRING) != 0 && this.tsUtil.compareTo(@string, this.stringUtil.EMPTY_STRING) != 0) {
             return false;
         } else {
             return true;

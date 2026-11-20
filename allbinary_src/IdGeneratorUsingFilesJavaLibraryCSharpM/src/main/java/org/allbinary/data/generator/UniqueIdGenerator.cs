@@ -27,6 +27,8 @@ using DataOutputStreamFactory = org.allbinary.logic.io.DataOutputStreamFactory;
 using StreamUtil = org.allbinary.logic.io.StreamUtil;
 using AbFile = org.allbinary.logic.io.file.AbFile;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.data.generator;
 
@@ -47,7 +49,7 @@ public class UniqueIdGenerator : IdGeneratorInterface
             AbDataOutputStream idData = DataOutputStreamFactory.getInstance().getInstanceForAbFile(this.newFile);
             idData.writeLong(value);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().IDLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().IDLOGGING)) {
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 this.logUtil.put(commonStrings.EXCEPTION, this, "initialize", e);
             }
@@ -68,7 +70,7 @@ public class UniqueIdGenerator : IdGeneratorInterface
         AbDataInputStream idData = null;
         AbDataOutputStream idOutData = null;
         try {
-            AbFileInputStream idFile = new AbFileInputStream(this.newFile);
+            AbFileInputStream idFile = AbFileInputStream.createFromAbFile(this.newFile);
             idData = new AbDataInputStream(idFile);
             this.id = idData.readLong();
             AbFileOutputStream idOutFile = AbFileOutputStream.createFromAbFile(this.newFile);
@@ -77,7 +79,7 @@ public class UniqueIdGenerator : IdGeneratorInterface
             long? idLong = this.id;
             return idLong.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().IDLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().IDLOGGING)) {
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 this.logUtil.put(commonStrings.EXCEPTION, this, "getNext", e);
             }

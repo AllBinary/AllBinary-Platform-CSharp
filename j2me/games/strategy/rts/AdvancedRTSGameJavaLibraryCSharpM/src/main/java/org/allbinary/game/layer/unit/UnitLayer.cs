@@ -52,7 +52,7 @@ using AdvancedRTSGameLayer = org.allbinary.game.layer.AdvancedRTSGameLayer;
 using AdvancedRTSProperties = org.allbinary.game.layer.AdvancedRTSProperties;
 using AllBinaryGameLayerManager = org.allbinary.game.layer.AllBinaryGameLayerManager;
 using AllBinaryTiledLayer = org.allbinary.game.layer.AllBinaryTiledLayer;
-using CaptionResources = org.allbinary.game.layer.CaptionResources;
+using LayerCaptionResources = org.allbinary.game.layer.LayerCaptionResources;
 using LinePathRelativeAnimation = org.allbinary.game.layer.LinePathRelativeAnimation;
 using PathAnimation = org.allbinary.game.layer.PathAnimation;
 using PathFindingLayerInterface = org.allbinary.game.layer.PathFindingLayerInterface;
@@ -151,7 +151,7 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
     private IndexedAnimation resourceAnimation = ((IndexedAnimation) NullIndexedAnimationFactory.getFactoryInstance().getInstance(0));
     private readonly PathAnimation initPathAnimation;
     private Animation pathAnimation = NullAnimationFactory.getFactoryInstance().getInstance(0);
-    private readonly CaptionAnimationHelperBase captionAnimationHelper = new CaptionAnimationHelper(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().get(CaptionResources.getInstance().RESOURCE).getInstance(0), -23, -25, 6, 0);
+    private readonly CaptionAnimationHelperBase captionAnimationHelper = new CaptionAnimationHelper(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().get(LayerCaptionResources.getInstance().RESOURCE).getInstance(0), -23, -25, 6, 0);
     private readonly RotationAnimation decalAnimation;
     private readonly LayerInterfaceFactoryInterface waypointLayerInterfaceFactoryInterface;
     private static readonly BasicArrayList partialPositionList = new BasicArrayListS(4);

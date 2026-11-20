@@ -27,6 +27,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbPath = org.allbinary.logic.io.path.AbPath;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using CommonLabels = org.allbinary.@string.CommonLabels;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -42,7 +44,7 @@ public class AuthenticationHelperUtil
     // throws Exception
     public bool isAuthorized(AuthenticationHelper authenticationHelper, string filePath)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
             this.logUtil.putF(CommonLabels.getInstance().START + filePath, this, "isAuthorized()");
         }
         int endIndex = HttpRequestUtil.getInstance().getLastSeparatorIndex(filePath);
@@ -52,12 +54,12 @@ public class AuthenticationHelperUtil
         UserRole userRole = authenticationHelper.getRole();
         BasicUserRole basicUserRole = userRole.getBasicUserRole();
         if (userRoles.contains(basicUserRole)) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Authorized", this, "isAuthorized()");
             }
             return true;
         } else {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Not Authorized: " + basicUserRole.ToString(), this, "isAuthorized()");
             }
             return false;

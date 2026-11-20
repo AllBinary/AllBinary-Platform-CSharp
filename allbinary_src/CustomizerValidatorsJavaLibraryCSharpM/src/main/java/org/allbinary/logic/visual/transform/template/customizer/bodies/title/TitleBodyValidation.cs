@@ -34,6 +34,8 @@ using TitleNotRequiredValidation = org.allbinary.logic.visual.transform.template
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.template.customizer.bodies.title;
 
@@ -44,7 +46,7 @@ public class TitleBodyValidation : Validation, DomNodeInterface
     private TitleNotRequiredValidation titleValidation;
     public TitleBodyValidation()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }
         StringUtil stringUtil = StringUtil.getInstance();
@@ -54,7 +56,7 @@ public class TitleBodyValidation : Validation, DomNodeInterface
 
     public TitleBodyValidation(Document document)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF(this.commonStrings.CONSTRUCTOR, this, "Constructor(document)");
         }
         NodeList nodeList = document.getElementsByTagName(BodyData.getInstance().NAME);
@@ -65,7 +67,7 @@ public class TitleBodyValidation : Validation, DomNodeInterface
             Node titleNode = DomSearchHelper.getNode(TitleData.getInstance().NAME, aBodyNode.getChildNodes());
             this.titleValidation = new TitleNotRequiredValidation(titleNode);
             if (index > 1) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("To Many Body Nodes", this, this.commonStrings.CONSTRUCTOR);
                 }
             }
@@ -74,7 +76,7 @@ public class TitleBodyValidation : Validation, DomNodeInterface
 
     public TitleBodyValidation(HashMap<object, object> hashMap)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF(this.commonStrings.START, this, "Constructor(hashmap)");
         }
         this.getFormData(hashMap);
@@ -91,7 +93,7 @@ public class TitleBodyValidation : Validation, DomNodeInterface
     {
         try {
             bool? isValid = true;
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("TitleBodyValidation", this, this.commonStrings.IS_VALID);
             }
             if (!StringValidationUtil.getInstance().isValidNotRequired(this.body, BodyData.getInstance().MIN, AbSqlData.MAXBLOB)) {
@@ -100,12 +102,12 @@ public class TitleBodyValidation : Validation, DomNodeInterface
             if (!((bool) (this.titleValidation.isValid()))) {
                 isValid = false;
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("TitleBodyValidation: " + isValid, this, this.commonStrings.IS_VALID);
             }
             return isValid;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put("Failed to validate form", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -124,7 +126,7 @@ public class TitleBodyValidation : Validation, DomNodeInterface
             }
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Validating Form";
@@ -144,7 +146,7 @@ public class TitleBodyValidation : Validation, DomNodeInterface
     // throws Exception
     public virtual Node toXmlNode(Document document)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Title Body: " + this.body, this, "toXmlNode(document)");
         }
         Node node = ModDomHelper.createNameValueNodes(document, BodyData.getInstance().NAME, this.body);

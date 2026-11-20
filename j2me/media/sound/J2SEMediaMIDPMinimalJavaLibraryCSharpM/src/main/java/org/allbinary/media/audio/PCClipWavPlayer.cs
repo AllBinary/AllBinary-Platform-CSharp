@@ -23,12 +23,12 @@ using InputStream = java.io.InputStream;
 using Control = javax.microedition.media.Control;
 using MediaException = javax.microedition.media.MediaException;
 using PlayerListener = javax.microedition.media.PlayerListener;
-//using AudioInputStream = javax.sound.sampled.AudioInputStream;
-//using AudioSystem = javax.sound.sampled.AudioSystem;
-//using Clip = javax.sound.sampled.Clip;
-//using FloatControl = javax.sound.sampled.FloatControl;
-//using LineEvent = javax.sound.sampled.LineEvent;
-//using LineListener = javax.sound.sampled.LineListener;
+using AudioInputStream = javax.sound.sampled.AudioInputStream;
+using AudioSystem = javax.sound.sampled.AudioSystem;
+using Clip = javax.sound.sampled.Clip;
+using FloatControl = javax.sound.sampled.FloatControl;
+using LineEvent = javax.sound.sampled.LineEvent;
+using LineListener = javax.sound.sampled.LineListener;
 using NullUtil = org.allbinary.logic.NullUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
@@ -62,19 +62,13 @@ public class PCClipWavPlayer : BasicPlayer, LineListener
 
     public override void close()
     {
-        MusicThreadPool.getInstance().runTask(new ARunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        MusicThreadPool.getInstance().runTask(new global::javax.sound.sampled.AudioTask(() => {
                 try {
                     close2();
                 } catch (Exception e) {
                     PreLogUtil.putOE(commonStrings.EXCEPTION, this, commonStrings.PROCESS, e);
                 }
-            }
-
-#endif
-);
+        }));
     }
 
     // throws Exception
@@ -94,19 +88,13 @@ public class PCClipWavPlayer : BasicPlayer, LineListener
     [MethodImpl(MethodImplOptions.Synchronized)]
     public override void start()
     {
-        MusicThreadPool.getInstance().runTask(new ARunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        MusicThreadPool.getInstance().runTask(new global::javax.sound.sampled.AudioTask(() => {
                 try {
                     start2();
                 } catch (Exception e) {
                     PreLogUtil.putOE(commonStrings.EXCEPTION, this, commonStrings.PROCESS, e);
                 }
-            }
-
-#endif
-);
+        }));
     }
 
     // throws Exception
@@ -131,19 +119,13 @@ public class PCClipWavPlayer : BasicPlayer, LineListener
     [MethodImpl(MethodImplOptions.Synchronized)]
     public override void stop()
     {
-        MusicThreadPool.getInstance().runTask(new ARunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        MusicThreadPool.getInstance().runTask(new global::javax.sound.sampled.AudioTask(() => {
                 try {
                     stop2();
                 } catch (Exception e) {
                     PreLogUtil.putOE(commonStrings.EXCEPTION, this, commonStrings.PROCESS, e);
                 }
-            }
-
-#endif
-);
+        }));
     }
 
     // throws Exception

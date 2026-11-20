@@ -14,8 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias GameLicensingNullJavaLibraryCSharp;
-extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -92,7 +90,7 @@ using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
 using SmallIntegerSingletonFactory = org.allbinary.logic.math.SmallIntegerSingletonFactory;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using ClientInformationFactory = org.allbinary.logic.system.security.licensing.ClientInformationFactory;
-//using InApplicationPurchaseFactory = org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory;
+using InApplicationPurchaseFactory = org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory;
 using LockableFeature = org.allbinary.logic.system.security.licensing.LockableFeature;
 using LockableFeatureFactory = org.allbinary.logic.system.security.licensing.LockableFeatureFactory;
 using AllBinaryEventObject = org.allbinary.logic.util.@event.AllBinaryEventObject;
@@ -329,7 +327,7 @@ public class GameMidlet : ProgressMidlet, CommandListener
                     this.logUtil.putF("Already in playing state", this, this.COMMAND_ACTION);
                 }
             } else if (command == gameCommandsFactory.BUY_COMMAND) {
-                GameLicensingNullJavaLibraryCSharp::org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory inApplicationPurchaseFactory = GameLicensingNullJavaLibraryCSharp::org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory.getInstance();
+                InApplicationPurchaseFactory inApplicationPurchaseFactory = InApplicationPurchaseFactory.getInstance();
                 BasicArrayList list = LockableFeatureFactory.getInstance().getList();
                 LockableFeature lockableFeature = ((LockableFeature) list.get(0));
                 if (list.size() > 0 && !inApplicationPurchaseFactory.isPurchased(lockableFeature)) {

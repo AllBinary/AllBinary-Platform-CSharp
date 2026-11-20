@@ -29,6 +29,8 @@ using AbPath = org.allbinary.logic.io.path.AbPath;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using DatabaseEncoder = org.allbinary.logic.system.security.crypt.DatabaseEncoder;
 using WeakCrypt = org.allbinary.logic.system.security.crypt.WeakCrypt;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.init;
 
@@ -60,7 +62,7 @@ public class InstallerInfo
             dataOutputStream.writeUTF(DatabaseEncoder.encode(cryptedPassword));
             InstallerInfo.hasRead = false;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRELOADERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRELOADERERROR)) {
                 this.logUtil.putF("Failed", this, "write");
             }
             throw e;
@@ -82,12 +84,12 @@ public class InstallerInfo
                 this.setUserName(new WeakCrypt(1).decrypt(decryptedUserName));
                 this.setPassword(new WeakCrypt(2).decrypt(decryptedPassword));
             } else {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRELOADER)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRELOADER)) {
                     this.logUtil.putF("Not a File - Failed Loading: " + FILEABPATH.ToString(), this, "read");
                 }
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRELOADERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRELOADERERROR)) {
                 this.logUtil.putF("Failed", this, "read");
             }
         }
@@ -117,7 +119,7 @@ public class InstallerInfo
             InstallerInfo.hasRead = true;
             this.read();
             if (InstallerInfo.userName == null || InstallerInfo.password == null) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRELOADER)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRELOADER)) {
                     this.logUtil.putF("Failed", this, "updateIfNeeded");
                 }
             }

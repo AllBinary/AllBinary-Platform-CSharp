@@ -29,6 +29,8 @@ using Node = org.w3c.dom.Node;
 using CustomizerUtil = views.business.context.modules.storefront.customizer.CustomizerUtil;
 using StoreCustomizerComponentUtil = views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil;
 using CssCustomizerView = views.business.context.modules.storefront.customizer.includes.style.css.CssCustomizerView;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context.modules.storefront.customizer.includes.style.css.template.retail;
 
@@ -52,7 +54,7 @@ public class InsertCssValidationView : CssCustomizerView, ValidationComponentInt
     {
         try {
             bool? isValid = true;
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Started Validation", this, this.commonStrings.IS_VALID);
             }
             if (isValid == true) {
@@ -60,7 +62,7 @@ public class InsertCssValidationView : CssCustomizerView, ValidationComponentInt
             }
             return isValid;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -73,7 +75,7 @@ public class InsertCssValidationView : CssCustomizerView, ValidationComponentInt
             StringMaker stringBuffer = new StringMaker();
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Getting Validation Info";
@@ -96,7 +98,7 @@ public class InsertCssValidationView : CssCustomizerView, ValidationComponentInt
         try {
             return StoreCustomizerComponentUtil.getInstance().generate(this.abeClientInformation, this.getTransformInfoInterface());
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             throw e;

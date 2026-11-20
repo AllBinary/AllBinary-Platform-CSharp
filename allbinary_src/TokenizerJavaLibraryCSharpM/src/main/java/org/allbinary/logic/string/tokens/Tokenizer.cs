@@ -31,7 +31,7 @@ public class Tokenizer
     private string endSep = StringUtil.getInstance().EMPTY_STRING;
     public Tokenizer(string sep)
     {
-        if (sep == null || TsUtil.getInstance().compareTo(sep, StringUtil.getInstance().EMPTY_STRING) == 0) {
+        if (TsUtil.getInstance().compareTo(sep, StringUtil.getInstance().EMPTY_STRING) == 0) {
             throw new Exception("Sep provided is not valid");
         }
         this.sep = sep;

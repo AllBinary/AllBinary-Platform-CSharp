@@ -24,6 +24,7 @@ using Tokenizer = org.allbinary.logic.@string.tokens.Tokenizer;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
+using URLGLOBALS = org.allbinary.globals.URLGLOBALS;
 
 namespace org.allbinary.business.context.modules.storefronts;
 
@@ -96,13 +97,13 @@ public class BasicStoreFront : BasicStoreFrontInterface
 
     public virtual string getTestHtmlPath()
     {
-        return org.allbinary.globals.URLGLOBALS.getTestHtmlPath() + this.getCurrentHostNamePath();
+        return URLGLOBALS.getTestHtmlPath() + this.getCurrentHostNamePath();
     }
 
     public virtual string getCurrentHostName()
     {
         string location = null;
-        if (org.allbinary.globals.URLGLOBALS.isTestingMode()) {
+        if (URLGLOBALS.isTestingMode()) {
             location = this.getTestHostName();
         } else {
             location = this.getHostName();
@@ -113,7 +114,7 @@ public class BasicStoreFront : BasicStoreFrontInterface
     public virtual string getCurrentHostNamePath()
     {
         string location = null;
-        if (org.allbinary.globals.URLGLOBALS.isTestingMode()) {
+        if (URLGLOBALS.isTestingMode()) {
             location = this.getTestHostNamePath();
         } else {
             location = this.getHostNamePath();
@@ -124,7 +125,7 @@ public class BasicStoreFront : BasicStoreFrontInterface
     public virtual string getCurrentHomeHostName()
     {
         string location = null;
-        if (org.allbinary.globals.URLGLOBALS.isTestingMode()) {
+        if (URLGLOBALS.isTestingMode()) {
             location = this.getTestHomeHostName();
         } else {
             location = this.getHomeHostName();
@@ -135,7 +136,7 @@ public class BasicStoreFront : BasicStoreFrontInterface
     public virtual string getCurrentHomeHostNamePath()
     {
         string location = null;
-        if (org.allbinary.globals.URLGLOBALS.isTestingMode()) {
+        if (URLGLOBALS.isTestingMode()) {
             location = this.getTestHomeHostNamePath();
         } else {
             location = this.getHomeHostNamePath();

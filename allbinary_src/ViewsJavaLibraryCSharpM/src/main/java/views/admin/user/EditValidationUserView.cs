@@ -27,6 +27,8 @@ using StringMaker = org.allbinary.logic.@string.StringMaker;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.user;
 
@@ -55,7 +57,7 @@ public class EditValidationUserView : UserView, ValidationComponentInterface
             }
             return this.user.isValid();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate form", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -67,7 +69,7 @@ public class EditValidationUserView : UserView, ValidationComponentInterface
         try {
             StringMaker stringBuffer = new StringMaker();
             if (UserName.getInstance().isValid(this.userName) == true) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("User Name is valid", this, "validationInfo()");
                 }
                 this.user = UserEntityFactory.getInstance().getUser(this.userName);
@@ -80,7 +82,7 @@ public class EditValidationUserView : UserView, ValidationComponentInterface
                 return stringBuffer.ToString();
             }
             if (this.user.isValid() == false) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("User exists but is invalid - Probably manually modified", this, "validationInfo()");
                 }
                 stringBuffer.append("User data is not valid - Please call administrator.<br />");
@@ -88,7 +90,7 @@ public class EditValidationUserView : UserView, ValidationComponentInterface
             }
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Validating Form";

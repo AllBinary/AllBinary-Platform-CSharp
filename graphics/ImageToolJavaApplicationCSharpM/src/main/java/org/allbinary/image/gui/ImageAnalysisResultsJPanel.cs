@@ -20,10 +20,17 @@ using ImageAnalysisResults = org.allbinary.media.image.analysis.ImageAnalysisRes
 using ImageColorRangeResults = org.allbinary.media.image.analysis.ImageColorRangeResults;
 using ImageColorResults = org.allbinary.media.image.analysis.ImageColorResults;
 using CommonPhoneStrings = org.allbinary.@string.CommonPhoneStrings;
+//using DefaultComboBoxModel = javax.swing.DefaultComboBoxModel;
+//using GroupLayout = javax.swing.GroupLayout;
+//using JComboBox = javax.swing.JComboBox;
+//using JLabel = javax.swing.JLabel;
+//using JPanel = javax.swing.JPanel;
+//using JTextField = javax.swing.JTextField;
+//using LayoutStyle = javax.swing.LayoutStyle;
 
 namespace org.allbinary.image.gui;
 
-public class ImageAnalysisResultsJPanel : javax.swing.JPanel
+public class ImageAnalysisResultsJPanel : JPanel
 {
     public ImageAnalysisResultsJPanel(ImageAnalysisResults[] imageAnalysisResultsArray)
     {
@@ -34,39 +41,39 @@ public class ImageAnalysisResultsJPanel : javax.swing.JPanel
 
     private void initComponents()
     {
-        this.jLabel1 = new javax.swing.JLabel();
-        this.jLabel2 = new javax.swing.JLabel();
-        this.jLabel3 = new javax.swing.JLabel();
-        this.percentMatchingJTextField = new javax.swing.JTextField();
-        this.totalPixelsJTextField = new javax.swing.JTextField();
-        this.matchingPixelsJTextField = new javax.swing.JTextField();
-        this.jComboBox1 = new javax.swing.JComboBox();
-        this.jLabel4 = new javax.swing.JLabel();
-        this.jLabel5 = new javax.swing.JLabel();
-        this.jLabel6 = new javax.swing.JLabel();
-        this.jLabel7 = new javax.swing.JLabel();
-        this.avgRedJTextField = new javax.swing.JTextField();
-        this.avgGreenJTextField = new javax.swing.JTextField();
-        this.avgBlueJTextField = new javax.swing.JTextField();
-        this.minGreenJTextField = new javax.swing.JTextField();
-        this.jLabel8 = new javax.swing.JLabel();
-        this.jLabel9 = new javax.swing.JLabel();
-        this.jLabel10 = new javax.swing.JLabel();
-        this.minRedJTextField = new javax.swing.JTextField();
-        this.minBlueJTextField = new javax.swing.JTextField();
-        this.jLabel11 = new javax.swing.JLabel();
-        this.jLabel12 = new javax.swing.JLabel();
-        this.jLabel13 = new javax.swing.JLabel();
-        this.maxRedJTextField = new javax.swing.JTextField();
-        this.maxGreenJTextField = new javax.swing.JTextField();
-        this.maxBlueJTextField = new javax.swing.JTextField();
+        this.jLabel1 = new JLabel();
+        this.jLabel2 = new JLabel();
+        this.jLabel3 = new JLabel();
+        this.percentMatchingJTextField = new JTextField();
+        this.totalPixelsJTextField = new JTextField();
+        this.matchingPixelsJTextField = new JTextField();
+        this.jComboBox1 = new JComboBox();
+        this.jLabel4 = new JLabel();
+        this.jLabel5 = new JLabel();
+        this.jLabel6 = new JLabel();
+        this.jLabel7 = new JLabel();
+        this.avgRedJTextField = new JTextField();
+        this.avgGreenJTextField = new JTextField();
+        this.avgBlueJTextField = new JTextField();
+        this.minGreenJTextField = new JTextField();
+        this.jLabel8 = new JLabel();
+        this.jLabel9 = new JLabel();
+        this.jLabel10 = new JLabel();
+        this.minRedJTextField = new JTextField();
+        this.minBlueJTextField = new JTextField();
+        this.jLabel11 = new JLabel();
+        this.jLabel12 = new JLabel();
+        this.jLabel13 = new JLabel();
+        this.maxRedJTextField = new JTextField();
+        this.maxGreenJTextField = new JTextField();
+        this.maxBlueJTextField = new JTextField();
         this.jLabel1.setText("Matching Pixels:");
         this.jLabel2.setText("Total Pixels:");
         this.jLabel3.setText("Percent Matching:");
         this.percentMatchingJTextField.setEditable(false);
         this.totalPixelsJTextField.setEditable(false);
         this.matchingPixelsJTextField.setEditable(false);
-        this.jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new string[] { CommonPhoneStrings.getInstance().ONE }));
+        this.jComboBox1.setModel(new DefaultComboBoxModel(new string[] { CommonPhoneStrings.getInstance().ONE }));
         this.jComboBox1.setEnabled(false);
         this.jLabel4.setText("Image:");
         this.jLabel5.setText("Average Red:");
@@ -87,10 +94,10 @@ public class ImageAnalysisResultsJPanel : javax.swing.JPanel
         this.maxRedJTextField.setEditable(false);
         this.maxGreenJTextField.setEditable(false);
         this.maxBlueJTextField.setEditable(false);
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
-        layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addContainerGap().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jLabel3).addComponent(jLabel2).addComponent(jLabel1).addComponent(jLabel5).addComponent(jLabel6).addComponent(jLabel7).addComponent(jLabel4)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(avgBlueJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 81, short.MaxValue).addComponent(avgGreenJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 81, short.MaxValue).addComponent(avgRedJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 81, short.MaxValue).addComponent(totalPixelsJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 81, short.MaxValue).addComponent(percentMatchingJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 81, short.MaxValue).addComponent(matchingPixelsJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 81, short.MaxValue)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(jLabel12).addComponent(jLabel13).addComponent(jLabel8).addComponent(jLabel9).addComponent(jLabel10).addComponent(jLabel11)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(minRedJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(maxGreenJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(minGreenJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(minBlueJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(maxRedJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(maxBlueJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)).addContainerGap(18, short.MaxValue)));
-        layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel4).addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel1).addComponent(matchingPixelsJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(jLabel8).addComponent(minRedJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel2).addComponent(totalPixelsJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(jLabel9).addComponent(minGreenJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel3).addComponent(percentMatchingJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(jLabel10).addComponent(minBlueJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel5).addComponent(avgRedJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(jLabel11).addComponent(maxRedJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel6).addComponent(avgGreenJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(maxGreenJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(jLabel12)).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel7).addComponent(avgBlueJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE).addComponent(jLabel13).addComponent(maxBlueJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))));
+        layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addContainerGap().addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(jLabel3).addComponent(jLabel2).addComponent(jLabel1).addComponent(jLabel5).addComponent(jLabel6).addComponent(jLabel7).addComponent(jLabel4)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE).addComponent(avgBlueJTextField, GroupLayout.DEFAULT_SIZE, 81, short.MaxValue).addComponent(avgGreenJTextField, GroupLayout.DEFAULT_SIZE, 81, short.MaxValue).addComponent(avgRedJTextField, GroupLayout.DEFAULT_SIZE, 81, short.MaxValue).addComponent(totalPixelsJTextField, GroupLayout.DEFAULT_SIZE, 81, short.MaxValue).addComponent(percentMatchingJTextField, GroupLayout.DEFAULT_SIZE, 81, short.MaxValue).addComponent(matchingPixelsJTextField, GroupLayout.DEFAULT_SIZE, 81, short.MaxValue)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(jLabel12).addComponent(jLabel13).addComponent(jLabel8).addComponent(jLabel9).addComponent(jLabel10).addComponent(jLabel11)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(minRedJTextField, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE).addComponent(maxGreenJTextField, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE).addComponent(minGreenJTextField, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE).addComponent(minBlueJTextField, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE).addComponent(maxRedJTextField, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE).addComponent(maxBlueJTextField, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)).addContainerGap(18, short.MaxValue)));
+        layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jLabel4).addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jLabel1).addComponent(matchingPixelsJTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE).addComponent(jLabel8).addComponent(minRedJTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jLabel2).addComponent(totalPixelsJTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE).addComponent(jLabel9).addComponent(minGreenJTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jLabel3).addComponent(percentMatchingJTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE).addComponent(jLabel10).addComponent(minBlueJTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jLabel5).addComponent(avgRedJTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE).addComponent(jLabel11).addComponent(maxRedJTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jLabel6).addComponent(avgGreenJTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE).addComponent(maxGreenJTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE).addComponent(jLabel12)).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jLabel7).addComponent(avgBlueJTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE).addComponent(jLabel13).addComponent(maxBlueJTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))));
     }
 
     private void updateImageColorRangeResults(ImageAnalysisResults imageAnalysisResults)
@@ -111,31 +118,31 @@ public class ImageAnalysisResultsJPanel : javax.swing.JPanel
         this.maxBlueJTextField.setText(imageColorResults.getColorRange().getMaxBlue().ToString());
     }
 
-    private javax.swing.JTextField avgBlueJTextField = null;
-    private javax.swing.JTextField avgGreenJTextField = null;
-    private javax.swing.JTextField avgRedJTextField = null;
-    private javax.swing.JComboBox jComboBox1 = null;
-    private javax.swing.JLabel jLabel1 = null;
-    private javax.swing.JLabel jLabel10 = null;
-    private javax.swing.JLabel jLabel11 = null;
-    private javax.swing.JLabel jLabel12 = null;
-    private javax.swing.JLabel jLabel13 = null;
-    private javax.swing.JLabel jLabel2 = null;
-    private javax.swing.JLabel jLabel3 = null;
-    private javax.swing.JLabel jLabel4 = null;
-    private javax.swing.JLabel jLabel5 = null;
-    private javax.swing.JLabel jLabel6 = null;
-    private javax.swing.JLabel jLabel7 = null;
-    private javax.swing.JLabel jLabel8 = null;
-    private javax.swing.JLabel jLabel9 = null;
-    private javax.swing.JTextField matchingPixelsJTextField = null;
-    private javax.swing.JTextField maxBlueJTextField = null;
-    private javax.swing.JTextField maxGreenJTextField = null;
-    private javax.swing.JTextField maxRedJTextField = null;
-    private javax.swing.JTextField minBlueJTextField = null;
-    private javax.swing.JTextField minGreenJTextField = null;
-    private javax.swing.JTextField minRedJTextField = null;
-    private javax.swing.JTextField percentMatchingJTextField = null;
-    private javax.swing.JTextField totalPixelsJTextField = null;
+    private JTextField avgBlueJTextField = null;
+    private JTextField avgGreenJTextField = null;
+    private JTextField avgRedJTextField = null;
+    private JComboBox jComboBox1 = null;
+    private JLabel jLabel1 = null;
+    private JLabel jLabel10 = null;
+    private JLabel jLabel11 = null;
+    private JLabel jLabel12 = null;
+    private JLabel jLabel13 = null;
+    private JLabel jLabel2 = null;
+    private JLabel jLabel3 = null;
+    private JLabel jLabel4 = null;
+    private JLabel jLabel5 = null;
+    private JLabel jLabel6 = null;
+    private JLabel jLabel7 = null;
+    private JLabel jLabel8 = null;
+    private JLabel jLabel9 = null;
+    private JTextField matchingPixelsJTextField = null;
+    private JTextField maxBlueJTextField = null;
+    private JTextField maxGreenJTextField = null;
+    private JTextField maxRedJTextField = null;
+    private JTextField minBlueJTextField = null;
+    private JTextField minGreenJTextField = null;
+    private JTextField minRedJTextField = null;
+    private JTextField percentMatchingJTextField = null;
+    private JTextField totalPixelsJTextField = null;
 }
 

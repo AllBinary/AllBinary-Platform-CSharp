@@ -27,7 +27,7 @@ public class TouchScreenTypeFactory
         return TouchScreenTypeFactory.instance;
     }
 
-    public virtual void TouchScreenTypeFactory_Method()
+    private TouchScreenTypeFactory()
     {
         TouchScreenFactory touchScreenFactory = TouchScreenFactory.getInstance();
         touchScreenFactory.setTouch(true);

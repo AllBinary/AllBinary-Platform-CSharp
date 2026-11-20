@@ -27,6 +27,8 @@ using BodyData = org.allbinary.logic.visual.transform.template.customizer.bodies
 using TitleData = org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.template.util;
 
@@ -78,7 +80,7 @@ public class TransformTemplateCustomizerUtil
         hashMap.put(new string[] { this.GLOBALS_UPDATE }, ONE_EMPTY_STRING_ARRAY);
         Replace replace = null;
         string rootViewName = replace.all(viewName);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("RootViewName for ObjectConfig: " + rootViewName, this, "getPageNameHack");
         }
         return rootViewName;

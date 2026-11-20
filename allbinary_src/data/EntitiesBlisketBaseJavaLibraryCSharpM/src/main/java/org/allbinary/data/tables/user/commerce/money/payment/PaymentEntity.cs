@@ -34,6 +34,8 @@ using AbSqlBean = org.allbinary.logic.communication.sql.AbSqlBean;
 using SuperCrypt = org.allbinary.logic.control.crypt.SuperCrypt;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.data.tables.user.commerce.money.payment;
 
@@ -67,11 +69,11 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
             updateKeyAndValue.put(EntryData.getInstance().DEFAULT, EntryData.getInstance().DEFAULT);
             whereKeyAndValue.put(PaymentData.ID, index.ToString());
             base.updateWhere(whereKeyAndValue, updateKeyAndValue);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.commonStrings.SUCCESS, this, "setDefault");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "setDefault", e);
             }
         }
@@ -94,7 +96,7 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
             }
             return paymentVector;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, this.commonStrings.GET, e);
             }
             return null;
@@ -111,7 +113,7 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
             paymentHashMap = base.getRow(updateKeyAndValue);
             if (paymentHashMap != null) {
                 Payment payment = new Payment(paymentHashMap);
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     this.logUtil.putF(this.commonStrings.SUCCESS, this, "getDefault");
                 }
                 return ((PaymentInterface) payment);
@@ -119,7 +121,7 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
                 return null;
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "getDefault", e);
             }
             return null;
@@ -133,11 +135,11 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
             whereHashMap.put(UserData.USERNAME, userName);
             whereHashMap.put(PaymentData.ID, ((string) index.ToString()));
             base.deleteWhere(whereHashMap);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.commonStrings.SUCCESS, this, "remove");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "remove", e);
             }
         }
@@ -160,11 +162,11 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
             string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
             vector.add(time);
             base.insert(vector);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.commonStrings.SUCCESS, this, "add");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "add", e);
             }
         }

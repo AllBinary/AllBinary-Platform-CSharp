@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using Control = javax.sound.sampled.Control;
+using Control = javax.sound.sampled.Control;
 
 namespace org.allbinary.media.audio;
 

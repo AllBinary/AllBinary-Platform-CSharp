@@ -14,14 +14,11 @@
  */
 // Generated Code Do Not Modify
 
-extern alias GameLicensingNullJavaLibraryCSharp;
-extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using Command = javax.microedition.lcdui.Command;
 using CommandListener = javax.microedition.lcdui.CommandListener;
 using Graphics = javax.microedition.lcdui.Graphics;
-using J2MEUtil = org.allbinary.J2MEUtil;
 using GameInfo = org.allbinary.game.GameInfo;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using GameCommandCanvas = org.allbinary.game.displayable.canvas.GameCommandCanvas;
@@ -45,9 +42,7 @@ using SimpleTextPaintable = org.allbinary.graphics.paint.SimpleTextPaintable;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonStrings = org.allbinary.@string.CommonStrings;
-using ARunnable = org.allbinary.thread.ARunnable;
 using SecondaryThreadPool = org.allbinary.thread.SecondaryThreadPool;
-using ABSystemWrapper = org.allbinary.logic.ABSystemWrapper;
 
 namespace org.allbinary.game.score.displayable;
 
@@ -64,7 +59,7 @@ public class HighScoresCanvas : GameCommandCanvas, HighScoresResultsListener
     private readonly GameInfo gameInfo;
     private readonly HighScoresCanvasInputProcessor highScoresCanvasInputProcessor;
     private Command currentCommand;
-    private bool hasPainted = false;
+    public bool hasPainted = false;
     public HighScoresCanvas(CommandListener commandListener, AllBinaryGameLayerManager allBinaryGameLayerManager, GameInfo gameInfo, HighScoresPaintable paintable, HighScoresFactoryInterface highScoresFactoryInterface, HighScoresCanvasInputProcessorFactoryInterface highScoresCanvasInputProcessorFactoryInterface) : base(commandListener, HighScoresCanvas.NAME, allBinaryGameLayerManager.getBackgroundBasicColor(), allBinaryGameLayerManager.getForegroundBasicColor())
     {
         this.waitPaintable = new SimpleTextPaintable(this.commonStrings.PLEASE_WAIT_FOR_SERVER, BasicColorFactory.getInstance().WHITE);
@@ -78,14 +73,13 @@ public class HighScoresCanvas : GameCommandCanvas, HighScoresResultsListener
         this.waitPaintable.setBasicColorP(allBinaryGameLayerManager.getForegroundBasicColor());
         this.getHighScoresPaintable().setBasicColorP(allBinaryGameLayerManager.getForegroundBasicColor());
         this.colorFillPaintable = ColorFillPaintableFactory.getInstance().getInstance(allBinaryGameLayerManager.getBackgroundBasicColor(), false);
-        if (this.highScoresHelper.getHighScoresArray() == NoHighScoresFactory.getInstance().NO_HIGH_SCORES) {
+        if (this.highScoresHelper.getHighScoresArray().Length == NoHighScoresFactory.getInstance().NO_HIGH_SCORES.Length) {
             this.setPaintable(this.waitPaintable);
         } else {
             this.logUtil.putF("Show HighScores that are already loaded", this, this.commonStrings.CONSTRUCTOR);
             this.updateCommand(this.currentCommand);
             this.setPaintable(this.getHighScoresPaintable());
         }
-        
         SecondaryThreadPool.getInstance().runTask(new HighScoreRunnable(this));
     }
 
@@ -190,45 +184,6 @@ public class HighScoresCanvas : GameCommandCanvas, HighScoresResultsListener
         this.paintable = paintable;
         this.repaintBehavior.onChangeRepaint(this);
     }
-
-        class HighScoreRunnable : ARunnable
-        {
-            public readonly HighScoresCanvas highScoresCanvas;
-            public HighScoreRunnable(HighScoresCanvas highScoresCanvas)
-            {
-                this.highScoresCanvas = highScoresCanvas;
-            }
-
-            public override void run()
-            {
-                CommonStrings commonStrings = CommonStrings.getInstance();
-                LogUtil logUtil = LogUtil.getInstance();
-                HighScoresCanvas highScoresCanvas = this.highScoresCanvas;
-                try {
-                    bool isHTML = J2MEUtil.isHTML();
-                    if (!isHTML) {
-                        while (!highScoresCanvas.hasPainted) {
-                        }
-                        highScoresCanvas.hasPainted = false;
-                    }
-                    StringMaker stringMaker = new StringMaker();
-                    ABSystemWrapper systemWrapper = ABSystemWrapper.getInstance();
-                    long currentTimeMillis = systemWrapper.currentTimeMillis();
-                    logUtil.putF(stringMaker.append("HighScoresCanvas - Request repaint to be sure: ").appendlong(currentTimeMillis).ToString(), this, commonStrings.RUN);
-                    highScoresCanvas.repaintBehavior.onChangeRepaint(highScoresCanvas);
-                    if (!isHTML) {
-                        while (!highScoresCanvas.hasPainted) {
-                        }
-                    }
-                    stringMaker.delete(0, stringMaker.length());
-                    logUtil.putF(stringMaker.append("HighScoresCanvas - Now that the canvas has completed repaint go ahead and fetch the scores: ").appendlong(currentTimeMillis).ToString(), this, commonStrings.RUN);
-                    highScoresCanvas.executeUpdate();
-                } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
-                }
-            }
-
-        }
 
 }
 

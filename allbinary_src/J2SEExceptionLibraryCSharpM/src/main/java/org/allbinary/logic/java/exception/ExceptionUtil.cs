@@ -43,9 +43,7 @@ public class ExceptionUtil
             System.IO.StreamWriter printStream = new System.IO.StreamWriter(byteArrayOutputStream) { AutoFlush = true };
             (printStream).WriteLine(e);
             string output = byteArrayOutputStream.ToString();
-            if (output != null) {
-                return new string((output).ToCharArray());
-            }
+            return new string((output).ToCharArray());
         }
         return this.NONE;
     }

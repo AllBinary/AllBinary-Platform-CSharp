@@ -29,6 +29,8 @@ using TransformInfoObjectConfig = org.allbinary.logic.visual.transform.info.obje
 using TransformInfoObjectConfigData = org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData;
 using TransformTemplateCustomizerUtil = org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil;
 using Document = org.w3c.dom.Document;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context.modules.storefront.customizer.template.objectConfig;
 
@@ -56,7 +58,7 @@ public class NoTemplateTransformInfoObjectConfig : TransformInfoObjectConfig
     public virtual Document generate(Document objectConfigDocument)
     {
         string docString = XmlDocumentHelper.toString(objectConfigDocument);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Initial ObjectConfig: " + docString, this, "generate()");
         }
         string storeName = this.getTransformInfoInterface().getStoreName();
@@ -69,7 +71,7 @@ public class NoTemplateTransformInfoObjectConfig : TransformInfoObjectConfig
         hashMap.put(VARKEY + TransformInfoData.getInstance().PARTIAL, pageName);
         Replace replace = new Replace(hashMap);
         Document newObjectConfigDocument = DomDocumentHelper.create(replace.all(docString));
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Final ObjectConfig: " + XmlDocumentHelper.toString(newObjectConfigDocument), this, "generate()");
         }
         return newObjectConfigDocument;

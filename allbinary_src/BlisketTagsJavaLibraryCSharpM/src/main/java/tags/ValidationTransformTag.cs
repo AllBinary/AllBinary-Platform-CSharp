@@ -24,6 +24,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using ValidatedViewHelperFactory = taghelpers.ValidatedViewHelperFactory;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace tags;
 
@@ -58,7 +60,7 @@ public class ValidationTransformTag : TransformTag
             bool? result = ((bool?) method.invoke(this.getHelper(), null));
             return result.Value;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.IS_VALID, e);
             }
             throw e;
@@ -74,7 +76,7 @@ public class ValidationTransformTag : TransformTag
             string result = ((string) method.invoke(this.getHelper(), null));
             return result;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "validationInfo()", e);
             }
             throw e;
@@ -85,7 +87,7 @@ public class ValidationTransformTag : TransformTag
     public override int doStartTag()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
                 StringMaker stringBuffer = new StringMaker();
                 HttpServletRequest request = ((HttpServletRequest) this.pageContext.getRequest());
                 stringBuffer.append("ValidationViewTag Start For: ");
@@ -99,7 +101,7 @@ public class ValidationTransformTag : TransformTag
             this.setHelper();
             if (this.isValid()) {
                 base.doStartTag();
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
                     StringMaker stringBuffer = new StringMaker();
                     stringBuffer.append("View File: ");
                     stringBuffer.append(this.getObjectFile());
@@ -114,7 +116,7 @@ public class ValidationTransformTag : TransformTag
                 }
             } else {
                 pageContext.getOut().print(this.validationInfo());
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
                     StringMaker stringBuffer = new StringMaker();
                     stringBuffer.append("View File: ");
                     stringBuffer.append(this.getObjectFile());
@@ -140,7 +142,7 @@ public class ValidationTransformTag : TransformTag
 
     public override int doEndTag()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF("Tag Ended", this, "doEndTag");
         }
         this.logic = true;

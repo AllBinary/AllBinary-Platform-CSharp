@@ -18,6 +18,8 @@ using System;
 using System.Linq;
 using TagHelperFactoryInterface = admin.taghelpers.TagHelperFactoryInterface;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace tags;
 
@@ -28,7 +30,7 @@ public class HelperTag : PropertiesTag
     private object anyType = null;
     public HelperTag(TagHelperFactoryInterface tagHelperFactoryInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }
         this.tagHelperFactoryInterface = tagHelperFactoryInterface;
@@ -38,7 +40,7 @@ public class HelperTag : PropertiesTag
     public virtual void setHelper()
     {
         if (this.anyType == null) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
                 this.logUtil.putF("Creating TagHelper with: \n" + this.getPropertiesHashMap().ToString(), this, "doStartTag");
             }
             this.anyType = this.tagHelperFactoryInterface.getInstance(this.getPropertiesHashMap(), this.pageContext);
@@ -52,7 +54,7 @@ public class HelperTag : PropertiesTag
 
     public override int doEndTag()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF("Tag Ended", this, "doEndTag");
         }
         this.anyType = null;

@@ -14,7 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias OpenGLESBaseJavaLibraryCSharp;
 using System;
 using System.Linq;
 using GL = javax.microedition.khronos.opengles.GL;
@@ -36,7 +35,7 @@ using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 namespace org.allbinary.image.opengles;
 
 //OpenGLESSWTJOGLImageJavaLibrary
-public class OpenGLESImage : Image, OpenGLESBaseJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLSurfaceChangedInterface
+public class OpenGLESImage : Image, OpenGLSurfaceChangedInterface
 {
     public static readonly OpenGLESImage NULL_OPENGL_IMAGE = new OpenGLESImage(NullImage.NULL_IMAGE, PlatformBitmapBaseFactory.NULL_PLATFORM_BITMAP_BASE_FACTORY, PlatformTextureBaseFactory.NULL_PLATFORM_TEXTURE_BASE_FACTORY);
     public readonly LogUtil logUtil = LogUtil.getInstance();
@@ -102,7 +101,7 @@ public class OpenGLESImage : Image, OpenGLESBaseJavaLibraryCSharp::org.allbinary
     }
 
     public const int TYPE = 4;
-    public virtual int getType()
+    public override int getType()
     {
         return OpenGLESImage.TYPE;
     }

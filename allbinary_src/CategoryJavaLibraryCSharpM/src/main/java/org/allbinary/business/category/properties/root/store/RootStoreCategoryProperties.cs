@@ -39,6 +39,8 @@ using TransformInfoHttpInterface = org.allbinary.logic.visual.transform.info.Tra
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.category.properties.root.store;
 
@@ -209,7 +211,7 @@ public class RootStoreCategoryProperties : RootCategoryPropertiesInterface, Cate
 
     public virtual void log()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             this.logUtil.putF(new StringMaker().append("filePath = ").append(this.fileAbPath.ToString()).append("\npath = ").append(this.abPath.ToString()).append("\ncategory = ").append(this.category).ToString(), this, "log()");
         }
     }

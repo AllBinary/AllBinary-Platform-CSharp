@@ -26,6 +26,8 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp.configuration.user.@event;
 
@@ -64,7 +66,7 @@ public class UserEmailEventsConfigurationView : DomNodeInterface
         Node node = document.createElement(UserEmailEventsConfigurationData.NAME);
         HashMap<object, object> emailEventHashMap = this.getUserEmailEventsConfigurationInterface().getEventConfigurationHashMap();
         Set<object> set = emailEventHashMap.keySet();
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             this.logUtil.putF("Number Of Email Events Specified in file: " + set.size(), this, this.commonStrings.CONSTRUCTOR);
         }
         object[] eventNameArray = set.toArray();

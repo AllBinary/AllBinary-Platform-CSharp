@@ -31,14 +31,16 @@ public class AbFileInputStream : FileInputStream
         // base(name) is called from the constructor declaration
     }
 
-    public AbFileInputStream(AbFile file) : base(AbFileNativeUtil.get(file))
+    // throws FileNotFoundException
+    public static AbFileInputStream createFromAbFile(AbFile file)
     {
-        // base(AbFileNativeUtil.get(file)) is called from the constructor declaration
+        return new AbFileInputStream(AbFileNativeUtil.get(file).getPath());
     }
 
-    public AbFileInputStream(File file) : base(file)
+    // throws FileNotFoundException
+    public static AbFileInputStream createFromFile(File file)
     {
-        // base(file) is called from the constructor declaration
+        return new AbFileInputStream(file.getPath());
     }
 
 }

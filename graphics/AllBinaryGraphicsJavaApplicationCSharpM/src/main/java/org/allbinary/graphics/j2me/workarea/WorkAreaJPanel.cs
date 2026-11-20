@@ -38,6 +38,11 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+//using GridBagConstraints = java.awt.GridBagConstraints;
+//using GridLayout = java.awt.GridLayout;
+//using KeyAdapter = java.awt.@event.KeyAdapter;
+using KeyEvent = java.awt.@event.KeyEvent;
+//using JPanel = javax.swing.JPanel;
 
 namespace org.allbinary.graphics.j2me.workarea;
 
@@ -48,7 +53,7 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
     private JPanel canvasHolderJPanel = null;
     private string name = null;
     private int selectedFrame = 0;
-    private static org.w3c.dom.Document document = null;
+    private static Document document = null;
     private PropertiesJPanel propertiesJPanel = null;
     private WorkAreaJTreeJPanel workAreaJTreeJPanel = null;
     private bool isPlaying = false;
@@ -107,7 +112,7 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = .05;
         gridBagConstraints.weighty = .05;
         ToolJPanel toolJPanel = new ToolJPanel();
@@ -117,7 +122,7 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1;
         gridBagConstraints.weighty = 1;
         gridBagLayout.setConstraints(this.canvasHolderJPanel, gridBagConstraints);
@@ -125,8 +130,8 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
         gridBagConstraints = new GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.gridwidth = GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
         gridBagConstraints.weightx = .1;
         gridBagConstraints.weighty = .1;
         this.propertiesJPanel = new PropertiesJPanel();
@@ -323,21 +328,21 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
 
     private void initComponents()
     {
-        this.innerJPanel = new javax.swing.JPanel();
-        setLayout(new java.awt.GridLayout(1, 1));
-        this.innerJPanel.addKeyListener(new java.awt.event.KeyAdapter()
+        this.innerJPanel = new JPanel();
+        setLayout(new GridLayout(1, 1));
+        this.innerJPanel.addKeyListener(new KeyAdapter()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void keyTyped(java.awt.event.KeyEvent evt)
+            public virtual void keyTyped(KeyEvent evt)
             {
                 innerJPanelKeyTyped(evt);
             }
 
-            public virtual void keyPressed(java.awt.event.KeyEvent evt)
+            public virtual void keyPressed(KeyEvent evt)
             {
                 innerJPanelKeyPressed(evt);
             }
 
-            public virtual void keyReleased(java.awt.event.KeyEvent evt)
+            public virtual void keyReleased(KeyEvent evt)
             {
                 innerJPanelKeyReleased(evt);
             }
@@ -347,31 +352,31 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
         add(this.innerJPanel);
     }
 
-    private void innerJPanelKeyReleased(java.awt.event.KeyEvent evt)
+    private void innerJPanelKeyReleased(KeyEvent evt)
     {
         StatusFactory.getInstance().setStatus("Key Pressed1");
     }
 
-    private void innerJPanelKeyPressed(java.awt.event.KeyEvent evt)
+    private void innerJPanelKeyPressed(KeyEvent evt)
     {
         StatusFactory.getInstance().setStatus("Key Pressed2");
     }
 
-    private void innerJPanelKeyTyped(java.awt.event.KeyEvent evt)
+    private void innerJPanelKeyTyped(KeyEvent evt)
     {
         StatusFactory.getInstance().setStatus("Key Pressed3");
     }
 
-    public virtual void keyPressed(java.awt.event.KeyEvent keyEvent)
+    public virtual void keyPressed(KeyEvent keyEvent)
     {
         this.getCurrentFrame().keyPressed(keyEvent);
     }
 
-    public virtual void keyReleased(java.awt.event.KeyEvent keyEvent)
+    public virtual void keyReleased(KeyEvent keyEvent)
     {
     }
 
-    public virtual void keyTyped(java.awt.event.KeyEvent keyEvent)
+    public virtual void keyTyped(KeyEvent keyEvent)
     {
     }
 
@@ -457,6 +462,6 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
         }
     }
 
-    private javax.swing.JPanel innerJPanel = null;
+    private JPanel innerJPanel = null;
 }
 

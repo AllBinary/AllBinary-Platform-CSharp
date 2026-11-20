@@ -20,6 +20,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using ValidationComponentInterface = org.allbinary.logic.control.validate.ValidationComponentInterface;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views;
 
@@ -42,12 +44,12 @@ public class ValidationOnlyTempUtil
     {
         CommonStrings commonStrings = CommonStrings.getInstance();
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("View Name: " + validationComponentInterface.getTransformInfoInterface().getName(), this, "view()");
             }
             return StringUtil.getInstance().EMPTY_STRING;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "view()", e);
             }
             throw e;

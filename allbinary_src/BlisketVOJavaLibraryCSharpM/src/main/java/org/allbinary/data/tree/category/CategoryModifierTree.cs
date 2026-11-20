@@ -24,6 +24,8 @@ using Directory = org.allbinary.logic.io.file.directory.Directory;
 using AbPath = org.allbinary.logic.io.path.AbPath;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.data.tree.category;
 
@@ -35,7 +37,7 @@ public class CategoryModifierTree : CategoryPrivateTree, CategoryModifierTreeInt
     public CategoryModifierTree(CategoryFactoryInterface categoryFactoryInterface) : base(categoryFactoryInterface)
     {
         // base(categoryFactoryInterface) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             this.logUtil.putF(this.commonStrings.START, this, "CategoryModifierTree(CategoryFactoryInterface categoryFactoryInterface)");
         }
     }
@@ -44,14 +46,14 @@ public class CategoryModifierTree : CategoryPrivateTree, CategoryModifierTreeInt
     public virtual void insert(CategoryInterface parentCategoryInterface, CategoryInterface newChildCategoryInterface)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
                 this.logUtil.putF("Inserting", this, "insert()");
             }
             if (((bool) (parentCategoryInterface.isValid()))) {
                 parentCategoryInterface.addChild(newChildCategoryInterface);
                 AbPath directoryToBeCreatedAbPath = new AbPath(newChildCategoryInterface.getRootFilePath().ToString() + newChildCategoryInterface.getPath().ToString(), StringUtil.getInstance().EMPTY_STRING);
                 this.directory.create(directoryToBeCreatedAbPath);
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
                     this.logUtil.putF("Saving", this, "insert()");
                 }
                 this.save(parentCategoryInterface);
@@ -60,7 +62,7 @@ public class CategoryModifierTree : CategoryPrivateTree, CategoryModifierTreeInt
                 throw new Exception("Will Not Add Null Category");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "insert", e);
             }
         }
@@ -81,7 +83,7 @@ public class CategoryModifierTree : CategoryPrivateTree, CategoryModifierTreeInt
                 throw new Exception("Will Not Add Null Category");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, this.commonStrings.delete, e);
             }
         }

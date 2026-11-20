@@ -30,7 +30,7 @@ public class IdGeneratorEntityFactory
     public static IdGeneratorEntityInterface getInstance()
     {
         try {
-            return ((IdGeneratorEntityInterface) new org.allbinary.data.tables.generator.IdGeneratorEntity());
+            return ((IdGeneratorEntityInterface) new IdGeneratorEntity());
         } catch (Exception e) {
             LogUtil logUtil = LogUtil.getInstance();
             CommonStrings commonStrings = CommonStrings.getInstance();

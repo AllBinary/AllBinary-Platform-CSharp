@@ -28,6 +28,8 @@ using StringMaker = org.allbinary.logic.@string.StringMaker;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using Replace = org.allbinary.logic.@string.regex.replace.Replace;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.sql;
 
@@ -97,11 +99,11 @@ public class AbSqlRow : AbSqlColumn
             stringBuffer.append(this.sqlStrings.CLOSE_QUOTE);
             string sqlStatement = stringBuffer.ToString();
             this.executeSQLStatement(sqlStatement);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.SUCCESS_SQL_STATEMENT + sqlStatement, this, this.METHOD_UPDATE_WHERE);
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + stringBuffer, this, METHOD_UPDATE_WHERE, e);
             }
         }
@@ -123,7 +125,7 @@ public class AbSqlRow : AbSqlColumn
                 stringBuffer.append(this.commonSeps.SPACE);
                 stringBuffer.append(columnName);
                 stringBuffer.append(this.EQUAL_QUOTE);
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     this.logUtil.putF(this.COLUMN_NAME_LABEL + columnName, this, this.METHOD_UPDATE_WHERE);
                 }
                 string columnValue = ((string) updatedKeyValuePairs.get(columnName));
@@ -157,11 +159,11 @@ public class AbSqlRow : AbSqlColumn
             }
             string sqlStatement = stringBuffer.ToString();
             this.executeSQLStatement(sqlStatement);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.SUCCESS_SQL_STATEMENT + sqlStatement, this, this.METHOD_UPDATE_WHERE);
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + stringBuffer, this, METHOD_UPDATE_WHERE, e);
             }
             throw e;
@@ -183,11 +185,11 @@ public class AbSqlRow : AbSqlColumn
         try {
             string sqlStatement = stringBuffer.ToString();
             this.executeSQLStatement(sqlStatement);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.SUCCESS_SQL_STATEMENT + sqlStatement, this, this.METHOD_DELETE_WHERE);
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + stringBuffer.ToString(), this, this.METHOD_DELETE_WHERE, e);
             }
         }
@@ -218,11 +220,11 @@ public class AbSqlRow : AbSqlColumn
             }
             string sqlStatement = stringBuffer.ToString();
             this.executeSQLStatement(sqlStatement);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.SUCCESS_SQL_STATEMENT + sqlStatement, this, this.METHOD_DELETE_WHERE);
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + stringBuffer.ToString(), this, this.METHOD_DELETE_WHERE, e);
             }
         }
@@ -247,11 +249,11 @@ public class AbSqlRow : AbSqlColumn
             stringBuffer.append(this.INSERT_END);
             string sqlStatement = stringBuffer.ToString();
             this.executeSQLStatement(sqlStatement);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.SUCCESS_SQL_STATEMENT + sqlStatement, this, this.INSERT);
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + stringBuffer.ToString(), this, INSERT, e);
             }
         }
@@ -280,7 +282,7 @@ public class AbSqlRow : AbSqlColumn
                 }
             }
             string sqlStatement = stringBuffer.ToString();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.sqlStrings.SQL_STATEMENT_LABEL + sqlStatement, this, this.METHOD_GET_ROW);
             }
             ResultSet rset = this.executeSQLStatement(sqlStatement);
@@ -293,17 +295,17 @@ public class AbSqlRow : AbSqlColumn
                     string field = rset.getString(columnName);
                     result.put(columnName, field);
                 }
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     this.logUtil.putF(this.ROW_VALUE_LABEL + result.ToString(), this, this.METHOD_GET_ROW);
                 }
                 return result;
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.putF(this.NO_RESULTS_IN_RESULT_SET, this, this.METHOD_GET_ROW);
             }
             return null;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + stringBuffer, this, this.METHOD_GET_ROW, e);
             }
             return null;
@@ -337,7 +339,7 @@ public class AbSqlRow : AbSqlColumn
                     stringBuffer.append(this.sqlStrings.AND);
                 }
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.sqlStrings.SQL_STATEMENT_LABEL + stringBuffer, this, this.METHOD_GET_ROWS);
             }
             stringBuffer.append(more);
@@ -353,14 +355,14 @@ public class AbSqlRow : AbSqlColumn
                     result.put(columnName, field);
                 }
                 string resultAsString = result.ToString();
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     this.logUtil.putF(this.GET_ROW + resultAsString, this, this.METHOD_GET_ROWS);
                 }
                 rows.add(result);
             }
             return rows;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + stringBuffer, this, this.METHOD_GET_ROWS, e);
             }
             return null;
@@ -373,7 +375,7 @@ public class AbSqlRow : AbSqlColumn
         stringBuffer.append(this.sqlStrings.SELECT_ALL_FROM);
         stringBuffer.append(this.getTableName());
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.sqlStrings.SQL_STATEMENT_LABEL + stringBuffer, this, this.METHOD_GET_ALL_ROWS);
             }
             BasicArrayList rows = new BasicArrayListD();
@@ -388,14 +390,14 @@ public class AbSqlRow : AbSqlColumn
                     string field = rset.getString(columnName);
                     result.put(columnName, field);
                 }
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     this.logUtil.putF(this.ROW_VALUES_LABEL + result.ToString(), this, this.METHOD_GET_ALL_ROWS);
                 }
                 rows.add(result);
             }
             return rows;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + stringBuffer, this, this.METHOD_GET_ALL_ROWS, e);
             }
             return null;
@@ -434,7 +436,7 @@ public class AbSqlRow : AbSqlColumn
             stringBuffer.append(largest);
             stringBuffer.append(this.sqlStrings.CLOSE_QUOTE);
             string sqlStatement = stringBuffer.ToString();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.sqlStrings.SQL_STATEMENT_LABEL + sqlStatement, this, this.METHOD_GET_ROWS_WHERE_BETWEEN);
             }
             ResultSet rset = this.executeSQLStatement(sqlStatement);
@@ -453,14 +455,14 @@ public class AbSqlRow : AbSqlColumn
                     field = rset.getString(columnName);
                     result.put(columnName, field);
                 }
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     this.logUtil.putF(this.ROW_VALUE_LABEL + result.ToString(), this, this.METHOD_GET_ROWS_WHERE_BETWEEN);
                 }
                 rows.add(result);
             }
             return rows;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + stringBuffer, this, METHOD_GET_ROWS_WHERE_BETWEEN, e);
             }
             return null;
@@ -485,7 +487,7 @@ public class AbSqlRow : AbSqlColumn
             stringBuffer.append(largest);
             stringBuffer.append(this.sqlStrings.CLOSE_QUOTE);
             string sqlStatement = stringBuffer.ToString();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.sqlStrings.SQL_STATEMENT_LABEL + sqlStatement, this, this.METHOD_GET_ROWS_WHERE_BETWEEN);
             }
             ResultSet rset = this.executeSQLStatement(sqlStatement);
@@ -504,14 +506,14 @@ public class AbSqlRow : AbSqlColumn
                     field = rset.getString(columnName);
                     result.put(columnName, field);
                 }
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     this.logUtil.putF(this.ROW_VALUE_LABEL + result.ToString(), this, this.METHOD_GET_ROWS_WHERE_BETWEEN);
                 }
                 rows.add(result);
             }
             return rows;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.FAILED_SQL_STATEMENT + stringBuffer, this, METHOD_GET_ROWS_WHERE_BETWEEN, e);
             }
             return null;

@@ -16,39 +16,45 @@
 
 using System;
 using System.Linq;
+//using DefaultComboBoxModel = javax.swing.DefaultComboBoxModel;
+//using GroupLayout = javax.swing.GroupLayout;
+//using JComboBox = javax.swing.JComboBox;
+//using JLabel = javax.swing.JLabel;
+//using JPanel = javax.swing.JPanel;
+//using LayoutStyle = javax.swing.LayoutStyle;
 
 namespace org.allbinary.input.automation.actions.script.condition.processors.input;
 
-public class InputAutomationTypeJPanel : javax.swing.JPanel
+public class InputAutomationTypeJPanel : JPanel
 {
     public InputAutomationTypeJPanel()
     {
         this.initComponents();
     }
 
-    public virtual javax.swing.JComboBox getInputAutomationTypeJComboBox()
+    public virtual JComboBox getInputAutomationTypeJComboBox()
     {
         return this.inputAutomationTypeJComboBox;
     }
 
-    public virtual void setInputAutomationTypeJComboBox(javax.swing.JComboBox inputAutomationTypeJComboBox)
+    public virtual void setInputAutomationTypeJComboBox(JComboBox inputAutomationTypeJComboBox)
     {
         this.inputAutomationTypeJComboBox = inputAutomationTypeJComboBox;
     }
 
     private void initComponents()
     {
-        this.inputAutomationTypeJComboBox = new javax.swing.JComboBox();
-        this.jLabel1 = new javax.swing.JLabel();
-        this.inputAutomationTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new string[] { "DirectX", "DirectX 8", "Low Level", "Java Robot" }));
+        this.inputAutomationTypeJComboBox = new JComboBox();
+        this.jLabel1 = new JLabel();
+        this.inputAutomationTypeJComboBox.setModel(new DefaultComboBoxModel(new string[] { "DirectX", "DirectX 8", "Low Level", "Java Robot" }));
         this.jLabel1.setText("Input Type:");
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
-        layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(jLabel1).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(inputAutomationTypeJComboBox, 0, 98, short.MaxValue)));
-        layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel1).addComponent(inputAutomationTypeJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)));
+        layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(jLabel1).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(inputAutomationTypeJComboBox, 0, 98, short.MaxValue)));
+        layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jLabel1).addComponent(inputAutomationTypeJComboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)));
     }
 
-    private javax.swing.JComboBox inputAutomationTypeJComboBox = null;
-    private javax.swing.JLabel jLabel1 = null;
+    private JComboBox inputAutomationTypeJComboBox = null;
+    private JLabel jLabel1 = null;
 }
 

@@ -14,7 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using InputStream = java.io.InputStream;

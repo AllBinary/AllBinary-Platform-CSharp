@@ -24,6 +24,8 @@ using AbPath = org.allbinary.logic.io.path.AbPath;
 using AbPathData = org.allbinary.logic.io.path.AbPathData;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
 using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.io.file.path;
 
@@ -64,7 +66,7 @@ public class AbPathUtilOld
         }
         int beginIndex = filePath.Length - AbPathUtilOld.MIN;
         string extension = filePath.Substring(beginIndex + 1);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("FileExtension: " + extension, this, "getExtension()");
         }
         return extension;
@@ -90,7 +92,7 @@ public class AbPathUtilOld
         }
         int endIndex = filePath.Length - AbPathUtilOld.MIN;
         string pathWithoutExtension = filePath.Substring(0, (endIndex) - (0));
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("FileWithoutExtension: " + pathWithoutExtension, this, "getWithoutExtension()");
         }
         return pathWithoutExtension;

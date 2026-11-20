@@ -31,6 +31,8 @@ using MediaData = org.allbinary.logic.visual.media.MediaData;
 using MediaTypeData = org.allbinary.logic.visual.media.MediaTypeData;
 using MediaUtil = org.allbinary.logic.visual.media.MediaUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.inventory;
 
@@ -58,7 +60,7 @@ public class InventoryUploadMediaUtil
     // throws Exception
     public virtual ItemInterface saveFiles(sbyte[] byteArray, string fileName, MediaData mediaData)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             this.logUtil.putF("Start FileName: " + fileName, this, "saveFiles()");
         }
         if (StringValidationUtil.getInstance().isEmpty(fileName)) {
@@ -80,14 +82,14 @@ public class InventoryUploadMediaUtil
         stringBuffer.append(AbPathData.getInstance().EXTENSION_SEP);
         stringBuffer.append(mediaData.getName());
         AbFile originalImageFile = AbFile.createAbFile(stringBuffer.ToString());
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             this.logUtil.putF("Saving Original Image: " + originalImageFile, this, "saveFiles()");
         }
         originalImageFile.createNewFile();
         fileUtil.write(new ByteArrayInputStream(byteArray), originalImageFile);
         UploadMediaSingleton uploadMedia = UploadMediaSingleton.getInstance();
         bool isMediaSupported = uploadMedia.isWriterSupported(mediaData.getName()) || uploadMedia.isReaderSupported(mediaData.getName());
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             stringBuffer.delete(0, stringBuffer.length());
             stringBuffer.append("Is Image Type: ");
             stringBuffer.append(mediaData.getName());
@@ -99,7 +101,7 @@ public class InventoryUploadMediaUtil
         this.setFileNames(fileName);
         if (isMediaSupported) {
             bool isMediaResizable = uploadMedia.isWriterMedia(mediaData.getName(), MediaTypeData.getInstance().RESIZABLE_MEDIA);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
                 stringBuffer.delete(0, stringBuffer.length());
                 stringBuffer.append("Is ");
                 stringBuffer.append(mediaData.ToString());
@@ -110,7 +112,7 @@ public class InventoryUploadMediaUtil
                 this.logUtil.putF(stringBuffer.ToString(), this, "saveFiles()");
             }
             if (isMediaResizable) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
                     this.logUtil.putF("Saving Small Image: " + this.itemInterface.getSmallImage(), this, "saveFiles()");
                 }
                 this.mediaUtil.saveImageFile(originalImageFile, this.itemInterface.getSmallImage(), fullPath, mediaData, this.SMALLWIDTH, this.SMALLHEIGHT);
@@ -118,7 +120,7 @@ public class InventoryUploadMediaUtil
                 this.mediaUtil.saveImageFile(originalImageFile, this.itemInterface.getLargeImage(), fullPath, mediaData, this.LARGEWIDTH, this.LARGEHEIGHT);
             } else {
                 bool isConvertable = mediaData.isConvertableTo(defaultMediaData);
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
                     stringBuffer.delete(0, stringBuffer.length());
                     stringBuffer.append("Converting: ");
                     stringBuffer.append(defaultMediaData.getName());
@@ -129,7 +131,7 @@ public class InventoryUploadMediaUtil
                     this.logUtil.putF(stringBuffer.ToString(), this, "saveFiles()");
                 }
                 if (isConvertable) {
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
                         this.logUtil.putF("Saving Small Image: " + this.itemInterface.getSmallImage(), this, "saveFiles()");
                     }
                     this.mediaUtil.saveImageFile(originalImageFile, this.itemInterface.getSmallImage(), fullPath, defaultMediaData, this.SMALLWIDTH, this.SMALLHEIGHT);
@@ -148,7 +150,7 @@ public class InventoryUploadMediaUtil
                 }
             }
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().CATEGORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             CommonStrings commonStrings = CommonStrings.getInstance();
             this.logUtil.putF(commonStrings.END, this, "saveFiles()");
         }

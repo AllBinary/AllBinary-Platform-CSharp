@@ -19,10 +19,18 @@ using System.Linq;
 using ARunnable = org.allbinary.thread.ARunnable;
 using File = java.io.File;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
+//using EventQueue = java.awt.EventQueue;
+//using Frame = java.awt.Frame;
+//using ActionEvent = java.awt.@event.ActionEvent;
+//using ActionListener = java.awt.@event.ActionListener;
+//using JDialog = javax.swing.JDialog;
+//using JFileChooser = javax.swing.JFileChooser;
+//using JFrame = javax.swing.JFrame;
+//using WindowConstants = javax.swing.WindowConstants;
 
 namespace org.allbinary.gui.dialog;
 
-public class FileJDialog : javax.swing.JDialog
+public class FileJDialog : JDialog
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private FileJDialogListenerInterface finishedListenerInterface = null;
@@ -33,7 +41,7 @@ public class FileJDialog : javax.swing.JDialog
         this.getJFileChooser1().setMultiSelectionEnabled(true);
     }
 
-    public FileJDialog(java.awt.Frame parent, bool modal) : base(parent, modal)
+    public FileJDialog(Frame parent, bool modal) : base(parent, modal)
     {
         // base(parent, modal) is called from the constructor declaration
         this.initComponents();
@@ -47,11 +55,11 @@ public class FileJDialog : javax.swing.JDialog
 
     private void initComponents()
     {
-        this.jFileChooser1 = new javax.swing.JFileChooser();
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        this.jFileChooser1.addActionListener(new java.awt.event.ActionListener()
+        this.jFileChooser1 = new JFileChooser();
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.jFileChooser1.addActionListener(new ActionListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void actionPerformed(java.awt.event.ActionEvent evt)
+            public virtual void actionPerformed(ActionEvent evt)
             {
                 jFileChooser1ActionPerformed(evt);
             }
@@ -65,7 +73,7 @@ public class FileJDialog : javax.swing.JDialog
         pack();
     }
 
-    private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt)
+    private void jFileChooser1ActionPerformed(ActionEvent evt)
     {
         this.logUtil.putF("Starting Action Command: " + evt.getActionCommand(), this, "ActionPerformed");
         File[] files = this.getJFileChooser1().getSelectedFiles();
@@ -81,27 +89,27 @@ public class FileJDialog : javax.swing.JDialog
 
     public static void main(string[] args)
     {
-        java.awt.EventQueue.invokeLater(new ARunnable()
+        EventQueue.invokeLater(new ARunnable()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public virtual void run()
             {
-                new FileJDialog(new javax.swing.JFrame(), true).setVisible(true);
+                new FileJDialog(new JFrame(), true).setVisible(true);
             }
 
 #endif
 );
     }
 
-    public virtual javax.swing.JFileChooser getJFileChooser1()
+    public virtual JFileChooser getJFileChooser1()
     {
         return this.jFileChooser1;
     }
 
-    public virtual void setJFileChooser1(javax.swing.JFileChooser jFileChooser1)
+    public virtual void setJFileChooser1(JFileChooser jFileChooser1)
     {
         this.jFileChooser1 = jFileChooser1;
     }
 
-    private javax.swing.JFileChooser jFileChooser1 = null;
+    private JFileChooser jFileChooser1 = null;
 }
 

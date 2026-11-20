@@ -17,12 +17,14 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
+//using EventListener = java.util.EventListener;
+//using EventListenerList = javax.swing.@event.EventListenerList;
 
 namespace org.allbinary.graphics.j2me.workarea.canvas.@event;
 
 public class MyCanvasEventService
 {
-    private static javax.swing.event.EventListenerList listenerList = new javax.swing.event.EventListenerList();
+    private static EventListenerList listenerList = new EventListenerList();
     public static string DELETE = "delete";
     public static string DUPLICATE = "duplicate";
     public static string SELECT = "select";
@@ -37,13 +39,13 @@ public class MyCanvasEventService
     [MethodImpl(MethodImplOptions.Synchronized)]
     public static void addListener(MyCanvasEventListener listener)
     {
-        MyCanvasEventService.listenerList.add(((Type) listener.GetType()), ((java.util.EventListener) listener));
+        MyCanvasEventService.listenerList.add(((Type) (((Type) listener.GetType()))), ((EventListener) listener));
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
     public static void removeListener(MyCanvasEventListener listener)
     {
-        MyCanvasEventService.listenerList.remove(((Type) listener.GetType()), ((java.util.EventListener) listener));
+        MyCanvasEventService.listenerList.remove(((Type) (((Type) listener.GetType()))), ((EventListener) listener));
     }
 
     // throws Exception

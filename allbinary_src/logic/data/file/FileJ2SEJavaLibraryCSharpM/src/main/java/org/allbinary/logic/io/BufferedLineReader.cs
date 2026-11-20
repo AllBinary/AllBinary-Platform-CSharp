@@ -41,6 +41,12 @@ public class BufferedLineReader
         return this.tmpIn.readLine();
     }
 
+    // throws Exception
+    public virtual bool ready()
+    {
+        return this.tmpIn.ready();
+    }
+
     public virtual long getSize()
     {
         return 0L;

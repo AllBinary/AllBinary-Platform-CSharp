@@ -14,8 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias GameLicensingNullJavaLibraryCSharp;
-extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -1258,7 +1256,6 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
             this.getCustomCommandListener().commandAction(GameCommandsFactory.getInstance().SET_MENU_DISPLAYABLE, textBox);
         }
         if (autoSubmit) {
-            
             SecondaryThreadPool.getInstance().runTask(new SaveHighScoreRunnable(isLast, textBox));
         }
     }
@@ -1579,35 +1576,6 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
     {
         return base.isPaused();
     }
-
-            class SaveHighScoreRunnable : global::java.lang.Runnable
-            {
-                private readonly ProgressCanvas progressCanvas = ProgressCanvasFactory.getInstance();
-                private readonly bool isLast;
-                private readonly HighScoreTextBox textBox;
-                public SaveHighScoreRunnable(bool isLast, HighScoreTextBox textBox)
-                {
-                    this.isLast = isLast;
-                    this.textBox = textBox;
-                }
-
-                public virtual void run()
-                {
-                    LogUtil logUtil = LogUtil.getInstance();
-                    try {
-                        if (this.isLast) {
-                            this.textBox.submit();
-                        } else {
-                            this.textBox.saveHighScore();
-                        }
-                    } catch (Exception e) {
-                        CommonStrings commonStrings = CommonStrings.getInstance();
-                        logUtil.put(commonStrings.EXCEPTION, this, "run", e);
-                        this.progressCanvas.end();
-                    }
-                }
-
-            }
 
 }
 

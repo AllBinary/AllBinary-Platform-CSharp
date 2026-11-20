@@ -29,6 +29,8 @@ using StringUtil = org.allbinary.logic.@string.StringUtil;
 using HtmlSelect = org.allbinary.logic.visual.dhtml.html.select.HtmlSelect;
 using CommonPhoneStrings = org.allbinary.@string.CommonPhoneStrings;
 using CommonSeps = org.allbinary.@string.CommonSeps;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -45,13 +47,13 @@ public class StoreFrontsHelper : BasicTable
     {
         try {
             string success = StoreFrontsEntityFactory.getInstance().getStoreFrontsEntityInstance().dropTable();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, this.commonStrings.DROP);
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to drop storefronts table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.DROP, e);
             }
             return error;
@@ -62,13 +64,13 @@ public class StoreFrontsHelper : BasicTable
     {
         try {
             string success = StoreFrontsEntityFactory.getInstance().getStoreFrontsEntityInstance().createTable();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "create()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to create new storefronts table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "create()", e);
             }
             return error;
@@ -80,13 +82,13 @@ public class StoreFrontsHelper : BasicTable
         try {
             string success = "Restore Successful";
             string result = AbSqlTableUtil.getInstance().restoreTable(StoreFrontsEntityFactory.getInstance().getStoreFrontsEntityInstance(), this.portion);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "restore()");
             }
             return result;
         } catch (Exception e) {
             string error = "Failed to restore backup";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "restore()", e);
             }
             return error;
@@ -98,13 +100,13 @@ public class StoreFrontsHelper : BasicTable
         try {
             string success = "Restore Successful";
             string result = AbSqlTableUtil.getInstance().backupTable(StoreFrontsEntityFactory.getInstance().getStoreFrontsEntityInstance());
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "backup()");
             }
             return result;
         } catch (Exception e) {
             string error = "Failed to make backup";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "backup()", e);
             }
             return error;
@@ -127,13 +129,13 @@ public class StoreFrontsHelper : BasicTable
                 storeSelect.addOption(storeName);
             }
             success += storeSelect;
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "generateSelect()");
             }
             return success;
         } catch (Exception e) {
             string error = "Failed to generate storefronts select";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, "generateSelect()", e);
             }
             return error;

@@ -21,20 +21,8 @@ public class OpenGLBitmapFactory : PlatformBitmapBaseFactory
         return OpenGLBitmapFactory.instance;
     }
 
-    public class Config
-    {
-        private readonly OpenGLBitmapFactory outer;
-
-        public readonly Bitmap.Config bitmapConfig;
-        public Config(OpenGLBitmapFactory outer, Bitmap.Config bitmapConfig)
-        {
-            this.outer = outer;
-            this.bitmapConfig = bitmapConfig;
-        }
-
-    }
-    public readonly Config ARGB_8888;
-    public virtual OpenGLBitmap createBitmap(int width, int height, OpenGLBitmapFactory.Config config)
+    public readonly OpenGLBitmapConfig ARGB_8888 = new OpenGLBitmapConfig(Bitmap.Config.ARGB_8888);
+    public virtual OpenGLBitmap createBitmap(int width, int height, OpenGLBitmapConfig config)
     {
         return new OpenGLBitmap(Bitmap.createBitmap(width, height, config.bitmapConfig));
     }
@@ -48,11 +36,6 @@ public class OpenGLBitmapFactory : PlatformBitmapBaseFactory
     public override PlatformBitmapBase createBitmap(Image image)
     {
         return new OpenGLBitmap((((AndroidImageInterface) image)).getBitmap());
-    }
-
-    public OpenGLBitmapFactory()
-    {
-        this.ARGB_8888 = new Config(this, Bitmap.Config.ARGB_8888);
     }
 
 }

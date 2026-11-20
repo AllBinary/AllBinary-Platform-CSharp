@@ -33,6 +33,8 @@ using EmailInfo = org.allbinary.logic.communication.smtp.info.EmailInfo;
 using StoreEmailInfo = org.allbinary.logic.communication.smtp.info.StoreEmailInfo;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.inventory.order.status;
 
@@ -64,7 +66,7 @@ public class OrderStatusEmail
     private void notifyStoreAdmin()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
                 this.logUtil.putF("Order Email", this, "emailStoreAdmin");
             }
             string adminEmailSubject = "Order " + this.orderHistory.getStatus() + " Attempt";
@@ -79,7 +81,7 @@ public class OrderStatusEmail
             storeAdminUserEmailEventHandler.receiveEmailInfo(userEmailEventNameData, storeAdminEmailInfo);
             adminUserEmailEventHandler.receiveEmailInfo(userEmailEventNameData, adminEmailInfo);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "emailAdmin", e);
             }
         }
@@ -89,7 +91,7 @@ public class OrderStatusEmail
     private void notifyUser()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
                 this.logUtil.putF("Email User", this, "notifyUser()");
             }
             string subject = "Order " + this.orderHistory.getStatus() + " Attempt";
@@ -100,7 +102,7 @@ public class OrderStatusEmail
             UserEmailEventHandler userEmailEventHandler = UserEmailEventHandlerSingletons.getInstance().getInstance(this.abeClientInformation, userEmailEventNameData, this.user);
             userEmailEventHandler.receiveEmailInfo(userEmailEventNameData, emailInfo);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "notifyUser", e);
             }
             throw e;

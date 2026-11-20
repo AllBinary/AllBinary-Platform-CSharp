@@ -22,6 +22,7 @@ using InventoryHelperFactory = admin.taghelpers.InventoryHelperFactory;
 using InventoryRequestHelperFactory = admin.taghelpers.InventoryRequestHelperFactory;
 using StoreFrontData = org.allbinary.business.context.modules.storefront.StoreFrontData;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
 
 namespace admin.tags;
 
@@ -46,7 +47,7 @@ public class InventoryTag : TableTag
         try {
             if (this.isEnabled()) {
                 if (this.getCommand() != null) {
-                    if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.BACKUP) != 0 && this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.RESTORE) != 0 && this.getCommand().compareTo(this.commonStrings.CREATE) != 0 && this.getCommand().compareTo(this.commonStrings.DROP) != 0) {
+                    if (this.getCommand().compareTo(GLOBALS2.BACKUP) != 0 && this.getCommand().compareTo(GLOBALS2.RESTORE) != 0 && this.getCommand().compareTo(this.commonStrings.CREATE) != 0 && this.getCommand().compareTo(this.commonStrings.DROP) != 0) {
                         Tag parentTag = this.getParent();
                         ParentInventoryTagHelper.getInstance().isValid(this, parentTag);
                         this.getPropertiesHashMap().put(AbTagData.PARENT, parentTag);

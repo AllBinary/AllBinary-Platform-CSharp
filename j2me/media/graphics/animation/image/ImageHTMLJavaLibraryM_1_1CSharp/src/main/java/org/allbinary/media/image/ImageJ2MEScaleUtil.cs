@@ -59,7 +59,7 @@ public class ImageJ2MEScaleUtil
             PlaynImmutableImage originalHTMLImage = ((PlaynImmutableImage) image);
             originalPlayNImage = ((playn.core.Image) originalHTMLImage.getImage());
         }
-        Image scaledImage = Image.createImage(width, height);
+        Image scaledImage = Image.createImageWH(width, height);
         PlaynMutableImage htmlImage = ((PlaynMutableImage) scaledImage);
         CanvasImage canvasImage = ((CanvasImage) htmlImage.getImage());
         CanvasSurface canvasSurface = htmlImage.getCanvasSurface(canvasImage);

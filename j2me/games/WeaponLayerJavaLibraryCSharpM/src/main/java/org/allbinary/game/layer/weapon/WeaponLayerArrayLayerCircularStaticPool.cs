@@ -16,7 +16,6 @@
 
 using System;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using CircularIndexUtil = org.allbinary.util.CircularIndexUtil;
 
 namespace org.allbinary.game.layer.weapon;
@@ -31,27 +30,37 @@ public class WeaponLayerArrayLayerCircularStaticPool
 
     private readonly int MAX = 5;
     private CircularIndexUtil circularIndexUtil;
-    private object[][][] ALL_WEAPONLAYER_ARRAY = new object[4][][];
+    private WeaponLayer[][] WEAPONLAYER_ARRAY;
+    private WeaponLayer[][] TWO_WEAPONLAYER_ARRAY;
+    private WeaponLayer[][] THREE_WEAPONLAYER_ARRAY;
     public virtual void init()
     {
-        object[][] WEAPONLAYER_ARRAY = new object[this.MAX * 2][];
-        object[][] TWO_WEAPONLAYER_ARRAY = new object[this.MAX][];
-        object[][] THREE_WEAPONLAYER_ARRAY = new object[this.MAX][];
         for (int index = 0; index < this.MAX; index++) {
-            WEAPONLAYER_ARRAY[index] = new object[1];
-            TWO_WEAPONLAYER_ARRAY[index] = new object[2];
-            THREE_WEAPONLAYER_ARRAY[index] = new object[3];
+            this.WEAPONLAYER_ARRAY[index] = new WeaponLayer[1];
+            this.TWO_WEAPONLAYER_ARRAY[index] = new WeaponLayer[2];
+            this.THREE_WEAPONLAYER_ARRAY[index] = new WeaponLayer[3];
         }
-        this.ALL_WEAPONLAYER_ARRAY[1] = WEAPONLAYER_ARRAY;
-        this.ALL_WEAPONLAYER_ARRAY[2] = TWO_WEAPONLAYER_ARRAY;
-        this.ALL_WEAPONLAYER_ARRAY[3] = THREE_WEAPONLAYER_ARRAY;
+        this.WEAPONLAYER_ARRAY = WEAPONLAYER_ARRAY;
+        this.TWO_WEAPONLAYER_ARRAY = TWO_WEAPONLAYER_ARRAY;
+        this.THREE_WEAPONLAYER_ARRAY = THREE_WEAPONLAYER_ARRAY;
+    }
+
+    private WeaponLayer[][] getWeaponLayerArrays(int size)
+    {
+        if (size == 1) {
+            return this.WEAPONLAYER_ARRAY;
+        } else if (size == 2) {
+            return this.TWO_WEAPONLAYER_ARRAY;
+        } else if (size == 3) {
+            return this.THREE_WEAPONLAYER_ARRAY;
+        }
+        throw new SystemException();
     }
 
     // throws Exception
-    [MethodImpl(MethodImplOptions.Synchronized)]
     public virtual WeaponLayer[] getInstanceArray(int size)
     {
-        WeaponLayer[] weaponLayerArray = ((WeaponLayer[]) this.ALL_WEAPONLAYER_ARRAY[size][this.circularIndexUtil.getIndex()]);
+        WeaponLayer[] weaponLayerArray = this.getWeaponLayerArrays(size)[this.circularIndexUtil.getIndex()];
         this.circularIndexUtil.next();
         return weaponLayerArray;
     }
@@ -59,6 +68,9 @@ public class WeaponLayerArrayLayerCircularStaticPool
     public WeaponLayerArrayLayerCircularStaticPool()
     {
         this.circularIndexUtil = CircularIndexUtil.createInstance(this.MAX);
+        this.WEAPONLAYER_ARRAY = new WeaponLayer[this.MAX * 2][];
+        this.TWO_WEAPONLAYER_ARRAY = new WeaponLayer[this.MAX][];
+        this.THREE_WEAPONLAYER_ARRAY = new WeaponLayer[this.MAX][];
     }
 
 }

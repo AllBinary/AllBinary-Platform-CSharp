@@ -21,6 +21,7 @@ using UserRoleData = org.allbinary.business.user.role.UserRoleData;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using SqlStrings = org.allbinary.logic.communication.sql.SqlStrings;
 using StoreValidationTransformTag = tags.StoreValidationTransformTag;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
 
 namespace tags.admin;
 
@@ -42,16 +43,16 @@ public class UserTag : StoreValidationTransformTag
     {
         try {
             if (this.getCommand() != null) {
-                if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.NEW) == 0) {
+                if (this.getCommand().compareTo(GLOBALS2.NEW) == 0) {
                     this.setName("New User View");
                     this.setObjectFile("views.admin.user.NewUserView");
                 } else if (this.getCommand().compareTo(this.commonStrings.INSERT) == 0 || this.getCommand().compareTo(SqlStrings.getInstance().INSERT_INTO) == 0) {
                     this.setName("Add Validation User View");
                     this.setObjectFile("views.admin.user.AddValidationUserView");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.VIEW) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.VIEW) == 0) {
                     this.setName("Validation User View");
                     this.setObjectFile("views.admin.user.ViewValidationUserView");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.EDIT) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.EDIT) == 0) {
                     this.setName("Validation User View");
                     this.setObjectFile("views.admin.user.EditValidationUserView");
                 } else if (this.getCommand().compareTo(this.commonStrings.UPDATE) == 0 || this.getCommand().compareTo(SqlStrings.getInstance().UPDATE) == 0) {
@@ -60,9 +61,9 @@ public class UserTag : StoreValidationTransformTag
                 } else if (this.getCommand().compareTo(this.commonStrings.DELETE) == 0) {
                     this.setName("Delete Validation User View");
                     this.setObjectFile("views.admin.user.DeleteValidationUserView");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.BACKUP) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.BACKUP) == 0) {
                     throw new Exception("View not implemented");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.RESTORE) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.RESTORE) == 0) {
                     throw new Exception("View not implemented");
                 } else if (this.getCommand().compareTo(this.commonStrings.DROP) == 0) {
                     throw new Exception("View not implemented");

@@ -19,6 +19,8 @@ using System.Linq;
 using java.util;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp.configuration.user.@event;
 
@@ -31,7 +33,7 @@ public class UserEmailEventConfiguration : UserEmailEventConfigurationInterface
     {
         this.setName(StringUtil.getInstance().EMPTY_STRING);
         this.setEventListenerClassPath(StringUtil.getInstance().EMPTY_STRING);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             this.logUtil.putF("New", this, " Constructor");
         }
     }
@@ -40,7 +42,7 @@ public class UserEmailEventConfiguration : UserEmailEventConfigurationInterface
     {
         this.setName(((string) hashMap.get(UserEmailEventConfigurationData.NAME)));
         this.setEventListenerClassPath(((string) hashMap.get(UserEmailEventConfigurationData.LISTENER_CLASSPATH)));
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             this.logUtil.putF("Log: " + this.log(), this, " Constructor");
         }
     }

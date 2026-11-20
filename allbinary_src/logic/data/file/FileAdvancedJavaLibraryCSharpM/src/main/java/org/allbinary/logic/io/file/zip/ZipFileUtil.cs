@@ -68,7 +68,7 @@ public class ZipFileUtil
                     stringBuffer.append(file.getPath());
                     this.logUtil.putF(stringBuffer.ToString(), this, "create()");
                     try {
-                        fileInputStream = new AbFileInputStream(file);
+                        fileInputStream = AbFileInputStream.createFromAbFile(file);
                         outputStream.putNextEntry(new ZipEntry(file.getPath()));
                         streamUtil.get(fileInputStream, outputStream, byteArray);
                         outputStream.closeEntry();
@@ -91,7 +91,7 @@ public class ZipFileUtil
         sbyte[] buffer = new sbyte[16384];
         ZipInputStream inputStream = null;
         try {
-            inputStream = new ZipInputStream(new AbFileInputStream(zipFile));
+            inputStream = new ZipInputStream(AbFileInputStream.createFromAbFile(zipFile));
             ZipEntry zipEntry = null;
             StringMaker stringBuffer = new StringMaker();
             FileUtil fileUtil = FileUtil.getInstance();

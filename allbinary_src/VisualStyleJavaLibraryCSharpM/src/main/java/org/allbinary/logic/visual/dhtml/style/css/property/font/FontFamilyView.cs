@@ -16,6 +16,7 @@
 
 using System;
 using System.Linq;
+using CssProperty = org.allbinary.logic.visual.dhtml.style.css.property.CssProperty;
 using CssPropertyView = org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView;
 using Node = org.w3c.dom.Node;
 
@@ -23,14 +24,14 @@ namespace org.allbinary.logic.visual.dhtml.style.css.property.font;
 
 public class FontFamilyView : CssPropertyView
 {
-    public FontFamilyView() : base(FontFamilyData.getInstance().VALUE)
+    public FontFamilyView() : base(new CssProperty(FontFamilyData.getInstance().VALUE))
     {
-        // base(FontFamilyData.getInstance().VALUE) is called from the constructor declaration
+        // base(new CssProperty(FontFamilyData.getInstance().VALUE)) is called from the constructor declaration
     }
 
-    public FontFamilyView(Node node) : base(node)
+    public FontFamilyView(Node node) : base(new CssProperty(node))
     {
-        // base(node) is called from the constructor declaration
+        // base(new CssProperty(node)) is called from the constructor declaration
     }
 
 }

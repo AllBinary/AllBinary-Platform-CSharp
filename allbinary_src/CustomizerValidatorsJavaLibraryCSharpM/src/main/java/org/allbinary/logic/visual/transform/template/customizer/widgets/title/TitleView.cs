@@ -28,6 +28,8 @@ using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.template.customizer.widgets.title;
 
@@ -50,14 +52,14 @@ public class TitleView : DomNodeInterface
         if (StringValidationUtil.getInstance().isEmpty(this.title)) {
             this.title = TitleView.NAME;
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Title: " + this.getTitle(), this, "Consructor()");
         }
     }
 
     public TitleView(HashMap<object, object> hashMap)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("HashMap: " + hashMap.ToString(), this, this.commonStrings.CONSTRUCTOR);
         }
         this.getFormData(hashMap);
@@ -87,7 +89,7 @@ public class TitleView : DomNodeInterface
     public virtual Node toXmlNode(Document document)
     {
         HashMap<object, object> hashMap = this.toHashMap();
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("TitleView HashMap: " + hashMap.ToString(), this, "toXmlNode()");
         }
         return ModDomHelper.createNameValueNodes(document, TitleData.getInstance().NAME, hashMap);

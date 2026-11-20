@@ -37,6 +37,8 @@ using Document = org.w3c.dom.Document;
 using NamedNodeMap = org.w3c.dom.NamedNodeMap;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.info.objectConfig;
 
@@ -51,7 +53,7 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
     {
         this.ownerTransformInfoInterface = transformInfoInterface;
         this.createDocument();
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("TransformInfo: ");
             if (this.ownerTransformInfoInterface != null) {
@@ -73,7 +75,7 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
         if (node != null) {
             this.setOutputTypeName(DomNodeHelper.getTextNodeValue(node));
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("TransformInfo: ");
             if (this.ownerTransformInfoInterface != null) {
@@ -95,7 +97,7 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
         configNameAttr.setValue(name);
         Node objectConfigNode = this.document.getElementsByTagName(TransformInfoObjectConfigData.getInstance().NAME).item(0);
         objectConfigNode.appendChild(configNameAttr);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("TransformInfo: ");
             if (this.ownerTransformInfoInterface != null) {
@@ -176,7 +178,7 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
         if (componentsNodeList != null && componentsNodeList.getLength() > 0) {
             BasicArrayList viewNodeVector = DomSearchHelper.getAllNodes(TransformInfoData.getInstance().NAME, componentsNodeList.item(0).getChildNodes());
             int numberOfViews = viewNodeVector.size();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Number Of ");
                 stringBuffer.append(nodeName);
@@ -218,7 +220,7 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
     // throws Exception
     public virtual BasicArrayList getTransformsGroup(string group)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Started: " + group, this, "getTransformsGroup()");
         }
         BasicArrayList viewVector = new BasicArrayListD();
@@ -239,7 +241,7 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
             }
             BasicArrayList viewNodeVector = DomSearchHelper.getAllNodes(TransformInfoData.getInstance().NAME, componentsNode.getChildNodes());
             int numberOfViews = viewNodeVector.size();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Number Of Nodes: " + numberOfViews, this, "getTransformsGroup()");
             }
             int size = viewNodeVector.size();
@@ -248,7 +250,7 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
                 viewVector.add(new TransformInfoDomNode(viewNode));
             }
         } else {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 if (componentsNodeList == null) {
                     this.logUtil.putF("Number Of Nodes: NULL", this, "getTransformsGroup()");
                 } else {
@@ -329,7 +331,7 @@ public class TransformInfoObjectConfig : TransformInfoObjectConfigInterface
                 return null;
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.putF("DOM Document error", this, this.commonStrings.TOSTRING);
             }
             return null;

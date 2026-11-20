@@ -37,6 +37,8 @@ using AbSqlBean = org.allbinary.logic.communication.sql.AbSqlBean;
 using SuperCrypt = org.allbinary.logic.control.crypt.SuperCrypt;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonSeps = org.allbinary.@string.CommonSeps;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.data.tables.user;
 
@@ -61,11 +63,11 @@ public class UserEntity : AbSqlBean, UserEntityInterface
     {
         try {
             base.insert(values);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.commonStrings.SUCCESS, this, INSERT);
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, INSERT, e);
             }
         }
@@ -152,11 +154,11 @@ public class UserEntity : AbSqlBean, UserEntityInterface
     {
         try {
             base.deleteWhere(key, value);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.commonStrings.SUCCESS, this, "deleteWhere");
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "deleteWhere", e);
             }
         }
@@ -171,13 +173,13 @@ public class UserEntity : AbSqlBean, UserEntityInterface
             if (encryption != null && string.CompareOrdinal(encryption, this.stringUtil.EMPTY_STRING) != 0) {
                 isUserNameAndPasswordCorrect = string.CompareOrdinal(result, new SuperCrypt(global::java.lang.JavaNumber.intValue(int.Parse(encryption))).encrypt(password));
             } else {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     this.logUtil.putF("Command Success but login failed for user: " + userName + " because user did not exist", this, "login");
                 }
                 return GLOBALS2.LOGINFAILED;
             }
             if (isUserNameAndPasswordCorrect == 0) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     StringMaker stringBuffer = new StringMaker();
                     stringBuffer.append(this.COMMAND_SUCCESS_FOR_USER);
                     stringBuffer.append(userName);
@@ -189,7 +191,7 @@ public class UserEntity : AbSqlBean, UserEntityInterface
                 }
                 return GLOBALS2.LOGINSUCCESS;
             } else {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     StringMaker stringBuffer = new StringMaker();
                     stringBuffer.append(this.COMMAND_SUCCESS_BUT_LOGIN_FAILED);
                     stringBuffer.append(userName);
@@ -203,7 +205,7 @@ public class UserEntity : AbSqlBean, UserEntityInterface
                 return GLOBALS2.LOGINFAILED;
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "login", e);
             }
             return "Error";

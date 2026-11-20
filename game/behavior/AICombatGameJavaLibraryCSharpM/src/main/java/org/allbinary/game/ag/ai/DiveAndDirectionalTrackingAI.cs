@@ -26,6 +26,7 @@ using BasicAI = org.allbinary.game.ai.BasicAI;
 using DestroyedEvent = org.allbinary.game.combat.destroy.@event.DestroyedEvent;
 using DestroyedEventHandler = org.allbinary.game.combat.destroy.@event.DestroyedEventHandler;
 using DestroyedEventListenerInterface = org.allbinary.game.combat.destroy.@event.DestroyedEventListenerInterface;
+using Group = org.allbinary.game.identification.Group;
 using GameInput = org.allbinary.game.input.GameInput;
 using BasicVelocityProperties = org.allbinary.game.physics.velocity.BasicVelocityProperties;
 using VelocityInterfaceCompositeInterface = org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface;
@@ -113,7 +114,9 @@ public class DiveAndDirectionalTrackingAI : BasicAI, TrackingEventListenerInterf
         this.lastTrackingLayerInterface = lastTrackingEvent.getLayerInterface();
         AllBinaryLayer layerInterface = this.lastTrackingLayerInterface;
         AllBinaryLayer ownerLayerInterface = this.getOwnerLayerInterface();
-        if (layerInterface.getGroupInterface() == ownerLayerInterface.getGroupInterface()) {
+        Group[] groupArray = layerInterface.getGroupInterface();
+        Group[] ownerGroupArray = ownerLayerInterface.getGroupInterface();
+        if (groupArray == ownerGroupArray) {
             return;
         }
         int x = this.lastTrackingLayerInterface.getXP();

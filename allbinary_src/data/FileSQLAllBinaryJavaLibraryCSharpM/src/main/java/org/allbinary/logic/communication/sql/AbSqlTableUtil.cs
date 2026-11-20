@@ -36,6 +36,9 @@ using OutputStream = java.io.OutputStream;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
+using URLGLOBALS = org.allbinary.globals.URLGLOBALS;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.sql;
 
@@ -78,7 +81,7 @@ public class AbSqlTableUtil
     {
         try {
             string fileName = tableName + this.EXTENSION;
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(this.SAVING + tableName, this, this.METHOD_GET_OUTPUT_STREAM);
             }
             AbPath backupFilePath = new AbPath(backupPath, fileName);
@@ -91,7 +94,7 @@ public class AbSqlTableUtil
             OutputStream outputStream = new AbFileOutputStream(backupFile);
             return outputStream;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put("Create File", this, this.METHOD_GET_OUTPUT_STREAM, e);
             }
             return null;
@@ -111,7 +114,7 @@ public class AbSqlTableUtil
             stringBuffer.append(AbPathData.getInstance().SEPARATOR);
             stringBuffer.append(time);
             AbPath backupAbPath = new AbPath(stringBuffer.ToString());
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 stringBuffer.delete(0, stringBuffer.length());
                 stringBuffer.append(this.SAVING_BACKUP_PATH);
                 stringBuffer.append(backupAbPath.toFileSystemString());
@@ -125,7 +128,7 @@ public class AbSqlTableUtil
             FileUtil.getInstance().copy(path, backupAbPath);
             return true;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.METHOD_BACKUP_FILE, e);
             }
             return false;
@@ -161,9 +164,9 @@ public class AbSqlTableUtil
         try {
             int count = 0;
             string sqlStatement = this.sqlStrings.SELECT_ALL_FROM + tableName;
-            string path = org.allbinary.globals.URLGLOBALS.getMainPath() + PATH_GLOBALS.getInstance().BACKUP_PATH;
+            string path = URLGLOBALS.getMainPath() + PATH_GLOBALS.getInstance().BACKUP_PATH;
             if (!Directory.create(new AbPath(path))) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     this.logUtil.putF(ERROR_CREATING + path, this, this.METHOD_BACKUP_TABLE);
                 }
             }
@@ -184,7 +187,7 @@ public class AbSqlTableUtil
                 stringBuffer.append(rset.getString(colNum));
                 stringBuffer.append(this.END);
                 string sqlStatementLine = stringBuffer.ToString();
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                     this.logUtil.putF(this.APPENDING + sqlStatementLine, this, this.METHOD_BACKUP_TABLE);
                 }
                 outputStream.write(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(sqlStatementLine), value => unchecked((sbyte) value)));
@@ -192,7 +195,7 @@ public class AbSqlTableUtil
             StreamUtil.getInstance().close(outputStream);
             return this.TABLE_LABEL + tableName + this.BACKUP_SUCCESS;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put("Backup Table Failed\nSQL Statement", this, this.METHOD_BACKUP_TABLE, e);
             }
             return this.TABLE_LABEL + tableName + " Backup Failed";
@@ -204,11 +207,11 @@ public class AbSqlTableUtil
     {
         string tableName = abSqlTable.getTableName();
         try {
-            string path = org.allbinary.globals.URLGLOBALS.getMainPath() + PATH_GLOBALS.getInstance().BACKUP_PATH;
+            string path = URLGLOBALS.getMainPath() + PATH_GLOBALS.getInstance().BACKUP_PATH;
             int current = global::java.lang.JavaNumber.intValue(portion.getCurrent());
             if (current == 0) {
                 if (Directory.create(new AbPath(path))) {
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                         this.logUtil.putF(this.ERROR_CREATING + path, this, this.METHOD_RESTORE_TABLE);
                     }
                 }
@@ -229,12 +232,13 @@ public class AbSqlTableUtil
             stringBuffer.append(start);
             stringBuffer.append(this.DASH);
             stringBuffer.append(end);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 this.logUtil.putF(stringBuffer.ToString(), this, this.METHOD_RESTORE_TABLE);
             }
             bufferedLineReader.readUpToLines(start);
             string line = this.stringUtil.EMPTY_STRING;
-            while (bufferedLineReader.getCurrent() < end && ((line = bufferedLineReader.readLine())) != null) {
+            while (bufferedLineReader.getCurrent() < end && bufferedLineReader.ready()) {
+                line = bufferedLineReader.readLine();
                 if (line.Length > 1) {
                     abSqlTable.executeSQLStatement(line);
                 }
@@ -245,7 +249,7 @@ public class AbSqlTableUtil
             stringBuffer.append(this.PORTION_RESTORED);
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                 this.logUtil.put("Restore Table Failed\nSQL Statement", this, this.METHOD_RESTORE_TABLE, e);
             }
             StringMaker stringBuffer = new StringMaker();

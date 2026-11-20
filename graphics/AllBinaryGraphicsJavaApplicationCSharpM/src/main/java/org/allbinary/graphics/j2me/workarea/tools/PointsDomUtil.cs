@@ -23,6 +23,7 @@ using CanvasDom = org.allbinary.graphics.j2me.workarea.canvas.CanvasDom;
 using PositionStrings = org.allbinary.math.PositionStrings;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using Node = org.w3c.dom.Node;
+using Document = org.w3c.dom.Document;
 
 namespace org.allbinary.graphics.j2me.workarea.tools;
 
@@ -44,7 +45,7 @@ public class PointsDomUtil
     public virtual Node toDom(CanvasDom canvasDom, BasicArrayList pointVector)
     {
         BasicArrayList tempPointVector = PointsUtil.getInstance().doTransforms(pointVector, canvasDom.getAngle(), PointFactory.getInstance().createXY(canvasDom.getDimension().getWidth(), canvasDom.getDimension().getHeight()));
-        org.w3c.dom.Document document = WorkAreaJPanel.getDocument();
+        Document document = WorkAreaJPanel.getDocument();
         Node linesNode = ((Node) document.createElement(this.LINES));
         int size2 = tempPointVector.size();
         int size = pointVector.size();
@@ -78,7 +79,7 @@ public class PointsDomUtil
 
     private Node getPointNode(GPoint point, string pointName)
     {
-        org.w3c.dom.Document document = WorkAreaJPanel.getDocument();
+        Document document = WorkAreaJPanel.getDocument();
         Node pointNode = ((Node) document.createElement(pointName));
         Node xNode = ((Node) document.createElement(PositionStrings.getInstance().X));
         Node xTextNode = ((Node) document.createTextNode((point.getX()).ToString()));

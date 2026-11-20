@@ -31,6 +31,8 @@ using TransformStoreDocumentFactory = org.allbinary.logic.visual.transform.data.
 using TransformInfoHttpSearch = org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.generic.inventory;
 
@@ -61,7 +63,7 @@ public class InventorySearchProductUtil
                 return this.ITEM_NOT_FOUND;
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRODUCTSEARCHLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "getProduct", e);
             }
             throw new Exception("Failed to getProduct");

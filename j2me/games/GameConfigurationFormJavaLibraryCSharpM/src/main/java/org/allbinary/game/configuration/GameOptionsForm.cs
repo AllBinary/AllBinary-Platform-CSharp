@@ -21,6 +21,7 @@ using Command = javax.microedition.lcdui.Command;
 using CommandListener = javax.microedition.lcdui.CommandListener;
 using Item = javax.microedition.lcdui.Item;
 using TextField = javax.microedition.lcdui.TextField;
+using MIDPUtil = org.allbinary.MIDPUtil;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using GameFeatureChoiceGroups = org.allbinary.game.configuration.feature.GameFeatureChoiceGroups;
 using GameFeatureFormUtil = org.allbinary.game.configuration.feature.GameFeatureFormUtil;
@@ -33,7 +34,6 @@ using BasicColor = org.allbinary.graphics.color.BasicColor;
 using MyCommandsFactory = org.allbinary.graphics.displayable.command.MyCommandsFactory;
 using CommandForm = org.allbinary.graphics.displayable.screen.CommandForm;
 using OrientationData = org.allbinary.input.gyro.OrientationData;
-using MEUtil = org.allbinary.logic.MEUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
@@ -45,7 +45,7 @@ namespace org.allbinary.game.configuration;
 
 public class GameOptionsForm : CommandForm
 {
-    private readonly MEUtil meUtil = MEUtil.getInstance();
+    private readonly MIDPUtil meUtil = MIDPUtil.getInstance();
     public GameOptionsForm(CommandListener commandListener, string title, BasicColor backgrounBasicColor, BasicColor foregroundBasicColor) : base(commandListener, title, backgrounBasicColor, foregroundBasicColor)
     {
         // base(commandListener, title, backgrounBasicColor, foregroundBasicColor) is called from the constructor declaration

@@ -25,6 +25,8 @@ using AbeFactory = org.allbinary.logic.system.loader.AbeFactory;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.control.workflow;
 
@@ -46,7 +48,7 @@ public class StoreTagWorkFlowFactory
     {
         try {
             string workFlowClassName = ((string) propertiesHashMap.get(DynamicObjectData.NAME));
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORY)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERFACTORY)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Creating WorkFlow: ");
                 stringBuffer.append(workFlowClassName);
@@ -63,7 +65,7 @@ public class StoreTagWorkFlowFactory
             @params[1] = ((object) pageContext);
             return ((StoreWorkFlowInterface) AbeFactory.getInstance().getInstance(abeClientInformation, workFlowClassName, classes, @params));
         } catch (LicensingException e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
                 string workFlowClassName = ((string) propertiesHashMap.get(DynamicObjectData.NAME));
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Error Creating WorkFlow: ");
@@ -75,7 +77,7 @@ public class StoreTagWorkFlowFactory
             }
             throw e;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERFACTORYERROR)) {
                 string workFlowClassName = ((string) propertiesHashMap.get(DynamicObjectData.NAME));
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Error Creating WorkFlow: ");

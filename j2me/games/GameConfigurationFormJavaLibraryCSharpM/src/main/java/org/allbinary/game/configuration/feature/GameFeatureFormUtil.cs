@@ -19,10 +19,10 @@ using System.Linq;
 using ChoiceGroup = javax.microedition.lcdui.ChoiceGroup;
 using Item = javax.microedition.lcdui.Item;
 using NullImage = javax.microedition.lcdui.NullImage;
+using MIDPUtil = org.allbinary.MIDPUtil;
 using GameConfigurationGauge = org.allbinary.game.configuration.GameConfigurationGauge;
 using GameConfigurationUtil = org.allbinary.game.configuration.GameConfigurationUtil;
 using CommandForm = org.allbinary.graphics.displayable.screen.CommandForm;
-using MEUtil = org.allbinary.logic.MEUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using StringUtil = org.allbinary.logic.@string.StringUtil;
@@ -41,7 +41,7 @@ public class GameFeatureFormUtil
     }
 
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private readonly MEUtil meUtil = MEUtil.getInstance();
+    private readonly MIDPUtil meUtil = MIDPUtil.getInstance();
     public virtual ChoiceGroup getChoiceGroup(ABHashtable<object, object> hashtable, string name, int option)
     {
         StringMaker stringMaker = new StringMaker();

@@ -14,8 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias GameLicensingNullJavaLibraryCSharp;
-extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using GL = javax.microedition.khronos.opengles.GL;
@@ -26,7 +24,7 @@ using BasicColorFactory = org.allbinary.graphics.color.BasicColorFactory;
 using BasicColorSetUtil = org.allbinary.graphics.color.BasicColorSetUtil;
 using NullPaintable = org.allbinary.graphics.paint.NullPaintable;
 using Paintable = org.allbinary.graphics.paint.Paintable;
-//using OpenGLSurfaceChangedInterface = org.allbinary.image.opengles.OpenGLSurfaceChangedInterface;
+using OpenGLSurfaceChangedInterface = org.allbinary.image.opengles.OpenGLSurfaceChangedInterface;
 using AllBinaryLayer = org.allbinary.layer.AllBinaryLayer;
 using AllBinaryLayerManager = org.allbinary.layer.AllBinaryLayerManager;
 using ForcedLogUtil = org.allbinary.logic.communication.log.ForcedLogUtil;
@@ -41,22 +39,20 @@ using ViewPositionEventListenerInterface = org.allbinary.view.@event.ViewPositio
 
 namespace org.allbinary.game.layer;
 
-public class AllBinaryGameLayer : AllBinaryLayer, ViewPositionEventListenerInterface, OpenGLNoneOtherJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLSurfaceChangedInterface
+public class AllBinaryGameLayer : AllBinaryLayer, ViewPositionEventListenerInterface, OpenGLSurfaceChangedInterface
 {
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     public readonly BasicColorSetUtil basicSetColorUtil = BasicColorSetUtil.getInstance();
     public readonly BasicColor RED = BasicColorFactory.getInstance().RED;
-    private readonly Paintable paintable = (SWTUtil.isSWT ? new Paintable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-        private readonly BasicColorSetUtil basicSetColorUtil = BasicColorSetUtil.getInstance();
-        private readonly BasicColor BLACK = BasicColorFactory.getInstance().BLACK;
-        public virtual void paint(Graphics graphics)
-        {
-            this.basicSetColorUtil.setBasicColorP(graphics, this.BLACK);
+    private static Paintable createPaintable()
+    {
+        if (SWTUtil.isSWT) {
+            return new SWTBlackPaintable();
         }
+        return NullPaintable.getInstance();
+    }
 
-#endif
- : NullPaintable.getInstance());
+    private readonly Paintable paintable = createPaintable();
     private readonly BasicArrayList gameKeyEventList = new BasicArrayListD();
     public AllBinaryGameLayer(string name, Rectangle layerInfo, ViewPositionBase viewPosition) : base(name, layerInfo, viewPosition)
     {

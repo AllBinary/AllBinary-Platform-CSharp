@@ -47,11 +47,7 @@ public class AllBinaryLayer : Layer, LayerInterface
         this.viewPositionEvent = new ViewPositionEvent(this);
         // base(rectangle.getWidth(), rectangle.getHeight()) is called from the constructor declaration
         string localName = null;
-        if (name == null) {
-            localName = this.GetType().FullName;
-        } else {
-            localName = new StringMaker().append(name).append(CommonSeps.getInstance().COLON).append(Convert.ToString(TsUtil.getInstance().hashCode(this), 16)).ToString();
-        }
+        localName = new StringMaker().append(name).append(CommonSeps.getInstance().COLON).append(Convert.ToString(TsUtil.getInstance().hashCode(this), 16)).ToString();
         this.name = localName;
         GPoint point = rectangle.getPoint();
         this.setPosition(point.getX(), point.getY(), point.getZ());

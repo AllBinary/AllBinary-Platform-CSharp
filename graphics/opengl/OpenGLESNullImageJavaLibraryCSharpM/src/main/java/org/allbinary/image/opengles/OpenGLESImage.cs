@@ -66,7 +66,7 @@ public class OpenGLESImage : Image, OpenGLSurfaceChangedInterface
     }
 
     public const int TYPE = 4;
-    public virtual int getType()
+    public override int getType()
     {
         return OpenGLESImage.TYPE;
     }

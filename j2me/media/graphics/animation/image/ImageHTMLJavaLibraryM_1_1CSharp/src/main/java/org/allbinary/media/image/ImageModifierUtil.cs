@@ -132,7 +132,7 @@ public class ImageModifierUtil
     public virtual void copy(Image[] imageArray, int index, Image image, playn.core.Image image3)
     {
         try {
-            Image image2 = Image.createImage(image3.width(), image3.height());
+            Image image2 = Image.createImageWH(image3.width(), image3.height());
             Graphics graphics = image2.getGraphics();
             graphics.drawImage(image, 0, 0, Anchor.TOP_LEFT);
             imageArray[index] = image2;

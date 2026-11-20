@@ -75,114 +75,6 @@ public class ScrollSelectionForm : PaintableForm
 
     private const string INSIDE_FORM = " inside form";
     private const string IS_IN_FORM = "isInForm";
-    public class ScrollSelectionFormHorizontalPaintable : ItemIndexPaintable
-    {
-        private readonly ScrollSelectionForm outer;
-
-        private readonly ScrollSelectionForm scrollSelectionForm;
-        public ScrollSelectionFormHorizontalPaintable(ScrollSelectionForm outer, ScrollSelectionForm scrollSelectionForm)
-        {
-            this.outer = outer;
-            this.scrollSelectionForm = scrollSelectionForm;
-        }
-
-        // throws Exception
-        public override int paint(Graphics graphics, int index, ABCustomItem item, int dx, int dy)
-        {
-            return this.scrollSelectionForm.paintItemHorizontal(graphics, index, item, dx, dy);
-        }
-
-    }
-    public class ScrollSelectionFormVerticalPaintable : ItemIndexPaintable
-    {
-        private readonly ScrollSelectionForm outer;
-
-        private readonly ScrollSelectionForm scrollSelectionForm;
-        public ScrollSelectionFormVerticalPaintable(ScrollSelectionForm outer, ScrollSelectionForm scrollSelectionForm)
-        {
-            this.outer = outer;
-            this.scrollSelectionForm = scrollSelectionForm;
-        }
-
-        // throws Exception
-        public override int paint(Graphics graphics, int index, ABCustomItem item, int dx, int dy)
-        {
-            return this.scrollSelectionForm.paintItemVertical(graphics, index, item, dx, dy);
-        }
-
-    }
-    public class ScrollSelectionFormTempHorizontalPaintable : ItemIndexPaintable
-    {
-        private readonly ScrollSelectionForm outer;
-
-        private readonly ScrollSelectionForm scrollSelectionForm;
-        public ScrollSelectionFormTempHorizontalPaintable(ScrollSelectionForm outer, ScrollSelectionForm scrollSelectionForm)
-        {
-            this.outer = outer;
-            this.scrollSelectionForm = scrollSelectionForm;
-        }
-
-        // throws Exception
-        public override int paint(Graphics graphics, int index, ABCustomItem item, int dx, int dy)
-        {
-            return this.scrollSelectionForm.paintItemTempHorizontal(graphics, index, item, dx, dy);
-        }
-
-    }
-    public class ScrollSelectionFormHorizontalDx : ItemIndexDx
-    {
-        private readonly ScrollSelectionForm outer;
-
-        private readonly ScrollSelectionForm scrollSelectionForm;
-        public ScrollSelectionFormHorizontalDx(ScrollSelectionForm outer, ScrollSelectionForm multipleScrollSelectionForm)
-        {
-            this.outer = outer;
-            this.scrollSelectionForm = multipleScrollSelectionForm;
-        }
-
-        // throws Exception
-        public override int getDx(int index, ABCustomItem item, int dx, int dy)
-        {
-            return this.scrollSelectionForm.getSelectedIndexForPointHorizontalDx(index, item, dx, dy);
-        }
-
-    }
-    public class ScrollSelectionFormVericalDx : ItemIndexDx
-    {
-        private readonly ScrollSelectionForm outer;
-
-        private readonly ScrollSelectionForm scrollSelectionForm;
-        public ScrollSelectionFormVericalDx(ScrollSelectionForm outer, ScrollSelectionForm multipleScrollSelectionForm)
-        {
-            this.outer = outer;
-            this.scrollSelectionForm = multipleScrollSelectionForm;
-        }
-
-        // throws Exception
-        public override int getDx(int index, ABCustomItem item, int dx, int dy)
-        {
-            return this.scrollSelectionForm.getSelectedIndexForPointVerticalDx(index, item, dx, dy);
-        }
-
-    }
-    public class ScrollSelectionFormTempHorizontalDx : ItemIndexDx
-    {
-        private readonly ScrollSelectionForm outer;
-
-        private readonly ScrollSelectionForm scrollSelectionForm;
-        public ScrollSelectionFormTempHorizontalDx(ScrollSelectionForm outer, ScrollSelectionForm multipleScrollSelectionForm)
-        {
-            this.outer = outer;
-            this.scrollSelectionForm = multipleScrollSelectionForm;
-        }
-
-        // throws Exception
-        public override int getDx(int index, ABCustomItem item, int dx, int dy)
-        {
-            return this.scrollSelectionForm.getSelectedIndexForPointTempHorizontalDx(index, item, dx, dy);
-        }
-
-    }
     private readonly RectangleCollisionUtil rectangleCollisionUtil = RectangleCollisionUtil.getInstance();
     public readonly int border;
     public readonly int halfBorder;
@@ -207,14 +99,14 @@ public class ScrollSelectionForm : PaintableForm
         base.init(rectangle, formType);
         FormTypeFactory formTypeFactory = FormTypeFactory.getInstance();
         if (formType == formTypeFactory.HORIZONTAL_FORM) {
-            this.scrollSelectionFormFormTypeItemIndexPaintable = new ScrollSelectionFormHorizontalPaintable(this, this);
-            this.formTypeItemIndexDx = new ScrollSelectionFormHorizontalDx(this, this);
+            this.scrollSelectionFormFormTypeItemIndexPaintable = new ScrollSelectionFormHorizontalPaintable(this);
+            this.formTypeItemIndexDx = new ScrollSelectionFormHorizontalDx(this);
         } else if (formType == formTypeFactory.VERTICAL_CENTER_FORM) {
-            this.scrollSelectionFormFormTypeItemIndexPaintable = new ScrollSelectionFormVerticalPaintable(this, this);
-            this.formTypeItemIndexDx = new ScrollSelectionFormVericalDx(this, this);
+            this.scrollSelectionFormFormTypeItemIndexPaintable = new ScrollSelectionFormVerticalPaintable(this);
+            this.formTypeItemIndexDx = new ScrollSelectionFormVericalDx(this);
         } else if (formType == formTypeFactory.TEMP_HORIZONTAL_FORM) {
-            this.scrollSelectionFormFormTypeItemIndexPaintable = new ScrollSelectionFormTempHorizontalPaintable(this, this);
-            this.formTypeItemIndexDx = new ScrollSelectionFormTempHorizontalDx(this, this);
+            this.scrollSelectionFormFormTypeItemIndexPaintable = new ScrollSelectionFormTempHorizontalPaintable(this);
+            this.formTypeItemIndexDx = new ScrollSelectionFormTempHorizontalDx(this);
         } else if (formType == formTypeFactory.NULL_FORM_TYPE) {
         } else {
             throw new Exception(formTypeFactory.UNK);

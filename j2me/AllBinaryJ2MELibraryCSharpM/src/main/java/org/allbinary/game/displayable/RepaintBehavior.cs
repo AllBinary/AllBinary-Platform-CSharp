@@ -16,7 +16,6 @@
 
 using System;
 using System.Linq;
-using ARunnable = org.allbinary.thread.ARunnable;
 using Canvas = javax.microedition.lcdui.Canvas;
 using Features = org.allbinary.game.configuration.feature.Features;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
@@ -48,22 +47,7 @@ public class RepaintBehavior
         if (features.isFeature(openGLFeatureFactory.OPENGL)) {
             DisplayInfoSingleton.getInstance().process();
         } else {
-            global::org.allbinary.thread.NullThread thread = new global::org.allbinary.thread.NullThread(new ARunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-                public virtual void run()
-                {
-                    try {
-                        canvas.repaint();
-                        DisplayInfoSingleton.getInstance().process();
-                    } catch (Exception e) {
-                        CommonStrings commonStrings = CommonStrings.getInstance();
-                        LogUtil logUtil = LogUtil.getInstance();
-                        logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
-                    }
-                }
-
-#endif
-, this.NAME);
+            global::org.allbinary.thread.NullThread thread = new global::org.allbinary.thread.NullThread(new RepaintRunnable(canvas), this.NAME);
             thread.start();
         }
     }

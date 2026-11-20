@@ -21,6 +21,8 @@ using EmailServerConfigurationInterface = org.allbinary.logic.communication.smtp
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp.info;
 
@@ -32,7 +34,7 @@ public class BasicEmailInfo
     public EmailServerConfigurationInterface emailServerConfigurationInterface = null;
     public BasicEmailInfo(string subject, string textBody)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             CommonStrings commonStrings = CommonStrings.getInstance();
             this.logUtil.putF(commonStrings.START, this, commonStrings.CONSTRUCTOR);
         }

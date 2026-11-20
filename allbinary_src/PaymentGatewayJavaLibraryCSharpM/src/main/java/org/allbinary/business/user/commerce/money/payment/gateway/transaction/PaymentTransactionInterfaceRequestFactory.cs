@@ -41,6 +41,9 @@ using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using TransformInfoHttpInterface = org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.money.payment.gateway.transaction;
 
@@ -65,8 +68,8 @@ public class PaymentTransactionInterfaceRequestFactory
             TransformInfoHttpInterface httpTransformInfoInterface = ((TransformInfoHttpInterface) transformInfoInterface);
             PageContext pageContext = httpTransformInfoInterface.getPageContext();
             HttpServletRequest httpServletRequest = ((HttpServletRequest) pageContext.getRequest());
-            string command = httpServletRequest.getParameter(org.allbinary.globals.GLOBALS2.ADMINCOMMAND);
-            if (command != null && string.CompareOrdinal(command, org.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR) == 0) {
+            string command = httpServletRequest.getParameter(GLOBALS2.ADMINCOMMAND);
+            if (command != null && string.CompareOrdinal(command, GLOBALS2.AUTHORIZEFORMEVALBODYONERROR) == 0) {
                 return this.generateFromTestData(transformInfoInterface);
             } else {
                 HashMap<object, object> propertiesHashMap = httpTransformInfoInterface.getPropertiesHashMap();
@@ -80,14 +83,14 @@ public class PaymentTransactionInterfaceRequestFactory
                 orderPaymentInfo.setTransactionType(TransactionTypeFactory.getInstance().SALE.ToString());
                 orderPaymentInfo.setTenderType(TenderTypeFactory.getInstance().CREDITCARD.ToString());
                 orderReview.setPaymentInfo(orderPaymentInfo);
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENT)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENT)) {
                     this.logUtil.putF(orderReview.getId(), this, "getPaymentTransactionInterface()");
                 }
                 PaymentTransactionInterface paymentTransactionInterface = PaymentTransactionInterfaceFactory.getInstance().getInstance(orderReview);
                 return paymentTransactionInterface;
             }
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "getPaymentTransactionInterface()", e);
             }
             throw e;
@@ -158,7 +161,7 @@ public class PaymentTransactionInterfaceRequestFactory
             PaymentTransactionInterface paymentTransactionInterface = PaymentTransactionInterfaceFactory.getInstance().getInstance(orderReview);
             return paymentTransactionInterface;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PAYMENTERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "generatePaymentTransactionInterfaceFromTestData()", e);
             }
             throw e;

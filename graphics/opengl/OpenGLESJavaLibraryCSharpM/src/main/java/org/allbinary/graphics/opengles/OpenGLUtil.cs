@@ -1,7 +1,5 @@
 // Generated Code Do Not Modify
 
-extern alias ImageCacheOpenGLESJavaLibraryCSharp;
-extern alias OpenGLNoneOtherJavaLibraryCSharp;
 using System;
 using System.Linq;
 using GL10 = javax.microedition.khronos.opengles.GL10;
@@ -12,11 +10,11 @@ using ProgressCanvas = org.allbinary.graphics.canvas.transition.progress.Progres
 using ProgressCanvasFactory = org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory;
 using CanvasStrings = org.allbinary.graphics.displayable.CanvasStrings;
 using DisplayInfoSingleton = org.allbinary.graphics.displayable.DisplayInfoSingleton;
-//using RendererStrings = org.allbinary.graphics.opengles.renderer.RendererStrings;
+using RendererStrings = org.allbinary.graphics.opengles.renderer.RendererStrings;
 using PreResourceImageUtil = org.allbinary.image.PreResourceImageUtil;
 using OpenGLESImage = org.allbinary.image.opengles.OpenGLESImage;
 using OpenGLImageCache = org.allbinary.image.opengles.OpenGLImageCache;
-//using OpenGLImageCacheFactory = org.allbinary.image.opengles.OpenGLImageCacheFactory;
+using OpenGLImageCacheFactory = org.allbinary.image.opengles.OpenGLImageCacheFactory;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
 using CommonLabels = org.allbinary.@string.CommonLabels;
@@ -37,7 +35,7 @@ public class OpenGLUtil
     }
 
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
-    private readonly OpenGLNoneOtherJavaLibraryCSharp::org.allbinary.graphics.opengles.renderer.RendererStrings renderStrings = OpenGLNoneOtherJavaLibraryCSharp::org.allbinary.graphics.opengles.renderer.RendererStrings.getInstance();
+    private readonly RendererStrings renderStrings = RendererStrings.getInstance();
     public readonly CanvasStrings canvasStrings = CanvasStrings.getInstance();
     public readonly DisplayInfoSingleton displayInfoSingleton = DisplayInfoSingleton.getInstance();
     private readonly PreResourceImageUtil preResourceImageUtil = PreResourceImageUtil.getInstance();
@@ -79,7 +77,7 @@ public class OpenGLUtil
         graphics.update();
         ProgressCanvas progressCanvas = ProgressCanvasFactory.getInstance();
         progressCanvas.update(graphics);
-        (((OpenGLImageCache) ImageCacheOpenGLESJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLImageCacheFactory.getInstance())).update(gl);
+        (((OpenGLImageCache) OpenGLImageCacheFactory.getInstance())).update(gl);
         this.processRunnables();
         this.set(gl);
     }

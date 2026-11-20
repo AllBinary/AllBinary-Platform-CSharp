@@ -25,6 +25,7 @@ using SecretKeyFactory = javax.crypto.SecretKeyFactory;
 using CryptInterface = org.allbinary.init.crypt.jcehelper.CryptInterface;
 using PreLogUtil = org.allbinary.logic.communication.log.PreLogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using SunJCE = com.sun.crypto.provider.SunJCE;
 
 namespace org.allbinary.logic.system.security.crypt.jcehelper;
 
@@ -49,7 +50,7 @@ public class AbBasicCrypt : CryptInterface
     private void init()
     {
         try {
-            Provider sunJce = new com.sun.crypto.provider.SunJCE();
+            Provider sunJce = new SunJCE();
             Security.addProvider(sunJce);
             KeySpec keySpec = KeySpecFactory.getInstance().getInstance(this.algorithm, this.key);
             SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(this.algorithm);

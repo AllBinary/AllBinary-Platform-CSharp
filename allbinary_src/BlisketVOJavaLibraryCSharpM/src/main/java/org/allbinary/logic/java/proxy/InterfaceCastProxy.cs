@@ -18,10 +18,11 @@ using System;
 using System.Linq;
 //using Method = java.lang.reflect.Method;
 //using Proxy = java.lang.reflect.Proxy;
+//using InvocationHandler = java.lang.reflect.InvocationHandler;
 
 namespace org.allbinary.logic.java.proxy;
 
-public class InterfaceCastProxy : java.lang.reflect.InvocationHandler
+public class InterfaceCastProxy : InvocationHandler
 {
     private object anyType;
     private InterfaceCastProxy(object anyType)

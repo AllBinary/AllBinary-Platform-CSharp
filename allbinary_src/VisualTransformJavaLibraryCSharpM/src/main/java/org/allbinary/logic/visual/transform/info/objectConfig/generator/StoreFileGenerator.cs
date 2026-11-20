@@ -38,6 +38,8 @@ using TransformInfoInterface = org.allbinary.logic.visual.transform.info.Transfo
 using TransformInfosData = org.allbinary.logic.visual.transform.info.TransformInfosData;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.info.objectConfig.generator;
 
@@ -87,7 +89,7 @@ public class StoreFileGenerator : TransformInfoObjectConfigGenerator
         abPath = new AbPath(abPath.ToString(), stringBuffer.ToString());
         this.fileAbPath = abPath;
         this.file = AbFile.createAbFileFromAbPath(this.fileAbPath);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("File: " + this.fileAbPath.ToString(), this, this.commonStrings.CONSTRUCTOR);
         }
     }
@@ -95,7 +97,7 @@ public class StoreFileGenerator : TransformInfoObjectConfigGenerator
     // throws Exception
     public override string process(string input)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Processing", this, this.commonStrings.PROCESS);
         }
         if (!this.file.exists()) {
@@ -107,7 +109,7 @@ public class StoreFileGenerator : TransformInfoObjectConfigGenerator
         } else {
             throw new Exception("Could Not Create: " + this.fileAbPath.ToString());
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Processed", this, this.commonStrings.PROCESS);
         }
         return StringUtil.getInstance().EMPTY_STRING;

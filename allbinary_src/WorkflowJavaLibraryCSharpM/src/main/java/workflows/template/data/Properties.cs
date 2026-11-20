@@ -21,6 +21,8 @@ using java.util;
 using StdUtil = org.allbinary.logic.StdUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace workflows.template.data;
 
@@ -31,7 +33,7 @@ public class Properties
     private HashMap<object, object> propertiesHashMap;
     public Properties()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF("Start/Tag", this, this.commonStrings.CONSTRUCTOR);
         }
         this.propertiesHashMap = StdUtil.getInstance().createHashMap();
@@ -44,7 +46,7 @@ public class Properties
 
     public virtual int doEndTag()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF("Tag Ended", this, "doEndTag");
         }
         this.propertiesHashMap = StdUtil.getInstance().createHashMap();

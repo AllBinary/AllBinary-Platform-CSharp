@@ -41,6 +41,8 @@ using MediaData = org.allbinary.logic.visual.media.MediaData;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using FileItem = org.apache.commons.fileupload.FileItem;
 using HttpStoreComponentView = views.business.context.modules.storefront.HttpStoreComponentView;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.inventory;
 
@@ -86,7 +88,7 @@ public class InventoryItemView : HttpStoreComponentView, RequestMapInterface
                 PathUtil pathUtil = PathUtil.getInstance();
                 this.mediaData = MediaData.get(pathData.getExtension(this.imageFileName));
                 this.imageFileName = pathUtil.getWithoutExtension(this.imageFileName);
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                     StringMaker stringBuffer = new StringMaker();
                     stringBuffer.append("Uploaded File Data: ");
                     stringBuffer.append(this.imageFileName);
@@ -123,7 +125,7 @@ public class InventoryItemView : HttpStoreComponentView, RequestMapInterface
             this.addDomNodeInterfaces();
             return base.view();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             throw e;

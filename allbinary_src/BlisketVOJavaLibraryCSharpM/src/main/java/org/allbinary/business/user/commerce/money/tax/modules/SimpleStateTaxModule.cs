@@ -37,6 +37,8 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.business.user.commerce.money.tax.modules;
 
@@ -62,7 +64,7 @@ public class SimpleStateTaxModule : TaxModuleInterface
         AbPath fileAbPath = new AbPath(URLGLOBALS.getMainPath() + FREEBLISKET_PATH_GLOBALS.getInstance().XSLPATH + this.storeFrontInterface.getName() + this.STATETAXPATH, this.STATETAXFILE);
         string data = new CryptFileReader(TransformInfoObjectConfigData.getInstance().UNCRYPTED_EXTENSION, TransformInfoObjectConfigData.getInstance().ENCRYPTED_EXTENSION).get(fileAbPath);
         this.document = DomDocumentHelper.create(data);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAX)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAX)) {
             this.logUtil.putF("Tax Doc: " + XmlDocumentHelper.toString(this.document), this, "getTaxRate");
         }
         string state = this.streetAddress.getState();
@@ -95,7 +97,7 @@ public class SimpleStateTaxModule : TaxModuleInterface
             AbPath fileAbPath = new AbPath(URLGLOBALS.getMainPath() + FREEBLISKET_PATH_GLOBALS.getInstance().XSLPATH + this.storeFrontInterface.getName() + this.STATETAXPATH, this.STATETAXFILE);
             string data = new CryptFileReader(TransformInfoObjectConfigData.getInstance().UNCRYPTED_EXTENSION, TransformInfoObjectConfigData.getInstance().ENCRYPTED_EXTENSION).get(fileAbPath);
             this.document = DomDocumentHelper.create(data);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAX)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAX)) {
                 this.logUtil.putF("Tax Doc: " + XmlDocumentHelper.toString(this.document), this, this.commonStrings.IS_VALID);
             }
             string country = this.streetAddress.getCountry();
@@ -105,7 +107,7 @@ public class SimpleStateTaxModule : TaxModuleInterface
                 Node node = nodeList.item(index);
                 NodeList taxNodeChildren = node.getChildNodes();
                 Node streetAddressNode = DomSearchHelper.getNode(StreetAddressData.NAME, taxNodeChildren);
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAX)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAX)) {
                     StringMaker stringBuffer = new StringMaker();
                     stringBuffer.append("StreetAddress Node: ");
                     stringBuffer.append(streetAddressNode.getNodeName());
@@ -129,7 +131,7 @@ public class SimpleStateTaxModule : TaxModuleInterface
             }
             return false;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate", this, this.commonStrings.IS_VALID, e);
             }
             return false;

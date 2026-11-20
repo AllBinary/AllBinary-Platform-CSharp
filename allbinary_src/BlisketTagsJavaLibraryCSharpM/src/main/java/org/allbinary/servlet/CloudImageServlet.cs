@@ -29,6 +29,8 @@ using CloudStreamUtil = org.allbinary.logic.io.CloudStreamUtil;
 using StreamUtil = org.allbinary.logic.io.StreamUtil;
 using AbFile = org.allbinary.logic.io.file.AbFile;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.servlet;
 
@@ -50,7 +52,7 @@ public class CloudImageServlet : HttpServlet
             response.setContentType("image/jpeg;charset=utf-8");
             response.getOutputStream().write(byteArray);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "processRequest()", e);
             }
         } finally {

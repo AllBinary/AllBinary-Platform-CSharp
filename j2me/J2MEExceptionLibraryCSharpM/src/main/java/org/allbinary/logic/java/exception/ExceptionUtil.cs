@@ -40,10 +40,7 @@ public class ExceptionUtil
         ByteArrayOutputStream bs = new ByteArrayOutputStream();
         Console.WriteLine(e);
         string output = bs.ToString();
-        if (output != null) {
-            return new string((output).ToCharArray());
-        }
-        return this.NONE;
+        return new string((output).ToCharArray());
     }
 
 }

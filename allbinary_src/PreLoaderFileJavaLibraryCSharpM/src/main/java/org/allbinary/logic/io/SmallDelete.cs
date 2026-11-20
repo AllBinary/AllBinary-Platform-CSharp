@@ -21,6 +21,8 @@ using FileOutputStream = java.io.FileOutputStream;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbFileSystem = org.allbinary.logic.io.file.AbFileSystem;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.io;
 
@@ -52,7 +54,7 @@ public class SmallDelete
             }
             return false;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().IDLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().IDLOGGING)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "deleteAtStart", e);
             }
             return false;
@@ -76,7 +78,7 @@ public class SmallDelete
             }
             return false;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().IDLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().IDLOGGING)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "deleteAtStart", e);
             }
             return false;

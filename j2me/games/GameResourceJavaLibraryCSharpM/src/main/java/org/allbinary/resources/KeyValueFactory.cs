@@ -32,11 +32,10 @@ public class KeyValueFactory
     public readonly ABHashtable<object, object> MAP = StdUtil.getInstance().createHashtable();
     public virtual string get(string key)
     {
-        string value = ((string) this.MAP.get(((object) key)));
-        if (value == null) {
+        if (!this.MAP.containsKey(((object) key))) {
             return key;
         }
-        return value;
+        return ((string) this.MAP.get(((object) key)));
     }
 
 }

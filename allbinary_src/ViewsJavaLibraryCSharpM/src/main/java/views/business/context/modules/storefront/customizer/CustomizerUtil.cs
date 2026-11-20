@@ -29,6 +29,8 @@ using TransformInfoHttpInterface = org.allbinary.logic.visual.transform.info.Tra
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using TransformInfoObjectConfigInterface = org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface;
 using Document = org.w3c.dom.Document;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context.modules.storefront.customizer;
 
@@ -48,7 +50,7 @@ public class CustomizerUtil
     // throws Exception
     public virtual TransformInfoInterface getTransformInfoInterfaceToCustomize(TransformInfoInterface customizerTransformInfoInterface, TransformInfoInterface transformInfoInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + customizerTransformInfoInterface.getName(), this, "getTransformInfoInterfaceToCustomize()");
         }
         TransformInfoEntity transformInfoEntityInterface = TransformInfoEntityBuilder.getInstance();
@@ -61,7 +63,7 @@ public class CustomizerUtil
     // throws Exception
     public virtual BasicArrayList getTransformInfoObjectConfigComponentNodesToCustomize(TransformInfoInterface customizerTransformInfoInterface, TransformInfoInterface transformInfoInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + customizerTransformInfoInterface.getName(), this, "getTransformInfoObjectConfigComponentNodesToCustomize()");
         }
         TransformInfoEntity transformInfoEntityInterface = TransformInfoEntityBuilder.getInstance();
@@ -74,7 +76,7 @@ public class CustomizerUtil
     // throws Exception
     public virtual BasicArrayList getTransformInfoObjectConfigComponentNodes(TransformInfoInterface transformInfoInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, "getTransformInfoObjectConfigComponentNodes()");
         }
         TransformInfoObjectConfigInterface transformInfoObjectConfigInterface = transformInfoInterface.getObjectConfigInterface();
@@ -84,7 +86,7 @@ public class CustomizerUtil
     // throws Exception
     public virtual BasicArrayList getTransformInfoObjectConfigGroupComponentNodes(TransformInfoInterface transformInfoInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, "getTransformInfoObjectConfigComponentNodes()");
         }
         TransformInfoObjectConfigInterface transformInfoObjectConfigInterface = transformInfoInterface.getObjectConfigInterface();
@@ -94,7 +96,7 @@ public class CustomizerUtil
     // throws Exception
     public virtual void insert(TransformInfoInterface transformInfoInterface, DomNodeInterface domNodeInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, "insert()");
         }
         TransformInfoEntity transformInfoEntityInterface = TransformInfoEntityBuilder.getInstance();
@@ -103,7 +105,7 @@ public class CustomizerUtil
         document.appendChild(domNodeInterface.toXmlNode(document));
         string documentString = XmlDocumentHelper.toString(document);
         StringMaker stringBuffer = new StringMaker();
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             stringBuffer.append("Total Views For Modification: ");
             stringBuffer.appendint(allViewsToBeModified.size());
             stringBuffer.append(" New Xml/Data: ");
@@ -115,7 +117,7 @@ public class CustomizerUtil
         for (int index = 0; index < size; index++) {
             TransformInfo transformInfo = ((TransformInfo) allViewsToBeModified.get(index));
             string viewNameOfViewToBeModified = transformInfo.getName();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 stringBuffer.delete(0, stringBuffer.length());
                 stringBuffer.append(transformInfoInterface.getName());
                 stringBuffer.append(" is modifying view: ");
@@ -125,7 +127,7 @@ public class CustomizerUtil
             TransformInfoHttpInterface httpTransformInfoInterface = ((TransformInfoHttpInterface) transformInfoInterface);
             TransformInfoInterface specifiedTransformInfoInterface = transformInfoEntityInterface.get(viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap(), httpTransformInfoInterface.getPageContext());
             if (specifiedTransformInfoInterface == null) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     stringBuffer.delete(0, stringBuffer.length());
                     stringBuffer.append(transformInfoInterface.getName());
                     stringBuffer.append(" is unable to add data to view: ");
@@ -134,10 +136,10 @@ public class CustomizerUtil
                     this.logUtil.putF(stringBuffer.ToString(), this, "insert()");
                 }
             } else {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF(transformInfoInterface.getName() + " is adding data to view: " + viewNameOfViewToBeModified, this, "insert()");
                 }
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     stringBuffer.delete(0, stringBuffer.length());
                     stringBuffer.append(viewNameOfViewToBeModified);
                     stringBuffer.append(" is changing data in ");
@@ -154,7 +156,7 @@ public class CustomizerUtil
     // throws Exception
     public virtual void write(TransformInfoInterface specifiedTransformInfoInterface, string documentString)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + specifiedTransformInfoInterface.getName(), this, "write()");
         }
         TransformInfoEntity transformInfoEntityInterface = TransformInfoEntityBuilder.getInstance();
@@ -165,7 +167,7 @@ public class CustomizerUtil
     // throws Exception
     public virtual Document getViewDataForComponentsInObjectConfig(TransformInfoInterface transformInfoInterface)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, "getViewDataForComponentsInObjectConfig()");
         }
         TransformInfoObjectConfigInterface transformInfoObjectConfigInterface = transformInfoInterface.getObjectConfigInterface();

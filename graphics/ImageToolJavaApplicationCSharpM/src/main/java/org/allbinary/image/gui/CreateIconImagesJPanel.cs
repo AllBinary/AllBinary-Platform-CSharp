@@ -30,10 +30,15 @@ using ImageUtil = org.allbinary.media.image.ImageUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
+//using ActionEvent = java.awt.@event.ActionEvent;
+//using ActionListener = java.awt.@event.ActionListener;
+//using GroupLayout = javax.swing.GroupLayout;
+//using JButton = javax.swing.JButton;
+//using JPanel = javax.swing.JPanel;
 
 namespace org.allbinary.image.gui;
 
-public class CreateIconImagesJPanel : javax.swing.JPanel, ImageProcessorInputCompositeInterface
+public class CreateIconImagesJPanel : JPanel, ImageProcessorInputCompositeInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
@@ -118,28 +123,28 @@ public class CreateIconImagesJPanel : javax.swing.JPanel, ImageProcessorInputCom
 
     private void initComponents()
     {
-        this.aboveJButton = new javax.swing.JButton();
+        this.aboveJButton = new JButton();
         this.aboveJButton.setText("Process");
-        this.aboveJButton.addActionListener(new java.awt.event.ActionListener()
+        this.aboveJButton.addActionListener(new ActionListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void actionPerformed(java.awt.event.ActionEvent evt)
+            public virtual void actionPerformed(ActionEvent evt)
             {
                 aboveJButtonActionPerformed(evt);
             }
 
 #endif
 );
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
-        layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(aboveJButton).addGap(0, 335, short.MaxValue)));
-        layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addContainerGap().addComponent(aboveJButton).addContainerGap(286, short.MaxValue)));
+        layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(aboveJButton).addGap(0, 335, short.MaxValue)));
+        layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addContainerGap().addComponent(aboveJButton).addContainerGap(286, short.MaxValue)));
     }
 
-    private void aboveJButtonActionPerformed(java.awt.event.ActionEvent evt)
+    private void aboveJButtonActionPerformed(ActionEvent evt)
     {
         this.process();
     }
 
-    private javax.swing.JButton aboveJButton = null;
+    private JButton aboveJButton = null;
 }
 

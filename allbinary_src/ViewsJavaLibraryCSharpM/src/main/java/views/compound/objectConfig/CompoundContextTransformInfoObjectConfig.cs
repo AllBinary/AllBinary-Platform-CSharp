@@ -36,6 +36,8 @@ using TransformInfoInterface = org.allbinary.logic.visual.transform.info.Transfo
 using GenericStoreTransformInfoObjectConfig = org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using Document = org.w3c.dom.Document;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.compound.objectConfig;
 
@@ -72,7 +74,7 @@ public class CompoundContextTransformInfoObjectConfig : GenericStoreTransformInf
         stringBuffer.append(RootTransformInfoData.NAME);
         TransformInterface rootComponentInterface = TransformFactory.getInstance().getInstance(abeClientInformation, stringBuffer.ToString(), this.getTransformInfoInterface());
         BasicArrayList viewVector = this.getTransformDomNodes();
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Root View Called with: " + viewVector.size(), this, "get(transformInfoInterface)");
         }
         string rootView = rootComponentInterface.view();
@@ -90,7 +92,7 @@ public class CompoundContextTransformInfoObjectConfig : GenericStoreTransformInf
             stringBuffer.append(replacementViewString);
             stringBuffer.append(endXMLHeader);
             string templateValue = stringBuffer.ToString();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 stringBuffer.delete(0, stringBuffer.length());
                 stringBuffer.append("Replacing: ");
                 stringBuffer.append(templateKey);
@@ -101,7 +103,7 @@ public class CompoundContextTransformInfoObjectConfig : GenericStoreTransformInf
             Replace replace = new Replace(templateKey, templateValue);
             rootView = replace.all(rootView);
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("End: Result of a compound view: " + rootView, this, "get()");
         }
         return rootView;
@@ -112,7 +114,7 @@ public class CompoundContextTransformInfoObjectConfig : GenericStoreTransformInf
     {
         sbyte[] completeTemplateViewBytes = System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(this.get()), value => unchecked((sbyte) value));
         ByteArrayInputStream bais = new ByteArrayInputStream(completeTemplateViewBytes);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Template: " + System.Text.Encoding.UTF8.GetString((byte[]) (Array) completeTemplateViewBytes).ToString(), this, "createInputStream()");
         }
         return bais;

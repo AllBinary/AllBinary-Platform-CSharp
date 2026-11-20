@@ -24,6 +24,8 @@ using TransformInfoObjectConfigData = org.allbinary.logic.visual.transform.info.
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.business.context.modules.storefront.customizer.template.objectConfig;
 
@@ -50,13 +52,13 @@ public class InsertTemplateCustomizerTransformInfoObjectConfig : NoTemplateTrans
     // throws Exception
     public virtual void set(string aParentViewName)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Setting: " + aParentViewName, this, "set()");
         }
         Document document = this.toXmlDoc();
         NodeList parentComponentsNodeList = document.getElementsByTagName(TransformInfosData.getInstance().NAME);
         if (parentComponentsNodeList != null && parentComponentsNodeList.getLength() > 0) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Replacing", this, "set()");
             }
             Node componentNode = parentComponentsNodeList.item(0).getChildNodes().item(0);
@@ -65,7 +67,7 @@ public class InsertTemplateCustomizerTransformInfoObjectConfig : NoTemplateTrans
             }
             parentComponentsNodeList.item(0).appendChild(new TransformInfoDomNodeView(aParentViewName).toXmlNode(document));
         } else {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Setting", this, "set()");
             }
             Node objectConfigNode = document.getElementsByTagName(TransformInfoObjectConfigData.getInstance().NAME).item(0);

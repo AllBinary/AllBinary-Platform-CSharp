@@ -21,6 +21,8 @@ using DynamicObjectData = org.allbinary.business.DynamicObjectData;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StoreWorkFlowTag = tags.StoreWorkFlowTag;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace tags.workflow.processing.basic;
 
@@ -30,7 +32,7 @@ public class BasicWorkFlowTag : StoreWorkFlowTag
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public BasicWorkFlowTag()
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }
     }
@@ -39,7 +41,7 @@ public class BasicWorkFlowTag : StoreWorkFlowTag
     public override int doStartTag()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
                 this.logUtil.putF(this.commonStrings.START, this, tagStrings.DO_START_TAG);
             }
             this.getPropertiesHashMap().put(DynamicObjectData.NAME, "workflows.template.data.BasicStoreWorkFlow");

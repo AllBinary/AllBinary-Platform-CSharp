@@ -25,6 +25,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using SearchData = org.allbinary.logic.control.search.SearchData;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using TransformInfoData = org.allbinary.logic.visual.transform.info.TransformInfoData;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.tags;
 
@@ -56,7 +58,7 @@ public class StaticPagesTag : TableTag
             throw e;
         } catch (Exception e) {
             string error = "Failed to generate staticpages table";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "generateStaticPages()", e);
             }
             return error;
@@ -76,7 +78,7 @@ public class StaticPagesTag : TableTag
             throw e;
         } catch (Exception e) {
             string error = "Failed to makePublic";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "makePublic()", e);
             }
             return error;
@@ -92,12 +94,12 @@ public class StaticPagesTag : TableTag
                     if (this.getCommand().compareTo(SearchData.GENERATESTATICPAGES) == 0) {
                         this.getPropertiesHashMap().put(TransformInfoData.getInstance().TEMPLATEFILENAME, this.xslFile);
                         string output = this.generateStaticPages();
-                        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
+                        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
                             this.pageContext.getOut().print(output);
                         }
                     } else if (this.getCommand().compareTo(SearchData.MAKEPUBLIC) == 0) {
                         string output = this.makePublic();
-                        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
+                        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAGEXTRAOUTPUT)) {
                             this.pageContext.getOut().print(output);
                         }
                     } else {

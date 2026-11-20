@@ -27,6 +27,8 @@ using BasicEmailInfo = org.allbinary.logic.communication.smtp.info.BasicEmailInf
 using EmailInfo = org.allbinary.logic.communication.smtp.info.EmailInfo;
 using AbeClientInformationInterface = org.allbinary.logic.system.security.licensing.AbeClientInformationInterface;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.communication.smtp.email;
 
@@ -55,7 +57,7 @@ public class NewPasswordEmail
     private void notifyStoreAdmin()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
                 this.logUtil.putF("notifyStoreAdmin", this, "notifyStoreAdmin");
             }
             string emailSubject = "New Password For User: " + this.userInterface.getUserName();
@@ -65,7 +67,7 @@ public class NewPasswordEmail
             UserEmailEventHandler adminUserEmailEventHandler = AdminUserEmailEventHandlerSingletons.getInstance().getInstance(this.abeClientInformation, UserEmailEventNameData.NEWPASSWORD);
             adminUserEmailEventHandler.receiveEmailInfo(UserEmailEventNameData.NEWPASSWORD, emailInfo);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "emailAdmin", e);
             }
         }
@@ -75,7 +77,7 @@ public class NewPasswordEmail
     private void notifyUser()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
                 this.logUtil.putF("Email User", this, "notifyUser()");
             }
             string subject = "New Password";
@@ -85,7 +87,7 @@ public class NewPasswordEmail
             UserEmailEventHandler userEmailEventHandler = UserEmailEventHandlerSingletons.getInstance().getInstance(this.abeClientInformation, UserEmailEventNameData.NEWPASSWORD, this.userInterface);
             userEmailEventHandler.receiveEmailInfo(UserEmailEventNameData.NEWPASSWORD, emailInfo);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "notifyUser", e);
             }
             throw e;

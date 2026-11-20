@@ -35,6 +35,8 @@ using StringUtil = org.allbinary.logic.@string.StringUtil;
 using TransformInfoData = org.allbinary.logic.visual.transform.info.TransformInfoData;
 using InventoryViewFactory = views.admin.inventory.listings.InventoryViewFactory;
 using InventoryViewSearchInterface = views.admin.inventory.listings.InventoryViewSearchInterface;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace taghelpers;
 
@@ -73,13 +75,13 @@ public class InventoryHelper : TagHelper
         try {
             InventoryViewSearchInterface inventoryViewSearchInterface = InventoryViewFactory.getInstance(this.searchRequest);
             string result = inventoryViewSearchInterface.getProduct(this.id);
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF("Successfull Inventory View Summary", this, "viewSummary()");
             }
             return result;
         } catch (Exception e) {
             string error = "Failed to View Summary";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "viewSummary()", e);
             }
             return error + "<br>" + "Exception: " + e + "<br>";
@@ -96,13 +98,13 @@ public class InventoryHelper : TagHelper
             }
             InventoryViewSearchInterface inventoryViewSearchInterface = InventoryViewFactory.getInstance(this.searchRequest);
             string result = inventoryViewSearchInterface.searchSingleDynamicPage();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGS)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF("Successful Inventory Dynamic Search", this, "searchSingleDynamicPage()");
             }
             return result;
         } catch (Exception e) {
             string error = "Failed to search Inventory by keyword";
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "searchSingleDynamicPage()", e);
             }
             return error + "<br>" + "Exception: " + e + "<br>";

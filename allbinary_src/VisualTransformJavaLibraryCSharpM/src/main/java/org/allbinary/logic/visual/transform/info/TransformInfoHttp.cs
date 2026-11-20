@@ -30,6 +30,8 @@ using AbSqlData = org.allbinary.logic.communication.sql.AbSqlData;
 using AbPath = org.allbinary.logic.io.path.AbPath;
 using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using TransformInfoObjectConfig = org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.info;
 
@@ -41,7 +43,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
     {
         // base() is called from the constructor declaration
         this.abContext = new AbContext(propertiesHashMap, pageContext);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, "Constructor(HashMap, PageContext, boolean)");
         }
         this.@override(propertiesHashMap);
@@ -51,7 +53,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
     {
         // base() is called from the constructor declaration
         this.abContext = new AbContext(propertiesHashMap, pageContext);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, "Constructor(HttpServletRequest, HashMap, PageContext)");
         }
         this.set(new RequestParams(((HttpServletRequest) request)).toHashMap());
@@ -62,7 +64,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
     {
         // base() is called from the constructor declaration
         this.abContext = new AbContext(propertiesHashMap, pageContext);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, "Constructor(HashMap, HashMap, PageContext)");
         }
         this.set(databaseHashMap);
@@ -72,7 +74,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
     {
         // base() is called from the constructor declaration
         this.abContext = new AbContext(propertiesHashMap, pageContext);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, "Constructor(HashMap, PageContext)");
         }
         this.set(propertiesHashMap);
@@ -87,7 +89,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
     // throws Exception
     private void set(HashMap<object, object> hashMap)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + hashMap.ToString(), this, "set()");
         }
         TransformInfoData transformInfoData = TransformInfoData.getInstance();
@@ -109,7 +111,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
         this.setTemplate(((string) hashMap.get(transformInfoData.TEMPLATE)));
         this.setDataFile(((string) hashMap.get(transformInfoData.DATAFILENAME)));
         this.setData(((string) hashMap.get(transformInfoData.DATA)));
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERFACTORY)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERFACTORY)) {
             this.logUtil.putF(this.log(), this, "set()");
         }
     }

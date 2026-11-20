@@ -14,7 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias J2MEForJ2MEJavaLibraryCSharp;
 using System;
 using System.Linq;
 using GL10 = javax.microedition.khronos.opengles.GL10;
@@ -115,7 +114,7 @@ public class TrueTypeFontUtil : TrueTypeFontUtilBase
         int cellsPerRow5 = this.CELLS_PER_ROW * 5;
         int cellsPerRow6 = this.CELLS_PER_ROW * 6;
         int cellsPerRow7 = this.CELLS_PER_ROW * 7;
-        Image image = Image.createImage(textureSize, textureSize);
+        Image image = Image.createImageWH(textureSize, textureSize);
         Graphics graphics = image.getGraphics();
         graphics.setColor(basicColor.intValue());
         int biggestHeight = 0;

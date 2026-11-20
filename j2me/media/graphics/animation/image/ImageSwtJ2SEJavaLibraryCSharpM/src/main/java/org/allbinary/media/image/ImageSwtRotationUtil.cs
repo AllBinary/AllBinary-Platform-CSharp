@@ -14,7 +14,6 @@
  */
 // Generated Code Do Not Modify
 
-extern alias OpenGLESJavaLibraryCSharp;
 using System;
 using System.Linq;
 using Features = org.allbinary.game.configuration.feature.Features;
@@ -24,6 +23,7 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using SWT = org.eclipse.swt.SWT;
 using GC = org.eclipse.swt.graphics.GC;
 using ImageData = org.eclipse.swt.graphics.ImageData;
+using Image = org.eclipse.swt.graphics.Image;
 
 namespace org.allbinary.media.image;
 
@@ -45,7 +45,7 @@ public class ImageSwtRotationUtil
     {
     }
 
-    public virtual org.eclipse.swt.graphics.Image getRotatedImage(org.eclipse.swt.graphics.Image bufferedImage, int totalAngle)
+    public virtual Image getRotatedImage(Image bufferedImage, int totalAngle)
     {
         if (!this.features.isFeature(this.gameFeatureFactory.POST_IMAGE_LOADING_MODIFICATION)) {
             this.logUtil.putF(this.NO_COPY, this, this.commonStrings.CONSTRUCTOR);
@@ -54,7 +54,7 @@ public class ImageSwtRotationUtil
         return bufferedImage;
     }
 
-    private org.eclipse.swt.graphics.Image getRotatedImage2(org.eclipse.swt.graphics.Image bufferedImage, org.eclipse.swt.graphics.Image newBufferedImage, GC gc, float angle)
+    private Image getRotatedImage2(Image bufferedImage, Image newBufferedImage, GC gc, float angle)
     {
         if (!this.features.isFeature(this.gameFeatureFactory.POST_IMAGE_LOADING_MODIFICATION)) {
             this.logUtil.putF(this.NO_COPY, this, this.commonStrings.CONSTRUCTOR);
@@ -63,19 +63,19 @@ public class ImageSwtRotationUtil
         return bufferedImage;
     }
 
-    public virtual org.eclipse.swt.graphics.Image rotateImage(org.eclipse.swt.graphics.Image originalSwtImage, org.eclipse.swt.graphics.Image newSwtImage, GC gc, int totalAngle)
+    public virtual Image rotateImage(Image originalSwtImage, Image newSwtImage, GC gc, int totalAngle)
     {
         return this.getRotatedImage2(originalSwtImage, newSwtImage, gc, totalAngle);
     }
 
-    public virtual org.eclipse.swt.graphics.Image getRotatedImageSWT(org.eclipse.swt.graphics.Image bufferedImage, org.eclipse.swt.graphics.Image newSwtImage, GC gc, int totalAngle)
+    public virtual Image getRotatedImageSWT(Image bufferedImage, Image newSwtImage, GC gc, int totalAngle)
     {
         return this.getRotatedImage2(bufferedImage, newSwtImage, gc, totalAngle);
     }
 
-    public virtual org.eclipse.swt.graphics.Image[] getRotatedImages(org.eclipse.swt.graphics.Image bufferedImage, int numberOfFrames, int totalAngle)
+    public virtual Image[] getRotatedImages(Image bufferedImage, int numberOfFrames, int totalAngle)
     {
-        org.eclipse.swt.graphics.Image[] bufferedImageArray = new org.eclipse.swt.graphics.Image[numberOfFrames];
+        Image[] bufferedImageArray = new Image[numberOfFrames];
         int angle = 0;
         int size = bufferedImageArray.Length;
         for (int index = 0; index < size; index++) {
@@ -85,7 +85,7 @@ public class ImageSwtRotationUtil
         return bufferedImageArray;
     }
 
-    public virtual org.eclipse.swt.graphics.Image createSpriteImage(org.eclipse.swt.graphics.Image[] bufferedImageArray)
+    public virtual Image createSpriteImage(Image[] bufferedImageArray)
     {
         int columns = 9;
         int rows = 0;
@@ -97,15 +97,15 @@ public class ImageSwtRotationUtil
         if (size % columns != 0) {
             rows++;
         }
-        org.eclipse.swt.graphics.Image firstBufferedImage = bufferedImageArray[0];
+        Image firstBufferedImage = bufferedImageArray[0];
         ImageData imageData = firstBufferedImage.getImageData();
-        org.eclipse.swt.graphics.Image bufferedImage = this.imageUtil.create(imageData.width * columns, imageData.height * rows);
+        Image bufferedImage = this.imageUtil.create(imageData.width * columns, imageData.height * rows);
         GC gc = new GC(bufferedImage);
         gc.setAntialias(SWT.ON);
         gc.setInterpolation(SWT.HIGH);
         int columnIndex = 0;
         int rowIndex = 0;
-        org.eclipse.swt.graphics.Image nextBufferedImage = null;
+        Image nextBufferedImage = null;
         for (int index = 0; index < size; index++) {
             if (index / 9 != 0 && index % 9 == 0) {
                 rowIndex++;

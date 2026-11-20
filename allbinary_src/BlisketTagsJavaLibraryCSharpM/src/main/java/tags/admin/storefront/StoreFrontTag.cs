@@ -20,6 +20,7 @@ using System.Linq;
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using StoreValidationTransformTag = tags.StoreValidationTransformTag;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
 
 namespace tags.admin.storefront;
 
@@ -37,9 +38,9 @@ public class StoreFrontTag : StoreValidationTransformTag
                 if (this.getCommand().compareTo(this.commonStrings.INSERT) == 0) {
                     this.setName("Add Validation StoreFront View");
                     this.setObjectFile("views.admin.storefront.AddValidationStoreFrontView");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.VIEW) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.VIEW) == 0) {
                     throw new Exception("View not implemented");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.EDIT) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.EDIT) == 0) {
                     this.setName("Edit Validation StoreFront View");
                     this.setObjectFile("views.admin.storefront.EditValidationStoreFrontView");
                 } else if (this.getCommand().compareTo(this.commonStrings.UPDATE) == 0) {
@@ -48,9 +49,9 @@ public class StoreFrontTag : StoreValidationTransformTag
                 } else if (this.getCommand().compareTo(this.commonStrings.DELETE) == 0) {
                     this.setName("Delete Validation StoreFront View");
                     this.setObjectFile("views.admin.storefront.DeleteValidationStoreFrontView");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.BACKUP) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.BACKUP) == 0) {
                     throw new Exception("View not implemented");
-                } else if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.RESTORE) == 0) {
+                } else if (this.getCommand().compareTo(GLOBALS2.RESTORE) == 0) {
                     throw new Exception("View not implemented");
                 } else if (this.getCommand().compareTo(this.commonStrings.DROP) == 0) {
                     throw new Exception("View not implemented");

@@ -22,10 +22,25 @@ using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using InputImageType = org.allbinary.input.media.image.InputImageType;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+//using Dimension = java.awt.Dimension;
+//using Insets = java.awt.Insets;
+//using ActionEvent = java.awt.@event.ActionEvent;
+//using ActionListener = java.awt.@event.ActionListener;
+//using AbstractListModel = javax.swing.AbstractListModel;
+//using BorderFactory = javax.swing.BorderFactory;
+//using GroupLayout = javax.swing.GroupLayout;
+//using JButton = javax.swing.JButton;
+//using JCheckBox = javax.swing.JCheckBox;
+//using JDialog = javax.swing.JDialog;
+//using JLabel = javax.swing.JLabel;
+//using JList = javax.swing.JList;
+//using JPanel = javax.swing.JPanel;
+//using JScrollPane = javax.swing.JScrollPane;
+//using LayoutStyle = javax.swing.LayoutStyle;
 
 namespace org.allbinary.input.automation.module.actions.script.condition.processors.output;
 
-public class ImageActionScriptOutputJPanel : javax.swing.JPanel
+public class ImageActionScriptOutputJPanel : JPanel
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
@@ -89,33 +104,33 @@ public class ImageActionScriptOutputJPanel : javax.swing.JPanel
         this.itemTypesJList.setModel(defaultListModel);
     }
 
-    public virtual javax.swing.JDialog getCapturedImageActionJDialog()
+    public virtual JDialog getCapturedImageActionJDialog()
     {
         return this.capturedImageActionJDialog;
     }
 
-    public virtual void setCapturedImageActionJDialog(javax.swing.JDialog capturedImageActionJDialog)
+    public virtual void setCapturedImageActionJDialog(JDialog capturedImageActionJDialog)
     {
         this.capturedImageActionJDialog = capturedImageActionJDialog;
     }
 
     private void initComponents()
     {
-        this.capturedImageActionJDialog = new javax.swing.JDialog();
-        this.titleJLabel = new javax.swing.JLabel();
-        this.okJButton = new javax.swing.JButton();
-        this.saveJCheckBox = new javax.swing.JCheckBox();
-        this.displayJCheckBox = new javax.swing.JCheckBox();
-        this.jScrollPane1 = new javax.swing.JScrollPane();
-        this.itemTypesJList = new javax.swing.JList();
-        this.capturedImageActionJButton = new javax.swing.JButton();
-        this.jLabel1 = new javax.swing.JLabel();
-        this.capturedImageActionJDialog.setMinimumSize(new java.awt.Dimension(250, 250));
+        this.capturedImageActionJDialog = new JDialog();
+        this.titleJLabel = new JLabel();
+        this.okJButton = new JButton();
+        this.saveJCheckBox = new JCheckBox();
+        this.displayJCheckBox = new JCheckBox();
+        this.jScrollPane1 = new JScrollPane();
+        this.itemTypesJList = new JList();
+        this.capturedImageActionJButton = new JButton();
+        this.jLabel1 = new JLabel();
+        this.capturedImageActionJDialog.setMinimumSize(new Dimension(250, 250));
         this.titleJLabel.setText("Image Output Options");
         this.okJButton.setText("OK");
-        this.okJButton.addActionListener(new java.awt.event.ActionListener()
+        this.okJButton.addActionListener(new ActionListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void actionPerformed(java.awt.event.ActionEvent evt)
+            public virtual void actionPerformed(ActionEvent evt)
             {
                 okJButtonActionPerformed(evt);
             }
@@ -123,21 +138,21 @@ public class ImageActionScriptOutputJPanel : javax.swing.JPanel
 #endif
 );
         this.saveJCheckBox.setText("Save To File");
-        this.saveJCheckBox.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        this.saveJCheckBox.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        this.saveJCheckBox.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        this.saveJCheckBox.setMargin(new Insets(0, 0, 0, 0));
         this.displayJCheckBox.setText("Display");
-        this.displayJCheckBox.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        this.displayJCheckBox.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        this.displayJCheckBox.addActionListener(new java.awt.event.ActionListener()
+        this.displayJCheckBox.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        this.displayJCheckBox.setMargin(new Insets(0, 0, 0, 0));
+        this.displayJCheckBox.addActionListener(new ActionListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void actionPerformed(java.awt.event.ActionEvent evt)
+            public virtual void actionPerformed(ActionEvent evt)
             {
                 displayJCheckBoxActionPerformed(evt);
             }
 
 #endif
 );
-        this.itemTypesJList.setModel(new javax.swing.AbstractListModel()
+        this.itemTypesJList.setModel(new AbstractListModel()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public string[] strings = new string[] { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public virtual int getSize()
@@ -153,15 +168,15 @@ public class ImageActionScriptOutputJPanel : javax.swing.JPanel
 #endif
 );
         this.jScrollPane1.setViewportView(this.itemTypesJList);
-        javax.swing.GroupLayout capturedImageActionJDialogLayout = new javax.swing.GroupLayout(this.capturedImageActionJDialog.getContentPane());
+        GroupLayout capturedImageActionJDialogLayout = new GroupLayout(this.capturedImageActionJDialog.getContentPane());
         this.capturedImageActionJDialog.getContentPane().setLayout(capturedImageActionJDialogLayout);
-        capturedImageActionJDialogLayout.setHorizontalGroup(capturedImageActionJDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(capturedImageActionJDialogLayout.createSequentialGroup().addGroup(capturedImageActionJDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(capturedImageActionJDialogLayout.createSequentialGroup().addGap(61, 61, 61).addComponent(titleJLabel)).addGroup(capturedImageActionJDialogLayout.createSequentialGroup().addContainerGap().addGroup(capturedImageActionJDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(capturedImageActionJDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(displayJCheckBox).addComponent(saveJCheckBox, javax.swing.GroupLayout.Alignment.TRAILING)).addGroup(capturedImageActionJDialogLayout.createSequentialGroup().addGap(84, 84, 84).addComponent(okJButton)))).addGroup(capturedImageActionJDialogLayout.createSequentialGroup().addContainerGap().addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 216, short.MaxValue))).addContainerGap()));
-        capturedImageActionJDialogLayout.setVerticalGroup(capturedImageActionJDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(capturedImageActionJDialogLayout.createSequentialGroup().addComponent(titleJLabel).addGap(5, 5, 5).addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 105, short.MaxValue).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(saveJCheckBox).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent(displayJCheckBox).addGap(9, 9, 9).addComponent(okJButton).addContainerGap()));
-        setMinimumSize(new java.awt.Dimension(100, 0));
+        capturedImageActionJDialogLayout.setHorizontalGroup(capturedImageActionJDialogLayout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(capturedImageActionJDialogLayout.createSequentialGroup().addGroup(capturedImageActionJDialogLayout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(capturedImageActionJDialogLayout.createSequentialGroup().addGap(61, 61, 61).addComponent(titleJLabel)).addGroup(capturedImageActionJDialogLayout.createSequentialGroup().addContainerGap().addGroup(capturedImageActionJDialogLayout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(capturedImageActionJDialogLayout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(displayJCheckBox).addComponent(saveJCheckBox, GroupLayout.Alignment.TRAILING)).addGroup(capturedImageActionJDialogLayout.createSequentialGroup().addGap(84, 84, 84).addComponent(okJButton)))).addGroup(capturedImageActionJDialogLayout.createSequentialGroup().addContainerGap().addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 216, short.MaxValue))).addContainerGap()));
+        capturedImageActionJDialogLayout.setVerticalGroup(capturedImageActionJDialogLayout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(capturedImageActionJDialogLayout.createSequentialGroup().addComponent(titleJLabel).addGap(5, 5, 5).addComponent(jScrollPane1, GroupLayout.DEFAULT_SIZE, 105, short.MaxValue).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(saveJCheckBox).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED).addComponent(displayJCheckBox).addGap(9, 9, 9).addComponent(okJButton).addContainerGap()));
+        setMinimumSize(new Dimension(100, 0));
         this.capturedImageActionJButton.setText("Edit");
-        this.capturedImageActionJButton.addActionListener(new java.awt.event.ActionListener()
+        this.capturedImageActionJButton.addActionListener(new ActionListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void actionPerformed(java.awt.event.ActionEvent evt)
+            public virtual void actionPerformed(ActionEvent evt)
             {
                 capturedImageActionJButtonActionPerformed(evt);
             }
@@ -169,35 +184,35 @@ public class ImageActionScriptOutputJPanel : javax.swing.JPanel
 #endif
 );
         this.jLabel1.setText("Capture Image:");
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        GroupLayout layout = new GroupLayout(this);
         this.setLayout(layout);
-        layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(jLabel1).addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, short.MaxValue).addComponent(capturedImageActionJButton)));
-        layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE).addComponent(jLabel1).addComponent(capturedImageActionJButton)));
+        layout.setHorizontalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createSequentialGroup().addComponent(jLabel1).addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, short.MaxValue).addComponent(capturedImageActionJButton)));
+        layout.setVerticalGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE).addComponent(jLabel1).addComponent(capturedImageActionJButton)));
     }
 
-    private void displayJCheckBoxActionPerformed(java.awt.event.ActionEvent evt)
+    private void displayJCheckBoxActionPerformed(ActionEvent evt)
     {
     }
 
-    private void okJButtonActionPerformed(java.awt.event.ActionEvent evt)
+    private void okJButtonActionPerformed(ActionEvent evt)
     {
         this.update();
         this.getCapturedImageActionJDialog().setVisible(false);
     }
 
-    private void capturedImageActionJButtonActionPerformed(java.awt.event.ActionEvent evt)
+    private void capturedImageActionJButtonActionPerformed(ActionEvent evt)
     {
         this.getCapturedImageActionJDialog().setVisible(true);
     }
 
-    private javax.swing.JButton capturedImageActionJButton = null;
-    private javax.swing.JDialog capturedImageActionJDialog = null;
-    private javax.swing.JCheckBox displayJCheckBox = null;
-    private javax.swing.JList itemTypesJList = null;
-    private javax.swing.JLabel jLabel1 = null;
-    private javax.swing.JScrollPane jScrollPane1 = null;
-    private javax.swing.JButton okJButton = null;
-    private javax.swing.JCheckBox saveJCheckBox = null;
-    private javax.swing.JLabel titleJLabel = null;
+    private JButton capturedImageActionJButton = null;
+    private JDialog capturedImageActionJDialog = null;
+    private JCheckBox displayJCheckBox = null;
+    private JList itemTypesJList = null;
+    private JLabel jLabel1 = null;
+    private JScrollPane jScrollPane1 = null;
+    private JButton okJButton = null;
+    private JCheckBox saveJCheckBox = null;
+    private JLabel titleJLabel = null;
 }
 

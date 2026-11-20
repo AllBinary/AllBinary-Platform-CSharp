@@ -24,6 +24,8 @@ using AbeClientInformationInterface = org.allbinary.logic.system.security.licens
 using TransformInfoDomNode = org.allbinary.logic.visual.transform.info.TransformInfoDomNode;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
 using TransformInfoObjectConfigInterface = org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.generator;
 
@@ -43,12 +45,12 @@ public class TransformsGeneratorUtil
     // throws Exception
     public virtual string generateComponentsFromObjectConfig(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface, string group)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Started Group: " + group, this, "generateComponentsFromObjectConfig(2)");
         }
         TransformInfoObjectConfigInterface transformInfoObjectConfigInterface = transformInfoInterface.getObjectConfigInterface();
         string result = this.generateComponentsFromObjectConfig(abeClientInformation, transformInfoObjectConfigInterface, transformInfoInterface, group);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("End Group: " + group, this, "generateComponentsFromObjectConfig(2)");
         }
         return result;
@@ -57,11 +59,11 @@ public class TransformsGeneratorUtil
     // throws Exception
     public virtual string generateComponentsFromObjectConfig(AbeClientInformationInterface abeClientInformation, TransformInfoObjectConfigInterface transformInfoObjectConfigInterface, TransformInfoInterface transformInfoInterface, string group)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Started Group: " + group, this, "generateComponentsFromObjectConfig()");
         }
         BasicArrayList transformInfoObjectConfigComponentVector = transformInfoObjectConfigInterface.getTransformsGroup(group);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("Processing ");
             stringBuffer.appendint(transformInfoObjectConfigComponentVector.size());
@@ -77,7 +79,7 @@ public class TransformsGeneratorUtil
             TransformInfoDomNode transformInfoObjectConfigComponent = ((TransformInfoDomNode) transformInfoObjectConfigComponentVector.get(index));
             TransformGeneratorUtil.getInstance().generate(abeClientInformation, transformInfoObjectConfigComponent, transformInfoInterface);
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Done Group: " + group, this, "generateComponentsFromObjectConfig()");
         }
         StringMaker stringBuffer = new StringMaker();

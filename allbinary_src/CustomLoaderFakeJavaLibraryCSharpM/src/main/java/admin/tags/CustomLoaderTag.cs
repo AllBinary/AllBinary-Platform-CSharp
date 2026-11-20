@@ -24,6 +24,8 @@ using AbResponseHandler = org.allbinary.logic.communication.http.request.AbRespo
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
 using CustomTagSupport = tags.CustomTagSupport;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.tags;
 
@@ -54,7 +56,7 @@ public class CustomLoaderTag : CustomTagSupport
             urlGlobals.setWebappPath(this.webappPath);
             URLGLOBALS.init(urlGlobals);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "setCustomLoaderWebappPath()", e);
             }
         }
@@ -64,7 +66,7 @@ public class CustomLoaderTag : CustomTagSupport
     public virtual int doStartTag()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().JSPTAG)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
                 this.logUtil.putF(this.commonStrings.START, this, tagStrings.DO_START_TAG);
             }
             if (this.command != null) {

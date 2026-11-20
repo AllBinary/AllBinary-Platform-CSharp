@@ -37,6 +37,8 @@ using TimeUtil = org.allbinary.time.TimeUtil;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using HttpStoreComponentView = views.business.context.modules.storefront.HttpStoreComponentView;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.orderhistory;
 
@@ -106,7 +108,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
             this.addDomNodeInterfaces();
             return base.view();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "view()", e);
             }
             throw e;
@@ -116,7 +118,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
     public virtual Node toXmlNode(Document document)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Attempt to View orders in (fromDate=");
                 stringBuffer.append(this.fromDate);
@@ -127,7 +129,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
             }
             Node node = document.createElement(OrderData.ORDERS);
             if (this.preprocessing != null && string.CompareOrdinal(this.preprocessing, this.ON) == 0) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("Adding Preprocessing Orders", this, "toXmlNode");
                 }
                 BasicArrayList orderHistoryVector = OrderHistoryEntityFactory.getInstance().getOrders(OrderHistoryData.PREPROCESSING, fromDate, toDate);
@@ -138,7 +140,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
                 }
             }
             if (this.shipped != null && string.CompareOrdinal(this.shipped, this.ON) == 0) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("Adding Shipped Orders", this, "toXmlNode");
                 }
                 BasicArrayList orderHistoryVector = OrderHistoryEntityFactory.getInstance().getOrders(OrderHistoryData.SHIPPED, fromDate, toDate);
@@ -149,7 +151,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
                 }
             }
             if (this.partiallyShipped != null && string.CompareOrdinal(this.partiallyShipped, this.ON) == 0) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("Adding Partially Shipped Orders", this, "toDomNode");
                 }
                 BasicArrayList orderHistoryVector = OrderHistoryEntityFactory.getInstance().getOrders(OrderHistoryData.PARTIALLYSHIPPED, fromDate, toDate);
@@ -160,7 +162,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
                 }
             }
             if (this.processing != null && string.CompareOrdinal(this.processing, this.ON) == 0) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("Adding Processing Orders", this, "toXmlNode");
                 }
                 BasicArrayList orderHistoryVector = OrderHistoryEntityFactory.getInstance().getOrders(OrderHistoryData.PROCESSING, fromDate, toDate);
@@ -171,7 +173,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
                 }
             }
             if (this.cancelled != null && string.CompareOrdinal(this.cancelled, this.ON) == 0) {
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("Adding Cancelled Orders", this, "view");
                 }
                 BasicArrayList orderHistoryVector = OrderHistoryEntityFactory.getInstance().getOrders(OrderHistoryData.CANCELLED, fromDate, toDate);
@@ -189,7 +191,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
             node.appendChild(ModDomHelper.createNameValueNodes(document, GLOBALS2.VIEWNAME, GLOBALS2.VIEW));
             return node;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().XSLLOGGINGERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().XSLLOGGINGERROR)) {
                 this.logUtil.put(this.commonStrings.FAILURE, this, "toXmlNode", e);
             }
             return null;
@@ -241,7 +243,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
                     isValid = false;
                 }
             }
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Attempt to View orders in (fromDate=");
                 stringBuffer.append(this.fromDate);
@@ -252,7 +254,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
             }
             return isValid;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.put("Exception in validation", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -285,7 +287,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
             }
             return result.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Getting Validation Info";

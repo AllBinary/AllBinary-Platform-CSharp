@@ -18,6 +18,8 @@ using System;
 using System.Linq;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.data.tables.user.commerce.inventory.item.options;
 
@@ -37,10 +39,10 @@ public class BasicOptionItemsEntityFactory
     public virtual BasicOptionItemsEntity getBasicOptionItemsEntityInstance()
     {
         try {
-            return new org.allbinary.data.tables.user.commerce.inventory.item.options.BasicOptionItemsEntity();
+            return new BasicOptionItemsEntity();
         } catch (Exception e) {
             CommonStrings commonStrings = CommonStrings.getInstance();
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().ENTITYFACTORYERROR)) {
                 this.logUtil.put(commonStrings.EXCEPTION, this, commonStrings.GET_INSTANCE, e);
             }
             return null;

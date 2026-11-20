@@ -22,6 +22,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using ValidationComponentInterface = org.allbinary.logic.control.validate.ValidationComponentInterface;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace taghelpers;
 
@@ -33,7 +35,7 @@ public class ValidationViewHelper : ViewHelper, ValidationComponentInterface
     {
         // base(hashMap, pageContext) is called from the constructor declaration
         this.viewInterface = ((ValidationComponentInterface) this.getViewObject());
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }
     }
@@ -41,12 +43,12 @@ public class ValidationViewHelper : ViewHelper, ValidationComponentInterface
     public virtual bool? isValid()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPER)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
                 this.logUtil.putF("Started", this, this.commonStrings.IS_VALID);
             }
             return this.viewInterface.isValid();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -58,7 +60,7 @@ public class ValidationViewHelper : ViewHelper, ValidationComponentInterface
         try {
             return this.viewInterface.validationInfo();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "validationInfo()", e);
             }
             return "Unknown Validation Error";
@@ -70,7 +72,7 @@ public class ValidationViewHelper : ViewHelper, ValidationComponentInterface
         try {
             return this.viewInterface.toValidationInfoDoc();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "toValidationInfoDoc()", e);
             }
             return null;
@@ -82,7 +84,7 @@ public class ValidationViewHelper : ViewHelper, ValidationComponentInterface
         try {
             return this.viewInterface.toValidationInfoNode(document);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "toValidationInfoNode()", e);
             }
             return null;

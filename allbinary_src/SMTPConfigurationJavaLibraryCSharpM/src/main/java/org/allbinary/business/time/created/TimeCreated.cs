@@ -22,9 +22,9 @@ namespace org.allbinary.business.time.created;
 
 public class TimeCreated : Time
 {
-    public TimeCreated(string time) : base(time)
+    public TimeCreated(string time) : base(long.Parse(time))
     {
-        // base(time) is called from the constructor declaration
+        // base(long.Parse(time)) is called from the constructor declaration
     }
 
     public TimeCreated(long time) : base(time)

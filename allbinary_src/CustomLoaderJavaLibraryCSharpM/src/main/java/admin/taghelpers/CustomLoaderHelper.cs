@@ -22,6 +22,8 @@ using AppUrlGlobals = org.allbinary.globals.AppUrlGlobals;
 using URLGLOBALS = org.allbinary.globals.URLGLOBALS;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.taghelpers;
 
@@ -41,7 +43,7 @@ public class CustomLoaderHelper
     public virtual string getWebappPath()
     {
         try {
-            return org.allbinary.globals.URLGLOBALS.getWebappPath();
+            return URLGLOBALS.getWebappPath();
         } catch (Exception e) {
             return null;
         }
@@ -55,7 +57,7 @@ public class CustomLoaderHelper
             urlGlobals.setWebappPath(path);
             URLGLOBALS.init(urlGlobals);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPERERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "setWebappPath()", e);
             }
         }

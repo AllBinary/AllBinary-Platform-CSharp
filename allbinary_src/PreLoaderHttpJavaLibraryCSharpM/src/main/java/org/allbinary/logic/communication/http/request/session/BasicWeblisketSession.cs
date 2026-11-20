@@ -25,6 +25,7 @@ using PaymentGatewayData = org.allbinary.business.user.commerce.money.payment.ga
 using BasicUserRole = org.allbinary.business.user.role.BasicUserRole;
 using BasicUserRoleData = org.allbinary.business.user.role.BasicUserRoleData;
 using BooleanFactory = org.allbinary.logic.java.@bool.BooleanFactory;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
 
 namespace org.allbinary.logic.communication.http.request.session;
 
@@ -86,7 +87,7 @@ public class BasicWeblisketSession
 
     public virtual string getWebAppPath()
     {
-        return ((string) this.session.getAttribute(org.allbinary.globals.GLOBALS2.WEBAPPPATH));
+        return ((string) this.session.getAttribute(GLOBALS2.WEBAPPPATH));
     }
 
     public virtual string getUserName()

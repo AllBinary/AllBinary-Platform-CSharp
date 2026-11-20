@@ -28,10 +28,17 @@ using ImageProcessorInputCompositeInterface = org.allbinary.media.image.ImagePro
 using ImageStrings = org.allbinary.media.image.ImageStrings;
 using MirrorImageUtil = org.allbinary.media.image.MirrorImageUtil;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+//using ActionEvent = java.awt.@event.ActionEvent;
+//using ActionListener = java.awt.@event.ActionListener;
+//using JButton = javax.swing.JButton;
+//using JCheckBox = javax.swing.JCheckBox;
+//using JLabel = javax.swing.JLabel;
+//using JLayeredPane = javax.swing.JLayeredPane;
+//using JPanel = javax.swing.JPanel;
 
 namespace org.allbinary.image.gui;
 
-public class MirrorSpriteImageJPanel : javax.swing.JPanel, ImageProcessorInputCompositeInterface
+public class MirrorSpriteImageJPanel : JPanel, ImageProcessorInputCompositeInterface
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
@@ -83,8 +90,8 @@ public class MirrorSpriteImageJPanel : javax.swing.JPanel, ImageProcessorInputCo
 
     private void initComponents()
     {
-        jLayeredPane1 = new javax.swing.JLayeredPane();
-        this.jPanel1 = new javax.swing.JPanel()
+        jLayeredPane1 = new JLayeredPane();
+        this.jPanel1 = new JPanel()
 #if JAVA_ANONYMOUS_CLASS_BODY
             public virtual void paint(Graphics graphics)
             {
@@ -95,14 +102,14 @@ public class MirrorSpriteImageJPanel : javax.swing.JPanel, ImageProcessorInputCo
 
 #endif
 ;
-        this.jPanel2 = new javax.swing.JPanel();
-        this.imageHeightIsFrameSizeJCheckBox = new javax.swing.JCheckBox();
-        this.horizontalJCheckBox = new javax.swing.JCheckBox();
-        this.verticleJCheckBox = new javax.swing.JCheckBox();
-        this.writeOverOriginalJCheckBox = new javax.swing.JCheckBox();
-        this.generateJButton = new javax.swing.JButton();
-        this.jPanel3 = new javax.swing.JPanel();
-        this.jLabel2 = new javax.swing.JLabel();
+        this.jPanel2 = new JPanel();
+        this.imageHeightIsFrameSizeJCheckBox = new JCheckBox();
+        this.horizontalJCheckBox = new JCheckBox();
+        this.verticleJCheckBox = new JCheckBox();
+        this.writeOverOriginalJCheckBox = new JCheckBox();
+        this.generateJButton = new JButton();
+        this.jPanel3 = new JPanel();
+        this.jLabel2 = new JLabel();
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(this.jPanel1);
         this.jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING).add(0, 507, short.MaxValue));
@@ -110,9 +117,9 @@ public class MirrorSpriteImageJPanel : javax.swing.JPanel, ImageProcessorInputCo
         this.imageHeightIsFrameSizeJCheckBox.setSelected(true);
         this.imageHeightIsFrameSizeJCheckBox.setText("Image Height Is Frame Size");
         this.imageHeightIsFrameSizeJCheckBox.setEnabled(false);
-        this.imageHeightIsFrameSizeJCheckBox.addActionListener(new java.awt.event.ActionListener()
+        this.imageHeightIsFrameSizeJCheckBox.addActionListener(new ActionListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void actionPerformed(java.awt.event.ActionEvent evt)
+            public virtual void actionPerformed(ActionEvent evt)
             {
                 imageHeightIsFrameSizeJCheckBoxActionPerformed(evt);
             }
@@ -126,9 +133,9 @@ public class MirrorSpriteImageJPanel : javax.swing.JPanel, ImageProcessorInputCo
         this.verticleJCheckBox.setEnabled(false);
         this.writeOverOriginalJCheckBox.setText("Write Over Original");
         this.generateJButton.setText("Generate");
-        this.generateJButton.addActionListener(new java.awt.event.ActionListener()
+        this.generateJButton.addActionListener(new ActionListener()
 #if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void actionPerformed(java.awt.event.ActionEvent evt)
+            public virtual void actionPerformed(ActionEvent evt)
             {
                 generateJButtonActionPerformed(evt);
             }
@@ -150,25 +157,25 @@ public class MirrorSpriteImageJPanel : javax.swing.JPanel, ImageProcessorInputCo
         layout.setVerticalGroup(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING).add(layout.createSequentialGroup().add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED).add(jPanel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED).add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, short.MaxValue)));
     }
 
-    private void generateJButtonActionPerformed(java.awt.event.ActionEvent evt)
+    private void generateJButtonActionPerformed(ActionEvent evt)
     {
         this.process();
     }
 
-    private void imageHeightIsFrameSizeJCheckBoxActionPerformed(java.awt.event.ActionEvent evt)
+    private void imageHeightIsFrameSizeJCheckBoxActionPerformed(ActionEvent evt)
     {
     }
 
-    private javax.swing.JButton generateJButton = null;
-    private javax.swing.JCheckBox horizontalJCheckBox = null;
-    private javax.swing.JCheckBox imageHeightIsFrameSizeJCheckBox = null;
-    private javax.swing.JLabel jLabel2 = null;
-    private javax.swing.JLayeredPane jLayeredPane1 = null;
-    private javax.swing.JPanel jPanel1 = null;
-    private javax.swing.JPanel jPanel2 = null;
-    private javax.swing.JPanel jPanel3 = null;
-    private javax.swing.JCheckBox verticleJCheckBox = null;
-    private javax.swing.JCheckBox writeOverOriginalJCheckBox = null;
+    private JButton generateJButton = null;
+    private JCheckBox horizontalJCheckBox = null;
+    private JCheckBox imageHeightIsFrameSizeJCheckBox = null;
+    private JLabel jLabel2 = null;
+    private JLayeredPane jLayeredPane1 = null;
+    private JPanel jPanel1 = null;
+    private JPanel jPanel2 = null;
+    private JPanel jPanel3 = null;
+    private JCheckBox verticleJCheckBox = null;
+    private JCheckBox writeOverOriginalJCheckBox = null;
     public virtual ImageProcessorInput getImageProcessorInput()
     {
         return this.imageProcessorInput;

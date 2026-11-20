@@ -29,6 +29,8 @@ using CommonStrings = org.allbinary.@string.CommonStrings;
 using Document = org.w3c.dom.Document;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.dhtml.style;
 
@@ -50,28 +52,28 @@ public class StylesValidationFactory
     {
         CommonStrings commonStrings = CommonStrings.getInstance();
         NodeList nodeList = document.getElementsByTagName(StylesData.getInstance().NAME);
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Style Present: " + XmlDocumentHelper.toString(document), this, commonStrings.GET_INSTANCE);
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Styles Present: " + nodeList.getLength(), this, commonStrings.GET_INSTANCE);
         }
         for (int index = 0; index < nodeList.getLength(); index++) {
             Node stylesNode = nodeList.item(index);
             BasicArrayList styleNodeList = DomSearchHelper.getAllNodes(StyleData.getInstance().NAME, stylesNode.getChildNodes());
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Number Of Style Nodes Present: " + styleNodeList.size(), this, commonStrings.GET_INSTANCE);
             }
             for (int styleNodesIndex = 0; styleNodesIndex < styleNodeList.size(); styleNodesIndex++) {
                 Node styleNode = ((Node) styleNodeList.get(styleNodesIndex));
                 BasicArrayList cssElementStyleNodeList = DomSearchHelper.getAllNodes(CssElementData.getInstance().NAME, styleNode.getChildNodes());
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     this.logUtil.putF("Number Of Element Nodes Present: " + cssElementStyleNodeList.size(), this, commonStrings.GET_INSTANCE);
                 }
                 return CssElementsValidationFactory.getInstance(cssElementStyleNodeList);
             }
         }
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("No Style Present", this, commonStrings.GET_INSTANCE);
         }
         return new BasicArrayListD();

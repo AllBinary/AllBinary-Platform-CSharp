@@ -22,6 +22,9 @@ using PaymentGatewayHelperFactory = admin.taghelpers.PaymentGatewayHelperFactory
 using AbResponseHandler = org.allbinary.logic.communication.http.request.AbResponseHandler;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using LicensingException = org.allbinary.logic.system.security.licensing.LicensingException;
+using GLOBALS2 = org.allbinary.globals.GLOBALS2;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace admin.tags;
 
@@ -47,7 +50,7 @@ public class PaymentGatewayTag : TableTag
             this.logUtil.put("LicensingException", this, this.commonStrings.PROCESS, e);
             throw e;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, this.commonStrings.PROCESS, e);
             }
             throw e;
@@ -59,12 +62,12 @@ public class PaymentGatewayTag : TableTag
     {
         try {
             if (this.isEnabled()) {
-                if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR) == 0 || this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.AUTHORIZEORDERANDEVALBODY) == 0 || this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR) == 0) {
+                if (this.getCommand().compareTo(GLOBALS2.AUTHORIZEORDEREVALBODYONERROR) == 0 || this.getCommand().compareTo(GLOBALS2.AUTHORIZEORDERANDEVALBODY) == 0 || this.getCommand().compareTo(GLOBALS2.AUTHORIZEFORMEVALBODYONERROR) == 0) {
                     string output = this.process();
                     {
                         this.pageContext.getOut().print(output + "<br />");
                     }
-                    if (this.getCommand().compareTo(org.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR) == 0) {
+                    if (this.getCommand().compareTo(GLOBALS2.AUTHORIZEORDEREVALBODYONERROR) == 0) {
                         return this.SKIP_BODY;
                     } else {
                         return this.EVAL_BODY_INCLUDE;

@@ -2,10 +2,13 @@
 
 using System;
 using System.Linq;
+using Buffer = java.nio.Buffer;
+using FloatBuffer = java.nio.FloatBuffer;
+using IntBuffer = java.nio.IntBuffer;
 
 namespace javax.microedition.khronos.opengles;
 
-public interface GL11 : javax.microedition.khronos.opengles.GL10
+public interface GL11 : GL10
 {
     public const int GL_ACTIVE_TEXTURE = 34016;
     public const int GL_ADD_SIGNED = 34164;
@@ -131,13 +134,13 @@ public interface GL11 : javax.microedition.khronos.opengles.GL10
     public const int GL_WRITE_ONLY = 35001;
     void glBindBuffer(int target, int buffer);
 
-    void glBufferData(int target, int size, java.nio.Buffer data, int usage);
+    void glBufferData(int target, int size, Buffer data, int usage);
 
-    void glBufferSubData(int target, int offset, int size, java.nio.Buffer data);
+    void glBufferSubData(int target, int offset, int size, Buffer data);
 
     void glClipPlanef(int plane, float[] equation, int offset);
 
-    void glClipPlanef(int plane, java.nio.FloatBuffer equation);
+    void glClipPlanef(int plane, FloatBuffer equation);
 
     void glColor4ub(sbyte red, sbyte green, sbyte blue, sbyte alpha);
 
@@ -145,45 +148,45 @@ public interface GL11 : javax.microedition.khronos.opengles.GL10
 
     void glDeleteBuffers(int n, int[] buffers, int offset);
 
-    void glDeleteBuffers(int n, java.nio.IntBuffer buffers);
+    void glDeleteBuffers(int n, IntBuffer buffers);
 
     void glDrawElements(int mode, int count, int type, int offset);
 
     void glGenBuffers(int n, int[] buffers, int offset);
 
-    void glGenBuffers(int n, java.nio.IntBuffer buffers);
+    void glGenBuffers(int n, IntBuffer buffers);
 
     void glGetBufferParameteriv(int target, int pname, int[] @params, int offset);
 
-    void glGetBufferParameteriv(int target, int pname, java.nio.IntBuffer @params);
+    void glGetBufferParameteriv(int target, int pname, IntBuffer @params);
 
     void glGetClipPlanef(int pname, float[] eqn, int offset);
 
-    void glGetClipPlanef(int pname, java.nio.FloatBuffer eqn);
+    void glGetClipPlanef(int pname, FloatBuffer eqn);
 
     void glGetFloatv(int pname, float[] @params, int offset);
 
-    void glGetFloatv(int pname, java.nio.FloatBuffer @params);
+    void glGetFloatv(int pname, FloatBuffer @params);
 
     void glGetLightfv(int light, int pname, float[] @params, int offset);
 
-    void glGetLightfv(int light, int pname, java.nio.FloatBuffer @params);
+    void glGetLightfv(int light, int pname, FloatBuffer @params);
 
     void glGetMaterialfv(int face, int pname, float[] @params, int offset);
 
-    void glGetMaterialfv(int face, int pname, java.nio.FloatBuffer @params);
+    void glGetMaterialfv(int face, int pname, FloatBuffer @params);
 
     void glGetTexEnviv(int env, int pname, int[] @params, int offset);
 
-    void glGetTexEnviv(int env, int pname, java.nio.IntBuffer @params);
+    void glGetTexEnviv(int env, int pname, IntBuffer @params);
 
     void glGetTexParameterfv(int target, int pname, float[] @params, int offset);
 
-    void glGetTexParameterfv(int target, int pname, java.nio.FloatBuffer @params);
+    void glGetTexParameterfv(int target, int pname, FloatBuffer @params);
 
     void glGetTexParameteriv(int target, int pname, int[] @params, int offset);
 
-    void glGetTexParameteriv(int target, int pname, java.nio.IntBuffer @params);
+    void glGetTexParameteriv(int target, int pname, IntBuffer @params);
 
     bool glIsBuffer(int buffer);
 
@@ -197,7 +200,7 @@ public interface GL11 : javax.microedition.khronos.opengles.GL10
 
     void glPointParameterfv(int pname, float[] @params, int offset);
 
-    void glPointParameterfv(int pname, java.nio.FloatBuffer @params);
+    void glPointParameterfv(int pname, FloatBuffer @params);
 
     void glTexCoordPointer(int size, int type, int stride, int offset);
 
@@ -205,17 +208,17 @@ public interface GL11 : javax.microedition.khronos.opengles.GL10
 
     void glTexEnviv(int target, int pname, int[] @params, int offset);
 
-    void glTexEnviv(int target, int pname, java.nio.IntBuffer @params);
+    void glTexEnviv(int target, int pname, IntBuffer @params);
 
     void glTexParameterfv(int target, int pname, float[] @params, int offset);
 
-    void glTexParameterfv(int target, int pname, java.nio.FloatBuffer @params);
+    void glTexParameterfv(int target, int pname, FloatBuffer @params);
 
     void glTexParameteri(int target, int pname, int param);
 
     void glTexParameteriv(int target, int pname, int[] @params, int offset);
 
-    void glTexParameteriv(int target, int pname, java.nio.IntBuffer @params);
+    void glTexParameteriv(int target, int pname, IntBuffer @params);
 
     void glVertexPointer(int size, int type, int stride, int offset);
 

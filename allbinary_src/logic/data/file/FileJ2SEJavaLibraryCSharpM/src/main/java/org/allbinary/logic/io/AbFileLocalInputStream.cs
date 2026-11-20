@@ -24,9 +24,9 @@ namespace org.allbinary.logic.io;
 
 public class AbFileLocalInputStream : AbFileInputStream
 {
-    public AbFileLocalInputStream(AbFile file) : base(AbFileNativeUtil.get(file))
+    public AbFileLocalInputStream(AbFile file) : base(AbFileNativeUtil.get(file).getPath())
     {
-        // base(AbFileNativeUtil.get(file)) is called from the constructor declaration
+        // base(AbFileNativeUtil.get(file).getPath()) is called from the constructor declaration
     }
 
 }

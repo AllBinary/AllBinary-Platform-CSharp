@@ -26,6 +26,8 @@ using TransformInfoInterface = org.allbinary.logic.visual.transform.info.Transfo
 using TransformInfoObjectConfigGenerator = org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGenerator;
 using TransformInfoObjectConfigGeneratorFactory = org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory;
 using CommonStrings = org.allbinary.@string.CommonStrings;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform;
 
@@ -75,20 +77,20 @@ public class AbTransformer : BasicTransformerInterface
     public virtual string translate(string xmlDocumentStr)
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().XMLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().XMLLOGGING)) {
                 this.logUtil.putF("xml: \n" + xmlDocumentStr, this, "translate(String xmlDocumentStr)");
             }
             if (this.getURIResolver() == null) {
                 throw new Exception("No URIResolver");
             }
             string result = XslHelper.getInstance().translate(this.getURIResolver(), new StreamSource(this.getInputStream()), new StreamSource(new StringBufferInputStream(xmlDocumentStr)));
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().XSLLOGGING)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().XSLLOGGING)) {
                 this.logUtil.putF("translated xml: " + result, this, "translate(String xmlDocumentStr)");
             }
             TransformInfoObjectConfigGenerator transformInfoObjectConfigGeneratorInterface = TransformInfoObjectConfigGeneratorFactory.getInstance().getInstance(this.getTransformInfoInterface());
             return transformInfoObjectConfigGeneratorInterface.process(result);
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.transformInfoInterface.log(), this, "translate(document)", e);
             }
             throw e;

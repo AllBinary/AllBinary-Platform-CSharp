@@ -24,6 +24,8 @@ using Attr = org.w3c.dom.Attr;
 using NamedNodeMap = org.w3c.dom.NamedNodeMap;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.info;
 
@@ -34,7 +36,7 @@ public class TransformInfoDomNode
     private string mappedName;
     public TransformInfoDomNode(Node node)
     {
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Constructing TransformInfo From TransformInfoDomNode: " + node.getNodeName(), this, "TransformInfoDomNode(Node node)");
         }
         TransformInfoData transformInfoData = TransformInfoData.getInstance();
@@ -43,7 +45,7 @@ public class TransformInfoDomNode
         string name = attrNode.getValue();
         NodeList nodeList = node.getChildNodes();
         if (nodeList.getLength() > 1) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Constructing Complete TransformInfo Node For: ");
                 stringBuffer.append(name);
@@ -62,7 +64,7 @@ public class TransformInfoDomNode
             string dataFileName = DomNodeHelper.getTextNodeValue(dataFileNameNode);
             this.transformInfoInterface = ((TransformInfoInterface) new TransformInfo(name, objectFileName, objectConfigFileName, templateFileName, dataFileName));
         } else {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Constructing Partial TransformInfo Node For: ");
                 stringBuffer.append(name);
@@ -116,7 +118,7 @@ public class TransformInfoDomNode
         stringBuffer.append("body");
         stringBuffer.append("\"/>");
         string key = stringBuffer.ToString();
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Component Key: " + key, this, "getReplaceKey()");
         }
         return key;

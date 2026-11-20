@@ -109,7 +109,7 @@ public class DbInitInfo : DbConnectionInfo
         try {
             AbFile file = AbFile.createAbFileFromAbPath(FILEABPATH);
             if (file.isFile()) {
-                AbFileInputStream iFile = new AbFileInputStream(file);
+                AbFileInputStream iFile = AbFileInputStream.createFromAbFile(file);
                 AbDataInputStream iData = new AbDataInputStream(iFile);
                 try {
                     string decryptedJdbcDriver = new string((DatabaseEncoder.decode(iData.readUTF())).ToCharArray());

@@ -17,10 +17,11 @@
 using System;
 using System.Linq;
 //using MutableTreeNode = javax.swing.tree.MutableTreeNode;
+//using EventObject = java.util.EventObject;
 
 namespace org.allbinary.graphics.j2me.workarea.canvas.@event;
 
-public class MyCanvasEvent : java.util.EventObject
+public class MyCanvasEvent : EventObject
 {
     public MyCanvasEvent(object source) : base(source)
     {

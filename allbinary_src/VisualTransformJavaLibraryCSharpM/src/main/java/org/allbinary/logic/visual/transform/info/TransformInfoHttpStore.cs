@@ -26,6 +26,8 @@ using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using AbPath = org.allbinary.logic.io.path.AbPath;
 using AbPathData = org.allbinary.logic.io.path.AbPathData;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace org.allbinary.logic.visual.transform.info;
 
@@ -35,7 +37,7 @@ public class TransformInfoHttpStore : TransformInfoHttp, TransformInfoHttpStoreI
     public TransformInfoHttpStore(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext, true)
     {
         // base(propertiesHashMap, pageContext, true) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, this.commonStrings.CONSTRUCTOR);
         }
     }
@@ -43,7 +45,7 @@ public class TransformInfoHttpStore : TransformInfoHttp, TransformInfoHttpStoreI
     public TransformInfoHttpStore(HashMap<object, object> databaseHashMap, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(databaseHashMap, propertiesHashMap, pageContext)
     {
         // base(databaseHashMap, propertiesHashMap, pageContext) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("Database HashMap: ");
             stringBuffer.append(databaseHashMap.ToString());
@@ -57,7 +59,7 @@ public class TransformInfoHttpStore : TransformInfoHttp, TransformInfoHttpStoreI
     public TransformInfoHttpStore(StoreFrontInterface storeFrontInterface, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
         // base(propertiesHashMap, pageContext) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, this.commonStrings.CONSTRUCTOR);
         }
         this.setStoreName(storeFrontInterface.getName());

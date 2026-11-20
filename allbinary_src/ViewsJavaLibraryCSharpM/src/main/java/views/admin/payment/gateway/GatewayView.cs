@@ -23,6 +23,8 @@ using PaymentGatewayEntityFactory = org.allbinary.data.tables.user.commerce.mone
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using StringValidationUtil = org.allbinary.logic.@string.StringValidationUtil;
 using TransformInfoInterface = org.allbinary.logic.visual.transform.info.TransformInfoInterface;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
 
 namespace views.admin.payment.gateway;
 
@@ -49,7 +51,7 @@ public class GatewayView : PaymentGatewayViewAbstract
             PaymentGatewayInterface paymentGatewayInterface = PaymentGatewayEntityFactory.getInstance().getPaymentGatewayInterface(this.getPaymentGatewayPrimaryKey().getStoreName(), BasicPaymentTypeUtil.getInstance().get(this.getPaymentGatewayPrimaryKey().getName()));
             return new PaymentGatewayComponent(this.getTransformInfoInterface(), paymentGatewayInterface).view();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "edit()", e);
             }
             throw e;

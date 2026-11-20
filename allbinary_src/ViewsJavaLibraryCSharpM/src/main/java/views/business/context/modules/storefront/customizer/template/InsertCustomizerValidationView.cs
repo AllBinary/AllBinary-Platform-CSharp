@@ -38,6 +38,9 @@ using Node = org.w3c.dom.Node;
 using HttpStoreComponentView = views.business.context.modules.storefront.HttpStoreComponentView;
 using InsertTemplateCustomizerTransformInfoObjectConfig = views.business.context.modules.storefront.customizer.template.objectConfig.InsertTemplateCustomizerTransformInfoObjectConfig;
 using NoTemplateTransformInfoObjectConfig = views.business.context.modules.storefront.customizer.template.objectConfig.NoTemplateTransformInfoObjectConfig;
+using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;
+using LogConfigTypes = org.allbinary.logic.communication.log.config.type.LogConfigTypes;
+using ValidationOnlyTempUtil = views.ValidationOnlyTempUtil;
 
 namespace views.business.context.modules.storefront.customizer.template;
 
@@ -49,7 +52,7 @@ public class InsertCustomizerValidationView : HttpStoreComponentView, Validation
     public InsertCustomizerValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
         // base(transformInfoInterface) is called from the constructor declaration
-        if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+        if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, this.commonStrings.CONSTRUCTOR);
         }
         HashMap<object, object> requestHashMap = new RequestParams(this.getPageContext()).toHashMap();
@@ -59,7 +62,7 @@ public class InsertCustomizerValidationView : HttpStoreComponentView, Validation
     public virtual bool? isValid()
     {
         try {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                 this.logUtil.putF("Started Validation", this, this.commonStrings.IS_VALID);
             }
             bool? isValid = true;
@@ -69,7 +72,7 @@ public class InsertCustomizerValidationView : HttpStoreComponentView, Validation
                 NoTemplateTransformInfoObjectConfig objectConfig = new NoTemplateTransformInfoObjectConfig(this.getTransformInfoInterface(), this.getTransformInfoInterface().getObjectConfigInterface().toXmlDoc());
                 BasicArrayList componentVector = objectConfig.getGroupTransforms();
                 int size = componentVector.size();
-                if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                     StringMaker stringBuffer = new StringMaker();
                     stringBuffer.append("Pointing ");
                     stringBuffer.appendint(componentVector.size());
@@ -79,7 +82,7 @@ public class InsertCustomizerValidationView : HttpStoreComponentView, Validation
                 for (int index = 0; index < size; index++) {
                     TransformInfo transformInfo = ((TransformInfo) componentVector.get(index));
                     string transformInfoName = transformInfo.getName();
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                         this.logUtil.putF("Setting Template Component with ViewName: " + transformInfoName, this, this.commonStrings.IS_VALID);
                     }
                     TransformInterface componentInterface = TransformFactory.getInstance().getInstance(this.abeClientInformation, transformInfoName, this.getTransformInfoInterface());
@@ -106,7 +109,7 @@ public class InsertCustomizerValidationView : HttpStoreComponentView, Validation
                         newViewNameStringBuffer.append(GeneratorTransformInfoData.NAME);
                     }
                     string newViewName = newViewNameStringBuffer.ToString();
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                         StringMaker stringBuffer = new StringMaker();
                         stringBuffer.append("Template Component: ");
                         stringBuffer.append(transformInfoName);
@@ -115,7 +118,7 @@ public class InsertCustomizerValidationView : HttpStoreComponentView, Validation
                         this.logUtil.putF(stringBuffer.ToString(), this, this.commonStrings.IS_VALID);
                     }
                     templateViewObjectConfig.set(newViewName);
-                    if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEW)) {
+                    if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
                         StringMaker stringBuffer = new StringMaker();
                         stringBuffer.append("Template Component: ");
                         stringBuffer.append(transformInfoName);
@@ -130,7 +133,7 @@ public class InsertCustomizerValidationView : HttpStoreComponentView, Validation
             }
             return isValid;
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to validate", this, this.commonStrings.IS_VALID, e);
             }
             return false;
@@ -144,7 +147,7 @@ public class InsertCustomizerValidationView : HttpStoreComponentView, Validation
             stringBuffer.append("Error: Template Name Is Empty.");
             return stringBuffer.ToString();
         } catch (Exception e) {
-            if (org.allbinary.logic.communication.log.config.type.LogConfigTypes.LOGGING.contains(org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory.getInstance().VIEWERROR)) {
+            if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEWERROR)) {
                 this.logUtil.put("Failed to generate validation error info", this, "validationInfo()", e);
             }
             return "Error Getting Validation Info";
@@ -164,7 +167,7 @@ public class InsertCustomizerValidationView : HttpStoreComponentView, Validation
     // throws Exception
     public override string view()
     {
-        return views.ValidationOnlyTempUtil.getInstance().view(this);
+        return ValidationOnlyTempUtil.getInstance().view(this);
     }
 
     // throws Exception

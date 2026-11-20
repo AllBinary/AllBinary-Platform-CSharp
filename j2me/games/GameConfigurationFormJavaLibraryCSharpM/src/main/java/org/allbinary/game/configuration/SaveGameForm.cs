@@ -18,11 +18,11 @@ using System;
 using System.Linq;
 using CommandListener = javax.microedition.lcdui.CommandListener;
 using TextField = javax.microedition.lcdui.TextField;
+using MIDPUtil = org.allbinary.MIDPUtil;
 using GameCommandsFactory = org.allbinary.game.commands.GameCommandsFactory;
 using BasicColor = org.allbinary.graphics.color.BasicColor;
 using CommandForm = org.allbinary.graphics.displayable.screen.CommandForm;
 using ABSystemWrapper = org.allbinary.logic.ABSystemWrapper;
-using MEUtil = org.allbinary.logic.MEUtil;
 
 namespace org.allbinary.game.configuration;
 
@@ -41,7 +41,7 @@ public class SaveGameForm : CommandForm
         return SaveGameForm.FORM;
     }
 
-    private readonly MEUtil meUtil = MEUtil.getInstance();
+    private readonly MIDPUtil meUtil = MIDPUtil.getInstance();
     private SaveGameForm(CommandListener commandListener, string title, BasicColor backgrounBasicColor, BasicColor foregroundBasicColor) : base(commandListener, title, backgrounBasicColor, foregroundBasicColor)
     {
         // base(commandListener, title, backgrounBasicColor, foregroundBasicColor) is called from the constructor declaration
