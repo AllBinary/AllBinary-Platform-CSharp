@@ -80,7 +80,7 @@ public class WeblisketFinder
     {
         StringUtil stringUtil = StringUtil.getInstance();
         BasicArrayList vector = WeblisketFinder.getInstance().findAll(stringUtil.EMPTY_STRING);
-        Console.WriteLine(vector.size());
+        global::System.Console.Out.WriteLine(vector.size());
     }
 
 }

@@ -120,7 +120,7 @@ public class MyRandomFactory
         for (int index_2 = 0; index_2 < size2; index_2++) {
             stringBuilder.appendint(((int) randomFactory.getAbsoluteNextInt(3))).append(commonSeps.COMMA);
         }
-        Console.WriteLine(stringBuilder.ToString());
+        global::System.Console.Out.WriteLine(stringBuilder.ToString());
         stringBuilder.delete(0, stringBuilder.length());
         int[] intArray = new int[52];
         int[] intArray2 = new int[52];
@@ -133,12 +133,12 @@ public class MyRandomFactory
         for (int index_4 = 0; index_4 < size; index_4++) {
             stringBuilder.appendint(intArray[index_4]).append(commonSeps.COMMA);
         }
-        Console.WriteLine(stringBuilder.ToString());
+        global::System.Console.Out.WriteLine(stringBuilder.ToString());
         stringBuilder.delete(0, stringBuilder.length());
         for (int index_5 = 0; index_5 < size; index_5++) {
             stringBuilder.appendint(intArray2[index_5]).append(commonSeps.COMMA);
         }
-        Console.WriteLine(stringBuilder.ToString());
+        global::System.Console.Out.WriteLine(stringBuilder.ToString());
         bool found = false;
         for (int index_6 = 0; index_6 < size; index_6++) {
             found = false;

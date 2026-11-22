@@ -53,15 +53,15 @@ public class LogUtil
             className = new string((new StringMaker().append(anyType.GetType().FullName).append(CommonSeps.getInstance().COLON).append(Convert.ToString(TsUtil.getInstance().hashCode(anyType), 16)).ToString()).ToCharArray());
         }
         string message = this.logFormatUtil.getS(className, functionName, specialMessage);
-        Console.Write(this.LOG_SUCCESS);
-        Console.WriteLine(message);
+        global::System.Console.Out.Write(this.LOG_SUCCESS);
+        global::System.Console.Out.WriteLine(message);
     }
 
     public virtual void putFS(string specialMessage, string className, string functionName)
     {
         string message = this.logFormatUtil.getS(className, functionName, specialMessage);
-        Console.Write(this.LOG_SUCCESS);
-        Console.WriteLine(message);
+        global::System.Console.Out.Write(this.LOG_SUCCESS);
+        global::System.Console.Out.WriteLine(message);
     }
 
     private readonly string LOG_SUCCESS = "org.allbinary: ";
@@ -74,8 +74,8 @@ public class LogUtil
             className = new string((new StringMaker().append(anyType.GetType().FullName).append(CommonSeps.getInstance().COLON).append(hexString).ToString()).ToCharArray());
         }
         string message = this.logFormatUtil.get(className, functionName, specialMessage, exception);
-        Console.Write(this.LOG_SUCCESS);
-        Console.WriteLine(message);
+        global::System.Console.Out.Write(this.LOG_SUCCESS);
+        global::System.Console.Out.WriteLine(message);
     }
 
 }

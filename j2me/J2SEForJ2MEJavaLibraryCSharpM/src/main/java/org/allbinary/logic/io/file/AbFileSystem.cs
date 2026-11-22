@@ -100,7 +100,7 @@ public class AbFileSystem
     public static void main(string[] args)
     {
         bool isDirectory = AbFileSystem.getInstance().isDirectory("c:");
-        Console.WriteLine("isDirectory: " + isDirectory);
+        global::System.Console.Out.WriteLine("isDirectory: " + isDirectory);
     }
 
 }

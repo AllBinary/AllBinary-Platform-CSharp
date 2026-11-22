@@ -79,7 +79,7 @@ public class DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor : Inclu
         list.add(commonFileStrings.JAVA);
         string filePath = "G:\\mnt\\bc\\mydev\\games\\ZeptoRacer\\platform\\j2se\\ZeptoRacerStaticPathsJ2SEM\\target\\dependency\\org\\allbinary\\logic\\system\\security\\licensing\\ZeptoRacerPCClientInformation.java";
         bool result = new DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor(list).visit(AbFile.createAbFileFromRawPath(filePath));
-        Console.WriteLine(filePath + " is Tracked: " + result);
+        global::System.Console.Out.WriteLine(filePath + " is Tracked: " + result);
     }
 
 }

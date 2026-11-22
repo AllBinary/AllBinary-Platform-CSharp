@@ -55,9 +55,9 @@ public class CreateIconImagesJPanel : JPanel, ImageProcessorInputCompositeInterf
         }
         Raster araster = this.imageProcessorInput.getBufferedImageArray()[0].getAlphaRaster();
         if (araster == null) {
-            Console.WriteLine("there is no Alpha channel!!!!!!!!!");
+            global::System.Console.Out.WriteLine("there is no Alpha channel!!!!!!!!!");
         } else {
-            Console.WriteLine("Alpha channel found !");
+            global::System.Console.Out.WriteLine("Alpha channel found !");
         }
     }
 

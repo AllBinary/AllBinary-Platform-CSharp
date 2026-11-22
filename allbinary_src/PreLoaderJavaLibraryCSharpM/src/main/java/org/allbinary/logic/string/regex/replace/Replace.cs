@@ -81,7 +81,7 @@ public class Replace
                 if (begin != -1) {
                     foundTotal++;
                     if (foundTotal % 100L == 0L) {
-                        Console.WriteLine(this.FOUND_KEY + foundTotal);
+                        global::System.Console.Out.WriteLine(this.FOUND_KEY + foundTotal);
                     }
                     nextKey = keys[0];
                     end = begin + nextKey.Length;
@@ -137,7 +137,7 @@ public class Replace
                 newStringBuffer.delete(0, newStringBuffer.length());
                 int begin = replace.IndexOf(key, index);
                 if (begin != -1) {
-                    Console.WriteLine(this.FOUND_KEY);
+                    global::System.Console.Out.WriteLine(this.FOUND_KEY);
                     int end = replace.IndexOf('\n', begin + key.Length) + 1;
                     if (end >= 0) {
                         newStringBuffer.append(replace.Substring(0, (begin) - (0)));
@@ -166,12 +166,12 @@ public class Replace
             URLGLOBALS.init(appUrlGlobals);
             string testString = "\"super gun\" big tank \"goodgunriflegun";
             Replace replace = new Replace("gun", "abcdefghijklmnopqrstuxwxyzabcdefghijklmnopqrstuxwxyz");
-            Console.WriteLine("Old String: " + testString);
+            global::System.Console.Out.WriteLine("Old String: " + testString);
             testString = replace.all(testString);
-            Console.WriteLine("New String: " + testString);
+            global::System.Console.Out.WriteLine("New String: " + testString);
             Replace replaceCat = new Replace("abcdefghijklmnopqrstuxwxyzabcdefghijklmnopqrstuxwxyz", stringUtil.EMPTY_STRING);
             testString = replaceCat.all(testString);
-            Console.WriteLine("New String: " + testString);
+            global::System.Console.Out.WriteLine("New String: " + testString);
         } catch (Exception e) {
         }
     }

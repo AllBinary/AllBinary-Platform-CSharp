@@ -41,7 +41,7 @@
     <ProjectReference Include="..\..\..\..\graphics\opengl\SWTWithoutJOGLJavaLibraryCSharpM\SWTWithoutJOGLJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\games\GameConfigurationJavaLibraryCSharpM\GameConfigurationJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\J2SEForJ2MEJavaLibraryCSharpM\J2SEForJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\graphics\opengl\OpenGLJ2MENoneJavaLibraryCSharpM\OpenGLJ2MENoneJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\graphics\opengl\OpenGLNoneJavaLibraryCSharpM\OpenGLNoneJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <!-- org/allbinary/image/opengles/OpenGLImageCacheFactory is also in OpenGLESNullImageJavaLibraryCSharp, the shared classes use the alias -->
     <ProjectReference Include="..\..\..\..\graphics\opengl\OpenGLNoneOtherJavaLibraryCSharpM\OpenGLNoneOtherJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="global,OpenGLNoneOtherJavaLibraryCSharp" />
     <ProjectReference Include="..\ImageCacheJ2MEJavaLibraryCSharpM\ImageCacheJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />

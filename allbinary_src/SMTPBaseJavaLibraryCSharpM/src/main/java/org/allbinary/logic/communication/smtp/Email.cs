@@ -121,7 +121,7 @@ public class Email : EmailInterface
         if (this.isDebug) {
             session.setDebug(true);
             this.bs = new ByteArrayOutputStream();
-            System.IO.StreamWriter printStream = new System.IO.StreamWriter(this.bs) { AutoFlush = true };
+            global::System.IO.TextWriter printStream = new System.IO.StreamWriter(this.bs) { AutoFlush = true };
             session.setDebugOut(printStream);
         }
         this.msg = new MimeMessage(session);

@@ -59,7 +59,7 @@ public class SetLicenseInitInfo
                 throw new Exception("null BasicArrayList Passed - Just Make Empty if you want");
             }
             LicenseInitInfo licenseInitInfo = this.getLicenseInitInfo();
-            Console.WriteLine("License Serv Example: http://www.dartstatistics.com/LicServ/serverssl.php");
+            global::System.Console.Out.WriteLine("License Serv Example: http://www.dartstatistics.com/LicServ/serverssl.php");
             licenseInitInfo.clearServers();
             File file = new File(PrintLicenseInitInfo.PATH + "licenseservers.txt");
             FileReader reader = new FileReader(file);
@@ -70,7 +70,7 @@ public class SetLicenseInitInfo
             LicenseInitInfoUtil.getInstance().write(licenseInitInfo);
             LicenseInitInfoUtil.getInstance().read();
         } catch (Exception e) {
-            Console.Write("Error: " + e);
+            global::System.Console.Out.Write("Error: " + e);
             Console.WriteLine(e);
         }
     }

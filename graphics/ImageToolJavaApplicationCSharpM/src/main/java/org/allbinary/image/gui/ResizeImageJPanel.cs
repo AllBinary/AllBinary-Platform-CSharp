@@ -58,9 +58,9 @@ public class ResizeImageJPanel : JPanel, ImageProcessorInputCompositeInterface
         this.jComboBox1.setModel(new DefaultComboBoxModel(numberStringArray));
         Raster araster = this.imageProcessorInput.getBufferedImageArray()[0].getAlphaRaster();
         if (araster == null) {
-            Console.WriteLine("there is no Alpha channel!!!!!!!!!");
+            global::System.Console.Out.WriteLine("there is no Alpha channel!!!!!!!!!");
         } else {
-            Console.WriteLine("Alpha channel found !");
+            global::System.Console.Out.WriteLine("Alpha channel found !");
         }
     }
 
@@ -89,9 +89,9 @@ public class ResizeImageJPanel : JPanel, ImageProcessorInputCompositeInterface
                     }
                     Raster araster = generatedBufferedImageArray[0].getAlphaRaster();
                     if (araster == null) {
-                        Console.WriteLine("No Alpha Channel In Result");
+                        global::System.Console.Out.WriteLine("No Alpha Channel In Result");
                     } else {
-                        Console.WriteLine("Found Alpha Channel In Result");
+                        global::System.Console.Out.WriteLine("Found Alpha Channel In Result");
                     }
                     ImagePersistanceUtil imagePersistanceUtil = ImagePersistanceUtil.getInstance();
                     for (int index = 0; index < generatedBufferedImageArray.Length; index++) {

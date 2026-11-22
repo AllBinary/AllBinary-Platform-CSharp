@@ -41,15 +41,15 @@ public class PreLogUtil
             className = new string((anyType.GetType().FullName).ToCharArray());
         }
         string message = LogFormatUtil.getInstance().get(className, functionName, specialMessage, exception);
-        Console.Write(LOG_SUCCESS);
-        Console.WriteLine(message);
+        global::System.Console.Out.Write(LOG_SUCCESS);
+        global::System.Console.Out.WriteLine(message);
     }
 
     public static void putSE(string specialMessage, string className, string functionName, object exception)
     {
         string message = LogFormatUtil.getInstance().get(className, functionName, specialMessage, exception);
-        Console.Write(LOG_SUCCESS);
-        Console.WriteLine(message);
+        global::System.Console.Out.Write(LOG_SUCCESS);
+        global::System.Console.Out.WriteLine(message);
     }
 
 }

@@ -39,7 +39,7 @@ public class IntPermutationVisitor : Visitor
             stringBuilder.appendint(data[i]);
             stringBuilder.append(commonSeps.SPACE);
         }
-        Console.WriteLine(stringBuilder.ToString());
+        global::System.Console.Out.WriteLine(stringBuilder.ToString());
     }
 
 }

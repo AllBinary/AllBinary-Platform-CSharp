@@ -27,7 +27,7 @@ public class OpenGLImageCacheFactory
     private static readonly ImageCache IMAGE_CACHE = new OpenGLImageCache();
     public static ImageCache getInstance()
     {
-        return OpenGLNoneOtherJavaLibraryCSharp::org.allbinary.image.opengles.OpenGLImageCacheFactory.IMAGE_CACHE;
+        return OpenGLImageCacheFactory.IMAGE_CACHE;
     }
 
     public static void init()

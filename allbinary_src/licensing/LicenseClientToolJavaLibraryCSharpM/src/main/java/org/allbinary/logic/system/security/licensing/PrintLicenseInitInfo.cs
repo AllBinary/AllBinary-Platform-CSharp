@@ -39,7 +39,7 @@ public class PrintLicenseInitInfo
         if (FileFactory.getInstance().isFile(licenseInitInfoUtil.getFilePath())) {
             return licenseInitInfoUtil.read();
         } else {
-            Console.WriteLine("No Licence File at: " + licenseInitInfoUtil.getFilePath());
+            global::System.Console.Out.WriteLine("No Licence File at: " + licenseInitInfoUtil.getFilePath());
             return new LicenseInitInfo();
         }
     }
@@ -48,14 +48,14 @@ public class PrintLicenseInitInfo
     {
         try {
             LicenseInitInfo licenseInitInfo = this.getLicenseInitInfo();
-            Console.WriteLine("License ID: " + licenseInitInfo.getLicenseId());
+            global::System.Console.Out.WriteLine("License ID: " + licenseInitInfo.getLicenseId());
             BasicArrayList list = licenseInitInfo.getServerList();
             int size = list.size();
             for (int index = 0; index < size; index++) {
-                Console.WriteLine("Lic Serv: " + list.get(index));
+                global::System.Console.Out.WriteLine("Lic Serv: " + list.get(index));
             }
         } catch (Exception e) {
-            Console.Write("Error: " + e);
+            global::System.Console.Out.Write("Error: " + e);
             Console.WriteLine(e);
         }
     }

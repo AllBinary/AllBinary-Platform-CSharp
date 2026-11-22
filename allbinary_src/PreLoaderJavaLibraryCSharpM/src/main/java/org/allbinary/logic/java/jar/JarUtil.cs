@@ -54,14 +54,14 @@ public class JarUtil
                         }
                         sbyte[] tmp = new sbyte[offset];
                         Array.Copy((Array) cache, 0, (Array) tmp, 0, offset);
-                        Console.WriteLine(entry.getName());
+                        global::System.Console.Out.WriteLine(entry.getName());
                     }
                 } else {
                     break;
                 }
             }
         } catch (System.IO.IOException ex) {
-            Console.WriteLine(ex);
+            global::System.Console.Error.WriteLine(ex);
             Console.WriteLine(ex);
         }
     }

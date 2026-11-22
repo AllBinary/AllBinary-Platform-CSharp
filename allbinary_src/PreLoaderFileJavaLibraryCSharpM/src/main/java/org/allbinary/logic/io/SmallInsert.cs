@@ -58,7 +58,7 @@ public class SmallInsert
         try {
             int index = this.@string.IndexOf(after);
             if (index < 0) {
-                Console.WriteLine("No such start: " + after + " in: " + this.@string);
+                global::System.Console.Out.WriteLine("No such start: " + after + " in: " + this.@string);
                 return false;
             }
             index = index + after.Length;

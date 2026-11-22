@@ -48,7 +48,7 @@ public class DisposalUtil
     public virtual void disposeResource(Resource resource)
     {
         if (!resource.isDisposed()) {
-            Console.WriteLine(this.commonStrings.CLOSE);
+            global::System.Console.Out.WriteLine(this.commonStrings.CLOSE);
             resource.dispose();
         }
     }

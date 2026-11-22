@@ -38,7 +38,7 @@ public class DynamicRaceTracksPathPrinter : RaceTracksPathPrinter
             for (int index = 0; index < size; index++) {
                 BasicGeographicMap geographicMapInterface = raceTrackGeographicMapInterfaceFactoryInterface.getTrackInstance(SmallIntegerSingletonFactory.getInstance().getAt(index));
                 BasicArrayList list = PathGenerator.getInstance().createList(geographicMapInterface, RaceTrackRoadsGeographicMapCellHistoryFactory.getInstance(), pathFindingInfo, 10);
-                Console.WriteLine("Track " + index);
+                global::System.Console.Out.WriteLine("Track " + index);
                 this.printPaths(list);
             }
         } catch (Exception e) {

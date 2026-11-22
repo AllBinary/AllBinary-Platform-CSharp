@@ -79,13 +79,13 @@ public class OrderedObjectArrayPermutationUtil
     public virtual void generate(object[] data, Visitor visitor)
     {
         long iterations = this.factorial(data.Length);
-        Console.Write(this.TOTAL_ITERATIONS_TABLE);
-        Console.WriteLine(iterations);
+        global::System.Console.Out.Write(this.TOTAL_ITERATIONS_TABLE);
+        global::System.Console.Out.WriteLine(iterations);
         for (long count = 0L; count < iterations - 1L; count++) {
             this.getNext(data);
             visitor.visit(this);
         }
-        Console.WriteLine(this.FINISHED);
+        global::System.Console.Out.WriteLine(this.FINISHED);
     }
 
     public static void main(string[] args)
@@ -98,7 +98,7 @@ public class OrderedObjectArrayPermutationUtil
         Arrays.sort(data);
         ObjectPermutationVisitor permutationVisitor = new ObjectPermutationVisitor(data);
         string ORIGINAL_DATA_LABEL = "Original Data: ";
-        Console.Write(ORIGINAL_DATA_LABEL);
+        global::System.Console.Out.Write(ORIGINAL_DATA_LABEL);
         permutationVisitor.visit(data);
         OrderedObjectArrayPermutationUtil.getInstance().generate(data, permutationVisitor);
     }

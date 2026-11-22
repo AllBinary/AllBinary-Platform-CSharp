@@ -57,7 +57,7 @@ public class ChangedPixelsUtil
         for (int index_1 = 0; index_1 < size; index_1++) {
             PixelDelta pixelDelta = ((PixelDelta) vector.get(index_1));
             if (pixelDelta.getColorDelta() == null) {
-                Console.Write("ColorDelta");
+                global::System.Console.Out.Write("ColorDelta");
                 Environment.Exit(0);
             }
             bufferedImageCacheables[0].getBufferedImage().setRGB(pixelDelta.getPoint().getX(), pixelDelta.getPoint().getY(), pixelDelta.getColorDelta().getRgb1());

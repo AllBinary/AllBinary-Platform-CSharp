@@ -74,7 +74,7 @@ public class GuiLog
         try {
             string data = this.logFormatUtil.get(specialMessage, anyType.GetType().FullName, functionName, exception);
             this.showDialog(data);
-            Console.WriteLine(data);
+            global::System.Console.Out.WriteLine(data);
             return data;
         } catch (Exception e) {
             PreLogUtil.putOE(this.commonStrings.EXCEPTION, this, "put", e);
@@ -94,7 +94,7 @@ public class GuiLog
         try {
             string data = this.logFormatUtil.get(specialMessage, className, functionName, exception);
             this.showDialog(data);
-            Console.WriteLine(data);
+            global::System.Console.Out.WriteLine(data);
             return data;
         } catch (Exception e) {
             PreLogUtil.putOE(this.commonStrings.EXCEPTION, this, "put", e);

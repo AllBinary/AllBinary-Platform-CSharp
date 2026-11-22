@@ -43,7 +43,7 @@ public class OperatingSystemFactory
         CommonStrings commonStrings = CommonStrings.getInstance();
         try {
             string osString = new StringMaker().append("OperatingSystem Info: ").append(this.genericOperatingSystem.ToString()).ToString();
-            Console.WriteLine(osString);
+            global::System.Console.Out.WriteLine(osString);
             this.logUtil.putF(osString, this, commonStrings.GET_INSTANCE);
         } catch (Exception e) {
             this.logUtil.put(commonStrings.EXCEPTION, this, commonStrings.GET_INSTANCE, e);

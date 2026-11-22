@@ -40,7 +40,7 @@ public class ObjectPermutationVisitor : Visitor
             stringBuilder.appendint(((int) tsUtil.hashCode(data[i])));
             stringBuilder.append(CommonSeps.getInstance().SPACE);
         }
-        Console.WriteLine(stringBuilder.ToString());
+        global::System.Console.Out.WriteLine(stringBuilder.ToString());
     }
 
 }

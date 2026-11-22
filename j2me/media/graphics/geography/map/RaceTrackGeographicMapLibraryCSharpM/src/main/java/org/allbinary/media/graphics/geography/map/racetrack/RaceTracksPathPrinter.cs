@@ -38,7 +38,7 @@ public class RaceTracksPathPrinter
     {
         int size = list.size();
         for (int index = 0; index < size; index++) {
-            Console.WriteLine(new StringMaker().append(" Path ").appendint(index).append(CommonLabels.getInstance().COLON_SEP).ToString());
+            global::System.Console.Out.WriteLine(new StringMaker().append(" Path ").appendint(index).append(CommonLabels.getInstance().COLON_SEP).ToString());
             this.printPath(((BasicArrayList) list.get(index)));
         }
     }

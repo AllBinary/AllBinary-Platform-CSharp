@@ -42,7 +42,7 @@ public class FileListFetcher
             return files;
         } catch (Exception e) {
             Console.WriteLine(e);
-            Console.WriteLine("Error: " + e + "\nMsg: " + e.Message);
+            global::System.Console.Out.WriteLine("Error: " + e + "\nMsg: " + e.Message);
         }
         return null;
     }
@@ -60,7 +60,7 @@ public class FileListFetcher
             return files;
         } catch (Exception e) {
             Console.WriteLine(e);
-            Console.WriteLine("Error: " + e + "\nMsg: " + e.Message);
+            global::System.Console.Out.WriteLine("Error: " + e + "\nMsg: " + e.Message);
         }
         return null;
     }
@@ -75,7 +75,7 @@ public class FileListFetcher
             return files;
         } catch (Exception e) {
             Console.WriteLine(e);
-            Console.WriteLine("Error: " + e + "\nMsg: " + e.Message);
+            global::System.Console.Out.WriteLine("Error: " + e + "\nMsg: " + e.Message);
         }
         return null;
     }
@@ -90,7 +90,7 @@ public class FileListFetcher
             return files;
         } catch (Exception e) {
             Console.WriteLine(e);
-            Console.WriteLine("Error: " + e + "\nMsg: " + e.Message);
+            global::System.Console.Out.WriteLine("Error: " + e + "\nMsg: " + e.Message);
         }
         return null;
     }
@@ -108,7 +108,7 @@ public class FileListFetcher
             return files;
         } catch (Exception e) {
             Console.WriteLine(e);
-            Console.WriteLine("Error: " + e + "\nMsg: " + e.Message);
+            global::System.Console.Out.WriteLine("Error: " + e + "\nMsg: " + e.Message);
         }
         return null;
     }
@@ -123,7 +123,7 @@ public class FileListFetcher
             return files;
         } catch (Exception e) {
             Console.WriteLine(e);
-            Console.WriteLine("Error: " + e + "\nMsg: " + e.Message);
+            global::System.Console.Out.WriteLine("Error: " + e + "\nMsg: " + e.Message);
         }
         return null;
     }
@@ -136,7 +136,7 @@ public class FileListFetcher
             return files;
         } catch (Exception e) {
             Console.WriteLine(e);
-            Console.WriteLine("Error: " + e + "\nMsg: " + e.Message);
+            global::System.Console.Out.WriteLine("Error: " + e + "\nMsg: " + e.Message);
         }
         return null;
     }

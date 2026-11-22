@@ -230,7 +230,7 @@ public class SVGAsJSONSimpleLoader
                 stringBuilder.append(CommonSeps.getInstance().COMMA);
             }
         }
-        Console.WriteLine(stringBuilder.ToString());
+        global::System.Console.Out.WriteLine(stringBuilder.ToString());
     }
 
 }

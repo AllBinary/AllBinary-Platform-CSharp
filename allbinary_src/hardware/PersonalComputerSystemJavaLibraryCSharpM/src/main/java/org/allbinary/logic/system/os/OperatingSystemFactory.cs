@@ -78,7 +78,7 @@ public class OperatingSystemFactory
                     throw new Exception(new StringMaker().append("OS Not Supported: ").append(osName).ToString());
                 }
                 Log log = LogFactory.getInstanceF(new StringMaker().append("OperatingSystem Info: ").append(StringUtil.getInstance().toString(this.genericOperatingSystem)).ToString(), this, this.commonStrings.GET_INSTANCE);
-                Console.WriteLine(log.ToString());
+                global::System.Console.Out.WriteLine(log.ToString());
                 this.logUtil.putL(log);
             }
             return this.genericOperatingSystem;

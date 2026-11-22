@@ -96,7 +96,7 @@ public class BasicArrayListUtil
         list.add(commonPhoneStrings.EIGHT);
         list.add(commonPhoneStrings.NINE);
         BasicArrayListUtil.getInstance().reverse(list);
-        Console.WriteLine(list.ToString());
+        global::System.Console.Out.WriteLine(list.ToString());
     }
 
 }

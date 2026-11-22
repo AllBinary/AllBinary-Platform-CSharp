@@ -65,8 +65,8 @@ public class LogUtil
             className = new string((anyType.GetType().FullName).ToCharArray());
         }
         string message = this.logFormatUtil.get(className, functionName, specialMessage, exception);
-        Console.Write(this.LOG_SUCCESS);
-        Console.WriteLine(message);
+        global::System.Console.Out.Write(this.LOG_SUCCESS);
+        global::System.Console.Out.WriteLine(message);
     }
 
 }

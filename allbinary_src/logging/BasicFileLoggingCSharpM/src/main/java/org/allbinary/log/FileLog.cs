@@ -64,7 +64,7 @@ public class FileLog
             bool canWrite = FileLog.logFile.canWrite();
             return canWrite;
         } catch (Exception e) {
-            Console.WriteLine("Error Creating Log: " + e);
+            global::System.Console.Out.WriteLine("Error Creating Log: " + e);
             return false;
         }
     }
@@ -94,7 +94,7 @@ public class FileLog
             FileLog.logFile.delete();
             return true;
         } catch (Exception e) {
-            Console.WriteLine("Error Creating Backup: " + e);
+            global::System.Console.Out.WriteLine("Error Creating Backup: " + e);
             return false;
         }
     }

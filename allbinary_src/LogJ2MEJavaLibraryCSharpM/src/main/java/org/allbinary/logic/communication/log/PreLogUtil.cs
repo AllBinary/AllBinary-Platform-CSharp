@@ -42,8 +42,8 @@ public class PreLogUtil
             className = new string((anyType.GetType().FullName).ToCharArray());
         }
         string message = LogFormatUtil.getInstance().get(className, functionName, specialMessage, exception);
-        Console.Write(PreLogUtil.LOG_SUCCESS);
-        Console.WriteLine(message);
+        global::System.Console.Out.Write(PreLogUtil.LOG_SUCCESS);
+        global::System.Console.Out.WriteLine(message);
     }
 
     public static void putS(string specialMessage, string className, string functionName)
@@ -54,8 +54,8 @@ public class PreLogUtil
     public static void putSE(string specialMessage, string className, string functionName, object exception)
     {
         string message = LogFormatUtil.getInstance().get(className, functionName, specialMessage, exception);
-        Console.Write(PreLogUtil.LOG_SUCCESS);
-        Console.WriteLine(message);
+        global::System.Console.Out.Write(PreLogUtil.LOG_SUCCESS);
+        global::System.Console.Out.WriteLine(message);
     }
 
     public static string getClassName(object anyType)

@@ -83,7 +83,7 @@ public class LogUtil
                 }
                 string message = LogFormatUtil.getInstance().get(className, functionName, specialMessage, exception);
                 try {
-                    Console.WriteLine("Eeeek");
+                    global::System.Console.Out.WriteLine("Eeeek");
                     if (this.abeClientInformation == null) {
                         throw new SystemException();
                     }
@@ -95,7 +95,7 @@ public class LogUtil
                     hashtable.put(this.MESSAGE, this.stringBuffer.ToString());
                     new XmlRpcRemoteLogClient(this.abeClientInformation).get(hashtable);
                 } catch (Exception e) {
-                    Console.WriteLine("Exception");
+                    global::System.Console.Out.WriteLine("Exception");
                     Console.WriteLine(e);
                 }
             }

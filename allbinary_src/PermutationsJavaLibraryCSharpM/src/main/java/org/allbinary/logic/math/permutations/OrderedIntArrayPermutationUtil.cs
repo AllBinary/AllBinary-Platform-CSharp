@@ -77,13 +77,13 @@ public class OrderedIntArrayPermutationUtil
     public virtual void generate(int[] data, Visitor visitor)
     {
         long iterations = this.factorial(data.Length);
-        Console.Write(this.TOTAL_ITERATIONS_TABLE);
-        Console.WriteLine(iterations);
+        global::System.Console.Out.Write(this.TOTAL_ITERATIONS_TABLE);
+        global::System.Console.Out.WriteLine(iterations);
         for (long count = 0L; count < iterations - 1L; count++) {
             this.getNext(data);
             visitor.visit(this);
         }
-        Console.WriteLine(this.FINISHED);
+        global::System.Console.Out.WriteLine(this.FINISHED);
     }
 
     public static void main(string[] args)
@@ -95,7 +95,7 @@ public class OrderedIntArrayPermutationUtil
         }
         IntPermutationVisitor permutationVisitor = new IntPermutationVisitor(data);
         string ORIGINAL_DATA_LABEL = "Original Data: ";
-        Console.Write(ORIGINAL_DATA_LABEL);
+        global::System.Console.Out.Write(ORIGINAL_DATA_LABEL);
         permutationVisitor.print(data, new StringMaker());
         OrderedIntArrayPermutationUtil.getInstance().generate(data, permutationVisitor);
     }

@@ -53,10 +53,10 @@ public class XmlRpcRemoteLogClient : XmlRpcAbeClient
             ABHashtable<object, object> hashtable = ((ABHashtable<object, object>) anyType);
             param.add(hashtable);
             object result = xmlRpcClient.executeWithCrypt(this.getRemoteMethod(), param, this.noCrypt);
-            Console.WriteLine(CommonLabels.getInstance().RESULT_ + CommonSeps.getInstance().NEW_LINE + result.ToString());
+            global::System.Console.Out.WriteLine(CommonLabels.getInstance().RESULT_ + CommonSeps.getInstance().NEW_LINE + result.ToString());
             return result;
         } catch (System.IO.IOException e) {
-            Console.WriteLine("IOException Trying Other Servers");
+            global::System.Console.Out.WriteLine("IOException Trying Other Servers");
             if (!e.Message.StartsWith(HOST_NOT_RESOLVED)) {
                 return this.tryAnother(anyType);
             } else {

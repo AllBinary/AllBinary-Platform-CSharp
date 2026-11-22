@@ -13,10 +13,10 @@ namespace org.allbinary.game.displayable.canvas;
 //SWTToJ2ME
 public class NullDisplayable : Canvas
 {
-    private static readonly J2MEForJ2MEJavaLibraryCSharp::org.allbinary.game.displayable.canvas.NullDisplayable SINGLETON = new J2MEForJ2MEJavaLibraryCSharp::org.allbinary.game.displayable.canvas.NullDisplayable();
-    public static J2MEForJ2MEJavaLibraryCSharp::org.allbinary.game.displayable.canvas.NullDisplayable getInstance()
+    private static readonly NullDisplayable SINGLETON = new NullDisplayable();
+    public static NullDisplayable getInstance()
     {
-        return J2MEForJ2MEJavaLibraryCSharp::org.allbinary.game.displayable.canvas.NullDisplayable.SINGLETON;
+        return NullDisplayable.SINGLETON;
     }
 
     private NullDisplayable()

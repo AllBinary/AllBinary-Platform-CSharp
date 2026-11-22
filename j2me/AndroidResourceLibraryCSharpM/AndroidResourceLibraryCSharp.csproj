@@ -49,6 +49,12 @@
   </ItemGroup>
   <!-- AllBinary references end -->
 
+  <!-- The Android application supplies these framework assemblies at runtime. -->
+  <ItemGroup>
+    <Reference Include="$(NetCoreRoot)packs\Microsoft.Android.Ref.35\*\ref\net9.0\Mono.Android.dll" Private="false" />
+    <Reference Include="$(NetCoreRoot)packs\Microsoft.Android.Ref.35\*\ref\net9.0\Java.Interop.dll" Private="false" />
+  </ItemGroup>
+
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
 
   <Target Name="AllBinaryWarnMissingDependencySources" BeforeTargets="CoreCompile">
