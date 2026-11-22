@@ -76,11 +76,11 @@ public class BuildingInfoHudPaintable : SelectionHudPaintable
 
     private class BuildingNumberHud : NumberStringHud
     {
-        private readonly int baseTextX;
-        private readonly int baseY;
-        private readonly int row;
-        private readonly int prefixLength;
-        private readonly bool positionBeforeMeasurement;
+        internal readonly int baseTextX;
+        internal readonly int baseY;
+        internal readonly int row;
+        internal readonly int prefixLength;
+        internal readonly bool positionBeforeMeasurement;
         public BuildingNumberHud(string label, int maximum, BasicHudFactory basicHudFactory, BasicColor basicColor, int baseTextX, int baseY, int row, int prefixLength, bool positionBeforeMeasurement) : base(label, maximum, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
         {
             // Constructor invocation emitted in the initializer.

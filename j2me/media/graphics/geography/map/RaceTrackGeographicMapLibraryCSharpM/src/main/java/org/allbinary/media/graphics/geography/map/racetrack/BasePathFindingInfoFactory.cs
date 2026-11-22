@@ -60,12 +60,12 @@ public class BasePathFindingInfoFactory
 
         class RaceTrackGeographicMapCellPositionFactoryInitVisitor : GeographicMapCellPositionFactoryInitVisitorInterface
         {
-            private int startLineId;
-            private int finishLineId;
-            private readonly BasePathFindingInfoFactory pathFindingInfoFactory;
-            private readonly BasicGeographicMap geographicMapInterface;
-            private readonly PathFindingInfo pathFindingInfo;
-            private readonly int[][] mapArray;
+            internal int startLineId;
+            internal int finishLineId;
+            internal readonly BasePathFindingInfoFactory pathFindingInfoFactory;
+            internal readonly BasicGeographicMap geographicMapInterface;
+            internal readonly PathFindingInfo pathFindingInfo;
+            internal readonly int[][] mapArray;
             public RaceTrackGeographicMapCellPositionFactoryInitVisitor(BasePathFindingInfoFactory pathFindingInfoFactory, BasicGeographicMap geographicMapInterface, PathFindingInfo pathFindingInfo, int[][] mapArray)
             {
                 this.pathFindingInfoFactory = pathFindingInfoFactory;
