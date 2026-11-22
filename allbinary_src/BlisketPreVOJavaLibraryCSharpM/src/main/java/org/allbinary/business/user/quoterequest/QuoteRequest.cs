@@ -150,7 +150,7 @@ public class QuoteRequest
         values.add(this.timeFrame);
         values.add(this.comments);
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         values.add(time);
         values.add(time);
         return values;
@@ -167,7 +167,7 @@ public class QuoteRequest
         values.put(quoteRequestData.TIMEFRAME, this.timeFrame);
         values.put(quoteRequestData.COMMENTS, this.comments);
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         values.put(EntryData.getInstance().LASTMODIFIED, time);
         return values;
     }

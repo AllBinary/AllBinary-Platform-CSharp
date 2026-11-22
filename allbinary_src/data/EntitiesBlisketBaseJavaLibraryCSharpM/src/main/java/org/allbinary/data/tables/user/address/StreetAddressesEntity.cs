@@ -87,7 +87,7 @@ public class StreetAddressesEntity : AbSqlBean, StreetAddressesEntityInterface
             values.add(address.getCode());
             values.add(address.getCountry());
             Calendar calendar = Calendar.getInstance();
-            string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+            string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
             values.add(time);
             base.insert(values);
             this.setDefault(getLastId());

@@ -76,7 +76,7 @@ public class UniqueIdGenerator : IdGeneratorInterface
             AbFileOutputStream idOutFile = AbFileOutputStream.createFromAbFile(this.newFile);
             idOutData = new AbDataOutputStream(idOutFile);
             idOutData.writeLong(this.id + 1L);
-            long? idLong = this.id;
+            long? idLong = ((long)(this.id));
             return idLong.ToString();
         } catch (Exception e) {
             if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().IDLOGGING)) {

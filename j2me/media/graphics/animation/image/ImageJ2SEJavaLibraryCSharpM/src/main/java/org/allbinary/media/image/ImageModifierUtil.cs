@@ -64,7 +64,7 @@ public class ImageModifierUtil
                 gx = colorModel.getGreen(dataElements);
                 bx = colorModel.getBlue(dataElements);
                 if (rx != 0 || gx != 0 || bx != 0) {
-                    newBufferedImage.setRGB(index, index2, (ax << 24) | (r << 16) | (g << 8) | ((int) (b)));
+                    newBufferedImage.setRGB(index, index2, (ax << 24) | (r << 16) | (g << 8) | unchecked(((int) (b))));
                 }
             }
         }
@@ -103,7 +103,7 @@ public class ImageModifierUtil
 
     public virtual void setAlpha(Image unusedOriginalImage, Image image, int imageIndex, int alphaInt)
     {
-        sbyte alpha = ((sbyte) alphaInt);
+        sbyte alpha = unchecked(((sbyte) alphaInt));
         BufferedImage newBufferedImage = this.imageUtil.getBufferedImage(image);
         int width = image.getWidth();
         int height = image.getHeight();
@@ -111,7 +111,7 @@ public class ImageModifierUtil
         for (int index = 0; index < width; index++) {
             for (int index2 = 0; index2 < height; index2++) {
                 raster.getPixel(index, index2, this.colorArray);
-                this.colorArray[0] = ((int) alpha) & this.colorArray[0];
+                this.colorArray[0] = unchecked(((int) alpha)) & this.colorArray[0];
                 raster.setPixel(index, index2, this.colorArray);
             }
         }

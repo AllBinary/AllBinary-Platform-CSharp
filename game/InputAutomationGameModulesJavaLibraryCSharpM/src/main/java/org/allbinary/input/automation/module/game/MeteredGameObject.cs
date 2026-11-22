@@ -43,7 +43,7 @@ public class MeteredGameObject : MeteredGameObjectInterface
         this.setSize(maxX - minX);
         for (int index = 0; index < bufferedImage.Length; index++) {
             double nominator = GraphicsAnalysisUtil.getNominator(bufferedImage[index], this.getMinX(), this.getMaxX(), this.getY());
-            this.getRatios()[index] = nominator / this.getSize();
+            this.getRatios()[index] = ((double)(nominator / this.getSize()));
         }
         if (global::java.lang.JavaNumber.doubleValue(this.getRatios()[bufferedImage.Length - 1]) > 0.93F) {
             this.setGood(true);

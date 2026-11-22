@@ -67,7 +67,7 @@ public class GitProcessHelper
         int start = 0;
         string relativePath = null;
         for (int index = 0; index < output.Length; index++) {
-            if (((int) output[index]) == 0) {
+            if (unchecked(((int) output[index])) == 0) {
                 relativePath = System.Text.Encoding.UTF8.GetString((byte[]) (Array) output, start, index - start, StandardCharsets.UTF_8);
                 if (relativePath.EndsWith(suffix)) {
                     files.add(relativePath);

@@ -30,7 +30,7 @@ public class AngleIncrementInfoFactory
     private readonly AngleIncrementInfo[] angleIncrementInfo = new AngleIncrementInfo[((int) AngleFactory.getInstance().TOTAL_ANGLE)];
     public virtual AngleIncrementInfo getAt(short angleIncrement)
     {
-        int halfAngleIncrement = (((int) angleIncrement) >> 1);
+        int halfAngleIncrement = (unchecked(((int) angleIncrement)) >> 1);
         AngleIncrementInfo angleIncrementInfo = null;
         AngleIncrementInfo angleIncrementInfoCanBeNull = this.angleIncrementInfo[halfAngleIncrement];
         if (angleIncrementInfoCanBeNull == null) {

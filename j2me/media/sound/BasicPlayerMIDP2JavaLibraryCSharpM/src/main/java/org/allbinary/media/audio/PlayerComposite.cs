@@ -126,7 +126,7 @@ public class PlayerComposite : Controllable, Player
             return this.player.setMediaTime(now);
         } catch (Exception e) {
             this.logUtil.put(this.commonStrings.EXCEPTION, this, "setMediaTime", e);
-            return ((long) (-1));
+            return unchecked(((long) (-1)));
         }
     }
 

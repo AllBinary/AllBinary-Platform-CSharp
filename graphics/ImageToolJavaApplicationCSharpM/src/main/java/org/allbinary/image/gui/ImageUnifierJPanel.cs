@@ -106,7 +106,7 @@ public class ImageUnifierJPanel : JPanel, ImageProcessorInputCompositeInterface
             }
             int totalImages = this.imageUnifierProperties.getRows() * this.imageUnifierProperties.getColumns();
             double averageRatio = this.imagesRatioUtil.getAverage(tempBufferedImageArray, totalImages);
-            string averageRatioString = averageRatio.ToString();
+            string averageRatioString = ((double)(averageRatio)).ToString();
             if (averageRatioString.Length > 4) {
                 averageRatioString = averageRatioString.Substring(0, (4) - (0));
             }
@@ -155,12 +155,12 @@ public class ImageUnifierJPanel : JPanel, ImageProcessorInputCompositeInterface
     {
         if (this.rowsJTextField.getText().length() > 0 && this.columnsJTextField.getText().length() > 0 && this.cellWidthJTextField.getText().length() > 0 && this.cellHeightJTextField.getText().length() > 0) {
             this.imageUnifierProperties = new ImageUnifierProperties();
-            this.imageUnifierProperties.setRows(this.rowsJTextField.getText());
-            this.imageUnifierProperties.setColumns(this.columnsJTextField.getText());
-            ImageUnifierCell imageUnifierCell = new ImageUnifierCell(this.cellWidthJTextField.getText(), this.cellHeightJTextField.getText());
+            this.imageUnifierProperties.setRows(((int)(this.rowsJTextField.getText())));
+            this.imageUnifierProperties.setColumns(((int)(this.columnsJTextField.getText())));
+            ImageUnifierCell imageUnifierCell = new ImageUnifierCell(((int)(this.cellWidthJTextField.getText())), ((int)(this.cellHeightJTextField.getText())));
             this.imageUnifierProperties.setImageUnifierCell(imageUnifierCell);
             double cellRatio = (((double) imageUnifierCell.getWidth()) / imageUnifierCell.getHeight());
-            string cellRatioString = cellRatio.ToString();
+            string cellRatioString = ((double)(cellRatio)).ToString();
             if (cellRatioString.Length > 4) {
                 cellRatioString = cellRatioString.Substring(0, (4) - (0));
             }

@@ -33,7 +33,9 @@ public class LogConfigTypes
     public static BasicArrayList LOGGING = new BasicArrayListD();
     static LogConfigTypes()
     {
+        {
         LogConfigTypes.init();
+        }
     }
     private LogConfigTypes()
     {

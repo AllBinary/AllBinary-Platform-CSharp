@@ -40,7 +40,7 @@ public class DatabaseEncoder
             sbyte[] array = value;
             StringMaker stringBuffer = new StringMaker();
             for (int index = 0; index < array.Length; index++) {
-                stringBuffer.append(array[index].ToString());
+                stringBuffer.append(((sbyte)(array[index])).ToString());
                 if (index < array.Length - 1) {
                     stringBuffer.append(CommonSeps.getInstance().SPACE);
                 }

@@ -49,11 +49,11 @@ public class ProfilingRefreshHelper : AndroidGameStatistics
     {
         this.frameProcessingTimeElapsed = DateTimeOffset.Now.ToUnixTimeMilliseconds() - this.frameProcessingTimeElapsed;
         if (this.firstTime != true) {
-            if (this.frameProcessingTimeElapsed > ((long) this.worstFrameProcessingTime)) {
-                this.worstFrameProcessingTime = ((int) this.frameProcessingTimeElapsed);
+            if (this.frameProcessingTimeElapsed > unchecked(((long) this.worstFrameProcessingTime))) {
+                this.worstFrameProcessingTime = unchecked(((int) this.frameProcessingTimeElapsed));
             }
-            if (this.frameProcessingTimeElapsed < ((long) this.bestFrameProcessingTime)) {
-                this.bestFrameProcessingTime = ((int) this.frameProcessingTimeElapsed);
+            if (this.frameProcessingTimeElapsed < unchecked(((long) this.bestFrameProcessingTime))) {
+                this.bestFrameProcessingTime = unchecked(((int) this.frameProcessingTimeElapsed));
             }
         } else {
             this.firstTime = false;

@@ -60,7 +60,7 @@ public class PaymentHelper : Table
             PaymentEntity paymentEntity = PaymentEntityFactory.getInstance().getPaymentEntityInstance();
             PaymentInterface paymentInterface = PaymentFactory.getInstance(this.request);
             paymentEntity.add(this.weblisketSession.getUserName(), paymentInterface);
-            paymentEntity.setDefault(this.weblisketSession.getUserName(), paymentEntity.getLastId(this.weblisketSession.getUserName()));
+            paymentEntity.setDefault(this.weblisketSession.getUserName(), ((int)(paymentEntity.getLastId(this.weblisketSession.getUserName()))));
             if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "addPayment()");
             }
@@ -101,7 +101,7 @@ public class PaymentHelper : Table
             paymentEntity.remove(this.weblisketSession.getUserName(), int.Parse(this.value));
             PaymentInterface paymentInterface = paymentEntity.getDefault(this.weblisketSession.getUserName());
             if (paymentInterface == null) {
-                paymentEntity.setDefault(this.weblisketSession.getUserName(), paymentEntity.getLastId(this.weblisketSession.getUserName()));
+                paymentEntity.setDefault(this.weblisketSession.getUserName(), ((int)(paymentEntity.getLastId(this.weblisketSession.getUserName()))));
             }
             if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "removePayment()");

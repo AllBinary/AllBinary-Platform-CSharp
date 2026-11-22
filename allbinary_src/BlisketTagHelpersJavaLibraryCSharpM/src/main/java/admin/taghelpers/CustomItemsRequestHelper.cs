@@ -68,7 +68,7 @@ public class CustomItemsRequestHelper : ModifyTable
         values.put(DynamicObjectData.NAME, this.className);
         values.put(CustomItemData.PACKAGE, this.packageName);
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         values.put(EntryData.getInstance().LASTMODIFIED, time);
         return values;
     }
@@ -77,7 +77,7 @@ public class CustomItemsRequestHelper : ModifyTable
     {
         try {
             Calendar calendar = Calendar.getInstance();
-            string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+            string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
             BasicArrayList values = new BasicArrayListD();
             values.add(this.id);
             values.add(this.className);

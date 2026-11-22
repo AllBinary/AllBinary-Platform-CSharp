@@ -61,7 +61,7 @@ public class BillingAddressesView : HttpStoreComponentView, DomNodeInterface
                 StreetAddress streetAddress = ((StreetAddress) this.streetAddresses.get(index));
                 billingAddressesNode.appendChild(streetAddress.toXmlNode(document));
             }
-            billingAddressesNode.appendChild(ModDomHelper.createNameValueNodes(document, StreetAddressData.NUMBEROFADDRESSES, streetAddresses.size().ToString()));
+            billingAddressesNode.appendChild(ModDomHelper.createNameValueNodes(document, StreetAddressData.NUMBEROFADDRESSES, ((int)(streetAddresses.size())).ToString()));
             return billingAddressesNode;
         } catch (Exception e) {
             if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().XSLLOGGINGERROR)) {

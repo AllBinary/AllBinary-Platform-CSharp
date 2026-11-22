@@ -53,8 +53,8 @@ public class VectorRotationGenerator
     {
         try {
             short totalAngle = this.angleFactory.TOTAL_ANGLE;
-            int angleIncrement = ((int) totalAngle) / frames;
-            BasicArrayList pointsBasicArrayList = new BasicArrayListS(((int) totalAngle) / angleIncrement);
+            int angleIncrement = unchecked(((int) totalAngle)) / frames;
+            BasicArrayList pointsBasicArrayList = new BasicArrayListS(unchecked(((int) totalAngle)) / angleIncrement);
             BasicArrayList pointBasicArrayList = new BasicArrayListS(points.Length);
             PointFactory pointFactory = PointFactory.getInstance();
             int size = points.Length;
@@ -62,7 +62,7 @@ public class VectorRotationGenerator
                 pointBasicArrayList.add(pointFactory.createXY(points[index_0][0], points[index_0][1]));
             }
             int index = 0;
-            while (index < ((int) totalAngle)) {
+            while (index < unchecked(((int) totalAngle))) {
                 pointsBasicArrayList.add(this.getListAtAngle(width, height, pointBasicArrayList, this.angleFactory.getAt(index)));
                 index += angleIncrement;
             }

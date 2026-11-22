@@ -76,7 +76,7 @@ public class TsUtil
 
     public virtual int toNumberFromChar(char value)
     {
-        return ((int) value);
+        return unchecked(((int) value));
     }
 
     public virtual int toNumber(int value)
@@ -104,7 +104,7 @@ public class TsUtil
 
     public virtual void gc()
     {
-        GC.Collect();
+        global::System.GC.Collect();
     }
 
 }

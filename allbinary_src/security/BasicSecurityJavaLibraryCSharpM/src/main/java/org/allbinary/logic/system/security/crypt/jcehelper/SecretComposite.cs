@@ -54,8 +54,8 @@ public class SecretComposite : BaseSecretComposite
     {
         for (int index = 0; index < this.key.Length; index++) {
             sbyte value = this.key[index];
-            if (((int) value) < 8 && ((int) value) > 0) {
-                array = this.byteUtil.xorByte(array, ((int) value));
+            if (unchecked(((int) value)) < 8 && unchecked(((int) value)) > 0) {
+                array = this.byteUtil.xorByte(array, unchecked(((int) value)));
             }
         }
         return array;

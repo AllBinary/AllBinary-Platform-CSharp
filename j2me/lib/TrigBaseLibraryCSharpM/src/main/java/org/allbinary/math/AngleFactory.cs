@@ -40,7 +40,7 @@ public class AngleFactory
     public readonly short TOTAL_ANGLE = 360;
     public readonly short QUARTER_TOTAL_ANGLE = 90;
     private readonly Angle[] angleArray;
-    private readonly short NEGATIVE_ONE = ((short) (-1));
+    private readonly short NEGATIVE_ONE = unchecked(((short) (-1)));
     public readonly NamedAngle NOT_ANGLE;
     public readonly NamedAngle DOWN;
     public readonly NamedAngle UP;
@@ -48,29 +48,29 @@ public class AngleFactory
     public readonly NamedAngle RIGHT;
     public AngleFactory()
     {
-        this.angleArray = new Angle[((int) this.TOTAL_ANGLE)];
+        this.angleArray = new Angle[unchecked(((int) this.TOTAL_ANGLE))];
         this.NOT_ANGLE = new NamedAngle(this.NEGATIVE_ONE, CommonStrings.getInstance().EMPTY);
         CommonPhoneStrings commonPhoneStrings = CommonPhoneStrings.getInstance();
-        short total = ((short) this.angleArray.Length);
-        this.UP = new NamedAngle(((short) 0), commonPhoneStrings.UP);
+        short total = unchecked(((short) this.angleArray.Length));
+        this.UP = new NamedAngle(unchecked(((short) 0)), commonPhoneStrings.UP);
         this.angleArray[0] = this.UP;
         for (int index_0 = 1; index_0 < 90; index_0++) {
-            this.angleArray[index_0] = new Angle(((short) index_0));
+            this.angleArray[index_0] = new Angle(unchecked(((short) index_0)));
         }
-        this.RIGHT = new NamedAngle(((short) 90), commonPhoneStrings.RIGHT);
+        this.RIGHT = new NamedAngle(unchecked(((short) 90)), commonPhoneStrings.RIGHT);
         this.angleArray[90] = this.RIGHT;
         for (int index_1 = 91; index_1 < 180; index_1++) {
-            this.angleArray[index_1] = new Angle(((short) index_1));
+            this.angleArray[index_1] = new Angle(unchecked(((short) index_1)));
         }
-        this.DOWN = new NamedAngle(((short) 180), commonPhoneStrings.DOWN);
+        this.DOWN = new NamedAngle(unchecked(((short) 180)), commonPhoneStrings.DOWN);
         this.angleArray[180] = this.DOWN;
         for (int index_2 = 181; index_2 < 270; index_2++) {
-            this.angleArray[index_2] = new Angle(((short) index_2));
+            this.angleArray[index_2] = new Angle(unchecked(((short) index_2)));
         }
-        this.LEFT = new NamedAngle(((short) 270), commonPhoneStrings.LEFT);
+        this.LEFT = new NamedAngle(unchecked(((short) 270)), commonPhoneStrings.LEFT);
         this.angleArray[270] = this.LEFT;
-        for (int index_3 = 271; index_3 < ((int) total); index_3++) {
-            this.angleArray[index_3] = new Angle(((short) index_3));
+        for (int index_3 = 271; index_3 < unchecked(((int) total)); index_3++) {
+            this.angleArray[index_3] = new Angle(unchecked(((short) index_3)));
         }
     }
 

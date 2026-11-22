@@ -482,7 +482,7 @@ public class BasicItem : ItemInterface
         hashMap.put(basicItemData.MEDIUMIMAGE, this.mediumImage);
         hashMap.put(basicItemData.LARGEIMAGE, this.largeImage);
         Calendar calendar = Calendar.getInstance();
-        string time = calendar.getTimeInMillis().ToString();
+        string time = ((long)(calendar.getTimeInMillis())).ToString();
         hashMap.put(EntryData.getInstance().LASTMODIFIED, time);
         hashMap.put(basicItemData.PRICE, this.price.ToString());
         hashMap.put(basicItemData.COMMENT, this.comment);
@@ -521,7 +521,7 @@ public class BasicItem : ItemInterface
         values.add(this.getMediumImage());
         values.add(this.getLargeImage());
         Calendar calendar = Calendar.getInstance();
-        string time = calendar.getTimeInMillis().ToString();
+        string time = ((long)(calendar.getTimeInMillis())).ToString();
         values.add(time);
         values.add(time);
         values.add(this.price.ToString());

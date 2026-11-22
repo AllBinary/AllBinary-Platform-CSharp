@@ -115,7 +115,7 @@ public class FileLog
                     return new string(("Log File Creation Error").ToCharArray());
                 }
             }
-            long length = ((long) FileLog.logFile.length());
+            long length = unchecked(((long) FileLog.logFile.length()));
             if (length > FileLog.logLength) {
                 if (!(createLogFileBackup()) || createLogFile() == false) {
                     return new string(("Couldn't Create a Backup file").ToCharArray());
@@ -157,7 +157,7 @@ public class FileLog
                     return new string(("Log File Creation Error").ToCharArray());
                 }
             }
-            long length = ((long) FileLog.logFile.length());
+            long length = unchecked(((long) FileLog.logFile.length()));
             if (length > FileLog.logLength) {
                 if (!(createLogFileBackup()) || createLogFile() == false) {
                     return new string(("Couldn't Create a Backup file").ToCharArray());

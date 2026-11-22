@@ -39,7 +39,7 @@ public class ByteUtil
         sbyte currentByte = 0;
         while (index < size) {
             currentByte = array[index];
-            bytes[index] = ((sbyte) (currentByte ^ mask));
+            bytes[index] = unchecked(((sbyte) (currentByte ^ mask)));
             index++;
         }
         return bytes;
@@ -51,7 +51,7 @@ public class ByteUtil
         int size = array.Length;
         int index = 0;
         while (index < size) {
-            bytes[index] = ((sbyte) (~array[index]));
+            bytes[index] = unchecked(((sbyte) (~array[index])));
             index++;
         }
         return bytes;
@@ -82,7 +82,7 @@ public class ByteUtil
             mask = 64;
         }
         if (index == 7) {
-            mask = ((sbyte) (-127));
+            mask = unchecked(((sbyte) (-127)));
         }
         return this.xor(array, mask);
     }

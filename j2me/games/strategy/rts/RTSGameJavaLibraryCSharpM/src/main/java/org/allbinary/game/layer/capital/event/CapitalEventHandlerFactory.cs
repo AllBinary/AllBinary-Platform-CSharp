@@ -25,8 +25,10 @@ public class CapitalEventHandlerFactory
     private static readonly CapitalEventHandler[] capitalEventHandlerArray = new CapitalEventHandler[10];
     static CapitalEventHandlerFactory()
     {
+        {
         for (int index = CapitalEventHandlerFactory.capitalEventHandlerArray.Length - 1; index >= 0; index--) {
             CapitalEventHandlerFactory.capitalEventHandlerArray[index] = new CapitalEventHandler();
+        }
         }
     }
     public static CapitalEventHandler getInstance(Group groupInterface)

@@ -57,7 +57,7 @@ public class ModDomHelper
     // throws Exception
     public static Node createIndexNode(Document document, int index)
     {
-        return ModDomHelper.createTextNode(document, DomData.INDEX, index.ToString());
+        return ModDomHelper.createTextNode(document, DomData.INDEX, ((int)(index)).ToString());
     }
 
     // throws Exception

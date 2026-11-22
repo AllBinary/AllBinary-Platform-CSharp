@@ -88,7 +88,7 @@ public class BasicGraphicsPipeline
                 y = secondPoint.getY() * sin;
                 secondX = (secondPoint.getX() * cos) - y;
                 secondY = (secondPoint.getX() * sin) + (secondPoint.getY() * cos);
-                point = pointFactory.createXY(((int) secondX) / 10000, ((int) secondY) / 10000);
+                point = pointFactory.createXY(unchecked(((int) secondX)) / 10000, unchecked(((int) secondY)) / 10000);
                 newBasicArrayList.add(point);
             } else {
                 newBasicArrayList.add(secondPoint);

@@ -27,6 +27,8 @@ public class BasicPaymentTypeUtil
     private static readonly BasicPaymentTypeUtil instance = new BasicPaymentTypeUtil();
     static BasicPaymentTypeUtil()
     {
+        {
+        }
     }
     public static BasicPaymentTypeUtil getInstance()
     {

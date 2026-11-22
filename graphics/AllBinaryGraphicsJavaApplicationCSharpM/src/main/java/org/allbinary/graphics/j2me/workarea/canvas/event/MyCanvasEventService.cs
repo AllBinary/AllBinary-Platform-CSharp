@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
-//using EventListener = java.util.EventListener;
+using EventListener = java.util.EventListener;
 //using EventListenerList = javax.swing.@event.EventListenerList;
 
 namespace org.allbinary.graphics.j2me.workarea.canvas.@event;

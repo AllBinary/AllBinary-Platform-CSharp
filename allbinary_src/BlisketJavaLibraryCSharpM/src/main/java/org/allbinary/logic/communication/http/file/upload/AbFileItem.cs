@@ -72,7 +72,7 @@ public class AbFileItem : FileItem
 
     public virtual long getSize()
     {
-        return ((long) this.byteArray.Length);
+        return unchecked(((long) this.byteArray.Length));
     }
 
     public virtual sbyte[] get()

@@ -70,7 +70,7 @@ public class OrderedObjectArrayPermutationUtil
         long temp = 1L;
         if (dataLength > 1) {
             for (int i = 1; i <= dataLength; i++) {
-                temp *= ((long) i);
+                temp *= unchecked(((long) i));
             }
         }
         return temp;

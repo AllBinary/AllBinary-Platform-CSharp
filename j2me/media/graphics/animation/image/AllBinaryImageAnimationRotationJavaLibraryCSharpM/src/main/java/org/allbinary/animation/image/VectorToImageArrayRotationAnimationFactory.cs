@@ -55,9 +55,9 @@ public class VectorToImageArrayRotationAnimationFactory : BaseImageAnimationFact
     public override Animation getInstance(int instanceId)
     {
         if (this.animationFactoryInitializationVisitor.dx != 0 || this.animationFactoryInitializationVisitor.dy != 0) {
-            return new AdjustedImageArrayRotationAnimation(this.imageArray, AngleInfo.getInstance(((short) this.getAngleIncrement())), ((int) AngleFactory.getInstance().TOTAL_ANGLE), this.animationFactoryInitializationVisitor.dx, this.animationFactoryInitializationVisitor.dy, this.animationBehaviorFactory.getOrCreateInstance());
+            return new AdjustedImageArrayRotationAnimation(this.imageArray, AngleInfo.getInstance(unchecked(((short) this.getAngleIncrement()))), ((int) AngleFactory.getInstance().TOTAL_ANGLE), this.animationFactoryInitializationVisitor.dx, this.animationFactoryInitializationVisitor.dy, this.animationBehaviorFactory.getOrCreateInstance());
         } else {
-            return AdjustedImageArrayRotationAnimation.createAnimation(this.imageArray, AngleInfo.getInstance(((short) this.angleIncrement)), ((int) AngleFactory.getInstance().TOTAL_ANGLE), this.animationBehaviorFactory.getOrCreateInstance());
+            return AdjustedImageArrayRotationAnimation.createAnimation(this.imageArray, AngleInfo.getInstance(unchecked(((short) this.angleIncrement))), ((int) AngleFactory.getInstance().TOTAL_ANGLE), this.animationBehaviorFactory.getOrCreateInstance());
         }
     }
 

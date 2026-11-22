@@ -62,7 +62,7 @@ public class AbSqlColumn : AbSqlTable
                     largest = intValue;
                 }
             }
-            string largestAsString = largest.ToString();
+            string largestAsString = ((int)(largest)).ToString();
             if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
                 stringBuffer.delete(0, stringBuffer.length());
                 stringBuffer.append(this.sqlStrings.SQL_STATEMENT_LABEL);

@@ -106,7 +106,7 @@ public class BaseMusicService : Service
             throw new SystemException("Started service without intent");
         }
         if (this.songId != -1) {
-            GC.Collect();
+            global::System.GC.Collect();
             if (this.player != NullAndroidCanvas.NULL_MEDIA_PLAYER && this.player.isPlaying()) {
                 MediaPlayer player = this.player;
                 this.logUtil.putF(this.ALREADY_PLAYING, this, this.commonStateStrings.ON_START_COMMAND);

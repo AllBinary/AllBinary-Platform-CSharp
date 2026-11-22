@@ -75,9 +75,9 @@ public class ImageModifierUtil
                     gx = (imageData.data[index3 + 1] & 0xFF) << 8;
                     bx = (imageData.data[index3 + 2] & 0xFF);
                     if (rx != 0 || gx != 0 || bx != 0) {
-                        imageData.data[index3] = ((sbyte) r);
-                        imageData.data[index3 + 1] = ((sbyte) g);
-                        imageData.data[index3 + 2] = ((sbyte) b);
+                        imageData.data[index3] = unchecked(((sbyte) r));
+                        imageData.data[index3 + 1] = unchecked(((sbyte) g));
+                        imageData.data[index3 + 2] = unchecked(((sbyte) b));
                     }
                 }
             }
@@ -121,9 +121,9 @@ public class ImageModifierUtil
                 rx = ((int) (rx * r));
                 gx = ((int) (gx * g));
                 bx = ((int) (bx * b));
-                imageData.data[index] = ((sbyte) rx);
-                imageData.data[index + 1] = ((sbyte) gx);
-                imageData.data[index + 2] = ((sbyte) bx);
+                imageData.data[index] = unchecked(((sbyte) rx));
+                imageData.data[index + 1] = unchecked(((sbyte) gx));
+                imageData.data[index + 2] = unchecked(((sbyte) bx));
             }
         }
     }
@@ -143,7 +143,7 @@ public class ImageModifierUtil
 
     public virtual void setAlphaSWT(Image image, int alphaInt)
     {
-        sbyte alpha = ((sbyte) alphaInt);
+        sbyte alpha = unchecked(((sbyte) alphaInt));
         org.eclipse.swt.graphics.Image newBufferedImage = null;
         if (image.isMutable()) {
             SwtMutableImage swtImage = ((SwtMutableImage) image);

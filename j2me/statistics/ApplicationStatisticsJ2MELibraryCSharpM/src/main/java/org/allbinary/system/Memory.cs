@@ -27,9 +27,9 @@ public class Memory
     {
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append("Memory: Free: ");
-        stringBuffer.appendlong(((long) Math.Max(0L, GC.GetGCMemoryInfo().HeapSizeBytes - GC.GetTotalMemory(false))));
+        stringBuffer.appendlong(((long) Math.Max(0L, global::System.GC.GetGCMemoryInfo().HeapSizeBytes - global::System.GC.GetTotalMemory(false))));
         stringBuffer.append(" Total: ");
-        stringBuffer.appendlong(((long) GC.GetGCMemoryInfo().HeapSizeBytes));
+        stringBuffer.appendlong(((long) global::System.GC.GetGCMemoryInfo().HeapSizeBytes));
         return stringBuffer.ToString();
     }
 

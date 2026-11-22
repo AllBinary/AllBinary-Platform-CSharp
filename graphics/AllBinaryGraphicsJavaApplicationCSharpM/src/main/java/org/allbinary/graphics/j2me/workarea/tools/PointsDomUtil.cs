@@ -44,7 +44,7 @@ public class PointsDomUtil
     // throws Exception
     public virtual Node toDom(CanvasDom canvasDom, BasicArrayList pointVector)
     {
-        BasicArrayList tempPointVector = PointsUtil.getInstance().doTransforms(pointVector, canvasDom.getAngle(), PointFactory.getInstance().createXY(canvasDom.getDimension().getWidth(), canvasDom.getDimension().getHeight()));
+        BasicArrayList tempPointVector = PointsUtil.getInstance().doTransforms(pointVector, ((double)(canvasDom.getAngle())), PointFactory.getInstance().createXY(canvasDom.getDimension().getWidth(), canvasDom.getDimension().getHeight()));
         Document document = WorkAreaJPanel.getDocument();
         Node linesNode = ((Node) document.createElement(this.LINES));
         int size2 = tempPointVector.size();

@@ -495,7 +495,7 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
         int angle = ((int) (angleInfo.getAngle() + this.slightAngle));
         this.hashtable.put(SmallIntegerSingletonFactory.getInstance().getAt(1), SmallIntegerSingletonFactory.getInstance().getAt(((int) AngleFactory.getInstance().getAt(angle).getValue())));
         SalvoInterface salvoInterface = ((SalvoInterface) this.getPartInterfaceArray()[0]);
-        salvoInterface.process(layerManager, ((short) angle), ((short) 90));
+        salvoInterface.process(layerManager, unchecked(((short) angle)), unchecked(((short) 90)));
     }
 
     public override void downgrade()
@@ -682,13 +682,13 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
                 this.getUnitWaypointBehavior().setMoving(true);
                 GeographicMapCompositeInterface geographicMapCompositeInterface = ((GeographicMapCompositeInterface) this.allBinaryGameLayerManagerP);
                 BasicGeographicMap geographicMapInterface = geographicMapCompositeInterface.getGeographicMapInterface()[0];
-                this.layerPartialCellPositionsUtil.getAllDXY(geographicMapInterface, this, ((int) velocityXScaled), ((int) velocityYScaled), UnitLayer.getPartialpositionlist());
+                this.layerPartialCellPositionsUtil.getAllDXY(geographicMapInterface, this, unchecked(((int) velocityXScaled)), unchecked(((int) velocityYScaled)), UnitLayer.getPartialpositionlist());
                 GeographicMapCellPosition cellPosition = ((GeographicMapCellPosition) DropCellPositionHistory.getInstance().getCellPositionWithDrop(UnitLayer.getPartialpositionlist()));
                 if (cellPosition == this.cellPositionFactory.NONE) {
                     AllBinaryTiledLayer tiledLayer = geographicMapInterface.getAllBinaryTiledLayer();
                     TiledLayerUtil tiledLayerUtil = TiledLayerUtil.getInstance();
-                    int x = this.x + ((int) velocityXScaled);
-                    int y = this.y + ((int) velocityYScaled);
+                    int x = this.x + unchecked(((int) velocityXScaled));
+                    int y = this.y + unchecked(((int) velocityYScaled));
                     x = tiledLayerUtil.keepOnMapX(tiledLayer, x, this.getWidth());
                     y = tiledLayerUtil.keepOnMapY(tiledLayer, y, this.getHeight());
                     this.setPosition(x, y, this.z);

@@ -54,7 +54,7 @@ public class StoreFrontOrdersHistoryStatistics : StoreFrontOrdersHistoryStatisti
             this.taxesMoney.add(orderHistoryInterface.getTaxes());
             this.totalMoney.add(orderHistoryInterface.getTotal());
         }
-        this.numberOfOrdersLong = numberOfOrders;
+        this.numberOfOrdersLong = ((long)(numberOfOrders));
     }
 
     public virtual long? getNumberOfOrders()

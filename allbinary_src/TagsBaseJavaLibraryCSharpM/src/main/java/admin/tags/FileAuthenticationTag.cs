@@ -106,9 +106,9 @@ public class FileAuthenticationTag : CustomTagSupport
     public virtual void nextAttempt()
     {
         if (this.attemptsInteger != null && ((int) this.attemptsInteger) > 0) {
-            this.weblisketSession.setAttempts(((int) this.attemptsInteger) + 1);
+            this.weblisketSession.setAttempts(((int)(((int) this.attemptsInteger) + 1)));
         } else {
-            this.weblisketSession.setAttempts(1);
+            this.weblisketSession.setAttempts(((int)(1)));
         }
     }
 
@@ -146,7 +146,7 @@ public class FileAuthenticationTag : CustomTagSupport
     {
         try {
             this.weblisketSession.clear();
-            return global::java.lang.JavaNumber.intValue(TagSupport.EVAL_BODY_INCLUDE);
+            return global::java.lang.JavaNumber.intValue(((int)(TagSupport.EVAL_BODY_INCLUDE)));
         } catch (Exception e) {
             if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAGERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "invalidateSession()", e);
@@ -304,7 +304,7 @@ public class FileAuthenticationTag : CustomTagSupport
                     login = GLOBALS2.LOGINFAILED;
                 }
                 if (string.CompareOrdinal(login, GLOBALS2.LOGINSUCCESS) == 0) {
-                    this.weblisketSession.setAttempts(0);
+                    this.weblisketSession.setAttempts(((int)(0)));
                     return ((bool) (true));
                 }
                 this.nextAttempt();

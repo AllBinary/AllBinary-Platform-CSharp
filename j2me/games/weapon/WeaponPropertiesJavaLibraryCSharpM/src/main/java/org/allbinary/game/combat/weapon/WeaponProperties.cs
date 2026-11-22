@@ -26,7 +26,7 @@ namespace org.allbinary.game.combat.weapon;
 
 public class WeaponProperties : SimpleWeaponProperties
 {
-    public static readonly WeaponProperties NULL_WEAPON_PROPERTIES = new WeaponProperties(0L, 0L, 0L, 0, ((short) 0));
+    public static readonly WeaponProperties NULL_WEAPON_PROPERTIES = new WeaponProperties(0L, 0L, 0L, 0, unchecked(((short) 0)));
     private long reloadTime = 0L;
     private long targetingTime = 0L;
     private BasicDecimal speed = BasicDecimal.ZERO_BIGDECIMAL;
@@ -49,8 +49,8 @@ public class WeaponProperties : SimpleWeaponProperties
         if (dissipation != this.ZERO) {
             long unscaledDamage = this.speed.getUnscaled() * damage;
             int scaledDissipation = dissipation * this.speed.getScaledFactorValue();
-            long value = (unscaledDamage / ((long) scaledDissipation));
-            this.setRange(((int) (value * 9L)) / 10);
+            long value = (unscaledDamage / unchecked(((long) scaledDissipation)));
+            this.setRange(unchecked(((int) (value * 9L))) / 10);
         }
     }
 

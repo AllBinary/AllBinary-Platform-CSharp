@@ -30,6 +30,7 @@ public class ColorCacheFactory
     private static AutomaticCacheInterface cacheInterface = null;
     static ColorCacheFactory()
     {
+        {
         LogUtil logUtil = LogUtil.getInstance();
         CommonStrings commonStrings = CommonStrings.getInstance();
         string STATIC_BLOCK = "Static Block";
@@ -39,6 +40,7 @@ public class ColorCacheFactory
             logUtil.putF(commonStrings.END, typeof(ColorCacheFactory), STATIC_BLOCK);
         } catch (Exception e) {
             logUtil.put(commonStrings.EXCEPTION, typeof(ColorCacheFactory), STATIC_BLOCK, e);
+        }
         }
     }
     private ColorCacheFactory()

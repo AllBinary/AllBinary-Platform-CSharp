@@ -493,12 +493,12 @@ public class ImageToolJFrame : JFrame, FileJDialogListenerInterface
     private ColorRangeInterface getColorRangeInterface()
     {
         ColorRangeInterface colorRangeInterface = ((ColorRangeInterface) new ColorRange());
-        colorRangeInterface.setMinRed(global::java.lang.JavaNumber.intValue(this.getMinRedJTextField().getText()));
-        colorRangeInterface.setMaxRed(global::java.lang.JavaNumber.intValue(this.getMaxRedJTextField().getText()));
-        colorRangeInterface.setMinGreen(global::java.lang.JavaNumber.intValue(this.getMinGreenJTextField().getText()));
-        colorRangeInterface.setMaxGreen(global::java.lang.JavaNumber.intValue(this.getMaxGreenJTextField().getText()));
-        colorRangeInterface.setMinBlue(global::java.lang.JavaNumber.intValue(this.getMinBlueJTextField().getText()));
-        colorRangeInterface.setMaxBlue(global::java.lang.JavaNumber.intValue(this.getMaxBlueJTextField().getText()));
+        colorRangeInterface.setMinRed(global::java.lang.JavaNumber.intValue(((int)(this.getMinRedJTextField().getText()))));
+        colorRangeInterface.setMaxRed(global::java.lang.JavaNumber.intValue(((int)(this.getMaxRedJTextField().getText()))));
+        colorRangeInterface.setMinGreen(global::java.lang.JavaNumber.intValue(((int)(this.getMinGreenJTextField().getText()))));
+        colorRangeInterface.setMaxGreen(global::java.lang.JavaNumber.intValue(((int)(this.getMaxGreenJTextField().getText()))));
+        colorRangeInterface.setMinBlue(global::java.lang.JavaNumber.intValue(((int)(this.getMinBlueJTextField().getText()))));
+        colorRangeInterface.setMaxBlue(global::java.lang.JavaNumber.intValue(((int)(this.getMaxBlueJTextField().getText()))));
         return colorRangeInterface;
     }
 

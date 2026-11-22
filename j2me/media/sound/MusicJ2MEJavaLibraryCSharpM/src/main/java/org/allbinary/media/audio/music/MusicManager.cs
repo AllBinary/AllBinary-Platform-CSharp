@@ -117,7 +117,7 @@ public class MusicManager
                 }
                 Sound startingCurrentSongSound = this.currentSongSound;
                 long duration = ((long) this.currentSongSound.getDuration());
-                this.timeDelayHelper.delay = ((int) duration);
+                this.timeDelayHelper.delay = unchecked(((int) duration));
                 if (duration <= 0L) {
                     string NO_DURATION_FOR = "No Duration for: ";
                     PreLogUtil.put(new StringMaker().append(NO_DURATION_FOR).append(this.currentSongSound.getResource()).ToString(), this, this.commonStrings.PROCESS);

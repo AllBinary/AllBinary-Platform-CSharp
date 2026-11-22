@@ -129,7 +129,7 @@ public class InventorySearchUtil
                 TransformDocumentInterface viewDocumentInterface = TransformStoreDocumentFactory.getInstance(searchRequest);
                 Node inventoryNode = viewDocumentInterface.getDoc().createElement(InventoryData.INVENTORY);
                 viewDocumentInterface.getBaseNode().appendChild(inventoryNode);
-                inventoryNode.appendChild(ModDomHelper.createNameValueNodes(viewDocumentInterface.getDoc(), SearchData.PAGE, startPage.ToString()));
+                inventoryNode.appendChild(ModDomHelper.createNameValueNodes(viewDocumentInterface.getDoc(), SearchData.PAGE, ((int)(startPage)).ToString()));
                 if (searchRequest.getFileBaseName() != null) {
                     inventoryNode.appendChild(searchRequest.getFileBaseNameNode(viewDocumentInterface.getDoc()));
                 }
@@ -150,14 +150,14 @@ public class InventorySearchUtil
                         numberOfResultsOnCurrentPage++;
                         if (lastPage < currentPage) {
                             if (currentPage >= startPage && currentPage <= endPage) {
-                                inventoryNode.appendChild(ModDomHelper.createNameValueNodes(viewDocumentInterface.getDoc(), SearchData.TOTAL_NUMBER_ITEMS_ON_THIS_PAGE, numberOfResultsOnCurrentPage.ToString()));
+                                inventoryNode.appendChild(ModDomHelper.createNameValueNodes(viewDocumentInterface.getDoc(), SearchData.TOTAL_NUMBER_ITEMS_ON_THIS_PAGE, ((int)(numberOfResultsOnCurrentPage)).ToString()));
                                 documents[currentPage] = viewDocumentInterface.getDoc();
                                 inventoryNodes[currentPage] = inventoryNode;
                                 savedPagesInRange++;
                                 viewDocumentInterface = TransformStoreDocumentFactory.getInstance(searchRequest);
                                 inventoryNode = viewDocumentInterface.getDoc().createElement(InventoryData.INVENTORY);
                                 viewDocumentInterface.getBaseNode().appendChild(inventoryNode);
-                                inventoryNode.appendChild(ModDomHelper.createNameValueNodes(viewDocumentInterface.getDoc(), SearchData.PAGE, currentPage + 1.ToString()));
+                                inventoryNode.appendChild(ModDomHelper.createNameValueNodes(viewDocumentInterface.getDoc(), SearchData.PAGE, ((int)(currentPage + 1)).ToString()));
                                 if (searchRequest.getFileBaseName() != null) {
                                     inventoryNode.appendChild(searchRequest.getFileBaseNameNode(viewDocumentInterface.getDoc()));
                                 }
@@ -172,7 +172,7 @@ public class InventorySearchUtil
                     }
                 }
                 if (numberOfResultsOnCurrentPage > 0 && (currentPage + 1 >= startPage && currentPage + 1 <= endPage)) {
-                    inventoryNode.appendChild(ModDomHelper.createNameValueNodes(viewDocumentInterface.getDoc(), SearchData.TOTAL_NUMBER_ITEMS_ON_THIS_PAGE, numberOfResultsOnCurrentPage - 1.ToString()));
+                    inventoryNode.appendChild(ModDomHelper.createNameValueNodes(viewDocumentInterface.getDoc(), SearchData.TOTAL_NUMBER_ITEMS_ON_THIS_PAGE, ((int)(numberOfResultsOnCurrentPage - 1)).ToString()));
                     documents[lastPage + 1] = viewDocumentInterface.getDoc();
                     inventoryNodes[lastPage + 1] = inventoryNode;
                     savedPagesInRange++;
@@ -186,8 +186,8 @@ public class InventorySearchUtil
                 for (int index_2 = startPage; index_2 <= endPage; index_2++) {
                     if (index_2 <= lastPage) {
                         Document tempDocument = documents[index_2];
-                        inventoryNodes[index_2].appendChild(ModDomHelper.createNameValueNodes(tempDocument, SearchData.TOTAL_NUMBER_PAGES, lastPage + 1.ToString()));
-                        inventoryNodes[index_2].appendChild(ModDomHelper.createNameValueNodes(tempDocument, SearchData.TOTAL_NUMBER_ITEMS, numberOfResults.ToString()));
+                        inventoryNodes[index_2].appendChild(ModDomHelper.createNameValueNodes(tempDocument, SearchData.TOTAL_NUMBER_PAGES, ((int)(lastPage + 1)).ToString()));
+                        inventoryNodes[index_2].appendChild(ModDomHelper.createNameValueNodes(tempDocument, SearchData.TOTAL_NUMBER_ITEMS, ((int)(numberOfResults)).ToString()));
                         for (int pageIndex = 0; pageIndex <= lastPage; pageIndex++) {
                             stringBuffer.delete(0, stringBuffer.length());
                             stringBuffer.append(searchRequest.getFileBaseName());

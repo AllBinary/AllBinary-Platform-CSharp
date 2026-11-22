@@ -157,9 +157,9 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
             vector.add(paymentInterface.getExpiration());
             int random = new Random().nextInt(SuperCrypt.KEYMAX);
             vector.add(new SuperCrypt(random).encrypt(paymentInterface.getNumber()));
-            vector.add(random.ToString());
+            vector.add(((int)(random)).ToString());
             Calendar calendar = Calendar.getInstance();
-            string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+            string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
             vector.add(time);
             base.insert(vector);
             if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {

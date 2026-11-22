@@ -79,7 +79,7 @@ public class DownloadableItem
         if (!StringValidationUtil.getInstance().isEmpty(value)) {
             this.size = long.Parse((value).ToString());
         } else {
-            this.size = 0;
+            this.size = ((long)(0));
         }
         string validTime = ((string) hashMap.get(DownloadItemData.VALID_TIME));
         if (!StringValidationUtil.getInstance().isEmpty(validTime)) {
@@ -92,7 +92,7 @@ public class DownloadableItem
             string totalMinutes = ((string) hashMap.get(DownloadItemData.VALID_TIME_MINUTES));
             string totalSeconds = ((string) hashMap.get(DownloadItemData.VALID_TIME_SECONDS));
             long totalTime = TimeUtil.getInstance().getTotalTime(totalYears, totalMonths, totalDays, totalHours, totalMinutes, totalSeconds);
-            this.validTime = totalTime;
+            this.validTime = ((long)(totalTime));
         }
         this.retries = ((string) hashMap.get(DownloadItemData.RETRIES));
     }
@@ -100,7 +100,7 @@ public class DownloadableItem
     public virtual BasicArrayList toVector()
     {
         Calendar calendar = Calendar.getInstance();
-        string time = calendar.getTimeInMillis().ToString();
+        string time = ((long)(calendar.getTimeInMillis())).ToString();
         BasicArrayList values = new BasicArrayListD();
         values.add(getId());
         values.add(this.basicItemId);
@@ -137,7 +137,7 @@ public class DownloadableItem
         values.put(DownloadItemData.VALID_TIME, this.getValidTime().ToString());
         values.put(DownloadItemData.RETRIES, this.getRetries());
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         values.put(EntryData.getInstance().LASTMODIFIED, time);
         return values;
     }

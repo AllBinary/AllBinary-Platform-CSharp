@@ -79,7 +79,7 @@ public class AuthenticationHelper : TagHelper
     {
         try {
             this.weblisketSession.clear();
-            return TagSupport.EVAL_BODY_INCLUDE;
+            return ((int)(TagSupport.EVAL_BODY_INCLUDE));
         } catch (Exception e) {
             if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().AUTHENTICATIONERROR)) {
                 this.logUtil.put(this.commonStrings.EXCEPTION, this, "invalidateSession()", e);
@@ -226,9 +226,9 @@ public class AuthenticationHelper : TagHelper
     public virtual void nextAttempt()
     {
         if (this.attemptsInteger != null && ((int) this.attemptsInteger) > 0) {
-            this.weblisketSession.setAttempts(((int) this.attemptsInteger) + 1);
+            this.weblisketSession.setAttempts(((int)(((int) this.attemptsInteger) + 1)));
         } else {
-            this.weblisketSession.setAttempts(1);
+            this.weblisketSession.setAttempts(((int)(1)));
         }
     }
 
@@ -245,7 +245,7 @@ public class AuthenticationHelper : TagHelper
                 if (string.CompareOrdinal(login, GLOBALS2.LOGINSUCCESS) == 0) {
                     UserInterface userInterface = userEntityInterface.getUser(userName);
                     if (((bool) (userInterface.isSessionValid()))) {
-                        this.weblisketSession.setAttempts(0);
+                        this.weblisketSession.setAttempts(((int)(0)));
                         return true;
                     }
                 }

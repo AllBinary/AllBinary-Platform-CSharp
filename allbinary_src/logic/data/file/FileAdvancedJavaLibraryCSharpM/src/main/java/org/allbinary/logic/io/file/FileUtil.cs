@@ -257,7 +257,7 @@ public class FileUtil
             if (LogConfigTypes.LOGGING.contains(this.logConfigTypeFactory.FILE)) {
                 StringMaker stringBuffer = new StringMaker();
                 stringBuffer.append("Copying ");
-                stringBuffer.appendlong(((long) fromFile.length()));
+                stringBuffer.appendlong(unchecked(((long) fromFile.length())));
                 stringBuffer.append(" bytes from File: ");
                 stringBuffer.append(fromFile.getPath());
                 stringBuffer.append(" to: ");

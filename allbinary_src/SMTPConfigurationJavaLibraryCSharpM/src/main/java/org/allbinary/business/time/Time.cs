@@ -29,7 +29,7 @@ public class Time
 
     public Time(long time)
     {
-        this.timeLong = time;
+        this.timeLong = ((long)(time));
     }
 
     public virtual long? getLong()

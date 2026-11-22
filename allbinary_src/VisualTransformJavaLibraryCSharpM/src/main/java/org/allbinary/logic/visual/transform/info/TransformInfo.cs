@@ -417,7 +417,7 @@ public class TransformInfo : TransformInfoInterface
         hashMap.put(transformInfoData.DATAFILENAME, this.dataFileName);
         hashMap.put(transformInfoData.DATA, Encoder.encode(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(this.data), value => unchecked((sbyte) value))));
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         hashMap.put(EntryData.getInstance().LASTMODIFIED, time);
         return hashMap;
     }
@@ -436,7 +436,7 @@ public class TransformInfo : TransformInfoInterface
         vector.add(this.dataFileName);
         vector.add(Encoder.encode(System.Array.ConvertAll(System.Text.Encoding.UTF8.GetBytes(this.data), value => unchecked((sbyte) value))));
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         vector.add(time);
         vector.add(time);
         return vector;

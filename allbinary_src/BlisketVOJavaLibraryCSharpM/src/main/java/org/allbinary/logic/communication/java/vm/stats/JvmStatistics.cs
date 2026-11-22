@@ -29,7 +29,7 @@ public class JvmStatistics
 
     public virtual long getFreeMemoryBytes()
     {
-        return Math.Max(0L, GC.GetGCMemoryInfo().HeapSizeBytes - GC.GetTotalMemory(false));
+        return Math.Max(0L, global::System.GC.GetGCMemoryInfo().HeapSizeBytes - global::System.GC.GetTotalMemory(false));
     }
 
     public virtual long getFreeMemoryKilobytes()
@@ -44,7 +44,7 @@ public class JvmStatistics
 
     public virtual long getMaxMemoryBytes()
     {
-        return GC.GetGCMemoryInfo().TotalAvailableMemoryBytes;
+        return global::System.GC.GetGCMemoryInfo().TotalAvailableMemoryBytes;
     }
 
     public virtual long getMaxMemoryKilobytes()
@@ -59,7 +59,7 @@ public class JvmStatistics
 
     public virtual long getTotalMemoryBytes()
     {
-        return GC.GetGCMemoryInfo().HeapSizeBytes;
+        return global::System.GC.GetGCMemoryInfo().HeapSizeBytes;
     }
 
     public virtual long getTotalMemoryKilobytes()
@@ -74,47 +74,47 @@ public class JvmStatistics
 
     public virtual long? getFreeMemoryBytesLong()
     {
-        return this.getFreeMemoryBytes();
+        return ((long)(this.getFreeMemoryBytes()));
     }
 
     public virtual long? getFreeMemoryKilobytesLong()
     {
-        return this.getFreeMemoryKilobytes();
+        return ((long)(this.getFreeMemoryKilobytes()));
     }
 
     public virtual long? getFreeMemoryMegabytesLong()
     {
-        return this.getFreeMemoryMegabytes();
+        return ((long)(this.getFreeMemoryMegabytes()));
     }
 
     public virtual long? getMaxMemoryBytesLong()
     {
-        return this.getMaxMemoryBytes();
+        return ((long)(this.getMaxMemoryBytes()));
     }
 
     public virtual long? getMaxMemoryKilobytesLong()
     {
-        return this.getMaxMemoryKilobytes();
+        return ((long)(this.getMaxMemoryKilobytes()));
     }
 
     public virtual long? getMaxMemoryMegabytesLong()
     {
-        return this.getMaxMemoryMegabytes();
+        return ((long)(this.getMaxMemoryMegabytes()));
     }
 
     public virtual long? getTotalMemoryBytesLong()
     {
-        return this.getTotalMemoryBytes();
+        return ((long)(this.getTotalMemoryBytes()));
     }
 
     public virtual long? getTotalMemoryKilobytesLong()
     {
-        return this.getTotalMemoryKilobytes();
+        return ((long)(this.getTotalMemoryKilobytes()));
     }
 
     public virtual long? getTotalMemoryMegabytesLong()
     {
-        return this.getTotalMemoryMegabytes();
+        return ((long)(this.getTotalMemoryMegabytes()));
     }
 
     public virtual string getFreeMemoryBytesString()
@@ -169,7 +169,7 @@ public class JvmStatistics
 
     public virtual long? getNumberOfThreadsLong()
     {
-        return this.getNumberOfThreads();
+        return ((long)(this.getNumberOfThreads()));
     }
 
     public virtual string getNumberOfThreadsString()
@@ -179,7 +179,7 @@ public class JvmStatistics
 
     public virtual void collectGarbage()
     {
-        GC.Collect();
+        global::System.GC.Collect();
     }
 
 }

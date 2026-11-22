@@ -192,7 +192,7 @@ public class BillingAddressHelper : Table
     {
         try {
             string success = "Successfully Removed Billing Address";
-            BillingAddressesEntityFactory.getInstance().getInstance(this.weblisketSession.getUserName()).remove(this.streetAddress.getId());
+            BillingAddressesEntityFactory.getInstance().getInstance(this.weblisketSession.getUserName()).remove(((int)(this.streetAddress.getId())));
             if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "delete()");
             }

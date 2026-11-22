@@ -76,7 +76,7 @@ public class SpecialItemsRequestHelper : ModifyTable
         values.put(SpecialItemData.END_TIME, this.endTime);
         values.put(basicItemData.PRICE, this.price);
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         values.put(EntryData.getInstance().LASTMODIFIED, time);
         return values;
     }
@@ -85,7 +85,7 @@ public class SpecialItemsRequestHelper : ModifyTable
     {
         try {
             Calendar calendar = Calendar.getInstance();
-            string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+            string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
             BasicArrayList values = new BasicArrayListD();
             values.add(this.id);
             values.add(this.number);

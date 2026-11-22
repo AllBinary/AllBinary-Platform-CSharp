@@ -99,7 +99,7 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
             vector.add(userName);
             vector.add(order.getStoreName());
             Calendar calendar = Calendar.getInstance();
-            string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+            string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
             vector.add(ZERO);
             vector.add(time);
             vector.add(ZERO);
@@ -112,7 +112,7 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
                 vector.add(paymentInterface.getExpiration());
                 int random = new Random().nextInt(SuperCrypt.KEYMAX);
                 vector.add(new SuperCrypt(random).encrypt(paymentInterface.getNumber()));
-                vector.add(random.ToString());
+                vector.add(((int)(random)).ToString());
             } else {
                 vector.add(empty);
                 vector.add(empty);
@@ -189,7 +189,7 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
     {
         try {
             Calendar calendar = Calendar.getInstance();
-            string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+            string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
             HashMap<object, object> updateHashMap = StdUtil.getInstance().createHashMap();
             updateHashMap.put(OrderHistoryData.STATUS, status);
             if (string.CompareOrdinal(status, OrderHistoryData.CANCELLED) == 0) {
@@ -209,7 +209,7 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
     {
         try {
             Calendar calendar = Calendar.getInstance();
-            string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+            string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
             HashMap<object, object> updateHashMap = StdUtil.getInstance().createHashMap();
             updateHashMap.put(PaymentData.METHOD, paymentMethod);
             updateHashMap.put(OrderHistoryData.TRANSDATE, time);

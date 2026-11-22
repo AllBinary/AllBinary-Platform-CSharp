@@ -37,7 +37,7 @@ public class StoreFrontUsersStatistics : StoreFrontUsersStatisticsInterface
         this.totalUsersByRoleHashMap = StdUtil.getInstance().createHashMap();
         UserEntityInterface userEntityInterface = UserEntityFactory.getInstance();
         BasicArrayList userVector = userEntityInterface.getCustomers();
-        this.totalNumberOfUsers = userVector.size();
+        this.totalNumberOfUsers = ((long)(userVector.size()));
         int size = userVector.size();
         for (int index = 0; index < size; index++) {
             UserInterface userInterface = ((UserInterface) userVector.get(index));
@@ -51,9 +51,9 @@ public class StoreFrontUsersStatistics : StoreFrontUsersStatisticsInterface
     {
         long? numberOfUsersForRoleLong = ((long?) this.totalUsersByRoleHashMap.get(userRole));
         if (numberOfUsersForRoleLong == null) {
-            numberOfUsersForRoleLong = 0;
+            numberOfUsersForRoleLong = ((long)(0));
         }
-        return ((long) numberOfUsersForRoleLong) + 1;
+        return ((long)(((long) numberOfUsersForRoleLong) + 1));
     }
 
     public virtual long? getNumberOfUsers()

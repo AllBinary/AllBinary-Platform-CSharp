@@ -74,7 +74,7 @@ public class AndroidBasicTitleProgressBar : ProgressCanvas, DisplayChangeEventLi
     {
         try {
             if (AndroidBasicTitleProgressBar.background != 0) {
-                ResourceUtil.getInstance().addResource(AndroidBasicTitleProgressBar.RESOURCE, AndroidBasicTitleProgressBar.background);
+                ResourceUtil.getInstance().addResource(AndroidBasicTitleProgressBar.RESOURCE, ((int)(AndroidBasicTitleProgressBar.background)));
                 GameFeatureImageCacheFactory.init();
                 this.image = ImageCacheFactory.getInstance().getWithKey(AndroidBasicTitleProgressBar.RESOURCE);
             }

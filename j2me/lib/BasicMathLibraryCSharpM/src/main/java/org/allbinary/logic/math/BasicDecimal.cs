@@ -36,7 +36,7 @@ public class BasicDecimal
 
     public virtual void setint(int value)
     {
-        this.units = ((long) value);
+        this.units = unchecked(((long) value));
         this.updateScaled();
     }
 
@@ -54,7 +54,7 @@ public class BasicDecimal
 
     public virtual void addint(int value)
     {
-        this.units = this.units + ((long) value);
+        this.units = this.units + unchecked(((long) value));
         this.updateScaled();
     }
 
@@ -72,7 +72,7 @@ public class BasicDecimal
 
     public virtual void subtractint(int value)
     {
-        this.units = this.units - ((long) value);
+        this.units = this.units - unchecked(((long) value));
         this.updateScaled();
     }
 
@@ -90,7 +90,7 @@ public class BasicDecimal
 
     public virtual void multiplyint(int value)
     {
-        this.units = this.units * ((long) value);
+        this.units = this.units * unchecked(((long) value));
         this.updateScaled();
     }
 
@@ -108,7 +108,7 @@ public class BasicDecimal
 
     public virtual void divideint(int value)
     {
-        this.units = this.units / ((long) value);
+        this.units = this.units / unchecked(((long) value));
         this.updateScaled();
     }
 
@@ -132,7 +132,7 @@ public class BasicDecimal
     private int scaled = 0;
     private void updateScaled()
     {
-        this.scaled = ((int) (this.units / ((long) this.factorValue)));
+        this.scaled = unchecked(((int) (this.units / unchecked(((long) this.factorValue)))));
     }
 
     public virtual int getScaled()

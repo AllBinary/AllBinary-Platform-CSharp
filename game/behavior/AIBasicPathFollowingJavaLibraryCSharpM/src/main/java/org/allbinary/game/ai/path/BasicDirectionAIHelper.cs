@@ -39,17 +39,17 @@ public class BasicDirectionAIHelper
         int keyDirection = -1;
         int directionAngle = this.angleInfo.getAngleIncrementInfo().getFrameAngle(frame);
         short angle = this.angleInfo.getAngle();
-        int degrees = Math.Abs(directionAngle - ((int) angle));
+        int degrees = Math.Abs(directionAngle - unchecked(((int) angle)));
         if (degrees < 180) {
-            if (((int) angle) > directionAngle) {
+            if (unchecked(((int) angle)) > directionAngle) {
                 keyDirection = Canvas.LEFT;
-            } else if (((int) angle) < directionAngle) {
+            } else if (unchecked(((int) angle)) < directionAngle) {
                 keyDirection = Canvas.RIGHT;
             }
         } else {
-            if (((int) angle) > directionAngle) {
+            if (unchecked(((int) angle)) > directionAngle) {
                 keyDirection = Canvas.RIGHT;
-            } else if (((int) angle) < directionAngle) {
+            } else if (unchecked(((int) angle)) < directionAngle) {
                 keyDirection = Canvas.LEFT;
             }
         }

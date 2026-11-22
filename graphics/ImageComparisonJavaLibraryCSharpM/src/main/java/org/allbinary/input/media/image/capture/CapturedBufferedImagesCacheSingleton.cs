@@ -41,6 +41,7 @@ public class CapturedBufferedImagesCacheSingleton
 
     static CapturedBufferedImagesCacheSingleton()
     {
+        {
         LogUtil logUtil = LogUtil.getInstance();
         CommonStrings commonStrings = CommonStrings.getInstance();
         string STATIC_BLOCK = "Static Block";
@@ -51,6 +52,7 @@ public class CapturedBufferedImagesCacheSingleton
             logUtil.putF(commonStrings.END, instance, STATIC_BLOCK);
         } catch (Exception e) {
             logUtil.put(commonStrings.EXCEPTION, instance, STATIC_BLOCK, e);
+        }
         }
     }
 }

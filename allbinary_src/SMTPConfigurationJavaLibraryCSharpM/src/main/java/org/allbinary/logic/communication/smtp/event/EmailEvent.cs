@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using EventObject = java.util.EventObject;
+using EventObject = java.util.EventObject;
 using EmailInfo = org.allbinary.logic.communication.smtp.info.EmailInfo;
 using StringMaker = org.allbinary.logic.@string.StringMaker;
 

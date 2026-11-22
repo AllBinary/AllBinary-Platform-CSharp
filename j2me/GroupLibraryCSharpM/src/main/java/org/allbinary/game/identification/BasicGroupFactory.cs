@@ -33,10 +33,10 @@ public class BasicGroupFactory
 
     public readonly string NAME = "GROUP_NAME";
     public readonly string NO_SUCH_GROUP = "No Such Group: ";
-    public readonly Group GOOD = new Group("Good Guys", ((short) 0));
-    public readonly Group ENEMY = new Group("Bad Guys", ((short) 1));
-    public readonly Group ENEMY_ON_LEVEL = new Group("Bad Guys on Level", ((short) 2));
-    public readonly Group NONE = new Group("Not On A Team", ((short) 3));
+    public readonly Group GOOD = new Group("Good Guys", unchecked(((short) 0)));
+    public readonly Group ENEMY = new Group("Bad Guys", unchecked(((short) 1)));
+    public readonly Group ENEMY_ON_LEVEL = new Group("Bad Guys on Level", unchecked(((short) 2)));
+    public readonly Group NONE = new Group("Not On A Team", unchecked(((short) 3)));
     public readonly Group[] GOOD_ARRAY;
     public readonly Group[] ENEMY_ARRAY;
     public readonly Group[] ENEMY_ON_LEVEL_ARRAY;

@@ -17,7 +17,7 @@
 using System;
 using System.Linq;
 //using MutableTreeNode = javax.swing.tree.MutableTreeNode;
-//using EventObject = java.util.EventObject;
+using EventObject = java.util.EventObject;
 
 namespace org.allbinary.graphics.j2me.workarea.tools.@event;
 

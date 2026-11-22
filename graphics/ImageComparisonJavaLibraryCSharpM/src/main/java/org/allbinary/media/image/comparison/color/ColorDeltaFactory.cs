@@ -31,6 +31,7 @@ public class ColorDeltaFactory
     private static AutomaticCacheInterface cacheInterface = null;
     static ColorDeltaFactory()
     {
+        {
         LogUtil logUtil = LogUtil.getInstance();
         CommonStrings commonStrings = CommonStrings.getInstance();
         string STATIC_BLOCK = "Static Block";
@@ -41,6 +42,7 @@ public class ColorDeltaFactory
             logUtil.putF(commonStrings.END, instance, STATIC_BLOCK);
         } catch (Exception e) {
             logUtil.put(commonStrings.EXCEPTION, instance, STATIC_BLOCK, e);
+        }
         }
     }
     private ColorDeltaFactory()

@@ -49,7 +49,7 @@ public class ImageArrayRotationAnimationInfo
 
     public virtual AngleInfo getAngleInfoP()
     {
-        return AngleInfo.getInstance(((short) this.angleIncrement));
+        return AngleInfo.getInstance(unchecked(((short) this.angleIncrement)));
     }
 
     public virtual void setTotalAngle(int totalAngle)

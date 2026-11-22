@@ -71,7 +71,7 @@ public class TransactionResultEntity : AbSqlBean, TransactionResultEntityInterfa
             values.add(userName);
             values.addAllList(transactionResultInterface.getValues());
             Calendar calendar = Calendar.getInstance();
-            string time = calendar.getTimeInMillis().ToString();
+            string time = ((long)(calendar.getTimeInMillis())).ToString();
             values.add(time);
             values.add(time);
             base.insert(values);

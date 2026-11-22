@@ -190,7 +190,7 @@ public class ShippingAddressHelper : BasicTable
     {
         try {
             string success = "Successfully Removed Shipping Address";
-            ShippingAddressesEntityFactory.getInstance().getInstance(this.weblisketSession.getUserName()).remove(this.streetAddress.getId());
+            ShippingAddressesEntityFactory.getInstance().getInstance(this.weblisketSession.getUserName()).remove(((int)(this.streetAddress.getId())));
             if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGS)) {
                 this.logUtil.putF(success, this, "remove()");
             }

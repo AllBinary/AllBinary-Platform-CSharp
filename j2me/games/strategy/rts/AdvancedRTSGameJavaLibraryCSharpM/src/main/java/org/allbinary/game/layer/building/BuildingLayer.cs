@@ -175,20 +175,20 @@ public class BuildingLayer : AdvancedRTSGameLayer, RotationAnimationInterfaceCom
     public override int getCost()
     {
         long total = RTSLayerUtil.getInstance().getCostExponential(((long) (this.getLevel() * this.getBuildingLevelCost())));
-        return ((int) total);
+        return unchecked(((int) total));
     }
 
     public override int getDowngradeCost()
     {
         long downgradeCost = RTSLayerUtil.getInstance().getCostExponential(((long) ((this.getLevel() - 1) * this.getBuildingLevelCost())));
         this.logUtil.putF("Cost: " + downgradeCost, this, "getDowngradeCost");
-        return ((int) downgradeCost) * 9 / 10;
+        return unchecked(((int) downgradeCost)) * 9 / 10;
     }
 
     public override int getUpgradeCost()
     {
         long upgradeCost = RTSLayerUtil.getInstance().getCostExponential(((long) ((this.getLevel() + 1) * this.getBuildingLevelCost())));
-        return ((int) upgradeCost);
+        return unchecked(((int) upgradeCost));
     }
 
     public override void downgrade()

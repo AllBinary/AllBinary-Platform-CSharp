@@ -39,7 +39,7 @@ public class GenericInputAutomationWorker : AbstractInputAutomationWorker
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public readonly string PROCESS_DATA_WORKER_RESULTS = "processDataWorkerResults";
-    private long? lastFrame = -1;
+    private long? lastFrame = ((long)(-1));
     private long? frame = null;
     private GenericProfile genericProfile = null;
     public GenericInputAutomationWorker(InputAutomationActionInterface inputAutomationActionInterface, GenericProfile genericProfile, MotionRectangleConstraintsInterface motionRectangleConstraintsInterface, ImageComparatorConstraintsInterface imageComparatorConstraintsInterface) : base(inputAutomationActionInterface)

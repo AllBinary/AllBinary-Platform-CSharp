@@ -81,12 +81,12 @@ public class SimpleStateTaxModule : TaxModuleInterface
                 if (state != null && taxableStreetAddress.getState() != null && string.CompareOrdinal(state, taxableStreetAddress.getState()) == 0) {
                     Node rateNode = DomSearchHelper.getNode(TaxData.RATE, taxNodeChildren);
                     string taxRate = DomNodeHelper.getTextNodeValue(rateNode);
-                    float? taxRateFloat = global::java.lang.JavaNumber.floatValue(float.Parse(taxRate, global::System.Globalization.CultureInfo.InvariantCulture)) * .01;
+                    float? taxRateFloat = ((float)(global::java.lang.JavaNumber.floatValue(float.Parse(taxRate, global::System.Globalization.CultureInfo.InvariantCulture)) * .01));
                     return taxRateFloat;
                 }
             }
         }
-        return 0;
+        return ((float)(0));
     }
 
     public virtual bool? isValid(StreetAddress streetAddress, StoreFrontInterface storeFrontInterface)

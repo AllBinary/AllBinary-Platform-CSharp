@@ -30,6 +30,7 @@ public class BufferedImagePoolSingleton
     private static PoolInterface poolInterface = null;
     static BufferedImagePoolSingleton()
     {
+        {
         LogUtil logUtil = LogUtil.getInstance();
         CommonStrings commonStrings = CommonStrings.getInstance();
         string STATIC_BLOCK = "Static Block";
@@ -40,6 +41,7 @@ public class BufferedImagePoolSingleton
             logUtil.putF(commonStrings.END, instance, STATIC_BLOCK);
         } catch (Exception e) {
             logUtil.put(commonStrings.EXCEPTION, instance, STATIC_BLOCK, e);
+        }
         }
     }
     private BufferedImagePoolSingleton()

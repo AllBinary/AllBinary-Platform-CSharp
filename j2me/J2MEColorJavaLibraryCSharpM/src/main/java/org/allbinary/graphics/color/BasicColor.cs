@@ -51,16 +51,16 @@ public class BasicColor
             tempValue = value;
         }
         int alphaInt = ((tempValue >> 24) & 255);
-        this.alpha = ((short) alphaInt);
+        this.alpha = unchecked(((short) alphaInt));
         this.alphaComponent = (((float) alphaInt)) / 255f;
         int redInt = ((tempValue >> 16) & 255);
-        this.red = ((short) redInt);
+        this.red = unchecked(((short) redInt));
         this.redComponent = (((float) redInt)) / 255f;
         int greenInt = ((tempValue >> 8) & 255);
-        this.green = ((short) greenInt);
+        this.green = unchecked(((short) greenInt));
         this.greenComponent = (((float) greenInt)) / 255f;
         int blueInt = ((tempValue) & 255);
-        this.blue = ((short) blueInt);
+        this.blue = unchecked(((short) blueInt));
         this.blueComponent = (((float) blueInt)) / 255f;
         this.value = tempValue;
     }

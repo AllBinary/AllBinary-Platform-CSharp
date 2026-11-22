@@ -47,7 +47,7 @@ public class AllBinaryVibration : AllBinaryVibrationME
 
     public override void vibrate(int duration, int type, int volume)
     {
-        this.vibrator.vibrate(((long) duration));
+        this.vibrator.vibrate(unchecked(((long) duration)));
     }
 
 }

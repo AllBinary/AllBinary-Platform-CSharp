@@ -37,10 +37,10 @@ public class SmallLongFactory
     public virtual void initWithRange(int value, int negativeValue)
     {
         for (int index_0 = value - 1; index_0 >= this.lastMin; index_0--) {
-            this.INTEGER_ARRAY[index_0 + this.NEGATIVE_MAX] = index_0;
+            this.INTEGER_ARRAY[index_0 + this.NEGATIVE_MAX] = ((long)(index_0));
         }
         for (int index_1 = negativeValue - 1; index_1 >= this.lastNegativeMin; index_1--) {
-            this.INTEGER_ARRAY[index_1] = -index_1;
+            this.INTEGER_ARRAY[index_1] = ((long)(-index_1));
         }
         if (this.lastMin < value) {
             this.lastMin = value;
@@ -56,10 +56,10 @@ public class SmallLongFactory
         if (this.INTEGER_ARRAY[0] == null) {
             if (this.lastMin < this.POSITIVE_MAX || this.lastNegativeMin < this.NEGATIVE_MAX) {
                 for (int index_2 = this.POSITIVE_MAX - 1; index_2 >= this.lastMin; index_2--) {
-                    this.INTEGER_ARRAY[index_2 + this.NEGATIVE_MAX] = index_2;
+                    this.INTEGER_ARRAY[index_2 + this.NEGATIVE_MAX] = ((long)(index_2));
                 }
                 for (int index_3 = this.NEGATIVE_MAX - 1; index_3 >= this.lastNegativeMin; index_3--) {
-                    this.INTEGER_ARRAY[index_3] = -index_3;
+                    this.INTEGER_ARRAY[index_3] = ((long)(-index_3));
                 }
                 this.lastMin = this.POSITIVE_MAX;
                 this.lastNegativeMin = this.NEGATIVE_MAX;
@@ -75,10 +75,10 @@ public class SmallLongFactory
 
     public virtual long? getInstanceNoThrow(long index)
     {
-        if (index + ((long) this.NEGATIVE_MAX) > ((long) (this.INTEGER_ARRAY.Length - 1))) {
+        if (index + unchecked(((long) this.NEGATIVE_MAX)) > unchecked(((long) (this.INTEGER_ARRAY.Length - 1)))) {
             return this.INTEGER_ARRAY[-1 + this.NEGATIVE_MAX];
         }
-        return this.INTEGER_ARRAY[(((int) index)) + this.NEGATIVE_MAX];
+        return this.INTEGER_ARRAY[(unchecked(((int) index))) + this.NEGATIVE_MAX];
     }
 
     public virtual string getString(int index)

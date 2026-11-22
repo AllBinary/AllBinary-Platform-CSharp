@@ -82,8 +82,8 @@ public class NewWorkAreaJDialog : JDialog
     private void disposeNewDialog()
     {
         try {
-            int? canvasWidth = this.xSizeJTextField.getText();
-            int? canvasHeight = this.ySizeJTextField.getText();
+            int? canvasWidth = ((int)(this.xSizeJTextField.getText()));
+            int? canvasHeight = ((int)(this.ySizeJTextField.getText()));
             string newName = this.nameJTextField.getText();
             if (newName == null) {
                 throw new GraphicsException("No Name", this, "disposeNewDialog");

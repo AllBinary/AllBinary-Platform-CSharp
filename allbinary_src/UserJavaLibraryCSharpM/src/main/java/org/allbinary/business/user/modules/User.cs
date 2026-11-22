@@ -439,7 +439,7 @@ public class User : UserInterface
         values.addAllList(this.password.toVector(this.secret));
         values.add(this.enable);
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         values.add(time);
         values.add(time);
         return values;
@@ -474,7 +474,7 @@ public class User : UserInterface
         values.putAll(this.password.toHashMap(this.secret));
         values.put(EntryData.getInstance().ENABLE, this.enable);
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         values.put(EntryData.getInstance().LASTMODIFIED, time);
         return values;
     }

@@ -138,7 +138,7 @@ public class ProductListing : ProductListingInterface
             }
             string indexStr = StringUtil.getInstance().EMPTY_STRING;
             if (index > 0) {
-                indexStr = index.ToString();
+                indexStr = ((int)(index)).ToString();
             }
             keywordFilenameHashMap.put(keywordData, pageName + indexStr);
             stringBuffer.delete(0, stringBuffer.length());

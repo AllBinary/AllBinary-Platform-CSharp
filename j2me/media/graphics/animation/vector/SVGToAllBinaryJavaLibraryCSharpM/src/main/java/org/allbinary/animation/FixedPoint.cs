@@ -26,12 +26,12 @@ public class FixedPoint
 
     public virtual int mul(int a, int b)
     {
-        return ((int) ((((long) a) * ((long) b)) >> 16));
+        return unchecked(((int) ((unchecked(((long) a)) * unchecked(((long) b))) >> 16)));
     }
 
     public virtual int div(int a, int b)
     {
-        return ((int) (((((long) a)) << 16) / ((long) b)));
+        return unchecked(((int) (((unchecked(((long) a))) << 16) / unchecked(((long) b)))));
     }
 
     public virtual int toInt(int @fixed)

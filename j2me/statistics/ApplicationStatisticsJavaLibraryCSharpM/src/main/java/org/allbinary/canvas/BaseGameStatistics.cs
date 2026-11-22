@@ -69,7 +69,7 @@ public class BaseGameStatistics
     {
         long elapsed = this.timeDelayHelper.getElapsed(this.gameTickTimeDelayHelper.startTime);
         if (elapsed > 1L) {
-            short time = ((short) (this.totalRefreshes / (elapsed >> this.DEFAULT_SCALE_FACTOR)));
+            short time = unchecked(((short) (this.totalRefreshes / (elapsed >> this.DEFAULT_SCALE_FACTOR))));
             return time;
         } else {
             return 0;
@@ -94,7 +94,7 @@ public class BaseGameStatistics
         long totalTime = this.timeDelayHelper.getElapsed(this.gameTickTimeDelayHelper.startTime);
         totalTime = (totalTime >> this.DEFAULT_SCALE_FACTOR);
         if (totalTime > 0L && this.updateDelayHelper.isTime(this.gameTickTimeDelayHelper.startTime)) {
-            int framesPerSec = ((int) (this.totalFrames / totalTime));
+            int framesPerSec = unchecked(((int) (this.totalFrames / totalTime)));
             if (framesPerSec < 10) {
                 this.CHAR_ARRAY[1][0] = this.SPACE_CHAR;
                 this.CHAR_ARRAY[1][1] = this.primitiveLongSingleton.NUMBER_CHAR_ARRAY[framesPerSec];
@@ -107,7 +107,7 @@ public class BaseGameStatistics
                 this.CHAR_ARRAY[1][0] = this.PLUS_CHAR;
                 this.CHAR_ARRAY[1][1] = this.PLUS_CHAR;
             }
-            int refreshesPerSec = ((int) (this.totalRefreshes / totalTime));
+            int refreshesPerSec = unchecked(((int) (this.totalRefreshes / totalTime)));
             if (refreshesPerSec < 10) {
                 this.CHAR_ARRAY[3][0] = this.X_CHAR;
                 this.CHAR_ARRAY[3][1] = this.primitiveLongSingleton.NUMBER_CHAR_ARRAY[refreshesPerSec];

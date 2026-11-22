@@ -33,7 +33,9 @@ public class AcceptableResponseUtil
 
     static AcceptableResponseUtil()
     {
+        {
         TsUtil.getInstance().hashCode(AcceptableResponseFactory.getInstance().HTML);
+        }
     }
     public readonly BasicArrayList candidateVector = new BasicArrayListD();
     public readonly BasicArrayList tagNameVector = new BasicArrayListD();

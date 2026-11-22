@@ -91,7 +91,7 @@ public class BasicGroupItemsRequestHelper : ModifyTable
         values.put(BasicGroupItemData.ITEM_NINE, this.itemNine);
         values.put(BasicGroupItemData.ITEM_TEN, this.itemTen);
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         values.put(EntryData.getInstance().LASTMODIFIED, time);
         return values;
     }
@@ -100,7 +100,7 @@ public class BasicGroupItemsRequestHelper : ModifyTable
     {
         try {
             Calendar calendar = Calendar.getInstance();
-            string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+            string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
             BasicArrayList values = new BasicArrayListD();
             values.add(this.id);
             values.add(this.itemOne);

@@ -52,8 +52,8 @@ public class NativeLibraryHelperWrapper
     {
         this.anyType = null;
         this.loader = null;
-        GC.Collect();
-        GC.Collect();
+        global::System.GC.Collect();
+        global::System.GC.Collect();
     }
 
     public override string ToString()

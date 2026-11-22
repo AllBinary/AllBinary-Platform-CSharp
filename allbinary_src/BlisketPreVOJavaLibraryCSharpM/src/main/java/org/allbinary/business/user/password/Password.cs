@@ -89,7 +89,7 @@ public class Password
         this.password = StringUtil.getInstance().getNonNull(this.password);
         int random = new Random().nextInt(SuperCrypt.KEYMAX);
         BasicArrayList vector = new BasicArrayListD();
-        vector.add(random.ToString());
+        vector.add(((int)(random)).ToString());
         vector.add(secret);
         vector.add(new SuperCrypt(random).encrypt(this.password));
         return vector;
@@ -100,7 +100,7 @@ public class Password
         this.password = StringUtil.getInstance().getNonNull(this.password);
         HashMap<object, object> values = StdUtil.getInstance().createHashMap();
         int random = new Random().nextInt(SuperCrypt.KEYMAX);
-        values.put(EntryData.getInstance().ENCRYPTION, random.ToString());
+        values.put(EntryData.getInstance().ENCRYPTION, ((int)(random)).ToString());
         values.put(UserData.SECRET, secret);
         values.put(UserData.PASSWORD, new SuperCrypt(random).encrypt(this.password));
         return values;

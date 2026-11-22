@@ -100,7 +100,7 @@ public class GameSkill
         stringBuffer.append(this.getExtra());
         stringBuffer.append(commonSeps.SPACE);
         stringBuffer.append(this.TIME_LABEL);
-        stringBuffer.appendlong(((long) this.getTime()));
+        stringBuffer.appendlong(unchecked(((long) this.getTime())));
         return stringBuffer.ToString();
     }
 

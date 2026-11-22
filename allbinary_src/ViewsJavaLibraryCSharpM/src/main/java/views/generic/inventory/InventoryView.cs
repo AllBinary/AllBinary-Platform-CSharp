@@ -55,7 +55,7 @@ public class InventoryView : HttpStoreComponentView, DomNodeInterface
             InventoryEntity inventoryEntityInterface = InventoryEntityFactory.getInstance().getInventoryEntityInstance();
             Node inventoryNode = document.createElement(InventoryData.INVENTORY);
             BasicArrayList itemVector = inventoryEntityInterface.getItems(StoreFrontFactory.getInstance(this.getTransformInfoInterface().getStoreName()));
-            inventoryNode.appendChild(ModDomHelper.createNameValueNodes(document, SearchData.TOTAL_NUMBER_ITEMS_ON_THIS_PAGE, itemVector.size().ToString()));
+            inventoryNode.appendChild(ModDomHelper.createNameValueNodes(document, SearchData.TOTAL_NUMBER_ITEMS_ON_THIS_PAGE, ((int)(itemVector.size())).ToString()));
             int size = itemVector.size();
             for (int index = 0; index < size; index++) {
                 ItemInterface itemInterface = ((ItemInterface) itemVector.get(index));

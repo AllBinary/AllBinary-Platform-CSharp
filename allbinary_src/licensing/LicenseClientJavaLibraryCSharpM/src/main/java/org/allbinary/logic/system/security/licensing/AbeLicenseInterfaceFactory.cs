@@ -77,7 +77,7 @@ public class AbeLicenseInterfaceFactory
     {
         Calendar calendar = Calendar.getInstance();
         long currentTime = calendar.getTimeInMillis();
-        if (this.abeLicenseInterface == null || this.abeLicenseInterface == AbeNoLicense.getInstance() || !this.abeLicenseInterface.hasKey() || isCheck() || currentTime - ((long) checkPeriod) > time) {
+        if (this.abeLicenseInterface == null || this.abeLicenseInterface == AbeNoLicense.getInstance() || !this.abeLicenseInterface.hasKey() || isCheck() || currentTime - unchecked(((long) checkPeriod)) > time) {
             this.abeLicenseInterface = null;
             this.time = currentTime;
             return true;

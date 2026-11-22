@@ -83,12 +83,12 @@ public class InputPersistance : BasicPersitance
                     while (inputStream.available() > 0) {
                         string gameActionInputIdAsString = inputStream.readUTF();
                         value = int.Parse(gameActionInputIdAsString);
-                        gameActionInputId = ((long) value);
+                        gameActionInputId = unchecked(((long) value));
                         inputStream.readUTF();
                         value = int.Parse(inputStream.readUTF());
-                        inputId = ((long) value);
-                        gameActionInput = gameKeyFactory.getGameKey(((int) gameActionInputId));
-                        input = inputFactory.getInstanceById(((int) inputId));
+                        inputId = unchecked(((long) value));
+                        gameActionInput = gameKeyFactory.getGameKey(unchecked(((int) gameActionInputId)));
+                        input = inputFactory.getInstanceById(unchecked(((int) inputId)));
                         if (input == inputFactory.NO_INPUT || gameActionInput == null) {
                             stringBuffer.delete(0, stringBuffer.length());
                             if (input == inputFactory.NO_INPUT) {

@@ -158,7 +158,7 @@ public class AbFile : AbFileInterface
 
     public virtual long length()
     {
-        return ((long) this.file.length());
+        return unchecked(((long) this.file.length()));
     }
 
     // throws IOException

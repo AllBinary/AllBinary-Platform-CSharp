@@ -60,7 +60,7 @@ public class TextItemUserIdentifierVisitor : Visitor
 
     public virtual bool isLetter(char charValue)
     {
-        int value = ((int) charValue);
+        int value = unchecked(((int) charValue));
         return (value > 64 && value < 91) || (value > 96 && value < 123);
     }
 

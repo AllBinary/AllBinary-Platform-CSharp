@@ -971,7 +971,7 @@ public class StoreFront : StoreFrontInterface
         dataVector.add(this.testFtpUserName);
         dataVector.add(this.testFtpPassword);
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         dataVector.add(time);
         dataVector.add(time);
         return dataVector;
@@ -1009,7 +1009,7 @@ public class StoreFront : StoreFrontInterface
         dataHashMap.put(storeFrontData.TESTFTPUSERNAME, this.testFtpUserName);
         dataHashMap.put(storeFrontData.TESTFTPPASSWORD, this.testFtpPassword);
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         dataHashMap.put(EntryData.getInstance().LASTMODIFIED, time);
         return dataHashMap;
     }

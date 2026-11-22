@@ -78,7 +78,7 @@ public class SavedCaptureImagesWorker : BasicEventHandler, CaptureWorkerInterfac
             TimeDelayHelper timeHelper = new TimeDelayHelper(1000);
             while (this.isRunning()) {
                 timeHelper.setStartTimeTNT();
-                long? frame = index;
+                long? frame = ((long)(index));
                 StringMaker filePathStringBuffer = new StringMaker();
                 filePathStringBuffer.append(this.savedCaptureGenericProfileDataWorkerType.getPath());
                 filePathStringBuffer.append(LongUtil.fillIn(frame.ToString()));

@@ -48,6 +48,8 @@ public class PaymentTypeUtil
     private static readonly PaymentTypeUtil instance = new PaymentTypeUtil();
     static PaymentTypeUtil()
     {
+        {
+        }
     }
     public static PaymentTypeUtil getInstance()
     {

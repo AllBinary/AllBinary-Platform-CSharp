@@ -124,7 +124,7 @@ public class CanvasJPanel : JPanel, MouseListener, MouseMotionListener, KeyListe
     // throws Exception
     private void initMyComponents()
     {
-        this.frameLabel = new CanvasTreeLabel("FrameLabel" + CanvasJPanel.frame.ToString());
+        this.frameLabel = new CanvasTreeLabel("FrameLabel" + ((int)(CanvasJPanel.frame)).ToString());
         this.canvasTreeNode = new DefaultMutableTreeNode(this.frameLabel);
         CanvasJPanel.frame++;
         this.workAreaJTreeJPanel.add(this.getTreeNode());
@@ -353,7 +353,7 @@ public class CanvasJPanel : JPanel, MouseListener, MouseMotionListener, KeyListe
 
     public virtual void drawItems(Graphics graphics)
     {
-        double? angleDouble = this.angle;
+        double? angleDouble = ((double)(this.angle));
         object[] graphicItemArray = this.getGraphicItemHashMap().keySet().toArray();
         int size = graphicItemArray.Length;
         for (int index = 0; index < size; index++) {
@@ -390,7 +390,7 @@ public class CanvasJPanel : JPanel, MouseListener, MouseMotionListener, KeyListe
                     this.drawGrid(graphics);
                 }
                 this.drawItems(graphics);
-                graphics.drawString(this.getAngle().ToString(), this.getWidth() - 75, this.getHeight() - 15);
+                graphics.drawString(((double)(this.getAngle())).ToString(), this.getWidth() - 75, this.getHeight() - 15);
                 this.grid.isChanged = false;
             }
         } catch (Exception e) {

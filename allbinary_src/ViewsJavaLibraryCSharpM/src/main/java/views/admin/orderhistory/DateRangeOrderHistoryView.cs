@@ -212,29 +212,29 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
                     string rangeDate = StringUtil.getInstance().EMPTY_STRING;
                     if (string.CompareOrdinal(this.command, this.VIEWORDERSINLASTHOUR) == 0) {
                         long oneHour = 60L * 60L * 1000L;
-                        rangeDate = oneHour.ToString();
+                        rangeDate = ((long)(oneHour)).ToString();
                     } else if (string.CompareOrdinal(this.command, this.VIEWORDERSINLASTDAY) == 0) {
                         long oneDay = 24L * 60L * 60L * 1000L;
-                        rangeDate = oneDay.ToString();
+                        rangeDate = ((long)(oneDay)).ToString();
                     } else if (string.CompareOrdinal(this.command, this.VIEWORDERSINLASTWEEK) == 0) {
                         long oneWeek = 7L * 24L * 60L * 60L * 1000L;
-                        rangeDate = oneWeek.ToString();
+                        rangeDate = ((long)(oneWeek)).ToString();
                     } else if (string.CompareOrdinal(this.command, this.VIEWORDERSINLAST30DAYS) == 0) {
                         long thirtyDays = 30L * 24L * 60L * 60L * 1000L;
-                        rangeDate = thirtyDays.ToString();
+                        rangeDate = ((long)(thirtyDays)).ToString();
                     } else if (string.CompareOrdinal(this.command, this.VIEWALLORDERS) == 0) {
-                        rangeDate = currentTime.ToString();
+                        rangeDate = ((long)(currentTime)).ToString();
                     }
                     long rangeDateLong = global::java.lang.JavaNumber.longValue(long.Parse(rangeDate));
-                    this.fromDate = currentTime - rangeDateLong.ToString();
-                    string time = new string((currentTime.ToString()).ToCharArray());
+                    this.fromDate = ((long)(currentTime - rangeDateLong)).ToString();
+                    string time = new string((((long)(currentTime)).ToString()).ToCharArray());
                     this.toDate = time;
                 } else if (string.CompareOrdinal(this.dateType, OrderHistoryData.TYPECAESAR) == 0) {
                     Calendar calendar = Calendar.getInstance();
                     TimeUtil.getInstance().setCalendar(calendar, this.fromYear, this.fromMonth, this.fromDay, this.fromHour);
-                    this.fromDate = calendar.getTimeInMillis().ToString();
+                    this.fromDate = ((long)(calendar.getTimeInMillis())).ToString();
                     TimeUtil.getInstance().setCalendar(calendar, this.toYear, this.toMonth, this.toDay, this.toHour);
-                    this.toDate = calendar.getTimeInMillis().ToString();
+                    this.toDate = ((long)(calendar.getTimeInMillis())).ToString();
                 }
                 if (StringValidationUtil.getInstance().isEmpty(this.toDate) || this.toDate.Length > this.MAXLEN) {
                     isValid = false;

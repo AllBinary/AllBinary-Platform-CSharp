@@ -45,7 +45,7 @@ public class BasicProjectileWeaponPart : BasicWeaponPart
     // throws Exception
     public override void processScore(AllBinaryLayerManager allbinaryLayerManager, short angle, short otherAngle, WeaponProperties weaponProperties, ScoreableInterface scoreableInterface)
     {
-        WeaponLayer weaponLayer = this.weaponLayerCircularStaticPool.getInstanceWeaponLayer(this.getOwnerLayerInterface(), this.relativeRelationship.getX(), this.relativeRelationship.getY(), this.relativeRelationship.getZ(), ((int) angle), ((int) otherAngle), weaponProperties, scoreableInterface);
+        WeaponLayer weaponLayer = this.weaponLayerCircularStaticPool.getInstanceWeaponLayer(this.getOwnerLayerInterface(), this.relativeRelationship.getX(), this.relativeRelationship.getY(), this.relativeRelationship.getZ(), unchecked(((int) angle)), unchecked(((int) otherAngle)), weaponProperties, scoreableInterface);
         allbinaryLayerManager.append(weaponLayer);
     }
 

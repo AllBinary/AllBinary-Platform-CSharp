@@ -46,8 +46,8 @@ public class Category : CategoryInterface
     private CategoryPropertiesInterface categoryPropertiesInterface;
     private readonly BasicArrayList childCategoryVector = new BasicArrayListD();
     private readonly BasicArrayList typeVector = new BasicArrayListD();
-    private readonly int? PROPERTIES = 1;
-    private readonly int? CATEGORY = 0;
+    private readonly int? PROPERTIES = ((int)(1));
+    private readonly int? CATEGORY = ((int)(0));
     public Category(CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface)
     {
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {

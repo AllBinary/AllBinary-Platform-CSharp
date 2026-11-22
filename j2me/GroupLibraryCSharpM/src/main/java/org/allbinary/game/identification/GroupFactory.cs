@@ -59,7 +59,7 @@ public class GroupFactory
         this.index = 0;
         int size = this.list.size();
         string name = null;
-        while (size < ((int) groups)) {
+        while (size < unchecked(((int) groups))) {
             name = stringUtil.EMPTY_STRING;
             if (size < nameArray.Length) {
                 name = nameArray[size];
@@ -67,7 +67,7 @@ public class GroupFactory
                 stringMaker.delete(0, stringMaker.length());
                 name = stringMaker.append(TEAM).appendint(size).ToString();
             }
-            this.list.add(new Group(name, ((short) (size + 3))));
+            this.list.add(new Group(name, unchecked(((short) (size + 3)))));
             size++;
         }
     }

@@ -106,7 +106,7 @@ public class AbSqlTableUtil
     {
         try {
             Calendar calendar = Calendar.getInstance();
-            long? timeLong = calendar.getTimeInMillis();
+            long? timeLong = ((long)(calendar.getTimeInMillis()));
             string time = timeLong.ToString();
             StringMaker stringBuffer = new StringMaker();
             string fileName = tableName + this.EXTENSION;
@@ -220,7 +220,7 @@ public class AbSqlTableUtil
             BufferedLineReader bufferedLineReader = new BufferedLineReader(backupFile);
             long size = bufferedLineReader.getSize();
             long section = size / global::java.lang.JavaNumber.intValue(portion.getTotal()) + 1;
-            long start = section * ((long) current);
+            long start = section * unchecked(((long) current));
             long end = start + section;
             if (end > size) {
                 end = size;

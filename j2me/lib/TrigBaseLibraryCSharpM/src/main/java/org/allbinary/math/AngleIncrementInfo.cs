@@ -46,7 +46,7 @@ public class AngleIncrementInfo
     private readonly FrameUtil frameUtil = FrameUtil.getInstance();
     public virtual int getFrameAngle(int frame)
     {
-        return this.frameUtil.getFrameAngle(frame, ((int) this.angleIncrement));
+        return this.frameUtil.getFrameAngle(frame, unchecked(((int) this.angleIncrement)));
     }
 
     public virtual short getAngleIncrement()

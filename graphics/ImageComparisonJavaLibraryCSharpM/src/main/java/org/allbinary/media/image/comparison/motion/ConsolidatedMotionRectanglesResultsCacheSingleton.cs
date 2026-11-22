@@ -31,6 +31,7 @@ public class ConsolidatedMotionRectanglesResultsCacheSingleton
     private static CacheInterface cacheInterface = null;
     static ConsolidatedMotionRectanglesResultsCacheSingleton()
     {
+        {
         LogUtil logUtil = LogUtil.getInstance();
         CommonStrings commonStrings = CommonStrings.getInstance();
         string STATIC_BLOCK = "Static Block";
@@ -41,6 +42,7 @@ public class ConsolidatedMotionRectanglesResultsCacheSingleton
             logUtil.putF(commonStrings.END, instance, STATIC_BLOCK);
         } catch (Exception e) {
             logUtil.put(commonStrings.EXCEPTION, instance, STATIC_BLOCK, e);
+        }
         }
     }
     private ConsolidatedMotionRectanglesResultsCacheSingleton()

@@ -164,10 +164,10 @@ public class LinesGraphicItem : GraphicItemInterface
         BasicArrayList list = DomHelper.getInstance().getWithoutTextNodes(pointNodes);
         Node xNode = DomHelper.getInstance().searchNodeList(PositionStrings.getInstance().X, list);
         Node xTextNode = xNode.getFirstChild();
-        int? xInteger = xTextNode.getNodeValue();
+        int? xInteger = ((int)(xTextNode.getNodeValue()));
         Node yNode = DomHelper.getInstance().searchNodeList(PositionStrings.getInstance().Y, list);
         Node yTextNode = yNode.getFirstChild();
-        int? yInteger = yTextNode.getNodeValue();
+        int? yInteger = ((int)(yTextNode.getNodeValue()));
         GPoint point = PointFactory.getInstance().createXY(((int) xInteger), ((int) yInteger));
         this.addPoint(point);
     }

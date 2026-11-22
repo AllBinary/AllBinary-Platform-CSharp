@@ -109,7 +109,7 @@ public class SearchParams
         if (this.listLength != null) {
             return int.Parse(this.listLength);
         } else {
-            return 0;
+            return ((int)(0));
         }
     }
 
@@ -128,7 +128,7 @@ public class SearchParams
         if (this.startPage != null) {
             return int.Parse(this.startPage);
         } else {
-            return 0;
+            return ((int)(0));
         }
     }
 
@@ -137,7 +137,7 @@ public class SearchParams
         if (this.endPage != null) {
             return int.Parse(this.endPage);
         } else {
-            return 0;
+            return ((int)(0));
         }
     }
 
@@ -155,7 +155,7 @@ public class SearchParams
     // throws Exception
     private Node getFieldsNode(Document document)
     {
-        Node fieldsNode = ModDomHelper.createNameValueNodes(document, SearchData.FIELDS, this.columnsAndSearchValues.size().ToString());
+        Node fieldsNode = ModDomHelper.createNameValueNodes(document, SearchData.FIELDS, ((int)(this.columnsAndSearchValues.size())).ToString());
         Set<object> set = this.columnsAndSearchValues.keySet();
         object[] searchValueArray = set.toArray();
         int size = searchValueArray.Length;

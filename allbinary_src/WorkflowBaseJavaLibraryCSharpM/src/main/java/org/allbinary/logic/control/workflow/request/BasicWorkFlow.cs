@@ -95,7 +95,7 @@ public class BasicWorkFlow
         values.add(this.storeName);
         values.add(XmlDocumentHelper.toString(this.workFlowDoc));
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         values.add(time);
         values.add(time);
         return values;
@@ -109,7 +109,7 @@ public class BasicWorkFlow
         hashMap.put(StoreFrontData.getInstance().NAME, this.storeName);
         hashMap.put(WorkFlowData.getInstance().DATA, XmlDocumentHelper.toString(this.workFlowDoc));
         Calendar calendar = Calendar.getInstance();
-        string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+        string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
         hashMap.put(EntryData.getInstance().LASTMODIFIED, time);
         return hashMap;
     }

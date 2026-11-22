@@ -25,7 +25,7 @@ namespace org.allbinary.game.ag.layer.hud.basic.time;
 
 public class HudTimer
 {
-    private long startTime = ((long) (-1));
+    private long startTime = unchecked(((long) (-1)));
     private long hundredthTime = 0L;
     private long maxTime;
     private long modifier = 0L;
@@ -37,7 +37,7 @@ public class HudTimer
     public HudTimer(int maxTime)
     {
         this.primitiveLongUtil = PrimitiveLongUtil.createPowerOfTen(maxTime);
-        this.maxTime = ((long) maxTime);
+        this.maxTime = unchecked(((long) maxTime));
     }
 
     public virtual void start()
@@ -64,19 +64,19 @@ public class HudTimer
                 this.hundrethsString = this.MAX;
             }
         } else if (lastLowerTime != this.hundredthTime) {
-            this.hundrethsString = this.primitiveLongUtil.getCharArray(((int) this.hundredthTime));
+            this.hundrethsString = this.primitiveLongUtil.getCharArray(unchecked(((int) this.hundredthTime)));
             this.totalDigits = this.primitiveLongUtil.getCurrentTotalDigits();
         }
     }
 
     public virtual void reduce(int value)
     {
-        this.modifier -= ((long) value);
+        this.modifier -= unchecked(((long) value));
     }
 
     public virtual void add(int value)
     {
-        this.modifier += ((long) value);
+        this.modifier += unchecked(((long) value));
     }
 
     public virtual char[] getTimeChars()

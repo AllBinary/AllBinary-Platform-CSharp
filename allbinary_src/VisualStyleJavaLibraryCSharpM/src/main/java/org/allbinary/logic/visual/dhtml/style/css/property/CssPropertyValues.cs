@@ -66,7 +66,7 @@ public class CssPropertyValues : DomNodeInterface
         }
         int size2 = indexPropertyValueHashMap.keySet().size();
         for (int index_1 = 0; index_1 < size2; index_1++) {
-            int? indexInt = index_1;
+            int? indexInt = ((int)(index_1));
             string propertyValue = ((string) indexPropertyValueHashMap.get(indexInt.ToString()));
             this.propertyValueVector.add(propertyValue);
         }

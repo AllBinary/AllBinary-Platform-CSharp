@@ -80,9 +80,9 @@ public class AllBinaryArrayImageRotationAnimationFactory : BaseImageAnimationFac
         }
         if (this.animationFactoryInitializationVisitor.dx != 0 || this.animationFactoryInitializationVisitor.dy != 0) {
             this.animationFactoryImageScaleUtil.processAdjust(this);
-            return new AdjustedImageArrayRotationAnimation(scaledImageArray, AngleInfo.getInstance(((short) this.getAngleIncrement())), ((int) AngleFactory.getInstance().TOTAL_ANGLE), this.animationFactoryInitializationVisitor.dx, this.animationFactoryInitializationVisitor.dy, this.animationBehaviorFactory.getOrCreateInstance());
+            return new AdjustedImageArrayRotationAnimation(scaledImageArray, AngleInfo.getInstance(unchecked(((short) this.getAngleIncrement()))), ((int) AngleFactory.getInstance().TOTAL_ANGLE), this.animationFactoryInitializationVisitor.dx, this.animationFactoryInitializationVisitor.dy, this.animationBehaviorFactory.getOrCreateInstance());
         } else {
-            return new ImageArrayRotationAnimation(scaledImageArray, AngleInfo.getInstance(((short) this.getAngleIncrement())), ((int) AngleFactory.getInstance().TOTAL_ANGLE), this.animationBehaviorFactory.getOrCreateInstance());
+            return new ImageArrayRotationAnimation(scaledImageArray, AngleInfo.getInstance(unchecked(((short) this.getAngleIncrement()))), ((int) AngleFactory.getInstance().TOTAL_ANGLE), this.animationBehaviorFactory.getOrCreateInstance());
         }
     }
 

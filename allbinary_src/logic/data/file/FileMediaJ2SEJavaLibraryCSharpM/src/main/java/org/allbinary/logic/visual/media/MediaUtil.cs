@@ -68,9 +68,9 @@ public class MediaUtil
             stringBuffer.append("\nNew").append(commonLabels.HEIGHT_LABEL);
             stringBuffer.appendint(newHeight);
             stringBuffer.append("\nFile Length: ");
-            stringBuffer.appendlong(((long) originalImageFile.length()));
+            stringBuffer.appendlong(unchecked(((long) originalImageFile.length())));
             stringBuffer.append("\nNew File Length: ");
-            stringBuffer.appendlong(((long) imageFile.length()));
+            stringBuffer.appendlong(unchecked(((long) imageFile.length())));
             this.logUtil.putF(stringBuffer.ToString(), this, "saveImageFile()");
         }
     }

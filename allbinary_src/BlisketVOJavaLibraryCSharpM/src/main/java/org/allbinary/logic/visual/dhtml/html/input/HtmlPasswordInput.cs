@@ -24,8 +24,8 @@ public class HtmlPasswordInput : HtmlLengthInput
     public HtmlPasswordInput(string before, string name, string value, string after) : base(before, HtmlInputData.getInstance().PASSWORD, name, value, after)
     {
         // base(before, HtmlInputData.getInstance().PASSWORD, name, value, after) is called from the constructor declaration
-        setSize(32);
-        setMaxLength(128);
+        setSize(((int)(32)));
+        setMaxLength(((int)(128)));
     }
 
 }

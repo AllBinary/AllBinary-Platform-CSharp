@@ -92,11 +92,11 @@ public class SimpleFileUtil
         int returnLine = 0;
         while (index < size) {
             startIndex = index;
-            while (index < size - 1 && byteArray[index] != ((sbyte) '\n')) {
+            while (index < size - 1 && byteArray[index] != unchecked(((sbyte) '\n'))) {
                 index++;
             }
             if (includeReturnLine == 0) {
-                if (index > 0 && byteArray[index - 1] == ((sbyte) '\r')) {
+                if (index > 0 && byteArray[index - 1] == unchecked(((sbyte) '\r'))) {
                     returnLine = 1;
                 } else {
                     returnLine = 0;

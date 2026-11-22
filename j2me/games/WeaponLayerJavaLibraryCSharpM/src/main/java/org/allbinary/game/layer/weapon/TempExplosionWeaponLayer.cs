@@ -16,7 +16,7 @@ namespace org.allbinary.game.layer.weapon;
 
 public class TempExplosionWeaponLayer : SimpleWeaponLayer
 {
-    public readonly WeaponProperties weaponProperties = new WeaponProperties(-1L, -1L, 0, 1000, ((short) 0));
+    public readonly WeaponProperties weaponProperties = new WeaponProperties(-1L, -1L, 0, 1000, unchecked(((short) 0)));
     private readonly TimeDelayHelper timeDelayHelper = new TimeDelayHelper(0);
     public TempExplosionWeaponLayer(string name, Movement movement, Animation animationInterface, Rectangle rectangle, ViewPositionBase viewPosition, int timeDelay) : base(name, RemoteInfo.REMOTE_INFO, -1, movement, animationInterface, SimpleWeaponLayer.createDestroyed(), rectangle, viewPosition)
     {

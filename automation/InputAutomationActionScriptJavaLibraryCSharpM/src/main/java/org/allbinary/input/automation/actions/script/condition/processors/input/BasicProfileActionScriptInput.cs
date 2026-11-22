@@ -114,7 +114,7 @@ public class BasicProfileActionScriptInput : BasicProfileActionScriptProcessor, 
             stringBuffer.append(StringUtil.getInstance().NULL_STRING);
         }
         stringBuffer.append(" Time: ");
-        stringBuffer.appendlong(((long) this.getTime()));
+        stringBuffer.appendlong(unchecked(((long) this.getTime())));
         return stringBuffer.ToString();
     }
 

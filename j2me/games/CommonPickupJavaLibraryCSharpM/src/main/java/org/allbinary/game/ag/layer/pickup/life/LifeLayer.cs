@@ -40,7 +40,7 @@ public class LifeLayer : AllBinaryLayer, LifeVisitorInterface
 
     public virtual void visit(Life lifeInterface)
     {
-        lifeInterface.add(((short) 1));
+        lifeInterface.add(unchecked(((short) 1)));
     }
 
 }

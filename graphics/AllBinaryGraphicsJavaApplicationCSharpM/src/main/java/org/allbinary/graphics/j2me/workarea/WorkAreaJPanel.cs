@@ -18,7 +18,7 @@ using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using java.awt;
-//using EventListener = java.util.EventListener;
+using EventListener = java.util.EventListener;
 using java.util;
 //using LinkedList = java.util.LinkedList;
 //using javax.swing;
@@ -146,7 +146,7 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
         int size = this.canvasJPanelList.size();
         for (int index = 0; index < size; index++) {
             CanvasJPanel canvasJPanel = ((CanvasJPanel) this.canvasJPanelList.get(index));
-            canvasJPanelHashMap.put(canvasJPanel.getTreeNode(), index);
+            canvasJPanelHashMap.put(canvasJPanel.getTreeNode(), ((int)(index)));
         }
         return canvasJPanelHashMap;
     }

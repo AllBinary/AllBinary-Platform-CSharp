@@ -27,8 +27,8 @@ public class BooleanFactory
         return BooleanFactory.instance;
     }
 
-    public readonly bool? TRUE = true;
-    public readonly bool? FALSE = false;
+    public readonly bool? TRUE = ((bool)(true));
+    public readonly bool? FALSE = ((bool)(false));
     public readonly string TRUE_STRING;
     public readonly string FALSE_STRING;
     public readonly string YES = "yes";

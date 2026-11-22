@@ -129,7 +129,7 @@ public class RunnableCanvas : MyCanvas, RunnableInterface
     public virtual void setWait(int wait)
     {
         this.loopTimeHelper.delay = wait;
-        this.pauseWait = ((long) wait) * 3L;
+        this.pauseWait = unchecked(((long) wait)) * 3L;
         this.logUtil.putF(new StringMaker().append("setWait - delay: ").appendint(((int) this.loopTimeHelper.delay)).ToString(), this, this.commonStrings.CONSTRUCTOR);
     }
 

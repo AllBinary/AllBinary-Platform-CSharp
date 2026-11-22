@@ -31,6 +31,7 @@ public class ImageComparisonResultCacheSingleton
     private static CacheInterface cacheInterface = null;
     static ImageComparisonResultCacheSingleton()
     {
+        {
         LogUtil logUtil = LogUtil.getInstance();
         CommonStrings commonStrings = CommonStrings.getInstance();
         string STATIC_BLOCK = "Static Block";
@@ -41,6 +42,7 @@ public class ImageComparisonResultCacheSingleton
             logUtil.putF(commonStrings.END, instance, STATIC_BLOCK);
         } catch (Exception e) {
             logUtil.put(commonStrings.EXCEPTION, instance, STATIC_BLOCK, e);
+        }
         }
     }
     private ImageComparisonResultCacheSingleton()

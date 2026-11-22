@@ -48,6 +48,7 @@ public class ShippingMethodsFactory
     private static readonly string SHIPPINGMETHODSFILEPATHSTRING = null;
     static ShippingMethodsFactory()
     {
+        {
         StringMaker stringBuffer = new StringMaker();
         string sep = AbPathData.getInstance().SEPARATOR;
         stringBuffer.append(sep);
@@ -56,6 +57,7 @@ public class ShippingMethodsFactory
         stringBuffer.append("shipping");
         stringBuffer.append(sep);
         SHIPPINGMETHODSFILEPATHSTRING = stringBuffer.ToString();
+        }
     }
     private const string SHIPPINGMETHODSFILENAME = "shippingMethods.xml";
     private Document document;

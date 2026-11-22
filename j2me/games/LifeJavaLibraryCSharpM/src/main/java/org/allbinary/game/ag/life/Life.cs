@@ -24,7 +24,7 @@ public class Life : LifeInterface
     public static Life createLife()
     {
         try {
-            return new Life(((short) 0), ((short) 0));
+            return new Life(unchecked(((short) 0)), unchecked(((short) 0)));
         } catch (Exception e) {
             throw new SystemException();
         }
@@ -62,8 +62,8 @@ public class Life : LifeInterface
     public virtual void add(short lives)
     {
         if (!this.reachedLimit()) {
-            if (this.lives + lives <= ((int) this.getMaxlives())) {
-                this.lives = ((short) (this.lives + lives));
+            if (this.lives + lives <= unchecked(((int) this.getMaxlives()))) {
+                this.lives = unchecked(((short) (this.lives + lives)));
             } else {
                 this.lives = this.getMaxlives();
             }
@@ -72,7 +72,7 @@ public class Life : LifeInterface
 
     public virtual bool isAlive()
     {
-        if (((int) this.lives) <= 0) {
+        if (unchecked(((int) this.lives)) <= 0) {
             return false;
         } else {
             return true;
@@ -86,7 +86,7 @@ public class Life : LifeInterface
 
     private bool reachedLimit()
     {
-        if (this.lives > this.maxlives || ((int) this.lives) < 0) {
+        if (this.lives > this.maxlives || unchecked(((int) this.lives)) < 0) {
             return true;
         } else {
             return false;
@@ -97,7 +97,7 @@ public class Life : LifeInterface
     {
         if (!this.reachedLimit()) {
             if (this.lives - lives >= 0) {
-                this.lives = ((short) (this.lives - lives));
+                this.lives = unchecked(((short) (this.lives - lives)));
             } else {
                 this.lives = 0;
             }

@@ -55,7 +55,7 @@ public class MineCountedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInte
         return 3;
     }
 
-    private readonly WeaponProperties weaponProperties = new WeaponProperties(-1L, -1L, 0, 8000, ((short) 10));
+    private readonly WeaponProperties weaponProperties = new WeaponProperties(-1L, -1L, 0, 8000, unchecked(((short) 10)));
     private readonly SmallIntegerSingletonFactory smallIntegerSingletonFactory = SmallIntegerSingletonFactory.getInstance();
     // throws Exception
     public override AllBinaryLayer getNextInstance(ABHashtable<object, object> hashtable, int x, int y, int z)

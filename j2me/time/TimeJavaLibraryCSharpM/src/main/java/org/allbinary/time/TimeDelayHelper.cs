@@ -24,7 +24,7 @@ namespace org.allbinary.time;
 
 public class TimeDelayHelper
 {
-    private long startTime = ((long) (-1));
+    private long startTime = unchecked(((long) (-1)));
     private long elapsedTimeAtPause = long.MinValue;
     public int delay;
     public TimeDelayHelper(int delay)
@@ -36,7 +36,7 @@ public class TimeDelayHelper
     public virtual bool isTimeTNT()
     {
         long currentTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-        if (currentTime - this.startTime > ((long) this.delay)) {
+        if (currentTime - this.startTime > unchecked(((long) this.delay))) {
             this.startTime = currentTime;
             return true;
         }
@@ -46,7 +46,7 @@ public class TimeDelayHelper
     public virtual bool isTimeSinceTNT(int delay)
     {
         long currentTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-        if (currentTime - this.startTime > ((long) delay)) {
+        if (currentTime - this.startTime > unchecked(((long) delay))) {
             this.startTime = currentTime;
             return true;
         }
@@ -55,7 +55,7 @@ public class TimeDelayHelper
 
     public virtual bool isTime(long currentTime)
     {
-        if (currentTime - this.startTime > ((long) this.delay)) {
+        if (currentTime - this.startTime > unchecked(((long) this.delay))) {
             this.startTime = currentTime;
             return true;
         }
@@ -64,7 +64,7 @@ public class TimeDelayHelper
 
     public virtual bool isTimeWithoutReset(long currentTime)
     {
-        if (currentTime - this.startTime > ((long) this.delay)) {
+        if (currentTime - this.startTime > unchecked(((long) this.delay))) {
             return true;
         }
         return false;
@@ -72,7 +72,7 @@ public class TimeDelayHelper
 
     public virtual bool isTimeSince(int delay, long currentTime)
     {
-        if (currentTime - this.startTime > ((long) this.delay)) {
+        if (currentTime - this.startTime > unchecked(((long) this.delay))) {
             this.startTime = currentTime;
             return true;
         }

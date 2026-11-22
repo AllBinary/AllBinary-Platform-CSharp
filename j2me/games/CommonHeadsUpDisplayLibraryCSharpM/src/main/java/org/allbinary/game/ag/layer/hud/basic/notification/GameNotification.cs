@@ -29,7 +29,7 @@ namespace org.allbinary.game.ag.layer.hud.basic.notification;
 
 public class GameNotification
 {
-    public static readonly GameNotificationEvent NULL_GAME_NOTIFICATION_EVENT = new GameNotificationEvent(NullUtil.getInstance().NULL_OBJECT, StringUtil.getInstance().EMPTY_STRING, 0, BasicColorFactory.getInstance().RED, BooleanFactory.getInstance().FALSE);
+    public static readonly GameNotificationEvent NULL_GAME_NOTIFICATION_EVENT = new GameNotificationEvent(NullUtil.getInstance().NULL_OBJECT, StringUtil.getInstance().EMPTY_STRING, ((int)(0)), BasicColorFactory.getInstance().RED, BooleanFactory.getInstance().FALSE);
     public readonly BasicArrayList stringList = new BasicArrayListD();
     public readonly BasicArrayList timeList = new BasicArrayListD();
     public readonly BasicArrayList colorList = new BasicArrayListD();

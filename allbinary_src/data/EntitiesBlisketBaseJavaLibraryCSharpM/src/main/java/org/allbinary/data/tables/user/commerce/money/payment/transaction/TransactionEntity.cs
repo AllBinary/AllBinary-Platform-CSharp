@@ -70,7 +70,7 @@ public class TransactionEntity : AbSqlBean, TransactionEntityInterface
             values.add(userName);
             values.addAllList(paymentTransactionInterface.toVector());
             Calendar calendar = Calendar.getInstance();
-            string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+            string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
             values.add(time);
             values.add(time);
             base.insert(values);

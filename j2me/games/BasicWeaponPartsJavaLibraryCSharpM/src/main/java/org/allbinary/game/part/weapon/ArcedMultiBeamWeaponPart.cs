@@ -43,14 +43,14 @@ public class ArcedMultiBeamWeaponPart : BasicWeaponPart
     // throws Exception
     public override void processScore(AllBinaryLayerManager allbinaryLayerManager, short angle, short otherAngle, WeaponProperties weaponProperties, ScoreableInterface scoreableInterface)
     {
-        short increment = ((short) ((this.total - 1) / this.TOTAL_ANGLE));
-        short minAngle = ((short) (((int) angle) - ((((int) increment) * this.total) >> 1)));
+        short increment = unchecked(((short) ((this.total - 1) / this.TOTAL_ANGLE)));
+        short minAngle = unchecked(((short) (unchecked(((int) angle)) - ((unchecked(((int) increment)) * this.total) >> 1))));
         int next = 0;
         WeaponLayer weaponLayer = null;
         for (int index = 0; index < this.total; index++) {
-            weaponLayer = this.weaponLayerCircularStaticPool.getInstanceWeaponLayer(this.getOwnerLayerInterface(), this.relativeRelationship.getX(), this.relativeRelationship.getY(), 0, (minAngle + increment), ((int) otherAngle), weaponProperties, scoreableInterface);
+            weaponLayer = this.weaponLayerCircularStaticPool.getInstanceWeaponLayer(this.getOwnerLayerInterface(), this.relativeRelationship.getX(), this.relativeRelationship.getY(), 0, (minAngle + increment), unchecked(((int) otherAngle)), weaponProperties, scoreableInterface);
             allbinaryLayerManager.append(weaponLayer);
-            next += ((int) increment);
+            next += unchecked(((int) increment));
         }
     }
 

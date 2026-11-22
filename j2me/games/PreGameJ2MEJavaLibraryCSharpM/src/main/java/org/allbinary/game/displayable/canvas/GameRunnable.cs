@@ -27,7 +27,7 @@ public class GameRunnable : global::java.lang.Runnable
     public long waitInMillis;
     public GameRunnable()
     {
-        this.waitInMillis = ((long) this.WAIT);
+        this.waitInMillis = unchecked(((long) this.WAIT));
     }
 
     public virtual void run()

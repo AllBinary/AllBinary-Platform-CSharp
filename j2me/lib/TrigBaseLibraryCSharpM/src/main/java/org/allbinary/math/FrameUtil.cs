@@ -36,7 +36,7 @@ public class FrameUtil
 
     public virtual int getFrameForAngle(short angle, int angleIncrement)
     {
-        return this.adjustAngleToFrameAngle(((int) angle)) / angleIncrement;
+        return this.adjustAngleToFrameAngle(unchecked(((int) angle))) / angleIncrement;
     }
 
     public virtual int getFrameAngle(int frame, int angleIncrement)

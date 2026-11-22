@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using EventListener = java.util.EventListener;
+using EventListener = java.util.EventListener;
 
 namespace org.allbinary.logic.communication.smtp.@event;
 

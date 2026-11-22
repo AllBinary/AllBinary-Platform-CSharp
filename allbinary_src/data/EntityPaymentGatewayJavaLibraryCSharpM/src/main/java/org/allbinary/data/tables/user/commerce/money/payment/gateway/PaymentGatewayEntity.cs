@@ -65,7 +65,7 @@ public class PaymentGatewayEntity : AbSqlBean, PaymentGatewayEntityInterface
             vector.add(new PaymentGatewayIdGenerator().getNext());
             vector.addAllList(new PaymentGatewayEncryptedMapping(paymentGatewayInterface).toVector());
             Calendar calendar = Calendar.getInstance();
-            string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+            string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
             vector.add(time);
             vector.add(time);
             base.insert(vector);
@@ -83,7 +83,7 @@ public class PaymentGatewayEntity : AbSqlBean, PaymentGatewayEntityInterface
     {
         try {
             Calendar calendar = Calendar.getInstance();
-            string time = new string((calendar.getTimeInMillis().ToString()).ToCharArray());
+            string time = new string((((long)(calendar.getTimeInMillis())).ToString()).ToCharArray());
             paymentGatewayInterface.setLastModified(time);
             HashMap<object, object> whereKeyValuePairs = StdUtil.getInstance().createHashMap();
             whereKeyValuePairs.put(StoreFrontData.getInstance().NAME.ToString(), paymentGatewayInterface.getStoreName());

@@ -80,14 +80,14 @@ public class BasketReview
         int size = itemArray.Length;
         for (int index = 0; index < size; index++) {
             Item item = ((Item) itemArray[index]);
-            weightFloat += global::java.lang.JavaNumber.floatValue(item.getWeight());
+            weightFloat += global::java.lang.JavaNumber.floatValue(((float)(item.getWeight())));
         }
-        return weightFloat.ToString();
+        return ((float)(weightFloat)).ToString();
     }
 
     public virtual int? getNumberOfItems()
     {
-        return this.items.size();
+        return ((int)(this.items.size()));
     }
 
     public virtual Set<object> getIds()
@@ -109,10 +109,10 @@ public class BasketReview
         for (int index = 0; index < size; index++) {
             Item item = ((Item) itemArray[index]);
             if (item.getId().compareTo(id) == 0) {
-                return item.getNumber();
+                return ((int)(item.getNumber()));
             }
         }
-        return 0;
+        return ((int)(0));
     }
 
     // throws Exception

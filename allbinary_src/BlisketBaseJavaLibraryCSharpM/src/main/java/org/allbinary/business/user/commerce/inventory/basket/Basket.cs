@@ -40,7 +40,7 @@ public class Basket : BasketInterface, Serializable
             string oldNumStr = new string((((string) this.items.get(id))).ToCharArray());
             int? oldNumInt = int.Parse((oldNumStr).ToString());
             int? numInt = int.Parse((num).ToString());
-            int? newNumInt = ((int) oldNumInt) + ((int) numInt);
+            int? newNumInt = ((int)(((int) oldNumInt) + ((int) numInt)));
             this.items.put(id, newNumInt.ToString());
         } else {
             this.items.put(id, num);
@@ -73,8 +73,8 @@ public class Basket : BasketInterface, Serializable
             int size = itemArray.Length;
             for (int index = 0; index < size; index++) {
                 product = new string((((string) itemArray[index])).ToCharArray());
-                weightFloat = new InventoryEntity().getWeight(product);
-                weightFloat = ((float) getNumberOf(product)) * ((float) weightFloat);
+                weightFloat = ((float)(new InventoryEntity().getWeight(product)));
+                weightFloat = ((float)(((float) getNumberOf(product)) * ((float) weightFloat)));
                 totalWeight.add(weightFloat.ToString());
             }
         }
@@ -83,7 +83,7 @@ public class Basket : BasketInterface, Serializable
 
     public virtual int? getNumberOfItems()
     {
-        return this.items.size();
+        return ((int)(this.items.size()));
     }
 
     public virtual Set<object> getIds()

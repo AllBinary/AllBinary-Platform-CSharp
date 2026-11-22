@@ -91,7 +91,7 @@ public class RTSLayerUtil
     {
         long cost = (weaponProperties.getDamage() + weaponProperties.getRange() + ((this.MAX_RELOAD_TIME / weaponProperties.getReloadTime()) >> 1));
         cost = this.getCostExponential(cost);
-        return ((int) cost);
+        return unchecked(((int) cost));
     }
 
     public virtual int getCost(RTSLayer rtsLayer)

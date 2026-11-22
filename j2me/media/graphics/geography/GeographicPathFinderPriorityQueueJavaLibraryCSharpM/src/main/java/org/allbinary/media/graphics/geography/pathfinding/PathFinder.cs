@@ -56,7 +56,7 @@ public class PathFinder : GeographicPathFinderBase
             for (int row = 0; row < sizeY; row++) {
                 GeographicMapCellType geographicMapCellType = geographicMapInterface.getCellTypeAt(basicGeographicMapCellPositionFactory.getAt(column, row));
                 RaceTrackGeographicMapCellType raceTrackGeographicMapCellType = ((RaceTrackGeographicMapCellType) geographicMapCellType);
-                node = new PathFindingNodeCost(NullUtil.getInstance().NULL_OBJECT, basicGeographicMapCellPositionFactory.getAt(column, row), new PathFindingNodeCostInfo(((long) raceTrackGeographicMapCellType.getTravelCost()), ((long) (-1))));
+                node = new PathFindingNodeCost(NullUtil.getInstance().NULL_OBJECT, basicGeographicMapCellPositionFactory.getAt(column, row), new PathFindingNodeCostInfo(((long) raceTrackGeographicMapCellType.getTravelCost()), unchecked(((long) (-1)))));
                 this.costArray[column][row] = node;
             }
         }
