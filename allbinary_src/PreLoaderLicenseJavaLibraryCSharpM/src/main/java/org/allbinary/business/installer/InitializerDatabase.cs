@@ -55,7 +55,7 @@ public class InitializerDatabase
         for (int index = 0; index < size; index++) {
             string key = ((string) keyArray[index]);
             string[] values = ((string[]) map.get(key));
-            hashMap.put(new string((key).ToCharArray()), new string((values[0]).ToCharArray()));
+            hashMap.put(new string((key).ToCharArray()), global::System.JavaStringExtensions.copyString(values[0]));
             stringBuffer.delete(0, stringBuffer.length());
             stringBuffer.append("key: ");
             stringBuffer.append(key);
@@ -99,7 +99,7 @@ public class InitializerDatabase
     private bool isJdbcDriverValid(string jdbcDriverClassPathString)
     {
         try {
-            Class.forName(jdbcDriverClassPathString).newInstance();
+            global::System.JavaDesktopReflection.forName(jdbcDriverClassPathString).newInstance();
             return true;
         } catch (Exception e) {
             if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().PRELOADERERROR)) {

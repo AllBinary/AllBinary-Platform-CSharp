@@ -39,7 +39,7 @@ public class Item : BasicItem, OrderItemInterface
     private string special = null;
     public Item(HashMap<object, object> itemHashMap) : base(itemHashMap)
     {
-        // base(itemHashMap) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setData(itemHashMap);
     }
 

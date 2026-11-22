@@ -34,7 +34,7 @@ public class NoMenuInputProcessor : BasicMenuInputProcessor
 
     private NoMenuInputProcessor() : base(BasicArrayListUtil.getInstance().getImmutableInstance(), -1, NullCanvas.NULL_CANVAS)
     {
-        // base(BasicArrayListUtil.getInstance().getImmutableInstance(), -1, NullCanvas.NULL_CANVAS) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]

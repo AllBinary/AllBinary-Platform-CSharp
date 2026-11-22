@@ -32,7 +32,7 @@ public class DateRangeOrderHistoryTag : StoreValidationTransformTag
     private string status = null;
     public DateRangeOrderHistoryTag() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void setStatus(string value)

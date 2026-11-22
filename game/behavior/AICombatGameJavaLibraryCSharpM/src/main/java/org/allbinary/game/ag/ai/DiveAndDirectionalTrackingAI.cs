@@ -70,7 +70,7 @@ public class DiveAndDirectionalTrackingAI : BasicAI, TrackingEventListenerInterf
     private Direction lastDirection = DirectionFactory.getInstance().NO_DIRECTION;
     public DiveAndDirectionalTrackingAI(AllBinaryLayer ownerLayerInterface, ArtificialIntelligenceInterface artificialIntelligenceInterface, GameInput gameInput, Visitor visitor) : base(ownerLayerInterface, gameInput)
     {
-        // base(ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.aiVistor = visitor;
         this.artificialIntelligenceInterface = artificialIntelligenceInterface;
         DirectionalCompositeInterface directionalCompositeInterface = ((DirectionalCompositeInterface) this.getOwnerLayerInterface());

@@ -34,7 +34,7 @@ public class WorkFlowView : HttpStoreComponentView, DomNodeInterface
     public WorkFlowInterface workFlowInterface = null;
     public WorkFlowView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual Node toXmlNode(Document document)

@@ -27,7 +27,7 @@ public class GraphicsException : Exception
     private readonly GuiLog guiLog = GuiLog.getInstance();
     public GraphicsException(string msg, object obj, string method) : base(msg)
     {
-        // base(msg) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         try {
             this.guiLog.showDialog(msg);
             this.logUtil.put(msg, obj, method, this);
@@ -37,7 +37,7 @@ public class GraphicsException : Exception
 
     public GraphicsException(string msg, string className, string method) : base(msg)
     {
-        // base(msg) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         try {
             this.guiLog.showDialog(msg);
             this.logUtil.put(msg, className, method, this);

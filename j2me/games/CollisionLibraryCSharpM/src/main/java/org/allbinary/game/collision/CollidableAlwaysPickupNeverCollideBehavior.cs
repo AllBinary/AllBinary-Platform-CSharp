@@ -24,7 +24,7 @@ public class CollidableAlwaysPickupNeverCollideBehavior : CollidableNeverCollide
 {
     public CollidableAlwaysPickupNeverCollideBehavior() : base(true)
     {
-        // base(true) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override CollisionType getCollisionTypeWith(AllBinaryLayer layerInterface)

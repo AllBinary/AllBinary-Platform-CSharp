@@ -34,7 +34,7 @@ public class TransformTag : TransformInfoTag
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public TransformTag() : base(new ViewHelperFactory())
     {
-        // base(new ViewHelperFactory()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }
@@ -42,7 +42,7 @@ public class TransformTag : TransformInfoTag
 
     public TransformTag(TagHelperFactoryInterface tagHelperFactoryInterface) : base(tagHelperFactoryInterface)
     {
-        // base(tagHelperFactoryInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }

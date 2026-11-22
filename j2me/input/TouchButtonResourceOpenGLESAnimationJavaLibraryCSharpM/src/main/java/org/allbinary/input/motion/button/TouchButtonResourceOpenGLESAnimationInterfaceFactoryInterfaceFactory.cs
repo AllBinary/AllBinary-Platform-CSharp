@@ -26,7 +26,7 @@ public class TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactor
 {
     public TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory() : base("OpenGL TouchButton Animations")
     {
-        // base("OpenGL TouchButton Animations") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

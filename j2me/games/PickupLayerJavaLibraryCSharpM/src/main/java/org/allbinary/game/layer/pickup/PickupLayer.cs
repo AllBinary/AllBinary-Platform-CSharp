@@ -38,7 +38,7 @@ public class PickupLayer : MultiPlayerGameLayer, PickedUpLayerInterface, Pickupa
     private Animation animationInterface = NullAnimationFactory.getFactoryInstance().getInstance(0);
     public PickupLayer(string name, RemoteInfo remoteInfo, int total, PickedUpLayerInterfaceFactoryInterface pickedUpLayerInterfaceFactoryInterface, Animation animationInterface, Rectangle rectangle, ViewPositionBase viewPosition) : base(remoteInfo, BasicGroupFactory.getInstance().NONE_ARRAY, name, rectangle, viewPosition)
     {
-        // base(remoteInfo, BasicGroupFactory.getInstance().NONE_ARRAY, name, rectangle, viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setCollidableInferface(CollidableAlwaysPickupNeverCollideBehaviorFactory.getInstance().createBehavior());
         this.setLayerWidth(10);
         this.setLayerHeight(10);

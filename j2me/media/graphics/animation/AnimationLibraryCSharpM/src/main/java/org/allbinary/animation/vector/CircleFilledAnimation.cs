@@ -29,7 +29,7 @@ public class CircleFilledAnimation : Animation, ColorCompositeInterface
     private int height;
     public CircleFilledAnimation(int width, int height, BasicColor basicColor) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.width = width;
         this.height = height;
         this.setBasicColorP(basicColor);

@@ -28,7 +28,7 @@ public class UpgradableWideRTSLayerPaintable : RTSLayerCompositePaintable
     private string cost = StringUtil.getInstance().EMPTY_STRING;
     public UpgradableWideRTSLayerPaintable(UpgradableRTSLayerHudPaintable upgradableRTSLayerHudPaintable) : base(upgradableRTSLayerHudPaintable)
     {
-        // base(upgradableRTSLayerHudPaintable) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void update(RTSLayer rtsLayer)

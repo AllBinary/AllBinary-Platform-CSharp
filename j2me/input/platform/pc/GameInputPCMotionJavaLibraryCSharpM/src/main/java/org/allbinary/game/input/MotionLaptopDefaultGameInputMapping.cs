@@ -28,7 +28,7 @@ public class MotionLaptopDefaultGameInputMapping : PersistentInputMapping
 {
     public MotionLaptopDefaultGameInputMapping() : base(GamePersistanceStrings.getInstance().DEFAULT_INPUT_MAPPING_RECORD_ID)
     {
-        // base(GamePersistanceStrings.getInstance().DEFAULT_INPUT_MAPPING_RECORD_ID) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         PCKeyFactory pcKeyFactory = PCKeyFactory.getInstance();
         InputToGameKeyMapping inputToGameKeyMapping = this.getInputMapping();
         GameKeyFactory gameKeyFactory = GameKeyFactory.getInstance();

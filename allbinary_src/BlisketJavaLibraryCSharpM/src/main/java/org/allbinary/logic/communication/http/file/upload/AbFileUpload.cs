@@ -30,7 +30,7 @@ public class AbFileUpload : FileUpload
 {
     public AbFileUpload(FileItemFactory fileItemFactory) : base(fileItemFactory)
     {
-        // base(fileItemFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws FileUploadException, IOException

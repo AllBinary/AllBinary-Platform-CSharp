@@ -29,7 +29,7 @@ public class PaymentGatewayViewAbstract : TransformInfoHttpComposite
     private PaymentGatewayPrimaryKey paymentGatewayPrimaryKey = null;
     public PaymentGatewayViewAbstract(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.getFormData(((HttpServletRequest) this.getPageContext().getRequest()));
     }
 

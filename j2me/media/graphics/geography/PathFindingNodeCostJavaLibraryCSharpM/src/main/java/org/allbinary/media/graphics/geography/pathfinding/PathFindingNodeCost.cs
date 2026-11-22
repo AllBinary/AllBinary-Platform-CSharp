@@ -30,7 +30,7 @@ public class PathFindingNodeCost : PathFindingNode, global::java.lang.Comparable
     public PathFindingNodeCostInfo pathFindingNodeCostInfoP;
     public PathFindingNodeCost(object parent, GeographicMapCellPosition geographicMapCellPosition, PathFindingNodeCostInfo pathFindingNodeCostInfo) : base(parent, geographicMapCellPosition)
     {
-        // base(parent, geographicMapCellPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.pathFindingNodeCostInfoP = pathFindingNodeCostInfo;
         if (this.geographicMapCellPosition == null) {
             throw new Exception("No GeographicMapCellPosition");

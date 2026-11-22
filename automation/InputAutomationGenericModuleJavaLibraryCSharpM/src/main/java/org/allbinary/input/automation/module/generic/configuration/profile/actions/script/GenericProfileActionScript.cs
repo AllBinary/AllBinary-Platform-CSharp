@@ -44,7 +44,7 @@ public class GenericProfileActionScript : DefaultMutableTreeNode, ProfileActionS
     private const string NAME = "Root";
     public GenericProfileActionScript(GenericProfileActionJPanel genericProfileActionJPanel, Node node) : base(NAME)
     {
-        // base(NAME) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.genericProfileActionJPanel = genericProfileActionJPanel;
         this.setProfileActionConditionInterfaceVector(new BasicArrayListD());
         Node actionScriptNode = DomSearchHelper.getNode(GenericProfileActionData.SCRIPT, node.getChildNodes());

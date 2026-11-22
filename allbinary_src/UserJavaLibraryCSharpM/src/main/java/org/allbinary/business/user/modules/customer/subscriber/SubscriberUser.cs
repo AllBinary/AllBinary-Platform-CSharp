@@ -28,13 +28,13 @@ public class SubscriberUser : User
     private Subscription subscription;
     public SubscriberUser() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.subscription = new Subscription();
     }
 
     public SubscriberUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
-        // base(userHashMap) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.subscription = new Subscription();
     }
 

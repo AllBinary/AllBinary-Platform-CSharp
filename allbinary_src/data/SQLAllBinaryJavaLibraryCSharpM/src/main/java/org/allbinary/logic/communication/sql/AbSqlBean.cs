@@ -34,7 +34,7 @@ public class AbSqlBean : AbSqlRow
     private readonly string METHOD_IS_SUBSET_OF_ENTRY = "isSubsetOfEntry";
     public AbSqlBean(DbConnectionInfo databaseConnectionInfoInterface) : base(databaseConnectionInfoInterface)
     {
-        // base(databaseConnectionInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual string getField(string key, string value, string requestedField)
@@ -91,7 +91,7 @@ public class AbSqlBean : AbSqlRow
             string value = null;
             for (int i = 0; i < size; i++) {
                 key = ((string) keyArray[i]);
-                value = new string((((string) keysAndValues.get(key))).ToCharArray());
+                value = global::System.JavaStringExtensions.copyString(((string) keysAndValues.get(key)));
                 stringBuffer.append(key);
                 stringBuffer.append(this.sqlStrings.EQUAL_QUOTE);
                 stringBuffer.append(value);

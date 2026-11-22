@@ -25,7 +25,7 @@ public class SpecialDemoGameMidlet : DemoGameMidlet
 {
     public SpecialDemoGameMidlet(ClientInformationFactory clientInformationFactory, LicenseLoadingType licenseLoadingType, LicensedDemoSetupFactory demoSetupFactory, LicenseCheckRunnableFactory licenseCheckRunnableFactory) : base(clientInformationFactory)
     {
-        // base(clientInformationFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void initView()

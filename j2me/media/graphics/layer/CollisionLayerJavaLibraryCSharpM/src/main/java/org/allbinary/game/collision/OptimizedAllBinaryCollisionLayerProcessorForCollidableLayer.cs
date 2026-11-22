@@ -28,7 +28,7 @@ public class OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer : Layer
 {
     public OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer() : base(new OptimizedAllBinaryCollisionLayerManager())
     {
-        // base(new OptimizedAllBinaryCollisionLayerManager()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

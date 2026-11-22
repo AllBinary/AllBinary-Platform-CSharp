@@ -31,7 +31,7 @@ public class CategoryPropertiesValidationView : CategoryPropertiesView, Validati
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public CategoryPropertiesValidationView(CategoryPropertiesInterface categoryPropertiesInterface) : base(categoryPropertiesInterface)
     {
-        // base(categoryPropertiesInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

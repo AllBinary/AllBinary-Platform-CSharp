@@ -42,7 +42,7 @@ public class EditValidationView : DownloadableInventoryItemView, ValidationCompo
     private string downloadItemId = null;
     public EditValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface, StringUtil.getInstance().EMPTY_STRING)
     {
-        // base(transformInfoInterface, StringUtil.getInstance().EMPTY_STRING) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.getFormData();
     }
 

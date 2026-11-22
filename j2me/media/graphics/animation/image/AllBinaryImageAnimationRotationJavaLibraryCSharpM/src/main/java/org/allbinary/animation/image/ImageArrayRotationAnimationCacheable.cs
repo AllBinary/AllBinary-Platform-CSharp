@@ -27,7 +27,7 @@ public class ImageArrayRotationAnimationCacheable : AdjustedImageArrayRotationAn
 {
     public ImageArrayRotationAnimationCacheable(object anyType, AnimationBehavior animationBehavior) : base((((ImageArrayRotationAnimationInfo) anyType)).getImageArray(), (((ImageArrayRotationAnimationInfo) anyType)).getAngleInfoP(), (((ImageArrayRotationAnimationInfo) anyType)).getTotalAngle(), (((ImageArrayRotationAnimationInfo) anyType)).getDx(), (((ImageArrayRotationAnimationInfo) anyType)).getDy(), animationBehavior)
     {
-        // base((((ImageArrayRotationAnimationInfo) anyType)).getImageArray(), (((ImageArrayRotationAnimationInfo) anyType)).getAngleInfoP(), (((ImageArrayRotationAnimationInfo) anyType)).getTotalAngle(), (((ImageArrayRotationAnimationInfo) anyType)).getDx(), (((ImageArrayRotationAnimationInfo) anyType)).getDy(), animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual object getKey()

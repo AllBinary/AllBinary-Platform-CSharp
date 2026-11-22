@@ -35,7 +35,7 @@ public class DemoGameMidlet : GameMidlet
 {
     public DemoGameMidlet(ClientInformationFactory clientInformationFactory) : base(clientInformationFactory)
     {
-        // base(clientInformationFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

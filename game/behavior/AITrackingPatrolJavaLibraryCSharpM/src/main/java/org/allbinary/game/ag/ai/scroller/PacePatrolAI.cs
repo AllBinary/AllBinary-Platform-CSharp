@@ -43,7 +43,7 @@ public class PacePatrolAI : BasePatrolAI, TrackingEventListenerInterface
     public bool isFollowLimitedByTerrain = false;
     public PacePatrolAI(ABHashtable<object, object> hashtable, AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(hashtable, ownerLayerInterface, gameInput)
     {
-        // base(hashtable, ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         TrackingEventHandler.getInstance().addListenerInterface(this);
         this.trackingList = new BasicArrayListD();
     }

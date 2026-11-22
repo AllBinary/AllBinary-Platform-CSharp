@@ -44,7 +44,7 @@ public class LicenseRegistrationTextBox : CustomTextBox
     private Paintable paintable = NullPaintable.getInstance();
     public LicenseRegistrationTextBox(CommandListener cmdListener, BasicColor backgrounBasicColor, BasicColor foregroundBasicColor) : base(cmdListener, "Enter Registration Code:", StringUtil.getInstance().EMPTY_STRING, 60, TextField.ANY, Font.getDefaultFont(), backgrounBasicColor, foregroundBasicColor)
     {
-        // base(cmdListener, "Enter Registration Code:", StringUtil.getInstance().EMPTY_STRING, 60, TextField.ANY, Font.getDefaultFont(), backgrounBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void initCommands(CommandListener cmdListener)

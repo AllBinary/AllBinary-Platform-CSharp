@@ -45,7 +45,7 @@ public class AllBinaryLayer : Layer, LayerInterface
     public AllBinaryLayer(string name, Rectangle rectangle, ViewPositionBase viewPosition) : base(rectangle.getWidth(), rectangle.getHeight())
     {
         this.viewPositionEvent = new ViewPositionEvent(this);
-        // base(rectangle.getWidth(), rectangle.getHeight()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         string localName = null;
         localName = new StringMaker().append(name).append(CommonSeps.getInstance().COLON).append(Convert.ToString(TsUtil.getInstance().hashCode(this), 16)).ToString();
         this.name = localName;

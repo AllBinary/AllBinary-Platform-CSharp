@@ -47,7 +47,7 @@ public class CollidableCompositeLayer : AllBinaryGameLayer, CollidableInterfaceC
     private CollidableBaseBehavior collidableInferface = CollidableNeverCollideBehaviorFactory.getInstance().createBehavior();
     public CollidableCompositeLayer(string name, Rectangle layerInfo, ViewPositionBase viewPosition, CollidableBaseBehaviorFactory collidableBaseBehaviorFactory) : base(name, layerInfo, viewPosition)
     {
-        // base(name, layerInfo, viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (collidableBaseBehaviorFactory != CollidableNeverCollideBehaviorFactory.getInstance()) {
             this.setCollidableInferface(collidableBaseBehaviorFactory.createBehavior());
         }

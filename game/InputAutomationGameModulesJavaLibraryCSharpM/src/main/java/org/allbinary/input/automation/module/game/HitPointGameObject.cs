@@ -31,7 +31,7 @@ public class HitPointGameObject : MeteredGameObject, HitPointGameObjectInterface
     private readonly string IS_CLOSE_DEATH_LABEL = "isCloseDeath: ";
     public HitPointGameObject(BufferedImage[] bufferedImage, int? minX, int? maxX, int? y) : base(bufferedImage, minX, maxX, y)
     {
-        // base(bufferedImage, minX, maxX, y) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (global::java.lang.JavaNumber.doubleValue(this.getRatios()[bufferedImage.Length - 1]) < 1.0F) {
             this.setDamaged(true);
         } else {

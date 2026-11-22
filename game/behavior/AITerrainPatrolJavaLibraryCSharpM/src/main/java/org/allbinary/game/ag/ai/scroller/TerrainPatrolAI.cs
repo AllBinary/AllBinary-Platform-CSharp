@@ -38,7 +38,7 @@ public class TerrainPatrolAI : PacePatrolAI
     public TerrainPatrolAI(ABHashtable<object, object> hashtable, AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(hashtable, ownerLayerInterface, gameInput)
     {
         this.CLIFF = new BasicTerrainInfo(this.DOWN);
-        // base(hashtable, ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         TerrainEventHandler.getInstance(ownerLayerInterface).addListener(this.terrainEventListener);
         this.terrainEventListener.onTerrainEvent(TerrainEventCircularStaticPool.getInstance().getNext(this.CLIFF));
     }

@@ -32,7 +32,7 @@ public class AllBinaryLayerManager : LayerManager
     {
         this.createLayerManagerEvent = new LayerManagerEvent(this, this.layerManagerEventHandler.CREATE);
         this.deleteLayerManagerEvent = new LayerManagerEvent(this, this.layerManagerEventHandler.DELETE);
-        // base(LayerManagerNoDebug.getInstance()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual LayerProcessor[] getLayerProcessorArray()

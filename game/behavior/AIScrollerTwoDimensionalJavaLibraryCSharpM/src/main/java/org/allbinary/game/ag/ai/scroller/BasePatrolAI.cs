@@ -41,7 +41,7 @@ public class BasePatrolAI : BasicAI
     public int keyDirection = Canvas.RIGHT;
     public BasePatrolAI(ABHashtable<object, object> hashtable, AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(ownerLayerInterface, gameInput)
     {
-        // base(ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.maxDistance = ((int?) hashtable.get(BasePatrolAI.MAX_DISTANCE));
         this.currentDistance = ((int) this.maxDistance);
     }

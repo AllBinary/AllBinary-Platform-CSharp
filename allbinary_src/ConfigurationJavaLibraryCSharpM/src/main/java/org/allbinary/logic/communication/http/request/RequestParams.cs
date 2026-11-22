@@ -81,7 +81,7 @@ public class RequestParams
                 stringBuffer.append(this.VALUE);
                 stringBuffer.append(values[0]);
                 this.logUtil.putF(stringBuffer.ToString(), this, "toXmlNode(document)");
-                node.appendChild(ModDomHelper.createNameValueNodes(document, RequestData.PARAMETER, new string((key).ToCharArray()), new string((values[0]).ToCharArray())));
+                node.appendChild(ModDomHelper.createNameValueNodes(document, RequestData.PARAMETER, new string((key).ToCharArray()), global::System.JavaStringExtensions.copyString(values[0])));
             }
             return node;
         } catch (Exception e) {
@@ -101,7 +101,7 @@ public class RequestParams
         for (int i = 0; i < size; i++) {
             string key = ((string) keyArray[i]);
             string[] values = ((string[]) this.map.get(key));
-            hashMap.put(new string((key).ToCharArray()), new string((values[0]).ToCharArray()));
+            hashMap.put(new string((key).ToCharArray()), global::System.JavaStringExtensions.copyString(values[0]));
         }
         stringBuffer.delete(0, stringBuffer.length());
         stringBuffer.append("RequestParams: ");

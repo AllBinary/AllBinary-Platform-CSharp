@@ -36,7 +36,7 @@ public class ValidationTransformTag : TransformTag
     private bool logic;
     public ValidationTransformTag() : base(new ValidatedViewHelperFactory())
     {
-        // base(new ValidatedViewHelperFactory()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logic = true;
     }
 
@@ -56,7 +56,7 @@ public class ValidationTransformTag : TransformTag
     {
         try {
             Type helperClass = this.getHelper().GetType();
-            Method method = helperClass.getMethod(commonStrings.IS_VALID, null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod(commonStrings.IS_VALID, null);
             bool? result = ((bool?) method.invoke(this.getHelper(), null));
             return result.Value;
         } catch (Exception e) {
@@ -72,7 +72,7 @@ public class ValidationTransformTag : TransformTag
     {
         try {
             Type addressHelperClass = this.getHelper().GetType();
-            Method method = addressHelperClass.getMethod("validationInfo", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("validationInfo", null);
             string result = ((string) method.invoke(this.getHelper(), null));
             return result;
         } catch (Exception e) {

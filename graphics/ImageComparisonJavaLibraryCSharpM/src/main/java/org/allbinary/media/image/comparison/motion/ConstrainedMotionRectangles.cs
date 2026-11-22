@@ -32,7 +32,7 @@ public class ConstrainedMotionRectangles : MotionRectangles
     private MotionRectangleConstraintsInterface motionRectangleConstraintsInterface = null;
     public ConstrainedMotionRectangles(MotionRectangleConstraintsInterface motionRectangleConstraintsInterface, MotionRectangles motionRectangles) : base(NAME, motionRectangles.getImageComparisonResult())
     {
-        // base(NAME, motionRectangles.getImageComparisonResult()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setMotionRectangleConstraintsInterface(motionRectangleConstraintsInterface);
     }
 

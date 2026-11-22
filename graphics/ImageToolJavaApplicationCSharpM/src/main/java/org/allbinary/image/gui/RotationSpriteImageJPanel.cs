@@ -50,17 +50,14 @@ public class RotationSpriteImageJPanel : JPanel, ImageProcessorInputCompositeInt
     private BufferedImage result = null;
     public RotationSpriteImageJPanel(ImageProcessorInput imageProcessorInput) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initComponents();
         this.imageProcessorInput = imageProcessorInput;
     }
 
     public virtual void process()
     {
-        new global::org.allbinary.thread.NullThread()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        new __SwtClosure_N66468((__swtSelf_N66468) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 try {
                     BufferedImage[] generatedBufferedImageArray = null;
@@ -77,19 +74,16 @@ public class RotationSpriteImageJPanel : JPanel, ImageProcessorInputCompositeInt
                             string filePath = file.getAbsolutePath();
                             int extensionIndex = filePath.IndexOf(imageStrings.PNG_EXTENSION);
                             filePath = new StringMaker().append(filePath.Substring(0, (extensionIndex) - (0))).append(CommonSeps.getInstance().UNDERSCORE).append("sprite").append(imageStrings.PNG_EXTENSION).ToString();
-                            logUtil.putF("New File Path: " + filePath, this, commonStrings.RUN);
+                            logUtil.putF("New File Path: " + filePath, __swtSelf_N66468, commonStrings.RUN);
                             file = new File(filePath);
                         }
                         bool isWritten = ImageIO.write(((RenderedImage) this.result), imageStrings.PNG, file);
-                        logUtil.putF("File: " + file + " Wrote: " + isWritten, this, commonStrings.RUN);
+                        logUtil.putF("File: " + file + " Wrote: " + isWritten, __swtSelf_N66468, commonStrings.RUN);
                     }
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N66468, commonStrings.RUN, e);
                 }
-            }
-
-#endif
-.start();
+            }).start();
     }
 
     private void initComponents()
@@ -184,6 +178,18 @@ public class RotationSpriteImageJPanel : JPanel, ImageProcessorInputCompositeInt
     public virtual void setImageProcessorInput(ImageProcessorInput imageProcessorInput)
     {
         this.imageProcessorInput = imageProcessorInput;
+    }
+
+    private sealed class __SwtClosure_N66468 : global::org.allbinary.thread.NullThread
+    {
+        private readonly global::System.Action<__SwtClosure_N66468> callback1;
+
+        public __SwtClosure_N66468(global::System.Action<__SwtClosure_N66468> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
     }
 
 }

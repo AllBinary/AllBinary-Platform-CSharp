@@ -23,7 +23,7 @@ public class HtmlPostForm : HtmlForm
 {
     public HtmlPostForm(string action) : base(action)
     {
-        // base(action) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         setPost();
     }
 

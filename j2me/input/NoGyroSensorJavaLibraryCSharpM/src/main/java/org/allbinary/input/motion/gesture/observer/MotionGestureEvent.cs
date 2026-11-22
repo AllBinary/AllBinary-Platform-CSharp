@@ -36,7 +36,7 @@ public class MotionGestureEvent : AllBinaryEventObject
     private GPoint currentPoint = PointFactory.getInstance().ZERO_ZERO;
     public MotionGestureEvent(object source, int id, MotionGestureInput motionGesture) : base(source)
     {
-        // base(source) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.id = id;
         this.setMotionGesture(motionGesture);
     }

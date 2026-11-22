@@ -40,7 +40,7 @@ public class NumberStringHud : BasicHud, PaintableInterface
     private int valueTotalDigits = 0;
     public NumberStringHud(string prependString, int max, int location, int direction, int bufferZone, BasicColor basicColor) : base(location, direction, bufferZone, basicColor)
     {
-        // base(location, direction, bufferZone, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.prependString = prependString;
         this.PREPEND_STRING = prependString.ToCharArray();
         this.valueString = PrimitiveLongSingleton.getInstance().NUMBER_CHAR_ARRAYS[0];

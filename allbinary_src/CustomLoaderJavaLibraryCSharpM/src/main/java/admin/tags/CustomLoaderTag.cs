@@ -59,7 +59,7 @@ public class CustomLoaderTag : CustomTagSupport
             Type helperClass = anyType.GetType();
             Type[] methodParams = new Type[] { this.webappPath.GetType() };
             object[] methodArgs = new object[] { this.webappPath };
-            Method setMethod = helperClass.getMethod("setWebappPath", methodParams);
+            global::System.Reflection.MethodInfo setMethod = helperClass.getMethod("setWebappPath", methodParams);
             setMethod.invoke(anyType, methodArgs);
         } catch (LicensingException e) {
             throw e;

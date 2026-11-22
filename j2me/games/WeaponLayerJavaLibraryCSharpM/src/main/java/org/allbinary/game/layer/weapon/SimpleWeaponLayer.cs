@@ -37,7 +37,7 @@ public class SimpleWeaponLayer : WeaponLayer
 
     public SimpleWeaponLayer(string name, RemoteInfo remoteInfo, int multiPlayerType, Movement movement, Animation animationInterface, Animation destroyedAnimationInterface, Rectangle rectangle, ViewPositionBase viewPosition) : base(name, remoteInfo, multiPlayerType, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition)
     {
-        // base(name, remoteInfo, multiPlayerType, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setCollidableInferface(new CollidableWeaponBehavior(true));
     }
 

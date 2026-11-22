@@ -38,7 +38,7 @@ public class PermissionItemsEntity : AbSqlBean, PermissionItemsEntityInterface
     public readonly string tableName = "permissionitems";
     public PermissionItemsEntity() : base(new InventoryDbInitInfo())
     {
-        // base(new InventoryDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

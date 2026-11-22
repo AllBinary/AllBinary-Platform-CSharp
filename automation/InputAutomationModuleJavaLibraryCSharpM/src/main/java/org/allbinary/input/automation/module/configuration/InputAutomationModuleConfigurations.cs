@@ -19,7 +19,6 @@ using System.Linq;
 using File = java.io.File;
 using FileInputStream = java.io.FileInputStream;
 using java.util;
-//using java.util;
 using DomDocumentHelper = org.allbinary.data.tree.dom.document.DomDocumentHelper;
 using InputAutomationModuleData = org.allbinary.input.automation.module.InputAutomationModuleData;
 using NewInputAutomationModulesData = org.allbinary.input.automation.module.NewInputAutomationModulesData;

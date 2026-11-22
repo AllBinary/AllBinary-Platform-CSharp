@@ -30,7 +30,7 @@ public class StaticTileLayerIntoPositionViewPosition : ViewPosition
     public static AllBinaryLayer layer = AllBinaryLayer.NULL_ALLBINARY_LAYER;
     public StaticTileLayerIntoPositionViewPosition() : base(0, 0, 0)
     {
-        // base(0, 0, 0) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override int getX()

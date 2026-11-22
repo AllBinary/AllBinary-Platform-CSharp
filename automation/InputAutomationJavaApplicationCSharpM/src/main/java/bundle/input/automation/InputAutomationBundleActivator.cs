@@ -47,7 +47,7 @@ public class InputAutomationBundleActivator : BundleActivator, InputAutomationBu
     {
         try {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.START);
-            this.bundleContext = bundleContext;
+            InputAutomationBundleActivator.bundleContext = bundleContext;
             InputAutomationBundleActivator.moduleManagementThread = new global::org.allbinary.thread.NullThread(new InputAutomationNewBundleRunnable(this));
             InputAutomationBundleActivator.moduleManagementThread.start();
             InputAutomationJFrame.create(this);

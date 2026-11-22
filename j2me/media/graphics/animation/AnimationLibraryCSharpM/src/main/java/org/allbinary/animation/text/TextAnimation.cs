@@ -45,7 +45,7 @@ public class TextAnimation : IndexedAnimation, UpdateMyFontInterface
     {
         this.updateMyFontProcessor = new UpdateMyFontProcessor(this);
         this.myFontProcessor = this.updateMyFontProcessor;
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setText(text);
     }
 

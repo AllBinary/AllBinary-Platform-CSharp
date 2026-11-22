@@ -58,7 +58,7 @@ public class WorkFlowRequestHelper : ModifyTable
                 if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {
                     this.logUtil.put(this.commonStrings.EXCEPTION, this, "delete()", e);
                 }
-                throw new Exception(e);
+                throw new Exception((e).Message, e);
             } catch (Exception e2) {
                 string error = "Failed to get data from workflowinterface to set error string";
                 if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLTAGSERROR)) {

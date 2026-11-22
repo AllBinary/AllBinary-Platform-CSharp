@@ -23,7 +23,7 @@ public class TestClientInformation : AbeClientInformation
 {
     public TestClientInformation() : base("Test App Name", "0.0.1", "Test App Name 0.0.1", "TA")
     {
-        // base("Test App Name", "0.0.1", "Test App Name 0.0.1", "TA") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

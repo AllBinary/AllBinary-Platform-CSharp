@@ -61,7 +61,7 @@ public class SelectedRTSLayersPlayerGameInput : PlayerGameInput
     private readonly GameNotificationEvent downgradeGameNotificationEvent;
     public SelectedRTSLayersPlayerGameInput(RTSLayerInfoPaintable towerInfoPaintable, RTSPlayerLayerInterface rtsPlayerLayerInterface, BasicArrayList list, int playerInputId, SelectRTSLayerVisitorFactoryInterface selectRTSLayerVisitorFactoryInterface) : base(list, new BasicArrayListD(), playerInputId)
     {
-        // base(list, new BasicArrayListD(), playerInputId) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initInputProcessors();
         this.rtsPlayerLayerInterface = rtsPlayerLayerInterface;
         this.list = list;

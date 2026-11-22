@@ -46,9 +46,9 @@
     <ProjectReference Include="..\..\..\..\..\..\graphics\opengl\OpenGLNoneOtherJavaLibraryCSharpM\OpenGLNoneOtherJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="OpenGLNoneOtherJavaLibraryCSharp" />
     <ProjectReference Include="..\..\..\ImageCacheJ2MEJavaLibraryCSharpM\ImageCacheJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\games\GameConfigurationJavaLibraryCSharpM\GameConfigurationJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\2_0_4\microemu-midpCSharp\microemu-midp-for-polyglotCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\2_0_4\microemu-javase-swt\microemu-javase-swtCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\..\..\..\working_thirdpartycsharp\graphics\swt\org.eclipse.swt.win32.win32.x86_64\org.eclipse.swt.win32.win32.x86_64CSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\..\..\..\AllBinary-Platform-Integrationcsharp\embedded\j2me\microemulator\3.0.0\microemulator\microemu-midpCSharp\microemu-midpCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\..\..\..\AllBinary-Platform-Integrationcsharp\embedded\j2me\microemulator\3.0.0\microemulator\microemu-javase-swtCSharp\microemu-javase-swtCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\..\..\..\AllBinary-Platform-Integrationcsharp\graphics\swt\org.eclipse.swt.win32.win32.x86_64-4.4.2_allbinaryCSharp\org.eclipse.swt.win32.win32.x86_64CSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\..\allbinary_src\LogCSharpM\LogCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\CommonJavaLibraryCSharpM\CommonJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\J2MEExceptionLibraryCSharpM\J2MEExceptionLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -85,6 +85,10 @@
     <ProjectReference Include="..\..\..\..\sound\BasicPlayerJavaLibraryCSharpM\BasicPlayerJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
   </ItemGroup>
   <!-- AllBinary references end -->
+  <ItemGroup>
+    <!-- SpriteFactoryInterface still uses the MIDP 2.0.4 sprite and image types. -->
+    <ProjectReference Include="..\..\..\..\..\..\..\working_thirdpartycsharp\embedded\j2me\microemulator\2_0_4\microemu-midpCSharp\microemu-midp-for-polyglotCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="LegacyMIDP" />
+  </ItemGroup>
 
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
 

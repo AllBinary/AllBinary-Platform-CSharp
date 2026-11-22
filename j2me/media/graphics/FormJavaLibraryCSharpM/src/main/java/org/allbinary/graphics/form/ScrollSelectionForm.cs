@@ -85,7 +85,7 @@ public class ScrollSelectionForm : PaintableForm
     private readonly int adjustedExtraBorder;
     public ScrollSelectionForm(string title, ABCustomItem[] items, ItemPaintableFactory formPaintableFactory, int border, int adjustedExtraBorder, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(title, items, backgroundBasicColor, foregroundBasicColor)
     {
-        // base(title, items, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.adjustedExtraBorder = adjustedExtraBorder;
         this.buttonBasicColor = foregroundBasicColor;
         this.border = border;

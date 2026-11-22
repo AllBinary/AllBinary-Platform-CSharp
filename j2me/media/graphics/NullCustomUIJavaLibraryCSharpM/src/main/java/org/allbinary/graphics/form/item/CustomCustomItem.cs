@@ -18,7 +18,7 @@ public class CustomCustomItem : ABCustomItem, UpdateMyFontInterface
     {
         this.updateMyFontProcessor = new UpdateMyFontProcessor(this);
         this.myFontProcessor = this.updateMyFontProcessor;
-        // base(label, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void updateMeasurement(Graphics graphics)

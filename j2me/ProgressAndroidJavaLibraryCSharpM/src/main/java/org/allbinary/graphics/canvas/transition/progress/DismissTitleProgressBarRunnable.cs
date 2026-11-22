@@ -28,7 +28,7 @@ public class DismissTitleProgressBarRunnable : ProgressRunnable
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public DismissTitleProgressBarRunnable(Activity midletActivity, ProgressCanvas progressCanvas) : base(midletActivity, progressCanvas)
     {
-        // base(midletActivity, progressCanvas) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     private readonly int[] ZOOM_OUT_AND_IN = new int[] { TransistionTypes.getInstance().ZOOM_OUT, TransistionTypes.getInstance().ZOOM_IN };

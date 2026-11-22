@@ -28,7 +28,7 @@ public class GameInitializedEvent : AllBinaryEventObject
     private int level = 0;
     public GameInitializedEvent(object anyType) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void setLevel(int level)

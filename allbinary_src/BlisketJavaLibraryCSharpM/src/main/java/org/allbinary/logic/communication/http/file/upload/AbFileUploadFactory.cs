@@ -17,7 +17,6 @@
 using System;
 using System.Linq;
 using java.util;
-//using List = java.util.List;
 //using HttpServletRequest = javax.servlet.http.HttpServletRequest;
 using AbFileItemFactory = org.allbinary.logic.communication.http.AbFileItemFactory;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
@@ -44,12 +43,12 @@ public class AbFileUploadFactory
     }
 
     // throws Exception
-    public virtual List getFileItemStreamList(HttpServletRequest httpServletRequest)
+    public virtual List<object> getFileItemStreamList(HttpServletRequest httpServletRequest)
     {
         try {
             AbFileUpload fileUpload = new AbFileUpload(new AbFileItemFactory());
             FileItemIterator iterator = fileUpload.getItemIterator(httpServletRequest);
-            List items = new ArrayList<object>();
+            List<object> items = new ArrayList<object>();
             while (iterator.hasNext()) {
                 FileItemStream fileItemStream = iterator.next();
                 HttpFileUploadUtil.log(fileItemStream);
@@ -67,7 +66,7 @@ public class AbFileUploadFactory
     }
 
     // throws Exception
-    public virtual List getFileItemList(HttpServletRequest httpServletRequest)
+    public virtual List<object> getFileItemList(HttpServletRequest httpServletRequest)
     {
         try {
             AbFileUpload abFileUpload = new AbFileUpload(new AbFileItemFactory());

@@ -33,12 +33,12 @@ public class WorkAreaDom
     private BasicArrayList canvasNodeList = null;
     public WorkAreaDom(Document document)
     {
-        NodeList workAreaNodeList = document.getElementsByTagName(this.WORKAREA);
+        NodeList workAreaNodeList = document.getElementsByTagName(WorkAreaDom.WORKAREA);
         if (workAreaNodeList != null) {
             int numberOfworkAreas = workAreaNodeList.getLength();
             if (numberOfworkAreas == 1) {
                 int numberOfNodes = workAreaNodeList.getLength();
-                Node nameNode = DomHelper.getInstance().searchNodeList(this.NAME, workAreaNodeList.item(0).getChildNodes());
+                Node nameNode = DomHelper.getInstance().searchNodeList(WorkAreaDom.NAME, workAreaNodeList.item(0).getChildNodes());
                 Node nameTextNode = nameNode.getFirstChild();
                 this.name = nameTextNode.getNodeValue();
             } else {

@@ -28,7 +28,7 @@ public class LicensingException : Exception
 
     public LicensingException(string msg) : base(msg)
     {
-        // base(msg) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

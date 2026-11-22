@@ -24,7 +24,7 @@ public class NullIndexedAnimationInner : NullIndexedAnimation
 {
     public NullIndexedAnimationInner() : base(new IndexedAnimationBehavior(1, 250))
     {
-        // base(new IndexedAnimationBehavior(1, 250)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void paintXY(Graphics graphics, int x, int y)

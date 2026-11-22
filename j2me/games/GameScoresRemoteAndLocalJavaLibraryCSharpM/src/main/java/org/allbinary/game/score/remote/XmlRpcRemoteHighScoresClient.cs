@@ -38,7 +38,7 @@ public class XmlRpcRemoteHighScoresClient : XmlRpcAbeClient
     private string page;
     public XmlRpcRemoteHighScoresClient(AbeClientInformationInterface clientInfo, string page, string remoteMethod) : base(clientInfo, remoteMethod)
     {
-        // base(clientInfo, remoteMethod) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.page = page;
         this.setServer(0);
     }

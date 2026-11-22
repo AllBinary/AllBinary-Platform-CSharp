@@ -27,7 +27,7 @@ public class AdjustedVectorAnimation : VectorAnimation
     private int dy;
     public AdjustedVectorAnimation(int[][][] currentPoints, BasicColor basicColor, int dx, int dy, AnimationBehavior animationBehavior) : base(currentPoints, basicColor, animationBehavior)
     {
-        // base(currentPoints, basicColor, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.dx = dx;
         this.dy = dy;
     }

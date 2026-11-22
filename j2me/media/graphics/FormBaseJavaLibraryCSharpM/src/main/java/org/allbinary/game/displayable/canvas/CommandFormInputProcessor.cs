@@ -56,7 +56,7 @@ public class CommandFormInputProcessor : BasicMenuInputProcessor
     {
         this.clickTimeHelper = new TimeDelayHelper(this.CLICK_DELAY);
         this.doubleClickTimeHelper = new TimeDelayHelper(this.DOUBLE_CLICK_DELAY);
-        // base(gameKeyEventList, playerInputId, gameCanvas) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.form = form;
     }
 

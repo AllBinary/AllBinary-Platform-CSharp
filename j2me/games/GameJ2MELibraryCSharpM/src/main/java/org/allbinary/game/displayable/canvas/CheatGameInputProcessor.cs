@@ -39,7 +39,7 @@ public class CheatGameInputProcessor : PlayerGameInput
     public static SpecialGameInputInterface inputProcessor = SpecialGameInputFactory.NO_SPECIAL_GAME_INPUT;
     public CheatGameInputProcessor(AllBinaryGameCanvas gameCanvas) : base(new BasicArrayListD(), new BasicArrayListD(), -1)
     {
-        // base(new BasicArrayListD(), new BasicArrayListD(), -1) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.gameCanvas = gameCanvas;
     }
 

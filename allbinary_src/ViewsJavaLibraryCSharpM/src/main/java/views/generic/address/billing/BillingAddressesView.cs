@@ -42,7 +42,7 @@ public class BillingAddressesView : HttpStoreComponentView, DomNodeInterface
     public BasicArrayList streetAddresses = null;
     public BillingAddressesView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         TransformInfoHttpInterface httpTransformInfoInterface = ((TransformInfoHttpInterface) this.getTransformInfoInterface());
         this.request = ((HttpServletRequest) httpTransformInfoInterface.getPageContext().getRequest());
     }

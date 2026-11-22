@@ -31,7 +31,7 @@ public class DeleteValidationView : BillingAddressView, ValidationComponentInter
     private string value;
     public DeleteValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         TransformInfoHttpInterface httpTransformInfoInterface = ((TransformInfoHttpInterface) this.getTransformInfoInterface());
         this.value = httpTransformInfoInterface.getPageContext().getRequest().getParameter(StreetAddressData.ID);
     }

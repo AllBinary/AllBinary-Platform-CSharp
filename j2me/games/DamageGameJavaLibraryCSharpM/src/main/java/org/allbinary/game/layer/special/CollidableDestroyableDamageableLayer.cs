@@ -69,7 +69,7 @@ public class CollidableDestroyableDamageableLayer : CollidableCompositeLayer, De
     public bool isDropped = false;
     public CollidableDestroyableDamageableLayer(Group[] groupInterface, string name, Rectangle layerInfo, ViewPositionBase viewPosition) : base(name, layerInfo, viewPosition, CollidableNeverCollideBehaviorFactory.getInstance())
     {
-        // base(name, layerInfo, viewPosition, CollidableNeverCollideBehaviorFactory.getInstance()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initWidth = layerInfo.getWidth();
         this.initHeight = layerInfo.getHeight();
         this.groupInterface = groupInterface;

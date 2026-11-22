@@ -24,7 +24,7 @@ public class NativeLibraryClassLoader : global::java.lang.ClassLoader
     private string message = "This Class Loader Does Not Load Classes - Only For Loading and Unloading of Native Libraries";
     public NativeLibraryClassLoader(global::java.lang.ClassLoader parent) : base(parent)
     {
-        // base(parent) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

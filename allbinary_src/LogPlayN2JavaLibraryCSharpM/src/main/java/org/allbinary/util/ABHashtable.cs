@@ -25,7 +25,7 @@ public class ABHashtable<K, V> : Hashtable<K, V>
 {
     public ABHashtable() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override int size()

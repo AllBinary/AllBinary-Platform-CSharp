@@ -36,7 +36,7 @@ public class DownOrientationInputToGameKeyEventAction : GameKeyCompleteMotionGes
 
     private DownOrientationInputToGameKeyEventAction() : base("Down Action", OrientationMotionGestureFactory.getInstance().DOWN, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping())
     {
-        // base("Down Action", OrientationMotionGestureFactory.getInstance().DOWN, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

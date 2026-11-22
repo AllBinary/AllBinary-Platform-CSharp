@@ -136,7 +136,7 @@ public class InventorySearchUtil
                 int currentPage = -1;
                 int size = column.size();
                 for (int index_1 = 0; index_1 < size; index_1++) {
-                    string product = new string((((string) column.get(index_1))).ToCharArray());
+                    string product = global::System.JavaStringExtensions.copyString(((string) column.get(index_1)));
                     ItemInterface itemInterface = inventoryEntityInterface.getItem(product);
                     string keywords = itemInterface.getKeywords();
                     keywords = keywords.ToUpper();

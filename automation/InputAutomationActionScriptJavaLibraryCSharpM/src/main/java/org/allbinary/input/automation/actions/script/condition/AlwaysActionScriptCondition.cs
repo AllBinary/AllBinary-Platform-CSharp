@@ -36,7 +36,7 @@ public class AlwaysActionScriptCondition : BasicProfileActionScriptCondition, Al
     private const string NAME = "Always On/Off";
     public AlwaysActionScriptCondition(Node node) : base(AlwaysActionScriptCondition.NAME, node)
     {
-        // base(AlwaysActionScriptCondition.NAME, node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         Node actionNode = DomSearchHelper.getNode(AlwaysActionScriptConditionData.NAME, node.getChildNodes());
         if (actionNode != null) {
             NodeList nodeList = actionNode.getChildNodes();
@@ -57,7 +57,7 @@ public class AlwaysActionScriptCondition : BasicProfileActionScriptCondition, Al
 
     public AlwaysActionScriptCondition() : base(AlwaysActionScriptCondition.NAME)
     {
-        // base(AlwaysActionScriptCondition.NAME) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.init();
     }
 

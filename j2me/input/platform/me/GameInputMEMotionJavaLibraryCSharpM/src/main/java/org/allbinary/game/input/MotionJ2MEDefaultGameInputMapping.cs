@@ -28,7 +28,7 @@ public class MotionJ2MEDefaultGameInputMapping : PersistentInputMapping
 {
     public MotionJ2MEDefaultGameInputMapping() : base(GamePersistanceStrings.getInstance().DEFAULT_INPUT_MAPPING_RECORD_ID)
     {
-        // base(GamePersistanceStrings.getInstance().DEFAULT_INPUT_MAPPING_RECORD_ID) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         InputToGameKeyMapping inputToGameKeyMapping = this.getInputMapping();
         GameKeyFactory gameKeyFactory = GameKeyFactory.getInstance();
         inputToGameKeyMapping.add(gameKeyFactory.UP, gameKeyFactory.KEY_NUM2);

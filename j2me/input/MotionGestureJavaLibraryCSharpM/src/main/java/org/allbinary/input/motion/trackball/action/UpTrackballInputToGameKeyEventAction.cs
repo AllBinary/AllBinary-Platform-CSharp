@@ -36,7 +36,7 @@ public class UpTrackballInputToGameKeyEventAction : GameKeyCompleteMotionGesture
 
     private UpTrackballInputToGameKeyEventAction() : base("Up Action", TrackballMotionGestureFactory.getInstance().UP, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping())
     {
-        // base("Up Action", TrackballMotionGestureFactory.getInstance().UP, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

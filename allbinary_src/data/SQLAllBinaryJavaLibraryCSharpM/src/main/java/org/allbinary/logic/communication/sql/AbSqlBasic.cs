@@ -115,7 +115,7 @@ public class AbSqlBasic
                 this.logUtil.put(this.SQL_CONNECTION_RETRYING, this, METHOD_CREATE_CONNECTION, se);
             }
             try {
-                global::org.allbinary.thread.NullThread.currentThread().sleep(2000);
+                global::java.lang.Thread.currentThread().sleep(2000);
                 if (this.connectAttemptCounter < 10) {
                     this.connectAttemptCounter++;
                     this.initialize();

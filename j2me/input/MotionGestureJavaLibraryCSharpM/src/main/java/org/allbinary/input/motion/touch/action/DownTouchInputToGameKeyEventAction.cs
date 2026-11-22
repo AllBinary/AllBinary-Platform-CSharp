@@ -36,7 +36,7 @@ public class DownTouchInputToGameKeyEventAction : GameKeyCompleteMotionGestureIn
 
     private DownTouchInputToGameKeyEventAction() : base("Down Action", TouchMotionGestureFactory.getInstance().DOWN, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping())
     {
-        // base("Down Action", TouchMotionGestureFactory.getInstance().DOWN, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

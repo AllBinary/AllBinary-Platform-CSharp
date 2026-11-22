@@ -37,7 +37,7 @@ public class GameDifficultyOptions : CommandForm
     private readonly BasicArrayList list;
     public GameDifficultyOptions(CommandListener commandListener, string title, BasicArrayList list, BasicColor backgrounBasicColor, BasicColor foregroundBasicColor) : base(commandListener, title, backgrounBasicColor, foregroundBasicColor)
     {
-        // base(commandListener, title, backgrounBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         this.list = list;
         this.update();

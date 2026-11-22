@@ -31,7 +31,7 @@ public class PreGameLockablePaintable : LockablePaintable
     private readonly ScrollCurrentSelectionForm paintableForm;
     public PreGameLockablePaintable(ScrollCurrentSelectionForm paintableForm, int lockedIndex) : base(lockedIndex)
     {
-        // base(lockedIndex) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.paintableForm = paintableForm;
         this.halfWidth = GameFeatureImageCacheFactory.getInstance().getWithKey(LockedResources.getInstance().LOCKED_DEMO_GAME_FEATURE_RESOURCE).getWidth() / 2;
     }

@@ -23,7 +23,7 @@ public class CompositeSound : Sound
 {
     public CompositeSound(string resource) : base(resource)
     {
-        // base(resource) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

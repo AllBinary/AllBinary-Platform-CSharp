@@ -39,7 +39,7 @@ public class QuoteRequestEntity : AbSqlBean, QuoteRequestEntityInterface
     private readonly string tableName = "quoterequest";
     public QuoteRequestEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 
@@ -125,7 +125,7 @@ public class QuoteRequestEntity : AbSqlBean, QuoteRequestEntityInterface
 
     public override string dropTable()
     {
-        string result = new string((base.dropTable()).ToCharArray());
+        string result = global::System.JavaStringExtensions.copyString(base.dropTable());
         return result;
     }
 

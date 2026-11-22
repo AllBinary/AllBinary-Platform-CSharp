@@ -55,13 +55,10 @@ public class BasicHighScoresFactory : HighScoresBase
 
     public override void fetchHighScoresPreload(GameInfo gameInfo, HighScoresResultsListener highScoresResultsListener, bool preload)
     {
-        SecondaryThreadPool.getInstance().runTask(new ARunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        SecondaryThreadPool.getInstance().runTask(new __SwtClosure_N66616((__swtSelf_N66616) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 try {
-                    logUtil.putF(this.commonStrings.START, this, FETCH);
+                    logUtil.putF(this.commonStrings.START, __swtSelf_N66616, FETCH);
                     highScoresArray[0] = RecordStoreHighScores.getInstance(abeClientInformation, gameInfo, TOP, PERSONAL_HIGH_SCORES, SCORES, new ScoreComparator(true));
                     GameType gameType = gameInfo.getGameType();
                     GameTypeFactory gameTypeFactory = GameTypeFactory.getInstance();
@@ -72,16 +69,13 @@ public class BasicHighScoresFactory : HighScoresBase
                         gameInfo2 = BasicHighScoresGameInfoFactory.getInstance().MULTI_PLAYER_SERVER;
                     }
                     highScoresArray[1] = RemoteHighScores.getInstancePreload(abeClientInformation, softwareInformation, gameInfo2, WORLD_TOP_SCORES, SCORES, BooleanFactory.getInstance().FALSE, preload);
-                    logUtil.putF(this.commonStrings.END, this, FETCH);
+                    logUtil.putF(this.commonStrings.END, __swtSelf_N66616, FETCH);
                     LastFetchHighScoresFactory.getInstance().highScoresArray = highScoresArray;
                     highScoresResultsListener.setHighScoresArray(highScoresArray);
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, FETCH, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N66616, FETCH, e);
                 }
-            }
-
-#endif
-);
+            }));
     }
 
     public override HighScoresHelperBaseInterface createHighScoresHelper()
@@ -95,6 +89,18 @@ public class BasicHighScoresFactory : HighScoresBase
             return true;
         }
         return false;
+    }
+
+    private sealed class __SwtClosure_N66616 : ARunnable
+    {
+        private readonly global::System.Action<__SwtClosure_N66616> callback1;
+
+        public __SwtClosure_N66616(global::System.Action<__SwtClosure_N66616> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
     }
 
 }

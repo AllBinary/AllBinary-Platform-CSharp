@@ -26,7 +26,7 @@ public class AbFileLocalInputStream : AbFileInputStream
 {
     public AbFileLocalInputStream(AbFile file) : base(AbFileNativeUtil.get(file).getPath())
     {
-        // base(AbFileNativeUtil.get(file).getPath()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

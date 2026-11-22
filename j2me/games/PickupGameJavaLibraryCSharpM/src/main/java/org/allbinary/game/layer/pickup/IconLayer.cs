@@ -33,7 +33,7 @@ public class IconLayer : AllBinaryLayer
     private Animation animationInterface;
     public IconLayer(Animation animationInterface, int width, int height) : base(StringUtil.getInstance().EMPTY_STRING, new Rectangle(PointFactory.getInstance().ZERO_ZERO, width, height), ViewPosition.getInstanceD())
     {
-        // base(StringUtil.getInstance().EMPTY_STRING, new Rectangle(PointFactory.getInstance().ZERO_ZERO, width, height), ViewPosition.getInstanceD()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.animationInterface = animationInterface;
     }
 

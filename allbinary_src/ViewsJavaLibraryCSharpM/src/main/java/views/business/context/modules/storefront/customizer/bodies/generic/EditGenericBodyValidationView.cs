@@ -34,7 +34,7 @@ public class EditGenericBodyValidationView : GenericBodyCustomizerView, Validati
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public EditGenericBodyValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual bool? isValid()

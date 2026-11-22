@@ -59,17 +59,7 @@ public class ProgressCanvas : RunnableCanvas, PaintableInterface, UpdateMyFontIn
     private bool background = true;
     public PaintableInterface paintable;
     public bool inProgress = false;
-    private readonly Processor IN_GAME_PROCESSOR = new Processor()
-#if JAVA_ANONYMOUS_CLASS_BODY
-        private readonly ThreadPool pathFindingThreadPool = PathFindingThreadPool.getInstance();
-        // throws Exception
-        public virtual void process()
-        {
-            this.pathFindingThreadPool.runAPriorityTask();
-        }
-
-#endif
-;
+    private readonly Processor IN_GAME_PROCESSOR;
     public Processor inGameProcessor = Processor.getInstance();
     public ProgressEndListener progressEndListener = ProgressEndListener.instance;
     public ProgressCanvas(string title, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(NullCommandListener.NULL_COMMAND_LISTENER, CanvasStrings.getInstance().EMPTY_CHILD_NAME_LIST, false)
@@ -80,7 +70,18 @@ public class ProgressCanvas : RunnableCanvas, PaintableInterface, UpdateMyFontIn
         this.myFontProcessor = this.updateMyFontProcessor;
         this.text = this.TEXT;
         this.paintable = this.GAUGE_PAINTABLE;
-        // base(NullCommandListener.NULL_COMMAND_LISTENER, CanvasStrings.getInstance().EMPTY_CHILD_NAME_LIST, false) is called from the constructor declaration
+        this.IN_GAME_PROCESSOR = new Processor()
+#if JAVA_ANONYMOUS_CLASS_BODY
+        private readonly ThreadPool pathFindingThreadPool = PathFindingThreadPool.getInstance();
+        // throws Exception
+        public virtual void process()
+        {
+            this.pathFindingThreadPool.runAPriorityTask();
+        }
+
+#endif
+;
+        // Constructor invocation emitted in the initializer.
         this.backgroundBasicColor = backgroundBasicColor;
         this.gauge = new ABCustomGaugeItem(StringUtil.getInstance().EMPTY_STRING, ((int) this.maxValue), 0, backgroundBasicColor, foregroundBasicColor);
     }

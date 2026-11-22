@@ -57,7 +57,7 @@ public class StoreFrontTag : CustomTagSupport
     {
         try {
             object anyType = new StoreFrontHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
-            Method method = anyType.GetType().getMethod("getCurrentLocation", null);
+            global::System.Reflection.MethodInfo method = anyType.GetType().getMethod("getCurrentLocation", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {
@@ -76,7 +76,7 @@ public class StoreFrontTag : CustomTagSupport
     {
         try {
             object anyType = new StoreFrontHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
-            Method method = anyType.GetType().getMethod("getCurrentHomeLocation", null);
+            global::System.Reflection.MethodInfo method = anyType.GetType().getMethod("getCurrentHomeLocation", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {

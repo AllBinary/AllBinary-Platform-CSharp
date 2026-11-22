@@ -41,7 +41,7 @@ public class TimeHudWidget : BasicHud
     private readonly HudTimer timer;
     public TimeHudWidget(int location, int direction, int bufferZone, BasicColor basicColor, HudTimer timer) : base(location, direction, bufferZone, basicColor)
     {
-        // base(location, direction, bufferZone, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.timer = timer;
         this.set();
         this.updateMaxHeight = 14;

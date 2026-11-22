@@ -37,7 +37,7 @@ public class GameKeyEvent : AllBinaryEventObject
     private int originalKey = 0;
     public GameKeyEvent(object anyType, int sourceId, int originalKey, int gameActionKey, int key, bool repeated) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.sourceId = sourceId;
         this.setOriginalKey(originalKey);
         this.key = key;

@@ -27,7 +27,7 @@ public class BasicStoreWorkFlow : BasicWorkFlow, StoreWorkFlowInterface
 {
     public BasicStoreWorkFlow(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
-        // base(propertiesHashMap, pageContext) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

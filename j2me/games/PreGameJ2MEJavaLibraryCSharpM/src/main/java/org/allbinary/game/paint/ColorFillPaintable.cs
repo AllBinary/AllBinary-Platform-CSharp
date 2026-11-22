@@ -27,7 +27,7 @@ public class ColorFillPaintable : ColorFillBasePaintable
     public readonly DisplayInfoSingleton displayInfoSingleton = DisplayInfoSingleton.getInstance();
     public ColorFillPaintable(BasicColor basicColor) : base(basicColor)
     {
-        // base(basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void paint(Graphics graphics)

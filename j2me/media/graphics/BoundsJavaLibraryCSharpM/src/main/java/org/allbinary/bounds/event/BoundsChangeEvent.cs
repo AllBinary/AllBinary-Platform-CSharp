@@ -25,7 +25,7 @@ public class BoundsChangeEvent : AllBinaryEventObject
 {
     public BoundsChangeEvent(Rectangle rectangle) : base(rectangle)
     {
-        // base(rectangle) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual Rectangle getRectangle()

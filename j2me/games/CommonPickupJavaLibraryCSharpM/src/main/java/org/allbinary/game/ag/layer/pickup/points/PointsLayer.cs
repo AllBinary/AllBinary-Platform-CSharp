@@ -31,7 +31,7 @@ public class PointsLayer : AllBinaryLayer
     private readonly int points;
     public PointsLayer(int points) : base(StringUtil.getInstance().EMPTY_STRING, new Rectangle(PointFactory.getInstance().ZERO_ZERO, 0, 0), ViewPosition.getInstanceD())
     {
-        // base(StringUtil.getInstance().EMPTY_STRING, new Rectangle(PointFactory.getInstance().ZERO_ZERO, 0, 0), ViewPosition.getInstanceD()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.points = points;
     }
 

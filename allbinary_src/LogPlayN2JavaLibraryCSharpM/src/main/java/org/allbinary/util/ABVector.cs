@@ -103,7 +103,7 @@ public class ABVector<E> : Vector<E>
         base.removeAllElements();
     }
 
-    public virtual object clone()
+    public override object clone()
     {
         return base.clone();
     }

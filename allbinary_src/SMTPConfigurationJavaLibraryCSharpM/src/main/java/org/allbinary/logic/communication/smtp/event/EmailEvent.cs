@@ -29,7 +29,7 @@ public class EmailEvent : EventObject
     private int attempts = 0;
     public EmailEvent(object emailEventHandler, UserEmailEventNameData userEmailEventNameData, EmailInfo emailInfo, int attempts) : base(emailEventHandler)
     {
-        // base(emailEventHandler) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.userEmailEventNameData = userEmailEventNameData;
         this.emailInfo = emailInfo;
     }

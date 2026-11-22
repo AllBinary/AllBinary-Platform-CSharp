@@ -24,12 +24,12 @@ public class StaticPagesDbInitInfo : DbInitInfo
     private const string INITFILE = "staticpagesbinitdata.dat";
     public StaticPagesDbInitInfo() : base(INITFILE, true)
     {
-        // base(INITFILE, true) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public StaticPagesDbInitInfo(bool read) : base(INITFILE, read)
     {
-        // base(INITFILE, read) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

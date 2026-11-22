@@ -39,7 +39,7 @@ public class XmlRpcRemoteLicenseRegistrationClient : XmlRpcAbeClient
     private readonly string PAGE = "licenseregistrationserverssl.php";
     public XmlRpcRemoteLicenseRegistrationClient(AbeClientInformationInterface clientInfo) : base(clientInfo, "LicenseRegistrationServer.process")
     {
-        // base(clientInfo, "LicenseRegistrationServer.process") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setServer(0);
     }
 

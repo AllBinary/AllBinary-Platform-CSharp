@@ -31,7 +31,7 @@ public class KeyPressesAI : BasicAI
     public int?[] keys;
     public KeyPressesAI(ABHashtable<object, object> hashtable, AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(ownerLayerInterface, gameInput)
     {
-        // base(ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.keys = new int?[hashtable.size()];
         object[] objectArray = HashtableUtil.getInstance().getKeysAsArray(hashtable);
         int size = objectArray.Length;

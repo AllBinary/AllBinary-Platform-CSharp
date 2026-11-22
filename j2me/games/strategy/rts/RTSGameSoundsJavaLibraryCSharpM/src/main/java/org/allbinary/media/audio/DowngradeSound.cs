@@ -25,7 +25,7 @@ public class DowngradeSound : CompositeSound
     private static Sound soundInterface = new DowngradeSound();
     private DowngradeSound() : base("resource:/wav/downgrade.wav")
     {
-        // base("resource:/wav/downgrade.wav") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public static Sound getInstance()

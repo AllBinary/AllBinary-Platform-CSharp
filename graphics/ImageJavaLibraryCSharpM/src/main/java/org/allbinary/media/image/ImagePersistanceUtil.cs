@@ -11,7 +11,7 @@ using System.Linq;
 //using BufferedImage = java.awt.image.BufferedImage;
 using File = java.io.File;
 //using IOException = java.io.IOException;
-//using Iterator = java.util.Iterator;
+using java.util;
 //using IIOImage = javax.imageio.IIOImage;
 //using ImageIO = javax.imageio.ImageIO;
 //using ImageWriteParam = javax.imageio.ImageWriteParam;
@@ -60,7 +60,7 @@ public class ImagePersistanceUtil
         ImageWriter writer = null;
         ImageOutputStream ios = null;
         try {
-            Iterator iter = ImageIO.getImageWritersByFormatName("jpeg");
+            Iterator<object> iter = ImageIO.getImageWritersByFormatName("jpeg");
             if (!iter.hasNext()) {
                 this.logUtil.putF("Unable to save image to jpeg file type.", this, this.commonStrings.SAVE);
                 return;

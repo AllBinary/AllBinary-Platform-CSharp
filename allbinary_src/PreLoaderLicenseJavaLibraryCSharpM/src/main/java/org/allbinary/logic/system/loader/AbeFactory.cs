@@ -67,7 +67,7 @@ public class AbeFactory
     [MethodImpl(MethodImplOptions.Synchronized)]
     public virtual object getInstance(AbeClientInformationInterface abeClientInformation, string className, Type[] classes, object[] @params)
     {
-        Constructor constructor = null;
+        global::System.Reflection.ConstructorInfo constructor = null;
         try {
             global::java.lang.ClassLoader parent = WebappClassLoaderInfo.getLoader();
             if (this.useCustomLoader) {

@@ -31,7 +31,7 @@ public class DemoCanvasBasicStartInputProcessor : BasicMenuInputProcessor
 {
     public DemoCanvasBasicStartInputProcessor(BasicArrayList gameKeyEventList, RunnableCanvas gameCanvas) : base(gameKeyEventList, -1, gameCanvas)
     {
-        // base(gameKeyEventList, -1, gameCanvas) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

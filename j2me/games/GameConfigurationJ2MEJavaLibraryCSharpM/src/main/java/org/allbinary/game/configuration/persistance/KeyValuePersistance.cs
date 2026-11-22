@@ -39,7 +39,7 @@ public class KeyValuePersistance : BasicPersitance
     private readonly TsUtil tsUtil = TsUtil.getInstance();
     public KeyValuePersistance(string recordId) : base(recordId)
     {
-        // base(recordId) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

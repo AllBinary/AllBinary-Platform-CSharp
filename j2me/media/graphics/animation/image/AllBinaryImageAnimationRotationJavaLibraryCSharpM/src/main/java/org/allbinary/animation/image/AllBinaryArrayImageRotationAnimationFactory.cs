@@ -50,7 +50,7 @@ public class AllBinaryArrayImageRotationAnimationFactory : BaseImageAnimationFac
 
     public AllBinaryArrayImageRotationAnimationFactory(Image image, int width, int height, int angleIncrement, AnimationBehaviorFactory animationBehaviorFactory) : base(image, PrimitiveIntUtil.getArrayInstance(), width, height, 0, 0, animationBehaviorFactory)
     {
-        // base(image, PrimitiveIntUtil.getArrayInstance(), width, height, 0, 0, animationBehaviorFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.angleIncrement = angleIncrement;
         this.init();
     }

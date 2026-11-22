@@ -41,7 +41,7 @@ public class ScrollCurrentSelectionForm : ScrollSelectionForm, UpdateMyFontInter
     {
         this.updateMyFontProcessor = new UpdateMyFontProcessor(this);
         this.myFontProcessor = this.updateMyFontProcessor;
-        // base(title, items, formPaintableFactory, border, adjustedExtraBorder, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.moveForSmallScreen = moveForSmallScreen;
     }
 

@@ -32,7 +32,7 @@ public class PaintableForm : ABCustomForm
     public FormType formType = FormTypeFactory.getInstance().NULL_FORM_TYPE;
     public PaintableForm(string title, ABCustomItem[] items, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(title, items, backgroundBasicColor, foregroundBasicColor)
     {
-        // base(title, items, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setSelectedIndex(0);
     }
 

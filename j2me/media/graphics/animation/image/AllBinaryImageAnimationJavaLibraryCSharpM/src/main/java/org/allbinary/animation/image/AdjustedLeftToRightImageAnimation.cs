@@ -28,7 +28,7 @@ public class AdjustedLeftToRightImageAnimation : LeftToRightImageAnimation
     private int dy = 0;
     public AdjustedLeftToRightImageAnimation(Image image, int[] sequenceArray, int dx, int dy, AnimationBehavior animationBehavior) : base(image, sequenceArray, animationBehavior)
     {
-        // base(image, sequenceArray, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.init(dx, dy);
     }
 

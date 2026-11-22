@@ -27,7 +27,7 @@ public class CapturedImageWorkerResultsEvent : AllBinaryEventObject
     private BufferedImage bufferedImage = null;
     public CapturedImageWorkerResultsEvent(object anyType, long? frame, BufferedImage bufferedImage) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.frame = frame;
         this.setBufferedImage(bufferedImage);
     }

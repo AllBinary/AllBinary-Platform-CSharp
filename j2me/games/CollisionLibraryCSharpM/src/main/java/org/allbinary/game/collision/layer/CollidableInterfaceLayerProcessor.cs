@@ -28,7 +28,7 @@ public class CollidableInterfaceLayerProcessor : LayerProcessor
 {
     public CollidableInterfaceLayerProcessor() : base(new CollidableInterfaceLayerManager())
     {
-        // base(new CollidableInterfaceLayerManager()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

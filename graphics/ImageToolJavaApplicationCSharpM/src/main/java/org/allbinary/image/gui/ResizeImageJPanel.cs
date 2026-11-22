@@ -47,7 +47,7 @@ public class ResizeImageJPanel : JPanel, ImageProcessorInputCompositeInterface
     private ImageProcessorInput imageProcessorInput;
     public ResizeImageJPanel(ImageProcessorInput imageProcessorInput) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         initComponents();
         this.imageProcessorInput = imageProcessorInput;
         string[] numberStringArray = new string[101];
@@ -66,10 +66,7 @@ public class ResizeImageJPanel : JPanel, ImageProcessorInputCompositeInterface
 
     public virtual void process()
     {
-        new global::org.allbinary.thread.NullThread()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        new __SwtClosure_N66834((__swtSelf_N66834) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 try {
                     ImageUtil imageUtil = ImageUtil.getInstance();
@@ -99,20 +96,14 @@ public class ResizeImageJPanel : JPanel, ImageProcessorInputCompositeInterface
                     }
                     this.getParent().repaint();
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N66834, commonStrings.RUN, e);
                 }
-            }
-
-#endif
-.start();
+            }).start();
     }
 
     public virtual void update()
     {
-        new global::org.allbinary.thread.NullThread()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        new __SwtClosure_N68307((__swtSelf_N68307) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 try {
                     ImageProcessorInput imageProcessorInput = this.getImageProcessorInput();
@@ -126,20 +117,14 @@ public class ResizeImageJPanel : JPanel, ImageProcessorInputCompositeInterface
                     }
                     this.getParent().repaint();
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N68307, commonStrings.RUN, e);
                 }
-            }
-
-#endif
-.start();
+            }).start();
     }
 
     public virtual void updateFor16Above()
     {
-        new global::org.allbinary.thread.NullThread()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        new __SwtClosure_N69006((__swtSelf_N69006) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 try {
                     ImageProcessorInput imageProcessorInput = this.getImageProcessorInput();
@@ -153,20 +138,14 @@ public class ResizeImageJPanel : JPanel, ImageProcessorInputCompositeInterface
                     }
                     this.getParent().repaint();
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N69006, commonStrings.RUN, e);
                 }
-            }
-
-#endif
-.start();
+            }).start();
     }
 
     public virtual void updateFor16Below()
     {
-        new global::org.allbinary.thread.NullThread()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        new __SwtClosure_N69741((__swtSelf_N69741) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 try {
                     ImageProcessorInput imageProcessorInput = this.getImageProcessorInput();
@@ -180,12 +159,9 @@ public class ResizeImageJPanel : JPanel, ImageProcessorInputCompositeInterface
                     }
                     this.getParent().repaint();
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N69741, commonStrings.RUN, e);
                 }
-            }
-
-#endif
-.start();
+            }).start();
     }
 
     public virtual ImageProcessorInput getImageProcessorInput()
@@ -294,5 +270,53 @@ public class ResizeImageJPanel : JPanel, ImageProcessorInputCompositeInterface
     private JTextField jTextField1 = null;
     private JTextField jTextField2 = null;
     private JButton updateJButton = null;
+    private sealed class __SwtClosure_N66834 : global::org.allbinary.thread.NullThread
+    {
+        private readonly global::System.Action<__SwtClosure_N66834> callback1;
+
+        public __SwtClosure_N66834(global::System.Action<__SwtClosure_N66834> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
+    }
+
+    private sealed class __SwtClosure_N68307 : global::org.allbinary.thread.NullThread
+    {
+        private readonly global::System.Action<__SwtClosure_N68307> callback1;
+
+        public __SwtClosure_N68307(global::System.Action<__SwtClosure_N68307> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
+    }
+
+    private sealed class __SwtClosure_N69006 : global::org.allbinary.thread.NullThread
+    {
+        private readonly global::System.Action<__SwtClosure_N69006> callback1;
+
+        public __SwtClosure_N69006(global::System.Action<__SwtClosure_N69006> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
+    }
+
+    private sealed class __SwtClosure_N69741 : global::org.allbinary.thread.NullThread
+    {
+        private readonly global::System.Action<__SwtClosure_N69741> callback1;
+
+        public __SwtClosure_N69741(global::System.Action<__SwtClosure_N69741> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
+    }
+
 }
 

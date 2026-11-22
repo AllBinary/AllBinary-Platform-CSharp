@@ -26,7 +26,7 @@ public class HtmlValueInput : HtmlInput
     private readonly string VALUE = "VALUE";
     public HtmlValueInput(string before, string type, string name, string value, string after) : base(before, type, name, after)
     {
-        // base(before, type, name, after) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         StringUtil stringUtil = StringUtil.getInstance();
         this.value = stringUtil.EMPTY_STRING;
         addAttribute(this.VALUE, value);

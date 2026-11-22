@@ -31,7 +31,7 @@ public class StoreValidationTransformTag : ValidationTransformTag
     private string storeName = null;
     public StoreValidationTransformTag() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void setStoreName(string value)

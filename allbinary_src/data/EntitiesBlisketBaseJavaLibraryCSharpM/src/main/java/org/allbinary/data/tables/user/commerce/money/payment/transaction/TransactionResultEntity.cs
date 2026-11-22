@@ -42,7 +42,7 @@ public class TransactionResultEntity : AbSqlBean, TransactionResultEntityInterfa
     private readonly string tableName = "vresults";
     public TransactionResultEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

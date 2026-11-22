@@ -27,7 +27,7 @@ public class ImageProcessorInput
     private File[] files;
     public ImageProcessorInput(File[] files, BufferedImage[] bufferedImageArray) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.bufferedImageArray = bufferedImageArray;
         this.files = files;
     }

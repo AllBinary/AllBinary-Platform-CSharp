@@ -37,7 +37,7 @@ public class AddValidationView : WorkFlowView, ValidationComponentInterface
     private readonly AbeClientInformationInterface abeClientInformation = ServiceClientInformationInterfaceFactory.getInstance();
     public AddValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.workFlowInterface = NewWorkFlowFactory.getInstance().getInstance(this.abeClientInformation, this.getPropertiesHashMap(), this.getPageContext());
     }
 

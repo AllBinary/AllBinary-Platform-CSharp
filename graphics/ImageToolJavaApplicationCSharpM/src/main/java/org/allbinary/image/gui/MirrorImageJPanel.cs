@@ -48,7 +48,7 @@ public class MirrorImageJPanel : JPanel, ImageProcessorInputCompositeInterface
     private BufferedImage result = null;
     public MirrorImageJPanel(ImageProcessorInput imageProcessorInput) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF("Starting", this, this.commonStrings.CONSTRUCTOR);
         this.initComponents();
         this.imageProcessorInput = imageProcessorInput;
@@ -56,10 +56,7 @@ public class MirrorImageJPanel : JPanel, ImageProcessorInputCompositeInterface
 
     public virtual void process()
     {
-        new global::org.allbinary.thread.NullThread()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        new __SwtClosure_N66460((__swtSelf_N66460) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 try {
                     ImageProcessorInput imageProcessorInput = this.getImageProcessorInput();
@@ -72,20 +69,17 @@ public class MirrorImageJPanel : JPanel, ImageProcessorInputCompositeInterface
                             string filePath = file.getAbsolutePath();
                             int extensionIndex = filePath.IndexOf(imageStrings.PNG_EXTENSION);
                             filePath = filePath.Substring(0, (extensionIndex) - (0)) + "_mirror" + imageStrings.PNG_EXTENSION;
-                            logUtil.putF("Renamed File: " + filePath, this, commonStrings.RUN);
+                            logUtil.putF("Renamed File: " + filePath, __swtSelf_N66460, commonStrings.RUN);
                             file = new File(filePath);
                         }
                         bool isWritten = ImageIO.write(((RenderedImage) this.result), imageStrings.PNG, file);
-                        logUtil.putF("File: " + file + " Wrote: " + isWritten, this, commonStrings.RUN);
+                        logUtil.putF("File: " + file + " Wrote: " + isWritten, __swtSelf_N66460, commonStrings.RUN);
                         this.getParent().repaint();
                     }
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N66460, commonStrings.RUN, e);
                 }
-            }
-
-#endif
-.start();
+            }).start();
     }
 
     private void initComponents()
@@ -184,6 +178,18 @@ public class MirrorImageJPanel : JPanel, ImageProcessorInputCompositeInterface
     public virtual void setImageProcessorInput(ImageProcessorInput imageProcessorInput)
     {
         this.imageProcessorInput = imageProcessorInput;
+    }
+
+    private sealed class __SwtClosure_N66460 : global::org.allbinary.thread.NullThread
+    {
+        private readonly global::System.Action<__SwtClosure_N66460> callback1;
+
+        public __SwtClosure_N66460(global::System.Action<__SwtClosure_N66460> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
     }
 
 }

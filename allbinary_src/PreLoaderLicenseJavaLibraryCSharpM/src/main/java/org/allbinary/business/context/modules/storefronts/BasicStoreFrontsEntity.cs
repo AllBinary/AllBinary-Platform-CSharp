@@ -33,7 +33,7 @@ public class BasicStoreFrontsEntity : InitSql
     public readonly string tableName = "storefronts";
     public BasicStoreFrontsEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTable(this.tableName);
     }
 

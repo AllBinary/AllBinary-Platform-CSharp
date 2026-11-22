@@ -41,12 +41,12 @@ public class AbDatabaseManagement : AbSqlBean
     public readonly string ADD_TABLES_RESULTS_LABEL = "Add Table Results: ";
     public AbDatabaseManagement(DatabaseConnectionInfoInterface databaseConnectionInfoInterface) : base(((DbConnectionInfo) databaseConnectionInfoInterface))
     {
-        // base(((DbConnectionInfo) databaseConnectionInfoInterface)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public AbDatabaseManagement(DbConnectionInfo connectionInfo) : base(connectionInfo)
     {
-        // base(connectionInfo) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     private string getHostName()

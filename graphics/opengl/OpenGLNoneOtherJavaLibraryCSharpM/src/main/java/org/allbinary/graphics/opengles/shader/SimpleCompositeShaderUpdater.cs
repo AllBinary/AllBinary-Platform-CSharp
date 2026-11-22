@@ -23,7 +23,7 @@ public class SimpleCompositeShaderUpdater : CompositeShaderUpdater
 {
     public SimpleCompositeShaderUpdater(string[] uniformBlockArray, string[] uniformArray, string[] attributeArray, int[] attributeHandleArray) : base(uniformBlockArray, uniformArray, attributeArray, attributeHandleArray)
     {
-        // base(uniformBlockArray, uniformArray, attributeArray, attributeHandleArray) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

@@ -26,12 +26,12 @@ public class OrderStoreAdminUser : User
 {
     public OrderStoreAdminUser() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public OrderStoreAdminUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
-        // base(userHashMap) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void validateSession(WeblisketSessionInterface weblisketSession)

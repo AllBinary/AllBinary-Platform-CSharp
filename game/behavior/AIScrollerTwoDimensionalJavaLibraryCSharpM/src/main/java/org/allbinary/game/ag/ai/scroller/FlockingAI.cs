@@ -35,7 +35,7 @@ public class FlockingAI : BasicAI
     private readonly int allowedDistance;
     public FlockingAI(ABHashtable<object, object> hashtable, AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(ownerLayerInterface, gameInput)
     {
-        // base(ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         int? allowedDistance = ((int?) hashtable.get(BasePatrolAI.MAX_DISTANCE));
         this.allowedDistance = ((int) allowedDistance);
     }

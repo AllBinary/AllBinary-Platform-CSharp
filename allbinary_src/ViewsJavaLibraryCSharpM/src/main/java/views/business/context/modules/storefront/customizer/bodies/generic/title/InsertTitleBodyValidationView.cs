@@ -38,7 +38,7 @@ public class InsertTitleBodyValidationView : TitleBodyCustomizerView, Validation
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public InsertTitleBodyValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         HashMap<object, object> requestHashMap = new RequestParams(this.getPageContext()).toHashMap();
         this.titleBody = new TitleBodyValidation(requestHashMap);
     }

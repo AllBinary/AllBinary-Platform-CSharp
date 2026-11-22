@@ -44,7 +44,7 @@ public class HighScoresCanvasLevelChangeInputProcessor : HighScoresCanvasInputPr
     public HighScoresCanvasLevelChangeInputProcessor(HighScoresCanvas highScoresCanvas) : base(highScoresCanvas)
     {
         this.myFontProcessor = new UpdateMyFontProcessor(this);
-        // base(highScoresCanvas) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void updateMeasurement(Graphics graphics)

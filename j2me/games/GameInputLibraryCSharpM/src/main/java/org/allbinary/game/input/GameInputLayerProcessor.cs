@@ -26,7 +26,7 @@ public class GameInputLayerProcessor : LayerProcessor
 {
     public GameInputLayerProcessor() : base(new GameInputLayerManager())
     {
-        // base(new GameInputLayerManager()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

@@ -31,7 +31,7 @@ public class GameKeyCompleteMotionGestureInputEvent : CompleteMotionGestureInput
     private GameKeyEvent gameKeyEvent = GameKeyEvent.NONE;
     public GameKeyCompleteMotionGestureInputEvent(string name, MotionGestureInput motionGestureInput, InputToGameKeyMapping inputToGameKeyMapping) : base(name, motionGestureInput)
     {
-        // base(name, motionGestureInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual int getSourceId()

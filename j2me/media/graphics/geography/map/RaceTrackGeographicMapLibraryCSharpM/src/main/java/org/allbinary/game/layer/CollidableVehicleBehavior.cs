@@ -31,7 +31,7 @@ public class CollidableVehicleBehavior : CollidableDestroyableDamageableBehavior
     public long totalImpactVelocity = 0L;
     public CollidableVehicleBehavior(bool collidable) : base(collidable)
     {
-        // base(collidable) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

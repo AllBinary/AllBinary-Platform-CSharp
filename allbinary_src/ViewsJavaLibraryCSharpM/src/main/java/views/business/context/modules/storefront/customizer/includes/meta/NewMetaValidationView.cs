@@ -35,7 +35,7 @@ public class NewMetaValidationView : MetaView, ValidationComponentInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public NewMetaValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

@@ -27,7 +27,7 @@ public class TitleProgressBarPortionSetProgressRunnable : ProgressRunnable
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public TitleProgressBarPortionSetProgressRunnable(Activity midletActivity, ProgressCanvas progressCanvas) : base(midletActivity, progressCanvas)
     {
-        // base(midletActivity, progressCanvas) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void run()

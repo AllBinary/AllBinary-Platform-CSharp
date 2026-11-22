@@ -26,7 +26,7 @@ public class LeftToRightImageAnimationFactory : BaseImageAnimationFactory
 {
     public LeftToRightImageAnimationFactory(Image image, int[] sequenceArray, int dx, int dy, AnimationBehaviorFactory animationBehaviorFactory) : base(image, sequenceArray, image.getWidth(), image.getHeight(), dx, dy, animationBehaviorFactory)
     {
-        // base(image, sequenceArray, image.getWidth(), image.getHeight(), dx, dy, animationBehaviorFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

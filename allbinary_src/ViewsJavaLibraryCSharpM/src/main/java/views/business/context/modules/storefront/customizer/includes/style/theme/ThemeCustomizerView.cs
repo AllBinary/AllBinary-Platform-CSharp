@@ -32,7 +32,7 @@ public class ThemeCustomizerView : HttpStoreComponentView
     public ValidationInterface validationInterface = null;
     public ThemeCustomizerView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

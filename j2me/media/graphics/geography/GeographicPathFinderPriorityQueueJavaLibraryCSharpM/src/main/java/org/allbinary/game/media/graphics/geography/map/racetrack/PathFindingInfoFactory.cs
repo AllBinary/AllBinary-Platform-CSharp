@@ -14,6 +14,7 @@
  */
 // Generated Code Do Not Modify
 
+extern alias LogJ2SECollections;
 using System;
 using System.Linq;
 using AllBinaryTiledLayer = org.allbinary.game.layer.AllBinaryTiledLayer;

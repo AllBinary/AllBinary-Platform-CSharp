@@ -42,7 +42,7 @@ public class InventoryView : HttpStoreComponentView, DomNodeInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public InventoryView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

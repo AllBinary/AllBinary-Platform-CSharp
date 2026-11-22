@@ -35,7 +35,7 @@ public class ValidationStoreFrontStatisticsView : StoreFrontStatisticsComponent,
     public StoreFrontInterface newStoreFrontInterface = null;
     public ValidationStoreFrontStatisticsView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual bool? isValid()

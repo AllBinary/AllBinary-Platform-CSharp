@@ -47,7 +47,7 @@ public class BasicProfileActionScriptCondition : ProfileActionScriptItem, Profil
     private BasicArrayList profileActionConditionInterfaceVector = null;
     public BasicProfileActionScriptCondition(string label, Node node) : base(label, node)
     {
-        // base(label, node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.init();
         NodeList nodeList = node.getChildNodes();
         for (int index = 0; index < nodeList.getLength(); index++) {
@@ -80,7 +80,7 @@ public class BasicProfileActionScriptCondition : ProfileActionScriptItem, Profil
 
     public BasicProfileActionScriptCondition(string label) : base(label)
     {
-        // base(label) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.init();
     }
 

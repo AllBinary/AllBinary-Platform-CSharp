@@ -55,7 +55,7 @@ public class WeaponLayer : MultiPlayerGameLayer, TickableInterface
     private readonly int multiPlayerType;
     public WeaponLayer(string name, RemoteInfo remoteInfo, int multiPlayerType, Movement movement, Animation animationInterface, Animation destroyedAnimationInterface, Rectangle rectangle, ViewPositionBase viewPosition) : base(remoteInfo, BasicGroupFactory.getInstance().NONE_ARRAY, name, rectangle, viewPosition)
     {
-        // base(remoteInfo, BasicGroupFactory.getInstance().NONE_ARRAY, name, rectangle, viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initAnimationInterface = animationInterface;
         this.setAnimationInterface(animationInterface);
         this.destroyedAnimationInterface = destroyedAnimationInterface;

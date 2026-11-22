@@ -160,7 +160,7 @@ public class DemoCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuListe
     public DemoCanvas(AbeClientInformationInterface abeClientInformation, CommandListener commandListener, HighScoresFactoryInterface highScoresFactoryInterface, Paintable paintable, InitUpdatePaintable overlayPaintable, BasicBuildGameInitializerFactory gameInitializationInterfaceFactoryInterface, bool isContinue) : base(commandListener, CurrentDisplayableFactory.getInstance().DEFAULT_CHILD_NAME_LIST, true)
     {
         this.basicColor = this.basicColorFactory.RED;
-        // base(commandListener, CurrentDisplayableFactory.getInstance().DEFAULT_CHILD_NAME_LIST, true) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.abeClientInformation = abeClientInformation;
         this.setWait(NullWaitGameRunnable.getInstance().WAIT);
         this.gameInitializationInterfaceFactoryInterface = gameInitializationInterfaceFactoryInterface;

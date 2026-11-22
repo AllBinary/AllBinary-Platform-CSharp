@@ -25,7 +25,7 @@ public class AllBinaryPlatformImageRotationAnimationFactory : AllBinaryJ2SEImage
 {
     public AllBinaryPlatformImageRotationAnimationFactory(Image image, int width, int height, short angleIncrement, AnimationBehaviorFactory animationBehaviorFactory, bool resizeCanvasForRotation) : base(image, width, height, angleIncrement, animationBehaviorFactory, resizeCanvasForRotation)
     {
-        // base(image, width, height, angleIncrement, animationBehaviorFactory, resizeCanvasForRotation) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

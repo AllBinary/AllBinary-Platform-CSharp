@@ -16,7 +16,6 @@
 
 using System;
 using System.Linq;
-//using java.util;
 using java.util;
 using ServiceReference = org.osgi.framework.ServiceReference;
 using StringMaker = org.allbinary.logic.@string.StringMaker;

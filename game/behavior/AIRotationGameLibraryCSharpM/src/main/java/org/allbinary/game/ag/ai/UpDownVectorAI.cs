@@ -32,7 +32,7 @@ public class UpDownVectorAI : BasicAI
     private int index = 0;
     public UpDownVectorAI(AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(ownerLayerInterface, gameInput)
     {
-        // base(ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         VelocityInterfaceCompositeInterface velocityInterfaceCompositeInterface = ((VelocityInterfaceCompositeInterface) this.getOwnerLayerInterface());
         this.velocityInterface = velocityInterfaceCompositeInterface.getVelocityProperties();
         this.velocityInterface.getVelocityYBasicDecimalP().setint(0);

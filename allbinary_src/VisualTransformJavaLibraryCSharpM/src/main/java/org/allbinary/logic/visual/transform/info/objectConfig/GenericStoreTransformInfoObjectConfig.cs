@@ -46,20 +46,20 @@ public class GenericStoreTransformInfoObjectConfig : TransformInfoObjectConfig
     public readonly AbeClientInformationInterface abeClientInformation;
     public GenericStoreTransformInfoObjectConfig(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.abeClientInformation = abeClientInformation;
     }
 
     public GenericStoreTransformInfoObjectConfig(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface, Document document) : base(transformInfoInterface, document)
     {
-        // base(transformInfoInterface, document) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.abeClientInformation = abeClientInformation;
         this.setDocument(this.generate(this.toXmlDoc()));
     }
 
     public GenericStoreTransformInfoObjectConfig(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface, string name, string type) : base(transformInfoInterface, name, type)
     {
-        // base(transformInfoInterface, name, type) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.abeClientInformation = abeClientInformation;
         this.setDocument(this.generate(this.toXmlDoc()));
     }

@@ -38,7 +38,7 @@ public class BasicInputMappingHelpPaintable : HelpPaintable
     private readonly GameKey NONE = GameKeyFactory.getInstance().NONE;
     public BasicInputMappingHelpPaintable(GameInputMapping[] gameInputMappingArray, BasicColor basicColor) : base("Help Screen", BasicColorFactory.getInstance().BLACK, basicColor)
     {
-        // base("Help Screen", BasicColorFactory.getInstance().BLACK, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.gameInputMappingArray = gameInputMappingArray;
         this.update(this.NONE, this.NONE);
     }

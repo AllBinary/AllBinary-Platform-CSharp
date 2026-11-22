@@ -49,7 +49,7 @@ public class OpenGLESImage : Image, OpenGLESBaseJavaLibraryCSharp::org.allbinary
     public readonly OpenGLESImageProperties openGLESImageProperties = new OpenGLESImageProperties();
     public OpenGLESImage(Image image, PlatformBitmapBaseFactory bitmapFactory, PlatformTextureBaseFactory textureFactory) : base(image.getName(), PostLoadImageProcessor.NULL_POST_LOAD_IMAGE_PROCESSOR)
     {
-        // base(image.getName(), PostLoadImageProcessor.NULL_POST_LOAD_IMAGE_PROCESSOR) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.openGLBitmap = bitmapFactory.createBitmap(image);
         this.textureFactory = textureFactory;
         OpenGLImageCacheFactory.getInstance().init(this);

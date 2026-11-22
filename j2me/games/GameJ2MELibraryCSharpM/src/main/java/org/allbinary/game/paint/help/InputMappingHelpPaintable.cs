@@ -60,7 +60,7 @@ public class InputMappingHelpPaintable : HelpPaintable
     private UpdateMyFontProperties updateMyFontProperties = new UpdateMyFontProperties();
     public InputMappingHelpPaintable(GameInputMapping[] gameInputMappingArray, BasicColor backgroundBasicColor, BasicColor basicColor) : base("Input Mapping", backgroundBasicColor, basicColor)
     {
-        // base("Input Mapping", backgroundBasicColor, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.gameInputMappingArray = gameInputMappingArray;
         this.update(this.NONE, this.NONE);
         if (backgroundBasicColor == this.basicColorFactory.WHITE || basicColor == this.basicColorFactory.WHITE) {

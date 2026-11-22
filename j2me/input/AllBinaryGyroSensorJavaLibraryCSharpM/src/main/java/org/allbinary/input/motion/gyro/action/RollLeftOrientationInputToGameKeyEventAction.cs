@@ -36,7 +36,7 @@ public class RollLeftOrientationInputToGameKeyEventAction : GameKeyCompleteMotio
 
     private RollLeftOrientationInputToGameKeyEventAction() : base("Roll Left Action", OrientationMotionGestureFactory.getInstance().ROLL_LEFT, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping())
     {
-        // base("Roll Left Action", OrientationMotionGestureFactory.getInstance().ROLL_LEFT, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

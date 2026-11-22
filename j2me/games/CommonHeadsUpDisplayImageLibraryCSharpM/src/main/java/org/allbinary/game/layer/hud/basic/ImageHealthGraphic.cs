@@ -30,7 +30,7 @@ public class ImageHealthGraphic : HealthGraphic
     private Image[] image;
     public ImageHealthGraphic(AnimationInterface animationInterface, HealthInterface healthInterface, int location, int direction) : base(animationInterface, healthInterface, location, direction)
     {
-        // base(animationInterface, healthInterface, location, direction) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.image = new Image[this.healthInterface.getMaxHealth()];
         ImageCacheFactory imageCacheFactory = ImageCacheFactory.getInstance();
         for (int numOfHealth_0 = 0; numOfHealth_0 <= max; numOfHealth_0++) {

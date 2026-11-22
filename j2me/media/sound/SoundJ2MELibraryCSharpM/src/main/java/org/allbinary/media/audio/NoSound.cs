@@ -30,7 +30,7 @@ public class NoSound : Sound
     private static readonly NoSound instance = new NoSound();
     private NoSound() : base(StringUtil.getInstance().EMPTY_STRING)
     {
-        // base(StringUtil.getInstance().EMPTY_STRING) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setPlayerP(NoPlayer.NO_PLAYER);
     }
 

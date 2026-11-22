@@ -36,7 +36,7 @@ public class DiagonalUpLeftTouchInputToGameKeyEventAction : GameKeyCompleteMotio
 
     private DiagonalUpLeftTouchInputToGameKeyEventAction() : base("Diagonal Up Left Action", TouchMotionGestureFactory.getInstance().DIAGONAL_UP_LEFT, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping())
     {
-        // base("Diagonal Up Left Action", TouchMotionGestureFactory.getInstance().DIAGONAL_UP_LEFT, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

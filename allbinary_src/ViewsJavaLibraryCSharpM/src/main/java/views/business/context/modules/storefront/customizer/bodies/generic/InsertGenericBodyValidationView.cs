@@ -38,7 +38,7 @@ public class InsertGenericBodyValidationView : GenericBodyCustomizerView, Valida
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public InsertGenericBodyValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         HashMap<object, object> requestHashMap = new RequestParams(this.getPageContext()).toHashMap();
         this.body = new GenericBodyValidation(requestHashMap);
     }

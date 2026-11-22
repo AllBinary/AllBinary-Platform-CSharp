@@ -37,7 +37,7 @@ public class GameKeyCompleteMotionGestureInputEvent : CompleteMotionGestureInput
     public GameKeyCompleteMotionGestureInputEvent(string name, MotionGestureInput motionGestureInput, InputToGameKeyMapping inputToGameKeyMapping) : base(name, motionGestureInput)
     {
         this.SOURCE_ID = this.gameKeyEventFactory.MOTION_GESTURE_SOURCE_ID;
-        // base(name, motionGestureInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.inputToGameKeyMapping = inputToGameKeyMapping;
         GameKeyCompleteMotionGestureInputEventFactory.getInstance().add(this);
         this.update();

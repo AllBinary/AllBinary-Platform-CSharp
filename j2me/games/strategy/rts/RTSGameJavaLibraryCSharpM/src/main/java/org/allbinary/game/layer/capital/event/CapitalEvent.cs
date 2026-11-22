@@ -25,7 +25,7 @@ public class CapitalEvent : AllBinaryEventObject
     private int value = 0;
     public CapitalEvent(object anyType) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override string ToString()

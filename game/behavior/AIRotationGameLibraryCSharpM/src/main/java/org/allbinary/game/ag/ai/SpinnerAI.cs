@@ -30,7 +30,7 @@ public class SpinnerAI : BasicAI
     private int[] direction;
     public SpinnerAI(int[] direction, AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(ownerLayerInterface, gameInput)
     {
-        // base(ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.direction = direction;
     }
 

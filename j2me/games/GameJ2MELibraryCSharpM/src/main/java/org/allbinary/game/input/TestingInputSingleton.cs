@@ -44,7 +44,7 @@ public class TestingInputSingleton : AllBinaryGameLayer, GameInputInterface
     public readonly GameInputProcessor[] inputProcessorArray = new GameInputProcessor[InputFactory.getInstance().MAX];
     private TestingInputSingleton() : base(StringUtil.getInstance().EMPTY_STRING, RectangleFactory.SINGLETON, ViewPosition.getInstanceD())
     {
-        // base(StringUtil.getInstance().EMPTY_STRING, RectangleFactory.SINGLETON, ViewPosition.getInstanceD()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         GameInputProcessorUtil.init(this.inputProcessorArray);
     }
 
@@ -57,66 +57,24 @@ public class TestingInputSingleton : AllBinaryGameLayer, GameInputInterface
     {
         TestInputInterface testInputInterface = aTestInputInterface;
         this.testInputPaintable = testInputInterface;
-        this.inputProcessorArray[Canvas.UP] = new GameInputProcessor()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            // throws Exception
-            public virtual void processEvent(AllBinaryLayerManager allbinaryLayerManager, GameKeyEvent gameKeyEvent)
-            {
+        this.inputProcessorArray[Canvas.UP] = new __SwtClosure_N66430((__swtSelf_N66430, allbinaryLayerManager, gameKeyEvent) => {
                 testInputInterface.up();
-            }
-
-#endif
-;
-        this.inputProcessorArray[Canvas.DOWN] = new GameInputProcessor()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            // throws Exception
-            public virtual void processEvent(AllBinaryLayerManager allbinaryLayerManager, GameKeyEvent gameKeyEvent)
-            {
+            });
+        this.inputProcessorArray[Canvas.DOWN] = new __SwtClosure_N66578((__swtSelf_N66578, allbinaryLayerManager, gameKeyEvent) => {
                 testInputInterface.down();
-            }
-
-#endif
-;
-        this.inputProcessorArray[Canvas.LEFT] = new GameInputProcessor()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            // throws Exception
-            public virtual void processEvent(AllBinaryLayerManager allbinaryLayerManager, GameKeyEvent gameKeyEvent)
-            {
+            });
+        this.inputProcessorArray[Canvas.LEFT] = new __SwtClosure_N66726((__swtSelf_N66726, allbinaryLayerManager, gameKeyEvent) => {
                 testInputInterface.left();
-            }
-
-#endif
-;
-        this.inputProcessorArray[Canvas.RIGHT] = new GameInputProcessor()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            // throws Exception
-            public virtual void processEvent(AllBinaryLayerManager allbinaryLayerManager, GameKeyEvent gameKeyEvent)
-            {
+            });
+        this.inputProcessorArray[Canvas.RIGHT] = new __SwtClosure_N66874((__swtSelf_N66874, allbinaryLayerManager, gameKeyEvent) => {
                 testInputInterface.right();
-            }
-
-#endif
-;
-        this.inputProcessorArray[Canvas.KEY_NUM7] = new GameInputProcessor()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            // throws Exception
-            public virtual void processEvent(AllBinaryLayerManager allbinaryLayerManager, GameKeyEvent gameKeyEvent)
-            {
+            });
+        this.inputProcessorArray[Canvas.KEY_NUM7] = new __SwtClosure_N67022((__swtSelf_N67022, allbinaryLayerManager, gameKeyEvent) => {
                 testInputInterface.strafeLeft();
-            }
-
-#endif
-;
-        this.inputProcessorArray[Canvas.KEY_NUM9] = new GameInputProcessor()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            // throws Exception
-            public virtual void processEvent(AllBinaryLayerManager allbinaryLayerManager, GameKeyEvent gameKeyEvent)
-            {
+            });
+        this.inputProcessorArray[Canvas.KEY_NUM9] = new __SwtClosure_N67170((__swtSelf_N67170, allbinaryLayerManager, gameKeyEvent) => {
                 testInputInterface.strafeRight();
-            }
-
-#endif
-;
+            });
         GameInputProcessorUtil.init(this.inputProcessorArray);
     }
 
@@ -150,6 +108,78 @@ public class TestingInputSingleton : AllBinaryGameLayer, GameInputInterface
     public override bool implmentsGameInputInterface()
     {
         return true;
+    }
+
+    private sealed class __SwtClosure_N66430 : GameInputProcessor
+    {
+        private readonly global::System.Action<__SwtClosure_N66430, AllBinaryLayerManager, GameKeyEvent> callback1;
+
+        public __SwtClosure_N66430(global::System.Action<__SwtClosure_N66430, AllBinaryLayerManager, GameKeyEvent> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void processEvent(AllBinaryLayerManager allbinaryLayerManager, GameKeyEvent gameKeyEvent) => callback1(this, allbinaryLayerManager, gameKeyEvent);
+    }
+
+    private sealed class __SwtClosure_N66578 : GameInputProcessor
+    {
+        private readonly global::System.Action<__SwtClosure_N66578, AllBinaryLayerManager, GameKeyEvent> callback1;
+
+        public __SwtClosure_N66578(global::System.Action<__SwtClosure_N66578, AllBinaryLayerManager, GameKeyEvent> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void processEvent(AllBinaryLayerManager allbinaryLayerManager, GameKeyEvent gameKeyEvent) => callback1(this, allbinaryLayerManager, gameKeyEvent);
+    }
+
+    private sealed class __SwtClosure_N66726 : GameInputProcessor
+    {
+        private readonly global::System.Action<__SwtClosure_N66726, AllBinaryLayerManager, GameKeyEvent> callback1;
+
+        public __SwtClosure_N66726(global::System.Action<__SwtClosure_N66726, AllBinaryLayerManager, GameKeyEvent> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void processEvent(AllBinaryLayerManager allbinaryLayerManager, GameKeyEvent gameKeyEvent) => callback1(this, allbinaryLayerManager, gameKeyEvent);
+    }
+
+    private sealed class __SwtClosure_N66874 : GameInputProcessor
+    {
+        private readonly global::System.Action<__SwtClosure_N66874, AllBinaryLayerManager, GameKeyEvent> callback1;
+
+        public __SwtClosure_N66874(global::System.Action<__SwtClosure_N66874, AllBinaryLayerManager, GameKeyEvent> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void processEvent(AllBinaryLayerManager allbinaryLayerManager, GameKeyEvent gameKeyEvent) => callback1(this, allbinaryLayerManager, gameKeyEvent);
+    }
+
+    private sealed class __SwtClosure_N67022 : GameInputProcessor
+    {
+        private readonly global::System.Action<__SwtClosure_N67022, AllBinaryLayerManager, GameKeyEvent> callback1;
+
+        public __SwtClosure_N67022(global::System.Action<__SwtClosure_N67022, AllBinaryLayerManager, GameKeyEvent> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void processEvent(AllBinaryLayerManager allbinaryLayerManager, GameKeyEvent gameKeyEvent) => callback1(this, allbinaryLayerManager, gameKeyEvent);
+    }
+
+    private sealed class __SwtClosure_N67170 : GameInputProcessor
+    {
+        private readonly global::System.Action<__SwtClosure_N67170, AllBinaryLayerManager, GameKeyEvent> callback1;
+
+        public __SwtClosure_N67170(global::System.Action<__SwtClosure_N67170, AllBinaryLayerManager, GameKeyEvent> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void processEvent(AllBinaryLayerManager allbinaryLayerManager, GameKeyEvent gameKeyEvent) => callback1(this, allbinaryLayerManager, gameKeyEvent);
     }
 
 }

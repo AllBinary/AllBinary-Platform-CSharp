@@ -23,7 +23,7 @@ public class InputAutomationClientInformation : AbeClientInformation
 {
     public InputAutomationClientInformation() : base("InputAutomationTool", "0.0.1", "InputAutomationTool 0.0.1", "IA")
     {
-        // base("InputAutomationTool", "0.0.1", "InputAutomationTool 0.0.1", "IA") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

@@ -30,7 +30,7 @@ public class VectorBaseRotationAnimation : RotationAnimation, VectorAnimationInt
     private int[][][] currentPoints = NullUtil.getInstance().NULL_INT_ARRAY_ARRAY_ARRAY;
     public VectorBaseRotationAnimation(AngleInfo angleInfo, int[][][] currentPoints, BasicColor basicColor, AnimationBehavior animationBehavior) : base(angleInfo, CircularIndexUtil.createInstance(360 / angleInfo.getAngleIncrementInfo().getAngleIncrement()), animationBehavior)
     {
-        // base(angleInfo, CircularIndexUtil.createInstance(360 / angleInfo.getAngleIncrementInfo().getAngleIncrement()), animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setPoints(currentPoints);
         this.setBasicColorP(basicColor);
     }

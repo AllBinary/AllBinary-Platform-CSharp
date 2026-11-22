@@ -31,12 +31,12 @@ public class JOGL11 : JOGL10, global::javax.microedition.khronos.opengles.GL11
     private readonly GL2 gl11;
     public JOGL11(GL gl) : this(gl, ((GL2) gl))
     {
-        // this(gl, ((GL2) gl)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public JOGL11(GL gl, GL2 gl2) : base(gl, gl2)
     {
-        // base(gl, gl2) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.gl11 = getJOGLGL();
     }
 

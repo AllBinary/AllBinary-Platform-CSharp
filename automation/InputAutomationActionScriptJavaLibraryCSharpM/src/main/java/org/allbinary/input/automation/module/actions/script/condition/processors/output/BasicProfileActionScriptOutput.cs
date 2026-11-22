@@ -26,12 +26,12 @@ public class BasicProfileActionScriptOutput : BasicProfileActionScriptProcessor,
 {
     public BasicProfileActionScriptOutput(string label, Node node) : base(label, node)
     {
-        // base(label, node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public BasicProfileActionScriptOutput(string label) : base(label)
     {
-        // base(label) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

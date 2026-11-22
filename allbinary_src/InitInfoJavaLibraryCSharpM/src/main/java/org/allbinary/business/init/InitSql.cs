@@ -126,7 +126,7 @@ public class InitSql
             int size = keyArray.Length;
             for (int i = 0; i < size; i++) {
                 string key = ((string) keyArray[i]);
-                string value = new string((((string) keysAndValues.get(key))).ToCharArray());
+                string value = global::System.JavaStringExtensions.copyString(((string) keysAndValues.get(key)));
                 stringBuffer.append(key);
                 stringBuffer.append(this.sqlStrings.EQUAL_QUOTE);
                 stringBuffer.append(this.getValue(value));
@@ -294,7 +294,7 @@ public class InitSql
             try {
                 string jdbcDriver = this.databaseConnectionInfoInterface.getJdbcDriver();
                 PreLogUtil.put(new StringMaker().append("Loading DbConnnectionInfo: ").append(this.databaseConnectionInfoInterface.GetType().FullName).append(" Driver: ").append(jdbcDriver).ToString(), this.INIT_SQL, "initialize()");
-                Class.forName(jdbcDriver).newInstance();
+                global::System.JavaDesktopReflection.forName(jdbcDriver).newInstance();
             } catch (Exception e) {
                 if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGINGERROR)) {
                     PreLogUtil.putOE("LoadDriver Failed: " + this.databaseConnectionInfoInterface.getJdbcDriver(), this.INIT_SQL, "initialize()", e);

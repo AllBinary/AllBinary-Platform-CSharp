@@ -26,7 +26,7 @@ public class TransformInfoHttpStoreNoManipulation : TransformInfoHttpStore
 {
     public TransformInfoHttpStoreNoManipulation(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
-        // base(propertiesHashMap, pageContext) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

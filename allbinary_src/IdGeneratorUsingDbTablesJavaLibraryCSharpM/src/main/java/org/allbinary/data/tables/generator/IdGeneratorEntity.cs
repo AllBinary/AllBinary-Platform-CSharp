@@ -36,7 +36,7 @@ public class IdGeneratorEntity : AbSqlBean, IdGeneratorEntityInterface
     public readonly string VALUE = "VALUE";
     public IdGeneratorEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.tableData = new StringMaker().append(this.sqlStrings.CREATE_TABLE).append(tableName).append(this.sqlStrings.START).append(NAME).append(this.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL).append(VALUE).append(this.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL).append(this.sqlStrings.PRIMARY_KEY).append(NAME).append(this.sqlStrings.END).ToString();
         base.setTableName(this.tableName);
     }

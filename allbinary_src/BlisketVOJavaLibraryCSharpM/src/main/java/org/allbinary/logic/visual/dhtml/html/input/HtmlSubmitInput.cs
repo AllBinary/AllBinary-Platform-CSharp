@@ -23,7 +23,7 @@ public class HtmlSubmitInput : HtmlValueInput
 {
     public HtmlSubmitInput(string before, string name, string value, string after) : base(before, HtmlInputData.getInstance().SUBMIT, name, value, after)
     {
-        // base(before, HtmlInputData.getInstance().SUBMIT, name, value, after) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

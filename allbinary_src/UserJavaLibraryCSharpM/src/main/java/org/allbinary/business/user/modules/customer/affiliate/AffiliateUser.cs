@@ -28,13 +28,13 @@ public class AffiliateUser : User
     private AffiliateSales affiliateSales;
     public AffiliateUser() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.affiliateSales = new AffiliateSales();
     }
 
     public AffiliateUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
-        // base(userHashMap) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.affiliateSales = new AffiliateSales();
     }
 

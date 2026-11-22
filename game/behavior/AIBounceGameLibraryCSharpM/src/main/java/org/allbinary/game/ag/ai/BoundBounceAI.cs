@@ -34,7 +34,7 @@ public class BoundBounceAI : BasicAI
     private BoundsVisitorInterface boundsVisitorInterface;
     public BoundBounceAI(AllBinaryLayer ownerLayerInterface, GameInput gameInput, LayerBounds layerBounds, BoundsVisitorInterface boundsVisitorInterface) : base(ownerLayerInterface, gameInput)
     {
-        // base(ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.layerBounds = layerBounds;
         this.boundsVisitorInterface = boundsVisitorInterface;
     }

@@ -49,7 +49,7 @@ public class BillingAddressTag : TableTag
         try {
             object anyType = new BillingAddressHelperFactory().getInstance(this.getPropertiesHashMap(), this.pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("set", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("set", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {
@@ -69,7 +69,7 @@ public class BillingAddressTag : TableTag
         try {
             object anyType = new BillingAddressHelperFactory().getInstance(this.getPropertiesHashMap(), this.pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("setToShippingAddress", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("setToShippingAddress", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {

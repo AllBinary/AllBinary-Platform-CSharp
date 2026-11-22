@@ -50,7 +50,7 @@ public class QuoteRequestTag : TableTag
         try {
             object anyType = new QuoteHelperFactory().getInstance(this.getPropertiesHashMap(), pageContext);
             Type helperClass = anyType.GetType();
-            Method method = helperClass.getMethod("email", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("email", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {

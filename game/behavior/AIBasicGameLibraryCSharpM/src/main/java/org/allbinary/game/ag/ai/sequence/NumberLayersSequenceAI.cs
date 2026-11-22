@@ -28,7 +28,7 @@ public class NumberLayersSequenceAI : SequenceAI
     private int numberOfLayersLeft;
     public NumberLayersSequenceAI(int numberOfEnemiesLeft, ArtificialIntelligenceInterface[] artificialIntelligenceInterface, AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(artificialIntelligenceInterface, ownerLayerInterface, gameInput)
     {
-        // base(artificialIntelligenceInterface, ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.numberOfLayersLeft = numberOfEnemiesLeft;
     }
 

@@ -24,7 +24,7 @@ public class PasswordValidator : TextFieldItemValidator
 {
     public PasswordValidator(ABTextFieldItem textFieldItem, int min, int max, bool allowOnEmpty) : base(textFieldItem, min, max, allowOnEmpty)
     {
-        // base(textFieldItem, min, max, allowOnEmpty) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

@@ -41,7 +41,7 @@ public class MouseActionScriptInput : BasicProfileActionScriptInput, MouseAction
     private MouseActionScriptInputJPanel mouseActionScriptInputJPanel;
     public MouseActionScriptInput(Node node) : base(NAME, node)
     {
-        // base(NAME, node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         this.point = new Point();
         Node actionNode = DomSearchHelper.getNode(MouseActionScriptInputData.NAME, node.getChildNodes());
@@ -74,7 +74,7 @@ public class MouseActionScriptInput : BasicProfileActionScriptInput, MouseAction
 
     public MouseActionScriptInput() : base(NAME)
     {
-        // base(NAME) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.point = new Point();
         this.setAllowsChildren(false);
         this.mouseActionScriptInputJPanel = new MouseActionScriptInputJPanel(this);

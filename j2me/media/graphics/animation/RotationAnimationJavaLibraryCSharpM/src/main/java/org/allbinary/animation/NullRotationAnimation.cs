@@ -22,7 +22,7 @@ public class NullRotationAnimation : RotationAnimation
 
     public NullRotationAnimation(AngleInfo angleInfo, CircularIndexUtil circularIndexUtil, AnimationBehavior animationBehavior) : base(angleInfo, circularIndexUtil, animationBehavior)
     {
-        // base(angleInfo, circularIndexUtil, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

@@ -25,7 +25,7 @@ public class SelectedRTSLayersPlayerDowngradeGameInputProcessor : SelectedRTSLay
 {
     public SelectedRTSLayersPlayerDowngradeGameInputProcessor(SelectedRTSLayersPlayerGameInput selectedRTSLayersPlayerGameInput) : base(selectedRTSLayersPlayerGameInput)
     {
-        // base(selectedRTSLayersPlayerGameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

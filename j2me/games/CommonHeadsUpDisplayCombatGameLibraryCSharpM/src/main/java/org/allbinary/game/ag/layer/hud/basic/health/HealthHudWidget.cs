@@ -40,7 +40,7 @@ public class HealthHudWidget : BasicHud, PaintableInterface, HealthListenerInter
     private readonly GameTickTimeDelayHelper gameTickTimeDelayHelper = GameTickTimeDelayHelperFactory.getInstance();
     public HealthHudWidget(Animation animationInterface, Health healthInterface, int location, int direction) : base(location, direction, 2, BasicColorFactory.getInstance().WHITE)
     {
-        // base(location, direction, 2, BasicColorFactory.getInstance().WHITE) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.animationInterface = animationInterface;
         this.healthInterface = healthInterface;
         this.healthInterface.addListener(this);

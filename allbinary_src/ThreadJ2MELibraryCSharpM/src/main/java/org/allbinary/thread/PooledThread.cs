@@ -31,7 +31,7 @@ public class PooledThread : global::org.allbinary.thread.NullThread
     private readonly ThreadPool threadPool;
     public PooledThread(ThreadPool threadPool) : base(threadPool.createName())
     {
-        // base(threadPool.createName()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(this.commonStrings.CONSTRUCTOR, this, this.commonStrings.CONSTRUCTOR);
         this.threadPool = threadPool;
     }

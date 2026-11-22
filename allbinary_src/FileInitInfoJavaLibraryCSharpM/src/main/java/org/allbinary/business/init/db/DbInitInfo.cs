@@ -48,7 +48,7 @@ public class DbInitInfo : DbConnectionInfo
     private bool hasRead = false;
     public DbInitInfo(string initFileName, bool read) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initFileName = initFileName;
         if (read) {
             this.updateIfNeeded();
@@ -112,13 +112,13 @@ public class DbInitInfo : DbConnectionInfo
                 AbFileInputStream iFile = AbFileInputStream.createFromAbFile(file);
                 AbDataInputStream iData = new AbDataInputStream(iFile);
                 try {
-                    string decryptedJdbcDriver = new string((DatabaseEncoder.decode(iData.readUTF())).ToCharArray());
-                    string decryptedName = new string((DatabaseEncoder.decode(iData.readUTF())).ToCharArray());
-                    string decryptedUserName = new string((DatabaseEncoder.decode(iData.readUTF())).ToCharArray());
-                    string decryptedPassword = new string((DatabaseEncoder.decode(iData.readUTF())).ToCharArray());
-                    string decryptedSchema = new string((DatabaseEncoder.decode(iData.readUTF())).ToCharArray());
-                    string decryptedServer = new string((DatabaseEncoder.decode(iData.readUTF())).ToCharArray());
-                    string decryptedPort = new string((DatabaseEncoder.decode(iData.readUTF())).ToCharArray());
+                    string decryptedJdbcDriver = global::System.JavaStringExtensions.copyString(DatabaseEncoder.decode(iData.readUTF()));
+                    string decryptedName = global::System.JavaStringExtensions.copyString(DatabaseEncoder.decode(iData.readUTF()));
+                    string decryptedUserName = global::System.JavaStringExtensions.copyString(DatabaseEncoder.decode(iData.readUTF()));
+                    string decryptedPassword = global::System.JavaStringExtensions.copyString(DatabaseEncoder.decode(iData.readUTF()));
+                    string decryptedSchema = global::System.JavaStringExtensions.copyString(DatabaseEncoder.decode(iData.readUTF()));
+                    string decryptedServer = global::System.JavaStringExtensions.copyString(DatabaseEncoder.decode(iData.readUTF()));
+                    string decryptedPort = global::System.JavaStringExtensions.copyString(DatabaseEncoder.decode(iData.readUTF()));
                     this.setJdbcDriver(new WeakCrypt(1).decrypt(decryptedJdbcDriver));
                     this.setName(new WeakCrypt(2).decrypt(decryptedName));
                     this.setUserName(new WeakCrypt(3).decrypt(decryptedUserName));

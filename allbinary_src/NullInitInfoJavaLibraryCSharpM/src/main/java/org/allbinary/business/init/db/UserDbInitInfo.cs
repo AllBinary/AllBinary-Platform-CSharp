@@ -23,12 +23,12 @@ public class UserDbInitInfo : DbInitInfo
 {
     public UserDbInitInfo() : base(null, false)
     {
-        // base(null, false) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public UserDbInitInfo(bool read) : base(null, false)
     {
-        // base(null, false) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

@@ -27,7 +27,7 @@ public class SavedCaptureGenericProfileDataWorkerType : GenericProfileDataWorker
     private int lastFrame = 0;
     public SavedCaptureGenericProfileDataWorkerType(string name, string path, int lastFrame) : base(name)
     {
-        // base(name) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setPath(path);
         this.setLastFrame(lastFrame);
     }

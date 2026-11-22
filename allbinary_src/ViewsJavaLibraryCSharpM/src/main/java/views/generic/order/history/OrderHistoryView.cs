@@ -47,7 +47,7 @@ public class OrderHistoryView : HttpStoreComponentView, DomNodeInterface
     private string cancelled;
     public OrderHistoryView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.request = ((HttpServletRequest) this.getPageContext().getRequest());
         this.preprocessing = this.request.getParameter(OrderHistoryData.PREPROCESSINGNAME);
         this.shipped = this.request.getParameter(OrderHistoryData.SHIPPEDNAME);

@@ -23,7 +23,7 @@ public class HtmlTextInput : HtmlLengthInput
 {
     public HtmlTextInput(string before, string name, string value, string after) : base(before, HtmlInputData.getInstance().TEXT, name, value, after)
     {
-        // base(before, HtmlInputData.getInstance().TEXT, name, value, after) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         setSize(((int)(19)));
         setMaxLength(((int)(60)));
     }

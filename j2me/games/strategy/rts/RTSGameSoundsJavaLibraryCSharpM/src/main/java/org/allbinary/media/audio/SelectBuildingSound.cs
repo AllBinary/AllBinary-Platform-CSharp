@@ -25,7 +25,7 @@ public class SelectBuildingSound : CompositeSound
     private static Sound soundInterface = new SelectBuildingSound();
     private SelectBuildingSound() : base("resource:/wav/select_building.wav")
     {
-        // base("resource:/wav/select_building.wav") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public static Sound getInstance()

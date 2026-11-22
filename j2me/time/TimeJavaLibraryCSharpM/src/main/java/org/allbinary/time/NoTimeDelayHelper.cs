@@ -24,7 +24,7 @@ public class NoTimeDelayHelper : TimeDelayHelper
     public static readonly NoTimeDelayHelper SINGLETON = new NoTimeDelayHelper();
     public NoTimeDelayHelper() : base(0)
     {
-        // base(0) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override bool isTimeTNT()

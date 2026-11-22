@@ -70,7 +70,7 @@ public class WaypointRTSFormInput : RTSFormInput
     private PathFindingLayerInterface stickyAssociatedRtsLayer = NullPathFindingLayer.NULL_PATH_FINDING_LAYER;
     public WaypointRTSFormInput(Group[] groupInterface, bool isPrimaryWaypointCreator) : base(groupInterface)
     {
-        // base(groupInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.isPrimaryWaypointCreator = isPrimaryWaypointCreator;
         SmallIntegerSingletonFactory smallIntegerSingletonFactory = SmallIntegerSingletonFactory.getInstance();
         BasicColorFactory basicColorFactory = BasicColorFactory.getInstance();

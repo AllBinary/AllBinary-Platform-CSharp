@@ -38,7 +38,7 @@ public class CustomTextBoxIndexedAnimation : IndexedAnimation, RawKeyEventListen
     private TextChangeListener textChangeListener = TextChangeListener.getInstance();
     public CustomTextBoxIndexedAnimation(CustomTextBox customTextBox) : base(AnimationBehavior.getInstance())
     {
-        // base(AnimationBehavior.getInstance()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.customTextBox = customTextBox;
     }
 

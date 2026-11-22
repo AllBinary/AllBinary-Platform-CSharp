@@ -24,12 +24,12 @@ public class TimeLastModified : Time
 {
     public TimeLastModified(string time) : base(long.Parse(time))
     {
-        // base(long.Parse(time)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public TimeLastModified(long time) : base(time)
     {
-        // base(time) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

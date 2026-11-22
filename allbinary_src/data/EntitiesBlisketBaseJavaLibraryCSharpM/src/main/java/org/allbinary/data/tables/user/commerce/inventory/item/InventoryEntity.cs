@@ -43,7 +43,7 @@ public class InventoryEntity : AbSqlBean, InventoryEntityInterface
     private readonly string tableName = "basicinventory";
     public InventoryEntity() : base(new InventoryDbInitInfo())
     {
-        // base(new InventoryDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

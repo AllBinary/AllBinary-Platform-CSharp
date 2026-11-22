@@ -68,7 +68,7 @@ public class UnitWaypointBehavior2 : UnitWaypointBehavior
     public UnitWaypointBehavior2(UnitLayer ownerAdvancedRTSGameLayer, AdvancedRTSGameLayer fakeWaypoint) : base(ownerAdvancedRTSGameLayer, fakeWaypoint)
     {
         this.buildingSteeringVisitor = new BuildingSteeringVisitor(this);
-        // base(ownerAdvancedRTSGameLayer, fakeWaypoint) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.progressTimeDelayHelper = new TimeDelayHelper(5000);
         this.wanderPathsList = new BasicArrayListD();
         Features features = Features.getInstance();

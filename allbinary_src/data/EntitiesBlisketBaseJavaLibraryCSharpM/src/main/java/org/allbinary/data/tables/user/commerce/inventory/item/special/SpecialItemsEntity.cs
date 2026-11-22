@@ -38,7 +38,7 @@ public class SpecialItemsEntity : AbSqlBean, SpecialItemsEntityInterface
     public readonly string tableName = "specialitems";
     public SpecialItemsEntity() : base(new InventoryDbInitInfo())
     {
-        // base(new InventoryDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

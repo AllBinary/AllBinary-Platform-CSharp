@@ -24,7 +24,7 @@ public class ErrorSound : CompositeSound
     private static Sound soundInterface = new ErrorSound();
     private ErrorSound() : base("resource:/wav/error.wav")
     {
-        // base("resource:/wav/error.wav") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public static Sound getInstance()

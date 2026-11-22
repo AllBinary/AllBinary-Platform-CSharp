@@ -67,7 +67,7 @@ public class OrderHistoryEntity : AbSqlBean, OrderHistoryEntityInterface
     public readonly string tableName = "orderhistory";
     public OrderHistoryEntity() : base(new HistoryDbInitInfo())
     {
-        // base(new HistoryDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

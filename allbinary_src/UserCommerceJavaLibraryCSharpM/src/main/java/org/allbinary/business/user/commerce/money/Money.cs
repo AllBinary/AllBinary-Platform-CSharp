@@ -131,7 +131,7 @@ public class Money
 
     public override string ToString()
     {
-        return new string((convertUnitsTo(this.DEFAULT_CURRENCY)).ToCharArray());
+        return global::System.JavaStringExtensions.copyString(convertUnitsTo(this.DEFAULT_CURRENCY));
     }
 
 }

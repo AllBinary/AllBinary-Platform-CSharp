@@ -25,7 +25,7 @@ public class OptimizedGameInputLayerManager : LayerManager
 {
     public OptimizedGameInputLayerManager() : base(LayerManagerNoDebug.getInstance())
     {
-        // base(LayerManagerNoDebug.getInstance()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

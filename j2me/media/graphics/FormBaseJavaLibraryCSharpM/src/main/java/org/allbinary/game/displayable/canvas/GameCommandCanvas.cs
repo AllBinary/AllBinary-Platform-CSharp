@@ -97,7 +97,7 @@ public class GameCommandCanvas : MyCanvas, MenuListener, DisplayChangeEventListe
         this.repaintProcessor = ScreenRepaintProcessorFactory.getInstance().create(this);
         this.updateMyFontProcessor = new UpdateMyFontProcessor(this);
         this.myFontProcessor = this.updateMyFontProcessor;
-        // base(name, CanvasStrings.getInstance().EMPTY_CHILD_NAME_LIST) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.repaintBehavior = RepaintBehavior.getInstance();
         this.foregroundBasicColor = foregroundBasicColor;
         this.backgroundBasicColor = backgroundBasicColor;

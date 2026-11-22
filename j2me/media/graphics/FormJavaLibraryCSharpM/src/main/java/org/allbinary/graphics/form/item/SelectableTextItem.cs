@@ -25,7 +25,7 @@ public class SelectableTextItem : ABTextItem
 {
     public SelectableTextItem(string label, int layout, string altText, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(label, layout, altText, backgroundBasicColor, foregroundBasicColor)
     {
-        // base(label, layout, altText, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override bool isFocusable()

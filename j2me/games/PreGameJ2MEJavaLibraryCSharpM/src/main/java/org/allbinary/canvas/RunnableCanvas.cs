@@ -59,7 +59,7 @@ public class RunnableCanvas : MyCanvas, RunnableInterface
     private readonly string PROCESS_LOOP_SLEEP = "processLoopSleep";
     public RunnableCanvas(CommandListener commandListener, BasicArrayList childNameList, bool hasParam) : base(CommonStrings.getInstance().UNKNOWN, childNameList)
     {
-        // base(CommonStrings.getInstance().UNKNOWN, childNameList) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(new StringMaker().append("RunnableCanvas delay: ").appendint(((int) this.loopTimeHelper.delay)).ToString(), this, this.commonStrings.CONSTRUCTOR);
         this.runnableCanvasRefreshHelper = new RunnableCanvasRefreshHelper(this);
         if (commandListener != null) {

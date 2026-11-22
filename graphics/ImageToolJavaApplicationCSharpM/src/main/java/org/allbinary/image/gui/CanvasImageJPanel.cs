@@ -55,17 +55,14 @@ public class CanvasImageJPanel : JPanel, ImageProcessedVisitor
     private BufferedImage result = null;
     public CanvasImageJPanel(ImageProcessorInput imageProcessorInput) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         initComponents();
         this.imageProcessorInput = imageProcessorInput;
     }
 
     public virtual void process()
     {
-        new global::org.allbinary.thread.NullThread()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        new __SwtClosure_N66626((__swtSelf_N66626) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 try {
                     CanvasTrimUtil canvasTrimUtil = CanvasTrimUtil.getInstance();
@@ -80,12 +77,9 @@ public class CanvasImageJPanel : JPanel, ImageProcessedVisitor
                         canvasExpandUtil.process(this.getImageProcessorInput(), leftReduction, topReduction, this);
                     }
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N66626, commonStrings.RUN, e);
                 }
-            }
-
-#endif
-.start();
+            }).start();
     }
 
     private void initComponents()
@@ -230,6 +224,18 @@ public class CanvasImageJPanel : JPanel, ImageProcessedVisitor
         }
         bool isWritten = ImageIO.write(((RenderedImage) this.result), imageStrings.PNG, file);
         this.logUtil.putF(new StringMaker().append("File: ").append(StringUtil.getInstance().toString(file)).append(" Wrote: ").appendboolean(isWritten).ToString(), this, this.commonStrings.RUN);
+    }
+
+    private sealed class __SwtClosure_N66626 : global::org.allbinary.thread.NullThread
+    {
+        private readonly global::System.Action<__SwtClosure_N66626> callback1;
+
+        public __SwtClosure_N66626(global::System.Action<__SwtClosure_N66626> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
     }
 
 }

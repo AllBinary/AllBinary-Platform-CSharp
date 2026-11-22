@@ -26,7 +26,7 @@ public class DbInitInfo : DbConnectionInfo
 {
     public DbInitInfo(string initFileName, bool read) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override string getUrl()

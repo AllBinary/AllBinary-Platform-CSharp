@@ -44,7 +44,7 @@ public class BuildingAdvancedRTSFormInput : BuildingRTSFormInput
     public readonly GameNotificationEvent atLeastOneHouseGameNotificationEvent;
     public BuildingAdvancedRTSFormInput(Group[] groupInterface, bool isUnitProducer) : base(groupInterface, isUnitProducer)
     {
-        // base(groupInterface, isUnitProducer) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         BasicColorFactory basicColorFactory = BasicColorFactory.getInstance();
         this.atLeastOneHouseGameNotificationEvent = new GameNotificationEvent(this, "Build At Least One House First", SmallIntegerSingletonFactory.getInstance().getAt(2), basicColorFactory.WHITE, BooleanFactory.getInstance().FALSE);
     }

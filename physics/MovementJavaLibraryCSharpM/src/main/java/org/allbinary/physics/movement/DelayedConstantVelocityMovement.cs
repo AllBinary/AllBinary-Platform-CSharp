@@ -29,7 +29,7 @@ public class DelayedConstantVelocityMovement : BasicConstantVelocityMovement
     private readonly TimeDelayHelper timeDelayHelper = new TimeDelayHelper(60);
     public DelayedConstantVelocityMovement(BasicDecimal basicDecimal, BasicVelocityProperties velocityProperties) : base(basicDecimal, velocityProperties)
     {
-        // base(basicDecimal, velocityProperties) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void init(BasicDecimal speedBasicDecimal, int angle, int otherAngle)

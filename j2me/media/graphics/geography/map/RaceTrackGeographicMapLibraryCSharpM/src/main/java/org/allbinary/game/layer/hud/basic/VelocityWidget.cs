@@ -43,7 +43,7 @@ public class VelocityWidget : BasicHud
     public VelocityWidget(int powerOfTenVelocity, int location, int direction, BasicColor basicColor) : base(location, direction, 2, basicColor)
     {
         this.totalChars = this.KILOMETERS_PER_HOUR_STR.Length;
-        // base(location, direction, 2, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.powerOfTenVelocity = powerOfTenVelocity;
         this.maxVelocity = powerOfTenVelocity;
         this.velocity = 0;

@@ -34,7 +34,7 @@ public class ImageArrayRotationAnimation : ImageArrayBaseRotationAnimation
     private int expectedTotalFrames = 0;
     public ImageArrayRotationAnimation(Image[] imageArray, AngleInfo angleInfo, int totalAngle, AnimationBehavior animationBehavior) : base(imageArray, angleInfo, animationBehavior)
     {
-        // base(imageArray, angleInfo, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initImageArray(imageArray, angleInfo, totalAngle);
     }
 

@@ -30,7 +30,7 @@ public class ConsolidateMotionRectangles : MotionRectangles
     private const string NAME = "consolidatedMotionRectangles_";
     public ConsolidateMotionRectangles(MotionRectangles motionRectangles) : base(NAME, motionRectangles.getImageComparisonResult())
     {
-        // base(NAME, motionRectangles.getImageComparisonResult()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         BasicArrayList vector = motionRectangles.getVector();
         int size = vector.size();
         for (int index = 0; index < size; index++) {

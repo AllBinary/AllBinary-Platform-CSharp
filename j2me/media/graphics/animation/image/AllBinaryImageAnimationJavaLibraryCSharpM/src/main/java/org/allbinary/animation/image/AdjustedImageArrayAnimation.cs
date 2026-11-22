@@ -28,7 +28,7 @@ public class AdjustedImageArrayAnimation : ImageArrayAnimation
     private int dy = 0;
     public AdjustedImageArrayAnimation(Image[] imageArray, int dx, int dy, AnimationBehavior animationBehavior) : base(imageArray, animationBehavior)
     {
-        // base(imageArray, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.init(dx, dy);
     }
 

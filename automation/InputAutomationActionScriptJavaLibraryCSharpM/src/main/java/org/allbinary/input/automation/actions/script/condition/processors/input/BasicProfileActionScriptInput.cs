@@ -17,7 +17,6 @@
 using System;
 using System.Linq;
 using java.util;
-//using Iterator = java.util.Iterator;
 using DomNodeHelper = org.allbinary.data.tree.dom.DomNodeHelper;
 using DomSearchHelper = org.allbinary.data.tree.dom.DomSearchHelper;
 using ModDomHelper = org.allbinary.data.tree.dom.ModDomHelper;
@@ -41,7 +40,7 @@ public class BasicProfileActionScriptInput : BasicProfileActionScriptProcessor, 
     private int time = 0;
     public BasicProfileActionScriptInput(string label, Node node) : base(label, node)
     {
-        // base(label, node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(this.commonStrings.START + label, this, this.commonStrings.CONSTRUCTOR);
         Node actionNode = DomSearchHelper.getNode(GenericProfileActionScriptInputData.TYPE, node.getChildNodes());
         string inputTypeString = DomNodeHelper.getTextNodeValue(actionNode);
@@ -57,12 +56,12 @@ public class BasicProfileActionScriptInput : BasicProfileActionScriptProcessor, 
 
     public BasicProfileActionScriptInput(string label) : base(label)
     {
-        // base(label) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(this.commonStrings.START + label, this, this.commonStrings.CONSTRUCTOR);
         InputRobotFactory inputRobotFactory = InputRobotFactory.getInstance();
         ABHashtable<object, object> hashtable = ((ABHashtable<object, object>) inputRobotFactory.get());
         Set<object> set = hashtable.keySet();
-        Iterator iterator = set.iterator();
+        Iterator<object> iterator = set.iterator();
         this.setInputRobotInterface(inputRobotFactory.get(((string) iterator.next())));
         this.setTime(0);
     }

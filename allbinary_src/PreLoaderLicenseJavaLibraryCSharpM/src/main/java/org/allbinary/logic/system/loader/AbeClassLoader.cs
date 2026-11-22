@@ -45,7 +45,7 @@ public class AbeClassLoader : global::java.lang.ClassLoader
     private string key;
     public AbeClassLoader(global::java.lang.ClassLoader parent, string key) : base(parent)
     {
-        // base(parent) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.key = key;
         AbeClassLoader.PATH = URLGLOBALS.getWebappPath() + "WEB-INF/classes/";
     }
@@ -57,7 +57,7 @@ public class AbeClassLoader : global::java.lang.ClassLoader
 
     // throws ClassNotFoundException
     [MethodImpl(MethodImplOptions.Synchronized)]
-    public virtual Type loadClass(string name)
+    public override Type loadClass(string name)
     {
         return this.loadClass(name, false);
     }
@@ -77,7 +77,7 @@ public class AbeClassLoader : global::java.lang.ClassLoader
                     if (normalClass != null) {
                         return normalClass;
                     }
-                } catch (ClassNotFoundException e) {
+                } catch (global::System.TypeLoadException e) {
                     logBuffer.add(LogFactory.getInstance("Failed to Load Class: " + name + "\nwith: " + loadedWith, this, this.LOAD_CLASS, e));
                 } catch (Exception e) {
                     logBuffer.add(LogFactory.getInstance("Failed to Load Class: " + name + "\nwith: " + loadedWith, this, this.LOAD_CLASS, e));
@@ -86,11 +86,11 @@ public class AbeClassLoader : global::java.lang.ClassLoader
                 }
                 sbyte[] classBytes = this.loadClassBytesFromFile(name);
                 if (classBytes == null) {
-                    throw new ClassNotFoundException("My Bytes not loaded for: " + name + "\nwith: " + "loadClassBytes");
+                    throw new global::System.TypeLoadException("My Bytes not loaded for: " + name + "\nwith: " + "loadClassBytes");
                 }
                 myClass = defineClass(name, classBytes, 0, classBytes.Length);
                 if (myClass == null) {
-                    throw new ClassNotFoundException("My Class Not Defineable for: " + name + "\nwith: " + "loadClassBytes");
+                    throw new global::System.TypeLoadException("My Class Not Defineable for: " + name + "\nwith: " + "loadClassBytes");
                 }
                 AbeClassLoader.classes.put(name, myClass);
             } else {
@@ -149,7 +149,7 @@ public class AbeClassLoader : global::java.lang.ClassLoader
                     if (normalClass != null) {
                         return normalClass;
                     }
-                } catch (ClassNotFoundException e) {
+                } catch (global::System.TypeLoadException e) {
                     if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().LOADER)) {
                         this.logUtil.putF("Failed Loaded Class: " + name + " with: " + loadedWith, this, this.LOAD_CLASS);
                     }
@@ -165,11 +165,11 @@ public class AbeClassLoader : global::java.lang.ClassLoader
                 loadedWith = "loadClassBytes";
                 sbyte[] classBytes = this.loadClassBytesFromFile(name);
                 if (classBytes == null) {
-                    throw new ClassNotFoundException("Bytes not loaded for: " + name);
+                    throw new global::System.TypeLoadException("Bytes not loaded for: " + name);
                 }
                 myClass = defineClass(name, classBytes, 0, classBytes.Length);
                 if (myClass == null) {
-                    throw new ClassNotFoundException("Class Not Defineable for: " + name);
+                    throw new global::System.TypeLoadException("Class Not Defineable for: " + name);
                 }
                 AbeClassLoader.classes.put(name, myClass);
             } else {

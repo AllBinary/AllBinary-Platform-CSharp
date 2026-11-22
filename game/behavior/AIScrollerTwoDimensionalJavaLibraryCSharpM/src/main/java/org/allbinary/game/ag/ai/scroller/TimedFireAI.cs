@@ -34,7 +34,7 @@ public class TimedFireAI : BasicAI
     private readonly int delay;
     public TimedFireAI(int delay, AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(ownerLayerInterface, gameInput)
     {
-        // base(ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.delay = delay;
     }
 

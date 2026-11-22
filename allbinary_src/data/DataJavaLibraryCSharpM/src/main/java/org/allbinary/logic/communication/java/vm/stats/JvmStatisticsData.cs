@@ -23,7 +23,7 @@ public class JvmStatisticsData
 {
     private JvmStatisticsData() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public const string JVM_STATISTICS = "JVM_STATISTICS_";

@@ -33,7 +33,7 @@ public class PaymentProcessorComponent : HttpStoreComponentView
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public PaymentProcessorComponent(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

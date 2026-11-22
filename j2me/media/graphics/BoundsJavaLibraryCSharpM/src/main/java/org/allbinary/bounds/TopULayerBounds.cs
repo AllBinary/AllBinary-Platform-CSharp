@@ -24,7 +24,7 @@ public class TopULayerBounds : LayerBounds
 {
     public TopULayerBounds(Rectangle rectangle) : base(rectangle)
     {
-        // base(rectangle) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void visit(BoundsVisitorInterface boundsVisitorInterface)

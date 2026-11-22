@@ -59,7 +59,7 @@ public class GameInputMappingCanvas : GameCommandCanvas, InputMappingInterface
     {
         this.selectedGameKey = this.NONE;
         this.selectedInput = this.NONE;
-        // base(commandListener, GameInputMappingCanvas.NAME, allBinaryGameLayerManager.getBackgroundBasicColor(), allBinaryGameLayerManager.getForegroundBasicColor()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         if (helpPaintable == null) {
             throw new Exception("Help Paintable Exception");

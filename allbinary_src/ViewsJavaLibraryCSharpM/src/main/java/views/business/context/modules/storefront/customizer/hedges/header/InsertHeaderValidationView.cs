@@ -42,7 +42,7 @@ public class InsertHeaderValidationView : TopBarView, ValidationComponentInterfa
     private readonly string LOGOPATH = "logo/";
     public InsertHeaderValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         HashMap<object, object> multipartRequestHashMap = new MultipartRequestParams(this.getPageContext()).toHashMap();
         StoreFrontInterface storeFrontInterface = StoreFrontFactory.getInstance(this.getWeblisketSession().getStoreName());
         string fullPath = URLGLOBALS.getWebappPath() + storeFrontInterface.getCurrentHostNamePath() + this.LOGOPATH;

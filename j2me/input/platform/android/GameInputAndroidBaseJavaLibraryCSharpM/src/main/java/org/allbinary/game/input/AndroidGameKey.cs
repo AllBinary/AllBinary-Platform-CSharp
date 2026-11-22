@@ -10,7 +10,7 @@ public class AndroidGameKey : Input
 {
     public AndroidGameKey(int keyCode, string name) : base(keyCode, name)
     {
-        // base(keyCode, name) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         InputFactory inputFactory = InputFactory.getInstance();
         inputFactory.inputIntegerArray[this.getId()] = this;
     }

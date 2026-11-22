@@ -30,7 +30,7 @@ public class NumberOnOwnGroupSequenceAI : SequenceAI
     private int?[] numberOnSameTeam;
     public NumberOnOwnGroupSequenceAI(int?[] numberOnSameTeam, ArtificialIntelligenceInterface[] artificialIntelligenceInterface, AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(artificialIntelligenceInterface, ownerLayerInterface, gameInput)
     {
-        // base(artificialIntelligenceInterface, ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.numberOnSameTeam = numberOnSameTeam;
     }
 

@@ -34,7 +34,7 @@ public class ScoreHudWidget : NumberStringHud
 
     public ScoreHudWidget(int maxscore, int location, int direction, int bufferZone, BasicColor basicColor) : base("Pts ", maxscore, location, direction, bufferZone, basicColor)
     {
-        // base("Pts ", maxscore, location, direction, bufferZone, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.updateMaxHeight = 14;
     }
 

@@ -38,7 +38,7 @@ public class CompositeRTSFormInput : RTSFormInput
     private readonly bool isPrimaryWaypointCreator;
     public CompositeRTSFormInput(Group[] groupInterface, bool isPrimaryWaypointCreator, int[] itemIndex) : base(groupInterface)
     {
-        // base(groupInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.itemIndex = itemIndex;
         this.isPrimaryWaypointCreator = isPrimaryWaypointCreator;
         this.rtsFormInputArray = new RTSFormInput[2];

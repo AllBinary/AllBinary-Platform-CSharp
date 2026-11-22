@@ -34,7 +34,7 @@ public class EditHeaderValidationView : TopBarView, ValidationComponentInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public EditHeaderValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual bool? isValid()

@@ -72,7 +72,7 @@ public class DateRangeOrderHistoryView : HttpStoreComponentView, ValidationCompo
     private int MAXLEN = 15;
     public DateRangeOrderHistoryView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.request = ((HttpServletRequest) this.getPageContext().getRequest());
         this.getFormData();
     }

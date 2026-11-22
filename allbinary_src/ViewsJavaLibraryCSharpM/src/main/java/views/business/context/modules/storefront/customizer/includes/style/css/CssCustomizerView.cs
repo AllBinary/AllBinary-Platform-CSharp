@@ -32,7 +32,7 @@ public class CssCustomizerView : HttpStoreComponentView
     public ValidationInterface styleValidationInterface = null;
     public CssCustomizerView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

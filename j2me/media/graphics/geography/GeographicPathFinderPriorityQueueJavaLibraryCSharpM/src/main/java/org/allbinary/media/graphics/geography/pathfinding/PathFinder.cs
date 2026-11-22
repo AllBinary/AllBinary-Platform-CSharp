@@ -14,6 +14,7 @@
  */
 // Generated Code Do Not Modify
 
+extern alias LogJ2SECollections;
 using System;
 using System.Linq;
 using AllBinaryTiledLayer = org.allbinary.game.layer.AllBinaryTiledLayer;
@@ -26,7 +27,8 @@ using BasicGeographicMapCellPositionFactory = org.allbinary.media.graphics.geogr
 using GeographicMapCellPosition = org.allbinary.media.graphics.geography.map.GeographicMapCellPosition;
 using GeographicMapCellType = org.allbinary.media.graphics.geography.map.GeographicMapCellType;
 using RaceTrackGeographicMapCellType = org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType;
-using org.allbinary.util;
+//using org.allbinary.util;
+//using org.allbinary.util;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using BasicArrayListUtil = org.allbinary.util.BasicArrayListUtil;
@@ -38,8 +40,8 @@ public class PathFinder : GeographicPathFinderBase
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private readonly BasicArrayListUtil basicArrayListUtil = BasicArrayListUtil.getInstance();
     private readonly MathUtil mathUtil = MathUtil.getInstance();
-    private readonly ABPriorityQueue<PathFindingNodeCost> openPriorityQueue = new ABPriorityQueue<PathFindingNodeCost>();
-    private readonly ABHashSet<PathFindingNodeCost> closedSet = new ABHashSet<PathFindingNodeCost>();
+    private readonly LogJ2SECollections::org.allbinary.util.ABPriorityQueue<PathFindingNodeCost> openPriorityQueue = new LogJ2SECollections::org.allbinary.util.ABPriorityQueue<PathFindingNodeCost>();
+    private readonly LogJ2SECollections::org.allbinary.util.ABHashSet<PathFindingNodeCost> closedSet = new LogJ2SECollections::org.allbinary.util.ABHashSet<PathFindingNodeCost>();
     private object geographicMapInterface = NullUtil.getInstance().NULL_OBJECT;
     private PathFindingNodeCost[][] costArray = PathFindingNodeCost.NULL_PATH_FINDING_NODE_COST_ARRAY_ARRAY;
     // throws Exception

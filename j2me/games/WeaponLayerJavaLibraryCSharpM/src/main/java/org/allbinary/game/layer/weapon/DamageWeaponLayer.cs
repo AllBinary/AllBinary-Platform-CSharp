@@ -28,7 +28,7 @@ public class DamageWeaponLayer : WeaponLayer
 {
     public DamageWeaponLayer(string name, RemoteInfo remoteInfo, Movement movement, Animation animationInterface, Animation destroyedAnimationInterface, Rectangle rectangle, ViewPositionBase viewPosition, string username, int actorSessionId, int id, int multiPlayerType) : base(name, remoteInfo, multiPlayerType, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition)
     {
-        // base(name, remoteInfo, multiPlayerType, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setCollidableInferface(new CollidableDamageWeaponBehavior(true));
     }
 

@@ -67,7 +67,7 @@ public class RTSPlayerGameInput : PlayerGameInput
     private RTSFormInput selectedRtsFormInput = NullRTSFormInputFactory.getInstance();
     public RTSPlayerGameInput(AllBinaryGameCanvas gameCanvas, BasicArrayList inputList, int playerInputId, RTSLayerInfoPaintable towerInfoPaintable, RTSPlayerLayerInterface rtsPlayerLayerInterface, LayerPositionFinderInterface layerPositionFinderInterface, SelectRTSLayerVisitorFactoryInterface selectRTSLayerVisitorFactoryInterface) : base(inputList, new BasicArrayListD(), playerInputId)
     {
-        // base(inputList, new BasicArrayListD(), playerInputId) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initInputProcessors();
         this.gameCanvas = gameCanvas;
         this.inputList = inputList;

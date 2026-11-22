@@ -45,7 +45,7 @@ public class CreateIconImagesJPanel : JPanel, ImageProcessorInputCompositeInterf
     private ImageProcessorInput imageProcessorInput;
     public CreateIconImagesJPanel(ImageProcessorInput imageProcessorInput) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         initComponents();
         this.imageProcessorInput = imageProcessorInput;
         string[] numberStringArray = new string[101];
@@ -63,10 +63,7 @@ public class CreateIconImagesJPanel : JPanel, ImageProcessorInputCompositeInterf
 
     public virtual void process()
     {
-        new global::org.allbinary.thread.NullThread()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        new __SwtClosure_N66773((__swtSelf_N66773) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 try {
                     ImageUtil imageUtil = ImageUtil.getInstance();
@@ -103,12 +100,9 @@ public class CreateIconImagesJPanel : JPanel, ImageProcessorInputCompositeInterf
                     }
                     this.getParent().repaint();
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N66773, commonStrings.RUN, e);
                 }
-            }
-
-#endif
-.start();
+            }).start();
     }
 
     public virtual ImageProcessorInput getImageProcessorInput()
@@ -146,5 +140,17 @@ public class CreateIconImagesJPanel : JPanel, ImageProcessorInputCompositeInterf
     }
 
     private JButton aboveJButton = null;
+    private sealed class __SwtClosure_N66773 : global::org.allbinary.thread.NullThread
+    {
+        private readonly global::System.Action<__SwtClosure_N66773> callback1;
+
+        public __SwtClosure_N66773(global::System.Action<__SwtClosure_N66773> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
+    }
+
 }
 

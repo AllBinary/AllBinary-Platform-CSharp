@@ -25,7 +25,7 @@ public class RTSPlayerRightGameInputProcessor : RTSPlayerGameInputProcessor
 {
     public RTSPlayerRightGameInputProcessor(RTSPlayerGameInput rtsPlayerGameInput) : base(rtsPlayerGameInput)
     {
-        // base(rtsPlayerGameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

@@ -27,7 +27,7 @@ public class InitException : Exception
 
     public InitException(string msg) : base(msg)
     {
-        // base(msg) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

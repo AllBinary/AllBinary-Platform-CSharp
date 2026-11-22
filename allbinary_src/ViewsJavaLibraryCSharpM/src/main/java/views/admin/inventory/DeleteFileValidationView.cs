@@ -35,7 +35,7 @@ public class DeleteFileValidationView : InventoryItemView, ValidationComponentIn
     private string id = null;
     public DeleteFileValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface, StringUtil.getInstance().EMPTY_STRING)
     {
-        // base(transformInfoInterface, StringUtil.getInstance().EMPTY_STRING) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.getFormData();
     }
 

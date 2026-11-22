@@ -30,7 +30,7 @@ public class GeographicMapCellPositionEvent : AllBinaryEventObject
     private CellPosition geographicMapCellPosition = CellPositionFactory.getInstance().NONE;
     public GeographicMapCellPositionEvent(object anyType, CellPosition geographicMapCellPosition) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.geographicMapCellPosition = geographicMapCellPosition;
     }
 

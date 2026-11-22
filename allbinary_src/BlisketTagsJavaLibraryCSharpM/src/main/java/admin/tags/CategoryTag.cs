@@ -51,7 +51,7 @@ public class CategoryTag : TableTag
         try {
             object anyType = new CategoryRequestHelperFactory().getInstance(this.getPropertiesHashMap(), this.pageContext);
             Type helperClass = anyType.GetType();
-            Method method = helperClass.getMethod("viewCategory", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("viewCategory", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {
@@ -71,7 +71,7 @@ public class CategoryTag : TableTag
         try {
             object anyType = new CategoryRequestHelperFactory().getInstance(this.getPropertiesHashMap(), this.pageContext);
             Type helperClass = anyType.GetType();
-            Method method = helperClass.getMethod("viewCategories", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("viewCategories", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {

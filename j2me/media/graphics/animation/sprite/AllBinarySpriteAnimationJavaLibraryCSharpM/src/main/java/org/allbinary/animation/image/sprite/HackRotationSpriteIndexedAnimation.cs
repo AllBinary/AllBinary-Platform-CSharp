@@ -33,7 +33,7 @@ public class HackRotationSpriteIndexedAnimation : RotationAnimation
     private readonly Image image;
     public HackRotationSpriteIndexedAnimation(Sprite sprite, Image image, AngleInfo angleInfo, AnimationBehavior animationBehavior) : base(angleInfo, CircularIndexUtil.createInstance(360 / angleInfo.getAngleIncrementInfo().getAngleIncrement()), animationBehavior)
     {
-        // base(angleInfo, CircularIndexUtil.createInstance(360 / angleInfo.getAngleIncrementInfo().getAngleIncrement()), animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.sprite = sprite;
         this.image = image;
     }

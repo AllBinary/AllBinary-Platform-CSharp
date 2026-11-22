@@ -51,13 +51,13 @@ public class OrderItemsTag : TableTag
             object anyType = new OrderItemsRequestHelperFactory().getInstance(this.getPropertiesHashMap(), this.pageContext);
             if (this.status == null) {
                 Type helperClass = anyType.GetType();
-                Method method = helperClass.getMethod("setOrderStatus", null);
+                global::System.Reflection.MethodInfo method = helperClass.getMethod("setOrderStatus", null);
                 string result = ((string) method.invoke(anyType, null));
                 return result;
             } else {
                 Type helperClass = anyType.GetType();
                 Type[] methodParams = new Type[] { this.status.GetType() };
-                Method method = helperClass.getMethod("setOrderStatus", methodParams);
+                global::System.Reflection.MethodInfo method = helperClass.getMethod("setOrderStatus", methodParams);
                 object[] methodArgs = new object[] { this.status };
                 string result = ((string) method.invoke(anyType, methodArgs));
                 return result;

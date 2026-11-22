@@ -27,7 +27,7 @@ public class GraphicsPipeline : BasicGraphicsPipeline
 {
     public GraphicsPipeline(BasicArrayList points) : base(points)
     {
-        // base(points) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

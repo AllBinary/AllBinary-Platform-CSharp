@@ -26,7 +26,7 @@ public class ImmutableBasicArrayList : BasicArrayListS
     private readonly string name;
     public ImmutableBasicArrayList(string name, int size) : base(size)
     {
-        // base(size) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.name = name;
     }
 

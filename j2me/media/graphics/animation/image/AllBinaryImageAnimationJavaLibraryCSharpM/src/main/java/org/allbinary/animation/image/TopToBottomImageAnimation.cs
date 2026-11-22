@@ -29,7 +29,7 @@ public class TopToBottomImageAnimation : ImageSegmentAnimation
     private int currentHeight;
     public TopToBottomImageAnimation(Image image, int[] sequenceArray, AnimationBehavior animationBehavior) : base(image, sequenceArray, animationBehavior)
     {
-        // base(image, sequenceArray, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.currentHeight = 0;
         if (this.getSequence()[0] == -1) {
             this.setFrame(this.getSize() - 1);

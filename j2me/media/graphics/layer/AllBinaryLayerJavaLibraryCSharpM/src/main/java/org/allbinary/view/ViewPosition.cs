@@ -30,7 +30,7 @@ public class ViewPosition : ViewPositionBase
     private AllBinaryLayer allbinaryLayer = AllBinaryLayer.NULL_ALLBINARY_LAYER;
     public ViewPosition(int x, int y, int z) : base(x, y, z)
     {
-        // base(x, y, z) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override int getX()

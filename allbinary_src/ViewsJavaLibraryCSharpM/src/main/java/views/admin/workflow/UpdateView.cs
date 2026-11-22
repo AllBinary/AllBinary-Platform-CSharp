@@ -32,7 +32,7 @@ public class UpdateView : WorkFlowView, ValidationComponentInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public UpdateView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual bool? isValid()

@@ -30,7 +30,7 @@ public class NullLayer : Layer
 
     private NullLayer() : base(0, 0)
     {
-        // base(0, 0) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void paint(Graphics graphics)

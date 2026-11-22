@@ -53,7 +53,7 @@ public class MiniMapLayer : AllBinaryLayer, GeographicMapCellPositionEventListen
     private CircleFilledAnimation animationInterface;
     public MiniMapLayer(BasicGeographicMap geographicMapInterface, ViewPositionBase viewPosition) : base(StringUtil.getInstance().EMPTY_STRING, new Rectangle(PointFactory.getInstance().createXY(0, viewPosition.getY()), geographicMapInterface.getAllBinaryTiledLayer().getWidth(), geographicMapInterface.getAllBinaryTiledLayer().getHeight()), viewPosition)
     {
-        // base(StringUtil.getInstance().EMPTY_STRING, new Rectangle(PointFactory.getInstance().createXY(0, viewPosition.getY()), geographicMapInterface.getAllBinaryTiledLayer().getWidth(), geographicMapInterface.getAllBinaryTiledLayer().getHeight()), viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.allBinaryTiledLayer = geographicMapInterface.getAllBinaryTiledLayer();
         this.geographicMapCellPositionFactory = geographicMapInterface.getGeographicMapCellPositionFactory();
         this.animationInterface = new CircleFilledAnimation(this.allBinaryTiledLayer.getCellWidth(), this.allBinaryTiledLayer.getCellHeight(), BasicColorFactory.getInstance().WHITE);

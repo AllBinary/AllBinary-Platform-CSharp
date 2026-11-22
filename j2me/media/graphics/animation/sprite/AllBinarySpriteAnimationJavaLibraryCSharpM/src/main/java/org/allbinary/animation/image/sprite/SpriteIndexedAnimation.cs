@@ -37,7 +37,7 @@ public class SpriteIndexedAnimation : IndexedAnimation, ColorCompositeInterface
     private readonly BasicColor[] basicColorArray;
     public SpriteIndexedAnimation(Sprite sprite, Image image, BasicColor[] basicColorArray, AnimationBehavior animationBehavior) : base(animationBehavior)
     {
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.sprite = sprite;
         this.image = image;
         this.basicColorArray = basicColorArray;

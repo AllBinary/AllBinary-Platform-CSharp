@@ -25,7 +25,7 @@ public class AbDataInputStream : DataInputStream
 {
     public AbDataInputStream(InputStream @out) : base(@out)
     {
-        // base(@out) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

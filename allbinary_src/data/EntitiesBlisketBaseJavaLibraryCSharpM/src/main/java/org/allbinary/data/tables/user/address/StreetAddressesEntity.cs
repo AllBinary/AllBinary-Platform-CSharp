@@ -42,12 +42,12 @@ public class StreetAddressesEntity : AbSqlBean, StreetAddressesEntityInterface
     private string userName;
     public StreetAddressesEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public StreetAddressesEntity(string userName) : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.userName = userName;
     }
 

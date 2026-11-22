@@ -58,7 +58,7 @@ public class AllBinaryGameLayer : AllBinaryLayer, ViewPositionEventListenerInter
     private readonly BasicArrayList gameKeyEventList = new BasicArrayListD();
     public AllBinaryGameLayer(string name, Rectangle layerInfo, ViewPositionBase viewPosition) : base(name, layerInfo, viewPosition)
     {
-        // base(name, layerInfo, viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

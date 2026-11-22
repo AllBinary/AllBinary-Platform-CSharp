@@ -28,7 +28,7 @@ public class JvmStatisticsMapping : JvmStatistics, TableMappingInterface
 {
     public JvmStatisticsMapping() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual HashMap<object, object> toHashMap()

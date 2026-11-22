@@ -25,7 +25,7 @@ public class GameBeginSound : CompositeSound
     private static Sound soundInterface = new GameBeginSound();
     private GameBeginSound() : base("resource:/wav/begin.wav")
     {
-        // base("resource:/wav/begin.wav") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public static Sound getInstance()

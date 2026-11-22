@@ -23,7 +23,7 @@ public class AttackSound : CompositeSound
     private static Sound soundInterface = new AttackSound();
     private AttackSound() : base("resource:/wav/attack.wav")
     {
-        // base("resource:/wav/attack.wav") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public static Sound getInstance()

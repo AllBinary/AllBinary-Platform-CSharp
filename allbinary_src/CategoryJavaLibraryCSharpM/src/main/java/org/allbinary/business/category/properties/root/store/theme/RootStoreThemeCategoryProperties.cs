@@ -37,22 +37,22 @@ public class RootStoreThemeCategoryProperties : RootStoreCategoryProperties
 {
     public RootStoreThemeCategoryProperties(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public RootStoreThemeCategoryProperties(TransformInfoInterface transformInfoInterface, AbPath abPath) : base(transformInfoInterface, abPath)
     {
-        // base(transformInfoInterface, abPath) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public RootStoreThemeCategoryProperties(TransformInfoInterface transformInfoInterface, Node node) : base(transformInfoInterface, node)
     {
-        // base(transformInfoInterface, node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public RootStoreThemeCategoryProperties(TransformInfoInterface transformInfoInterface, HashMap<object, object> categoryPropertiesHashMap) : base(transformInfoInterface, categoryPropertiesHashMap)
     {
-        // base(transformInfoInterface, categoryPropertiesHashMap) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

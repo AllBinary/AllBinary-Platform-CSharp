@@ -36,7 +36,7 @@ public class UsersValidationView : UsersView, ValidationComponentInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public UsersValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         TransformInfoHttpInterface httpTransformInfoInterface = ((TransformInfoHttpInterface) this.getTransformInfoInterface());
         string role = ((string) httpTransformInfoInterface.getPropertiesHashMap().get(UserRoleData.NAME.ToString()));
         UserRole userRole = UserRoleB.getRole(role);

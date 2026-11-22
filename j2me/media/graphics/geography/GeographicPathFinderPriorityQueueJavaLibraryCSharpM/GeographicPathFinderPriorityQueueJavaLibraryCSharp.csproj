@@ -110,6 +110,9 @@
     <ProjectReference Include="..\..\..\..\lib\VectorThreeDimensionalLibraryCSharpM\VectorThreeDimensionalLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
   </ItemGroup>
   <!-- AllBinary references end -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\allbinary_src\LogJ2SEJavaLibraryCSharpM\LogJ2SEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="LogJ2SECollections" />
+  </ItemGroup>
 
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
 

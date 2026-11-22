@@ -49,7 +49,7 @@ public class TechRTSFormInput : RTSFormInput
     public TechRTSFormInput(Group[] groupInterface) : base(groupInterface)
     {
         this.EVENT = new AllBinaryEventObject(this);
-        // base(groupInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         BasicColorFactory basicColorFactory = BasicColorFactory.getInstance();
         this.noMoneyGameNotificationEvent = new GameNotificationEvent(this, RTSGameStrings.getInstance().NO_MONEY, SmallIntegerSingletonFactory.getInstance().getAt(2), basicColorFactory.WHITE, BooleanFactory.getInstance().FALSE);
     }

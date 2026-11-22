@@ -26,7 +26,7 @@ public class ImageIconUnique : ImageIcon
     private int id = 0;
     public ImageIconUnique(BufferedImage bufferedImage, int index) : base(bufferedImage)
     {
-        // base(bufferedImage) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setId(index);
     }
 

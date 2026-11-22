@@ -45,14 +45,14 @@ public class ProfileActionScriptItem : DefaultMutableTreeNode, ProfileActionScri
     public const string NEW_IMAGE_OUTPUT = "Image";
     public ProfileActionScriptItem(string label, Node node) : base(label)
     {
-        // base(label) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.init();
         this.logUtil.putF("Label: " + label, this, this.commonStrings.CONSTRUCTOR);
     }
 
     public ProfileActionScriptItem(string label) : base(label)
     {
-        // base(label) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.init();
         this.logUtil.putF("Label: " + label, this, this.commonStrings.CONSTRUCTOR);
     }

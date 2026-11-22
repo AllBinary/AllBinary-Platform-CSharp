@@ -34,7 +34,7 @@ public class AbSqlTable : AbSqlBasic
     private readonly string DROPPED_SUCCESS = " Dropped Successfully";
     public AbSqlTable(DbConnectionInfo databaseConnectionInfoInterface) : base(databaseConnectionInfoInterface)
     {
-        // base(databaseConnectionInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void setTableName(string tableName)

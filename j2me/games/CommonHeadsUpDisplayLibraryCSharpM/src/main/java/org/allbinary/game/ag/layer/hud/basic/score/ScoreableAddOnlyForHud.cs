@@ -25,7 +25,7 @@ public class ScoreableAddOnlyForHud : Scoreable
     private readonly ScoreHudWidget scoreHudWidget;
     public ScoreableAddOnlyForHud(ScoreHudWidget scoreVectorGraphic) : base(0)
     {
-        // base(0) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.scoreHudWidget = scoreVectorGraphic;
         this.getScoreHudWidget().set(0);
     }

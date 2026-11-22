@@ -26,7 +26,7 @@ public class CommandTextItem : ABTextItem
     private readonly Command command;
     public CommandTextItem(Command command, int layout, string altText, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(command.getLabel(), layout, altText, backgroundBasicColor, foregroundBasicColor)
     {
-        // base(command.getLabel(), layout, altText, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.command = command;
     }
 

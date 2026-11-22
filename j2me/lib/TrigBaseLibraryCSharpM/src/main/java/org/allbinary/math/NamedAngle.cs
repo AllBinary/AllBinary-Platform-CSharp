@@ -27,7 +27,7 @@ public class NamedAngle : Angle
     public readonly string name;
     public NamedAngle(short angle, string name) : base(angle)
     {
-        // base(angle) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.name = name;
     }
 

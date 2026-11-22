@@ -28,22 +28,22 @@ public class TransformInfoDomNodeView : TransformInfoDomNode, DomNodeInterface
 {
     public TransformInfoDomNodeView(TransformInfoInterface transformInfoInterface, string mapping) : base(transformInfoInterface, mapping)
     {
-        // base(transformInfoInterface, mapping) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public TransformInfoDomNodeView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public TransformInfoDomNodeView(string name, string mappedName) : base(name, mappedName)
     {
-        // base(name, mappedName) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public TransformInfoDomNodeView(string name) : base(name, null)
     {
-        // base(name, null) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

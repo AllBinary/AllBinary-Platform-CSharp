@@ -35,7 +35,7 @@ public class TransformInfoHttpContext : TransformInfoHttp
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public TransformInfoHttpContext(HashMap<object, object> databaseHashMap, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(databaseHashMap, propertiesHashMap, pageContext)
     {
-        // base(databaseHashMap, propertiesHashMap, pageContext) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("Database HashMap: ");
@@ -49,7 +49,7 @@ public class TransformInfoHttpContext : TransformInfoHttp
 
     public TransformInfoHttpContext(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
-        // base(propertiesHashMap, pageContext) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, this.commonStrings.CONSTRUCTOR);
         }

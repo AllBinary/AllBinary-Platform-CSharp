@@ -9,7 +9,7 @@ public class XmlRpcException : Exception
 {
     public XmlRpcException(int code, string message) : base(message)
     {
-        // base(message) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

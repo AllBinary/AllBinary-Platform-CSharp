@@ -58,14 +58,14 @@ public class InventoryItemView : HttpStoreComponentView, RequestMapInterface
     private HashMap<object, object> requestHashMap = null;
     public InventoryItemView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.request = ((HttpServletRequest) this.getPageContext().getRequest());
         this.getFormData();
     }
 
     public InventoryItemView(TransformInfoInterface transformInfoInterface, string empty) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.request = ((HttpServletRequest) this.getPageContext().getRequest());
     }
 

@@ -26,7 +26,7 @@ public class InputAutomationModuleServiceConsumer : InputAutomationServiceConsum
 {
     public InputAutomationModuleServiceConsumer(BundleContext bundleContext) : base(typeof(InputAutomationModuleServiceInterface).getName(), bundleContext, new InputAutomationModuleOSGIServiceVisitor())
     {
-        // base(typeof(InputAutomationModuleServiceInterface).getName(), bundleContext, new InputAutomationModuleOSGIServiceVisitor()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

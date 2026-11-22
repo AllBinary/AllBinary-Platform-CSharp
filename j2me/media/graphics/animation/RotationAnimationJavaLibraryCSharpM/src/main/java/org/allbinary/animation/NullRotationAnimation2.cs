@@ -27,7 +27,7 @@ public class NullRotationAnimation2 : NullRotationAnimation
 {
     public NullRotationAnimation2() : base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), new IndexedAnimationBehavior(1, 250))
     {
-        // base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), new IndexedAnimationBehavior(1, 250)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void paintXY(Graphics graphics, int x, int y)

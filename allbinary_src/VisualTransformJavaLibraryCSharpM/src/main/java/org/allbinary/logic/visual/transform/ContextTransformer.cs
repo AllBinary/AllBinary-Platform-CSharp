@@ -28,7 +28,7 @@ public class ContextTransformer : BasicTransformer
 {
     public ContextTransformer(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface) : base(abeClientInformation, transformInfoInterface)
     {
-        // base(abeClientInformation, transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setURIResolver(((URIResolver) new ContextUriResolver(((BasicUriResolver) this.getURIResolver()))));
     }
 

@@ -26,7 +26,7 @@ public class GameKey : Input
     public static readonly GameKey NULL_GAME_KEY = new GameKey(-1, StringUtil.getInstance().NULL_STRING);
     public GameKey(int key, string name) : base(key, name)
     {
-        // base(key, name) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override string ToString()

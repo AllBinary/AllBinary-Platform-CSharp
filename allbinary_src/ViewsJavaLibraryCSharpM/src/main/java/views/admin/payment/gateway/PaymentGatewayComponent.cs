@@ -35,7 +35,7 @@ public class PaymentGatewayComponent : HttpStoreComponentView
     private PaymentGatewayInterface paymentGatewayInterface;
     public PaymentGatewayComponent(TransformInfoInterface transformInfoInterface, PaymentGatewayInterface paymentGatewayInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.paymentGatewayInterface = paymentGatewayInterface;
     }
 

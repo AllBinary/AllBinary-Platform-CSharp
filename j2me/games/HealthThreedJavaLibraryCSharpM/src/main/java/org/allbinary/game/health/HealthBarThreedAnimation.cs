@@ -37,7 +37,7 @@ public class HealthBarThreedAnimation : HealthBarAnimation
     private readonly BasicColorFactory basicColorFactory = BasicColorFactory.getInstance();
     public HealthBarThreedAnimation(AllBinaryLayer layerInterface, int location) : base(layerInterface, location)
     {
-        // base(layerInterface, location) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.basicColor = this.basicColorFactory.GREEN;
         this.colorP = global::java.lang.JavaNumber.intValue(this.basicColor);
         this.rectangle = new Rectangle(0, 0, 1, 1, this.basicColor);

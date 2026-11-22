@@ -31,7 +31,7 @@ public class LayerInterfaceFactoryImageItem : ABCustomImageItem
     private readonly LayerInterfaceFactoryInterface layerInterfaceFactoryInterface;
     public LayerInterfaceFactoryImageItem(string label, Image img, int layout, string altText, BasicColor basicColor, Animation[] animationArray, LayerInterfaceFactoryInterface layerInterfaceFactoryInterface) : base(label, img, layout, altText, basicColor, 0)
     {
-        // base(label, img, layout, altText, basicColor, 0) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.animationArray = animationArray;
         this.layerInterfaceFactoryInterface = layerInterfaceFactoryInterface;
     }

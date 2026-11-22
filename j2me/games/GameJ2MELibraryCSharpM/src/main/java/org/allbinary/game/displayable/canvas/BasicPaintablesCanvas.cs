@@ -33,7 +33,7 @@ public class BasicPaintablesCanvas : GameCommandCanvas
     private readonly ColorFillBasePaintable colorFillPaintable;
     public BasicPaintablesCanvas(CommandListener cmdListener, string name, AllBinaryGameLayerManager allBinaryGameLayerManager, Paintable[] paintableArray) : base(cmdListener, name, allBinaryGameLayerManager.getBackgroundBasicColor(), allBinaryGameLayerManager.getForegroundBasicColor())
     {
-        // base(cmdListener, name, allBinaryGameLayerManager.getBackgroundBasicColor(), allBinaryGameLayerManager.getForegroundBasicColor()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.paintableArray = paintableArray;
         this.colorFillPaintable = ColorFillPaintableFactory.getInstance().getInstance(allBinaryGameLayerManager.getBackgroundBasicColor(), false);
     }

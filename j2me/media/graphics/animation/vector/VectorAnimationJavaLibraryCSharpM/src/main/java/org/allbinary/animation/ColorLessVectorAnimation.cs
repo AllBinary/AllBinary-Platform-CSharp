@@ -25,7 +25,7 @@ public class ColorLessVectorAnimation : VectorAnimation
 {
     public ColorLessVectorAnimation(int[][][] currentPoints, AnimationBehavior animationBehavior) : base(currentPoints, BasicColorFactory.getInstance().WHITE, animationBehavior)
     {
-        // base(currentPoints, BasicColorFactory.getInstance().WHITE, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void paintXY(Graphics graphics, int x, int y)

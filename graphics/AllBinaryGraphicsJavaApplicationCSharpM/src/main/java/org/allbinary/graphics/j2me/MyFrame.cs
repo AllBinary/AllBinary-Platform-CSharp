@@ -604,7 +604,7 @@ public class MyFrame : JFrame, FileJDialogListenerInterface, HashMapJDialogListe
     {
         try {
             WorkAreaJPanelInterface workAreaJPanel = ((WorkAreaJPanelInterface) this.jTabbedPane.getSelectedComponent());
-            File file = new File(this.SAVE_PATH + "/" + workAreaJPanel.getName() + this.JAVAEXTENSION);
+            File file = new File(MyFrame.SAVE_PATH + "/" + workAreaJPanel.getName() + this.JAVAEXTENSION);
             Document document = workAreaJPanel.toDocument();
             this.logUtil.putF("Export: " + DomHelper.getInstance().toString(document), this, "exportJMenuItem1ActionPerformed");
             this.xslHelper.export(file, MyFrame.TEMPLATE_EXPORT_PATH + "/" + this.JAVA_TEMPLATE, document);
@@ -619,7 +619,7 @@ public class MyFrame : JFrame, FileJDialogListenerInterface, HashMapJDialogListe
     {
         try {
             WorkAreaJPanelInterface workAreaJPanel = ((WorkAreaJPanelInterface) this.jTabbedPane.getSelectedComponent());
-            DomHelper.getInstance().save(new File(this.SAVE_PATH + "/" + workAreaJPanel.getName() + this.SAVEEXTENSION), workAreaJPanel.toDocument());
+            DomHelper.getInstance().save(new File(MyFrame.SAVE_PATH + "/" + workAreaJPanel.getName() + this.SAVEEXTENSION), workAreaJPanel.toDocument());
         } catch (Exception e) {
             if (LOGGING.contains(LOGGING.MENUEVENT)) {
                 this.guiLog.put(this.commonStrings.EXCEPTION, this, this.commonStrings.SAVE, e);
@@ -657,8 +657,8 @@ public class MyFrame : JFrame, FileJDialogListenerInterface, HashMapJDialogListe
     public virtual void add(WorkAreaJPanelInterface newCanvasInterface)
     {
         try {
-            this.numberOfWorkAreas++;
-            if (this.numberOfWorkAreas == MyFrame.MAXWORKAREAS) {
+            MyFrame.numberOfWorkAreas++;
+            if (MyFrame.numberOfWorkAreas == MyFrame.MAXWORKAREAS) {
                 throw new Exception();
             }
             this.jTabbedPane.addTab(newCanvasInterface.getName(), ((JPanel) newCanvasInterface));

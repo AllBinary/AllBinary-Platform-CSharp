@@ -20,7 +20,6 @@ using System.Runtime.CompilerServices;
 using java.awt;
 using EventListener = java.util.EventListener;
 using java.util;
-//using LinkedList = java.util.LinkedList;
 //using javax.swing;
 //using MutableTreeNode = javax.swing.tree.MutableTreeNode;
 using DomHelper = org.allbinary.dom.DomHelper;
@@ -49,7 +48,7 @@ namespace org.allbinary.graphics.j2me.workarea;
 public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventListener, EventListener, global::java.lang.Runnable
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
-    private LinkedList canvasJPanelList = null;
+    private LinkedList<object> canvasJPanelList = null;
     private JPanel canvasHolderJPanel = null;
     private string name = null;
     private int selectedFrame = 0;
@@ -105,7 +104,7 @@ public class WorkAreaJPanel : JPanel, WorkAreaJPanelInterface, MyCanvasEventList
         this.canvasHolderJPanel.setSize(dimension);
         this.canvasHolderJPanel.setLayout(new GridLayout(1, 1));
         this.setSize(dimension);
-        this.canvasJPanelList = new LinkedList();
+        this.canvasJPanelList = new LinkedList<object>();
         GridBagLayout gridBagLayout = new GridBagLayout();
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         this.innerJPanel.setLayout(gridBagLayout);

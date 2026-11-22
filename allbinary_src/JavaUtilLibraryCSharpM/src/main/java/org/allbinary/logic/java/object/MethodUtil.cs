@@ -30,7 +30,7 @@ public class MethodUtil
     public static string viewAll(Type myClass, string lineBreak)
     {
         StringMaker stringBuffer = new StringMaker();
-        Method[] method = myClass.getMethods();
+        global::System.Reflection.MethodInfo[] method = myClass.getMethods();
         stringBuffer.append("Methods: ");
         stringBuffer.append(lineBreak);
         for (int index = 0; index < method.Length; index++) {

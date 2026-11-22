@@ -37,7 +37,7 @@ public class AbSqlColumn : AbSqlTable
     private readonly string INVALID_RESULT = "-1";
     public AbSqlColumn(DbConnectionInfo databaseConnectionInfoInterface) : base(databaseConnectionInfoInterface)
     {
-        // base(databaseConnectionInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual string getLargestIntegerInColumnWhere(string columnName, string key, string value)

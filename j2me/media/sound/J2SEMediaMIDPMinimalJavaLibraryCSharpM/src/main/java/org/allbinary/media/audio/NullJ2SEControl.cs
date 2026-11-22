@@ -24,7 +24,7 @@ public class NullJ2SEControl : Control
 {
     public NullJ2SEControl(Type type) : base(type)
     {
-        // base(type) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

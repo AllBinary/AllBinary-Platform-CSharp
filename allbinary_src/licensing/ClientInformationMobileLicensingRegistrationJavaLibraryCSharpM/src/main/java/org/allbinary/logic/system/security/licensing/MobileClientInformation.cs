@@ -30,7 +30,7 @@ public class MobileClientInformation : AbeClientInformation
     public static readonly string ANDROID_DESC = "Android" + MobileClientInformation.DESC;
     public MobileClientInformation(string name, string version, string specialName, string shortName) : base(name, version, new StringMaker().append(specialName).append(CommonSeps.getInstance().SPACE).append(PartnerIdentifierFileUtil.getInstance().get()).ToString(), shortName)
     {
-        // base(name, version, new StringMaker().append(specialName).append(CommonSeps.getInstance().SPACE).append(PartnerIdentifierFileUtil.getInstance().get()).ToString(), shortName) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         string @string = this.getSpecialName();
         string number = @string.Substring(@string.Length - 1);
         if (Integer.getInteger(number) == null) {

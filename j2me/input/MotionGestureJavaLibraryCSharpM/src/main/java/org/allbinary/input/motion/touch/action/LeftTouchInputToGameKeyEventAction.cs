@@ -36,7 +36,7 @@ public class LeftTouchInputToGameKeyEventAction : GameKeyCompleteMotionGestureIn
 
     private LeftTouchInputToGameKeyEventAction() : base("Left Action", TouchMotionGestureFactory.getInstance().LEFT, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping())
     {
-        // base("Left Action", TouchMotionGestureFactory.getInstance().LEFT, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

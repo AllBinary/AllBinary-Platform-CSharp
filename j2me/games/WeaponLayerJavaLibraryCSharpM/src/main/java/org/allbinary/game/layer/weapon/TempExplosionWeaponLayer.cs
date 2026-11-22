@@ -20,7 +20,7 @@ public class TempExplosionWeaponLayer : SimpleWeaponLayer
     private readonly TimeDelayHelper timeDelayHelper = new TimeDelayHelper(0);
     public TempExplosionWeaponLayer(string name, Movement movement, Animation animationInterface, Rectangle rectangle, ViewPositionBase viewPosition, int timeDelay) : base(name, RemoteInfo.REMOTE_INFO, -1, movement, animationInterface, SimpleWeaponLayer.createDestroyed(), rectangle, viewPosition)
     {
-        // base(name, RemoteInfo.REMOTE_INFO, -1, movement, animationInterface, SimpleWeaponLayer.createDestroyed(), rectangle, viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.timeDelayHelper.delay = timeDelay;
     }
 

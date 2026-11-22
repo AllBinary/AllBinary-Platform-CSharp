@@ -35,7 +35,7 @@ public class TransformInfoBasic : AbContext, TransformInfoHttpInterface
     private StoreFrontInterface storeFrontInterface;
     public TransformInfoBasic(StoreFrontInterface storeFrontInterface, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
-        // base(propertiesHashMap, pageContext) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.storeFrontInterface = storeFrontInterface;
     }
 

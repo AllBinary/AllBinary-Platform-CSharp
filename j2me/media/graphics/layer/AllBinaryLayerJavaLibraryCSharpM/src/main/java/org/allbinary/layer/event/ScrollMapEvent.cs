@@ -26,7 +26,7 @@ public class ScrollMapEvent : AllBinaryEventObject
     private int dy = 0;
     public ScrollMapEvent(object anyType) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void setDx(int dx)

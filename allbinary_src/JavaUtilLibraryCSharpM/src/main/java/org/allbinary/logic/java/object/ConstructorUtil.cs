@@ -31,7 +31,7 @@ public class ConstructorUtil
     public static string viewAll(Type myClass, string lineBreak)
     {
         StringMaker stringBuffer = new StringMaker();
-        Constructor[] constructor = myClass.getConstructors();
+        global::System.Reflection.ConstructorInfo[] constructor = myClass.getConstructors();
         stringBuffer.append("Constructors: ");
         stringBuffer.append(lineBreak);
         for (int index = 0; index < constructor.Length; index++) {
@@ -40,7 +40,7 @@ public class ConstructorUtil
         return stringBuffer.ToString();
     }
 
-    public static string view(Constructor constructor, string lineBreak)
+    public static string view(global::System.Reflection.ConstructorInfo constructor, string lineBreak)
     {
         if (constructor != null) {
             CommonSeps commonSeps = CommonSeps.getInstance();

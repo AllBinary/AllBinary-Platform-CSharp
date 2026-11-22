@@ -19,7 +19,7 @@ using System.Linq;
 using ByteArrayOutputStream = java.io.ByteArrayOutputStream;
 //using PrintStream = java.io.PrintStream;
 using java.util;
-//using Properties = java.util.Properties;
+using Properties = java.util.Properties;
 //using Address = javax.mail.Address;
 //using Authenticator = javax.mail.Authenticator;
 //using Message = javax.mail.Message;

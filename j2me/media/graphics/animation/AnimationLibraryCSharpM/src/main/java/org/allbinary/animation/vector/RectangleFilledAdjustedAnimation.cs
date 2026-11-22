@@ -28,7 +28,7 @@ public class RectangleFilledAdjustedAnimation : RectangleFilledAnimation, ColorC
     private int offsetY;
     public RectangleFilledAdjustedAnimation(int width, int height, int offsetX, int offsetY, BasicColor basicColor) : base(width, height, basicColor)
     {
-        // base(width, height, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.offsetX = offsetX;
         this.offsetY = offsetY;
         this.setBasicColorP(basicColor);

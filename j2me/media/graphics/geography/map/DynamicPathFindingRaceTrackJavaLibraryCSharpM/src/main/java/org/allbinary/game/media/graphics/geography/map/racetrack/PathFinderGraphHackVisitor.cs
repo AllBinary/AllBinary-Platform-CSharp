@@ -37,7 +37,7 @@ public class PathFinderGraphHackVisitor<V, E> : BasePathFinderGraphVisitor<V, E>
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public PathFinderGraphHackVisitor(BasicGeographicMap geographicMapInterface, int edgeMinimum, int minPathWeight, int maxPathWeight) : base(geographicMapInterface, edgeMinimum, minPathWeight, maxPathWeight)
     {
-        // base(geographicMapInterface, edgeMinimum, minPathWeight, maxPathWeight) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

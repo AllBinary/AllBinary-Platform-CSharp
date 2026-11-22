@@ -50,7 +50,7 @@ public class ShippingMethodsView : HttpStoreComponentView, DomNodeInterface
     private StoreFrontInterface storeFrontInterface;
     public ShippingMethodsView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.storeFrontInterface = StoreFrontFactory.getInstance(this.getTransformInfoInterface().getStoreName());
         this.shippingMethods = new ShippingMethods(this.abeClientInformation, this.storeFrontInterface);
     }

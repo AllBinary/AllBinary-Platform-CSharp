@@ -50,7 +50,7 @@ public class TitleAnimation : SpecialAnimation
 
     public TitleAnimation(IndexedAnimation[] animationInterfaceArray, BasicColor[] basicColorArray, int[] dxArray, int[] dyArray, int y, int width, AnimationBehavior animationBehavior) : base(animationBehavior)
     {
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.lastFrameStartTime = this.systemWrapper.currentTimeMillis();
         this.animationInterfaceArray = animationInterfaceArray;
         this.sizeP = this.animationInterfaceArray.Length;

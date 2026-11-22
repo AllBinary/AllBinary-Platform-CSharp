@@ -41,7 +41,7 @@ public class TransactionEntity : AbSqlBean, TransactionEntityInterface
     private readonly string tableName = "vtrans";
     public TransactionEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

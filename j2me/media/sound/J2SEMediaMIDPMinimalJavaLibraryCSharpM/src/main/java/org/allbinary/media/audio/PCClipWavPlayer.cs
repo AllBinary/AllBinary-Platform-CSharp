@@ -62,13 +62,13 @@ public class PCClipWavPlayer : BasicPlayer, LineListener
 
     public override void close()
     {
-        MusicThreadPool.getInstance().runTask(new global::javax.sound.sampled.AudioTask(() => {
+        MusicThreadPool.getInstance().runTask(new __SwtClosure_N66748((__swtSelf_N66748) => {
                 try {
                     close2();
                 } catch (Exception e) {
-                    PreLogUtil.putOE(commonStrings.EXCEPTION, this, commonStrings.PROCESS, e);
+                    PreLogUtil.putOE(commonStrings.EXCEPTION, __swtSelf_N66748, commonStrings.PROCESS, e);
                 }
-        }));
+            }));
     }
 
     // throws Exception
@@ -88,13 +88,13 @@ public class PCClipWavPlayer : BasicPlayer, LineListener
     [MethodImpl(MethodImplOptions.Synchronized)]
     public override void start()
     {
-        MusicThreadPool.getInstance().runTask(new global::javax.sound.sampled.AudioTask(() => {
+        MusicThreadPool.getInstance().runTask(new __SwtClosure_N67160((__swtSelf_N67160) => {
                 try {
                     start2();
                 } catch (Exception e) {
-                    PreLogUtil.putOE(commonStrings.EXCEPTION, this, commonStrings.PROCESS, e);
+                    PreLogUtil.putOE(commonStrings.EXCEPTION, __swtSelf_N67160, commonStrings.PROCESS, e);
                 }
-        }));
+            }));
     }
 
     // throws Exception
@@ -119,13 +119,13 @@ public class PCClipWavPlayer : BasicPlayer, LineListener
     [MethodImpl(MethodImplOptions.Synchronized)]
     public override void stop()
     {
-        MusicThreadPool.getInstance().runTask(new global::javax.sound.sampled.AudioTask(() => {
+        MusicThreadPool.getInstance().runTask(new __SwtClosure_N67742((__swtSelf_N67742) => {
                 try {
                     stop2();
                 } catch (Exception e) {
-                    PreLogUtil.putOE(commonStrings.EXCEPTION, this, commonStrings.PROCESS, e);
+                    PreLogUtil.putOE(commonStrings.EXCEPTION, __swtSelf_N67742, commonStrings.PROCESS, e);
                 }
-        }));
+            }));
     }
 
     // throws Exception
@@ -179,6 +179,42 @@ public class PCClipWavPlayer : BasicPlayer, LineListener
                 listener.playerUpdate(this, PlayerListener.END_OF_MEDIA, null);
             }
         }
+    }
+
+    private sealed class __SwtClosure_N66748 : ARunnable
+    {
+        private readonly global::System.Action<__SwtClosure_N66748> callback1;
+
+        public __SwtClosure_N66748(global::System.Action<__SwtClosure_N66748> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
+    }
+
+    private sealed class __SwtClosure_N67160 : ARunnable
+    {
+        private readonly global::System.Action<__SwtClosure_N67160> callback1;
+
+        public __SwtClosure_N67160(global::System.Action<__SwtClosure_N67160> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
+    }
+
+    private sealed class __SwtClosure_N67742 : ARunnable
+    {
+        private readonly global::System.Action<__SwtClosure_N67742> callback1;
+
+        public __SwtClosure_N67742(global::System.Action<__SwtClosure_N67742> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
     }
 
 }

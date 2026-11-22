@@ -30,7 +30,7 @@ public class GameInputMotionInfoAPI5 : GameInputMotionInfo
 
     private GameInputMotionInfoAPI5() : base(int.MaxValue, 10)
     {
-        // base(int.MaxValue, 10) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

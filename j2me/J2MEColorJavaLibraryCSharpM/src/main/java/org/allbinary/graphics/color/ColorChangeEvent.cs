@@ -25,7 +25,7 @@ public class ColorChangeEvent : AllBinaryEventObject
     private BasicColor basicColor = BasicColorFactory.getInstance().WHITE;
     public ColorChangeEvent(object anyType) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void setBasicColorP(BasicColor basicColor)

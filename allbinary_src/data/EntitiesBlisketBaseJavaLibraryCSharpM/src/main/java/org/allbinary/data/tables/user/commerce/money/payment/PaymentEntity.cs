@@ -45,7 +45,7 @@ public class PaymentEntity : AbSqlBean, PaymentEntityInterface
     private readonly string tableName = "payment";
     public PaymentEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

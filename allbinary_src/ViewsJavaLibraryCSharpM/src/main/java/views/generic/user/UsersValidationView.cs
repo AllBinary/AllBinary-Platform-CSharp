@@ -32,7 +32,7 @@ public class UsersValidationView : UsersView, ValidationComponentInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public UsersValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.userVector = UserEntityFactory.getInstance().getCustomers();
     }
 

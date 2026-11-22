@@ -46,7 +46,7 @@ public class AllBinaryJ2SEImageRotationAnimationFactory : BaseImageAnimationFact
 
     public AllBinaryJ2SEImageRotationAnimationFactory(Image image, int width, int height, short angleIncrement, AnimationBehaviorFactory animationBehaviorFactory, bool resizeCanvasForRotation) : base(image, PrimitiveIntUtil.getArrayInstance(), width, height, 0, 0, animationBehaviorFactory)
     {
-        // base(image, PrimitiveIntUtil.getArrayInstance(), width, height, 0, 0, animationBehaviorFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.angleIncrementP = angleIncrement;
         this.resizeCanvasForRotation = resizeCanvasForRotation;
     }

@@ -26,7 +26,7 @@ public class CollidableWaypointBehavior : CollidableRTSBehavior
 {
     public CollidableWaypointBehavior(bool collidable) : base(collidable)
     {
-        // base(collidable) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override bool isCollision(CollidableCompositeLayer ownerLayer, CollidableCompositeLayer collisionLayer)

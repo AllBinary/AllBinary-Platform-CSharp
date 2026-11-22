@@ -34,7 +34,7 @@ public class GlobalsView : HttpStoreComponentView, DomNodeInterface
     public GlobalsValidation globalsValidation;
     public GlobalsView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.globalsValidation = new GlobalsValidation(this.getWeblisketSession().getStoreName());
     }
 

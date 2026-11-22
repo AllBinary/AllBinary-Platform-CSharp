@@ -25,7 +25,7 @@ public class CachingGeographicMapCellPositionFactory : BasicGeographicMapCellPos
 {
     public CachingGeographicMapCellPositionFactory(BasicGeographicMap geographicMapInterface) : base(geographicMapInterface)
     {
-        // base(geographicMapInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

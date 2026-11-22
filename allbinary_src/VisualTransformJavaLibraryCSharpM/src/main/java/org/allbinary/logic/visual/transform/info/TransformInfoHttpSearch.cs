@@ -30,7 +30,7 @@ public class TransformInfoHttpSearch : TransformInfoHttp
 {
     public TransformInfoHttpSearch(SearchRequest searchRequest) : base(searchRequest.getPropertiesHashMap(), searchRequest.getPageContext())
     {
-        // base(searchRequest.getPropertiesHashMap(), searchRequest.getPageContext()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (searchRequest.getStoreFront().getName() != null) {
             this.setStoreName(searchRequest.getStoreFront().getName());
         } else {

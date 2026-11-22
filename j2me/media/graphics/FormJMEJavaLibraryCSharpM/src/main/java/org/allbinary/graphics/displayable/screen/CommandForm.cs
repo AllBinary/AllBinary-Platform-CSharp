@@ -52,7 +52,7 @@ public class CommandForm : Form, MyCommandInterface, MenuListener
     public CommandForm(CommandListener commandListener, string formTitle, BasicColor backgrounBasicColor, BasicColor foregroundBasicColor) : base(formTitle)
     {
         this.repaintProcessor = ScreenRepaintProcessorFactory.getInstance().create(this);
-        // base(formTitle) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.commandStack = StdUtil.getInstance().createStack();
         try {
             this.repaintProcessor.process();

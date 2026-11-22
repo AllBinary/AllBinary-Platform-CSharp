@@ -35,7 +35,7 @@ public class BasicTextJDialog : JDialog
     private CloseJDialogListenerInterface closeListenerInterface = null;
     public BasicTextJDialog(Frame parent, bool modal, string text) : base(parent, modal)
     {
-        // base(parent, modal) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initComponents();
         this.setText(text);
     }
@@ -89,18 +89,24 @@ public class BasicTextJDialog : JDialog
 
     public static void main(string[] args)
     {
-        EventQueue.invokeLater(new ARunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        EventQueue.invokeLater(new __SwtClosure_N67330((__swtSelf_N67330) => {
                 new BasicTextJDialog(new JFrame(), true, "Test").setVisible(true);
-            }
-
-#endif
-);
+            }));
     }
 
     private JButton jButton1 = null;
     private JLabel textJLabel = null;
+    private sealed class __SwtClosure_N67330 : ARunnable
+    {
+        private readonly global::System.Action<__SwtClosure_N67330> callback1;
+
+        public __SwtClosure_N67330(global::System.Action<__SwtClosure_N67330> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
+    }
+
 }
 

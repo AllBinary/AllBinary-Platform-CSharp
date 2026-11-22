@@ -31,12 +31,12 @@ public class CssElementValidation : CssElementView, ValidationInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public CssElementValidation() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public CssElementValidation(Node node) : base(node)
     {
-        // base(node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual bool? isValid()

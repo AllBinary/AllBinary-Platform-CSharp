@@ -36,7 +36,7 @@ public class UpOrientationInputToGameKeyEventAction : GameKeyCompleteMotionGestu
 
     private UpOrientationInputToGameKeyEventAction() : base("Up Action", OrientationMotionGestureFactory.getInstance().UP, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping())
     {
-        // base("Up Action", OrientationMotionGestureFactory.getInstance().UP, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

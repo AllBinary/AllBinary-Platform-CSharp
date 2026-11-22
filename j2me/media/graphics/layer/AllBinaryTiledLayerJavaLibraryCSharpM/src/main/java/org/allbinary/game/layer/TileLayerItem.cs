@@ -29,7 +29,7 @@ public class TileLayerItem : ABCustomItem, ABCustomItemInterface
     private readonly AllBinaryTiledLayer tiledLayer;
     public TileLayerItem(string label, AllBinaryTiledLayer tiledLayer, int layout, string altText, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(label, backgroundBasicColor, foregroundBasicColor)
     {
-        // base(label, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.tiledLayer = tiledLayer;
     }
 

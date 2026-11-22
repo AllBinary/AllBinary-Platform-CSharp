@@ -47,7 +47,7 @@ public class WorkFlowEntity : AbSqlBean, WorkFlowEntityInterface
     private readonly string METHOD_UPDATE = "update";
     public WorkFlowEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

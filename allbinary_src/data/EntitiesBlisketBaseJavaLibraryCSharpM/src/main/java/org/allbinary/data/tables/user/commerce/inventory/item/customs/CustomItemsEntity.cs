@@ -39,7 +39,7 @@ public class CustomItemsEntity : AbSqlBean, CustomItemsEntityInterface
     public readonly string tableName = "customitems";
     public CustomItemsEntity() : base(new InventoryDbInitInfo())
     {
-        // base(new InventoryDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

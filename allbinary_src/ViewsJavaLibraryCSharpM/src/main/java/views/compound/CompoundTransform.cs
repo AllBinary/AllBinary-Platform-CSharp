@@ -37,7 +37,7 @@ public class CompoundTransform : AbTransformer
     private readonly AbeClientInformationInterface abeClientInformation = ServiceClientInformationInterfaceFactory.getInstance();
     public CompoundTransform(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setURIResolver(((URIResolver) new StoreUriResolver(this.getTransformInfoInterface(), ((BasicUriResolver) this.getURIResolver()))));
         CompoundContextTransformInfoObjectConfig objectConfig = new CompoundContextTransformInfoObjectConfig(this.abeClientInformation, this.getTransformInfoInterface(), this.getTransformInfoInterface().getObjectConfigInterface().toXmlDoc());
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {

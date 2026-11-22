@@ -27,7 +27,7 @@ public class TrackingEvent : AllBinaryEventObject
     private AllBinaryLayer layerInterface = AllBinaryLayer.NULL_ALLBINARY_LAYER;
     public TrackingEvent(object allBinaryLayerInterface) : base(allBinaryLayerInterface)
     {
-        // base(allBinaryLayerInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (allBinaryLayerInterface != TrackingEventHandler.getInstance()) {
             this.setLayerInterface(((AllBinaryLayer) allBinaryLayerInterface));
         }

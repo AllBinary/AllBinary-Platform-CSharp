@@ -27,7 +27,7 @@ public class HtmlLengthInput : HtmlValueInput
     private string size = null;
     public HtmlLengthInput(string before, string type, string name, string value, string after) : base(before, type, name, value, after)
     {
-        // base(before, type, name, value, after) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void setMaxLength(int? length)

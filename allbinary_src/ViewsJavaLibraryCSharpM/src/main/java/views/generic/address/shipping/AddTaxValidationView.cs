@@ -41,7 +41,7 @@ public class AddTaxValidationView : ShippingAddressView, ValidationComponentInte
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public AddTaxValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

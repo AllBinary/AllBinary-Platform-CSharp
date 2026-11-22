@@ -29,7 +29,7 @@ public class AdjustedImageBaseRotationAnimation : ImageBaseRotationAnimation
     private int dy = 0;
     public AdjustedImageBaseRotationAnimation(Image image, AngleInfo angleInfo, short totalAngle, int dx, int dy, AnimationBehavior animationBehavior) : base(image, angleInfo, totalAngle, animationBehavior)
     {
-        // base(image, angleInfo, totalAngle, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.init(dx, dy);
     }
 

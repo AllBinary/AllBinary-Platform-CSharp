@@ -36,7 +36,7 @@ public class ImageThreadPool : ThreadPool
 
     public ImageThreadPool(string poolName, int numThreads, int priority) : base(poolName, numThreads, priority)
     {
-        // base(poolName, numThreads, priority) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]

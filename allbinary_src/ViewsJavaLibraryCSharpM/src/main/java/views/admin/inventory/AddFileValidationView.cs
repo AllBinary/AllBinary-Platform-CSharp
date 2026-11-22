@@ -52,7 +52,7 @@ public class AddFileValidationView : InventoryItemView, ValidationComponentInter
     private static readonly string NEXTSTEP = CommonLabels.getInstance().NEXT + " Step";
     public AddFileValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual bool? isValid()

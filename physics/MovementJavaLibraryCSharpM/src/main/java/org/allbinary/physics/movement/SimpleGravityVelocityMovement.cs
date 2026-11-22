@@ -27,7 +27,7 @@ public class SimpleGravityVelocityMovement : BasicConstantVelocityMovement
 {
     public SimpleGravityVelocityMovement(BasicDecimal speedBasicDecimal) : base(speedBasicDecimal, new VelocityProperties(((int) speedBasicDecimal.getUnscaled()), ((int) speedBasicDecimal.getUnscaled())))
     {
-        // base(speedBasicDecimal, new VelocityProperties(((int) speedBasicDecimal.getUnscaled()), ((int) speedBasicDecimal.getUnscaled()))) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     private readonly GravityUtil gravityUtil = GravityUtil.getInstance();

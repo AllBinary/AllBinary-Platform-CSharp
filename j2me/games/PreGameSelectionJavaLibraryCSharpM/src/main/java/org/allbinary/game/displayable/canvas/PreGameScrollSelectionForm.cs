@@ -29,7 +29,7 @@ public class PreGameScrollSelectionForm : ScrollCurrentSelectionForm
 {
     public PreGameScrollSelectionForm(string title, ABCustomItem[] items, ItemPaintableFactory formPaintableFactory, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(title, items, formPaintableFactory, 0, 3, false, backgroundBasicColor, foregroundBasicColor)
     {
-        // base(title, items, formPaintableFactory, 0, 3, false, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

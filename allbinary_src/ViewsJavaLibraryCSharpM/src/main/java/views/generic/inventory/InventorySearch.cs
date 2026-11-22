@@ -48,7 +48,7 @@ public class InventorySearch : InventoryViewSearchInterface
     private readonly SearchRequest searchRequest;
     public InventorySearch(SearchRequest searchRequest) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.searchRequest = searchRequest;
     }
 

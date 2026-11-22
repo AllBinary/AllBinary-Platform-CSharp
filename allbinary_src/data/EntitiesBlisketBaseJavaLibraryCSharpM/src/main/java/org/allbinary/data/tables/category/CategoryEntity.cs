@@ -38,13 +38,13 @@ public class CategoryEntity : AbSqlBean, CategoryEntityInterface
     public readonly string tableName = "categories";
     public CategoryEntity(CategoryFactoryInterface categoryFactoryInterface) : base(new InventoryDbInitInfo())
     {
-        // base(new InventoryDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 
     public CategoryEntity() : base(new InventoryDbInitInfo())
     {
-        // base(new InventoryDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

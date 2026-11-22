@@ -33,7 +33,7 @@ public class ImageSegmentAnimation : ImageAnimation
     private int[] sequenceArray;
     public ImageSegmentAnimation(Image image, int[] sequenceArray, AnimationBehavior animationBehavior) : base(image, animationBehavior)
     {
-        // base(image, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.startX = 0;
         this.startY = 0;
         this.drawWidth = this.getImage().getWidth();

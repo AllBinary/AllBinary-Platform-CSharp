@@ -30,7 +30,7 @@ public class UserRoleB : UserRole
     public static BasicArrayList roleVector = new BasicArrayListD();
     public UserRoleB(BasicUserRole aBasicUserRole, UserFactoryInterface aUserFactoryInterface) : base(aBasicUserRole, aUserFactoryInterface)
     {
-        // base(aBasicUserRole, aUserFactoryInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         UserRoleB.roleVector.add(this);
     }
 

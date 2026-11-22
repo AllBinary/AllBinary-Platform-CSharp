@@ -34,7 +34,7 @@ public class GameScrollMenuPaintable : BasicGameDemoPaintable, ColorChangeListen
 {
     public GameScrollMenuPaintable(Paintable mainDemoStatePaintable, Paintable ownershipPaintable, Paintable helpPaintableInterface, BasicColor basicColor) : base(mainDemoStatePaintable, ownershipPaintable, helpPaintableInterface)
     {
-        // base(mainDemoStatePaintable, ownershipPaintable, helpPaintableInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setColor(basicColor);
         ColorChangeEventHandler.getInstance().addListenerInterface(this);
     }

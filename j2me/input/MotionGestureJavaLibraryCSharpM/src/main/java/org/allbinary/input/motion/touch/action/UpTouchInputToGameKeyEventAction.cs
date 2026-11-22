@@ -36,7 +36,7 @@ public class UpTouchInputToGameKeyEventAction : GameKeyCompleteMotionGestureInpu
 
     private UpTouchInputToGameKeyEventAction() : base("Up Action", TouchMotionGestureFactory.getInstance().UP, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping())
     {
-        // base("Up Action", TouchMotionGestureFactory.getInstance().UP, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

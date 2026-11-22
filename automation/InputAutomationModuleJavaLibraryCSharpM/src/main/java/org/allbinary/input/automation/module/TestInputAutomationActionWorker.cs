@@ -32,7 +32,7 @@ public class TestInputAutomationActionWorker : AbstractInputAutomationWorker
     private int sleep;
     public TestInputAutomationActionWorker(int sleep, InputAutomationActionInterface inputAutomationActionInterface, ImageComparatorConstraintsInterface imageComparatorConstraintsInterface, MotionRectangleConstraintsInterface motionRectangleConstraintsInterface) : base(inputAutomationActionInterface)
     {
-        // base(inputAutomationActionInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF("BasicTestAttackWorder", this, this.commonStrings.CONSTRUCTOR);
         this.sleep = sleep;
     }

@@ -27,7 +27,7 @@ public class RaceTrackGeographicMapCellType : GeographicMapCellType
     private readonly int travelCost;
     public RaceTrackGeographicMapCellType(string name, int type, int travelCost, int reset) : base(type, reset)
     {
-        // base(type, reset) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.name = name;
         this.travelCost = travelCost;
     }

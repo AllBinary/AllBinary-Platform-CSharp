@@ -115,7 +115,7 @@ public class RTSLayer : MultiPlayerGameLayer, TickableInterface, GameInputInterf
     {
         this.showMoreCaptionStates = this.debug;
         this.hackVerticleBuild = this.BUILD_VALUE;
-        // base(remoteInfo, groupInterface, name, rectangle, viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initInputProcessors();
         this.rootName = rootName;
         this.healthInterface = healthInterface;

@@ -35,7 +35,11 @@ namespace org.allbinary.image.opengles;
 public class OpenGLESGL10Image : OpenGLESImage
 {
     private readonly FloatBuffer textureVertexFloatBuffer = ByteBuffer.allocateDirect(4 * 4 * 2).order(ByteOrder.nativeOrder()).asFloatBuffer();
-    private readonly OpenGLESImageDraw realOpenGLESImageDraw = new OpenGLESImageDraw()
+    private readonly OpenGLESImageDraw realOpenGLESImageDraw;
+    private OpenGLESImageDraw openGLESImageDraw = OpenGLESImageDraw.getInstance();
+    public OpenGLESGL10Image(Image image, PlatformBitmapBaseFactory bitmapFactory, PlatformTextureBaseFactory textureFactory) : base(image, bitmapFactory, textureFactory)
+    {
+        this.realOpenGLESImageDraw = new OpenGLESImageDraw()
 #if JAVA_ANONYMOUS_CLASS_BODY
         private readonly GLUtil glUtil = GLUtil.getInstance();
         private readonly DisplayInfoSingleton displayInfoSingleton = DisplayInfoSingleton.getInstance();
@@ -134,10 +138,7 @@ public class OpenGLESGL10Image : OpenGLESImage
 
 #endif
 ;
-    private OpenGLESImageDraw openGLESImageDraw = OpenGLESImageDraw.getInstance();
-    public OpenGLESGL10Image(Image image, PlatformBitmapBaseFactory bitmapFactory, PlatformTextureBaseFactory textureFactory) : base(image, bitmapFactory, textureFactory)
-    {
-        // base(image, bitmapFactory, textureFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initVertices();
     }
 

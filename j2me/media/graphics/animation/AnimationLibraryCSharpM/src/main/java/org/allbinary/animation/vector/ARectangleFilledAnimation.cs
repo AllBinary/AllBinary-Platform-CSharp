@@ -13,7 +13,7 @@ public class ARectangleFilledAnimation : RectangleFilledAnimation
     public int y = 0;
     public ARectangleFilledAnimation() : base(0, 0, BasicColorFactory.getInstance().BLACK)
     {
-        // base(0, 0, BasicColorFactory.getInstance().BLACK) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void nextFrame()

@@ -71,7 +71,7 @@ public class ShippingMethodsFactory
         stringBuffer.append(storeFrontInterface.getName());
         stringBuffer.append(sep);
         stringBuffer.append(ShippingMethodsFactory.SHIPPINGMETHODSFILEPATHSTRING);
-        AbPath abPath = ((AbPath) new AbPath(stringBuffer.ToString(), this.SHIPPINGMETHODSFILENAME));
+        AbPath abPath = ((AbPath) new AbPath(stringBuffer.ToString(), ShippingMethodsFactory.SHIPPINGMETHODSFILENAME));
         string data = new CryptFileReader(TransformInfoObjectConfigData.getInstance().UNCRYPTED_EXTENSION, TransformInfoObjectConfigData.getInstance().ENCRYPTED_EXTENSION).get(abPath);
         this.document = DomDocumentHelper.create(data);
         this.shippingVector = new BasicArrayListD();

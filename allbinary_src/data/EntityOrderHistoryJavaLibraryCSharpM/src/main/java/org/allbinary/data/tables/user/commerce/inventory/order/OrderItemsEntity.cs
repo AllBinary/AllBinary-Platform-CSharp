@@ -17,7 +17,6 @@
 using System;
 using System.Linq;
 using java.util;
-//using ListIterator = java.util.ListIterator;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
 using BasicArrayListD = org.allbinary.util.BasicArrayListD;
 using StoreFrontData = org.allbinary.business.context.modules.storefront.StoreFrontData;
@@ -55,7 +54,7 @@ public class OrderItemsEntity : AbSqlBean, OrderItemsEntityInterface
     public readonly string tableName = "orderitems";
     public OrderItemsEntity() : base(new HistoryDbInitInfo())
     {
-        // base(new HistoryDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

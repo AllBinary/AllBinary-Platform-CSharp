@@ -37,7 +37,7 @@ public class TimeIntervalActionScriptCondition : BasicProfileActionScriptConditi
     private const string NAME = "Time Interval";
     public TimeIntervalActionScriptCondition(Node node) : base(TimeIntervalActionScriptCondition.NAME, node)
     {
-        // base(TimeIntervalActionScriptCondition.NAME, node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         Node actionNode = DomSearchHelper.getNode(TimeIntervalActionScriptConditionData.NAME, node.getChildNodes());
         if (actionNode != null) {
             NodeList nodeList = actionNode.getChildNodes();
@@ -58,7 +58,7 @@ public class TimeIntervalActionScriptCondition : BasicProfileActionScriptConditi
 
     public TimeIntervalActionScriptCondition() : base(TimeIntervalActionScriptCondition.NAME)
     {
-        // base(TimeIntervalActionScriptCondition.NAME) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTimeDelayHelper(new TimeDelayHelper(0));
         this.init();
     }

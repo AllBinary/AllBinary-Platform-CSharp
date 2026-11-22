@@ -31,7 +31,7 @@ public class ImmediateCommandFormInputProcessor : CommandFormInputProcessor
     public GameCommandCanvas gameCommandCanvas;
     public ImmediateCommandFormInputProcessor(BasicArrayList gameKeyEventList, int playerInputId, GameCommandCanvas gameCommandCanvas, ScrollSelectionForm form) : base(gameKeyEventList, playerInputId, gameCommandCanvas, form)
     {
-        // base(gameKeyEventList, playerInputId, gameCommandCanvas, form) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.gameCommandCanvas = gameCommandCanvas;
     }
 

@@ -33,7 +33,7 @@ public class FallingPickupLayer : PickupLayer, TickableInterface
     private const string NAME = "FallingPickupLayer";
     public FallingPickupLayer(RemoteInfo remoteInfo) : base(FallingPickupLayer.NAME, remoteInfo, 0, CountedPickedUpLayerInterfaceFactory.NULL_COUNTED_PICKUP_LAYER_FACTORY, NullAnimationFactory.getFactoryInstance().getInstance(0), new Rectangle(PointFactory.getInstance().ZERO_ZERO, 0, 0), ViewPosition.getInstanceD())
     {
-        // base(FallingPickupLayer.NAME, remoteInfo, 0, CountedPickedUpLayerInterfaceFactory.NULL_COUNTED_PICKUP_LAYER_FACTORY, NullAnimationFactory.getFactoryInstance().getInstance(0), new Rectangle(PointFactory.getInstance().ZERO_ZERO, 0, 0), ViewPosition.getInstanceD()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void processTick(AllBinaryLayerManager allBinaryLayerManager)

@@ -25,7 +25,7 @@ public class GeologicalGeographicMapCellPosition : GeographicMapCellPosition
     private readonly GeologicalResource geologicalResource;
     public GeologicalGeographicMapCellPosition(int column, int row, int columns, int rows, int width, int height, GeologicalResource geologicalResource) : base(column, row, columns, rows, width, height)
     {
-        // base(column, row, columns, rows, width, height) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.geologicalResource = geologicalResource;
     }
 

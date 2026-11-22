@@ -23,7 +23,7 @@ public class StaticViewPosition : ViewPosition
 {
     public StaticViewPosition(int x, int y, int z) : base(x, y, z)
     {
-        // base(x, y, z) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override int getX()

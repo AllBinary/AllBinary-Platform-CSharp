@@ -46,7 +46,7 @@ public class RotateJDialog : JDialog
     private HashMap<object, object> hashMap = StdUtil.getInstance().createHashMap();
     public RotateJDialog(Frame parent, bool modal) : base(parent, modal)
     {
-        // base(parent, modal) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initComponents();
     }
 
@@ -99,10 +99,7 @@ public class RotateJDialog : JDialog
 
     public static void main(string[] args)
     {
-        EventQueue.invokeLater(new ARunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        EventQueue.invokeLater(new __SwtClosure_N68782((__swtSelf_N68782) => {
                 RotateJDialog dialog = new RotateJDialog(new JFrame(), true);
                 dialog.addWindowListener(new WindowAdapter()
 #if JAVA_ANONYMOUS_CLASS_BODY
@@ -114,10 +111,7 @@ public class RotateJDialog : JDialog
 #endif
 );
                 dialog.setVisible(true);
-            }
-
-#endif
-);
+            }));
     }
 
     private JTextField angleIncrementJTextField = null;
@@ -126,5 +120,17 @@ public class RotateJDialog : JDialog
     private JLabel jLabel2 = null;
     private JPanel jPanel1 = null;
     private JTextField totalRotationJTextField = null;
+    private sealed class __SwtClosure_N68782 : ARunnable
+    {
+        private readonly global::System.Action<__SwtClosure_N68782> callback1;
+
+        public __SwtClosure_N68782(global::System.Action<__SwtClosure_N68782> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
+    }
+
 }
 

@@ -14,10 +14,11 @@
  */
 // Generated Code Do Not Modify
 
+extern alias DesktopMIDP;
 using System;
 using System.Linq;
 using SimpleTiledLayer = javax.microedition.lcdui.game.SimpleTiledLayer;
-using Graphics = javax.microedition.lcdui.Graphics;
+using Graphics = DesktopMIDP::javax.microedition.lcdui.Graphics;
 using RTSLayerEvent = org.allbinary.game.layer.RTSLayerEvent;
 using BuildingEventListenerInterface = org.allbinary.game.layer.building.@event.BuildingEventListenerInterface;
 using LocalPlayerBuildingEventHandler = org.allbinary.game.layer.building.@event.LocalPlayerBuildingEventHandler;

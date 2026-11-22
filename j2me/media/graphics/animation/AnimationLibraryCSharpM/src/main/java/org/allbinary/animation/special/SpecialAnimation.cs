@@ -32,7 +32,7 @@ public class SpecialAnimation : IndexedAnimation, SpecialAnimationInterface
 
     public SpecialAnimation(AnimationBehavior animationBehavior) : base(animationBehavior)
     {
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void nextFrame()

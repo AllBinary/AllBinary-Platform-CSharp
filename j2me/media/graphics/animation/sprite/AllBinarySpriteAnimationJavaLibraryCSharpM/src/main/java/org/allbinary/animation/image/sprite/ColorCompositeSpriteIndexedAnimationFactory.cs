@@ -34,7 +34,7 @@ public class ColorCompositeSpriteIndexedAnimationFactory : BaseImageAnimationFac
     private readonly BasicColor[] basicColorArray;
     public ColorCompositeSpriteIndexedAnimationFactory(Image image, BasicColor[] basicColorArray, int width, int height, AnimationBehaviorFactory animationBehaviorFactory) : base(image, PrimitiveIntUtil.getArrayInstance(), width, height, 0, 0, animationBehaviorFactory)
     {
-        // base(image, PrimitiveIntUtil.getArrayInstance(), width, height, 0, 0, animationBehaviorFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.basicColorArray = basicColorArray;
     }
 

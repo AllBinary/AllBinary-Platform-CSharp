@@ -28,7 +28,7 @@ public class UpdateValidationView : ShippingAddressView, ValidationComponentInte
 {
     public UpdateValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

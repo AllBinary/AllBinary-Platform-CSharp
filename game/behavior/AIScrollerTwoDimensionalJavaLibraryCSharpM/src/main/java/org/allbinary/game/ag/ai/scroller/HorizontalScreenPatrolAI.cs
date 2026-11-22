@@ -47,7 +47,7 @@ public class HorizontalScreenPatrolAI : BasicAI
     public HorizontalScreenPatrolAI(ABHashtable<object, object> hashtable, AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(ownerLayerInterface, gameInput)
     {
         this.firingX = this.displayInfoSingleton.getLastHalfWidth();
-        // base(ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.sound = ((Sound) hashtable.get(HorizontalScreenPatrolAI.SOUND));
         if (this.sound == null) {
             throw new Exception("No Sound Provided!!");

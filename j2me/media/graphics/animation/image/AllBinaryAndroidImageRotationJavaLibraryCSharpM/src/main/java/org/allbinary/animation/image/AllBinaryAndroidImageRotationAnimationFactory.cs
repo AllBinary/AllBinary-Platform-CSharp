@@ -79,7 +79,7 @@ public class AllBinaryAndroidImageRotationAnimationFactory : BaseImageAnimationF
     private readonly bool resizeCanvasForRotation;
     public AllBinaryAndroidImageRotationAnimationFactory(Image image, int width, int height, short angleIncrement, AnimationBehaviorFactory animationBehaviorFactory, bool resizeCanvasForRotation) : base(image, PrimitiveIntUtil.getArrayInstance(), width, height, 0, 0, animationBehaviorFactory)
     {
-        // base(image, PrimitiveIntUtil.getArrayInstance(), width, height, 0, 0, animationBehaviorFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.angleIncrement = angleIncrement;
         this.resizeCanvasForRotation = resizeCanvasForRotation;
     }

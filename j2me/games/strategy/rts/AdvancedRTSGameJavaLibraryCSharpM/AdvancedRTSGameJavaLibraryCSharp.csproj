@@ -42,7 +42,7 @@
     <ProjectReference Include="..\..\..\..\media\graphics\ImageCacheJ2MEJavaLibraryCSharpM\ImageCacheJ2MEJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\allbinary_src\ThreadJ2MELibraryCSharpM\ThreadJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\..\AllBinary-Platform-Integrationcsharp\embedded\j2me\microemulator\custom\MicroEmulatorCustomGameJavaLibraryCSharpM\MicroEmulatorCustomGameJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\..\..\AllBinary-Platform-Integrationcsharp\embedded\j2me\microemulator\custom\MicroEmulatorCustomUIJavaLibraryCSharpM\MicroEmulatorCustomUIJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\media\graphics\NullCustomUIJavaLibraryCSharpM\NullCustomUIJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\multiplayer\AllBinaryGameClientBaseNullJavaLibraryCSharpM\AllBinaryGameClientBaseNullJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\media\motion\NoVibrateJavaLibraryCSharpM\NoVibrateJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\..\graphics\opengl\OpenGLNoneOtherJavaLibraryCSharpM\OpenGLNoneOtherJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -64,7 +64,7 @@
     <ProjectReference Include="..\..\..\..\statistics\ApplicationStatisticsJavaLibraryCSharpM\ApplicationStatisticsJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\lib\BasicMathLibraryCSharpM\BasicMathLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\NullJ2MELibraryCSharpM\NullJ2MELibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
-    <ProjectReference Include="..\..\..\..\..\..\AllBinary-Platform-Integrationcsharp\embedded\j2me\microemulator\custom\MicroEmulatorCustomUIPreJavaLibraryCSharpM\MicroEmulatorCustomUIPreJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
+    <ProjectReference Include="..\..\..\..\media\graphics\NullCustomUIPreJavaLibraryCSharpM\NullCustomUIPreJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\..\media\graphics\FormJavaLibraryCSharpM\FormJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\GameConfigurationJavaLibraryCSharpM\GameConfigurationJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
     <ProjectReference Include="..\..\..\DamageGameJavaLibraryCSharpM\DamageGameJavaLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
@@ -149,6 +149,10 @@
     <ProjectReference Include="..\..\..\..\lib\VectorThreeDimensionalLibraryCSharpM\VectorThreeDimensionalLibraryCSharp.csproj" GlobalPropertiesToRemove="OutputPath" />
   </ItemGroup>
   <!-- AllBinary references end -->
+  <ItemGroup>
+    <!-- SimpleTiledLayer paints with the graphics type from desktop MIDP. -->
+    <ProjectReference Include="..\..\..\..\..\..\AllBinary-Platform-Integrationcsharp\embedded\j2me\microemulator\3.0.0\microemulator\microemu-midpCSharp\microemu-midpCSharp.csproj" GlobalPropertiesToRemove="OutputPath" Aliases="DesktopMIDP" />
+  </ItemGroup>
 
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
 

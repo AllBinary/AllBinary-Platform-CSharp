@@ -25,7 +25,7 @@ public class ExcludeFileExtensionsBooleanFileVisitor : BooleanFileVisitor
 {
     public ExcludeFileExtensionsBooleanFileVisitor(BasicArrayList filterStringBasicArrayList) : base(filterStringBasicArrayList)
     {
-        // base(filterStringBasicArrayList) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override bool? visit(AbFile file)

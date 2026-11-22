@@ -16,9 +16,7 @@
 
 using System;
 using System.Linq;
-//using Collection = java.util.Collection;
 using java.util;
-//using Iterator = java.util.Iterator;
 //using HelpSet = javax.help.HelpSet;
 //using HelpSetEvent = javax.help.@event.HelpSetEvent;
 //using HelpSetListener = javax.help.@event.HelpSetListener;
@@ -43,8 +41,8 @@ public class InputAutomationModuleFactoryFactory
         this.helpSetListenerInterface = helpSetListenerInterface;
         this.defaultListModelHelper = new DefaultListModelHelper();
         this.hashMap = StdUtil.getInstance().createHashMap();
-        Collection collection = inputAutomationModuleConfigurations.getHashMap().values();
-        Iterator iterator = collection.iterator();
+        Collection<object> collection = inputAutomationModuleConfigurations.getHashMap().values();
+        Iterator<object> iterator = collection.iterator();
         InputAutomationModuleConfiguration inputAutomationModuleConfiguration = null;
         while (iterator.hasNext()) {
             inputAutomationModuleConfiguration = ((InputAutomationModuleConfiguration) iterator.next());

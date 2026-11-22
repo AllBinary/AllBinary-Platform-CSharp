@@ -26,7 +26,7 @@ public class MiddleRelativeLayerRelationship : RelativeLayerRelationship
 {
     public MiddleRelativeLayerRelationship(AllBinaryLayer layer) : base(layer, PointFactory.getInstance().createXY(layer.getHalfWidth(), layer.getHalfHeight()), BasicArrayListUtil.getInstance().getImmutableInstance())
     {
-        // base(layer, PointFactory.getInstance().createXY(layer.getHalfWidth(), layer.getHalfHeight()), BasicArrayListUtil.getInstance().getImmutableInstance()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

@@ -26,7 +26,7 @@ public class ArtificialIntelligenceLayerProcessor : LayerProcessor
 {
     public ArtificialIntelligenceLayerProcessor() : base(new ArtificialIntelligenceLayerManager())
     {
-        // base(new ArtificialIntelligenceLayerManager()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

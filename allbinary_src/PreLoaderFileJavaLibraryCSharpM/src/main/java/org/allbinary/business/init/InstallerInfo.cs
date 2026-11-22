@@ -79,8 +79,8 @@ public class InstallerInfo
             if (file.isFile()) {
                 AbFileLocalInputStream iFile = new AbFileLocalInputStream(file);
                 AbDataInputStream iData = new AbDataInputStream(iFile);
-                string decryptedUserName = new string((DatabaseEncoder.decode(iData.readUTF())).ToCharArray());
-                string decryptedPassword = new string((DatabaseEncoder.decode(iData.readUTF())).ToCharArray());
+                string decryptedUserName = global::System.JavaStringExtensions.copyString(DatabaseEncoder.decode(iData.readUTF()));
+                string decryptedPassword = global::System.JavaStringExtensions.copyString(DatabaseEncoder.decode(iData.readUTF()));
                 this.setUserName(new WeakCrypt(1).decrypt(decryptedUserName));
                 this.setPassword(new WeakCrypt(2).decrypt(decryptedPassword));
             } else {
@@ -144,7 +144,7 @@ public class InstallerInfo
     public virtual bool isValid(string userName, string password)
     {
         this.updateIfNeeded();
-        if (this.userName != null && string.CompareOrdinal(this.userName, userName) == 0 && this.password != null && string.CompareOrdinal(this.password, password) == 0) {
+        if (InstallerInfo.userName != null && string.CompareOrdinal(InstallerInfo.userName, userName) == 0 && InstallerInfo.password != null && string.CompareOrdinal(InstallerInfo.password, password) == 0) {
             return true;
         }
         return false;

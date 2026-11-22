@@ -33,7 +33,7 @@ public class BasicGeographicMap : SimpleGeographicMap, GeographicMapInterface
     private readonly GeographicMapCellTypeFactory geographicMapCellTypeFactory;
     public BasicGeographicMap(int? id, string name, int[] cellTypeIdToGeographicMapCellType, AllBinaryTiledLayer tiledLayer, BasicColor foregroundBasicColor, BasicColor backgroundBasicColor, GeographicMapCellPositionFactoryInterface geographicMapCellPositionFactoryInterface, GeographicMapCellPositionBaseFactory geographicMapCellPositionBaseFactory, GeographicMapCellTypeFactory geographicMapCellTypeFactory) : base(id, name, cellTypeIdToGeographicMapCellType, tiledLayer, foregroundBasicColor, backgroundBasicColor)
     {
-        // base(id, name, cellTypeIdToGeographicMapCellType, tiledLayer, foregroundBasicColor, backgroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.geographicMapCellPositionFactoryInterface = geographicMapCellPositionFactoryInterface;
         this.geographicMapCellPositionFactory = geographicMapCellPositionBaseFactory.getInstance(this);
         this.geographicMapCellTypeFactory = geographicMapCellTypeFactory;

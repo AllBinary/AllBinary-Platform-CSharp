@@ -30,7 +30,7 @@ public class TouchButtonUpgradeResource : TouchButtonResource
 
     private TouchButtonUpgradeResource() : base("/touch_button_upgrade_64_by_64.png", "/touch_button_upgrade_hint_64_by_64.png")
     {
-        // base("/touch_button_upgrade_64_by_64.png", "/touch_button_upgrade_hint_64_by_64.png") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

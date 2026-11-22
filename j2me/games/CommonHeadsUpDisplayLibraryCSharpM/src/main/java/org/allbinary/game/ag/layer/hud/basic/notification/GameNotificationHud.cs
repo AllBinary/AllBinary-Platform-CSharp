@@ -34,7 +34,7 @@ public class GameNotificationHud : BasicHud, GameNotificationListenerInterface
     public static readonly GameNotificationHud NULL_GAME_NOTIFICATION = new GameNotificationHud(BasicHudFactory.getInstance().TOPCENTER, BasicHudFactory.getInstance().HORIZONTAL, 0, BasicColorFactory.getInstance().RED);
     public GameNotificationHud(int location, int direction, int bufferZone, BasicColor basicColor) : base(location, direction, bufferZone, basicColor)
     {
-        // base(location, direction, bufferZone, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void onEvent(AllBinaryEventObject eventObject)

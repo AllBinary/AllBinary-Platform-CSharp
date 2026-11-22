@@ -26,7 +26,7 @@ public class TickableLayerProcessor : LayerProcessor
 {
     public TickableLayerProcessor() : base(new TickableLayerManager())
     {
-        // base(new TickableLayerManager()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

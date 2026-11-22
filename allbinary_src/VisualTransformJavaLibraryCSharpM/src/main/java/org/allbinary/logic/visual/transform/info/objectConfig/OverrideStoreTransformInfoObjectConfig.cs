@@ -26,18 +26,18 @@ public class OverrideStoreTransformInfoObjectConfig : GenericStoreTransformInfoO
 {
     public OverrideStoreTransformInfoObjectConfig(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface) : base(abeClientInformation, transformInfoInterface)
     {
-        // base(abeClientInformation, transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public OverrideStoreTransformInfoObjectConfig(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface, Document document) : base(abeClientInformation, transformInfoInterface, document)
     {
-        // base(abeClientInformation, transformInfoInterface, document) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setDocument(this.generate(this.toXmlDoc()));
     }
 
     public OverrideStoreTransformInfoObjectConfig(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface, string name, string type) : base(abeClientInformation, transformInfoInterface, name, type)
     {
-        // base(abeClientInformation, transformInfoInterface, name, type) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setDocument(this.generate(this.toXmlDoc()));
     }
 

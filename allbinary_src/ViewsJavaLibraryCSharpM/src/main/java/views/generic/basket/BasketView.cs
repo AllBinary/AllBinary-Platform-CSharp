@@ -46,7 +46,7 @@ public class BasketView : HttpStoreComponentView, DomNodeInterface
     private readonly HttpServletRequest request;
     public BasketView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.request = ((HttpServletRequest) this.getPageContext().getRequest());
     }
 
@@ -63,7 +63,7 @@ public class BasketView : HttpStoreComponentView, DomNodeInterface
             object[] productArray = items.toArray();
             int size = productArray.Length;
             for (int index = 0; index < size; index++) {
-                string product = new string((((string) productArray[index])).ToCharArray());
+                string product = global::System.JavaStringExtensions.copyString(((string) productArray[index]));
                 ItemInterface itemInterface = inventoryEntity.getItem(product);
                 if (itemInterface != null) {
                     BasicItemView basicItemView = new BasicItemView(itemInterface, new BasicArrayListD());

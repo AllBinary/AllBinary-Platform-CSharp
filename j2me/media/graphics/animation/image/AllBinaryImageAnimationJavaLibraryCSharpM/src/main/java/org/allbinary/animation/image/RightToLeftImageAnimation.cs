@@ -31,7 +31,7 @@ public class RightToLeftImageAnimation : ImageSegmentAnimation
     private int currentWidth = 0;
     public RightToLeftImageAnimation(Image image, AnimationBehavior animationBehavior) : base(image, PrimitiveIntUtil.getArrayInstance(), animationBehavior)
     {
-        // base(image, PrimitiveIntUtil.getArrayInstance(), animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setFrame(this.getSize() - 1);
     }
 

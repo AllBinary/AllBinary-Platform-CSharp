@@ -20,7 +20,7 @@ using ARunnable = org.allbinary.thread.ARunnable;
 using URI = java.net.URI;
 using URL = java.net.URL;
 using Desktop = java.awt.Desktop;
-//using java.util;
+using java.util;
 //using ImageIcon = javax.swing.ImageIcon;
 //using JDialog = javax.swing.JDialog;
 //using HelpSet = javax.help.HelpSet;
@@ -462,14 +462,11 @@ public class InputAutomationJFrame : JFrame, InputAutomationConfigurationModuleC
         appUrlGlobals.setWebappPath("G:/mnt/bc/mydev/work_automation/automation/run/");
         URLGLOBALS.init(appUrlGlobals);
         WebappClassLoaderInfo.setLoader(global::java.lang.ClassLoader.getSystemClassLoader());
-        EventQueue.invokeLater(new ARunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        EventQueue.invokeLater(new __SwtClosure_N76838((__swtSelf_N76838) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 try {
-                    logUtil.putF("Running", this, commonStrings.RUN);
+                    logUtil.putF("Running", __swtSelf_N76838, commonStrings.RUN);
                     INPUTAUTOMATION_JFRAME = new InputAutomationJFrame();
                     InputRobotFactory.getInstance().addListener(InputAutomationJFrame.getInstance());
                     if (inputAutomationBundleActivatorListenerInterface != null) {
@@ -478,12 +475,9 @@ public class InputAutomationJFrame : JFrame, InputAutomationConfigurationModuleC
                     }
                     INPUTAUTOMATION_JFRAME.setVisible(true);
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N76838, commonStrings.RUN, e);
                 }
-            }
-
-#endif
-);
+            }));
     }
 
     // throws Exception
@@ -572,5 +566,17 @@ public class InputAutomationJFrame : JFrame, InputAutomationConfigurationModuleC
     private JMenuItem subscriptionJMenuItem = null;
     private JMenu toolsJMenu = null;
     private JMenuItem updatesJMenuItem = null;
+    private sealed class __SwtClosure_N76838 : ARunnable
+    {
+        private readonly global::System.Action<__SwtClosure_N76838> callback1;
+
+        public __SwtClosure_N76838(global::System.Action<__SwtClosure_N76838> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
+    }
+
 }
 

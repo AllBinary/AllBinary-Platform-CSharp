@@ -24,7 +24,7 @@ public class AbSqlTablePresentation : AbSqlBasic
 {
     public AbSqlTablePresentation(DbConnectionInfo databaseConnectionInfoInterface) : base(databaseConnectionInfoInterface)
     {
-        // base(databaseConnectionInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

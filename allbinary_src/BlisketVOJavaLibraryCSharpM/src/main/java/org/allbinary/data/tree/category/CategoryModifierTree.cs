@@ -36,7 +36,7 @@ public class CategoryModifierTree : CategoryPrivateTree, CategoryModifierTreeInt
     private readonly Directory directory = Directory.getInstance();
     public CategoryModifierTree(CategoryFactoryInterface categoryFactoryInterface) : base(categoryFactoryInterface)
     {
-        // base(categoryFactoryInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             this.logUtil.putF(this.commonStrings.START, this, "CategoryModifierTree(CategoryFactoryInterface categoryFactoryInterface)");
         }

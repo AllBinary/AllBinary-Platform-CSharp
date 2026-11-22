@@ -42,7 +42,7 @@ public class TestInputAutomationCaptureWorker : AbstractInputAutomationWorker
     private readonly string IMAGE_NOT_AVAILABLE = "Image Not Available";
     public TestInputAutomationCaptureWorker(InputAutomationActionInterface inputAutomationActionInterface, GenericProfileActions genericProfileActions, ImageComparatorConstraintsInterface imageComparatorConstraintsInterface, MotionRectangleConstraintsInterface motionRectangleConstraintsInterface) : base(inputAutomationActionInterface)
     {
-        // base(inputAutomationActionInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(this.MESSAGE, this, this.commonStrings.CONSTRUCTOR);
         this.setGenericProfileActions(genericProfileActions);
     }

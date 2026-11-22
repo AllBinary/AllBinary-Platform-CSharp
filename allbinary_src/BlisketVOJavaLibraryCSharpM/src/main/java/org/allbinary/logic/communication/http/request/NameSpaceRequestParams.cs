@@ -45,7 +45,7 @@ public class NameSpaceRequestParams : RequestParams
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public NameSpaceRequestParams() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
             this.logUtil.putF("Constructing empty", this, this.commonStrings.CONSTRUCTOR);
         }
@@ -53,7 +53,7 @@ public class NameSpaceRequestParams : RequestParams
 
     public NameSpaceRequestParams(HttpServletRequest httpServletRequest) : base(httpServletRequest)
     {
-        // base(httpServletRequest) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
             this.logUtil.putF("Constructing from HttpServletRequest", this, this.commonStrings.CONSTRUCTOR);
         }
@@ -61,7 +61,7 @@ public class NameSpaceRequestParams : RequestParams
 
     public NameSpaceRequestParams(PageContext pageContext) : base(pageContext)
     {
-        // base(pageContext) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
             this.logUtil.putF("Constructing from PageContext", this, this.commonStrings.CONSTRUCTOR);
         }
@@ -301,9 +301,9 @@ public class NameSpaceRequestParams : RequestParams
                     if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
                         this.logUtil.putF("Not NameSpace key: " + key + " Value: " + values[0], this, "toHashMap()");
                     }
-                    hashMap.put(new string((key).ToCharArray()), new string((values[0]).ToCharArray()));
+                    hashMap.put(new string((key).ToCharArray()), global::System.JavaStringExtensions.copyString(values[0]));
                 } else {
-                    document = this.addNameSpace(new string((key).ToCharArray()), new string((values[0]).ToCharArray()), document);
+                    document = this.addNameSpace(new string((key).ToCharArray()), global::System.JavaStringExtensions.copyString(values[0]), document);
                 }
             }
         }

@@ -45,7 +45,7 @@ public class ScrollMapPlayerGameInput : PlayerGameInput
     public ScrollMapPlayerGameInput(BasicGeographicMap geographicMapInterface, BasicArrayList list, int playerInputId) : base(list, new BasicArrayListD(), playerInputId)
     {
         this.scrollMapEvent = new ScrollMapEvent(this);
-        // base(list, new BasicArrayListD(), playerInputId) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initInputProcessors();
         this.geographicMapInterface = geographicMapInterface;
         this.inputList = list;

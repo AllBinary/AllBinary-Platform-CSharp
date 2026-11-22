@@ -24,7 +24,7 @@ public class PCGameKey : Input
 {
     public PCGameKey(int keyCode, string name) : base(keyCode, name)
     {
-        // base(keyCode, name) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         int id = this.getId();
         if (id >= 0) {
             InputFactory.getInstance().add(id, this);

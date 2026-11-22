@@ -26,12 +26,12 @@ public class WholesaleUser : User
 {
     public WholesaleUser() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public WholesaleUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
-        // base(userHashMap) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void validateSession(WeblisketSessionInterface weblisketSession)

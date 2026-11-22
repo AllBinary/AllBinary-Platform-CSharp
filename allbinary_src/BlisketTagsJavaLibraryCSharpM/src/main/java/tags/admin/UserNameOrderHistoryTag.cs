@@ -28,7 +28,7 @@ public class UserNameOrderHistoryTag : StoreValidationTransformTag
     private string status = null;
     public UserNameOrderHistoryTag() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void setStatus(string value)

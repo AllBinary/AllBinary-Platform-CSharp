@@ -24,12 +24,12 @@ public class InventoryDbInitInfo : DbInitInfo
     private const string INITFILE = "inventorydbinitdata.dat";
     public InventoryDbInitInfo() : base(INITFILE, true)
     {
-        // base(INITFILE, true) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public InventoryDbInitInfo(bool read) : base(INITFILE, read)
     {
-        // base(INITFILE, read) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

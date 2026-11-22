@@ -56,7 +56,7 @@ public class SpriteIndexedAnimationFactory : BaseImageAnimationFactory, Procedur
     private BasicColor[] basicColorArray = BasicColorUtil.getInstance().ZERO_ARRAY;
     private SpriteIndexedAnimationFactory(Image image, BasicColor[] basicColorArray, int[] sequenceArray, int width, int height, int dx, int dy, AnimationBehaviorFactory animationBehaviorFactory) : base(image, sequenceArray, width, height, dx, dy, animationBehaviorFactory)
     {
-        // base(image, sequenceArray, width, height, dx, dy, animationBehaviorFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.basicColorArray = basicColorArray;
     }
 

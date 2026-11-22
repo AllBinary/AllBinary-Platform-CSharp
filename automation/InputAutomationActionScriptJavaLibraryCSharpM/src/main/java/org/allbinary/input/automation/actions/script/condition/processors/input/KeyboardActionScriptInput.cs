@@ -46,7 +46,7 @@ public class KeyboardActionScriptInput : BasicProfileActionScriptInput, Keyboard
     private int delayBetweenKeys = 0;
     public KeyboardActionScriptInput(Node node) : base(NAME, node)
     {
-        // base(NAME, node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         Node actionNode = DomSearchHelper.getNode(KeyboardActionScriptInputData.NAME, node.getChildNodes());
         if (actionNode != null) {
@@ -83,7 +83,7 @@ public class KeyboardActionScriptInput : BasicProfileActionScriptInput, Keyboard
 
     public KeyboardActionScriptInput() : base(NAME)
     {
-        // base(NAME) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (!this.isPress() && !this.isRelease()) {
             this.setNormal();
         }

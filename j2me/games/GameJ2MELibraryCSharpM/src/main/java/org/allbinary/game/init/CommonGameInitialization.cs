@@ -36,7 +36,7 @@ public class CommonGameInitialization : BaseGameInitialization
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     public CommonGameInitialization(ResourceInitialization[] resourceInitializationArray, int portion) : base(resourceInitializationArray, portion)
     {
-        // base(resourceInitializationArray, portion) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

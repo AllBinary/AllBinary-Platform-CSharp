@@ -25,7 +25,7 @@ public class MotionGestureInput : Input
 {
     public MotionGestureInput(int id, string name) : base(id, name)
     {
-        // base(id, name) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         InputFactory inputFactory = InputFactory.getInstance();
         inputFactory.add(this.getId(), this);
     }

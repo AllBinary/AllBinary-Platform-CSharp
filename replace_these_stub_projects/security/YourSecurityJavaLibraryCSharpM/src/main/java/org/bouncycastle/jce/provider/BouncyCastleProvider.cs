@@ -12,7 +12,7 @@ public class BouncyCastleProvider : Provider
     public static string PROVIDER_NAME = "BC";
     public BouncyCastleProvider() : base(BouncyCastleProvider.PROVIDER_NAME, 1.41, BouncyCastleProvider.info)
     {
-        // base(BouncyCastleProvider.PROVIDER_NAME, 1.41, BouncyCastleProvider.info) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void setParameter(string parameterName, object parameter)

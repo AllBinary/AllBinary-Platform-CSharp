@@ -38,7 +38,7 @@ public class XmlOptionItemsEntity : AbSqlBean, XmlOptionItemsEntityInterface
     public readonly string tableName = "xmloptionitems";
     public XmlOptionItemsEntity() : base(new InventoryDbInitInfo())
     {
-        // base(new InventoryDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

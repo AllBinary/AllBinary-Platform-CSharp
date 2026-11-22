@@ -34,7 +34,7 @@ public class ImageAnimationFactory : BaseImageAnimationFactory
 
     public ImageAnimationFactory(Image image, int width, int height, int dx, int dy, AnimationBehaviorFactory animationBehaviorFactory) : base(image, PrimitiveIntUtil.getArrayInstance(), width, height, dx, dy, animationBehaviorFactory)
     {
-        // base(image, PrimitiveIntUtil.getArrayInstance(), width, height, dx, dy, animationBehaviorFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

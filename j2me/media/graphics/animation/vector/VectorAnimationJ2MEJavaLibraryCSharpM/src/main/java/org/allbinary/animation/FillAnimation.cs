@@ -14,7 +14,7 @@ public class FillAnimation : IndexedAnimation
     private readonly int height;
     public FillAnimation(int[] pixelBuffer, int width, int height, AnimationBehavior animationBehavior) : base(animationBehavior)
     {
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.width = 100;
         this.height = 100;
         this.pixelBuffer = pixelBuffer;

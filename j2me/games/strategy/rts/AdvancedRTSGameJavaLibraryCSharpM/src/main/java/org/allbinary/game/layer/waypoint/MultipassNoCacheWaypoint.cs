@@ -49,7 +49,7 @@ public class MultipassNoCacheWaypoint : WaypointBase, BuildingEventListenerInter
     public readonly PathFindingLayerInterface ownerLayer;
     public MultipassNoCacheWaypoint(PathFindingLayerInterface ownerLayer, Sound sound) : base(sound)
     {
-        // base(sound) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.ownerLayer = ownerLayer;
     }
 

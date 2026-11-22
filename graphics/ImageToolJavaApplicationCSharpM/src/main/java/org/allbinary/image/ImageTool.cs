@@ -33,22 +33,28 @@ public class ImageTool
 
     public static void main(string[] args)
     {
-        EventQueue.invokeLater(new ARunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        EventQueue.invokeLater(new __SwtClosure_N65811((__swtSelf_N65811) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 CommonStrings commonStrings = CommonStrings.getInstance();
                 try {
-                    logUtil.putF(commonStrings.START, this, commonStrings.RUN);
+                    logUtil.putF(commonStrings.START, __swtSelf_N65811, commonStrings.RUN);
                     new ImageToolJFrame().setVisible(true);
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N65811, commonStrings.RUN, e);
                 }
-            }
+            }));
+    }
 
-#endif
-);
+    private sealed class __SwtClosure_N65811 : ARunnable
+    {
+        private readonly global::System.Action<__SwtClosure_N65811> callback1;
+
+        public __SwtClosure_N65811(global::System.Action<__SwtClosure_N65811> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
     }
 
 }

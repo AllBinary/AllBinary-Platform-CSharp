@@ -34,7 +34,7 @@ public class SelectNewView : PaymentGatewayViewAbstract
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public SelectNewView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

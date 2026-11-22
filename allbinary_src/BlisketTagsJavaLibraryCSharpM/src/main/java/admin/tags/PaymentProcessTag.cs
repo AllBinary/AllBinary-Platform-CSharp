@@ -42,7 +42,7 @@ public class PaymentProcessTag : StoreValidationTransformTag
         try {
             object anyType = new PaymentProcessHelperFactory().getInstance(this.getPropertiesHashMap(), this.pageContext);
             Type helperClass = anyType.GetType();
-            Method method = helperClass.getMethod(commonStrings.PROCESS, null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod(commonStrings.PROCESS, null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {

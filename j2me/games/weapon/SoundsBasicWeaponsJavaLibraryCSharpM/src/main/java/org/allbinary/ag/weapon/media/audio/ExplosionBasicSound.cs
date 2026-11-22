@@ -26,7 +26,7 @@ public class ExplosionBasicSound : CompositeSound
     private static Sound soundInterface = new ExplosionBasicSound();
     private ExplosionBasicSound() : base("resource:/wav/explosion.wav")
     {
-        // base("resource:/wav/explosion.wav") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public static Sound getInstance()

@@ -121,12 +121,12 @@ public class FileLog
                     return new string(("Couldn't Create a Backup file").ToCharArray());
                 }
             }
-            string className = new string((stringUtil.NULL_STRING).ToCharArray());
+            string className = global::System.JavaStringExtensions.copyString(stringUtil.NULL_STRING);
             if (functionName == null) {
-                functionName = new string((FileLog.stringUtil.NULL_STRING).ToCharArray());
+                functionName = global::System.JavaStringExtensions.copyString(FileLog.stringUtil.NULL_STRING);
             }
             if (specialMessage == null) {
-                specialMessage = new string((FileLog.stringUtil.NULL_STRING).ToCharArray());
+                specialMessage = global::System.JavaStringExtensions.copyString(FileLog.stringUtil.NULL_STRING);
             }
             if (anyType.GetType().FullName != null) {
                 className = new string((anyType.GetType().FullName).ToCharArray());
@@ -164,10 +164,10 @@ public class FileLog
                 }
             }
             if (functionName == null) {
-                functionName = new string((FileLog.stringUtil.NULL_STRING).ToCharArray());
+                functionName = global::System.JavaStringExtensions.copyString(FileLog.stringUtil.NULL_STRING);
             }
             if (specialMessage == null) {
-                specialMessage = new string((FileLog.stringUtil.NULL_STRING).ToCharArray());
+                specialMessage = global::System.JavaStringExtensions.copyString(FileLog.stringUtil.NULL_STRING);
             }
             string message = LogFormatUtil.getInstance().get(className, functionName, specialMessage, exception);
             FileLog.fileOut.write(message, 0, message.Length);

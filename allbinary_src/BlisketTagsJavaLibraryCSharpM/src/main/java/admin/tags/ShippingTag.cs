@@ -58,7 +58,7 @@ public class ShippingTag : CustomTagSupport
         try {
             object anyType = new ShippingHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("setShippingType", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("setShippingType", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {

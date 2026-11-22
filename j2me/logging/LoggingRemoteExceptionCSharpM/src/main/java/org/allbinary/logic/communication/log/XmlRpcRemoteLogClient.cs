@@ -36,7 +36,7 @@ public class XmlRpcRemoteLogClient : XmlRpcAbeClient
     private readonly NoCrypt noCrypt = new NoCrypt();
     public XmlRpcRemoteLogClient(AbeClientInformationInterface clientInfo) : base(clientInfo, "SSLLogServ.logUtil")
     {
-        // base(clientInfo, "SSLLogServ.logUtil") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

@@ -28,7 +28,7 @@ public class ImageArrayRotationAnimationPool : BasicArrayListResetablePool
     private static PoolInterface IMAGE_ROTATION_ANIMATION_POOL = new ImageArrayRotationAnimationPool(new ImageArrayRotationAnimationCacheableInterfaceFactory());
     public ImageArrayRotationAnimationPool(CacheableInterfaceFactoryInterface cacheableInterfaceFactoryInterface) : base(cacheableInterfaceFactoryInterface)
     {
-        // base(cacheableInterfaceFactoryInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public static PoolInterface getInstance()

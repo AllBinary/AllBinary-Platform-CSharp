@@ -55,7 +55,7 @@ public class CategoryProperties : CategoryPropertiesInterface
 
     public CategoryProperties(HashMap<object, object> categoryPropertiesHashMap)
     {
-        this.category = new string((((string) categoryPropertiesHashMap.get(CategoryData.getInstance().NAME))).ToCharArray());
+        this.category = global::System.JavaStringExtensions.copyString(((string) categoryPropertiesHashMap.get(CategoryData.getInstance().NAME)));
     }
 
     public virtual bool isRealRoot()

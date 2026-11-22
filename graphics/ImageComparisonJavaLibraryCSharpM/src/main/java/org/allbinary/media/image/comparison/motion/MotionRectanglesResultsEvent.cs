@@ -26,7 +26,7 @@ public class MotionRectanglesResultsEvent : AllBinaryEventObject
     private MotionRectangles motionRectangles = null;
     public MotionRectanglesResultsEvent(object anyType, long? frame, MotionRectangles motionRectangles) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.frame = frame;
         this.setMotionRectangles(motionRectangles);
     }

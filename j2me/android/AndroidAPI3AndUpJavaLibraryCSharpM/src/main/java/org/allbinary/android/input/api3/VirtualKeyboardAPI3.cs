@@ -37,7 +37,7 @@ public class VirtualKeyboardAPI3 : VirtualKeyboard, VirtualKeyboardEventListener
     private readonly global::java.lang.Runnable hideVirtualKeyboardRunnable;
     public VirtualKeyboardAPI3(Activity activity) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.activity = activity;
         this.showVirtualKeyboardRunnable = new ShowVirtualKeyboardRunnable(this.activity);
         this.hideVirtualKeyboardRunnable = new HideVirtualKeyboardRunnable(this.activity);

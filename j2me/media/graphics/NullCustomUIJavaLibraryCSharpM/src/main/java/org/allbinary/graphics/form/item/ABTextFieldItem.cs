@@ -15,7 +15,7 @@ public class ABTextFieldItem : ABTextItem
     private Font font;
     public ABTextFieldItem(Canvas canvas, Visitor visitor, string label, string value, int maxSize, int layout, string altText, Font font, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(label, layout, altText, backgroundBasicColor, foregroundBasicColor)
     {
-        // base(label, layout, altText, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.font = font;
     }
 

@@ -56,17 +56,14 @@ public class SpriteSplitterImageJPanel : JPanel, ImageProcessedVisitor
     private BufferedImage result = null;
     public SpriteSplitterImageJPanel(ImageProcessorInput imageProcessorInput) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         initComponents();
         this.imageProcessorInput = imageProcessorInput;
     }
 
     public virtual void process()
     {
-        new global::org.allbinary.thread.NullThread()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        new __SwtClosure_N66636((__swtSelf_N66636) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 try {
                     SpriteSplitterUtil spriteSplitterUtil = SpriteSplitterUtil.getInstance();
@@ -79,12 +76,9 @@ public class SpriteSplitterImageJPanel : JPanel, ImageProcessedVisitor
                     int increaseHeight = int.Parse((increaseHeightTextField.getText()).ToString());
                     spriteSplitterUtil.process(this.getImageProcessorInput(), totalFrames, totalAnimations, widthReduction, heightReduction, increaseWidth, increaseHeight, spriteType, this);
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N66636, commonStrings.RUN, e);
                 }
-            }
-
-#endif
-.start();
+            }).start();
     }
 
     private void initComponents()
@@ -299,6 +293,18 @@ public class SpriteSplitterImageJPanel : JPanel, ImageProcessedVisitor
         }
         bool isWritten = ImageIO.write(((RenderedImage) this.result), imageStrings.PNG, file);
         this.logUtil.putF(new StringMaker().append("File: ").append(StringUtil.getInstance().toString(file)).append(" Wrote: ").appendboolean(isWritten).ToString(), this, this.commonStrings.RUN);
+    }
+
+    private sealed class __SwtClosure_N66636 : global::org.allbinary.thread.NullThread
+    {
+        private readonly global::System.Action<__SwtClosure_N66636> callback1;
+
+        public __SwtClosure_N66636(global::System.Action<__SwtClosure_N66636> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
     }
 
 }

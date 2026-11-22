@@ -31,7 +31,7 @@ public class PositionWidget : BasicHud
     private string positionString = StringUtil.getInstance().EMPTY_STRING;
     public PositionWidget(int position, int location, int direction, BasicColor basicColor) : base(location, direction, 2, basicColor)
     {
-        // base(location, direction, 2, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.updateMaxHeight = 10;
         this.updateMaxWidth = 40;
     }

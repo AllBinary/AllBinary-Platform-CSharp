@@ -38,7 +38,7 @@ public class WaypointLayer : AdvancedRTSGameLayer
 {
     public WaypointLayer(RemoteInfo remoteInfo, PathFindingLayerInterface parentLayer, Group[] groupInterface, string rootName, string name, AnimationInterfaceFactoryInterface animationInterfaceFactoryInterface, ProceduralAnimationInterfaceFactoryInterface proceduralAnimationInterfaceFactoryInterface, Rectangle rectangle, int x, int y) : base(remoteInfo, parentLayer, AdvancedRTSProperties.createProperties(), groupInterface, rootName, name, new Health(1000), NullRTSFormInputFactory.getInstance(), animationInterfaceFactoryInterface, animationInterfaceFactoryInterface, animationInterfaceFactoryInterface, animationInterfaceFactoryInterface, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, new TileLayerPositionIntoViewPosition())
     {
-        // base(remoteInfo, parentLayer, AdvancedRTSProperties.createProperties(), groupInterface, rootName, name, new Health(1000), NullRTSFormInputFactory.getInstance(), animationInterfaceFactoryInterface, animationInterfaceFactoryInterface, animationInterfaceFactoryInterface, animationInterfaceFactoryInterface, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, new TileLayerPositionIntoViewPosition()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setCollidableInferface(new CollidableWaypointBehavior(true));
         this.getWaypointBehavior().setWaypoint(new Waypoint(this, AttackSound.getInstance()));
         this.setAnimationInterface(this.indexedButShouldBeRotationAnimationInterface);

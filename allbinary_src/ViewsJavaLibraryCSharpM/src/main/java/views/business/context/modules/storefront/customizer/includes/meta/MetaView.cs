@@ -34,7 +34,7 @@ public class MetaView : HttpStoreComponentView, DomNodeInterface
     public MetasValidation metasValidation;
     public MetaView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.metasValidation = new MetasValidation(this.getWeblisketSession().getStoreName());
     }
 

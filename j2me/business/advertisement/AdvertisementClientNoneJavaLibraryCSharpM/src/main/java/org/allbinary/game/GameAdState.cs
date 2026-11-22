@@ -29,7 +29,7 @@ public class GameAdState : GameAdStateBase, VirtualKeyboardEventListenerInterfac
 {
     public GameAdState(AdConfiguration adConfiguration) : base(adConfiguration)
     {
-        // base(adConfiguration) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         VirtualKeyboardEventHandler.getInstance().addListenerInterface(this);
     }
 

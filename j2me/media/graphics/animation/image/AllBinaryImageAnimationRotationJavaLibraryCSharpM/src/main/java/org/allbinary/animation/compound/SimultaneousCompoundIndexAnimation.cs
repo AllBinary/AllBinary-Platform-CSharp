@@ -29,7 +29,7 @@ public class SimultaneousCompoundIndexAnimation : IndexedAnimation
     private IndexedAnimation[] animationInterfaceArray;
     public SimultaneousCompoundIndexAnimation(IndexedAnimation[] animationInterfaceArray, AnimationBehavior animationBehavior) : base(animationBehavior)
     {
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.animationInterfaceArray = animationInterfaceArray;
     }
 

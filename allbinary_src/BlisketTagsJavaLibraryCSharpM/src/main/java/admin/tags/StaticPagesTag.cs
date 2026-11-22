@@ -51,7 +51,7 @@ public class StaticPagesTag : TableTag
         try {
             object anyType = new StaticPagesRequestHelperFactory().getInstance(this.getPropertiesHashMap(), this.pageContext);
             Type helperClass = anyType.GetType();
-            Method method = helperClass.getMethod("generateStaticPages", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("generateStaticPages", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {
@@ -71,7 +71,7 @@ public class StaticPagesTag : TableTag
         try {
             object anyType = new StaticPagesRequestHelperFactory().getInstance(this.getPropertiesHashMap(), this.pageContext);
             Type helperClass = anyType.GetType();
-            Method method = helperClass.getMethod("makePublic", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("makePublic", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {

@@ -58,7 +58,7 @@ public class BasketTag : CustomTagSupport
     {
         try {
             object anyType = new BasketHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
-            Method method = anyType.GetType().getMethod("isBasketEmpty", null);
+            global::System.Reflection.MethodInfo method = anyType.GetType().getMethod("isBasketEmpty", null);
             bool? emptyBoolean = ((bool?) method.invoke(anyType, null));
             return emptyBoolean.Value;
         } catch (LicensingException e) {
@@ -76,7 +76,7 @@ public class BasketTag : CustomTagSupport
     {
         try {
             object anyType = new BasketRequestHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
-            Method method = anyType.GetType().getMethod("addItemToBasket", null);
+            global::System.Reflection.MethodInfo method = anyType.GetType().getMethod("addItemToBasket", null);
             bool? emptyBoolean = ((bool?) method.invoke(anyType, null));
             return emptyBoolean.Value;
         } catch (LicensingException e) {
@@ -95,7 +95,7 @@ public class BasketTag : CustomTagSupport
     {
         try {
             object anyType = new BasketRequestHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
-            Method method = anyType.GetType().getMethod("removeItemFromBasket", null);
+            global::System.Reflection.MethodInfo method = anyType.GetType().getMethod("removeItemFromBasket", null);
             bool? emptyBoolean = ((bool?) method.invoke(anyType, null));
             return emptyBoolean.Value;
         } catch (LicensingException e) {
@@ -114,7 +114,7 @@ public class BasketTag : CustomTagSupport
     {
         try {
             object anyType = new BasketRequestHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
-            Method method = anyType.GetType().getMethod("adjustBasket", null);
+            global::System.Reflection.MethodInfo method = anyType.GetType().getMethod("adjustBasket", null);
             bool? emptyBoolean = ((bool?) method.invoke(anyType, null));
             return emptyBoolean.Value;
         } catch (LicensingException e) {

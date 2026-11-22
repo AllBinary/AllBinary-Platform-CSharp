@@ -24,12 +24,12 @@ public class LogDbInitInfo : DbInitInfo
     private const string INITFILE = "logdbinitdata.dat";
     public LogDbInitInfo() : base(INITFILE, true)
     {
-        // base(INITFILE, true) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public LogDbInitInfo(bool read) : base(INITFILE, read)
     {
-        // base(INITFILE, read) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

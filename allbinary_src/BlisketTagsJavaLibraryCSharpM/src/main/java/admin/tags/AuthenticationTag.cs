@@ -86,7 +86,7 @@ public class AuthenticationTag : CustomTagSupport
         try {
             object anyType = new AuthenticationRequestHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("changePassword", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("changePassword", null);
             bool? result = ((bool?) method.invoke(anyType, null));
             return result.Value;
         } catch (LicensingException e) {
@@ -105,7 +105,7 @@ public class AuthenticationTag : CustomTagSupport
         try {
             object anyType = new AuthenticationRequestHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("newPassword", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("newPassword", null);
             bool? result = ((bool?) method.invoke(anyType, null));
             return result.Value;
         } catch (LicensingException e) {
@@ -124,7 +124,7 @@ public class AuthenticationTag : CustomTagSupport
         try {
             object anyType = new AuthenticationHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("invalidateSession", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("invalidateSession", null);
             int? resultInteger = ((int?) method.invoke(anyType, null));
             return ((int) resultInteger);
         } catch (LicensingException e) {
@@ -143,7 +143,7 @@ public class AuthenticationTag : CustomTagSupport
         try {
             object anyType = new AuthenticationHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type helperClass = anyType.GetType();
-            Method method = helperClass.getMethod("isSessionOld", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("isSessionOld", null);
             bool? resultBoolean = ((bool?) method.invoke(anyType, null));
             return resultBoolean.Value;
         } catch (LicensingException e) {
@@ -163,7 +163,7 @@ public class AuthenticationTag : CustomTagSupport
             object anyType = new AuthenticationRequestHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type addressHelperClass = anyType.GetType();
             Type[] methodParams = new Type[] { this.userName.GetType(), this.password.GetType(), this.roles.GetType() };
-            Method method = addressHelperClass.getMethod("isRoleValid", methodParams);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("isRoleValid", methodParams);
             object[] methodArgs = new object[] { this.userName, this.password, this.roles };
             bool? resultBoolean = ((bool?) method.invoke(anyType, methodArgs));
             return resultBoolean.Value;
@@ -183,7 +183,7 @@ public class AuthenticationTag : CustomTagSupport
         try {
             object anyType = new AuthenticationHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("validRole", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("validRole", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {
@@ -203,7 +203,7 @@ public class AuthenticationTag : CustomTagSupport
         try {
             object anyType = new AuthenticationHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("invalidRole", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("invalidRole", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {
@@ -224,7 +224,7 @@ public class AuthenticationTag : CustomTagSupport
             object anyType = new AuthenticationHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type addressHelperClass = anyType.GetType();
             Type[] methodParams = new Type[] { this.roles.GetType() };
-            Method method = addressHelperClass.getMethod("isAuthenticationSessionValid", methodParams);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("isAuthenticationSessionValid", methodParams);
             object[] methodArgs = new object[] { this.roles };
             bool? resultBoolean = ((bool?) method.invoke(anyType, methodArgs));
             return resultBoolean.Value;
@@ -245,7 +245,7 @@ public class AuthenticationTag : CustomTagSupport
             object anyType = new AuthenticationHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type helperClass = anyType.GetType();
             Type[] methodParams = new Type[] { this.userName.GetType(), this.password.GetType() };
-            Method method = helperClass.getMethod("processIfNewLogin", methodParams);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("processIfNewLogin", methodParams);
             object[] methodArgs = new object[] { this.userName, this.password };
             bool? resultBoolean = ((bool?) method.invoke(anyType, methodArgs));
             return resultBoolean.Value;
@@ -265,7 +265,7 @@ public class AuthenticationTag : CustomTagSupport
         try {
             object anyType = new AuthenticationHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("processInvalidation", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("processInvalidation", null);
             bool? resultBoolean = ((bool?) method.invoke(anyType, null));
             return resultBoolean.Value;
         } catch (LicensingException e) {

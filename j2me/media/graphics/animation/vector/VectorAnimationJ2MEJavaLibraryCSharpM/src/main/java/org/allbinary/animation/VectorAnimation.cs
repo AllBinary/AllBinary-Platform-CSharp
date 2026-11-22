@@ -42,7 +42,7 @@ public class VectorAnimation : IndexedAnimation, VectorAnimationInterface
     private CircularIndexUtil circularIndexUtil = CircularIndexUtil.createInstance(0);
     public VectorAnimation(int[][][] currentPoints, BasicColor basicColor, AnimationBehavior animationBehavior) : base(animationBehavior)
     {
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setPoints(currentPoints);
         this.setBasicColorP(basicColor);
     }

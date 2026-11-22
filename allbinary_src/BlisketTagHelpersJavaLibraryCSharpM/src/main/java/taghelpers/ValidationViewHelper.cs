@@ -33,7 +33,7 @@ public class ValidationViewHelper : ViewHelper, ValidationComponentInterface
     private ValidationComponentInterface viewInterface;
     public ValidationViewHelper(HashMap<object, object> hashMap, PageContext pageContext) : base(hashMap, pageContext)
     {
-        // base(hashMap, pageContext) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.viewInterface = ((ValidationComponentInterface) this.getViewObject());
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().TAGHELPER)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);

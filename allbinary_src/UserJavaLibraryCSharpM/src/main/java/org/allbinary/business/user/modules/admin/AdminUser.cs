@@ -26,12 +26,12 @@ public class AdminUser : User
 {
     public AdminUser() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public AdminUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
-        // base(userHashMap) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void validateSession(WeblisketSessionInterface weblisketSession)

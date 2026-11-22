@@ -33,7 +33,7 @@ public class WorkWaypoint : Waypoint
     public static readonly int? ID = SmallIntegerSingletonFactory.getInstance().getAt(25);
     public WorkWaypoint(PathFindingLayerInterface ownerLayer) : base(ownerLayer, WorkSound.getInstance())
     {
-        // base(ownerLayer, WorkSound.getInstance()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

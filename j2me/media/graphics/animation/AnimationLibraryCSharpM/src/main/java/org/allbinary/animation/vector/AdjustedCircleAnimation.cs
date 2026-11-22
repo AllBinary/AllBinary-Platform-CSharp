@@ -42,7 +42,7 @@ public class AdjustedCircleAnimation : CircleAnimation
     private int yAdjustment = 0;
     public AdjustedCircleAnimation(int width, int height, BasicColor basicColor) : base(width, height, basicColor)
     {
-        // base(width, height, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     private void initXY(int xAdjustment, int yAdjustment)

@@ -25,7 +25,7 @@ public class FireworksSound : CompositeSound
     private static Sound soundInterface = new FireworksSound();
     private FireworksSound() : base("resource:/wav/fireworks.wav")
     {
-        // base("resource:/wav/fireworks.wav") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public static Sound getInstance()

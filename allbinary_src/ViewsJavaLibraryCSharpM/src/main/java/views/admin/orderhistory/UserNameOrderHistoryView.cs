@@ -52,7 +52,7 @@ public class UserNameOrderHistoryView : HttpStoreComponentView, ValidationCompon
     private readonly string ON = "on";
     public UserNameOrderHistoryView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.request = ((HttpServletRequest) this.getPageContext().getRequest());
         this.userName = this.request.getParameter(UserData.USERNAME);
         this.preprocessing = this.request.getParameter(OrderHistoryData.PREPROCESSINGNAME);

@@ -27,7 +27,7 @@ public class DemoGameMidletEvent : AllBinaryEventObject
     private DemoGameMidletState demoGameMidletState;
     public DemoGameMidletEvent(object anyType, DemoGameMidletState demoGameMidletState) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.demoGameMidletState = demoGameMidletState;
     }
 

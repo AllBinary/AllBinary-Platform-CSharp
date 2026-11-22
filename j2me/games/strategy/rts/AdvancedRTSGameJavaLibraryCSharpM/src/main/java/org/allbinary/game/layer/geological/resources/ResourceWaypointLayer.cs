@@ -31,7 +31,7 @@ public class ResourceWaypointLayer : WaypointLayer
 {
     public ResourceWaypointLayer(RemoteInfo remoteInfo, PathFindingLayerInterface parentLayer, Group[] groupInterface, string rootName, string name, AnimationInterfaceFactoryInterface animationInterfaceFactoryInterface, ProceduralAnimationInterfaceFactoryInterface proceduralAnimationInterfaceFactoryInterface, Rectangle rectangle, int x, int y) : base(remoteInfo, parentLayer, groupInterface, rootName, name, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y)
     {
-        // base(remoteInfo, parentLayer, groupInterface, rootName, name, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override SelectionHudPaintable createHudPaintable()

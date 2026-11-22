@@ -24,7 +24,7 @@ public class MultitouchReleaseHelper : ReleaseHelper
 {
     public MultitouchReleaseHelper(TouchButtonRecognizer touchButtonRecognizer) : base(touchButtonRecognizer)
     {
-        // base(touchButtonRecognizer) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

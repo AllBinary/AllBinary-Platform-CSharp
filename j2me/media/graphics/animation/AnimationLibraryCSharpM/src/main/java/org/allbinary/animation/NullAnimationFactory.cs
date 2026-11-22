@@ -25,17 +25,12 @@ public class NullAnimationFactory : AnimationInterfaceFactoryInterface, Procedur
 {
     public static NullAnimationFactory NULL_NOT_FOR_USE_ANIMATION_FACTORY = new NullAnimationFactory();
     private static NullAnimationFactory NULL_ANIMATION_FACTORY = new NullAnimationFactory();
-    private readonly Animation NULL_ANIMATION = new Animation()
-#if JAVA_ANONYMOUS_CLASS_BODY
-        public virtual void paintXY(Graphics graphics, int x, int y)
-        {
-        }
-
-#endif
-;
+    private readonly Animation NULL_ANIMATION;
     public readonly Animation[] EMPTY_ARRAY = new Animation[0];
     private NullAnimationFactory()
     {
+        this.NULL_ANIMATION = new __SwtClosure_N65760((__swtSelf_N65760, graphics, x, y) => {
+        });
     }
 
     public static NullAnimationFactory getFactoryInstance()
@@ -56,6 +51,18 @@ public class NullAnimationFactory : AnimationInterfaceFactoryInterface, Procedur
 
     public virtual void setInitialScale(ScaleProperties scaleProperties)
     {
+    }
+
+    private sealed class __SwtClosure_N65760 : Animation
+    {
+        private readonly global::System.Action<__SwtClosure_N65760, Graphics, int, int> callback1;
+
+        public __SwtClosure_N65760(global::System.Action<__SwtClosure_N65760, Graphics, int, int> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void paintXY(Graphics graphics, int x, int y) => callback1(this, graphics, x, y);
     }
 
 }

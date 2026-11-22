@@ -26,7 +26,7 @@ public class J2MEGameInputMapping : PersistentInputMapping
 {
     public J2MEGameInputMapping() : base(GamePersistanceStrings.getInstance().SAVED_INPUT_CONFIGURATION_RECORD_ID)
     {
-        // base(GamePersistanceStrings.getInstance().SAVED_INPUT_CONFIGURATION_RECORD_ID) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

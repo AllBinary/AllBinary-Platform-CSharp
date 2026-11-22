@@ -23,7 +23,7 @@ public class PaymentException : Exception
 {
     public PaymentException(string error) : base(error)
     {
-        // base(error) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

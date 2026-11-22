@@ -30,7 +30,7 @@ public class GameInputMotionInfoAPI1 : GameInputMotionInfo
 
     private GameInputMotionInfoAPI1() : base(4, 1)
     {
-        // base(4, 1) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

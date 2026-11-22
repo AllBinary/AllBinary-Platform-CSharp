@@ -40,7 +40,7 @@ public class DownloadItemsEntity : AbSqlBean, DownloadItemsEntityInterface
     public readonly string tableName = "downloaditems";
     public DownloadItemsEntity() : base(new InventoryDbInitInfo())
     {
-        // base(new InventoryDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

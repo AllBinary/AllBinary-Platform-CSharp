@@ -31,7 +31,7 @@ public class HealLayer : AllBinaryLayer, HealthVisitorInterface
 {
     public HealLayer() : base(StringUtil.getInstance().EMPTY_STRING, new Rectangle(PointFactory.getInstance().ZERO_ZERO, 0, 0), ViewPosition.getInstanceD())
     {
-        // base(StringUtil.getInstance().EMPTY_STRING, new Rectangle(PointFactory.getInstance().ZERO_ZERO, 0, 0), ViewPosition.getInstanceD()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void paint(Graphics graphics)

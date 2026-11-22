@@ -33,7 +33,7 @@ public class StoreFrontComponent : HttpStoreComponentView
     public StoreFrontInterface newStoreFrontInterface;
     public StoreFrontComponent(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.newStoreFrontInterface = ((StoreFrontInterface) new StoreFront(((HttpServletRequest) this.getPageContext().getRequest())));
         if (this.newStoreFrontInterface.getName() == null) {
             this.newStoreFrontInterface.setName(this.getWeblisketSession().getStoreName());

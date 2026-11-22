@@ -24,12 +24,12 @@ public class TimeCreated : Time
 {
     public TimeCreated(string time) : base(long.Parse(time))
     {
-        // base(long.Parse(time)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public TimeCreated(long time) : base(time)
     {
-        // base(time) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

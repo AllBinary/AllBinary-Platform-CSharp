@@ -25,7 +25,7 @@ public class ScrollMapLeftGameInputProcessor : ScrollMapGameInputProcessor
 {
     public ScrollMapLeftGameInputProcessor(ScrollMapPlayerGameInput scrollMapPlayerGameInput) : base(scrollMapPlayerGameInput)
     {
-        // base(scrollMapPlayerGameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

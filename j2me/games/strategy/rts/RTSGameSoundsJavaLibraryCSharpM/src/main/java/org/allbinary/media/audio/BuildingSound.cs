@@ -25,7 +25,7 @@ public class BuildingSound : CompositeSound
     private static Sound soundInterface = new BuildingSound();
     private BuildingSound() : base("resource:/wav/building.wav")
     {
-        // base("resource:/wav/building.wav") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public static Sound getInstance()

@@ -31,7 +31,7 @@ public class InventoryTag : TableTag
     private string storeName = null;
     public InventoryTag() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTagHelperFactory(new InventoryHelperFactory());
         this.setTagRequestHelperFactory(new InventoryRequestHelperFactory());
     }

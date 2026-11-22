@@ -36,7 +36,7 @@ public class EditValidationView : WorkFlowView, ValidationComponentInterface
     private string workFlowName;
     public EditValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         TransformInfoHttpInterface httpTransformInfoInterface = ((TransformInfoHttpInterface) this.getTransformInfoInterface());
         this.workFlowName = httpTransformInfoInterface.getPageContext().getRequest().getParameter(WorkFlowData.getInstance().NAME);
     }

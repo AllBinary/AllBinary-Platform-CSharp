@@ -27,7 +27,7 @@ public class TerrainEvent : AllBinaryEventObject
     private BasicTerrainInfo basicTerrainInfo = BasicTerrainInfo.NULL_BASIC_TERRAIN_INFO;
     public TerrainEvent(object basicTerrainInfo) : base(basicTerrainInfo)
     {
-        // base(basicTerrainInfo) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setBasicTerrainInfo(this.basicTerrainInfo);
     }
 

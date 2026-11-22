@@ -25,7 +25,7 @@ public class UpgradeSound : CompositeSound
     private static Sound soundInterface = new UpgradeSound();
     private UpgradeSound() : base("resource:/wav/upgrade.wav")
     {
-        // base("resource:/wav/upgrade.wav") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public static Sound getInstance()

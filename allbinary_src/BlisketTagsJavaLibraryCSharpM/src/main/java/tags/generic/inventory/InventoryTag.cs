@@ -34,7 +34,7 @@ public class InventoryTag : StoreValidationTransformTag
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public InventoryTag() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws LicensingException
@@ -43,7 +43,7 @@ public class InventoryTag : StoreValidationTransformTag
         try {
             object anyType = new InventoryHelperFactory().getInstance(this.getPropertiesHashMap(), this.pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("search", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("search", null);
             string result = ((string) method.invoke(anyType, null));
             pageContext.getOut().print(result);
         } catch (LicensingException e) {
@@ -70,7 +70,7 @@ public class InventoryTag : StoreValidationTransformTag
         try {
             object anyType = new InventoryHelperFactory().getInstance(this.getPropertiesHashMap(), this.pageContext);
             Type helperClass = anyType.GetType();
-            Method method = helperClass.getMethod("viewSummary", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("viewSummary", null);
             string result = ((string) method.invoke(anyType, null));
             pageContext.getOut().print(result);
         } catch (LicensingException e) {

@@ -40,7 +40,7 @@ public class CustomTextBox : GameCommandCanvas, RawKeyEventListener
     private readonly ABTextFieldItem textFieldItem;
     public CustomTextBox(CommandListener cmdListener, string label, string text, int maxSize, int constraints, Font font, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(cmdListener, label, backgroundBasicColor, foregroundBasicColor)
     {
-        // base(cmdListener, label, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         StringUtil stringUtil = StringUtil.getInstance();
         ABTextFieldItem textFieldItem = new ABTextFieldItem(this, new TextItemVisitor(), stringUtil.EMPTY_STRING, stringUtil.EMPTY_STRING, maxSize, 0, stringUtil.EMPTY_STRING, font, backgroundBasicColor, foregroundBasicColor);
         textFieldItem.setString(text);

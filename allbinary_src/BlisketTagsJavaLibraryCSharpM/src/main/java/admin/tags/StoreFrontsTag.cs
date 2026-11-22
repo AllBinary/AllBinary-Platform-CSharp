@@ -44,7 +44,7 @@ public class StoreFrontsTag : TableTag
     {
         try {
             object anyType = this.getTagHelperFactoryInterface().getInstance(this.getPropertiesHashMap(), pageContext);
-            Method method = anyType.GetType().getMethod("generateSelect", null);
+            global::System.Reflection.MethodInfo method = anyType.GetType().getMethod("generateSelect", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {
@@ -63,7 +63,7 @@ public class StoreFrontsTag : TableTag
     {
         try {
             object anyType = this.getTagRequestHelperFactoryInterface().getInstance(this.getPropertiesHashMap(), pageContext);
-            Method method = anyType.GetType().getMethod("install", null);
+            global::System.Reflection.MethodInfo method = anyType.GetType().getMethod("install", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {
@@ -82,7 +82,7 @@ public class StoreFrontsTag : TableTag
     {
         try {
             object anyType = this.getTagRequestHelperFactoryInterface().getInstance(this.getPropertiesHashMap(), pageContext);
-            Method method = anyType.GetType().getMethod("sendStoreCreatedEmails", null);
+            global::System.Reflection.MethodInfo method = anyType.GetType().getMethod("sendStoreCreatedEmails", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {

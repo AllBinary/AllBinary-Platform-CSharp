@@ -26,7 +26,7 @@ public class RaceTrackGameFeature : GameFeature
     public static readonly GameFeature AUTO_FINISH_AI = new RaceTrackGameFeature("Auto Finish AI");
     public RaceTrackGameFeature(string name) : base(name)
     {
-        // base(name) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

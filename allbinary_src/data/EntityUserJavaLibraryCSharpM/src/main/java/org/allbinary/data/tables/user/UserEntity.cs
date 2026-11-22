@@ -55,7 +55,7 @@ public class UserEntity : AbSqlBean, UserEntityInterface
     private readonly string END_QUOTES = CommonSeps.getInstance().QUOTE;
     public UserEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

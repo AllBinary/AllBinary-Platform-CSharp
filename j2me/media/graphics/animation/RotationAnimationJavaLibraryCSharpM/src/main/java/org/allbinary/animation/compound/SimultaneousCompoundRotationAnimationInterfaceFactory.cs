@@ -28,7 +28,7 @@ public class SimultaneousCompoundRotationAnimationInterfaceFactory : CompoundAni
 {
     public SimultaneousCompoundRotationAnimationInterfaceFactory(AnimationInterfaceFactoryInterface[] basicAnimationInterfaceFactoryInterfaceArray, AnimationBehaviorFactory animationBehaviorFactory) : base(basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory)
     {
-        // base(basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (animationBehaviorFactory == AnimationBehaviorFactory.getInstance()) {
             ForcedLogUtil.log("Using default AnimationBehaviorFactory with IndexedAnimationFactory", this);
         }

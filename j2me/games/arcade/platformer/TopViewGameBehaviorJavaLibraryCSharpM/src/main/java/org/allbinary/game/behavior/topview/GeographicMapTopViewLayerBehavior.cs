@@ -31,7 +31,7 @@ public class GeographicMapTopViewLayerBehavior : TopViewGameLayerBehavior
 {
     public GeographicMapTopViewLayerBehavior(int maxGravityActionIndex) : base(maxGravityActionIndex)
     {
-        // base(maxGravityActionIndex) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

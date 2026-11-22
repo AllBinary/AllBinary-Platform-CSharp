@@ -24,12 +24,12 @@ public class UserDbInitInfo : DbInitInfo
     private const string INITFILE = "userdbinitdata.dat";
     public UserDbInitInfo() : base(INITFILE, true)
     {
-        // base(INITFILE, true) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public UserDbInitInfo(bool read) : base(INITFILE, read)
     {
-        // base(INITFILE, read) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

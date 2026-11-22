@@ -37,7 +37,7 @@ public class GeographicMapTopViewGameLayerBehavior2 : GeographicMapTopViewLayerB
     private GeographicMapCellPosition previousGeographicMapCellPosition = SimpleGeographicMapCellPositionFactory.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
     public GeographicMapTopViewGameLayerBehavior2(int maxGravityActionIndex, bool autoStepBlocks, int offsetY) : base(maxGravityActionIndex)
     {
-        // base(maxGravityActionIndex) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.autoStepBlocks = autoStepBlocks;
         this.offsetY = offsetY;
     }

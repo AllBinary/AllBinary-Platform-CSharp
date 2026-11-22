@@ -29,12 +29,12 @@ public class BasicProfileActionScriptProcessor : ProfileActionScriptItem, Profil
 {
     public BasicProfileActionScriptProcessor(string label, Node node) : base(label, node)
     {
-        // base(label, node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public BasicProfileActionScriptProcessor(string label) : base(label)
     {
-        // base(label) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void actionPerformed(ActionEvent actionEvent)

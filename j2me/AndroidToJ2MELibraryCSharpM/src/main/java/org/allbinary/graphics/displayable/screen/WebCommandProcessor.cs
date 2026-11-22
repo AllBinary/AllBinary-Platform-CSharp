@@ -49,7 +49,7 @@ public class WebCommandProcessor
             intent.putExtra(this.aboutCommandProcessor.URL, ((string) this.list.removeAt(0)));
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
-        } catch (ClassNotFoundException e) {
+        } catch (global::System.TypeLoadException e) {
             CommonStrings commonStrings = CommonStrings.getInstance();
             this.logUtil.put(commonStrings.EXCEPTION, this, "process", e);
         }

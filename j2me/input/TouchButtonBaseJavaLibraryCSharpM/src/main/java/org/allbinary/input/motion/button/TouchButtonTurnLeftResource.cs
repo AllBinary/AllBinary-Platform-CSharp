@@ -29,7 +29,7 @@ public class TouchButtonTurnLeftResource : TouchButtonResource
 
     private TouchButtonTurnLeftResource() : base("/touch_button_turn_left_arrow_64_by_64.png", "/touch_button_turn_left_arrow_hint_64_by_64.png")
     {
-        // base("/touch_button_turn_left_arrow_64_by_64.png", "/touch_button_turn_left_arrow_hint_64_by_64.png") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

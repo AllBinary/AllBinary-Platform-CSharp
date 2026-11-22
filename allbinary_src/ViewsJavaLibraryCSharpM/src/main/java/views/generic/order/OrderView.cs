@@ -42,7 +42,7 @@ public class OrderView : HttpStoreComponentView, DomNodeInterface
     public BasketReview basketReview = null;
     public OrderView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.request = ((HttpServletRequest) this.getPageContext().getRequest());
         this.getFormData();
     }

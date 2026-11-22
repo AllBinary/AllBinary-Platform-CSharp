@@ -28,7 +28,7 @@ public class CustomGravityConstantVelocityMovement : BasicConstantVelocityMoveme
     private int customGravity;
     public CustomGravityConstantVelocityMovement(BasicDecimal speedBasicDecimal, int customGravity) : base(speedBasicDecimal, new VelocityProperties(((int) speedBasicDecimal.getUnscaled()), ((int) speedBasicDecimal.getUnscaled())))
     {
-        // base(speedBasicDecimal, new VelocityProperties(((int) speedBasicDecimal.getUnscaled()), ((int) speedBasicDecimal.getUnscaled()))) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.customGravity = customGravity;
     }
 

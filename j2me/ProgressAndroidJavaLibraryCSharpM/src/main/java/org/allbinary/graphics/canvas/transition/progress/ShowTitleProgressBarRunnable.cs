@@ -28,7 +28,7 @@ public class ShowTitleProgressBarRunnable : ProgressRunnable
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public ShowTitleProgressBarRunnable(Activity midletActivity, ProgressCanvas progressCanvas) : base(midletActivity, progressCanvas)
     {
-        // base(midletActivity, progressCanvas) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     private readonly int[] FADE_IN_HALF = new int[] { TransistionTypes.getInstance().FADE_IN_TO_HALF_ALPHA, TransistionTypes.getInstance().FADE_IN_FROM_HALF_ALPHA };

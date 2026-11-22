@@ -45,7 +45,7 @@ public class NoCacheWaypoint : WaypointBase, BuildingEventListenerInterface
     public readonly PathFindingLayerInterface ownerLayer;
     public NoCacheWaypoint(PathFindingLayerInterface ownerLayer, Sound sound) : base(sound)
     {
-        // base(sound) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.ownerLayer = ownerLayer;
     }
 

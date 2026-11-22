@@ -30,7 +30,7 @@ public class TransformInfoCustomUriTransformer : BasicTransformer
 {
     public TransformInfoCustomUriTransformer(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface) : base(abeClientInformation, transformInfoInterface)
     {
-        // base(abeClientInformation, transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         TransformInfoObjectConfigInterface transformInfoObjectConfigInterface = ((TransformInfoObjectConfigInterface) TransformInfoObjectConfigAndManipulatorFactory.getInstance().getInstance(abeClientInformation, transformInfoInterface));
         this.setURIResolver(((URIResolver) new CustomUriResolver(transformInfoObjectConfigInterface.getImportUriPath(), ((BasicUriResolver) this.getURIResolver()))));
     }

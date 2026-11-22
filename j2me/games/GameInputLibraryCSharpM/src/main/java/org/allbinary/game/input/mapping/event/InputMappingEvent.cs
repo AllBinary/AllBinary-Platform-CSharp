@@ -26,7 +26,7 @@ public class InputMappingEvent : AllBinaryEventObject
     private InputToGameKeyMapping inputToGameKeyMapping = InputToGameKeyMapping.getNullInstance();
     public InputMappingEvent(object anyType) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void setInputToGameKeyMapping(InputToGameKeyMapping inputToGameKeyMapping)

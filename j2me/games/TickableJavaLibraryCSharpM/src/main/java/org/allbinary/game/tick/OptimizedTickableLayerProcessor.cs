@@ -27,7 +27,7 @@ public class OptimizedTickableLayerProcessor : LayerProcessor
 {
     public OptimizedTickableLayerProcessor() : base(new OptimizedTickableLayerManager())
     {
-        // base(new OptimizedTickableLayerManager()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

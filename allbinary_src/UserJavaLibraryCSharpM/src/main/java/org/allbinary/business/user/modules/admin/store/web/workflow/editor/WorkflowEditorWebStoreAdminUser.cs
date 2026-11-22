@@ -26,12 +26,12 @@ public class WorkflowEditorWebStoreAdminUser : User
 {
     public WorkflowEditorWebStoreAdminUser() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public WorkflowEditorWebStoreAdminUser(HashMap<object, object> userHashMap) : base(userHashMap)
     {
-        // base(userHashMap) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void validateSession(WeblisketSessionInterface weblisketSession)

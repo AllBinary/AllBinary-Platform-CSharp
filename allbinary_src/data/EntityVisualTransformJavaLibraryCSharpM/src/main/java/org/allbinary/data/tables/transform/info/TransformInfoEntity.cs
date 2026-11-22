@@ -51,7 +51,7 @@ public class TransformInfoEntity : AbSqlBean, TransformInfoEntityInterface
     private readonly TransformInfoObjectConfigGeneratorFactoryInterface transformInfoObjectConfigGeneratorFactoryInterface;
     public TransformInfoEntity(TransformInfoObjectConfigGeneratorFactoryInterface transformInfoObjectConfigGeneratorFactoryInterface, TransformInfoObjectConfigAndManipulatorFactoryBase transformInfoObjectConfigAndManipulatorFactoryInterface, TransformInfoFactoryInterface transformInfoFactoryInterface) : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
         this.transformInfoObjectConfigGeneratorFactoryInterface = transformInfoObjectConfigGeneratorFactoryInterface;
         this.transformInfoObjectConfigAndManipulatorFactoryInterface = transformInfoObjectConfigAndManipulatorFactoryInterface;
@@ -97,12 +97,12 @@ public class TransformInfoEntity : AbSqlBean, TransformInfoEntityInterface
             object anyType = hashMap.get(transformInfoData.OBJECTCONFIG);
             if (anyType != null) {
                 string @string = ((string) anyType);
-                hashMap.put(transformInfoData.OBJECTCONFIG, new string((Encoder.decode(@string)).ToCharArray()));
+                hashMap.put(transformInfoData.OBJECTCONFIG, global::System.JavaStringExtensions.copyString(Encoder.decode(@string)));
             }
             object objectData = hashMap.get(transformInfoData.DATA);
             if (objectData != null) {
                 string @string = ((string) objectData);
-                hashMap.put(transformInfoData.DATA, new string((Encoder.decode(@string)).ToCharArray()));
+                hashMap.put(transformInfoData.DATA, global::System.JavaStringExtensions.copyString(Encoder.decode(@string)));
             }
             return this.transformInfoFactoryInterface.getInstance(hashMap, propertiesHashMap, pageContext);
         } else {
@@ -118,7 +118,7 @@ public class TransformInfoEntity : AbSqlBean, TransformInfoEntityInterface
         int size = objectConfigColumnVector.size();
         for (int i = 0; i < size; i++) {
             string objectConfigString = ((string) objectConfigColumnVector.get(i));
-            objectConfigString = new string((Encoder.decode(objectConfigString)).ToCharArray());
+            objectConfigString = global::System.JavaStringExtensions.copyString(Encoder.decode(objectConfigString));
             objectConfigVector.add(this.transformInfoObjectConfigAndManipulatorFactoryInterface.getInstance(this.abeClientInformation, ((TransformInfoInterface) this), DomDocumentHelper.create(objectConfigString)));
         }
         return objectConfigVector;

@@ -35,12 +35,12 @@ public class EditCssStyleValidation : CssStyleValidation, ValidationInterface, D
 
     public EditCssStyleValidation(Document document) : base(document)
     {
-        // base(document) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public EditCssStyleValidation(HashMap<object, object> hashMap) : base(hashMap)
     {
-        // base(hashMap) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override bool? isValid()

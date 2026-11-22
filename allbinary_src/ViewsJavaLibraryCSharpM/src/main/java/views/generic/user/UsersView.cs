@@ -38,7 +38,7 @@ public class UsersView : HttpStoreComponentView, DomNodeInterface
     public BasicArrayList userVector = null;
     public UsersView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual Node toXmlNode(Document document)

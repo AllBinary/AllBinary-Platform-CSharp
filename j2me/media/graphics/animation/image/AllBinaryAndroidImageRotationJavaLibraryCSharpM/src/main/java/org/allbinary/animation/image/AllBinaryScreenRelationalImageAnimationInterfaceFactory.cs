@@ -33,7 +33,7 @@ public class AllBinaryScreenRelationalImageAnimationInterfaceFactory : BaseImage
     private Image lastImage = NullImage.NULL_IMAGE;
     public AllBinaryScreenRelationalImageAnimationInterfaceFactory(Image image, AnimationBehaviorFactory animationBehaviorFactory) : base(image, PrimitiveIntUtil.getArrayInstance(), 0, 0, 0, 0, animationBehaviorFactory)
     {
-        // base(image, PrimitiveIntUtil.getArrayInstance(), 0, 0, 0, 0, animationBehaviorFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (this.lastImage != NullImage.NULL_IMAGE) {
             AndroidImageInterface androidImageInterface = ((AndroidImageInterface) this.lastImage);
             androidImageInterface.getBitmap().recycle();

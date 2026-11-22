@@ -24,7 +24,7 @@ public class BasicArrayListPool : AbstractArrayListPool
 {
     public BasicArrayListPool(CacheableInterfaceFactoryInterface cacheableInterfaceFactoryInterface) : base(cacheableInterfaceFactoryInterface)
     {
-        // base(cacheableInterfaceFactoryInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void clear()

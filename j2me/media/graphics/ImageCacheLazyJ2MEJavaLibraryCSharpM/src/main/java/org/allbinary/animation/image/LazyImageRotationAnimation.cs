@@ -47,7 +47,7 @@ public class LazyImageRotationAnimation : RotationAnimation
     public ScaleProperties scaleProperties = ScaleProperties.instance;
     public LazyImageRotationAnimation(int layoutIndex, int instanceId, ScaleProperties scaleProperties, BaseImageAnimationFactory animationInterfaceFactoryInterface, AnimationBehavior animationBehavior) : base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior)
     {
-        // base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.layoutIndex = layoutIndex;
         this.instanceId = instanceId;
         this.animationInterfaceFactoryInterface = animationInterfaceFactoryInterface;
@@ -272,7 +272,7 @@ public class LazyImageRotationAnimation : RotationAnimation
             private int index = 0;
             public ActualRotationAnimation(LazyImageRotationAnimation lazyImageRotationAnimation) : base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior)
             {
-                // base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior) is called from the constructor declaration
+                // Constructor invocation emitted in the initializer.
                 this.lazyImageRotationAnimation = lazyImageRotationAnimation;
             }
 

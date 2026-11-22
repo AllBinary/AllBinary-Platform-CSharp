@@ -52,7 +52,7 @@ public class AbSqlRow : AbSqlColumn
     private readonly string INSERT_END = "')";
     public AbSqlRow(DbConnectionInfo databaseConnectionInfoInterface) : base(databaseConnectionInfoInterface)
     {
-        // base(databaseConnectionInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     [MethodImpl(MethodImplOptions.Synchronized)]
@@ -209,7 +209,7 @@ public class AbSqlRow : AbSqlColumn
             int size = keyArray.Length;
             for (int i = 0; i < size; i++) {
                 string key = ((string) keyArray[i]);
-                string value = new string((((string) keysAndValues.get(key))).ToCharArray());
+                string value = global::System.JavaStringExtensions.copyString(((string) keysAndValues.get(key)));
                 stringBuffer.append(key);
                 stringBuffer.append(this.sqlStrings.EQUAL_QUOTE);
                 stringBuffer.append(this.getValue(value));
@@ -272,7 +272,7 @@ public class AbSqlRow : AbSqlColumn
             int size = keyArray.Length;
             for (int index_5 = 0; index_5 < size; index_5++) {
                 string key = ((string) keyArray[index_5]);
-                string value = new string((((string) keysAndValues.get(key))).ToCharArray());
+                string value = global::System.JavaStringExtensions.copyString(((string) keysAndValues.get(key)));
                 stringBuffer.append(key);
                 stringBuffer.append(this.sqlStrings.EQUAL_QUOTE);
                 stringBuffer.append(this.getValue(value));
@@ -330,7 +330,7 @@ public class AbSqlRow : AbSqlColumn
             int size = keyArray.Length;
             for (int index_7 = 0; index_7 < size; index_7++) {
                 string key = ((string) keyArray[index_7]);
-                string value = new string((((string) keysAndValues.get(key))).ToCharArray());
+                string value = global::System.JavaStringExtensions.copyString(((string) keysAndValues.get(key)));
                 stringBuffer.append(key);
                 stringBuffer.append(this.sqlStrings.EQUAL_QUOTE);
                 stringBuffer.append(this.getValue(value));

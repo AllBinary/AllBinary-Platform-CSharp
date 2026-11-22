@@ -33,7 +33,7 @@ public class GenericModuleFactory : AbstractInputAutomationFactory
     private static string NAME = "Generic" + InputAutomationModuleData.MODULE_NAME_END;
     public GenericModuleFactory() : base(NAME, new GenericModuleConfigurationJPanel())
     {
-        // base(NAME, new GenericModuleConfigurationJPanel()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

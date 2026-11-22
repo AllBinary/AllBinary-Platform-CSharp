@@ -34,7 +34,7 @@ public class ArcedMultiBeamWeaponPart : BasicWeaponPart
     private readonly int total;
     public ArcedMultiBeamWeaponPart(Animation animationInterface, AllBinaryLayer sourceLayerInterface, WeaponLayerCircularPool weaponLayerCircularStaticPool, int total, WeaponProperties weaponProperties, ScoreableInterface scoreableInterface, RelativeRelationship relativeRelationship) : base(animationInterface, sourceLayerInterface, weaponProperties, scoreableInterface, relativeRelationship)
     {
-        // base(animationInterface, sourceLayerInterface, weaponProperties, scoreableInterface, relativeRelationship) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.total = total;
         this.weaponLayerCircularStaticPool = weaponLayerCircularStaticPool;
     }

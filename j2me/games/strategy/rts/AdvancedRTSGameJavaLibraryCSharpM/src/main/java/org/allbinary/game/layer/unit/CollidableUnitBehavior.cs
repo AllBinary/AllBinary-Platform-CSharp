@@ -43,7 +43,7 @@ public class CollidableUnitBehavior : CollidableRTSBehavior
     public CollidableUnitBehavior(bool collidable) : base(collidable)
     {
         this.simpleSteeringVisitor = new SimpleSteeringVisitor(this);
-        // base(collidable) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

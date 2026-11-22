@@ -13,7 +13,7 @@ public class ABCustomGaugeItem : ABCustomItem
     public static readonly ABCustomGaugeItem NULL_GAUGE_ITEM = new ABCustomGaugeItem(StringUtil.getInstance().EMPTY_STRING, 1, 0, BasicColorFactory.getInstance().BLACK, BasicColorFactory.getInstance().WHITE);
     public ABCustomGaugeItem(string label, int maxValue, int initialValue, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(label, backgroundBasicColor, foregroundBasicColor)
     {
-        // base(label, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

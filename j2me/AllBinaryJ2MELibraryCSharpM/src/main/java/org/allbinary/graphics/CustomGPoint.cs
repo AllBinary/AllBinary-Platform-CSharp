@@ -37,7 +37,7 @@ public class CustomGPoint : GPoint
     private int cz = 0;
     public CustomGPoint(int x, int y, int z) : base(x, y, z)
     {
-        // base(x, y, z) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void setX(int x)

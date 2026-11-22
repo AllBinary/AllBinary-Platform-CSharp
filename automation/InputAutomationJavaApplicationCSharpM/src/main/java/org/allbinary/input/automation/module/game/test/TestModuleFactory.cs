@@ -31,7 +31,7 @@ public class TestModuleFactory : AbstractInputAutomationFactory
     private BlankModuleConfigurationJPanel blankModuleConfigurationJPanel = null;
     public TestModuleFactory() : base(NAME, new BlankModuleConfigurationJPanel())
     {
-        // base(NAME, new BlankModuleConfigurationJPanel()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override string getName()

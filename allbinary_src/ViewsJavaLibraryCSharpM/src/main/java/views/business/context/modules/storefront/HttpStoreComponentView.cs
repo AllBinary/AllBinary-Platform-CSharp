@@ -34,7 +34,7 @@ public class HttpStoreComponentView : HttpComponentView
     public readonly CommonStrings commonStrings = CommonStrings.getInstance();
     public HttpStoreComponentView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("View Name: " + transformInfoInterface.getName(), this, this.commonStrings.CONSTRUCTOR);
         }

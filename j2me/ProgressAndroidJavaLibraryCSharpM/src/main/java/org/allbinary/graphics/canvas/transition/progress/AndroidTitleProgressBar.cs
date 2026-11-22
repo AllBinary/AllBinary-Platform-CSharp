@@ -134,7 +134,7 @@ public class AndroidTitleProgressBar : ProgressCanvas
         this.dismissTitleProgressBarRunnable = new DismissTitleProgressBarRunnable(this, this);
         this.progressDialogPortionSetProgressRunnable = new TitleProgressBarPortionSetProgressRunnable(this, this);
         this.progressDialogSetProgressRunnable = new TitleProgressBarSetProgressRunnable(this, this);
-        // base(title, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void init(ProgressActivityInterface activity)

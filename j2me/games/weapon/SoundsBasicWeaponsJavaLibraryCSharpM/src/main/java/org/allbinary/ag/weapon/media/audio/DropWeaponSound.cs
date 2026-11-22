@@ -26,7 +26,7 @@ public class DropWeaponSound : CompositeSound
     private static Sound soundInterface = new DropWeaponSound();
     private DropWeaponSound() : base("resource:/wav/mine.wav")
     {
-        // base("resource:/wav/mine.wav") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public static Sound getInstance()

@@ -44,7 +44,7 @@ public class CollidableWeaponBehavior : CollidableDestroyableDamageableBehavior
     public CollisionHelper collisionHelper;
     public CollidableWeaponBehavior(bool collidable) : base(collidable)
     {
-        // base(collidable) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setCollided(false);
         this.setCollidable(true);
         this.collisionHelper = CollidableHelperFactory.getInstance();

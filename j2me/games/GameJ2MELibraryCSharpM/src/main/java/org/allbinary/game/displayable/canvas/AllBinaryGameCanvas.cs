@@ -239,7 +239,7 @@ public class AllBinaryGameCanvas : RunnableCanvas, AllBinaryGameCanvasInterface,
         this.rawGameInputProcessor = new GameCanvasInputProcessor(this);
         this.rawInputProcessor = new FormInputProcessor(this);
         this.inputProcessor = this.getRawGameInputProcessor();
-        // base(commandListener, CanvasStrings.getInstance().EMPTY_CHILD_NAME_LIST, true) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.highScoresHelper = highScoresFactoryInterface.createHighScoresHelper();
         this.gameInitializationInterfaceFactoryInterface = gameInitializationInterfaceFactoryInterface;
         this.init(gameLayerManager, buffered);

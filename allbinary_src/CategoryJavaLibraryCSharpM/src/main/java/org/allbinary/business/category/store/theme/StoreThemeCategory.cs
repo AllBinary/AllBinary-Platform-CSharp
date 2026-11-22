@@ -39,21 +39,21 @@ public class StoreThemeCategory : Category, StoreThemeCategoryInterface
     private BasicArrayList themeVector;
     public StoreThemeCategory(TransformInfoInterface transformInfoInterface, CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface, int level) : base(categoryPropertiesFactoryInterface, level)
     {
-        // base(categoryPropertiesFactoryInterface, level) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.transformInfoInterface = transformInfoInterface;
         this.themeVector = new BasicArrayListD();
     }
 
     public StoreThemeCategory(TransformInfoInterface transformInfoInterface, CategoryInterface rootCategoryInterface, CategoryInterface parentCategoryInterface, CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface) : base(rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface)
     {
-        // base(rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.transformInfoInterface = transformInfoInterface;
         this.themeVector = new BasicArrayListD();
     }
 
     public StoreThemeCategory(TransformInfoInterface transformInfoInterface, Node node, CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface, int level) : base(categoryPropertiesFactoryInterface, level)
     {
-        // base(categoryPropertiesFactoryInterface, level) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.transformInfoInterface = transformInfoInterface;
         this.themeVector = new BasicArrayListD();
         this.addThemes(node);
@@ -61,7 +61,7 @@ public class StoreThemeCategory : Category, StoreThemeCategoryInterface
 
     public StoreThemeCategory(TransformInfoInterface transformInfoInterface, Node node, CategoryInterface rootCategoryInterface, CategoryInterface parentCategoryInterface, CategoryPropertiesFactoryInterface categoryPropertiesFactoryInterface) : base(rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface)
     {
-        // base(rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.transformInfoInterface = transformInfoInterface;
         this.themeVector = new BasicArrayListD();
         this.addThemes(node);

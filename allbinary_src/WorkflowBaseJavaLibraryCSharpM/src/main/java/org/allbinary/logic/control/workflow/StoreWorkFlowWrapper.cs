@@ -29,7 +29,7 @@ public class StoreWorkFlowWrapper : WorkFlowWrapper
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public StoreWorkFlowWrapper(object anyType) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception
@@ -37,7 +37,7 @@ public class StoreWorkFlowWrapper : WorkFlowWrapper
     {
         try {
             Type helperClass = this.getWorkFlowObject().GetType();
-            Method method = helperClass.getMethod("getStoreName", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("getStoreName", null);
             string result = ((string) method.invoke(this.getWorkFlowObject(), null));
             return result;
         } catch (Exception e) {

@@ -32,7 +32,7 @@ public class HighScoreCommandsFactory : HighScoreCommandsBaseFactory
 
     private HighScoreCommandsFactory() : base(new Command[] { HighScoreCommands.getInstance().PERSONAL, HighScoreCommands.getInstance().WORLD })
     {
-        // base(new Command[] { HighScoreCommands.getInstance().PERSONAL, HighScoreCommands.getInstance().WORLD }) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

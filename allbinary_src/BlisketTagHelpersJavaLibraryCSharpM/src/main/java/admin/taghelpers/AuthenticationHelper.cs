@@ -52,7 +52,7 @@ public class AuthenticationHelper : TagHelper
     private int? attemptsInteger = null;
     public AuthenticationHelper(HashMap<object, object> hashMap, PageContext pageContext) : this(hashMap, ((HttpServletRequest) pageContext.getRequest()))
     {
-        // this(hashMap, ((HttpServletRequest) pageContext.getRequest())) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public AuthenticationHelper(HashMap<object, object> hashMap, HttpServletRequest httpServletRequest)

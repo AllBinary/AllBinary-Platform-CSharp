@@ -41,10 +41,10 @@ public class NativeLibraryHelperWrapper
         classes[0] = this.getLibraryName().GetType();
         this.loader = new NativeLibraryClassLoader(global::java.lang.ClassLoader.getSystemClassLoader());
         Type myClass = this.loader.loadClass("dynamic.NativeLibraryHelper");
-        Constructor constructor = myClass.getConstructor(classes);
+        global::System.Reflection.ConstructorInfo constructor = myClass.getConstructor(classes);
         this.anyType = constructor.newInstance(@params);
         CommonStrings commonStrings = CommonStrings.getInstance();
-        Method method = this.anyType.GetType().getMethod(commonStrings.LOAD, null);
+        global::System.Reflection.MethodInfo method = this.anyType.GetType().getMethod(commonStrings.LOAD, null);
         method.invoke(this.anyType, null);
     }
 

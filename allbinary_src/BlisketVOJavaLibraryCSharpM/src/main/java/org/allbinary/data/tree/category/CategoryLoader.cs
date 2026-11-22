@@ -41,7 +41,7 @@ public class CategoryLoader : CategoryModifierTree, CategoryLoaderInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public CategoryLoader(CategoryFactoryInterface categoryFactoryInterface) : base(categoryFactoryInterface)
     {
-        // base(categoryFactoryInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().CATEGORY)) {
             this.logUtil.putF(this.commonStrings.START, this, "CategoryLoader(CategoryFactoryInterface categoryFactoryInterface)");
         }

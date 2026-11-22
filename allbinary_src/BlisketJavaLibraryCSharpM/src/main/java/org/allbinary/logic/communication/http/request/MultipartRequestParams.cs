@@ -17,7 +17,6 @@
 using System;
 using System.Linq;
 using java.util;
-//using List = java.util.List;
 //using HttpServletRequest = javax.servlet.http.HttpServletRequest;
 //using PageContext = javax.servlet.jsp.PageContext;
 using StdUtil = org.allbinary.logic.StdUtil;
@@ -37,13 +36,13 @@ public class MultipartRequestParams : RequestParams
     private bool special = false;
     public MultipartRequestParams(HttpServletRequest request) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.processMultipartRequest(request);
     }
 
     public MultipartRequestParams(PageContext pageContext) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.processMultipartRequest(((HttpServletRequest) pageContext.getRequest()));
     }
 
@@ -56,7 +55,7 @@ public class MultipartRequestParams : RequestParams
     {
         try {
             HashMap<object, object> specialRequest = StdUtil.getInstance().createHashMap();
-            List multipartRequestList = AbFileUploadFactory.getInstance().getFileItemStreamList(request);
+            List<object> multipartRequestList = AbFileUploadFactory.getInstance().getFileItemStreamList(request);
             if (multipartRequestList != null) {
                 if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().HTTPREQUEST)) {
                     this.logUtil.putF("FileItem List Size: " + multipartRequestList.size(), this, "processMultipartRequest()");

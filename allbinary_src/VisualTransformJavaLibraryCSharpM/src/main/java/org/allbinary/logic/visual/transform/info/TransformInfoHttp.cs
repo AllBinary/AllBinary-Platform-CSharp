@@ -41,7 +41,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
     private readonly AbContext abContext;
     public TransformInfoHttp(HashMap<object, object> propertiesHashMap, PageContext pageContext, bool crud) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.abContext = new AbContext(propertiesHashMap, pageContext);
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, "Constructor(HashMap, PageContext, boolean)");
@@ -51,7 +51,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
 
     public TransformInfoHttp(HttpServletRequest request, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.abContext = new AbContext(propertiesHashMap, pageContext);
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, "Constructor(HttpServletRequest, HashMap, PageContext)");
@@ -62,7 +62,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
 
     public TransformInfoHttp(HashMap<object, object> databaseHashMap, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.abContext = new AbContext(propertiesHashMap, pageContext);
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, "Constructor(HashMap, HashMap, PageContext)");
@@ -72,7 +72,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
 
     public TransformInfoHttp(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.abContext = new AbContext(propertiesHashMap, pageContext);
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, "Constructor(HashMap, PageContext)");
@@ -82,7 +82,7 @@ public class TransformInfoHttp : TransformInfo, TransformInfoHttpInterface
 
     public TransformInfoHttp(TransformInfoHttp parentViewOfThisTransformInfoInterface) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.abContext = new AbContext(parentViewOfThisTransformInfoInterface.getPropertiesHashMap(), parentViewOfThisTransformInfoInterface.getPageContext());
     }
 

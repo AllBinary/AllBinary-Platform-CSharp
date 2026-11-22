@@ -35,7 +35,7 @@ public class FullTouchButton : TouchButton
 
     public FullTouchButton(TouchButtonInput touchButtonInput, Animation animationInterface, Animation hintAnimationInterface, Rectangle rawRectangle, CellPosition cellPosition, int xBorder, int yBorder) : base(touchButtonInput, animationInterface, hintAnimationInterface, rawRectangle, cellPosition, xBorder, yBorder)
     {
-        // base(touchButtonInput, animationInterface, hintAnimationInterface, rawRectangle, cellPosition, xBorder, yBorder) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void updateRectangle()

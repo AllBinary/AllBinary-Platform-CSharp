@@ -37,7 +37,7 @@ public class AllBinaryTiledLayer : Layer, NamedInterface, PaintableInterface
     private readonly int? dataId;
     public AllBinaryTiledLayer(int? dataId, int width, int height, int cellWidth, int cellHeight) : base(0, 0)
     {
-        // base(0, 0) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.dataId = dataId;
         this.setLayerWidth(width);
         this.setLayerHeight(height);

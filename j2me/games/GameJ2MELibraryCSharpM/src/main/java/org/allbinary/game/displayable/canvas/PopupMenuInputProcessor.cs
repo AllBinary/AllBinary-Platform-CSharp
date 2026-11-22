@@ -45,7 +45,7 @@ public class PopupMenuInputProcessor : BasicMenuInputProcessor
     public PopupMenuInputProcessor(BasicArrayList gameKeyEventList, int playerInputId, MyCanvas gameCanvas, Rectangle rectangle) : base(gameKeyEventList, playerInputId, gameCanvas)
     {
         this.clickTimeHelper = new TimeDelayHelper(this.CLICK_DELAY);
-        // base(gameKeyEventList, playerInputId, gameCanvas) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.rectangle = rectangle;
     }
 

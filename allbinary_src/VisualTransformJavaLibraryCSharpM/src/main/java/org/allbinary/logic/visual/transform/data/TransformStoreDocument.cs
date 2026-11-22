@@ -33,7 +33,7 @@ public class TransformStoreDocument : TransformHttpRequestDocument
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public TransformStoreDocument(PageContext pageContext, WeblisketSession weblisketSession) : base(pageContext, weblisketSession)
     {
-        // base(pageContext, weblisketSession) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         try {
             string storeName = weblisketSession.getStoreName();
             if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
@@ -51,7 +51,7 @@ public class TransformStoreDocument : TransformHttpRequestDocument
 
     public TransformStoreDocument(SearchRequest searchRequest) : base(searchRequest)
     {
-        // base(searchRequest) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         try {
             this.getBaseNode().appendChild(StoreFrontViewFactory.getInstance(searchRequest.getStoreFront().getName()).toXmlNode(this.getDoc()));
             this.getBaseNode().appendChild(searchRequest.getParams().getParamsNode(this.getDoc()));

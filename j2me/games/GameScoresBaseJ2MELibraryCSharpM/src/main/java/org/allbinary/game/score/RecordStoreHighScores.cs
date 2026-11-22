@@ -59,7 +59,7 @@ public class RecordStoreHighScores : HighScores
     private readonly RecordComparator recordComparatorInterface;
     private RecordStoreHighScores(AbeClientInformationInterface abeClientInformation, GameInfo gameInfo, string name, string heading, string columnTwoHeading, RecordComparator recordComparatorInterface) : base(name, heading, columnTwoHeading)
     {
-        // base(name, heading, columnTwoHeading) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.abeClientInformation = abeClientInformation;
         this.gameInfo = gameInfo;
         this.recordComparatorInterface = recordComparatorInterface;

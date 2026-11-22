@@ -31,7 +31,7 @@ public class ImageAnimation : IndexedAnimation
     private readonly Image image;
     public ImageAnimation(Image image, AnimationBehavior animationBehavior) : base(animationBehavior)
     {
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.image = image;
     }
 

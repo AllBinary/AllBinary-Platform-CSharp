@@ -27,7 +27,7 @@ public class AdjustCustomTextAnimation : CustomTextAnimation
     private int dy;
     public AdjustCustomTextAnimation(string text, int fontSize, int dx, int dy, AnimationBehavior animationBehavior) : base(text, fontSize, animationBehavior)
     {
-        // base(text, fontSize, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.dx = dx;
         this.dy = dy;
     }

@@ -32,7 +32,7 @@ public class CompoundIndexedAnimation : IndexedAnimation, CompoundAnimationInter
     private Animation[] animationInterfaceArray;
     public CompoundIndexedAnimation(Animation[] animationInterfaceArray, AnimationBehavior animationBehavior) : base(animationBehavior)
     {
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.animationInterfaceArray = animationInterfaceArray;
         this.circularIndexUtil = CircularIndexUtil.createInstance(this.animationInterfaceArray.Length);
     }

@@ -64,7 +64,7 @@ public class NullGameCanvas : AllBinaryGameCanvas
     public const string NO_GAME = "No Background Game";
     public NullGameCanvas(AllBinaryGameLayerManager gameLayerManager) : base(NullCommandListener.NULL_COMMAND_LISTENER, gameLayerManager, NoHighScoresFactory.getInstance(), BasicBuildGameInitializerFactory.NULL_BASE_BUILD_GMAE_INITIALIZER_FACTORY, false)
     {
-        // base(NullCommandListener.NULL_COMMAND_LISTENER, gameLayerManager, NoHighScoresFactory.getInstance(), BasicBuildGameInitializerFactory.NULL_BASE_BUILD_GMAE_INITIALIZER_FACTORY, false) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         base.setWait(1200);
     }
 

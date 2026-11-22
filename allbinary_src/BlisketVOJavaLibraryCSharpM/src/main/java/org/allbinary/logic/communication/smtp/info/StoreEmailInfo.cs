@@ -32,7 +32,7 @@ public class StoreEmailInfo : BasicEmailInfo
     private StoreFrontInterface storeFrontInterface;
     public StoreEmailInfo(StoreFrontInterface storeFrontInterface, string subject, string textBody) : base(subject, textBody)
     {
-        // base(subject, textBody) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().EMAILLOGGING)) {
             CommonStrings commonStrings = CommonStrings.getInstance();
             this.logUtil.putF(commonStrings.START, this, commonStrings.CONSTRUCTOR);

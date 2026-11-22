@@ -25,7 +25,7 @@ public class BasicArrayListD : BasicArrayListS
 {
     public BasicArrayListD() : base(7)
     {
-        // base(7) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

@@ -62,7 +62,7 @@ public class PlayerGameNotificationHud : GameNotificationHud, UpdateMyFontInterf
         this.setAndRemoveProcessor = new SetAndRemoveProcessor(this);
         this.nextUnremoveableProcessor = new NextUnremoveableProcessor(this);
         this.@string = this.EMPTY_STRING;
-        // base(location, direction, bufferZone, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.circularIndexUtil = CircularIndexUtil.createInstance(0);
         GameNotificationEventHandler gameNotificationEventHandler = GameNotificationEventHandler.getInstance();
         gameNotificationEventHandler.removeAllListeners();

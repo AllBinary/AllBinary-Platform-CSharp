@@ -30,7 +30,7 @@ public class EditValidationView : BillingAddressView, ValidationComponentInterfa
     private string value;
     public EditValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.value = this.getPageContext().getRequest().getParameter(StreetAddressData.ID);
     }
 

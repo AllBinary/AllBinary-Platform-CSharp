@@ -31,7 +31,7 @@ public class DestroyedEvent : AllBinaryEventObject
     private AllBinaryLayer allBinaryLayerInterface = AllBinaryLayer.NULL_ALLBINARY_LAYER;
     public DestroyedEvent(AllBinaryGameCanvas combatGameCanvas) : base(DestroyedEventHandler.getInstance())
     {
-        // base(DestroyedEventHandler.getInstance()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setAllBinaryGameCanvas(combatGameCanvas);
     }
 

@@ -23,7 +23,7 @@ public class SingleLayerLayerProcessor : LayerProcessor
 {
     public SingleLayerLayerProcessor() : base(new SingleLayerLayerManager())
     {
-        // base(new SingleLayerLayerManager()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

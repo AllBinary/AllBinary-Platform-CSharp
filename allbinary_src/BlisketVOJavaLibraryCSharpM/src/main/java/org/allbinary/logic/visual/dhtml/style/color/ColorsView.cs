@@ -42,15 +42,15 @@ public class ColorsView : DomNodeInterface
         if (redIndex < this.HEXRADIX) {
             hexColorStringBuffer.append(this.commonPhoneStrings.ZERO);
         }
-        hexColorStringBuffer.append(Integer.toString(redIndex, HEXRADIX));
+        hexColorStringBuffer.append(global::java.lang.JavaNumber.toString(redIndex, HEXRADIX));
         if (greenIndex < this.HEXRADIX) {
             hexColorStringBuffer.append(this.commonPhoneStrings.ZERO);
         }
-        hexColorStringBuffer.append(Integer.toString(greenIndex, HEXRADIX));
+        hexColorStringBuffer.append(global::java.lang.JavaNumber.toString(greenIndex, HEXRADIX));
         if (blueIndex < this.HEXRADIX) {
             hexColorStringBuffer.append(this.commonPhoneStrings.ZERO);
         }
-        hexColorStringBuffer.append(Integer.toString(blueIndex, HEXRADIX));
+        hexColorStringBuffer.append(global::java.lang.JavaNumber.toString(blueIndex, HEXRADIX));
         Node colorNode = ModDomHelper.createNameValueNodes(document, ColorData.getInstance().NAME, hexColorStringBuffer.ToString());
         return colorNode;
     }
@@ -66,15 +66,15 @@ public class ColorsView : DomNodeInterface
             if (index < this.HEXRADIX) {
                 hexColorStringBuffer.append(this.commonPhoneStrings.ZERO);
             }
-            hexColorStringBuffer.append(Integer.toString(index, HEXRADIX));
+            hexColorStringBuffer.append(global::java.lang.JavaNumber.toString(index, HEXRADIX));
             if (index < this.HEXRADIX) {
                 hexColorStringBuffer.append(this.commonPhoneStrings.ZERO);
             }
-            hexColorStringBuffer.append(Integer.toString(index, HEXRADIX));
+            hexColorStringBuffer.append(global::java.lang.JavaNumber.toString(index, HEXRADIX));
             if (index < this.HEXRADIX) {
                 hexColorStringBuffer.append(this.commonPhoneStrings.ZERO);
             }
-            hexColorStringBuffer.append(Integer.toString(index, HEXRADIX));
+            hexColorStringBuffer.append(global::java.lang.JavaNumber.toString(index, HEXRADIX));
             Node colorNode = ModDomHelper.createNameValueNodes(document, ColorData.getInstance().NAME, hexColorStringBuffer.ToString());
             node.appendChild(colorNode);
         }

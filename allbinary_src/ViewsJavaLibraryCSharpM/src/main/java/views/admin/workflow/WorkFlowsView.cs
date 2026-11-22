@@ -39,7 +39,7 @@ public class WorkFlowsView : HttpStoreComponentView, DomNodeInterface
     private BasicArrayList workFlowsVector;
     public WorkFlowsView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.workFlowsVector = WorkFlowEntityFactory.getInstance().create2().get(this.getWeblisketSession().getStoreName());
     }
 

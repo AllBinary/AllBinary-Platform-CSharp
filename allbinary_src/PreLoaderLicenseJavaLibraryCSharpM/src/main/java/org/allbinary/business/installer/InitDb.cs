@@ -54,7 +54,7 @@ public class InitDb
     {
         try {
             Type dynamicClass = this.anyType.GetType();
-            Method method = dynamicClass.getMethod(this.METHOD_CALL_GET_HOST_NAME, null);
+            global::System.Reflection.MethodInfo method = dynamicClass.getMethod(this.METHOD_CALL_GET_HOST_NAME, null);
             string result = ((string) method.invoke(this.anyType, null));
             return result;
         } catch (Exception e) {
@@ -66,7 +66,7 @@ public class InitDb
     {
         try {
             Type dynamicClass = this.anyType.GetType();
-            Method method = dynamicClass.getMethod(this.METHOD_CALL_ADD_USERS, null);
+            global::System.Reflection.MethodInfo method = dynamicClass.getMethod(this.METHOD_CALL_ADD_USERS, null);
             bool? result = ((bool?) method.invoke(this.anyType, null));
             return result.Value;
         } catch (Exception e) {
@@ -78,7 +78,7 @@ public class InitDb
     {
         try {
             Type dynamicClass = this.anyType.GetType();
-            Method method = dynamicClass.getMethod(this.METHOD_CALL_ADD_DATABASES, null);
+            global::System.Reflection.MethodInfo method = dynamicClass.getMethod(this.METHOD_CALL_ADD_DATABASES, null);
             bool? result = ((bool?) method.invoke(this.anyType, null));
             return result.Value;
         } catch (Exception e) {
@@ -90,7 +90,7 @@ public class InitDb
     {
         try {
             Type dynamicClass = this.anyType.GetType();
-            Method method = dynamicClass.getMethod(this.METHOD_CALL_ADD_TABLES, null);
+            global::System.Reflection.MethodInfo method = dynamicClass.getMethod(this.METHOD_CALL_ADD_TABLES, null);
             bool? result = ((bool?) method.invoke(this.anyType, null));
             return result.Value;
         } catch (Exception e) {
@@ -102,7 +102,7 @@ public class InitDb
     {
         try {
             Type dynamicClass = this.anyType.GetType();
-            Method method = dynamicClass.getMethod(this.METHOD_CALL_TEMP_MAIN_PATH, null);
+            global::System.Reflection.MethodInfo method = dynamicClass.getMethod(this.METHOD_CALL_TEMP_MAIN_PATH, null);
             bool? result = ((bool?) method.invoke(this.anyType, null));
             return result.Value;
         } catch (Exception e) {
@@ -114,7 +114,7 @@ public class InitDb
     {
         try {
             Type dynamicClass = this.anyType.GetType();
-            Method method = dynamicClass.getMethod(this.METHOD_CALL_MAIN_PATH, null);
+            global::System.Reflection.MethodInfo method = dynamicClass.getMethod(this.METHOD_CALL_MAIN_PATH, null);
             bool? result = ((bool?) method.invoke(this.anyType, null));
             return result.Value;
         } catch (Exception e) {

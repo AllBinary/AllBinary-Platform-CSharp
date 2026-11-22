@@ -29,7 +29,7 @@ public class FakeLayerManager : AllBinaryGameLayerManager, GeographicMapComposit
     private GeographicMapCellType[] geographicMapCellTypeArray = GeographicMapCellType.NULL_GEOGRAPHIC_MAP_CELL_TYPE_ARRAY;
     public FakeLayerManager(GameInfo gameInfo) : base(BasicColorFactory.getInstance().BLACK, BasicColorFactory.getInstance().WHITE, gameInfo)
     {
-        // base(BasicColorFactory.getInstance().BLACK, BasicColorFactory.getInstance().WHITE, gameInfo) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual BasicGeographicMap[] getGeographicMapInterface()

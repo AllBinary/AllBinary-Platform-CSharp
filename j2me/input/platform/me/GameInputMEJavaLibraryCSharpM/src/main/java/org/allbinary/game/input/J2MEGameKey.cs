@@ -25,7 +25,7 @@ public class J2MEGameKey : Input
 {
     public J2MEGameKey(int key, string keyName) : base(key, keyName)
     {
-        // base(key, keyName) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         int id = this.getId();
         if (id >= 0) {
             InputFactory inputFactory = InputFactory.getInstance();

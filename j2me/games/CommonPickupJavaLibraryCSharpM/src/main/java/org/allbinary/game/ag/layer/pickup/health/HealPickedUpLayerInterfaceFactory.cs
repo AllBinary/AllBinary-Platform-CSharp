@@ -39,7 +39,7 @@ public class HealPickedUpLayerInterfaceFactory : PickedUpLayerInterfaceFactory, 
     private HealLayerCircularStaticPool pool = new HealLayerCircularStaticPool(new HealLayerFactory(), 1);
     private HealPickedUpLayerInterfaceFactory() : base(PickedUpLayerTypeFactory.getInstance().HEAL, IconLayerFactory.getInstance(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().get(HealthResources.getInstance().RESOURCE).getInstance(0), 10, 10), FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().get(HealthResources.getInstance().RESOURCE).getInstance(0))
     {
-        // base(PickedUpLayerTypeFactory.getInstance().HEAL, IconLayerFactory.getInstance(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().get(HealthResources.getInstance().RESOURCE).getInstance(0), 10, 10), FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().get(HealthResources.getInstance().RESOURCE).getInstance(0)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual int getTotal()

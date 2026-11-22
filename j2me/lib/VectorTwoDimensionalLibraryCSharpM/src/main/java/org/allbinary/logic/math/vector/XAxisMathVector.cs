@@ -24,7 +24,7 @@ public class XAxisMathVector : MathVector
 {
     public XAxisMathVector(BasicDecimal magnitudeBasicDecimal, int direction) : base(magnitudeBasicDecimal, direction)
     {
-        // base(magnitudeBasicDecimal, direction) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.calculate();
     }
 

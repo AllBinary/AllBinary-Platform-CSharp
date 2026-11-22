@@ -27,7 +27,7 @@ public class SecuredNativeLibraryHelperWrapper : NativeLibraryHelperWrapper
     private SecuredNativeLibraryInterface securedNativeLibraryInterface;
     public SecuredNativeLibraryHelperWrapper(SecuredNativeLibraryInterface securedNativeLibraryInterface) : base(securedNativeLibraryInterface.getLibraryName())
     {
-        // base(securedNativeLibraryInterface.getLibraryName()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.securedNativeLibraryInterface = securedNativeLibraryInterface;
     }
 

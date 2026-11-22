@@ -25,7 +25,7 @@ public class GameYouLoseSound : CompositeSound
     private static Sound soundInterface = new GameYouLoseSound();
     private GameYouLoseSound() : base("resource:/wav/youlose.wav")
     {
-        // base("resource:/wav/youlose.wav") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public static Sound getInstance()

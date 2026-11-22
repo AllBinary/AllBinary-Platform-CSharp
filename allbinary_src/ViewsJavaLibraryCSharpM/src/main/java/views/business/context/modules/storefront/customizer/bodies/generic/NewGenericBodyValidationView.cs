@@ -36,7 +36,7 @@ public class NewGenericBodyValidationView : GenericBodyCustomizerView, Validatio
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public NewGenericBodyValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.body = new GenericBodyValidation();
     }
 

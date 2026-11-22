@@ -35,7 +35,7 @@ public class MineLayer : SimpleWeaponLayer
     private const string NAME = "MineLayer";
     public MineLayer(ViewPositionBase viewPosition) : base(MineLayer.NAME, RemoteInfo.REMOTE_INFO, -1, NoMovementFactory.getInstance().getMovmentInstance(), FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().get(MineWeaponResources.getInstance().RESOURCE).getInstance(0), SimpleWeaponLayer.createDestroyed(), new Rectangle(PointFactory.getInstance().ZERO_ZERO, 10, 10), viewPosition)
     {
-        // base(MineLayer.NAME, RemoteInfo.REMOTE_INFO, -1, NoMovementFactory.getInstance().getMovmentInstance(), FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().get(MineWeaponResources.getInstance().RESOURCE).getInstance(0), SimpleWeaponLayer.createDestroyed(), new Rectangle(PointFactory.getInstance().ZERO_ZERO, 10, 10), viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     private readonly ViewPositionEventHandler viewPositionEventHandler = ViewPositionEventHandler.getInstance();

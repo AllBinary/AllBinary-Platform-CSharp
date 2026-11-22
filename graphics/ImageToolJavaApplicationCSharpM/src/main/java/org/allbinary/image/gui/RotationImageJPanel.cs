@@ -50,28 +50,22 @@ public class RotationImageJPanel : JPanel, ImageProcessedVisitor
     private BufferedImage result = null;
     public RotationImageJPanel(ImageProcessorInput imageProcessorInput) : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initComponents();
         this.imageProcessorInput = imageProcessorInput;
     }
 
     public virtual void process()
     {
-        new global::org.allbinary.thread.NullThread()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        new __SwtClosure_N66463((__swtSelf_N66463) => {
                 LogUtil logUtil = LogUtil.getInstance();
                 try {
                     string angleAsString = ((string) this.totalAngleJComboBox.getSelectedItem());
                     ImageArrayRotationUtil.getInstance().process(this.getImageProcessorInput(), angleAsString, this);
                 } catch (Exception e) {
-                    logUtil.put(commonStrings.EXCEPTION, this, commonStrings.RUN, e);
+                    logUtil.put(commonStrings.EXCEPTION, __swtSelf_N66463, commonStrings.RUN, e);
                 }
-            }
-
-#endif
-.start();
+            }).start();
     }
 
     private void initComponents()
@@ -178,6 +172,18 @@ public class RotationImageJPanel : JPanel, ImageProcessedVisitor
         }
         bool isWritten = ImageIO.write(((RenderedImage) this.result), imageStrings.PNG, file);
         this.logUtil.putF("File: " + file + " Wrote: " + isWritten, this, this.commonStrings.RUN);
+    }
+
+    private sealed class __SwtClosure_N66463 : global::org.allbinary.thread.NullThread
+    {
+        private readonly global::System.Action<__SwtClosure_N66463> callback1;
+
+        public __SwtClosure_N66463(global::System.Action<__SwtClosure_N66463> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
     }
 
 }

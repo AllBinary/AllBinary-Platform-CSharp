@@ -25,7 +25,7 @@ public class Special2GameInputInterfaceProcessor : SpecialGameInputInterfaceProc
 {
     public Special2GameInputInterfaceProcessor(SpecialGameInputInterface collidableDestroyableDamageableLayer) : base(collidableDestroyableDamageableLayer)
     {
-        // base(collidableDestroyableDamageableLayer) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

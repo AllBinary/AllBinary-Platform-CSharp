@@ -29,7 +29,7 @@ public class BasicUserRole : Serializable
     private readonly long sessionInactivityTimeout;
     public BasicUserRole(string aRole, int a_int_RoleId, long aSessionTimeout, long aSessionInactivityTimeout) : this(aRole, aRole, a_int_RoleId, aSessionTimeout, aSessionInactivityTimeout)
     {
-        // this(aRole, aRole, a_int_RoleId, aSessionTimeout, aSessionInactivityTimeout) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public BasicUserRole(string aRole, string aDisplayValue, int a_int_RoleId, long aSessionTimeout, long aSessionInactivityTimeout)

@@ -49,7 +49,7 @@ public class ColorAtActionScriptCondition : BasicProfileActionScriptCondition, C
     private const string NAME = "If Color At";
     public ColorAtActionScriptCondition(Node node) : base(ColorAtActionScriptCondition.NAME, node)
     {
-        // base(ColorAtActionScriptCondition.NAME, node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.point = new Point(0, 0);
         Node actionNode = DomSearchHelper.getNode(ColorAtActionScriptConditionData.NAME, node.getChildNodes());
         if (actionNode != null) {
@@ -90,7 +90,7 @@ public class ColorAtActionScriptCondition : BasicProfileActionScriptCondition, C
 
     public ColorAtActionScriptCondition() : base(ColorAtActionScriptCondition.NAME)
     {
-        // base(ColorAtActionScriptCondition.NAME) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.point = new Point(0, 0);
         this.init();
     }

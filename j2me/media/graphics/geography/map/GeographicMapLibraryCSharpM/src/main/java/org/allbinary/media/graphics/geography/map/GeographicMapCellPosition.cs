@@ -28,7 +28,7 @@ public class GeographicMapCellPosition : CellPosition
     private GPoint midPoint;
     public GeographicMapCellPosition(int column, int row, int columns, int rows, int width, int height) : base(column, row, columns, rows)
     {
-        // base(column, row, columns, rows) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         int x = this.getColumn() * width;
         int y = this.getRow() * height;
         PointFactory pointFactory = PointFactory.getInstance();

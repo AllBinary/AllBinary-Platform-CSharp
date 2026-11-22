@@ -39,7 +39,7 @@ public class ImageArrayBaseRotationAnimation : RotationAnimation
     private int totalFrames = 0;
     public ImageArrayBaseRotationAnimation(Image[] originalImageArray, AngleInfo angleInfo, AnimationBehavior animationBehavior) : base(angleInfo, CircularIndexUtil.createInstance(360 / angleInfo.getAngleIncrementInfo().getAngleIncrement()), animationBehavior)
     {
-        // base(angleInfo, CircularIndexUtil.createInstance(360 / angleInfo.getAngleIncrementInfo().getAngleIncrement()), animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.originalImageArray = originalImageArray;
         this.setImageArray(this.imageModifierUtil.getImageArray(originalImageArray));
         this.currentImage = this.imageArray[this.circularIndexUtil.getIndex()];

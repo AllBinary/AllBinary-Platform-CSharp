@@ -38,7 +38,7 @@ public class XmlValidationTransformTag : TransformTag
     {
         try {
             Type helperClass = this.getHelper().GetType();
-            Method method = helperClass.getMethod(commonStrings.IS_VALID, null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod(commonStrings.IS_VALID, null);
             bool? result = ((bool?) method.invoke(this.getHelper(), null));
             return result.Value;
         } catch (Exception e) {

@@ -53,7 +53,7 @@ public class UpdateFileValidationView : DownloadableInventoryItemView, Validatio
     private readonly CommonStrings commonStrings = CommonStrings.getInstance();
     public UpdateFileValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual bool? isValid()

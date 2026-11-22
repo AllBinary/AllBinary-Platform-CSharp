@@ -25,7 +25,7 @@ public class Special3GameInputProcessor : SpecialGameInputProcessor
 {
     public Special3GameInputProcessor(CollidableDestroyableDamageableLayer collidableDestroyableDamageableLayer) : base(collidableDestroyableDamageableLayer)
     {
-        // base(collidableDestroyableDamageableLayer) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

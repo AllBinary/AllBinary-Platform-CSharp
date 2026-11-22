@@ -24,7 +24,7 @@ public class AbFileItemFactory : DefaultFileItemFactory
 {
     public AbFileItemFactory() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

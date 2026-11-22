@@ -43,7 +43,7 @@ public class LevelHudWidget : BasicHud, PaintableInterface
     private readonly PrimitiveLongUtil primitiveLongUtil;
     public LevelHudWidget(int maxlevel, int location, int direction) : base(location, direction, 2, BasicColorFactory.getInstance().GREY)
     {
-        // base(location, direction, 2, BasicColorFactory.getInstance().GREY) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.primitiveLongUtil = PrimitiveLongUtil.createPowerOfTen(1000);
         string LEVEL = "Lv ";
         this.levelString = LEVEL.ToCharArray();

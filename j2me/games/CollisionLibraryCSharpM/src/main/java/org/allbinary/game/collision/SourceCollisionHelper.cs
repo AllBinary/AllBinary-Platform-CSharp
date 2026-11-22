@@ -25,7 +25,7 @@ public class SourceCollisionHelper : CollisionHelper
 {
     public SourceCollisionHelper(AllBinaryLayer layerInterface) : base(layerInterface)
     {
-        // base(layerInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override bool isCollidable(CollidableCompositeLayer layerInterface)

@@ -35,7 +35,7 @@ public class DeleteValidationView : WorkFlowView, ValidationComponentInterface
     private string workFlowName;
     public DeleteValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.workFlowName = this.getPageContext().getRequest().getParameter(WorkFlowData.getInstance().NAME);
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Name: " + this.workFlowName, this, this.commonStrings.CONSTRUCTOR);

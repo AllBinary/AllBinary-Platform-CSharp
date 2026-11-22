@@ -32,7 +32,7 @@ public class CompleteMotionGestureInputEvent : AllBinaryEventObject, CompleteMot
     private MotionGestureInput motionGestureInput = TouchMotionGestureFactory.getInstance().NO_MOTION;
     public CompleteMotionGestureInputEvent(string name, MotionGestureInput motionGestureInput) : base(motionGestureInput)
     {
-        // base(motionGestureInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setName(name);
         try {
             this.setMotionGestureInput(motionGestureInput);

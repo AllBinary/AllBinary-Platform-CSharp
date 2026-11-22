@@ -40,7 +40,7 @@ public class XmlRpcAbeLicenseRetrievalClient : XmlRpcAbeClient
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public XmlRpcAbeLicenseRetrievalClient(AbeClientInformationInterface clientInfo) : base(clientInfo, "LicServ.getLicense")
     {
-        // base(clientInfo, "LicServ.getLicense") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

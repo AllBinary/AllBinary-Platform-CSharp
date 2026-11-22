@@ -44,7 +44,7 @@ public class GenericInputAutomationWorker : AbstractInputAutomationWorker
     private GenericProfile genericProfile = null;
     public GenericInputAutomationWorker(InputAutomationActionInterface inputAutomationActionInterface, GenericProfile genericProfile, MotionRectangleConstraintsInterface motionRectangleConstraintsInterface, ImageComparatorConstraintsInterface imageComparatorConstraintsInterface) : base(inputAutomationActionInterface)
     {
-        // base(inputAutomationActionInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         this.setCaptureWorker(GenericProfileCaptureWorkerFactory.getInstance(genericProfile));
         this.setInputAutomationActionInterface(inputAutomationActionInterface);

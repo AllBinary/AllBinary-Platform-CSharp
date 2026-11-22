@@ -43,7 +43,7 @@ public class InitInfoEntity : InitSql
     private readonly string FAILED_TO_CREATE = "Failed to create ";
     public InitInfoEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         StringMaker stringBuffer = new StringMaker();
         stringBuffer.append(this.sqlStrings.CREATE_TABLE);
         stringBuffer.append(this.tableName);

@@ -31,7 +31,7 @@ public class CountedPickedUpLayerInterfaceFactory : PickedUpLayerInterfaceFactor
     private readonly int id;
     public CountedPickedUpLayerInterfaceFactory(PickedUpLayerType pickeUpLayerType, IconLayer iconLayer, Animation animationInterface) : base(pickeUpLayerType, iconLayer, animationInterface)
     {
-        // base(pickeUpLayerType, iconLayer, animationInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         BasicArrayList list = CountedPickedUpLayerInterfaceFactoryPool.getInstance().getList();
         this.id = list.size();
         list.add(this);

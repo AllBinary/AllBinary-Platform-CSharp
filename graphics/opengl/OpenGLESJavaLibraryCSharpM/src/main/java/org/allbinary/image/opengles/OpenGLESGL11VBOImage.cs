@@ -39,7 +39,7 @@ public class OpenGLESGL11VBOImage : OpenGLESImage
     private FloatBuffer textureVertexFloatBuffer = ByteBuffer.allocateDirect(4 * 4 * 2).order(ByteOrder.nativeOrder()).asFloatBuffer();
     public OpenGLESGL11VBOImage(Image image, PlatformBitmapBaseFactory bitmapFactory, PlatformTextureBaseFactory textureFactory) : base(image, bitmapFactory, textureFactory)
     {
-        // base(image, bitmapFactory, textureFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initVertices();
         this.regionRectangleVertexFloatBuffer.put(FloatBuffer.wrap(this.regionRectangleFloatArray));
         this.regionTextureVertexFloatBuffer.put(FloatBuffer.wrap(this.regionTextureRectangleFloatArray));

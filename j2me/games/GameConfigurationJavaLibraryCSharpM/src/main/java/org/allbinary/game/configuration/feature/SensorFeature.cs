@@ -23,7 +23,7 @@ public class SensorFeature : Feature
 {
     public SensorFeature(string name) : base(name)
     {
-        // base(name) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

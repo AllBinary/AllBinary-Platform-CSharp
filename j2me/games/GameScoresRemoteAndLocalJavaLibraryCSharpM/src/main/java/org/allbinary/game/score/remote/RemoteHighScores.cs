@@ -46,7 +46,7 @@ public class RemoteHighScores : HighScores
     public readonly string ASCENDING = "ASCENDING";
     private RemoteHighScores(AbeClientInformationInterface abeClientInformation, SoftwareInformation softwareInformation, GameInfo gameInfo, string heading, string columnTwoHeading, bool? ascending, bool preload) : base(gameInfo.ToString(), heading, columnTwoHeading)
     {
-        // base(gameInfo.ToString(), heading, columnTwoHeading) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.abeClientInformation = abeClientInformation;
         this.softwareInformation = softwareInformation;
         this.setAscending(ascending);

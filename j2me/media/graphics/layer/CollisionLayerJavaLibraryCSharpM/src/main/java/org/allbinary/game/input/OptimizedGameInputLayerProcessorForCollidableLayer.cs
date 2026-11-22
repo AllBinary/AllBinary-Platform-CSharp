@@ -27,7 +27,7 @@ public class OptimizedGameInputLayerProcessorForCollidableLayer : LayerProcessor
 {
     public OptimizedGameInputLayerProcessorForCollidableLayer() : base(new OptimizedGameInputLayerManager())
     {
-        // base(new OptimizedGameInputLayerManager()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

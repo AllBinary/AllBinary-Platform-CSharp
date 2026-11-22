@@ -25,7 +25,7 @@ public class GameFeatureEvent : AllBinaryEventObject
     private readonly string whatChanged;
     public GameFeatureEvent(object anyType, string whatChanged) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.whatChanged = whatChanged;
     }
 

@@ -28,7 +28,7 @@ public class VectorRotationAnimation : VectorBaseRotationAnimation
 {
     public VectorRotationAnimation(int[][][] currentPoints, BasicColor basicColor, AnimationBehavior animationBehavior) : base(AngleInfo.getInstance(((short) (AngleFactory.getInstance().TOTAL_ANGLE / currentPoints.Length))), currentPoints, basicColor, animationBehavior)
     {
-        // base(AngleInfo.getInstance(((short) (AngleFactory.getInstance().TOTAL_ANGLE / currentPoints.Length))), currentPoints, basicColor, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.angleInfo.adjustAngle(this.getFrame());
     }
 

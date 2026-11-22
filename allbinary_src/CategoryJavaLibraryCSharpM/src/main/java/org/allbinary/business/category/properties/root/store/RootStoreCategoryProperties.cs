@@ -94,7 +94,7 @@ public class RootStoreCategoryProperties : RootCategoryPropertiesInterface, Cate
     public RootStoreCategoryProperties(TransformInfoInterface transformInfoInterface, HashMap<object, object> categoryPropertiesHashMap)
     {
         this.transformInfoInterface = transformInfoInterface;
-        string categoryPath = new string((((string) categoryPropertiesHashMap.get(CategoryData.getInstance().NAME))).ToCharArray());
+        string categoryPath = global::System.JavaStringExtensions.copyString(((string) categoryPropertiesHashMap.get(CategoryData.getInstance().NAME)));
         this.abPath = new AbPath(categoryPath, StringUtil.getInstance().EMPTY_STRING);
         this.category = this.pathData.getNameFromPath(categoryPath);
         if (StringValidationUtil.getInstance().isEmpty(this.category)) {

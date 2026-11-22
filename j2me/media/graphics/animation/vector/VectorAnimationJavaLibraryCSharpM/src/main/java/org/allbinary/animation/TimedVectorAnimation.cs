@@ -27,7 +27,7 @@ public class TimedVectorAnimation : VectorAnimation
     private TimeDelayHelper timeElapsedHelper = new TimeDelayHelper(200);
     public TimedVectorAnimation(int[][][] currentPoints, BasicColor basicColor, AnimationBehavior animationBehavior) : base(currentPoints, basicColor, animationBehavior)
     {
-        // base(currentPoints, basicColor, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void nextFrame()

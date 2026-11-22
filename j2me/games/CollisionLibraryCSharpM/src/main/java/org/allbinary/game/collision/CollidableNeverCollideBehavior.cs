@@ -24,7 +24,7 @@ public class CollidableNeverCollideBehavior : CollidableBaseBehavior
 {
     public CollidableNeverCollideBehavior(bool isCollidable) : base(isCollidable)
     {
-        // base(isCollidable) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override bool isCollision(CollidableCompositeLayer ownerLayer, CollidableCompositeLayer allbinaryCollidableLayer)

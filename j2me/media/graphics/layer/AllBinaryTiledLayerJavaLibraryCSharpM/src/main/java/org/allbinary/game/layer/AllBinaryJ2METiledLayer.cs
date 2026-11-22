@@ -30,7 +30,7 @@ public class AllBinaryJ2METiledLayer : AllBinaryTiledLayer
     public readonly int debugColor;
     public AllBinaryJ2METiledLayer(int? dataId, TiledLayer tiledLayer, int[][] mapTwoDArray, int debugColor) : base(dataId, tiledLayer.getWidth(), tiledLayer.getHeight(), tiledLayer.getCellWidth(), tiledLayer.getCellHeight())
     {
-        // base(dataId, tiledLayer.getWidth(), tiledLayer.getHeight(), tiledLayer.getCellWidth(), tiledLayer.getCellHeight()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.tiledLayerP = tiledLayer;
         this.debugColor = debugColor;
         this.setCells(mapTwoDArray);

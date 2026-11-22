@@ -24,7 +24,7 @@ public class AbFilePath : AbPath
 {
     public AbFilePath(string aPath) : base(StringUtil.getInstance().EMPTY_STRING, StringUtil.getInstance().EMPTY_STRING)
     {
-        // base(StringUtil.getInstance().EMPTY_STRING, StringUtil.getInstance().EMPTY_STRING) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         AbPathData pathData = AbPathData.getInstance();
         PathUtil abPathUtil = PathUtil.getInstance();
         this.schema = this.getSchema(aPath);

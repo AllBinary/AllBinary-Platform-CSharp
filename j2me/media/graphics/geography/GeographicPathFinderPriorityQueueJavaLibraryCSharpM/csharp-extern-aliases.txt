@@ -1,0 +1,2 @@
+org.allbinary.util.ABPriorityQueue=LogJ2SECollections
+org.allbinary.util.ABHashSet=LogJ2SECollections

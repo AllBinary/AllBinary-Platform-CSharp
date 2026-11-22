@@ -24,12 +24,12 @@ public class HistoryDbInitInfo : DbInitInfo
     private const string INITFILE = "historydbinitdata.dat";
     public HistoryDbInitInfo() : base(INITFILE, true)
     {
-        // base(INITFILE, true) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public HistoryDbInitInfo(bool read) : base(INITFILE, read)
     {
-        // base(INITFILE, read) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

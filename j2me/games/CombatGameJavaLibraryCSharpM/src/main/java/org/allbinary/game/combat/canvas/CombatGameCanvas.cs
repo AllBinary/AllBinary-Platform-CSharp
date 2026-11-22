@@ -39,7 +39,7 @@ public class CombatGameCanvas : AllBinaryGameCanvas
     public static BasicLayerProcessor[] basicLayerProcessor = new BasicLayerProcessor[0];
     public CombatGameCanvas(CommandListener cmdListener, AllBinaryGameLayerManager gameLayerManager, HighScoresFactoryInterface highScoresFactoryInterface, BasicBuildGameInitializerFactory gameInitializationInterfaceFactoryInterface, bool buffered) : base(cmdListener, gameLayerManager, highScoresFactoryInterface, gameInitializationInterfaceFactoryInterface, buffered)
     {
-        // base(cmdListener, gameLayerManager, highScoresFactoryInterface, gameInitializationInterfaceFactoryInterface, buffered) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     private void CombatGameCanvas_init()

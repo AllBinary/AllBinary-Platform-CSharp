@@ -79,7 +79,7 @@ public class HumanRTSPlayerGameInput : RTSPlayerGameInput, BaseMotionGestureEven
     {
         this.PRESSED = this.touchMotionGestureFactory.PRESSED;
         this.RELEASED = this.touchMotionGestureFactory.RELEASED;
-        // base(gameCanvas, inputList, playerInputId, towerInfoPaintable, rtsPlayerLayerInterface, layerPositionFinderInterface, selectRTSLayerVisitorFactoryInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.touchButtonsBuilderFactory = touchButtonsBuilderFactory;
         BasicColorFactory basicColorFactory = BasicColorFactory.getInstance();
         this.notYoursGameNotificationEvent = new GameNotificationEvent(this, RTSGameStrings.getInstance().NOT_YOURS, SmallIntegerSingletonFactory.getInstance().getAt(2), basicColorFactory.PINK, BooleanFactory.getInstance().FALSE);

@@ -46,12 +46,12 @@ public class TransformInfoTag : ModifyTag
     private string type = null;
     public TransformInfoTag() : base(new TransformInfoRequestHelperFactory())
     {
-        // base(new TransformInfoRequestHelperFactory()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public TransformInfoTag(TagHelperFactoryInterface tagHelperFactoryInterface) : base(tagHelperFactoryInterface)
     {
-        // base(tagHelperFactoryInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void setName(string value)

@@ -13,7 +13,7 @@ public class ABCustomImageItem : ABCustomItem
     public int yOffset = 0;
     public ABCustomImageItem(string label, Image image, int layout, string altText, BasicColor basicColor, int yOffset) : base(label, basicColor, basicColor)
     {
-        // base(label, basicColor, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual Image getImage()

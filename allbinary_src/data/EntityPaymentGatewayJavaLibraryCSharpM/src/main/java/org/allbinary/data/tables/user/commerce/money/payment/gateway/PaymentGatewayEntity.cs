@@ -48,7 +48,7 @@ public class PaymentGatewayEntity : AbSqlBean, PaymentGatewayEntityInterface
     private readonly string tableName = "paymentgateways";
     public PaymentGatewayEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().SQLLOGGING)) {
             this.logUtil.putF(this.commonStrings.CONSTRUCTOR, this, this.commonStrings.CONSTRUCTOR);

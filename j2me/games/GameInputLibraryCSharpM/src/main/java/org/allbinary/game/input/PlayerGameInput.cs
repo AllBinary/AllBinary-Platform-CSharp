@@ -35,7 +35,7 @@ public class PlayerGameInput : GameInput, GameKeyEventListenerInterface
     private readonly int playerInputId;
     public PlayerGameInput(BasicArrayList gameKeyEventList, BasicArrayList removalGameKeyEventList, int playerInputId) : base(gameKeyEventList, removalGameKeyEventList)
     {
-        // base(gameKeyEventList, removalGameKeyEventList) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.playerInputId = playerInputId;
     }
 

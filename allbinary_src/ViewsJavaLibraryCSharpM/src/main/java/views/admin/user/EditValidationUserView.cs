@@ -38,7 +38,7 @@ public class EditValidationUserView : UserView, ValidationComponentInterface
     private string userName;
     public EditValidationUserView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         HttpServletRequest httpServletRequest = ((HttpServletRequest) this.getPageContext().getRequest());
         HashMap<object, object> hashMap = new RequestParams(httpServletRequest).toHashMap();
         this.userName = new UserName(hashMap).get();

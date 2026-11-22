@@ -24,7 +24,7 @@ public class ViewPositionEvent : AllBinaryEventObject
 {
     public ViewPositionEvent(object anyType) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

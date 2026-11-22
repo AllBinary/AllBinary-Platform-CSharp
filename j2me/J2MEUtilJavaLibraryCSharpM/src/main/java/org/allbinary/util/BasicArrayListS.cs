@@ -27,7 +27,7 @@ public class BasicArrayListS : BasicArrayList
 {
     public BasicArrayListS(int size) : base(NullUtil.getInstance().NULL_OBJECT_ARRAY)
     {
-        // base(NullUtil.getInstance().NULL_OBJECT_ARRAY) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (size < 0) {
             throw new ArgumentException(new StringMaker().append("Init Size Exception: ").appendint(size).ToString());
         }

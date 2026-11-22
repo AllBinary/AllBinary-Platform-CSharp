@@ -40,7 +40,7 @@ public class NewWorkAreaJDialog : JDialog
     private JTextField nameJTextField = null;
     public NewWorkAreaJDialog(MyFrame parent, bool modal, Dimension dimension, string newName) : base(((Frame) parent), modal)
     {
-        // base(((Frame) parent), modal) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         try {
             this.initComponents();
             this.parent = parent;

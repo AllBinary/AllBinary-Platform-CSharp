@@ -29,7 +29,7 @@ public class TouchButtonBlankResource : TouchButtonResource
 
     private TouchButtonBlankResource() : base("/touch_button_64_by_64.png", "/touch_button_hint_64_by_64.png")
     {
-        // base("/touch_button_64_by_64.png", "/touch_button_hint_64_by_64.png") is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

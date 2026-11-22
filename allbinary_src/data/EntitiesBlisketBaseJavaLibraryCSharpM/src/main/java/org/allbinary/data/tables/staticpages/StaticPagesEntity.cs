@@ -40,7 +40,7 @@ public class StaticPagesEntity : AbSqlBean, StaticPagesEntityInterface
     private readonly string TABLENAME = "staticpages";
     public StaticPagesEntity() : base(new StaticPagesDbInitInfo())
     {
-        // base(new StaticPagesDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.TABLENAME);
     }
 

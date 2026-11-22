@@ -27,13 +27,13 @@ public class DirectoryOrIncludeFileExtensionBooleanFileVisitor : IncludeFileExte
     private readonly string includesString;
     public DirectoryOrIncludeFileExtensionBooleanFileVisitor(BasicArrayList filterStringBasicArrayList) : base(filterStringBasicArrayList)
     {
-        // base(filterStringBasicArrayList) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.includesString = null;
     }
 
     public DirectoryOrIncludeFileExtensionBooleanFileVisitor(BasicArrayList filterStringBasicArrayList, string includesString) : base(filterStringBasicArrayList)
     {
-        // base(filterStringBasicArrayList) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.includesString = includesString;
     }
 

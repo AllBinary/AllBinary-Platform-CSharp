@@ -29,7 +29,7 @@ public class GamePersistanceSingleton : KeyValuePersistance
 
     private GamePersistanceSingleton() : base(GamePersistanceStrings.getInstance().SAVED_GAME_RECORD_ID)
     {
-        // base(GamePersistanceStrings.getInstance().SAVED_GAME_RECORD_ID) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

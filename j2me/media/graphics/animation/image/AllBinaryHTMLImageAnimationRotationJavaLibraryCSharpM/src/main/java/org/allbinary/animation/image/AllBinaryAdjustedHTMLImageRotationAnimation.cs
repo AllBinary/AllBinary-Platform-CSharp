@@ -29,7 +29,7 @@ public class AllBinaryAdjustedHTMLImageRotationAnimation : AllBinaryHTMLImageRot
     private int dy = 0;
     public AllBinaryAdjustedHTMLImageRotationAnimation(Image originalImage, Image image, AngleInfo angleInfo, short totalAngle, int dx, int dy, AnimationBehavior animationBehavior) : base(originalImage, image, angleInfo, totalAngle, animationBehavior)
     {
-        // base(originalImage, image, angleInfo, totalAngle, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.init(dx, dy);
     }
 

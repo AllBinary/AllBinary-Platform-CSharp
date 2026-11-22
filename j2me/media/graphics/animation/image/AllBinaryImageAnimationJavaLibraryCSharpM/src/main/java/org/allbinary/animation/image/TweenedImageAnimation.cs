@@ -36,7 +36,7 @@ public class TweenedImageAnimation : IndexedAnimation
     public CircularIndexUtil circularIndexUtil;
     public TweenedImageAnimation(Image image, int dx, int dy, int totalFrames, AnimationBehavior animationBehavior) : base(animationBehavior)
     {
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.image = image;
         this.dx = dx;
         this.dy = dy;

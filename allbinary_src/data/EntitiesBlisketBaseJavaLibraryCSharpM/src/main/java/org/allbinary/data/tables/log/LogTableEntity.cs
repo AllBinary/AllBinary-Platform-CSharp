@@ -30,7 +30,7 @@ public class LogTableEntity : AbSqlBean, LogTableEntityInterface
     private readonly string tableName = "log";
     public LogTableEntity() : base(new LogDbInitInfo())
     {
-        // base(new LogDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

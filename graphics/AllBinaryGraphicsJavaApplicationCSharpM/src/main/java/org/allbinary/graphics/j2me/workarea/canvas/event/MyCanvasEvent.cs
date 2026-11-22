@@ -25,7 +25,7 @@ public class MyCanvasEvent : EventObject
 {
     public MyCanvasEvent(object source) : base(source)
     {
-        // base(source) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual object getSource()

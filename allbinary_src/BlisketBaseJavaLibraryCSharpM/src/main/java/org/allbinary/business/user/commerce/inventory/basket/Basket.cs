@@ -37,7 +37,7 @@ public class Basket : BasketInterface, Serializable
     public virtual void addItem(string id, string num)
     {
         if (this.items.containsKey(id)) {
-            string oldNumStr = new string((((string) this.items.get(id))).ToCharArray());
+            string oldNumStr = global::System.JavaStringExtensions.copyString(((string) this.items.get(id)));
             int? oldNumInt = int.Parse((oldNumStr).ToString());
             int? numInt = int.Parse((num).ToString());
             int? newNumInt = ((int)(((int) oldNumInt) + ((int) numInt)));
@@ -72,7 +72,7 @@ public class Basket : BasketInterface, Serializable
             object[] itemArray = items.toArray();
             int size = itemArray.Length;
             for (int index = 0; index < size; index++) {
-                product = new string((((string) itemArray[index])).ToCharArray());
+                product = global::System.JavaStringExtensions.copyString(((string) itemArray[index]));
                 weightFloat = ((float)(new InventoryEntity().getWeight(product)));
                 weightFloat = ((float)(((float) getNumberOf(product)) * ((float) weightFloat)));
                 totalWeight.add(weightFloat.ToString());
@@ -115,7 +115,7 @@ public class Basket : BasketInterface, Serializable
             object[] itemArray = items.toArray();
             int size = itemArray.Length;
             for (int index = 0; index < size; index++) {
-                string product = new string((((string) itemArray[index])).ToCharArray());
+                string product = global::System.JavaStringExtensions.copyString(((string) itemArray[index]));
                 ItemInterface itemInterface = inventoryEntity.getItem(product);
                 Money productTotal = itemInterface.getPrice();
                 productTotal.multiply(((int) getNumberOf(product)));

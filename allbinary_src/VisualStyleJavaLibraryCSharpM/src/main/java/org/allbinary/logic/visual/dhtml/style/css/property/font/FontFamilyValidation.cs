@@ -31,12 +31,12 @@ public class FontFamilyValidation : FontFamilyView, ValidationInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public FontFamilyValidation() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public FontFamilyValidation(Node node) : base(node)
     {
-        // base(node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

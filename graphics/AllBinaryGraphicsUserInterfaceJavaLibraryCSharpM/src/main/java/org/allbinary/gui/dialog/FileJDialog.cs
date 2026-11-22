@@ -36,14 +36,14 @@ public class FileJDialog : JDialog
     private FileJDialogListenerInterface finishedListenerInterface = null;
     public FileJDialog() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initComponents();
         this.getJFileChooser1().setMultiSelectionEnabled(true);
     }
 
     public FileJDialog(Frame parent, bool modal) : base(parent, modal)
     {
-        // base(parent, modal) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initComponents();
         this.getJFileChooser1().setMultiSelectionEnabled(true);
     }
@@ -89,15 +89,9 @@ public class FileJDialog : JDialog
 
     public static void main(string[] args)
     {
-        EventQueue.invokeLater(new ARunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void run()
-            {
+        EventQueue.invokeLater(new __SwtClosure_N67618((__swtSelf_N67618) => {
                 new FileJDialog(new JFrame(), true).setVisible(true);
-            }
-
-#endif
-);
+            }));
     }
 
     public virtual JFileChooser getJFileChooser1()
@@ -111,5 +105,17 @@ public class FileJDialog : JDialog
     }
 
     private JFileChooser jFileChooser1 = null;
+    private sealed class __SwtClosure_N67618 : ARunnable
+    {
+        private readonly global::System.Action<__SwtClosure_N67618> callback1;
+
+        public __SwtClosure_N67618(global::System.Action<__SwtClosure_N67618> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
+    }
+
 }
 

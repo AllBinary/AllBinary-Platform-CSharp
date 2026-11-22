@@ -17,7 +17,7 @@ public class PreciseConstantVelocityMovement : BasicConstantVelocityMovement
     private int accumulatedZ = 0;
     public PreciseConstantVelocityMovement(BasicDecimal basicDecimal, BasicVelocityProperties velocityProperties) : base(basicDecimal, velocityProperties)
     {
-        // base(basicDecimal, velocityProperties) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void init(BasicDecimal speedBasicDecimal, int angle, int otherAngle)

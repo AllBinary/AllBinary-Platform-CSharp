@@ -26,7 +26,7 @@ public class NoBasicConstantVelocityMovement : BasicConstantVelocityMovement
 {
     public NoBasicConstantVelocityMovement() : base(BasicDecimal.ZERO_BIGDECIMAL, new BasicVelocityProperties())
     {
-        // base(BasicDecimal.ZERO_BIGDECIMAL, new BasicVelocityProperties()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

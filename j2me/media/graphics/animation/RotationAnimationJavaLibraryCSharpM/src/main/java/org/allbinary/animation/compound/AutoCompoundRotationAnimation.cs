@@ -35,7 +35,7 @@ public class AutoCompoundRotationAnimation : RotationAnimation, CompoundAnimatio
     private RotationAnimation[] animationInterfaceArray;
     public AutoCompoundRotationAnimation(RotationAnimation[] animationInterfaceArray, AnimationBehavior animationBehavior) : base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior)
     {
-        // base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.animationInterfaceArray = animationInterfaceArray;
         this.circularIndexUtil = CircularIndexUtil.createInstance(this.animationInterfaceArray.Length);
     }

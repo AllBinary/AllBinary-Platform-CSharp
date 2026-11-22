@@ -33,17 +33,17 @@ public class TitleValidation : TitleView, ValidationInterface
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public TitleValidation() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public TitleValidation(Node node) : base(node)
     {
-        // base(node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public TitleValidation(HashMap<object, object> hashMap) : base(hashMap)
     {
-        // base(hashMap) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual bool? isValid()

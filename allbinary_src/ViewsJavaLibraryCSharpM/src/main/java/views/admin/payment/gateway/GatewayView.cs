@@ -33,7 +33,7 @@ public class GatewayView : PaymentGatewayViewAbstract
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public GatewayView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void getFormData(HttpServletRequest request)

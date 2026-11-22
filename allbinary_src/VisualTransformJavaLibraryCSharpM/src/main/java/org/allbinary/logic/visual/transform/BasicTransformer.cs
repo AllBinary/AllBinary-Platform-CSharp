@@ -46,7 +46,7 @@ public class BasicTransformer : AbTransformer
     private readonly AbeClientInformationInterface abeClientInformation;
     public BasicTransformer(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.abeClientInformation = abeClientInformation;
         this.setTemplateAsInputStream();
     }

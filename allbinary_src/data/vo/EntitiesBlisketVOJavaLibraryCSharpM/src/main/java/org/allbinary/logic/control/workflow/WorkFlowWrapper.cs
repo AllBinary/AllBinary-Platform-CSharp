@@ -44,7 +44,7 @@ public class WorkFlowWrapper : WorkFlowInterface
     {
         try {
             Type helperClass = this.anyType.GetType();
-            Method method = helperClass.getMethod("getName", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("getName", null);
             string result = ((string) method.invoke(this.anyType, null));
             return result;
         } catch (Exception e) {
@@ -61,7 +61,7 @@ public class WorkFlowWrapper : WorkFlowInterface
     {
         try {
             Type helperClass = this.anyType.GetType();
-            Method method = helperClass.getMethod("getStoreName", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("getStoreName", null);
             string result = ((string) method.invoke(this.anyType, null));
             return result;
         } catch (Exception e) {
@@ -78,7 +78,7 @@ public class WorkFlowWrapper : WorkFlowInterface
     {
         try {
             Type helperClass = this.anyType.GetType();
-            Method method = helperClass.getMethod(this.commonStrings.PROCESS, null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod(this.commonStrings.PROCESS, null);
             int? result = ((int?) method.invoke(this.anyType, null));
             return result;
         } catch (Exception e) {

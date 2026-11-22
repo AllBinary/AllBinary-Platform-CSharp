@@ -14,6 +14,7 @@
  */
 // Generated Code Do Not Modify
 
+extern alias LogJ2SECollections;
 using System;
 using System.Linq;
 using BasicArrayList = org.allbinary.util.BasicArrayList;
@@ -26,7 +27,7 @@ public class PathFinderGraphHackVisitor : BasePathFinderGraphVisitor
 {
     public PathFinderGraphHackVisitor(BasicGeographicMap geographicMapInterface, int edgeMinimum, int minPathWeight, int maxPathWeight) : base(geographicMapInterface, edgeMinimum, minPathWeight, maxPathWeight)
     {
-        // base(geographicMapInterface, edgeMinimum, minPathWeight, maxPathWeight) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

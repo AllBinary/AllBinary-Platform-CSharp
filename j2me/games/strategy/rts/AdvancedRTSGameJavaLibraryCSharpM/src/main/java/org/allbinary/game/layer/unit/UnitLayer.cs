@@ -165,7 +165,7 @@ public class UnitLayer : AdvancedRTSGameLayer, BuildingEventListenerInterface, T
     {
         this.movementAngle = this.angleFactory.NOT_ANGLE;
         this.CAPITAL_EVENT = new CapitalEvent(this);
-        // base(remoteInfo, parentLayer, advancedRTSProperties, groupInterface, rootName, name, healthInterface, new WaypointRTSFormInput(groupInterface, true), animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setCollidableInferface(new CollidableUnitBehavior(true));
         this.waypointLayerInterfaceFactoryInterface = waypointLayerInterfaceFactoryInterface;
         this.maxResourceLoad = ((short) maxResourceLoad);

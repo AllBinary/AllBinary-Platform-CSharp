@@ -42,7 +42,7 @@ public class AllBinaryNoFlickerAndroidImageRotationAnimation : ImageBaseRotation
     private int bufferedImageIndex = 0;
     public AllBinaryNoFlickerAndroidImageRotationAnimation(Image originalImage, Image image, AngleInfo angleInfo, short totalAngle, AnimationBehavior animationBehavior) : base(image, angleInfo, totalAngle, animationBehavior)
     {
-        // base(image, angleInfo, totalAngle, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.originalImage = originalImage;
         this.halfWidth = (image.getWidth() >> 1);
         this.halfHeight = (image.getHeight() >> 1);

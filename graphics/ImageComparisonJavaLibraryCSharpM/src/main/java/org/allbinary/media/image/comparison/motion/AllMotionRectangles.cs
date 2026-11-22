@@ -29,7 +29,7 @@ public class AllMotionRectangles : MotionRectangles
     private const string NAME = "allMotionRectangles_";
     public AllMotionRectangles(ImageComparisonResult imageComparisonResult) : base(NAME, imageComparisonResult)
     {
-        // base(NAME, imageComparisonResult) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.createMotionRectangles(imageComparisonResult);
     }
 

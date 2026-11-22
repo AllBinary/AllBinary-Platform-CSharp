@@ -24,7 +24,7 @@ public class GameConfigurationGauge : Gauge
 {
     public GameConfigurationGauge(GameConfiguration gameConfiguration) : base(gameConfiguration.getName(), ((bool) (gameConfiguration.isModifiable())), global::java.lang.JavaNumber.intValue(gameConfiguration.getMaxValue()) - global::java.lang.JavaNumber.intValue(gameConfiguration.getMinValue()), global::java.lang.JavaNumber.intValue(gameConfiguration.getValue()) - global::java.lang.JavaNumber.intValue(gameConfiguration.getMinValue()))
     {
-        // base(gameConfiguration.getName(), ((bool) (gameConfiguration.isModifiable())), global::java.lang.JavaNumber.intValue(gameConfiguration.getMaxValue()) - global::java.lang.JavaNumber.intValue(gameConfiguration.getMinValue()), global::java.lang.JavaNumber.intValue(gameConfiguration.getValue()) - global::java.lang.JavaNumber.intValue(gameConfiguration.getMinValue())) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

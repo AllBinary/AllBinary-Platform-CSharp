@@ -25,7 +25,7 @@ public class StoreAppClientInformation : AbeClientInformation, LongArrayIdentifi
     private readonly long[] longArrayIdentifier;
     public StoreAppClientInformation(string name, string version, string specialName, string shortName, long[] longArrayIdentifier) : base(name, version, specialName, shortName)
     {
-        // base(name, version, specialName, shortName) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.longArrayIdentifier = longArrayIdentifier;
     }
 

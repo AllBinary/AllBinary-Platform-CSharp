@@ -91,15 +91,7 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
 
     }
     private readonly global::java.lang.Runnable END_RUNNABLE;
-    private readonly global::java.lang.Runnable ALREADY_ENDED_RUNNABLE = new ARunnable()
-#if JAVA_ANONYMOUS_CLASS_BODY
-        public virtual void run()
-        {
-            throw new SystemException();
-        }
-
-#endif
-;
+    private readonly global::java.lang.Runnable ALREADY_ENDED_RUNNABLE;
     private global::java.lang.Runnable currentPassRunnable;
     public MultipassWaypointPathRunnable()
     {
@@ -107,6 +99,9 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
         this.FIRST_RUNNABLE = new FirstRunnable(this, this);
         this.SECOND_RUNNABLE = new SecondRunnable(this, this);
         this.END_RUNNABLE = new EndRunnable(this, this);
+        this.ALREADY_ENDED_RUNNABLE = new __SwtClosure_N66917((__swtSelf_N66917) => {
+            throw new SystemException();
+        });
         this.currentPassRunnable = this.FIRST_RUNNABLE;
     }
 
@@ -212,6 +207,18 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
             this.setRunning(false);
         }
         this.finish();
+    }
+
+    private sealed class __SwtClosure_N66917 : ARunnable
+    {
+        private readonly global::System.Action<__SwtClosure_N66917> callback1;
+
+        public __SwtClosure_N66917(global::System.Action<__SwtClosure_N66917> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run() => callback1(this);
     }
 
 }

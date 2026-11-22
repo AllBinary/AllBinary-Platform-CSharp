@@ -28,7 +28,7 @@ public class CategoryComponent : CategoryView, TransformInterface
 {
     public CategoryComponent(CategoryInterface categoryInterface) : base(categoryInterface)
     {
-        // base(categoryInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public int NO_TYPE = 0;

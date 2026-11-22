@@ -38,7 +38,7 @@ public class StoreFrontsEntity : AbSqlBean, StoreFrontsEntityInterface
     public readonly string tableName = "storefronts";
     public StoreFrontsEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

@@ -186,8 +186,8 @@ public class SVGAsJSONSimpleLoader
 
     private int toInt(object value, string key)
     {
-        if (value is Number) {
-            return ((int) global::java.lang.JavaMath.round(global::java.lang.JavaNumber.doubleValue((((Number) value)))));
+        if (value is sbyte or byte or short or ushort or int or uint or long or ulong or float or double or decimal) {
+            return ((int) global::java.lang.JavaMath.round(global::java.lang.JavaNumber.doubleValue((((object) value)))));
         }
         if (value is string) {
             return ((int) global::java.lang.JavaMath.round(double.Parse(((string) value))));

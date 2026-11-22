@@ -25,7 +25,7 @@ public class OverScanColorFillPaintable : ColorFillPaintable
 {
     public OverScanColorFillPaintable(BasicColor basicColor) : base(basicColor)
     {
-        // base(basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void paint(Graphics graphics)

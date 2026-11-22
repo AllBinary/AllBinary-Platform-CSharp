@@ -28,7 +28,7 @@ public class StoreTransformer : BasicTransformer
 {
     public StoreTransformer(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface) : base(abeClientInformation, transformInfoInterface)
     {
-        // base(abeClientInformation, transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setURIResolver(((URIResolver) new StoreUriResolver(this.getTransformInfoInterface(), ((BasicUriResolver) this.getURIResolver()))));
     }
 

@@ -143,7 +143,7 @@ public class GameMidlet : ProgressMidlet, CommandListener
     public GameMidlet(ClientInformationFactory clientInformationFactory) : base(clientInformationFactory)
     {
         this.COMMAND_ACTION = new StringMaker().append("GameMidlet::").append(this.midletStrings.COMMAND_ACTION).ToString();
-        // base(clientInformationFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         SmallIntegerSingletonFactory.getInstance().initWithRange(0x291, 6);
         this.loadGameForm = CommandForm.getNullCommandForm();
         ProgressCanvas progressCanvas = ProgressCanvasFactory.getInstance();

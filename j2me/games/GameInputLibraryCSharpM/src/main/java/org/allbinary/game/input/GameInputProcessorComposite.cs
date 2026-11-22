@@ -30,7 +30,7 @@ public class GameInputProcessorComposite : PlayerGameInput
     private readonly GameInputProcessorInterface gameInputProcessorInterface;
     public GameInputProcessorComposite(string name, GameInputProcessorInterface gameInputProcessorInterface) : base(new BasicArrayListD(), new BasicArrayListD(), -1)
     {
-        // base(new BasicArrayListD(), new BasicArrayListD(), -1) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.name = name;
         this.gameInputProcessorInterface = gameInputProcessorInterface;
     }

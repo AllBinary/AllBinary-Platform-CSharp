@@ -51,7 +51,7 @@ public class AbFileOutputStream : FileOutputStream
 
     public AbFileOutputStream(string name, bool append) : base(name, append)
     {
-        // base(name, append) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

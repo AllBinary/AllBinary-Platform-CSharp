@@ -33,7 +33,7 @@ public class LivesHudWidget : BasicHud, PaintableInterface
     private readonly Animation animationInterface;
     public LivesHudWidget(Animation animationInterface, Life lifeInterface, int location, int direction) : base(location, direction, 2, BasicColorFactory.getInstance().WHITE)
     {
-        // base(location, direction, 2, BasicColorFactory.getInstance().WHITE) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.lifeInterface = lifeInterface;
         int size = ((int) this.getLifeInterface().getMaxlives());
         this.xArray = new int[size];

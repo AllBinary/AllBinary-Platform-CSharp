@@ -27,7 +27,7 @@ public class LazyProgressCanvas : ProgressCanvas
 {
     public LazyProgressCanvas(string title, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(title, backgroundBasicColor, foregroundBasicColor)
     {
-        // base(title, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void start()

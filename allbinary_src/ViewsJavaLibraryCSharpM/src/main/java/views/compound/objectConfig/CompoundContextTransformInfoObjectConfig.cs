@@ -46,18 +46,18 @@ public class CompoundContextTransformInfoObjectConfig : GenericStoreTransformInf
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public CompoundContextTransformInfoObjectConfig(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface) : base(abeClientInformation, transformInfoInterface)
     {
-        // base(abeClientInformation, transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public CompoundContextTransformInfoObjectConfig(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface, Document document) : base(abeClientInformation, transformInfoInterface, document)
     {
-        // base(abeClientInformation, transformInfoInterface, document) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setDocument(this.generate(this.toXmlDoc()));
     }
 
     public CompoundContextTransformInfoObjectConfig(AbeClientInformationInterface abeClientInformation, TransformInfoInterface transformInfoInterface, string name, string type) : base(abeClientInformation, transformInfoInterface, name, type)
     {
-        // base(abeClientInformation, transformInfoInterface, name, type) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setDocument(this.generate(this.toXmlDoc()));
     }
 

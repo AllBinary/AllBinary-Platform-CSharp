@@ -36,7 +36,7 @@ public class PlayerGameInputGameLayer : AllBinaryGameLayer, PlayerGameInputCompo
     private PlayerGameInput playerGameInput;
     public PlayerGameInputGameLayer(int playerInputId) : base(StringUtil.getInstance().EMPTY_STRING, new Rectangle(PointFactory.getInstance().ZERO_ZERO, 0, 0), new StaticViewPosition(0, 0, 0))
     {
-        // base(StringUtil.getInstance().EMPTY_STRING, new Rectangle(PointFactory.getInstance().ZERO_ZERO, 0, 0), new StaticViewPosition(0, 0, 0)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.playerGameInput = new PlayerGameInput(this.getGameKeyEventList(), new BasicArrayListD(), playerInputId);
         CanvasStrings canvasStrings = CanvasStrings.getInstance();
         this.logUtil.putF("Danger Danger Danger: Should Not Be Called Except For Testing Input", this, canvasStrings.PAINT);

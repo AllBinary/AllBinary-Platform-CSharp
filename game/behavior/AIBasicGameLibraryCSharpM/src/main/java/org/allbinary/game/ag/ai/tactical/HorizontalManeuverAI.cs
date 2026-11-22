@@ -31,7 +31,7 @@ public class HorizontalManeuverAI : BasicAI
     private int currentSpeed;
     public HorizontalManeuverAI(AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(ownerLayerInterface, gameInput)
     {
-        // base(ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.currentSpeed = 5;
     }
 

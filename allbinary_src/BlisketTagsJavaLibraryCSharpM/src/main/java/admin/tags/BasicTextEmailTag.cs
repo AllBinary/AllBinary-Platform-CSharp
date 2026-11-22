@@ -55,7 +55,7 @@ public class BasicTextEmailTag : CustomTagSupport
             propertiesHashMap.put("Subject", this.subject);
             propertiesHashMap.put("Body", this.body);
             object anyType = new BasicTextEmailHelperFactory().getInstance(propertiesHashMap, this.pageContext);
-            Method method = anyType.GetType().getMethod("send", null);
+            global::System.Reflection.MethodInfo method = anyType.GetType().getMethod("send", null);
             method.invoke(anyType, null);
             return "Email Sent";
         } catch (Exception e) {

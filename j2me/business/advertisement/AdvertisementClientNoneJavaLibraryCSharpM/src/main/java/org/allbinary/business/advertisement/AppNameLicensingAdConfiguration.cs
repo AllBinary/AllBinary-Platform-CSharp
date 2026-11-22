@@ -10,7 +10,7 @@ public class AppNameLicensingAdConfiguration : AdConfiguration
 {
     public AppNameLicensingAdConfiguration() : base(new object[] { StringUtil.getInstance().EMPTY_STRING, StringUtil.getInstance().EMPTY_STRING, StringUtil.getInstance().EMPTY_STRING })
     {
-        // base(new object[] { StringUtil.getInstance().EMPTY_STRING, StringUtil.getInstance().EMPTY_STRING, StringUtil.getInstance().EMPTY_STRING }) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

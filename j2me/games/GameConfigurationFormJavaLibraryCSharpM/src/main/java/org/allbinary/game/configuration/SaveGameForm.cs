@@ -44,7 +44,7 @@ public class SaveGameForm : CommandForm
     private readonly MIDPUtil meUtil = MIDPUtil.getInstance();
     private SaveGameForm(CommandListener commandListener, string title, BasicColor backgrounBasicColor, BasicColor foregroundBasicColor) : base(commandListener, title, backgrounBasicColor, foregroundBasicColor)
     {
-        // base(commandListener, title, backgrounBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         string timeString = (ABSystemWrapper.getInstance().currentTimeMillis()).ToString();
         this.meUtil.appendItem(this, new TextField("Name: ", timeString, 30, TextField.ANY));

@@ -31,7 +31,7 @@ public class ImageMiniMapLayer : MiniMapLayer
     private Image image = NullImage.NULL_IMAGE;
     public ImageMiniMapLayer(BasicGeographicMap geographicMapInterface, ViewPositionBase viewPosition) : base(geographicMapInterface, viewPosition)
     {
-        // base(geographicMapInterface, viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

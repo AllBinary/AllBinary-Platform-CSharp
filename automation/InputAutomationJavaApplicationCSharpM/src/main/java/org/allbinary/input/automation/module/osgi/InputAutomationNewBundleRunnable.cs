@@ -23,7 +23,7 @@ using FileInputStream = java.io.FileInputStream;
 using URL = java.net.URL;
 using java.util;
 //using JarInputStream = java.util.jar.JarInputStream;
-//using Manifest = java.util.jar.Manifest;
+using Manifest = java.util.jar.Manifest;
 using Bundle = org.osgi.framework.Bundle;
 using BundleContext = org.osgi.framework.BundleContext;
 using Constants = org.osgi.framework.Constants;

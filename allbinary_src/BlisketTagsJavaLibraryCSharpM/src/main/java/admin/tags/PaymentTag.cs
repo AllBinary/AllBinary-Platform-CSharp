@@ -53,7 +53,7 @@ public class PaymentTag : TableTag
         try {
             object anyType = new PaymentHelperFactory().getInstance(this.getPropertiesHashMap(), pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("select", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("select", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {

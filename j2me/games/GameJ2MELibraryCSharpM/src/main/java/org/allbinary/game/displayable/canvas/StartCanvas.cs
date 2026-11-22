@@ -141,7 +141,7 @@ public class StartCanvas : RunnableCanvas, GameCanvasRunnableInterface, MenuList
     public StartCanvas(AbeClientInformationInterface abeClientInformation, CommandListener commandListener, HighScoresFactoryInterface highScoresFactoryInterface, Paintable paintable, InitUpdatePaintable overlayPaintable, BasicBuildGameInitializerFactory gameInitializationInterfaceFactoryInterface, bool isContinue) : base(commandListener, CurrentDisplayableFactory.getInstance().DEFAULT_CHILD_NAME_LIST, true)
     {
         this.isSingleKeyRepeatableProcessing = this.features.isFeature(InputFeatureFactory.getInstance().SINGLE_KEY_REPEAT_PRESS);
-        // base(commandListener, CurrentDisplayableFactory.getInstance().DEFAULT_CHILD_NAME_LIST, true) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setWait(NullWaitGameRunnable.getInstance().WAIT);
         this.gameInitializationInterfaceFactoryInterface = gameInitializationInterfaceFactoryInterface;
         GameInitializationUtil.getInstance().initDemo(abeClientInformation, this, gameInitializationInterfaceFactoryInterface);

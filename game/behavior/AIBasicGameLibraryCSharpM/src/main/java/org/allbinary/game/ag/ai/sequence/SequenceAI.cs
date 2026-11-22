@@ -34,7 +34,7 @@ public class SequenceAI : ArrayAI
     private int index = 0;
     public SequenceAI(ArtificialIntelligenceInterface[] artificialIntelligenceInterfaceArray, AllBinaryLayer ownerLayerInterface, GameInput gameInput) : base(artificialIntelligenceInterfaceArray, ownerLayerInterface, gameInput)
     {
-        // base(artificialIntelligenceInterfaceArray, ownerLayerInterface, gameInput) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

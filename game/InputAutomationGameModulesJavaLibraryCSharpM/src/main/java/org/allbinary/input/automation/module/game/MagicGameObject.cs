@@ -27,7 +27,7 @@ public class MagicGameObject : MeteredGameObject, MagicGameObjectInterface
     private readonly string MP_LABEL = "MP:";
     public MagicGameObject(BufferedImage[] bufferedImage, int? minX, int? maxX, int? y) : base(bufferedImage, minX, maxX, y)
     {
-        // base(bufferedImage, minX, maxX, y) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override string ToString()

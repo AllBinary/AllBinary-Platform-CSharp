@@ -35,7 +35,7 @@ public class ModifyTag : HelperTag
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public ModifyTag(TagHelperFactoryInterface tagHelperFactoryInterface) : base(tagHelperFactoryInterface)
     {
-        // base(tagHelperFactoryInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }
@@ -46,7 +46,7 @@ public class ModifyTag : HelperTag
     {
         try {
             Type helperClass = this.getHelper().GetType();
-            Method method = helperClass.getMethod("insert", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("insert", null);
             string result = ((string) method.invoke(this.getHelper(), null));
             return result;
         } catch (Exception e) {
@@ -63,7 +63,7 @@ public class ModifyTag : HelperTag
     {
         try {
             Type helperClass = this.getHelper().GetType();
-            Method method = helperClass.getMethod(commonStrings.delete, null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod(commonStrings.delete, null);
             string result = ((string) method.invoke(this.getHelper(), null));
             return result;
         } catch (Exception e) {
@@ -80,7 +80,7 @@ public class ModifyTag : HelperTag
     {
         try {
             Type helperClass = this.getHelper().GetType();
-            Method method = helperClass.getMethod("update", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("update", null);
             string result = ((string) method.invoke(this.getHelper(), null));
             return result;
         } catch (Exception e) {

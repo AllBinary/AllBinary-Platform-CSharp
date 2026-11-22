@@ -50,7 +50,7 @@ public class TechnologyRTSInterfaceImageItem : ABCustomImageItem, UpdateMyFontIn
     public TechnologyRTSInterfaceImageItem(string label, Image img, int layout, string altText, BasicColor basicColor, RTSInterface rtsInterface) : base(label, img, layout, altText, basicColor, 0)
     {
         this.myFontProcessor = new UpdateMyFontProcessor(this);
-        // base(label, img, layout, altText, basicColor, 0) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.rtsInterface = rtsInterface;
         this.update();
     }

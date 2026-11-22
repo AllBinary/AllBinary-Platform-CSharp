@@ -31,7 +31,7 @@ public class CustomizersValidationView : CustomizersView, ValidationComponentInt
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public CustomizersValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual bool? isValid()

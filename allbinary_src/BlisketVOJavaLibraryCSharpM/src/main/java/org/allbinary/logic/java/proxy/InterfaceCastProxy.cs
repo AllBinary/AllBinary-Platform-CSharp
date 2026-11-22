@@ -17,8 +17,8 @@
 using System;
 using System.Linq;
 //using Method = java.lang.reflect.Method;
-//using Proxy = java.lang.reflect.Proxy;
-//using InvocationHandler = java.lang.reflect.InvocationHandler;
+using Proxy = java.lang.reflect.Proxy;
+using InvocationHandler = java.lang.reflect.InvocationHandler;
 
 namespace org.allbinary.logic.java.proxy;
 
@@ -36,10 +36,10 @@ public class InterfaceCastProxy : InvocationHandler
     }
 
     // throws Throwable
-    public virtual object invoke(object proxyObject, Method proxyMethod, object[] proxyArgs)
+    public virtual object invoke(object proxyObject, global::System.Reflection.MethodInfo proxyMethod, object[] proxyArgs)
     {
         string methodName = proxyMethod.getName();
-        Method realMethod = this.anyType.GetType().getMethod(methodName, proxyMethod.getParameterTypes());
+        global::System.Reflection.MethodInfo realMethod = this.anyType.GetType().getMethod(methodName, proxyMethod.getParameterTypes());
         if (!realMethod.isAccessible()) {
             realMethod.setAccessible(true);
         }

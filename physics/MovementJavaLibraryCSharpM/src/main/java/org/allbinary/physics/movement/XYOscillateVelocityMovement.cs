@@ -30,7 +30,7 @@ public class XYOscillateVelocityMovement : BasicConstantVelocityMovement
     private bool oscillatePositive = false;
     public XYOscillateVelocityMovement(BasicDecimal speedBasicDecimal, int oscillateMin, int oscillateMax) : base(speedBasicDecimal, new VelocityProperties(((int) speedBasicDecimal.getUnscaled()), ((int) speedBasicDecimal.getUnscaled())))
     {
-        // base(speedBasicDecimal, new VelocityProperties(((int) speedBasicDecimal.getUnscaled()), ((int) speedBasicDecimal.getUnscaled()))) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.oscillateMin = oscillateMin;
         this.oscillateMax = oscillateMax;
     }

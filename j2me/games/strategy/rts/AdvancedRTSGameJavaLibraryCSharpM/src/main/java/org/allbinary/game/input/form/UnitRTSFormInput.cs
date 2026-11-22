@@ -53,7 +53,7 @@ public class UnitRTSFormInput : RTSFormInput
     public readonly GameNotificationEvent newUnitGameNotificationEvent;
     public UnitRTSFormInput(Group[] groupInterface) : base(groupInterface)
     {
-        // base(groupInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         SmallIntegerSingletonFactory smallIntegerSingletonFactory = SmallIntegerSingletonFactory.getInstance();
         BasicColorFactory basicColorFactory = BasicColorFactory.getInstance();
         this.noMoneyGameNotificationEvent = new GameNotificationEvent(this, RTSGameStrings.getInstance().NO_MONEY, smallIntegerSingletonFactory.getAt(2), basicColorFactory.WHITE, BooleanFactory.getInstance().FALSE);

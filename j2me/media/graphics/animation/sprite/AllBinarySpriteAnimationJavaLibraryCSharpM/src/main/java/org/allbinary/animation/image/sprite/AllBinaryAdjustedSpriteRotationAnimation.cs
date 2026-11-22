@@ -29,7 +29,7 @@ public class AllBinaryAdjustedSpriteRotationAnimation : AllBinarySpriteRotationA
     private int dy;
     public AllBinaryAdjustedSpriteRotationAnimation(Sprite sprite, Image image, int dx, int dy, AnimationBehavior animationBehavior) : base(sprite, image, animationBehavior)
     {
-        // base(sprite, image, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.dx = dx;
         this.dy = dy;
     }

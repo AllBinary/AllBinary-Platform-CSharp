@@ -43,7 +43,7 @@ public class AdjustedImageArrayRotationAnimation : ImageArrayRotationAnimation
     private int dy = 0;
     public AdjustedImageArrayRotationAnimation(Image[] imageArray, AngleInfo angleInfo, int totalAngle, int dx, int dy, AnimationBehavior animationBehavior) : base(imageArray, angleInfo, totalAngle, animationBehavior)
     {
-        // base(imageArray, angleInfo, totalAngle, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.init(dx, dy);
     }
 

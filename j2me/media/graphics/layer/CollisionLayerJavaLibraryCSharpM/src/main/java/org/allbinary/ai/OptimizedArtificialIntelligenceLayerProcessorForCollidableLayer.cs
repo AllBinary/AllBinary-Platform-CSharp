@@ -27,7 +27,7 @@ public class OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer : L
 {
     public OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer() : base(new OptimizedArtificialIntelligenceLayerManager())
     {
-        // base(new OptimizedArtificialIntelligenceLayerManager()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

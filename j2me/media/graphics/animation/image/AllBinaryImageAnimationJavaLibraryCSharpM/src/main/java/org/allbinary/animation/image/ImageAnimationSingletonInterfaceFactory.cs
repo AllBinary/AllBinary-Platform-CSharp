@@ -27,7 +27,7 @@ public class ImageAnimationSingletonInterfaceFactory : SingletonAnimationInterfa
 {
     public ImageAnimationSingletonInterfaceFactory(Animation animationInterface, int width, int height) : base(new ImageAnimation(AnimationFrameToImageUtil.getInstance().getInstanceWH(width, height, animationInterface), AnimationBehavior.getInstance()))
     {
-        // base(new ImageAnimation(AnimationFrameToImageUtil.getInstance().getInstanceWH(width, height, animationInterface), AnimationBehavior.getInstance())) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

@@ -42,7 +42,7 @@ public class WeblisketSession : WeblisketSessionInterface
     private HttpSession session;
     public WeblisketSession(HashMap<object, object> hashMap, PageContext pageContext) : this(hashMap, ((HttpServletRequest) pageContext.getRequest()))
     {
-        // this(hashMap, ((HttpServletRequest) pageContext.getRequest())) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public WeblisketSession(HashMap<object, object> hashMap, HttpServletRequest httpServletRequest)

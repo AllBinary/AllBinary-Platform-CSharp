@@ -54,7 +54,7 @@ public class Waypoint : WaypointBase, BuildingEventListenerInterface
     {
         this.endList = this.basicArrayListUtil.getImmutableInstance();
         this.paths = this.basicArrayListUtil.NULL_ARRAY_OF_ARRAY;
-        // base(sound) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.ownerLayer = ownerLayer;
     }
 

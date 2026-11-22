@@ -34,7 +34,7 @@ public class SimultaneousCompoundRotationAnimation : RotationAnimation
     private RotationAnimation[] animationInterfaceArray;
     public SimultaneousCompoundRotationAnimation(RotationAnimation[] animationInterfaceArray, AnimationBehavior animationBehavior) : base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior)
     {
-        // base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.animationInterfaceArray = animationInterfaceArray;
     }
 

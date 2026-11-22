@@ -161,20 +161,14 @@ public class ImageUtil
     public virtual Canvas drawTransformedImage(Image image, Composite parent, int dx, int dy, int width, int height)
     {
         Canvas imageCanvas = new Canvas(parent, SWT.NONE);
-        imageCanvas.addPaintListener(new PaintListener()
-#if JAVA_ANONYMOUS_CLASS_BODY
-            public virtual void paintControl(PaintEvent @event)
-            {
+        imageCanvas.addPaintListener(new __SwtClosure_N70725((__swtSelf_N70725, @event) => {
                 GC gc = @event.gc;
                 Transform affineTransform = new Transform(gc.getDevice());
                 affineTransform.translate(dx, dy);
                 gc.setAntialias(SWT.ON);
                 gc.setInterpolation(SWT.HIGH);
                 gc.drawImage(image, 0, 0, image.getBounds().width, image.getBounds().height, 0, 0, width, height);
-            }
-
-#endif
-);
+            }));
         return imageCanvas;
     }
 
@@ -191,6 +185,18 @@ public class ImageUtil
         stringBuffer.append(" Type: ");
         stringBuffer.appendint(((int) imageData.type));
         return stringBuffer.ToString();
+    }
+
+    private sealed class __SwtClosure_N70725 : PaintListener
+    {
+        private readonly global::System.Action<__SwtClosure_N70725, PaintEvent> callback1;
+
+        public __SwtClosure_N70725(global::System.Action<__SwtClosure_N70725, PaintEvent> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public void paintControl(PaintEvent @event) => callback1(this, @event);
     }
 
 }

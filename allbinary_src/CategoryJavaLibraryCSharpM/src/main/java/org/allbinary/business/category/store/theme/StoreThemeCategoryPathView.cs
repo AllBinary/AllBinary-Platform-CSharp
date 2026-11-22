@@ -30,7 +30,7 @@ public class StoreThemeCategoryPathView : CategoryView, DomNodeInterface
 {
     public StoreThemeCategoryPathView(StoreThemeCategoryInterface categoryInterface) : base(((StoreThemeCategoryInterface) categoryInterface))
     {
-        // base(((StoreThemeCategoryInterface) categoryInterface)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

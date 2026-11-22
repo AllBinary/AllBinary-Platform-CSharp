@@ -55,12 +55,12 @@ public class OrderHistory : Order, OrderHistoryInterface
     private Money total;
     public OrderHistory(BasketInterface basketInterface) : base(basketInterface)
     {
-        // base(basketInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public OrderHistory(BasketInterface basketInterface, OrderHistory orderHistory) : base(orderHistory.getStoreName(), basketInterface, orderHistory.getId(), orderHistory.getShippingMethod(), orderHistory.getSpecial(), orderHistory.getPaymentMethod())
     {
-        // base(orderHistory.getStoreName(), basketInterface, orderHistory.getId(), orderHistory.getShippingMethod(), orderHistory.getSpecial(), orderHistory.getPaymentMethod()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.userName = orderHistory.getUserName();
         this.shippingAddress = orderHistory.getShippingAddress();
         this.billingAddress = orderHistory.getBillingAddress();
@@ -82,7 +82,7 @@ public class OrderHistory : Order, OrderHistoryInterface
 
     public OrderHistory(BasketInterface basketInterface, HashMap<object, object> orderHistoryHashMap) : base(((string) orderHistoryHashMap.get(StoreFrontData.getInstance().NAME)), basketInterface, ((string) orderHistoryHashMap.get(OrderData.ID)), ((string) orderHistoryHashMap.get(ShippingMethodData.NAME)), ((string) orderHistoryHashMap.get(EntryData.getInstance().SPECIAL)), ((string) orderHistoryHashMap.get(PaymentData.METHOD)))
     {
-        // base(((string) orderHistoryHashMap.get(StoreFrontData.getInstance().NAME)), basketInterface, ((string) orderHistoryHashMap.get(OrderData.ID)), ((string) orderHistoryHashMap.get(ShippingMethodData.NAME)), ((string) orderHistoryHashMap.get(EntryData.getInstance().SPECIAL)), ((string) orderHistoryHashMap.get(PaymentData.METHOD))) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.shippingAddress = new StreetAddress(((string) orderHistoryHashMap.get(ShippingAddressData.NAME)), ((string) orderHistoryHashMap.get(ShippingAddressData.STREET)), ((string) orderHistoryHashMap.get(ShippingAddressData.CITY)), ((string) orderHistoryHashMap.get(ShippingAddressData.STATE)), ((string) orderHistoryHashMap.get(ShippingAddressData.CODE)), ((string) orderHistoryHashMap.get(ShippingAddressData.COUNTRY)));
         this.billingAddress = new StreetAddress(((string) orderHistoryHashMap.get(BillingAddressData.NAME)), ((string) orderHistoryHashMap.get(BillingAddressData.STREET)), ((string) orderHistoryHashMap.get(BillingAddressData.CITY)), ((string) orderHistoryHashMap.get(BillingAddressData.STATE)), ((string) orderHistoryHashMap.get(BillingAddressData.CODE)), ((string) orderHistoryHashMap.get(BillingAddressData.COUNTRY)));
         this.payment = new Payment(orderHistoryHashMap);

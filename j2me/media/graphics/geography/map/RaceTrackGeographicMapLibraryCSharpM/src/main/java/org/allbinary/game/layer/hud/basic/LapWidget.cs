@@ -32,7 +32,7 @@ public class LapWidget : BasicHud
     private string @string = StringUtil.getInstance().EMPTY_STRING;
     public LapWidget(int location, int direction, BasicColor basicColor) : base(location, direction, 2, basicColor)
     {
-        // base(location, direction, 2, basicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.updateMaxHeight = 15;
         this.updateMaxWidth = 40;
     }

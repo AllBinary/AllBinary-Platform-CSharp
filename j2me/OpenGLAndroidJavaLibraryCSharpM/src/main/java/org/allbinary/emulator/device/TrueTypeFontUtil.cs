@@ -53,7 +53,7 @@ public class TrueTypeFontUtil : TrueTypeFontUtilBase
     public OpenGLESImage fontImage = OpenGLESImage.NULL_OPENGL_IMAGE;
     private TrueTypeFontUtil() : base(1)
     {
-        // base(1) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void saveFontAtlasAsFile()

@@ -24,12 +24,12 @@ public class ABHashtable<K, V> : Hashtable<K, V>
 {
     public ABHashtable(int initialCapacity) : base(initialCapacity)
     {
-        // base(initialCapacity) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public ABHashtable() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

@@ -31,7 +31,7 @@ public class AdjustedSpriteIndexedAnimation : SpriteIndexedAnimation
     private int dy;
     public AdjustedSpriteIndexedAnimation(Sprite sprite, Image image, BasicColor[] basicColorArray, int dx, int dy, AnimationBehavior animationBehavior) : base(sprite, image, basicColorArray, animationBehavior)
     {
-        // base(sprite, image, basicColorArray, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.dx = dx;
         this.dy = dy;
     }

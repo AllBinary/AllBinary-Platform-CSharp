@@ -34,7 +34,7 @@ public class RotationAnimation : IndexedAnimation, RotationAnimationInterface
     public CircularIndexUtil circularIndexUtil;
     public RotationAnimation(AngleInfo angleInfo, CircularIndexUtil circularIndexUtil, AnimationBehavior animationBehavior) : base(animationBehavior)
     {
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.angleInfo = angleInfo;
         this.circularIndexUtil = circularIndexUtil;
     }

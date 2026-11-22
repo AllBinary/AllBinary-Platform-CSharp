@@ -54,7 +54,7 @@ public class AddFileValidationView : DownloadableInventoryItemView, ValidationCo
     private const string ADDANOTHERDOWNLOADABLE = "Add Another";
     public AddFileValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual bool? isValid()

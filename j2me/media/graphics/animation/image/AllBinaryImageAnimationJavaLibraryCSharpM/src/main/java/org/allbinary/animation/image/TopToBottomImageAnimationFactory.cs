@@ -26,7 +26,7 @@ public class TopToBottomImageAnimationFactory : BaseImageAnimationFactory
 {
     public TopToBottomImageAnimationFactory(Image image, int[] sequenceArray, AnimationBehaviorFactory animationBehaviorFactory) : base(image, sequenceArray, image.getWidth(), image.getHeight(), 0, 0, animationBehaviorFactory)
     {
-        // base(image, sequenceArray, image.getWidth(), image.getHeight(), 0, 0, animationBehaviorFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

@@ -30,7 +30,7 @@ public class NewValidationView : InventoryItemView, ValidationComponentInterface
 {
     public NewValidationView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface, StringUtil.getInstance().EMPTY_STRING)
     {
-        // base(transformInfoInterface, StringUtil.getInstance().EMPTY_STRING) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.itemInterface = ((ItemInterface) new BasicItem());
     }
 

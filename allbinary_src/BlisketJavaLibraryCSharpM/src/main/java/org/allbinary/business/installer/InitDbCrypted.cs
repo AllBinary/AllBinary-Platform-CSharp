@@ -61,7 +61,7 @@ public class InitDbCrypted : AbDatabaseManagement
     private readonly string SQL_FILE = "initWeblisket.sql";
     public InitDbCrypted(DatabaseConnectionInfoInterface databaseConnectionInfoInterface) : base(((DbConnectionInfo) databaseConnectionInfoInterface))
     {
-        // base(((DbConnectionInfo) databaseConnectionInfoInterface)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual bool? addUsers()

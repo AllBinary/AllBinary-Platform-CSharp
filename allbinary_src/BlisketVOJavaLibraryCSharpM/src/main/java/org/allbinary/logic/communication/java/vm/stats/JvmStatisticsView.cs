@@ -28,7 +28,7 @@ public class JvmStatisticsView : JvmStatisticsMapping, DomNodeInterface
 {
     public JvmStatisticsView() : base()
     {
-        // base() is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

@@ -68,7 +68,7 @@ public class BuildingRTSFormInput : RTSFormInput
     private readonly DropCellPositionHistory dropCellPositionHistory = DropCellPositionHistory.getInstance();
     public BuildingRTSFormInput(Group[] groupInterface, bool isUnitProducer) : base(groupInterface)
     {
-        // base(groupInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.isUnitProducer = isUnitProducer;
         SmallIntegerSingletonFactory smallIntegerSingletonFactory = SmallIntegerSingletonFactory.getInstance();
         BasicColorFactory basicColorFactory = BasicColorFactory.getInstance();

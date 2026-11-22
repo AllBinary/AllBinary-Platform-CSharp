@@ -38,7 +38,7 @@ public class NewView : WorkFlowView, ValidationComponentInterface
     private readonly AbeClientInformationInterface abeClientInformation = ServiceClientInformationInterfaceFactory.getInstance();
     public NewView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         TransformInfoHttpInterface httpTransformInfoInterface = ((TransformInfoHttpInterface) this.getTransformInfoInterface());
         this.workFlowInterface = NewWorkFlowFactory.getInstance().getInstance(this.abeClientInformation, ((string) httpTransformInfoInterface.getPropertiesHashMap().get(DynamicObjectData.NAME)));
     }

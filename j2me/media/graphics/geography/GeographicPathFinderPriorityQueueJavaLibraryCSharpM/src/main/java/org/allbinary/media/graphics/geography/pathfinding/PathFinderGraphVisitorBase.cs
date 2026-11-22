@@ -14,6 +14,7 @@
  */
 // Generated Code Do Not Modify
 
+extern alias LogJ2SECollections;
 using System;
 using System.Linq;
 using BasicArrayList = org.allbinary.util.BasicArrayList;

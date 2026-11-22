@@ -31,7 +31,7 @@ public class ImageArraySpecialAnimation : ImageArrayAnimation, SpecialAnimationI
     private readonly TimeDelayHelper timeDelayHelper = new TimeDelayHelper(270);
     public ImageArraySpecialAnimation(Image[] imageArray, AnimationBehavior animationBehavior) : base(imageArray, animationBehavior)
     {
-        // base(imageArray, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.reset();
     }
 

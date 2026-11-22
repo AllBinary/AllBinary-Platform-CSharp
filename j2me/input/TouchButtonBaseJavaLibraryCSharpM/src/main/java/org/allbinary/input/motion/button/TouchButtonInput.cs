@@ -37,7 +37,7 @@ public class TouchButtonInput : Input, GameKeyEventSourceInterface
     public TouchButtonInput(int id, string name) : base(id, name)
     {
         this.TOUCH_BUTTON_SOURCE_ID = this.gameKeyEventFactory.TOUCH_BUTTON_SOURCE_ID;
-        // base(id, name) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         InputFactory inputFactory = InputFactory.getInstance();
         inputFactory.add(this.getId(), this);
     }

@@ -33,7 +33,7 @@ public class BasicMenuInputProcessor : PlayerGameInput, BaseMotionGestureEventLi
     private Canvas canvas = NullCanvas.NULL_CANVAS;
     public BasicMenuInputProcessor(BasicArrayList gameKeyEventList, int playerInputId, Canvas gameCanvas) : base(gameKeyEventList, new BasicArrayListD(), playerInputId)
     {
-        // base(gameKeyEventList, new BasicArrayListD(), playerInputId) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.canvas = gameCanvas;
     }
 

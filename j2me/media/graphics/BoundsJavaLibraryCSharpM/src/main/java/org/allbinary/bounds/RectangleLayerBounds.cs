@@ -24,7 +24,7 @@ public class RectangleLayerBounds : LayerBounds
 {
     public RectangleLayerBounds(Rectangle rectangle) : base(rectangle)
     {
-        // base(rectangle) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void visit(BoundsVisitorInterface boundsVisitorInterface)

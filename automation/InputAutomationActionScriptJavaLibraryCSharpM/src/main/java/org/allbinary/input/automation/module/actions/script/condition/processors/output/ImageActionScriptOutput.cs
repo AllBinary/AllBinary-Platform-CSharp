@@ -39,7 +39,7 @@ public class ImageActionScriptOutput : BasicProfileActionScriptOutput, ImageActi
     private ImageActionScriptOutputJPanel actionScriptOutputJPanel;
     public ImageActionScriptOutput(Node node) : base(NAME, node)
     {
-        // base(NAME, node) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         Node actionNode = DomSearchHelper.getNode(ImageActionScriptOutputData.NAME, node.getChildNodes());
         if (actionNode != null) {
@@ -67,7 +67,7 @@ public class ImageActionScriptOutput : BasicProfileActionScriptOutput, ImageActi
 
     public ImageActionScriptOutput() : base(NAME)
     {
-        // base(NAME) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setImageTypes(new ImageTypes());
         this.setAllowsChildren(false);
         this.actionScriptOutputJPanel = new ImageActionScriptOutputJPanel(this);

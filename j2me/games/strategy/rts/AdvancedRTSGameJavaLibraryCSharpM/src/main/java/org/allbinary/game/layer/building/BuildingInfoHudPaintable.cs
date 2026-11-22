@@ -137,7 +137,7 @@ public class BuildingInfoHudPaintable : SelectionHudPaintable
             {
                 public ProductivityNumberStringHud() : base("Productivity:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
                 {
-                    // base("Productivity:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor) is called from the constructor declaration
+                    // Constructor invocation emitted in the initializer.
                 }
 
                 public override void updateMeasurement(Graphics graphics)
@@ -154,7 +154,7 @@ public class BuildingInfoHudPaintable : SelectionHudPaintable
             {
                 public EfficiencyNumberStringHud() : base("Efficiency:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
                 {
-                    // base("Efficiency:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor) is called from the constructor declaration
+                    // Constructor invocation emitted in the initializer.
                 }
 
                 public override void updateMeasurement(Graphics graphics)
@@ -171,7 +171,7 @@ public class BuildingInfoHudPaintable : SelectionHudPaintable
             {
                 public HealthNumberStringHud() : base(HEALTH, 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
                 {
-                    // base(HEALTH, 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor) is called from the constructor declaration
+                    // Constructor invocation emitted in the initializer.
                 }
 
                 public override void updateMeasurement(Graphics graphics)
@@ -188,7 +188,7 @@ public class BuildingInfoHudPaintable : SelectionHudPaintable
             {
                 public MaxHealthNumberStringHud() : base("/ ", 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
                 {
-                    // base("/ ", 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor) is called from the constructor declaration
+                    // Constructor invocation emitted in the initializer.
                 }
 
                 public override void updateMeasurement(Graphics graphics)

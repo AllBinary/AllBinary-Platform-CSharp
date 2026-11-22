@@ -33,7 +33,7 @@ public class CustomTextAnimation : TextAnimation, TextInterface
     public bool hasChanged = true;
     public CustomTextAnimation(string text, int fontSize, AnimationBehavior animationBehavior) : base(text, animationBehavior)
     {
-        // base(text, animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.fontSize = fontSize;
         this.font = Font.getFont(Font.FACE_SYSTEM, Font.STYLE_PLAIN, fontSize);
     }

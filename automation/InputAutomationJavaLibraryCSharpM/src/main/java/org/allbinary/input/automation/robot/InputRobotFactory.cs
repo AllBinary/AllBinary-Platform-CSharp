@@ -18,8 +18,6 @@ using System;
 using System.Linq;
 //using GraphicsDevice = java.awt.GraphicsDevice;
 //using GraphicsEnvironment = java.awt.GraphicsEnvironment;
-//using Collection = java.util.Collection;
-//using Iterator = java.util.Iterator;
 using java.util;
 //using HelpSet = javax.help.HelpSet;
 //using HelpSetEvent = javax.help.@event.HelpSetEvent;
@@ -103,11 +101,11 @@ public class InputRobotFactory
     }
 
     // throws Exception
-    public static void loadLibraries(Collection collection)
+    public static void loadLibraries(Collection<object> collection)
     {
         LogUtil logUtil = LogUtil.getInstance();
         logUtil.putF("Loading Libraries", "InputRobotFactory", "loadLibraries");
-        Iterator iterator = collection.iterator();
+        Iterator<object> iterator = collection.iterator();
         while (iterator.hasNext()) {
             InputRobotFactory.loadLibrary(((InputRobotInterface) iterator.next()));
         }

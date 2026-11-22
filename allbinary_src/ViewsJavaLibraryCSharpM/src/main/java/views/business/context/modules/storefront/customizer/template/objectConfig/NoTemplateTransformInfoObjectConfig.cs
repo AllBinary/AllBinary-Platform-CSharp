@@ -39,18 +39,18 @@ public class NoTemplateTransformInfoObjectConfig : TransformInfoObjectConfig
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public NoTemplateTransformInfoObjectConfig(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public NoTemplateTransformInfoObjectConfig(TransformInfoInterface transformInfoInterface, Document document) : base(transformInfoInterface, document)
     {
-        // base(transformInfoInterface, document) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setDocument(this.generate(this.toXmlDoc()));
     }
 
     public NoTemplateTransformInfoObjectConfig(TransformInfoInterface transformInfoInterface, string name, string type) : base(transformInfoInterface, name, type)
     {
-        // base(transformInfoInterface, name, type) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setDocument(this.generate(this.toXmlDoc()));
     }
 

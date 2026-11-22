@@ -30,14 +30,7 @@ public class SWTJOGLProcessor : global::java.lang.Runnable
         return SWTJOGLProcessor.instance;
     }
 
-    public GLHolder glHolder = new GLHolder()
-#if JAVA_ANONYMOUS_CLASS_BODY
-        public virtual void run(object renderer)
-        {
-        }
-
-#endif
-;
+    public GLHolder glHolder;
     public virtual void init(object display, object comp)
     {
     }
@@ -118,6 +111,24 @@ public class SWTJOGLProcessor : global::java.lang.Runnable
     public virtual int substringWidth(Font font, string str, int offset, int len)
     {
         throw new SystemException();
+    }
+
+    private sealed class __SwtClosure_N65773 : GLHolder
+    {
+        private readonly global::System.Action<__SwtClosure_N65773, object> callback1;
+
+        public __SwtClosure_N65773(global::System.Action<__SwtClosure_N65773, object> callback1)
+        {
+            this.callback1 = callback1;
+        }
+
+        public override void run(object renderer) => callback1(this, renderer);
+    }
+
+    public SWTJOGLProcessor()
+    {
+        this.glHolder = new __SwtClosure_N65773((__swtSelf_N65773, renderer) => {
+        });
     }
 
 }

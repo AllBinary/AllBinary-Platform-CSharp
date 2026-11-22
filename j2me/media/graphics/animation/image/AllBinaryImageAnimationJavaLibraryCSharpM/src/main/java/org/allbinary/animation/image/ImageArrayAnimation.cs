@@ -34,7 +34,7 @@ public class ImageArrayAnimation : IndexedAnimation
     public CircularIndexUtil circularIndexUtil = CircularIndexUtil.NULL_CIRCULAR_INDEX_UTIL;
     public ImageArrayAnimation(Image[] imageArray, AnimationBehavior animationBehavior) : base(animationBehavior)
     {
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setImageArray(imageArray);
     }
 

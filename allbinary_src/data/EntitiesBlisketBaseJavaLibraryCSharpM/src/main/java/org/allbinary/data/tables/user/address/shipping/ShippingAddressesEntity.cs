@@ -25,7 +25,7 @@ public class ShippingAddressesEntity : StreetAddressesEntity
     private readonly string TABLENAME = "shipping";
     public ShippingAddressesEntity(string userName) : base(userName)
     {
-        // base(userName) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         setTableName(this.TABLENAME);
     }
 

@@ -37,7 +37,7 @@ public class AdvertisementAreaView : HttpStoreComponentView, DomNodeInterface
     private string advertisementAreaName;
     public AdvertisementAreaView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.advertisementAreaName = ((string) this.getPropertiesHashMap().get(AdvertisementAreaData.getInstance().NAME));
     }
 

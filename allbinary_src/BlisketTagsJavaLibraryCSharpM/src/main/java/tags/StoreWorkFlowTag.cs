@@ -36,7 +36,7 @@ public class StoreWorkFlowTag : HelperTag
     private string viewFile = null;
     public StoreWorkFlowTag() : base(new StoreTagWorkFlowHelperFactory())
     {
-        // base(new StoreTagWorkFlowHelperFactory()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().JSPTAG)) {
             this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         }
@@ -56,7 +56,7 @@ public class StoreWorkFlowTag : HelperTag
                 this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.PROCESS);
             }
             Type helperClass = this.getHelper().GetType();
-            Method method = helperClass.getMethod(commonStrings.PROCESS, null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod(commonStrings.PROCESS, null);
             int? result = ((int?) method.invoke(this.getHelper(), null));
             return ((int) result);
         } catch (Exception e) {

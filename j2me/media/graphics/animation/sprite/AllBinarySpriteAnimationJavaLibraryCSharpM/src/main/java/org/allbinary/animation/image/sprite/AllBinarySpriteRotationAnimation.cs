@@ -30,7 +30,7 @@ public class AllBinarySpriteRotationAnimation : HackRotationSpriteIndexedAnimati
 {
     public AllBinarySpriteRotationAnimation(Sprite sprite, Image image, AnimationBehavior animationBehavior) : base(sprite, image, AngleInfo.getInstance(((short) (AngleFactory.getInstance().TOTAL_ANGLE / sprite.getRawFrameCount()))), animationBehavior)
     {
-        // base(sprite, image, AngleInfo.getInstance(((short) (AngleFactory.getInstance().TOTAL_ANGLE / sprite.getRawFrameCount()))), animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.angleInfo.adjustAngle(this.sprite.getFrame());
     }
 

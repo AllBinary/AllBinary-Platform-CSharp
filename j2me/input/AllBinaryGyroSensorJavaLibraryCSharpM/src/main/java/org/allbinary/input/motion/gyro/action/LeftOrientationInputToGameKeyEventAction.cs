@@ -36,7 +36,7 @@ public class LeftOrientationInputToGameKeyEventAction : GameKeyCompleteMotionGes
 
     private LeftOrientationInputToGameKeyEventAction() : base("Left Action", OrientationMotionGestureFactory.getInstance().LEFT, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping())
     {
-        // base("Left Action", OrientationMotionGestureFactory.getInstance().LEFT, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

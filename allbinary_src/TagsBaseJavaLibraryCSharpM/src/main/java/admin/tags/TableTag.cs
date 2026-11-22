@@ -112,7 +112,7 @@ public class TableTag : PropertiesTag
         try {
             object anyType = this.getTagHelperFactoryInterface().getInstance(this.getPropertiesHashMap(), pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("drop", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("drop", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (Exception e) {
@@ -130,7 +130,7 @@ public class TableTag : PropertiesTag
         try {
             object anyType = this.getTagHelperFactoryInterface().getInstance(this.getPropertiesHashMap(), pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("create", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("create", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (Exception e) {
@@ -148,7 +148,7 @@ public class TableTag : PropertiesTag
         try {
             object anyType = this.getTagHelperFactoryInterface().getInstance(this.getPropertiesHashMap(), pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("restore", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("restore", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (Exception e) {
@@ -166,7 +166,7 @@ public class TableTag : PropertiesTag
         try {
             object anyType = this.getTagHelperFactoryInterface().getInstance(this.getPropertiesHashMap(), pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("backup", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("backup", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (Exception e) {
@@ -183,7 +183,7 @@ public class TableTag : PropertiesTag
     {
         try {
             Type helperClass = this.requestObject.GetType();
-            Method method = helperClass.getMethod("insert", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("insert", null);
             string result = ((string) method.invoke(this.requestObject, null));
             return result;
         } catch (Exception e) {
@@ -200,7 +200,7 @@ public class TableTag : PropertiesTag
     {
         try {
             Type helperClass = this.requestObject.GetType();
-            Method method = helperClass.getMethod(commonStrings.delete, null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod(commonStrings.delete, null);
             string result = ((string) method.invoke(this.requestObject, null));
             return result;
         } catch (Exception e) {
@@ -217,7 +217,7 @@ public class TableTag : PropertiesTag
     {
         try {
             Type helperClass = this.requestObject.GetType();
-            Method method = helperClass.getMethod("update", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("update", null);
             string result = ((string) method.invoke(this.requestObject, null));
             return result;
         } catch (Exception e) {

@@ -27,7 +27,7 @@ public class MultiPlayerGameLayer : CollidableDestroyableDamageableLayer, MultiP
 {
     public MultiPlayerGameLayer(RemoteInfo remoteInfo, Group[] groupInterface, string name, Rectangle layerInfo, ViewPositionBase viewPosition) : base(groupInterface, name, layerInfo, viewPosition)
     {
-        // base(groupInterface, name, layerInfo, viewPosition) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual MultiplayerBehavior getMultiplayerBehavior()

@@ -31,7 +31,7 @@ public class GameNotificationEvent : AllBinaryEventObject
     private readonly bool? removeable;
     public GameNotificationEvent(object anyType, string @string, int? seconds, BasicColor basicColor, bool? permanent) : base(anyType)
     {
-        // base(anyType) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setString(@string);
         this.seconds = seconds;
         this.setBasicColorP(basicColor);

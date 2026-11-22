@@ -41,7 +41,7 @@ public class ReleaseTouchInputToGameKeyEventAction : GameKeyCompleteMotionGestur
     private readonly GameKey NONE = GameKeyFactory.getInstance().NONE;
     private ReleaseTouchInputToGameKeyEventAction() : base("Release Action", TouchMotionGestureFactory.getInstance().RELEASED, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping())
     {
-        // base("Release Action", TouchMotionGestureFactory.getInstance().RELEASED, PlatformInputMappingFactory.getInstance().getPersistentInputMappingInstance().getInputMapping()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         try {
             this.setGameKey(this.NONE);
             this.setGameKeyEvent(GameKeyEventFactory.getInstance().getInstanceForInput(this, this.NONE));

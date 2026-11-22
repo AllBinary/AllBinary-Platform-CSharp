@@ -25,7 +25,7 @@ public class HealthBarTwodAnimation : HealthBarAnimation
 {
     public HealthBarTwodAnimation(AllBinaryLayer layerInterface, int location) : base(layerInterface, location)
     {
-        // base(layerInterface, location) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void paintXY(Graphics graphics, int x, int y)

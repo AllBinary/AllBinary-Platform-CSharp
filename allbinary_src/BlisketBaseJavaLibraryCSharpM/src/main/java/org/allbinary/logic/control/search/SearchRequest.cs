@@ -35,7 +35,7 @@ public class SearchRequest : AbContext
     private StoreFrontInterface storeFront;
     public SearchRequest(StoreFrontInterface storeFront, SearchParams searchParams, string xslFile, string contentType, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
-        // base(propertiesHashMap, pageContext) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.storeFront = storeFront;
         this.searchParams = searchParams;
         this.xslFile = xslFile;

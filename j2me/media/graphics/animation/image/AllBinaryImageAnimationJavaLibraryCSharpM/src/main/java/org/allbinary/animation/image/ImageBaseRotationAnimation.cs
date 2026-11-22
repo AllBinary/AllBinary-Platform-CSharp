@@ -33,7 +33,7 @@ public class ImageBaseRotationAnimation : RotationAnimation
     private readonly Image image;
     public ImageBaseRotationAnimation(Image image, AngleInfo angleInfo, short totalAngle, AnimationBehavior animationBehavior) : base(angleInfo, CircularIndexUtil.createInstance(totalAngle / angleInfo.getAngleIncrementInfo().getAngleIncrement()), animationBehavior)
     {
-        // base(angleInfo, CircularIndexUtil.createInstance(totalAngle / angleInfo.getAngleIncrementInfo().getAngleIncrement()), animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.image = image;
     }
 

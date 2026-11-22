@@ -43,7 +43,7 @@ public class CaptionIndexedAnimation : IndexedAnimation
     private Player player;
     public CaptionIndexedAnimation(Animation animationInterface, IndexedAnimation movieIndexedAnimationInterface, Player player, int captionDx, int captionDy, int dx, int dy, int time, AnimationBehavior animationBehavior) : base(animationBehavior)
     {
-        // base(animationBehavior) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.animationInterface = animationInterface;
         this.movieIndexedAnimationInterface = movieIndexedAnimationInterface;
         this.captionDx = captionDx;

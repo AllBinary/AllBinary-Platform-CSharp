@@ -442,22 +442,4 @@ namespace javax.sound.sampled
     }
 }
 
-namespace java.io
-{
-    internal sealed class BufferedInputStream : InputStream
-    {
-        private readonly BufferedStream stream;
-
-        internal BufferedInputStream(InputStream inputStream) => stream = new BufferedStream(inputStream);
-
-        public override int read() => stream.ReadByte();
-
-        public override int read(sbyte[] buffer, int offset, int length)
-        {
-            int count = stream.Read((byte[]) (Array) buffer, offset, length);
-            return count == 0 && length != 0 ? -1 : count;
-        }
-
-        public override void close() => stream.Dispose();
-    }
-}
+// java.io.BufferedInputStream is in the runtime J2SEForCSharpLibraryCSharpM.

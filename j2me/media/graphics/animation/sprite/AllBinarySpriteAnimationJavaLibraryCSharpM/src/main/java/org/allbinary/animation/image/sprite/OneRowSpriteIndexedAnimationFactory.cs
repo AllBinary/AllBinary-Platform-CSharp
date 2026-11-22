@@ -60,7 +60,7 @@ public class OneRowSpriteIndexedAnimationFactory : BaseImageAnimationFactory
     private readonly AnimationFactorySpriteScaleUtil animationFactorySpriteScaleUtil = AnimationFactorySpriteScaleUtil.getInstance();
     public OneRowSpriteIndexedAnimationFactory(Image image, int[] sequenceArray, int width, int height, int dx, int dy, AnimationBehaviorFactory animationBehaviorFactory) : base(image, sequenceArray, width, height, dx, dy, animationBehaviorFactory)
     {
-        // base(image, sequenceArray, width, height, dx, dy, animationBehaviorFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual void init(int dx, int dy)

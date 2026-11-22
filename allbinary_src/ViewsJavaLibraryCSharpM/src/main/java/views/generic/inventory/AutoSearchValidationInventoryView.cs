@@ -26,7 +26,7 @@ public class AutoSearchValidationInventoryView : InventorySearch
 {
     public AutoSearchValidationInventoryView(SearchRequest searchRequest) : base(searchRequest)
     {
-        // base(searchRequest) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual bool? isValid()

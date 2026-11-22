@@ -59,7 +59,7 @@ public class StaticPagesRequestHelper : AbContext, TagHelperInterface
     private string xslFile;
     public StaticPagesRequestHelper(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
-        // base(propertiesHashMap, pageContext) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.request = ((HttpServletRequest) pageContext.getRequest());
         this.xslFile = ((string) propertiesHashMap.get(TransformInfoData.getInstance().TEMPLATEFILENAME));
         this.getFormData();

@@ -25,7 +25,7 @@ public class NoGameGameNotificationHud : GameNotificationHud
 {
     public NoGameGameNotificationHud() : base(BasicHudFactory.getInstance().TOPCENTER, BasicHudFactory.getInstance().HORIZONTAL, 2, BasicColorFactory.getInstance().RED)
     {
-        // base(BasicHudFactory.getInstance().TOPCENTER, BasicHudFactory.getInstance().HORIZONTAL, 2, BasicColorFactory.getInstance().RED) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.updateMaxWidth = 40;
         this.updateMaxHeight = 14;
     }

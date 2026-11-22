@@ -29,7 +29,7 @@ public class PopupCommandFormInputProcessor : CommandFormInputProcessor
 {
     public PopupCommandFormInputProcessor(BasicArrayList gameKeyEventList, int playerInputId, MyCanvas gameCanvas, ScrollSelectionForm form, PopupMenuInputProcessor popupMenuInputProcessor) : base(gameKeyEventList, playerInputId, gameCanvas, form)
     {
-        // base(gameKeyEventList, playerInputId, gameCanvas, form) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

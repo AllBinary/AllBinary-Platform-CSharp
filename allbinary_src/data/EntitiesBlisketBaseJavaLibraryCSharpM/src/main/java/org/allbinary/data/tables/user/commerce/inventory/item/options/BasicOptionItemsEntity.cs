@@ -38,7 +38,7 @@ public class BasicOptionItemsEntity : AbSqlBean, BasicOptionItemsEntityInterface
     public readonly string tableName = "basicoptionitems";
     public BasicOptionItemsEntity() : base(new InventoryDbInitInfo())
     {
-        // base(new InventoryDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

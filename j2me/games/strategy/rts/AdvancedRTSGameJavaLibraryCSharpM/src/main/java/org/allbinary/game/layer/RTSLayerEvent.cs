@@ -25,7 +25,7 @@ public class RTSLayerEvent : AllBinaryEventObject
     private PathFindingLayerInterface rtsLayer = NullPathFindingLayer.NULL_PATH_FINDING_LAYER;
     public RTSLayerEvent(PathFindingLayerInterface rtsLayer) : base(rtsLayer)
     {
-        // base(rtsLayer) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override string ToString()

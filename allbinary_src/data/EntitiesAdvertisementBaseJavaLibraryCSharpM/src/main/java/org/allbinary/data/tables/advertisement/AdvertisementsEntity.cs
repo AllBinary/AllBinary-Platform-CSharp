@@ -41,7 +41,7 @@ public class AdvertisementsEntity : AbSqlBean, AdvertisementsEntityInterface
     private readonly string _INDEX = "_index";
     public AdvertisementsEntity() : base(new UserDbInitInfo())
     {
-        // base(new UserDbInitInfo()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setTableName(this.tableName);
     }
 

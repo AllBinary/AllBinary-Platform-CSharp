@@ -27,7 +27,7 @@ public class NoImageComparatorConstraints : ImageComparatorConstraints
 {
     public NoImageComparatorConstraints() : base(1)
     {
-        // base(1) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.setMaxNonMatchingPixelDeltas(int.MaxValue);
     }
 

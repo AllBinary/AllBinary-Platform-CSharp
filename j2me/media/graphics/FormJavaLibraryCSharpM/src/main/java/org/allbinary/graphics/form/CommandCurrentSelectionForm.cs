@@ -37,7 +37,7 @@ public class CommandCurrentSelectionForm : ScrollCurrentSelectionForm, UpdateMyF
     public readonly Animation[] unSelectedAnimationArray = new Animation[16];
     public CommandCurrentSelectionForm(string title, ABCustomItem[] items, int border, bool moveForSmallScreen, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(title, items, ItemPaintableFactory.getInstance(), border, -3, moveForSmallScreen, backgroundBasicColor, foregroundBasicColor)
     {
-        // base(title, items, ItemPaintableFactory.getInstance(), border, -3, moveForSmallScreen, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.initAnimations();
         this.addAll(items);
     }

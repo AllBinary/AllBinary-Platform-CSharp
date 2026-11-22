@@ -42,7 +42,7 @@ public class PaymentGatewaysView : HttpStoreComponentView, DomNodeInterface
     private BasicArrayList paymentGatewayVector;
     public PaymentGatewaysView(TransformInfoInterface transformInfoInterface, BasicArrayList gatewayVector) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.paymentGatewayVector = gatewayVector;
     }
 

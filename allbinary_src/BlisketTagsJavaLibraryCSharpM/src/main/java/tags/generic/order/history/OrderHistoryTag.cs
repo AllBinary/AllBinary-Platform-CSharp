@@ -49,7 +49,7 @@ public class OrderHistoryTag : StoreValidationTransformTag
         try {
             object anyType = new OrderHistoryHelperFactory().getInstance(this.getPropertiesHashMap(), pageContext);
             Type helperClass = anyType.GetType();
-            Method method = helperClass.getMethod("setOrderStatus", null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod("setOrderStatus", null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {

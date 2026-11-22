@@ -66,7 +66,7 @@ public class HighScoresCanvas : GameCommandCanvas, HighScoresResultsListener
     {
         this.waitPaintable = new SimpleTextPaintable(this.commonStrings.PLEASE_WAIT_FOR_SERVER, BasicColorFactory.getInstance().WHITE);
         this.currentCommand = this.highScoreCommandsFactory.HIGH_SCORE_COMMANDS[0];
-        // base(commandListener, HighScoresCanvas.NAME, allBinaryGameLayerManager.getBackgroundBasicColor(), allBinaryGameLayerManager.getForegroundBasicColor()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.logUtil.putF(this.commonStrings.START, this, this.commonStrings.CONSTRUCTOR);
         this.highScoresPaintable = paintable;
         this.highScoresFactoryInterface = highScoresFactoryInterface;

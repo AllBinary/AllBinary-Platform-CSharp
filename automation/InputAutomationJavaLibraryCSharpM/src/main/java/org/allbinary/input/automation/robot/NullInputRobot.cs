@@ -32,7 +32,7 @@ public class NullInputRobot : AbstractInputRobot, InputRobotInterface
     public const string NAME = "NULL";
     public NullInputRobot() : base(null)
     {
-        // base(null) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual string getName()

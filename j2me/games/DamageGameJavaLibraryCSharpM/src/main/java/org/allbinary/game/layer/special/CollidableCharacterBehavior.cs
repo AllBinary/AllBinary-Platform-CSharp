@@ -29,7 +29,7 @@ public class CollidableCharacterBehavior : CollidableDestroyableDamageableBehavi
 {
     public CollidableCharacterBehavior(bool collidable) : base(collidable)
     {
-        // base(collidable) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

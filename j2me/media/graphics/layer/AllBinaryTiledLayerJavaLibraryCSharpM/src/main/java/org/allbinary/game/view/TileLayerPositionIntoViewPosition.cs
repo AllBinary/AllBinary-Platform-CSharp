@@ -28,7 +28,7 @@ public class TileLayerPositionIntoViewPosition : ViewPosition
     private Layer tiledLayer = NullLayer.getInstance();
     public TileLayerPositionIntoViewPosition() : base(0, 0, 0)
     {
-        // base(0, 0, 0) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override int getX()

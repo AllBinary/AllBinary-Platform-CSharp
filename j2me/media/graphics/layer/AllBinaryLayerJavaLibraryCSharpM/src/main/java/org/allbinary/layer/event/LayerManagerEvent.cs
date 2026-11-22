@@ -29,7 +29,7 @@ public class LayerManagerEvent : AllBinaryEventObject
     private readonly string crud;
     public LayerManagerEvent(LayerManager layerManager, string crud) : base(layerManager)
     {
-        // base(layerManager) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.crud = crud;
     }
 

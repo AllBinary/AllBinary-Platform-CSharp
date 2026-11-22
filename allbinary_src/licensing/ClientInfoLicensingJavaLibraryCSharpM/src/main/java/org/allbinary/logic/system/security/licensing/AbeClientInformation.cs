@@ -33,7 +33,7 @@ public class AbeClientInformation : ClientInformation
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public AbeClientInformation(string name, string version, string specialName, string shortName) : base(name, version, specialName, shortName)
     {
-        // base(name, version, specialName, shortName) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void init()

@@ -40,7 +40,7 @@ public class OpenGLESGL11ExtImage : OpenGLESImage
     private readonly int[] rectangle;
     public OpenGLESGL11ExtImage(Image image, PlatformBitmapBaseFactory bitmapFactory, PlatformTextureBaseFactory textureFactory) : base(image, bitmapFactory, textureFactory)
     {
-        // base(image, bitmapFactory, textureFactory) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.onDisplayChangeEvent(DisplayInfoSingleton.getInstance().displayChangeEvent);
         this.rectangle = new int[] { 0, this.getHeight(), this.getWidth(), -this.getHeight() };
     }

@@ -60,7 +60,7 @@ public class OrderTag : CustomTagSupport
         try {
             object anyType = new OrderHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type helperClass = anyType.GetType();
-            Method method = helperClass.getMethod(commonStrings.PROCESS, null);
+            global::System.Reflection.MethodInfo method = helperClass.getMethod(commonStrings.PROCESS, null);
             string result = ((string) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {
@@ -80,7 +80,7 @@ public class OrderTag : CustomTagSupport
         try {
             object anyType = new OrderHelperFactory().getInstance(this.propertiesHashMap, this.pageContext);
             Type addressHelperClass = anyType.GetType();
-            Method method = addressHelperClass.getMethod("setPaymentGateway", null);
+            global::System.Reflection.MethodInfo method = addressHelperClass.getMethod("setPaymentGateway", null);
             bool? result = ((bool?) method.invoke(anyType, null));
             return result;
         } catch (LicensingException e) {

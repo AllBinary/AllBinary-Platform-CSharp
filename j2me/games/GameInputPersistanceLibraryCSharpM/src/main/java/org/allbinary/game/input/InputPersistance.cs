@@ -47,7 +47,7 @@ public class InputPersistance : BasicPersitance
     private readonly HashtableUtil hashtableUtil = HashtableUtil.getInstance();
     public InputPersistance(string name) : base(name)
     {
-        // base(name) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

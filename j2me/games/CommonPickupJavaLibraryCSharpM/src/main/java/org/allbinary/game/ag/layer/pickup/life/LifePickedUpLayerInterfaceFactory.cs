@@ -39,7 +39,7 @@ public class LifePickedUpLayerInterfaceFactory : PickedUpLayerInterfaceFactory, 
     private LifeLayerCircularStaticPool pool = new LifeLayerCircularStaticPool(new LifeLayerFactory(), 1);
     private LifePickedUpLayerInterfaceFactory() : base(PickedUpLayerTypeFactory.getInstance().LIFE, IconLayerFactory.getInstance(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().get(LifeResources.getInstance().RESOURCE).getInstance(0), 10, 10), FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().get(LifeResources.getInstance().RESOURCE).getInstance(0))
     {
-        // base(PickedUpLayerTypeFactory.getInstance().LIFE, IconLayerFactory.getInstance(FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().get(LifeResources.getInstance().RESOURCE).getInstance(0), 10, 10), FeaturedAnimationInterfaceFactoryInterfaceFactory.getInstance().get(LifeResources.getInstance().RESOURCE).getInstance(0)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public virtual int getTotal()

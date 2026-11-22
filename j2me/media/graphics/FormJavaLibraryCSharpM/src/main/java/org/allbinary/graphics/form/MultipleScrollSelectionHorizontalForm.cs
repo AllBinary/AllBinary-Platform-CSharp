@@ -38,7 +38,7 @@ public class MultipleScrollSelectionHorizontalForm : ScrollSelectionForm, Update
     public MultipleScrollSelectionHorizontalForm(string title, ABCustomItem[] items, ItemPaintableFactory formPaintableFactory, int border, BasicColor backgroundBasicColor, BasicColor foregroundBasicColor) : base(title, items, formPaintableFactory, border, 3, backgroundBasicColor, foregroundBasicColor)
     {
         this.myFontProcessor = new UpdateMyFontProcessor(this);
-        // base(title, items, formPaintableFactory, border, 3, backgroundBasicColor, foregroundBasicColor) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (J2MEUtil.isJ2ME() || J2MEUtil.isHTML()) {
         } else {
             this.rectPaintable = new MultipleScrollSelectionFormRectPaintable(this);

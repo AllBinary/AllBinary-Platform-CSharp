@@ -29,7 +29,7 @@ public class NoScoreable : Scoreable
 
     private NoScoreable() : base(0)
     {
-        // base(0) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public override void addPoints(int points)

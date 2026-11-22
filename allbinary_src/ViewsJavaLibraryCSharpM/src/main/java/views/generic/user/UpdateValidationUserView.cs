@@ -38,7 +38,7 @@ public class UpdateValidationUserView : HttpStoreComponentView, ValidationCompon
     private UserInterface user;
     public UpdateValidationUserView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.user = NewUserFactory.getInstance(transformInfoInterface);
     }
 

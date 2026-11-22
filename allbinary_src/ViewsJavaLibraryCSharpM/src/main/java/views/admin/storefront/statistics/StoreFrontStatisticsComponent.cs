@@ -36,7 +36,7 @@ public class StoreFrontStatisticsComponent : HttpStoreComponentView
     private DomNodeInterface domNodeInterface;
     public StoreFrontStatisticsComponent(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.newStoreFrontInterface = ((StoreFrontInterface) StoreFrontFactory.getInstance(transformInfoInterface.getStoreName()));
         this.domNodeInterface = new RealTimeStoreFrontStatisticsView(new RealTimeStoreFrontStatistics(this.newStoreFrontInterface), this.getWeblisketSession().getRole());
     }

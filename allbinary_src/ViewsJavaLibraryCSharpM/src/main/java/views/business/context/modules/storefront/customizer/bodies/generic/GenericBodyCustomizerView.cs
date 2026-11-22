@@ -41,7 +41,7 @@ public class GenericBodyCustomizerView : HttpStoreComponentView, DomNodeInterfac
     public GenericBodyValidation body = null;
     public GenericBodyCustomizerView(TransformInfoInterface transformInfoInterface) : base(transformInfoInterface)
     {
-        // base(transformInfoInterface) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     // throws Exception

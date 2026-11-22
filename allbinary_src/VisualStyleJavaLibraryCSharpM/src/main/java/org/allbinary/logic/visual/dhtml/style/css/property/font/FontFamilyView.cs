@@ -26,12 +26,12 @@ public class FontFamilyView : CssPropertyView
 {
     public FontFamilyView() : base(new CssProperty(FontFamilyData.getInstance().VALUE))
     {
-        // base(new CssProperty(FontFamilyData.getInstance().VALUE)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     public FontFamilyView(Node node) : base(new CssProperty(node))
     {
-        // base(new CssProperty(node)) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
 }

@@ -28,7 +28,7 @@ public class RelativeLayerRelationship : RelativeRelationship
     private AllBinaryLayer layer = AllBinaryLayer.NULL_ALLBINARY_LAYER;
     public RelativeLayerRelationship(AllBinaryLayer layer, GPoint point, BasicArrayList typesAllowedList) : base(point, typesAllowedList)
     {
-        // base(point, typesAllowedList) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         this.layer = layer;
     }
 

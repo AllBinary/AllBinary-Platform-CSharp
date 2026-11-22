@@ -36,7 +36,7 @@ public class TransformInfoHttpStore : TransformInfoHttp, TransformInfoHttpStoreI
     public readonly LogUtil logUtil = LogUtil.getInstance();
     public TransformInfoHttpStore(HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext, true)
     {
-        // base(propertiesHashMap, pageContext, true) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, this.commonStrings.CONSTRUCTOR);
         }
@@ -44,7 +44,7 @@ public class TransformInfoHttpStore : TransformInfoHttp, TransformInfoHttpStoreI
 
     public TransformInfoHttpStore(HashMap<object, object> databaseHashMap, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(databaseHashMap, propertiesHashMap, pageContext)
     {
-        // base(databaseHashMap, propertiesHashMap, pageContext) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             StringMaker stringBuffer = new StringMaker();
             stringBuffer.append("Database HashMap: ");
@@ -58,7 +58,7 @@ public class TransformInfoHttpStore : TransformInfoHttp, TransformInfoHttpStoreI
 
     public TransformInfoHttpStore(StoreFrontInterface storeFrontInterface, HashMap<object, object> propertiesHashMap, PageContext pageContext) : base(propertiesHashMap, pageContext)
     {
-        // base(propertiesHashMap, pageContext) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
         if (LogConfigTypes.LOGGING.contains(LogConfigTypeFactory.getInstance().VIEW)) {
             this.logUtil.putF("Properties HashMap: " + propertiesHashMap.ToString(), this, this.commonStrings.CONSTRUCTOR);
         }

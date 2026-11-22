@@ -34,7 +34,7 @@ public class RaceTrackPickupLayer : PickupLayer
     private const string NAME = "RaceTrackPickupLayer";
     public RaceTrackPickupLayer() : base(NAME, RemoteInfo.REMOTE_INFO, 0, CountedPickedUpLayerInterfaceFactory.NULL_COUNTED_PICKUP_LAYER_FACTORY, NullAnimationFactory.getFactoryInstance().getInstance(0), new Rectangle(PointFactory.getInstance().ZERO_ZERO, 0, 0), new TileLayerPositionIntoViewPosition())
     {
-        // base(NAME, RemoteInfo.REMOTE_INFO, 0, CountedPickedUpLayerInterfaceFactory.NULL_COUNTED_PICKUP_LAYER_FACTORY, NullAnimationFactory.getFactoryInstance().getInstance(0), new Rectangle(PointFactory.getInstance().ZERO_ZERO, 0, 0), new TileLayerPositionIntoViewPosition()) is called from the constructor declaration
+        // Constructor invocation emitted in the initializer.
     }
 
     private readonly ViewPositionEventHandler viewPositionEventHandler = ViewPositionEventHandler.getInstance();
