@@ -25,7 +25,7 @@ namespace org.allbinary.animation.image;
 public class ChangeColorProcessor : ModifierBaseProcessor
 {
     private static readonly ChangeColorProcessor instanceC = new ChangeColorProcessor();
-    public static ChangeColorProcessor getInstance()
+    public new static ChangeColorProcessor getInstance()
     {
         return ChangeColorProcessor.instanceC;
     }

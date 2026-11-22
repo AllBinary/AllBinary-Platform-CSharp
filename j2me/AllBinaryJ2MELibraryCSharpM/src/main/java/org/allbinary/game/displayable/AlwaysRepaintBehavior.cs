@@ -29,7 +29,7 @@ namespace org.allbinary.game.displayable;
 public class AlwaysRepaintBehavior : RepaintBehavior
 {
     private static readonly AlwaysRepaintBehavior instanceC = new AlwaysRepaintBehavior();
-    public static AlwaysRepaintBehavior getInstance()
+    public new static AlwaysRepaintBehavior getInstance()
     {
         return AlwaysRepaintBehavior.instanceC;
     }

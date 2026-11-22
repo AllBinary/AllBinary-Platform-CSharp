@@ -16,7 +16,7 @@
 
 using System;
 using System.Linq;
-//using ZipEntry = java.util.zip.ZipEntry;
+using ZipEntry = java.util.zip.ZipEntry;
 //using ZipInputStream = java.util.zip.ZipInputStream;
 //using ZipOutputStream = java.util.zip.ZipOutputStream;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;

@@ -147,10 +147,10 @@ public class BuildingRTSFormInput : RTSFormInput
                     if (this.newUnconstructedRTSLayerInterfaceArray[itemIndex] == CollidableDestroyableDamageableLayer.getNullInstance()) {
                         this.newUnconstructedRTSLayerInterfaceArray[itemIndex] = this.getInstance(layerManager, item, geographicMapCellPosition);
                     } else {
-                        RTSLayer rtsLayer = ((RTSLayer) this.newUnconstructedRTSLayerInterfaceArray[itemIndex]);
+                        RTSLayer positionedLayer = ((RTSLayer) this.newUnconstructedRTSLayerInterfaceArray[itemIndex]);
                         GPoint cellPoint = geographicMapCellPosition.getPoint();
-                        rtsLayer.setPosition(cellPoint.getX(), cellPoint.getY(), cellPoint.getZ());
-                        rtsLayer.geographicMapCellPositionAreaBase.update(geographicMapInterface);
+                        positionedLayer.setPosition(cellPoint.getX(), cellPoint.getY(), cellPoint.getZ());
+                        positionedLayer.geographicMapCellPositionAreaBase.update(geographicMapInterface);
                     }
                     RTSLayer rtsLayer = ((RTSLayer) this.newUnconstructedRTSLayerInterfaceArray[itemIndex]);
                     this.attemptBuild(rtsPlayerLayerInterface, layerManager, rtsLayer, itemIndex);

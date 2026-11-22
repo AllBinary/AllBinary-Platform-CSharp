@@ -36,7 +36,7 @@ public class MusicManager
     {
         private readonly MusicManager outer;
 
-        private readonly MusicManager musicManager;
+        internal readonly MusicManager musicManager;
         public MusicManagerPlayerListener(MusicManager outer, MusicManager musicManager)
         {
             this.outer = outer;

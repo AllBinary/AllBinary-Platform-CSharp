@@ -31,7 +31,7 @@ public class AndroidTitleProgressBar : ProgressCanvas
     {
         private readonly AndroidTitleProgressBar outer;
 
-        private readonly AndroidTitleProgressBar androidTitleProgressBar;
+        internal readonly AndroidTitleProgressBar androidTitleProgressBar;
         public TitleProgressBarSetProgressRunnable(AndroidTitleProgressBar outer, AndroidTitleProgressBar androidTitleProgressBar)
         {
             this.outer = outer;
@@ -55,7 +55,7 @@ public class AndroidTitleProgressBar : ProgressCanvas
     {
         private readonly AndroidTitleProgressBar outer;
 
-        private readonly AndroidTitleProgressBar androidTitleProgressBar;
+        internal readonly AndroidTitleProgressBar androidTitleProgressBar;
         public TitleProgressBarPortionSetProgressRunnable(AndroidTitleProgressBar outer, AndroidTitleProgressBar androidTitleProgressBar)
         {
             this.outer = outer;
@@ -79,7 +79,7 @@ public class AndroidTitleProgressBar : ProgressCanvas
     {
         private readonly AndroidTitleProgressBar outer;
 
-        private readonly AndroidTitleProgressBar androidTitleProgressBar;
+        internal readonly AndroidTitleProgressBar androidTitleProgressBar;
         public ShowTitleProgressBarRunnable(AndroidTitleProgressBar outer, AndroidTitleProgressBar androidTitleProgressBar)
         {
             this.outer = outer;
@@ -103,7 +103,7 @@ public class AndroidTitleProgressBar : ProgressCanvas
     {
         private readonly AndroidTitleProgressBar outer;
 
-        private readonly AndroidTitleProgressBar androidTitleProgressBar;
+        internal readonly AndroidTitleProgressBar androidTitleProgressBar;
         public DismissTitleProgressBarRunnable(AndroidTitleProgressBar outer, AndroidTitleProgressBar androidTitleProgressBar)
         {
             this.outer = outer;

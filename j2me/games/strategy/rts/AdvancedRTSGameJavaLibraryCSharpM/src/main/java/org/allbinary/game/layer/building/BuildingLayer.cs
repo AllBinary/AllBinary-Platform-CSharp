@@ -69,7 +69,7 @@ namespace org.allbinary.game.layer.building;
 public class BuildingLayer : AdvancedRTSGameLayer, RotationAnimationInterfaceCompositeInterface, TrackingEventListenerInterface
 {
     // throws Exception
-    public static BuildingLayer createSimulated()
+    public new static BuildingLayer createSimulated()
     {
         AnimationInterfaceFactoryInterface nullAnimationInterfaceFactoryInterface = NullAnimationFactory.getFactoryInstance();
         AnimationInterfaceFactoryInterface nullIndexedAnimationInterfaceFactoryInterface = NullIndexedAnimationFactory.getFactoryInstance();

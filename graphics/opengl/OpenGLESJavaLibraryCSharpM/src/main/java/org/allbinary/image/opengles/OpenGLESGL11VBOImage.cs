@@ -41,8 +41,8 @@ public class OpenGLESGL11VBOImage : OpenGLESImage
     {
         // Constructor invocation emitted in the initializer.
         this.initVertices();
-        this.regionRectangleVertexFloatBuffer.put(FloatBuffer.wrap(this.regionRectangleFloatArray));
-        this.regionTextureVertexFloatBuffer.put(FloatBuffer.wrap(this.regionTextureRectangleFloatArray));
+        this.regionRectangleVertexFloatBuffer.put(this.regionRectangleFloatArray);
+        this.regionTextureVertexFloatBuffer.put(this.regionTextureRectangleFloatArray);
     }
 
     public virtual void initVertices()

@@ -122,9 +122,9 @@ public class BaseMusicService : Service
     //A member class instead of a local class using the method's player and intent since most of the converted languages do not have local classes.
     private class MusicRunnable : ARunnable
     {
-        private readonly BaseMusicService baseMusicService;
-        private readonly MediaPlayer player;
-        private readonly Intent intent;
+        internal readonly BaseMusicService baseMusicService;
+        internal readonly MediaPlayer player;
+        internal readonly Intent intent;
         public MusicRunnable(BaseMusicService baseMusicService, MediaPlayer player, Intent intent)
         {
             this.baseMusicService = baseMusicService;

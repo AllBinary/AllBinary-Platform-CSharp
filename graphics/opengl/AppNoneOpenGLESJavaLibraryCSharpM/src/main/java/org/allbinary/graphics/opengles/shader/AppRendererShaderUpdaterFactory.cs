@@ -22,7 +22,7 @@ namespace org.allbinary.graphics.opengles.shader;
 public class AppRendererShaderUpdaterFactory : ShaderUpdater
 {
     private static readonly AppRendererShaderUpdaterFactory instanceC = new AppRendererShaderUpdaterFactory();
-    public static AppRendererShaderUpdaterFactory getInstance()
+    public new static AppRendererShaderUpdaterFactory getInstance()
     {
         return AppRendererShaderUpdaterFactory.instanceC;
     }

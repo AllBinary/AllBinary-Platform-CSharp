@@ -25,7 +25,7 @@ namespace org.allbinary.game.displayable.canvas;
 public class InGameMenuBehavior : BaseMenuBehavior
 {
     private static readonly InGameMenuBehavior instanceC = new InGameMenuBehavior();
-    public static InGameMenuBehavior getInstance()
+    public new static InGameMenuBehavior getInstance()
     {
         return InGameMenuBehavior.instanceC;
     }

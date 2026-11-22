@@ -56,27 +56,14 @@ public class BuildingInfoHudPaintable : SelectionHudPaintable
         NumberStringHud healthHud = numberStringHudFactory.NULL_NUMBER_STRING_HUD;
         NumberStringHud maxHealthHud = numberStringHudFactory.NULL_NUMBER_STRING_HUD;
         try {
-            int index = 0;
             BasicHudFactory basicHudFactory = BasicHudFactory.getInstance();
             BasicColor basicColor = this.getBasicColorP();
             int textX = this.textX;
             int y = this.y;
-            int firstIndex = index;
-            
-            productivityHud = new ProductivityNumberStringHud();
-            index++;
-            int secondIndex = index;
-            
-            efficiencyHud = new EfficiencyNumberStringHud();
-            index++;
-            string HEALTH = this.HEALTH;
-            int thirdIndex = index;
-            
-            int totalLength = HEALTH.Length + 1;
-            healthHud = new HealthNumberStringHud();
-            int fourthIndex = index;
-            
-            maxHealthHud = new MaxHealthNumberStringHud();
+            productivityHud = new BuildingNumberHud("Productivity:", 999, basicHudFactory, basicColor, textX, y, 1, 0, true);
+            efficiencyHud = new BuildingNumberHud("Efficiency:", 999, basicHudFactory, basicColor, textX, y, 2, 0, false);
+            healthHud = new BuildingNumberHud(this.HEALTH, 99999, basicHudFactory, basicColor, textX, y, 3, 0, true);
+            maxHealthHud = new BuildingNumberHud("/ ", 99999, basicHudFactory, basicColor, textX, y, 3, this.HEALTH.Length + 1, false);
         } catch (Exception e) {
             CommonStrings commonStrings = CommonStrings.getInstance();
             this.logUtil.put(commonStrings.EXCEPTION, this, commonStrings.CONSTRUCTOR, e);
@@ -87,6 +74,37 @@ public class BuildingInfoHudPaintable : SelectionHudPaintable
         this.maxHealthHud = maxHealthHud;
     }
 
+    private class BuildingNumberHud : NumberStringHud
+    {
+        private readonly int baseTextX;
+        private readonly int baseY;
+        private readonly int row;
+        private readonly int prefixLength;
+        private readonly bool positionBeforeMeasurement;
+        public BuildingNumberHud(string label, int maximum, BasicHudFactory basicHudFactory, BasicColor basicColor, int baseTextX, int baseY, int row, int prefixLength, bool positionBeforeMeasurement) : base(label, maximum, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
+        {
+            // Constructor invocation emitted in the initializer.
+            this.baseTextX = baseTextX;
+            this.baseY = baseY;
+            this.row = row;
+            this.prefixLength = prefixLength;
+            this.positionBeforeMeasurement = positionBeforeMeasurement;
+        }
+
+        public override void updateMeasurement(Graphics graphics)
+        {
+            if (!this.positionBeforeMeasurement) {
+                base.updateMeasurement(graphics);
+            }
+            Font font = graphics.getFont();
+            this.updateMaxWidth = this.baseTextX + this.prefixLength * font.getHeight();
+            this.updateMaxHeight = this.baseY + this.row * font.getHeight();
+            if (this.positionBeforeMeasurement) {
+                base.updateMeasurement(graphics);
+            }
+        }
+
+    }
     public override void updateMeasurement(Graphics graphics)
     {
         Font font = graphics.getFont();
@@ -132,74 +150,6 @@ public class BuildingInfoHudPaintable : SelectionHudPaintable
     {
         this.rtsLayer = rtsLayer;
     }
-
-            class ProductivityNumberStringHud : NumberStringHud
-            {
-                public ProductivityNumberStringHud() : base("Productivity:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
-                {
-                    // Constructor invocation emitted in the initializer.
-                }
-
-                public override void updateMeasurement(Graphics graphics)
-                {
-                    Font font = graphics.getFont();
-                    this.updateMaxWidth = textX;
-                    this.updateMaxHeight = y + ((firstIndex + 1) * font.getHeight());
-                    base.updateMeasurement(graphics);
-                }
-
-            }
-
-            class EfficiencyNumberStringHud : NumberStringHud
-            {
-                public EfficiencyNumberStringHud() : base("Efficiency:", 999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
-                {
-                    // Constructor invocation emitted in the initializer.
-                }
-
-                public override void updateMeasurement(Graphics graphics)
-                {
-                    base.updateMeasurement(graphics);
-                    Font font = graphics.getFont();
-                    this.updateMaxWidth = textX;
-                    this.updateMaxHeight = y + ((secondIndex + 1) * font.getHeight());
-                }
-
-            }
-
-            class HealthNumberStringHud : NumberStringHud
-            {
-                public HealthNumberStringHud() : base(HEALTH, 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
-                {
-                    // Constructor invocation emitted in the initializer.
-                }
-
-                public override void updateMeasurement(Graphics graphics)
-                {
-                    Font font = graphics.getFont();
-                    this.updateMaxWidth = textX;
-                    this.updateMaxHeight = y + ((thirdIndex + 1) * font.getHeight());
-                    base.updateMeasurement(graphics);
-                }
-
-            }
-
-            class MaxHealthNumberStringHud : NumberStringHud
-            {
-                public MaxHealthNumberStringHud() : base("/ ", 99999, basicHudFactory.ABSOLUTE, basicHudFactory.HORIZONTAL, 0, basicColor)
-                {
-                    // Constructor invocation emitted in the initializer.
-                }
-
-                public override void updateMeasurement(Graphics graphics)
-                {
-                    base.updateMeasurement(graphics);
-                    Font font = graphics.getFont();
-                    this.updateMaxWidth = textX + (totalLength * font.getHeight());
-                    this.updateMaxHeight = y + ((fourthIndex + 1) * font.getHeight());
-                }
-
-            }
 
 }
 

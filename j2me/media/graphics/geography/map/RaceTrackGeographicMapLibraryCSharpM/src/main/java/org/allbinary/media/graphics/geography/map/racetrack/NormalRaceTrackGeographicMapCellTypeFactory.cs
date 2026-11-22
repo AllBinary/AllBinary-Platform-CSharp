@@ -22,7 +22,7 @@ namespace org.allbinary.media.graphics.geography.map.racetrack;
 public class NormalRaceTrackGeographicMapCellTypeFactory : RaceTrackGeographicMapCellTypeFactory
 {
     private static readonly NormalRaceTrackGeographicMapCellTypeFactory instanceC = new NormalRaceTrackGeographicMapCellTypeFactory();
-    public static NormalRaceTrackGeographicMapCellTypeFactory getInstance()
+    public new static NormalRaceTrackGeographicMapCellTypeFactory getInstance()
     {
         return NormalRaceTrackGeographicMapCellTypeFactory.instanceC;
     }

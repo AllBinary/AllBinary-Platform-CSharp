@@ -23,7 +23,7 @@ using Image = javax.microedition.lcdui.Image;
 using SWT = org.eclipse.swt.SWT;
 using ImageData = org.eclipse.swt.graphics.ImageData;
 using ImageLoader = org.eclipse.swt.graphics.ImageLoader;
-using SwtMutableImage = org.microemu.device.swt.SwtMutableImage;
+using PaletteData = org.eclipse.swt.graphics.PaletteData;
 using AvianUtil = org.allbinary.AvianUtil;
 using ResourceUtil = org.allbinary.data.resource.ResourceUtil;
 using PointFactory = org.allbinary.graphics.PointFactory;
@@ -72,17 +72,17 @@ public class TrueTypeFontUtil : TrueTypeFontUtilBase
                 OpenGLCapabilities openGLCapabilities = OpenGLCapabilities.getInstance();
                 if (openGLCapabilities.isTextureSizeValid(1024) && this.scale == 2) {
                     string FONT_ATLAS_1024 = "/font_1024.png";
-                    Image image = Image.createImage(ResourceUtil.getInstance().getResourceAsStream(FONT_ATLAS_1024));
+                    Image image = Image.createImageFromInputStream(ResourceUtil.getInstance().getResourceAsStream(FONT_ATLAS_1024));
                     image.setName(canvasStrings.FONT_ATLAS);
                     this.fontImage = ((OpenGLESImage) this.preResourceImageUtil.encapsulate(image));
                 } else if (openGLCapabilities.isTextureSizeValid(512)) {
                     string FONT_ATLAS_512 = "/font_512.png";
-                    Image image = Image.createImage(ResourceUtil.getInstance().getResourceAsStream(FONT_ATLAS_512));
+                    Image image = Image.createImageFromInputStream(ResourceUtil.getInstance().getResourceAsStream(FONT_ATLAS_512));
                     image.setName(canvasStrings.FONT_ATLAS);
                     this.fontImage = ((OpenGLESImage) this.preResourceImageUtil.encapsulate(image));
                 } else {
                     string FONT_ATLAS_512 = "/font_512.png";
-                    Image image = Image.createImage(ResourceUtil.getInstance().getResourceAsStream(FONT_ATLAS_512));
+                    Image image = Image.createImageFromInputStream(ResourceUtil.getInstance().getResourceAsStream(FONT_ATLAS_512));
                     image.setName(canvasStrings.FONT_ATLAS);
                     this.fontImage = ((OpenGLESImage) this.preResourceImageUtil.encapsulate(image));
                 }
@@ -101,7 +101,17 @@ public class TrueTypeFontUtil : TrueTypeFontUtilBase
     {
         Image image = this.getFontBitmap(null, cellSize, BasicColorFactory.getInstance().WHITE);
         ImageLoader imageLoader = new ImageLoader();
-        ImageData imageData = (((SwtMutableImage) image)).image.getImageData();
+        int width = image.getWidth();
+        int height = image.getHeight();
+        int[] pixels = new int[width * height];
+        image.getRGB(pixels, 0, width, 0, 0, width, height);
+        ImageData imageData = new ImageData(width, height, 32, new PaletteData(0xFF0000, 0xFF00, 0xFF));
+        for (int index = 0; index < pixels.Length; index++) {
+            pixels[index] &= 0xFFFFFF;
+        }
+        for (int row = 0; row < height; row++) {
+            imageData.setPixels(0, row, width, pixels, row * width);
+        }
         imageData.transparentPixel = imageData.getPixel(0, 0);
         imageLoader.data = new ImageData[] { imageData };
         imageLoader.save(CommonSeps.getInstance().PERIOD + CanvasStrings.getInstance().FONT_ATLAS, SWT.IMAGE_PNG);
@@ -190,7 +200,7 @@ public class TrueTypeFontUtil : TrueTypeFontUtilBase
                     _characterWidth[index] -= 2;
                 }
             }
-            _characterWidth[index] *= this.widthScale;
+            _characterWidth[index] = ((int) (_characterWidth[index] * this.widthScale));
         }
         return _characterWidth;
     }

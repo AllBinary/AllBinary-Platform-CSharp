@@ -1,3 +1,4 @@
+// Hand-maintained C# source. Preserve during Java regeneration.
 /*
  * 
  * AllBinary Open License Version 1 
@@ -12,13 +13,12 @@
  * Created By: Travis Berthelot 
  *   
  */
-// Generated Code Do Not Modify
 
-extern alias OpenGLESJavaLibraryCSharp;
+extern alias LegacyMIDP;
 using System;
 using System.Linq;
-using Image = javax.microedition.lcdui.Image;
-using Sprite = javax.microedition.lcdui.game.Sprite;
+using Image = LegacyMIDP::javax.microedition.lcdui.Image;
+using Sprite = LegacyMIDP::javax.microedition.lcdui.game.Sprite;
 using CommonSeps = org.allbinary.@string.CommonSeps;
 using CommonStrings = org.allbinary.@string.CommonStrings;
 using StringMaker = org.allbinary.logic.@string.StringMaker;

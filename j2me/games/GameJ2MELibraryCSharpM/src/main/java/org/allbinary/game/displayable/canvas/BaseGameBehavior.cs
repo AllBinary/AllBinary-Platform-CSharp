@@ -30,7 +30,7 @@ namespace org.allbinary.game.displayable.canvas;
 public class BaseGameBehavior : DemoGameBehavior
 {
     private static readonly BaseGameBehavior instanceC = new BaseGameBehavior();
-    public static DemoGameBehavior getInstance()
+    public new static DemoGameBehavior getInstance()
     {
         return BaseGameBehavior.instanceC;
     }

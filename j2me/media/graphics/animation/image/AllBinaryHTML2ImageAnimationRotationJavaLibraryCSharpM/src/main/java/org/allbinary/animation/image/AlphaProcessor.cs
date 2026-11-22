@@ -24,7 +24,7 @@ namespace org.allbinary.animation.image;
 public class AlphaProcessor : AlphaBaseProcessor
 {
     private static readonly AlphaProcessor instanceC = new AlphaProcessor();
-    public static AlphaProcessor getInstance()
+    public new static AlphaProcessor getInstance()
     {
         return AlphaProcessor.instanceC;
     }

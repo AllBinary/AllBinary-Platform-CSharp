@@ -22,7 +22,7 @@ namespace org.allbinary.graphics.opengles.shader;
 public class SimpleShaderInitializer : ShaderInitializer
 {
     private static readonly SimpleShaderInitializer instanceC = new SimpleShaderInitializer();
-    public static SimpleShaderInitializer getInstance()
+    public new static SimpleShaderInitializer getInstance()
     {
         return SimpleShaderInitializer.instanceC;
     }

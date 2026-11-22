@@ -22,7 +22,7 @@ namespace org.allbinary.graphics.paint;
 public class NullLocationPaintable : LocationPaintable
 {
     private static readonly NullLocationPaintable instanceC = new NullLocationPaintable();
-    public static NullLocationPaintable getInstance()
+    public new static NullLocationPaintable getInstance()
     {
         return NullLocationPaintable.instanceC;
     }

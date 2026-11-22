@@ -28,7 +28,7 @@ public class CompositeShaderUpdater : ShaderUpdater
 {
     public readonly CommonSeps commonSeps = CommonSeps.getInstance();
     private static readonly CompositeShaderUpdater instanceC = new CompositeShaderUpdater(StringUtil.getInstance().getArrayInstance(), StringUtil.getInstance().getArrayInstance(), StringUtil.getInstance().getArrayInstance(), NullUtil.getInstance().NULL_INT_ARRAY);
-    public static CompositeShaderUpdater getInstance()
+    public new static CompositeShaderUpdater getInstance()
     {
         return CompositeShaderUpdater.instanceC;
     }

@@ -22,7 +22,7 @@ namespace org.allbinary.image.opengles;
 public class ModifierOpenGLESImageProcessor : OpenGLESImageProcessor
 {
     private static readonly ModifierOpenGLESImageProcessor instanceC = new ModifierOpenGLESImageProcessor();
-    public static ModifierOpenGLESImageProcessor getInstance()
+    public new static ModifierOpenGLESImageProcessor getInstance()
     {
         return ModifierOpenGLESImageProcessor.instanceC;
     }

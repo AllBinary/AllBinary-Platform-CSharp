@@ -40,7 +40,7 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
     {
         private readonly MultipassWaypointPathRunnable outer;
 
-        private readonly MultipassWaypointPathRunnable multipassWaypointPathRunnable;
+        internal readonly MultipassWaypointPathRunnable multipassWaypointPathRunnable;
         public FirstRunnable(MultipassWaypointPathRunnable outer, MultipassWaypointPathRunnable multipassWaypointPathRunnable)
         {
             this.outer = outer;
@@ -59,7 +59,7 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
     {
         private readonly MultipassWaypointPathRunnable outer;
 
-        private readonly MultipassWaypointPathRunnable multipassWaypointPathRunnable;
+        internal readonly MultipassWaypointPathRunnable multipassWaypointPathRunnable;
         public SecondRunnable(MultipassWaypointPathRunnable outer, MultipassWaypointPathRunnable multipassWaypointPathRunnable)
         {
             this.outer = outer;
@@ -77,7 +77,7 @@ public class MultipassWaypointPathRunnable : WaypointPathRunnableBase
     {
         private readonly MultipassWaypointPathRunnable outer;
 
-        private readonly MultipassWaypointPathRunnable multipassWaypointPathRunnable;
+        internal readonly MultipassWaypointPathRunnable multipassWaypointPathRunnable;
         public EndRunnable(MultipassWaypointPathRunnable outer, MultipassWaypointPathRunnable multipassWaypointPathRunnable)
         {
             this.outer = outer;

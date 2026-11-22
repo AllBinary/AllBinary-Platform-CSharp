@@ -47,7 +47,6 @@ using AbeClientInformationInterface = org.allbinary.logic.system.security.licens
 using ServiceClientInformationInterfaceFactory = org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory;
 using CommonPhoneStrings = org.allbinary.@string.CommonPhoneStrings;
 using CommonSeps = org.allbinary.@string.CommonSeps;
-using BasicArrayList = org.allbinary.util.BasicArrayList;
 using InventoryColumnUtil = views.generic.inventory.InventoryColumnUtil;
 using InventorySearchUtil = views.generic.inventory.InventorySearchUtil;
 using LogConfigTypeFactory = org.allbinary.logic.communication.log.config.type.LogConfigTypeFactory;

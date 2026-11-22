@@ -29,7 +29,7 @@ namespace org.allbinary.game.layer.building;
 public class SimulatedBuildingPropertiesFactory : BuildingPropertiesFactory
 {
     private static readonly SimulatedBuildingPropertiesFactory instanceC = new SimulatedBuildingPropertiesFactory();
-    public static SimulatedBuildingPropertiesFactory getInstance()
+    public new static SimulatedBuildingPropertiesFactory getInstance()
     {
         return SimulatedBuildingPropertiesFactory.instanceC;
     }

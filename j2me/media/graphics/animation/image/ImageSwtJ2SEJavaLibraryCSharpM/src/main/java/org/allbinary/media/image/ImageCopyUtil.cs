@@ -64,7 +64,7 @@ public class ImageCopyUtil
     {
         if (this.features.isFeature(this.openGLFeatureFactory.OPENGL)) {
             Image image = originalImage;
-            image = this.openGLUtil.addImage(image);
+            image = SwtOpenGLESImageBridge.addImage(this.openGLUtil, image);
             return image;
         } else {
             return this.createImage(originalImage);
@@ -81,8 +81,8 @@ public class ImageCopyUtil
         Image originalImage2 = originalImage;
         if (this.features.isFeature(this.openGLFeatureFactory.OPENGL)) {
             if (originalImage.getType() >= OpenGLESImage.TYPE) {
-                OpenGLESImage openGLESImage = (((OpenGLESImage) originalImage));
-                originalImage2 = openGLESImage.openGLBitmap.getImage();
+                OpenGLESImage openGLESImage = SwtOpenGLESImageBridge.getOpenGLESImage(originalImage);
+                originalImage2 = SwtOpenGLESImageBridge.getBitmapImage(openGLESImage);
             }
         }
         Image image = null;
@@ -93,7 +93,7 @@ public class ImageCopyUtil
             SwtImmutableImage originalImmutableImage = ((SwtImmutableImage) originalImage2);
             image = new SwtMutableImage(SwtDeviceComponent.createImage(originalImmutableImage.image.getImageData()));
         }
-        image = this.openGLUtil.addImage(image);
+        image = SwtOpenGLESImageBridge.addImage(this.openGLUtil, image);
         return image;
     }
 
@@ -106,12 +106,12 @@ public class ImageCopyUtil
             return originalImage;
         }
         if (this.features.isFeature(this.openGLFeatureFactory.OPENGL)) {
-            if (this.openGLESImageExclusionUtil.isCustomScaling(originalImage)) {
+            if (SwtOpenGLESImageBridge.isCustomScaling(this.openGLESImageExclusionUtil, originalImage)) {
                 return this.createImage2(originalImage, width, height, mutable);
             }
             if (originalImage.getType() >= OpenGLESImage.TYPE) {
-                OpenGLESImage openGLESImage = (((OpenGLESImage) originalImage));
-                originalImage2 = openGLESImage.openGLBitmap.getImage();
+                OpenGLESImage openGLESImage = SwtOpenGLESImageBridge.getOpenGLESImage(originalImage);
+                originalImage2 = SwtOpenGLESImageBridge.getBitmapImage(openGLESImage);
             }
         }
         Image image = null;
@@ -139,7 +139,7 @@ public class ImageCopyUtil
                 image = new SwtImmutableImage(originalImmutableImage.getName(), new PostLoadSwtImmutableImageProcessor(originalImmutableImage));
             }
         }
-        image = this.openGLUtil.addImage(image);
+        image = SwtOpenGLESImageBridge.addImage(this.openGLUtil, image);
         return image;
     }
 
@@ -157,7 +157,7 @@ public class ImageCopyUtil
         if (this.features.isFeature(this.openGLFeatureFactory.OPENGL)) {
             DisplayInfoSingleton displayInfoSingleton = DisplayInfoSingleton.getInstance();
             if (originalImage.getType() >= OpenGLESImage.TYPE) {
-                OpenGLESImage openGLESImage = (((OpenGLESImage) originalImage));
+                OpenGLESImage openGLESImage = SwtOpenGLESImageBridge.getOpenGLESImage(originalImage);
                 OpenGLESImageProperties openGLESImageProperties = openGLESImage.openGLESImageProperties;
                 int openGLWidth = openGLESImage.openGLBitmap.getWidth();
                 int openGLHeight = openGLESImage.openGLBitmap.getHeight();
@@ -171,10 +171,10 @@ public class ImageCopyUtil
                     openGLESImageProperties.scaleX2 += 1.0f / ((float) openGLWidth);
                     openGLESImageProperties.scaleY2 += 1.0f / ((float) openGLHeight);
                 }
-                image = openGLESImage;
+                image = SwtOpenGLESImageBridge.asImage(openGLESImage);
             } else {
                 image = originalImage;
-                OpenGLESImage openGLESImage = ((OpenGLESImage) this.openGLUtil.addImage(image));
+                OpenGLESImage openGLESImage = SwtOpenGLESImageBridge.getOpenGLESImage(SwtOpenGLESImageBridge.addImage(this.openGLUtil, image));
                 OpenGLESImageProperties openGLESImageProperties = openGLESImage.openGLESImageProperties;
                 openGLESImageProperties.scaleX2 = ((float) ((((float) width)) / openGLESImage.getWidth()));
                 openGLESImageProperties.scaleX = openGLESImageProperties.scaleX2;
@@ -201,7 +201,7 @@ public class ImageCopyUtil
                         openGLESImageProperties.scaleY = 1.0f;
                     }
                 }
-                image = openGLESImage;
+                image = SwtOpenGLESImageBridge.asImage(openGLESImage);
             }
         } else {
             if (originalImage2.isMutable() && mutable) {
@@ -223,7 +223,7 @@ public class ImageCopyUtil
                     image = new SwtImmutableImage(originalImmutableImage.getName(), new PostLoadSwtImmutableImageProcessor(originalImmutableImage));
                 }
             }
-            image = this.openGLUtil.addImage(image);
+            image = SwtOpenGLESImageBridge.addImage(this.openGLUtil, image);
         }
         return image;
     }

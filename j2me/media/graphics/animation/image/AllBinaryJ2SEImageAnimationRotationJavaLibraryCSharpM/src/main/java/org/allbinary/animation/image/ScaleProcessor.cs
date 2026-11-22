@@ -27,7 +27,7 @@ public class ScaleProcessor : ScaleBaseProcessor
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private static readonly ScaleProcessor instanceC = new ScaleProcessor();
-    public static ScaleBaseProcessor getInstance()
+    public new static ScaleBaseProcessor getInstance()
     {
         return ScaleProcessor.instanceC;
     }

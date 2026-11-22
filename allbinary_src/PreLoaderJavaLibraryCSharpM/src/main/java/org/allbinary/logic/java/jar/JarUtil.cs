@@ -19,7 +19,7 @@ using System.Linq;
 //using IOException = java.io.IOException;
 using URL = java.net.URL;
 using URLConnection = java.net.URLConnection;
-//using JarEntry = java.util.jar.JarEntry;
+using JarEntry = java.util.jar.JarEntry;
 //using JarInputStream = java.util.jar.JarInputStream;
 
 namespace org.allbinary.logic.java.jar;

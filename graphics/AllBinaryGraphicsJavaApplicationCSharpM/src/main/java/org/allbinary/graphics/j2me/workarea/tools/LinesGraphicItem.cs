@@ -35,7 +35,6 @@ using StdUtil = org.allbinary.logic.StdUtil;
 using LogUtil = org.allbinary.logic.communication.log.LogUtil;
 using PositionStrings = org.allbinary.math.PositionStrings;
 using CommonStrings = org.allbinary.@string.CommonStrings;
-using BasicArrayList = org.allbinary.util.BasicArrayList;
 using Node = org.w3c.dom.Node;
 using NodeList = org.w3c.dom.NodeList;
 using KeyEvent = java.awt.@event.KeyEvent;

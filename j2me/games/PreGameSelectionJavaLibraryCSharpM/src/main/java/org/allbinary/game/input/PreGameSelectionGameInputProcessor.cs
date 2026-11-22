@@ -50,7 +50,7 @@ public class PreGameSelectionGameInputProcessor : Processor, GameInputProcessorI
     {
         private readonly PreGameSelectionGameInputProcessor outer;
 
-        private readonly PreGameSelectionGameInputProcessor inputProcessor;
+        internal readonly PreGameSelectionGameInputProcessor inputProcessor;
         public PreGameSelectionRunnable(PreGameSelectionGameInputProcessor outer, PreGameSelectionGameInputProcessor inputProcessor)
         {
             this.outer = outer;

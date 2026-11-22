@@ -24,7 +24,7 @@ namespace org.allbinary.media.graphics.geography.map.racetrack;
 public class RaceTrackGeographicMapCellTypeFactory : GeographicMapCellTypeFactory
 {
     private static readonly RaceTrackGeographicMapCellTypeFactory instanceC = new RaceTrackGeographicMapCellTypeFactory();
-    public static RaceTrackGeographicMapCellTypeFactory getInstance()
+    public new static RaceTrackGeographicMapCellTypeFactory getInstance()
     {
         return RaceTrackGeographicMapCellTypeFactory.instanceC;
     }

@@ -96,8 +96,8 @@ public class AndroidMediaPlayerWrapperListener
     {
         private readonly AndroidMediaPlayerWrapperListener outer;
 
-        private readonly string ON_BUFFERING_UPDATE = "onBufferingUpdate()";
-        private readonly AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener;
+        internal readonly string ON_BUFFERING_UPDATE = "onBufferingUpdate()";
+        internal readonly AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener;
         public AndroidMediaPlayerOnBufferingUpdateListener(AndroidMediaPlayerWrapperListener outer, AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener) : base(outer)
         {
             this.outer = outer;
@@ -117,8 +117,8 @@ public class AndroidMediaPlayerWrapperListener
     {
         private readonly AndroidMediaPlayerWrapperListener outer;
 
-        private readonly string ON_PREPARE = "onPrepare()";
-        private readonly AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener;
+        internal readonly string ON_PREPARE = "onPrepare()";
+        internal readonly AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener;
         public AndroidMediaPlayerOnPreparedListener(AndroidMediaPlayerWrapperListener outer, AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener) : base(outer)
         {
             this.outer = outer;
@@ -139,8 +139,8 @@ public class AndroidMediaPlayerWrapperListener
     {
         private readonly AndroidMediaPlayerWrapperListener outer;
 
-        private readonly string ON_ERROR = "onError()";
-        private readonly AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener;
+        internal readonly string ON_ERROR = "onError()";
+        internal readonly AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener;
         public AndroidMediaPlayerOnErrorListener(AndroidMediaPlayerWrapperListener outer, AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener) : base(outer)
         {
             this.outer = outer;
@@ -161,8 +161,8 @@ public class AndroidMediaPlayerWrapperListener
     {
         private readonly AndroidMediaPlayerWrapperListener outer;
 
-        private readonly string ON_COMPLETE = "onComplete()";
-        private readonly AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener;
+        internal readonly string ON_COMPLETE = "onComplete()";
+        internal readonly AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener;
         public AndroidMediaPlayerOnCompletionListener(AndroidMediaPlayerWrapperListener outer, AndroidMediaPlayerWrapperListener androidMediaPlayerWrapperListener) : base(outer)
         {
             this.outer = outer;

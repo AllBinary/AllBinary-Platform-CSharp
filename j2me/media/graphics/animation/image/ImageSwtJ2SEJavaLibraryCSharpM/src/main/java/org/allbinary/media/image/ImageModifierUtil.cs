@@ -88,7 +88,7 @@ public class ImageModifierUtil
     {
         if (this.features.isFeature(OpenGLFeatureFactory.getInstance().OPENGL)) {
             if (image.getType() >= OpenGLESImage.TYPE) {
-                OpenGLESImage openGLESImage = (((OpenGLESImage) image));
+                OpenGLESImage openGLESImage = SwtOpenGLESImageBridge.getOpenGLESImage(image);
                 openGLESImage.imageProcessor = ModifierOpenGLESImageProcessor.getInstance();
                 openGLESImage.openGLESImageProperties.redf = basicColor.getRedComponent();
                 openGLESImage.openGLESImageProperties.greenf = basicColor.getGreenComponent();
@@ -132,7 +132,7 @@ public class ImageModifierUtil
     {
         if (this.features.isFeature(OpenGLFeatureFactory.getInstance().OPENGL)) {
             if (image.getType() >= OpenGLESImage.TYPE) {
-                OpenGLESImage openGLESImage = (((OpenGLESImage) image));
+                OpenGLESImage openGLESImage = SwtOpenGLESImageBridge.getOpenGLESImage(image);
                 openGLESImage.imageProcessor = ModifierOpenGLESImageProcessor.getInstance();
                 openGLESImage.openGLESImageProperties.alphaf = (((float) alphaInt)) / 255f;
                 return;

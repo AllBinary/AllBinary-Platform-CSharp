@@ -23,7 +23,7 @@ public class TimeTypeTest
 
     private class TestableTimeTypeUtil : TimeTypeUtil
     {
-        private readonly int hour;
+        internal readonly int hour;
         public TestableTimeTypeUtil(int hour)
         {
             this.hour = hour;

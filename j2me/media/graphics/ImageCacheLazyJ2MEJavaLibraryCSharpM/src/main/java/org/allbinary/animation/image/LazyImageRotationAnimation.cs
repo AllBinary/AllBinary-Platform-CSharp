@@ -268,8 +268,8 @@ public class LazyImageRotationAnimation : RotationAnimation
 
         class ActualRotationAnimation : RotationAnimation
         {
-            private readonly LazyImageRotationAnimation lazyImageRotationAnimation;
-            private int index = 0;
+            internal readonly LazyImageRotationAnimation lazyImageRotationAnimation;
+            internal int index = 0;
             public ActualRotationAnimation(LazyImageRotationAnimation lazyImageRotationAnimation) : base(AngleInfo.getInstance(AngleFactory.getInstance().QUARTER_TOTAL_ANGLE), CircularIndexUtil.createInstance(4), animationBehavior)
             {
                 // Constructor invocation emitted in the initializer.

@@ -105,11 +105,11 @@ public class ImageModifierUtil
     {
         private readonly ImageModifierUtil outer;
 
-        private readonly ImageModifierUtil imageModifierUtil;
-        private readonly Image[] imageArray;
-        private readonly int index;
-        private readonly Image image;
-        private readonly CoreImage image3;
+        internal readonly ImageModifierUtil imageModifierUtil;
+        internal readonly Image[] imageArray;
+        internal readonly int index;
+        internal readonly Image image;
+        internal readonly CoreImage image3;
         public ImageCopyCallback(ImageModifierUtil outer, ImageModifierUtil imageModifierUtil, Image[] imageArray, int index, Image image, CoreImage image3)
         {
             this.outer = outer;

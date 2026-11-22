@@ -23,7 +23,7 @@ namespace org.allbinary.emulator.swt;
 public class SWTRunnableProcessor : SWTProcessor
 {
     private static readonly SWTRunnableProcessor instanceR = new SWTRunnableProcessor();
-    public static SWTRunnableProcessor getInstance()
+    public new static SWTRunnableProcessor getInstance()
     {
         return SWTRunnableProcessor.instanceR;
     }

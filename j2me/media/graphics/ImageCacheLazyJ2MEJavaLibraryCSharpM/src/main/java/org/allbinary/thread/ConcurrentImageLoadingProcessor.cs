@@ -31,7 +31,7 @@ public class ConcurrentImageLoadingProcessor : BaseImageLoadingProcessor
     {
         private readonly ConcurrentImageLoadingProcessor outer;
 
-        private readonly ImageCache imageCache;
+        internal readonly ImageCache imageCache;
         public ImageCacheRunnable(ConcurrentImageLoadingProcessor outer, ImageCache imageCache)
         {
             this.outer = outer;

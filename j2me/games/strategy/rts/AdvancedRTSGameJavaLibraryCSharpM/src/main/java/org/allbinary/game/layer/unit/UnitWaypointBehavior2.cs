@@ -486,7 +486,7 @@ public class UnitWaypointBehavior2 : UnitWaypointBehavior
     {
         private readonly UnitWaypointBehavior2 outer;
 
-        private readonly BasicArrayList positionList = new BasicArrayListD();
+        internal readonly BasicArrayList positionList = new BasicArrayListD();
         public override object visit(object anyType)
         {
             LogUtil logUtil = LogUtil.getInstance();

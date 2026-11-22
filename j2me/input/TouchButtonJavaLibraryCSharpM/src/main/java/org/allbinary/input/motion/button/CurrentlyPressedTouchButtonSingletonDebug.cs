@@ -26,7 +26,7 @@ namespace org.allbinary.input.motion.button;
 public class CurrentlyPressedTouchButtonSingletonDebug : CurrentlyPressedTouchButtonSingleton
 {
     private static readonly CurrentlyPressedTouchButtonSingletonDebug instanceC = new CurrentlyPressedTouchButtonSingletonDebug();
-    public static CurrentlyPressedTouchButtonSingleton getInstance()
+    public new static CurrentlyPressedTouchButtonSingleton getInstance()
     {
         return CurrentlyPressedTouchButtonSingletonDebug.instanceC;
     }

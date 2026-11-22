@@ -50,7 +50,7 @@ public class MapSelectionGameInputProcessor : Processor, GameInputProcessorInter
     {
         private readonly MapSelectionGameInputProcessor outer;
 
-        private readonly MapSelectionGameInputProcessor inputProcessor;
+        internal readonly MapSelectionGameInputProcessor inputProcessor;
         public MapSelectionRunnable(MapSelectionGameInputProcessor outer, MapSelectionGameInputProcessor inputProcessor)
         {
             this.outer = outer;

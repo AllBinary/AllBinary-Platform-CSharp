@@ -28,7 +28,7 @@ namespace org.allbinary.android.api30;
 public class ActivityFractureUtilAPI30 : ActivityFractureUtilAPI5
 {
     private static readonly ActivityFractureUtilAPI30 instance30 = new ActivityFractureUtilAPI30();
-    public static ActivityFractureUtilAPI30 getInstance()
+    public new static ActivityFractureUtilAPI30 getInstance()
     {
         return ActivityFractureUtilAPI30.instance30;
     }

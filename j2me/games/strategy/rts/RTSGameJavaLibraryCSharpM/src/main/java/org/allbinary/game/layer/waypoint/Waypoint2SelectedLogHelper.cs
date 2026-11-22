@@ -33,7 +33,7 @@ public class Waypoint2SelectedLogHelper : Waypoint2LogHelper
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private static readonly Waypoint2SelectedLogHelper instanceC = new Waypoint2SelectedLogHelper();
-    public static Waypoint2LogHelper getInstance()
+    public new static Waypoint2LogHelper getInstance()
     {
         return Waypoint2SelectedLogHelper.instanceC;
     }

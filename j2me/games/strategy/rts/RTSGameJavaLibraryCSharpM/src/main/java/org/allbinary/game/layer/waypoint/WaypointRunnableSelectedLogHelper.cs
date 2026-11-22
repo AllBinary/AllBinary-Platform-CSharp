@@ -27,7 +27,7 @@ public class WaypointRunnableSelectedLogHelper : WaypointRunnableLogHelper
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private static readonly WaypointRunnableSelectedLogHelper instanceC = new WaypointRunnableSelectedLogHelper();
-    public static WaypointRunnableSelectedLogHelper getInstance()
+    public new static WaypointRunnableSelectedLogHelper getInstance()
     {
         return WaypointRunnableSelectedLogHelper.instanceC;
     }

@@ -27,9 +27,9 @@ public class ToastUtil
     //A member class instead of a local class using the method parameters since most of the converted languages do not have local classes.
     private class MakeToast : global::java.lang.Runnable
     {
-        private readonly Context context;
-        private readonly string @string;
-        private readonly int time;
+        internal readonly Context context;
+        internal readonly string @string;
+        internal readonly int time;
         public MakeToast(Context context, string @string, int time)
         {
             this.context = context;

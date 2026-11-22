@@ -47,7 +47,7 @@ public class ImageRotationUtil
         Image originalImage2 = originalImage;
         if (this.features.isFeature(OpenGLFeatureFactory.getInstance().OPENGL)) {
             if (image.getType() >= OpenGLESImage.TYPE) {
-                OpenGLESImage openGLESImage = (((OpenGLESImage) image));
+                OpenGLESImage openGLESImage = SwtOpenGLESImageBridge.getOpenGLESImage(image);
                 openGLESImage.openGLESImageProperties.angle = totalAngle;
                 return;
             } else {

@@ -31,8 +31,15 @@ public class ShapeTypeFactory
     public readonly string KEY_CIRCLE = "circle";
     public readonly string KEY_RECTANGLE = "rectangle";
     public readonly string KEY_RECT = "rect";
-    public readonly ShapeType LINE = new ShapeType(KEY_LINE);
-    public readonly ShapeType CIRCLE = new ShapeType(KEY_CIRCLE);
-    public readonly ShapeType RECTANGLE = new ShapeType(KEY_RECTANGLE);
+    public readonly ShapeType LINE;
+    public readonly ShapeType CIRCLE;
+    public readonly ShapeType RECTANGLE;
+    public ShapeTypeFactory()
+    {
+        this.LINE = new ShapeType(this.KEY_LINE);
+        this.CIRCLE = new ShapeType(this.KEY_CIRCLE);
+        this.RECTANGLE = new ShapeType(this.KEY_RECTANGLE);
+    }
+
 }
 

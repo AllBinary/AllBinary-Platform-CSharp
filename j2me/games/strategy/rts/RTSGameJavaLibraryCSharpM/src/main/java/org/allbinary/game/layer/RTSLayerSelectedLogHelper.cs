@@ -34,7 +34,7 @@ public class RTSLayerSelectedLogHelper : RTSLayerLogHelper
 {
     public readonly LogUtil logUtil = LogUtil.getInstance();
     private static readonly RTSLayerSelectedLogHelper instanceC = new RTSLayerSelectedLogHelper();
-    public static RTSLayerSelectedLogHelper getInstance()
+    public new static RTSLayerSelectedLogHelper getInstance()
     {
         return RTSLayerSelectedLogHelper.instanceC;
     }

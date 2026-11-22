@@ -83,12 +83,12 @@ public class UnitRTSFormInput : RTSFormInput
         if (this.newUnconstructedRTSLayerInterfaceArray[itemIndex] == CollidableDestroyableDamageableLayer.getNullInstance()) {
             this.newUnconstructedRTSLayerInterfaceArray[itemIndex] = this.getInstance(layerManager, item, geographicMapCellPosition);
         } else {
-            GPoint cellPoint = geographicMapCellPosition.getPoint();
-            RTSLayer rtsLayer = ((RTSLayer) this.newUnconstructedRTSLayerInterfaceArray[itemIndex]);
-            rtsLayer.setPosition(cellPoint.getX(), cellPoint.getY(), rtsLayer.getZP());
-            GeographicMapCompositeInterface geographicMapCompositeInterface = ((GeographicMapCompositeInterface) rtsLayer.allBinaryGameLayerManagerP);
+            GPoint selectedCellPoint = geographicMapCellPosition.getPoint();
+            RTSLayer positionedLayer = ((RTSLayer) this.newUnconstructedRTSLayerInterfaceArray[itemIndex]);
+            positionedLayer.setPosition(selectedCellPoint.getX(), selectedCellPoint.getY(), positionedLayer.getZP());
+            GeographicMapCompositeInterface geographicMapCompositeInterface = ((GeographicMapCompositeInterface) positionedLayer.allBinaryGameLayerManagerP);
             BasicGeographicMap geographicMapInterface = geographicMapCompositeInterface.getGeographicMapInterface()[0];
-            rtsLayer.geographicMapCellPositionAreaBase.update(geographicMapInterface);
+            positionedLayer.geographicMapCellPositionAreaBase.update(geographicMapInterface);
         }
         GPoint cellPoint = geographicMapCellPosition.getMidPoint();
         RTSLayer rtsLayer = ((RTSLayer) this.newUnconstructedRTSLayerInterfaceArray[itemIndex]);

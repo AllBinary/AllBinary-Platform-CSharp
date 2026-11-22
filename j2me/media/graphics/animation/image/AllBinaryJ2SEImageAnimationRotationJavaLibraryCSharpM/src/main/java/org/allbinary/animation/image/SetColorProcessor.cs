@@ -25,7 +25,7 @@ namespace org.allbinary.animation.image;
 public class SetColorProcessor : ModifierBaseProcessor
 {
     private static readonly SetColorProcessor instanceC = new SetColorProcessor();
-    public static SetColorProcessor getInstance()
+    public new static SetColorProcessor getInstance()
     {
         return SetColorProcessor.instanceC;
     }

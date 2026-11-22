@@ -22,7 +22,7 @@ namespace org.allbinary.graphics;
 public class CustomGPoint : GPoint
 {
     public static readonly CustomGPoint NULL_CUSTOM_POINT = new CustomGPoint(0, 0, 0);
-    public static CustomGPoint getInstance(GPoint point)
+    public new static CustomGPoint getInstance(GPoint point)
     {
         return new CustomGPoint(point.getX(), point.getY(), point.getZ());
     }

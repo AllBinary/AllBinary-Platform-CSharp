@@ -25,7 +25,7 @@ namespace org.allbinary.game.layer;
 public class LinePathRelativeAnimation : LinePathAnimation
 {
     private static readonly LinePathRelativeAnimation instanceC = new LinePathRelativeAnimation();
-    public static LinePathAnimation getInstance()
+    public new static LinePathAnimation getInstance()
     {
         return LinePathRelativeAnimation.instanceC;
     }
