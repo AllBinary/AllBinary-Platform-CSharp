@@ -50,8 +50,9 @@
 
         <!--
         ../../
-        <module>../../../../../work/j2me/media/graphics/animation/sprite/AllBinaryQuarterSpriteAnimationJavaLibraryCSharpM</module>
         -->
+        <module>../../../../../workcsharp/j2me/media/graphics/animation/sprite/AllBinaryQuarterSpriteAnimationJavaLibraryCSharpM</module>
+
         <!--
         ../../
         <module>../../../../../work/j2me/media/graphics/animation/sprite/AllBinaryQuarterSpriteAnimation2JavaLibraryCSharpM</module>
